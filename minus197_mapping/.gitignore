@@ -1,0 +1,12 @@
+# Python bytecode and cache
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Local Python/Conda environments
+.venv/
+venv/
+env/
+ENV/
+.conda/
+conda-meta/

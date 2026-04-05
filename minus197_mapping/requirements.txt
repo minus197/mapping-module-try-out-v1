@@ -1,0 +1,25 @@
+# minus197 — Mapping Module
+# Install with:  pip install -r requirements.txt
+
+# ── Core IFC parsing ─────────────────────────────────────────────────────────
+ifcopenshell>=0.8.0
+
+# ── Numerical / geometry ─────────────────────────────────────────────────────
+numpy>=1.24.0
+scipy>=1.11.0
+scikit-image>=0.21.0        # medial-axis skeletonisation (Sprint 3)
+shapely>=2.0.0               # polygon operations, line-of-sight (Sprint 4)
+
+# ── Graph algorithms ─────────────────────────────────────────────────────────
+networkx>=3.1                # Yen's K-shortest paths (Sprint 5)
+
+# ── NLP / embeddings ─────────────────────────────────────────────────────────
+sentence-transformers>=2.2.0 # MiniLM node resolution (Sprint 5)
+                             # Install separately on Edge devices if needed
+
+# ── Fuzzy matching (lightweight fallback) ────────────────────────────────────
+rapidfuzz>=3.0.0             # Tier-2 destination resolution (Sprint 5)
+
+# ── Dev / test ───────────────────────────────────────────────────────────────
+pytest>=7.4.0
+pytest-cov>=4.1.0
