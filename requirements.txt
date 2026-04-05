@@ -1,4 +1,0 @@
-ifcopenshell
-numpy
-shapely
-matplotlib
