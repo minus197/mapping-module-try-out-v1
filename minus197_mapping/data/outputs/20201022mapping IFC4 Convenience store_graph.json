@@ -1,0 +1,953 @@
+{
+  "floor_label": "L1",
+  "source_file": "data\\ifc_files\\20201022mapping IFC4 Convenience store.ifc",
+  "nodes": [
+    {
+      "node_id": "FEAT-0_ndkJyO9CVPHaFtnEM6Kk",
+      "label": "Дверь - Двупольная распашная с полотнами разной ширины (глухое): 1 300,00 мм x 2 100,00 мм",
+      "position": [
+        -0.1,
+        0.27500000010527675
+      ],
+      "node_type": "door",
+      "zone_id": "0BGjw438P6JAPe2g$sDgcT",
+      "tags": {
+        "feature_type": "door",
+        "priority": "2",
+        "ifc_guid": "0_ndkJyO9CVPHaFtnEM6Kk"
+      }
+    },
+    {
+      "node_id": "FEAT-0wp3zaH$L7VBlQRHvLq4Rl",
+      "label": "Дверь - Двупольная распашная с полотнами разной ширины (глухое): 1 300,00 мм x 2 100,00 мм",
+      "position": [
+        -0.1,
+        2.2750000001054542
+      ],
+      "node_type": "door",
+      "zone_id": "0BGjw438P6JAPe2g$sDgcT",
+      "tags": {
+        "feature_type": "door",
+        "priority": "2",
+        "ifc_guid": "0wp3zaH$L7VBlQRHvLq4Rl"
+      }
+    },
+    {
+      "node_id": "FEAT-1rcsg60O53_ukZNuZICUKt",
+      "label": "Дверь - Двупольная распашная с полотнами разной ширины (глухое): 1 400,00 мм x 2 100,00 мм",
+      "position": [
+        34.300000000000004,
+        15.10000000010491
+      ],
+      "node_type": "door",
+      "zone_id": "2lyI2yiub9QBhgywjO7xcX",
+      "tags": {
+        "feature_type": "door",
+        "priority": "2",
+        "ifc_guid": "1rcsg60O53_ukZNuZICUKt"
+      }
+    },
+    {
+      "node_id": "FEAT-0GgCLy2LP42eJhqSxCFQXc",
+      "label": "Дверь - Однопольная распашная (глухое темное): 900,00 мм x 2 100,00 мм",
+      "position": [
+        29.849999999981424,
+        15.100000000104911
+      ],
+      "node_type": "door",
+      "zone_id": "2UG7dUO6vAYheCYwduYFZE",
+      "tags": {
+        "feature_type": "door",
+        "priority": "2",
+        "ifc_guid": "0GgCLy2LP42eJhqSxCFQXc"
+      }
+    },
+    {
+      "node_id": "FEAT-3jTK1b2NH4aPT0WWuekAnp",
+      "label": "Дверь - Двупольная распашная с полотнами разной ширины (глухое): 1 200,00 мм x 2 100,00 мм",
+      "position": [
+        27.12499999998142,
+        15.100000000104913
+      ],
+      "node_type": "door",
+      "zone_id": "0BGjw438P6JAPe2g$sDgcT",
+      "tags": {
+        "feature_type": "door",
+        "priority": "2",
+        "ifc_guid": "3jTK1b2NH4aPT0WWuekAnp"
+      }
+    },
+    {
+      "node_id": "FEAT-0JV8FQB5b5DPTE76PusxqH",
+      "label": "Дверь - Двупольная распашная с полотнами разной ширины (глухое): 1 200,00 мм x 2 100,00 мм",
+      "position": [
+        34.6,
+        7.725000000104912
+      ],
+      "node_type": "door",
+      "zone_id": "2lyI2yiub9QBhgywjO7xcX",
+      "tags": {
+        "feature_type": "door",
+        "priority": "2",
+        "ifc_guid": "0JV8FQB5b5DPTE76PusxqH"
+      }
+    },
+    {
+      "node_id": "FEAT-3KZzX8BSn5$uXshxhC1MGX",
+      "label": "Дверь - Однопольная распашная (глухое темное): 900,00 мм x 2 100,00 мм",
+      "position": [
+        37.085,
+        13.9
+      ],
+      "node_type": "door",
+      "zone_id": "2gbGtfPHrFnOw3AWmEVj8l",
+      "tags": {
+        "feature_type": "door",
+        "priority": "2",
+        "ifc_guid": "3KZzX8BSn5$uXshxhC1MGX"
+      }
+    },
+    {
+      "node_id": "FEAT-0XYyyamEP3Bxdj9fgnPmpr",
+      "label": "Дверь - Однопольная распашная (глухое темное): 900,00 мм x 2 100,00 мм",
+      "position": [
+        30.28749999998147,
+        3.8300000001049055
+      ],
+      "node_type": "door",
+      "zone_id": "2lyI2yiub9QBhgywjO7xcX",
+      "tags": {
+        "feature_type": "door",
+        "priority": "2",
+        "ifc_guid": "0XYyyamEP3Bxdj9fgnPmpr"
+      }
+    },
+    {
+      "node_id": "FEAT-2C7bqjFAn4dRRXxCO5ljPg",
+      "label": "Дверь - Двупольная распашная с полотнами разной ширины (глухое): 1 400,00 мм x 2 100,00 мм",
+      "position": [
+        29.46999999998144,
+        5.574999999999485
+      ],
+      "node_type": "door",
+      "zone_id": "0BGjw438P6JAPe2g$sDgcT",
+      "tags": {
+        "feature_type": "door",
+        "priority": "2",
+        "ifc_guid": "2C7bqjFAn4dRRXxCO5ljPg"
+      }
+    },
+    {
+      "node_id": "FEAT-3MacNmU1rFHA3qwn4LY1Sp",
+      "label": "Дверь - Однопольная распашная (глухое темное): 900,00 мм x 2 100,00 мм",
+      "position": [
+        35.44499999998144,
+        4.237500000104897
+      ],
+      "node_type": "door",
+      "zone_id": "2GDGci$en8jAR10fGEvA6l",
+      "tags": {
+        "feature_type": "door",
+        "priority": "2",
+        "ifc_guid": "3MacNmU1rFHA3qwn4LY1Sp"
+      }
+    },
+    {
+      "node_id": "FEAT-2z4FjdAgjF8BzQmj709ndM",
+      "label": "Дверь - Однопольная распашная (глухое темное): 900,00 мм x 2 100,00 мм",
+      "position": [
+        35.44499999998144,
+        2.3375000001049058
+      ],
+      "node_type": "door",
+      "zone_id": "2zO1ky5n57$hlSP0I709Q7",
+      "tags": {
+        "feature_type": "door",
+        "priority": "2",
+        "ifc_guid": "2z4FjdAgjF8BzQmj709ndM"
+      }
+    },
+    {
+      "node_id": "FEAT-3o6zFbINX8ue3cLBEniaGh",
+      "label": "Дверь - Двупольная распашная с полотнами разной ширины (глухое): 1 200,00 мм x 2 100,00 мм",
+      "position": [
+        34.60000000001858,
+        -0.07500000000003712
+      ],
+      "node_type": "door",
+      "zone_id": "2RTFVvtPr83Q0UxafooW91",
+      "tags": {
+        "feature_type": "door",
+        "priority": "2",
+        "ifc_guid": "3o6zFbINX8ue3cLBEniaGh"
+      }
+    },
+    {
+      "node_id": "FEAT-3BojDOt51BFRctjuYcdjPm",
+      "label": "Лестница 3 ступени",
+      "position": [
+        -0.5000000000185628,
+        5.475000000105418
+      ],
+      "node_type": "stair",
+      "zone_id": "0BGjw438P6JAPe2g$sDgcT",
+      "tags": {
+        "feature_type": "stair",
+        "priority": "3",
+        "ifc_guid": "3BojDOt51BFRctjuYcdjPm"
+      }
+    },
+    {
+      "node_id": "ZONE-0BGjw438P6JAPe2g$sDgcT",
+      "label": "Торговый зал",
+      "position": [
+        14.499999999981446,
+        7.612500000104919
+      ],
+      "node_type": "zone_centroid",
+      "zone_id": "0BGjw438P6JAPe2g$sDgcT",
+      "tags": {
+        "category": "shop",
+        "name": "1",
+        "area_m2": "445.63"
+      }
+    },
+    {
+      "node_id": "ZONE-2lyI2yiub9QBhgywjO7xcX",
+      "label": "Склад",
+      "position": [
+        34.272499999981456,
+        9.550000000105179
+      ],
+      "node_type": "zone_centroid",
+      "zone_id": "2lyI2yiub9QBhgywjO7xcX",
+      "tags": {
+        "category": "storage",
+        "name": "3",
+        "area_m2": "63.43"
+      }
+    },
+    {
+      "node_id": "ZONE-2zO1ky5n57$hlSP0I709Q7",
+      "label": "Кабинет",
+      "position": [
+        37.25999999998145,
+        1.7962500001049102
+      ],
+      "node_type": "zone_centroid",
+      "zone_id": "2zO1ky5n57$hlSP0I709Q7",
+      "tags": {
+        "category": "office",
+        "name": "6",
+        "area_m2": "13.5"
+      }
+    },
+    {
+      "node_id": "ZONE-2GDGci$en8jAR10fGEvA6l",
+      "label": "Раздевалка",
+      "position": [
+        37.25999999998146,
+        5.696250000104912
+      ],
+      "node_type": "zone_centroid",
+      "zone_id": "2GDGci$en8jAR10fGEvA6l",
+      "tags": {
+        "category": "storage",
+        "name": "7",
+        "area_m2": "13.41"
+      }
+    },
+    {
+      "node_id": "ZONE-2UG7dUO6vAYheCYwduYFZE",
+      "label": "Разделочная",
+      "position": [
+        30.284999999990724,
+        12.050000000055032
+      ],
+      "node_type": "zone_centroid",
+      "zone_id": "2UG7dUO6vAYheCYwduYFZE",
+      "tags": {
+        "category": "storage",
+        "name": "2",
+        "area_m2": "9.94"
+      }
+    },
+    {
+      "node_id": "ZONE-2gbGtfPHrFnOw3AWmEVj8l",
+      "label": "Сан. узел",
+      "position": [
+        38.07999999999073,
+        14.092500000052445
+      ],
+      "node_type": "zone_centroid",
+      "zone_id": "2gbGtfPHrFnOw3AWmEVj8l",
+      "tags": {
+        "category": "restroom",
+        "name": "8",
+        "area_m2": "3.91"
+      }
+    },
+    {
+      "node_id": "ZONE-2RTFVvtPr83Q0UxafooW91",
+      "label": "Коридор",
+      "position": [
+        33.96000022876049,
+        3.740000000104916
+      ],
+      "node_type": "zone_centroid",
+      "zone_id": "2RTFVvtPr83Q0UxafooW91",
+      "tags": {
+        "category": "corridor",
+        "name": "5",
+        "area_m2": "19.96"
+      }
+    },
+    {
+      "node_id": "ZONE-2qT_j3zBf5_8BGICwHrmlI",
+      "label": "Холодильная камера",
+      "position": [
+        30.976682134546103,
+        1.8775000001049078
+      ],
+      "node_type": "zone_centroid",
+      "zone_id": "2qT_j3zBf5_8BGICwHrmlI",
+      "tags": {
+        "category": "storage",
+        "name": "4",
+        "area_m2": "11.69"
+      }
+    }
+  ],
+  "edges": [
+    {
+      "edge_id": "EDGE-FEAT-0_ndkJyO9CVPHaFtnEM6Kk-FEAT-0wp3zaH$L7VBlQRHvLq4Rl",
+      "source_id": "FEAT-0_ndkJyO9CVPHaFtnEM6Kk",
+      "target_id": "FEAT-0wp3zaH$L7VBlQRHvLq4Rl",
+      "distance": 2.0,
+      "shore_linable": false,
+      "safety_score": 0.5,
+      "landmark_score": 0.0,
+      "tags": {}
+    },
+    {
+      "edge_id": "EDGE-FEAT-0_ndkJyO9CVPHaFtnEM6Kk-FEAT-3BojDOt51BFRctjuYcdjPm",
+      "source_id": "FEAT-0_ndkJyO9CVPHaFtnEM6Kk",
+      "target_id": "FEAT-3BojDOt51BFRctjuYcdjPm",
+      "distance": 5.2154,
+      "shore_linable": false,
+      "safety_score": 0.5,
+      "landmark_score": 0.0,
+      "tags": {}
+    },
+    {
+      "edge_id": "EDGE-FEAT-0_ndkJyO9CVPHaFtnEM6Kk-ZONE-0BGjw438P6JAPe2g$sDgcT",
+      "source_id": "FEAT-0_ndkJyO9CVPHaFtnEM6Kk",
+      "target_id": "ZONE-0BGjw438P6JAPe2g$sDgcT",
+      "distance": 16.3401,
+      "shore_linable": false,
+      "safety_score": 0.5,
+      "landmark_score": 0.0,
+      "tags": {}
+    },
+    {
+      "edge_id": "EDGE-FEAT-0wp3zaH$L7VBlQRHvLq4Rl-FEAT-0_ndkJyO9CVPHaFtnEM6Kk",
+      "source_id": "FEAT-0wp3zaH$L7VBlQRHvLq4Rl",
+      "target_id": "FEAT-0_ndkJyO9CVPHaFtnEM6Kk",
+      "distance": 2.0,
+      "shore_linable": false,
+      "safety_score": 0.5,
+      "landmark_score": 0.0,
+      "tags": {}
+    },
+    {
+      "edge_id": "EDGE-FEAT-0wp3zaH$L7VBlQRHvLq4Rl-FEAT-3BojDOt51BFRctjuYcdjPm",
+      "source_id": "FEAT-0wp3zaH$L7VBlQRHvLq4Rl",
+      "target_id": "FEAT-3BojDOt51BFRctjuYcdjPm",
+      "distance": 3.2249,
+      "shore_linable": false,
+      "safety_score": 0.5,
+      "landmark_score": 0.0,
+      "tags": {}
+    },
+    {
+      "edge_id": "EDGE-FEAT-0wp3zaH$L7VBlQRHvLq4Rl-ZONE-0BGjw438P6JAPe2g$sDgcT",
+      "source_id": "FEAT-0wp3zaH$L7VBlQRHvLq4Rl",
+      "target_id": "ZONE-0BGjw438P6JAPe2g$sDgcT",
+      "distance": 15.5451,
+      "shore_linable": false,
+      "safety_score": 0.5,
+      "landmark_score": 0.0,
+      "tags": {}
+    },
+    {
+      "edge_id": "EDGE-FEAT-1rcsg60O53_ukZNuZICUKt-FEAT-3KZzX8BSn5$uXshxhC1MGX",
+      "source_id": "FEAT-1rcsg60O53_ukZNuZICUKt",
+      "target_id": "FEAT-3KZzX8BSn5$uXshxhC1MGX",
+      "distance": 3.0325,
+      "shore_linable": false,
+      "safety_score": 0.5,
+      "landmark_score": 0.0,
+      "tags": {}
+    },
+    {
+      "edge_id": "EDGE-FEAT-1rcsg60O53_ukZNuZICUKt-ZONE-2gbGtfPHrFnOw3AWmEVj8l",
+      "source_id": "FEAT-1rcsg60O53_ukZNuZICUKt",
+      "target_id": "ZONE-2gbGtfPHrFnOw3AWmEVj8l",
+      "distance": 3.912,
+      "shore_linable": false,
+      "safety_score": 0.5,
+      "landmark_score": 0.0,
+      "tags": {}
+    },
+    {
+      "edge_id": "EDGE-FEAT-1rcsg60O53_ukZNuZICUKt-FEAT-0GgCLy2LP42eJhqSxCFQXc",
+      "source_id": "FEAT-1rcsg60O53_ukZNuZICUKt",
+      "target_id": "FEAT-0GgCLy2LP42eJhqSxCFQXc",
+      "distance": 4.45,
+      "shore_linable": false,
+      "safety_score": 0.5,
+      "landmark_score": 0.0,
+      "tags": {}
+    },
+    {
+      "edge_id": "EDGE-FEAT-0GgCLy2LP42eJhqSxCFQXc-FEAT-3jTK1b2NH4aPT0WWuekAnp",
+      "source_id": "FEAT-0GgCLy2LP42eJhqSxCFQXc",
+      "target_id": "FEAT-3jTK1b2NH4aPT0WWuekAnp",
+      "distance": 2.725,
+      "shore_linable": false,
+      "safety_score": 0.5,
+      "landmark_score": 0.0,
+      "tags": {}
+    },
+    {
+      "edge_id": "EDGE-FEAT-0GgCLy2LP42eJhqSxCFQXc-ZONE-2UG7dUO6vAYheCYwduYFZE",
+      "source_id": "FEAT-0GgCLy2LP42eJhqSxCFQXc",
+      "target_id": "ZONE-2UG7dUO6vAYheCYwduYFZE",
+      "distance": 3.0809,
+      "shore_linable": false,
+      "safety_score": 0.5,
+      "landmark_score": 0.0,
+      "tags": {}
+    },
+    {
+      "edge_id": "EDGE-FEAT-0GgCLy2LP42eJhqSxCFQXc-FEAT-1rcsg60O53_ukZNuZICUKt",
+      "source_id": "FEAT-0GgCLy2LP42eJhqSxCFQXc",
+      "target_id": "FEAT-1rcsg60O53_ukZNuZICUKt",
+      "distance": 4.45,
+      "shore_linable": false,
+      "safety_score": 0.5,
+      "landmark_score": 0.0,
+      "tags": {}
+    },
+    {
+      "edge_id": "EDGE-FEAT-3jTK1b2NH4aPT0WWuekAnp-FEAT-0GgCLy2LP42eJhqSxCFQXc",
+      "source_id": "FEAT-3jTK1b2NH4aPT0WWuekAnp",
+      "target_id": "FEAT-0GgCLy2LP42eJhqSxCFQXc",
+      "distance": 2.725,
+      "shore_linable": false,
+      "safety_score": 0.5,
+      "landmark_score": 0.0,
+      "tags": {}
+    },
+    {
+      "edge_id": "EDGE-FEAT-3jTK1b2NH4aPT0WWuekAnp-ZONE-2UG7dUO6vAYheCYwduYFZE",
+      "source_id": "FEAT-3jTK1b2NH4aPT0WWuekAnp",
+      "target_id": "ZONE-2UG7dUO6vAYheCYwduYFZE",
+      "distance": 4.3918,
+      "shore_linable": false,
+      "safety_score": 0.5,
+      "landmark_score": 0.0,
+      "tags": {}
+    },
+    {
+      "edge_id": "EDGE-FEAT-3jTK1b2NH4aPT0WWuekAnp-FEAT-1rcsg60O53_ukZNuZICUKt",
+      "source_id": "FEAT-3jTK1b2NH4aPT0WWuekAnp",
+      "target_id": "FEAT-1rcsg60O53_ukZNuZICUKt",
+      "distance": 7.175,
+      "shore_linable": false,
+      "safety_score": 0.5,
+      "landmark_score": 0.0,
+      "tags": {}
+    },
+    {
+      "edge_id": "EDGE-FEAT-0JV8FQB5b5DPTE76PusxqH-ZONE-2lyI2yiub9QBhgywjO7xcX",
+      "source_id": "FEAT-0JV8FQB5b5DPTE76PusxqH",
+      "target_id": "ZONE-2lyI2yiub9QBhgywjO7xcX",
+      "distance": 1.8542,
+      "shore_linable": false,
+      "safety_score": 0.5,
+      "landmark_score": 0.0,
+      "tags": {}
+    },
+    {
+      "edge_id": "EDGE-FEAT-0JV8FQB5b5DPTE76PusxqH-ZONE-2GDGci$en8jAR10fGEvA6l",
+      "source_id": "FEAT-0JV8FQB5b5DPTE76PusxqH",
+      "target_id": "ZONE-2GDGci$en8jAR10fGEvA6l",
+      "distance": 3.3454,
+      "shore_linable": false,
+      "safety_score": 0.5,
+      "landmark_score": 0.0,
+      "tags": {}
+    },
+    {
+      "edge_id": "EDGE-FEAT-0JV8FQB5b5DPTE76PusxqH-FEAT-3MacNmU1rFHA3qwn4LY1Sp",
+      "source_id": "FEAT-0JV8FQB5b5DPTE76PusxqH",
+      "target_id": "FEAT-3MacNmU1rFHA3qwn4LY1Sp",
+      "distance": 3.5884,
+      "shore_linable": false,
+      "safety_score": 0.5,
+      "landmark_score": 0.0,
+      "tags": {}
+    },
+    {
+      "edge_id": "EDGE-FEAT-3KZzX8BSn5$uXshxhC1MGX-ZONE-2gbGtfPHrFnOw3AWmEVj8l",
+      "source_id": "FEAT-3KZzX8BSn5$uXshxhC1MGX",
+      "target_id": "ZONE-2gbGtfPHrFnOw3AWmEVj8l",
+      "distance": 1.0135,
+      "shore_linable": false,
+      "safety_score": 0.5,
+      "landmark_score": 0.0,
+      "tags": {}
+    },
+    {
+      "edge_id": "EDGE-FEAT-3KZzX8BSn5$uXshxhC1MGX-FEAT-1rcsg60O53_ukZNuZICUKt",
+      "source_id": "FEAT-3KZzX8BSn5$uXshxhC1MGX",
+      "target_id": "FEAT-1rcsg60O53_ukZNuZICUKt",
+      "distance": 3.0325,
+      "shore_linable": false,
+      "safety_score": 0.5,
+      "landmark_score": 0.0,
+      "tags": {}
+    },
+    {
+      "edge_id": "EDGE-FEAT-3KZzX8BSn5$uXshxhC1MGX-ZONE-2lyI2yiub9QBhgywjO7xcX",
+      "source_id": "FEAT-3KZzX8BSn5$uXshxhC1MGX",
+      "target_id": "ZONE-2lyI2yiub9QBhgywjO7xcX",
+      "distance": 5.18,
+      "shore_linable": false,
+      "safety_score": 0.5,
+      "landmark_score": 0.0,
+      "tags": {}
+    },
+    {
+      "edge_id": "EDGE-FEAT-0XYyyamEP3Bxdj9fgnPmpr-FEAT-2C7bqjFAn4dRRXxCO5ljPg",
+      "source_id": "FEAT-0XYyyamEP3Bxdj9fgnPmpr",
+      "target_id": "FEAT-2C7bqjFAn4dRRXxCO5ljPg",
+      "distance": 1.927,
+      "shore_linable": false,
+      "safety_score": 0.5,
+      "landmark_score": 0.0,
+      "tags": {}
+    },
+    {
+      "edge_id": "EDGE-FEAT-0XYyyamEP3Bxdj9fgnPmpr-ZONE-2qT_j3zBf5_8BGICwHrmlI",
+      "source_id": "FEAT-0XYyyamEP3Bxdj9fgnPmpr",
+      "target_id": "ZONE-2qT_j3zBf5_8BGICwHrmlI",
+      "distance": 2.0706,
+      "shore_linable": false,
+      "safety_score": 0.5,
+      "landmark_score": 0.0,
+      "tags": {}
+    },
+    {
+      "edge_id": "EDGE-FEAT-0XYyyamEP3Bxdj9fgnPmpr-ZONE-2RTFVvtPr83Q0UxafooW91",
+      "source_id": "FEAT-0XYyyamEP3Bxdj9fgnPmpr",
+      "target_id": "ZONE-2RTFVvtPr83Q0UxafooW91",
+      "distance": 3.6736,
+      "shore_linable": false,
+      "safety_score": 0.5,
+      "landmark_score": 0.0,
+      "tags": {}
+    },
+    {
+      "edge_id": "EDGE-FEAT-2C7bqjFAn4dRRXxCO5ljPg-FEAT-0XYyyamEP3Bxdj9fgnPmpr",
+      "source_id": "FEAT-2C7bqjFAn4dRRXxCO5ljPg",
+      "target_id": "FEAT-0XYyyamEP3Bxdj9fgnPmpr",
+      "distance": 1.927,
+      "shore_linable": false,
+      "safety_score": 0.5,
+      "landmark_score": 0.0,
+      "tags": {}
+    },
+    {
+      "edge_id": "EDGE-FEAT-2C7bqjFAn4dRRXxCO5ljPg-ZONE-2qT_j3zBf5_8BGICwHrmlI",
+      "source_id": "FEAT-2C7bqjFAn4dRRXxCO5ljPg",
+      "target_id": "ZONE-2qT_j3zBf5_8BGICwHrmlI",
+      "distance": 3.9927,
+      "shore_linable": false,
+      "safety_score": 0.5,
+      "landmark_score": 0.0,
+      "tags": {}
+    },
+    {
+      "edge_id": "EDGE-FEAT-2C7bqjFAn4dRRXxCO5ljPg-ZONE-2RTFVvtPr83Q0UxafooW91",
+      "source_id": "FEAT-2C7bqjFAn4dRRXxCO5ljPg",
+      "target_id": "ZONE-2RTFVvtPr83Q0UxafooW91",
+      "distance": 4.8505,
+      "shore_linable": false,
+      "safety_score": 0.5,
+      "landmark_score": 0.0,
+      "tags": {}
+    },
+    {
+      "edge_id": "EDGE-FEAT-3MacNmU1rFHA3qwn4LY1Sp-ZONE-2RTFVvtPr83Q0UxafooW91",
+      "source_id": "FEAT-3MacNmU1rFHA3qwn4LY1Sp",
+      "target_id": "ZONE-2RTFVvtPr83Q0UxafooW91",
+      "distance": 1.5661,
+      "shore_linable": false,
+      "safety_score": 0.5,
+      "landmark_score": 0.0,
+      "tags": {}
+    },
+    {
+      "edge_id": "EDGE-FEAT-3MacNmU1rFHA3qwn4LY1Sp-FEAT-2z4FjdAgjF8BzQmj709ndM",
+      "source_id": "FEAT-3MacNmU1rFHA3qwn4LY1Sp",
+      "target_id": "FEAT-2z4FjdAgjF8BzQmj709ndM",
+      "distance": 1.9,
+      "shore_linable": false,
+      "safety_score": 0.5,
+      "landmark_score": 0.0,
+      "tags": {}
+    },
+    {
+      "edge_id": "EDGE-FEAT-3MacNmU1rFHA3qwn4LY1Sp-ZONE-2GDGci$en8jAR10fGEvA6l",
+      "source_id": "FEAT-3MacNmU1rFHA3qwn4LY1Sp",
+      "target_id": "ZONE-2GDGci$en8jAR10fGEvA6l",
+      "distance": 2.3286,
+      "shore_linable": false,
+      "safety_score": 0.5,
+      "landmark_score": 0.0,
+      "tags": {}
+    },
+    {
+      "edge_id": "EDGE-FEAT-2z4FjdAgjF8BzQmj709ndM-ZONE-2zO1ky5n57$hlSP0I709Q7",
+      "source_id": "FEAT-2z4FjdAgjF8BzQmj709ndM",
+      "target_id": "ZONE-2zO1ky5n57$hlSP0I709Q7",
+      "distance": 1.894,
+      "shore_linable": false,
+      "safety_score": 0.5,
+      "landmark_score": 0.0,
+      "tags": {}
+    },
+    {
+      "edge_id": "EDGE-FEAT-2z4FjdAgjF8BzQmj709ndM-FEAT-3MacNmU1rFHA3qwn4LY1Sp",
+      "source_id": "FEAT-2z4FjdAgjF8BzQmj709ndM",
+      "target_id": "FEAT-3MacNmU1rFHA3qwn4LY1Sp",
+      "distance": 1.9,
+      "shore_linable": false,
+      "safety_score": 0.5,
+      "landmark_score": 0.0,
+      "tags": {}
+    },
+    {
+      "edge_id": "EDGE-FEAT-2z4FjdAgjF8BzQmj709ndM-ZONE-2RTFVvtPr83Q0UxafooW91",
+      "source_id": "FEAT-2z4FjdAgjF8BzQmj709ndM",
+      "target_id": "ZONE-2RTFVvtPr83Q0UxafooW91",
+      "distance": 2.0426,
+      "shore_linable": false,
+      "safety_score": 0.5,
+      "landmark_score": 0.0,
+      "tags": {}
+    },
+    {
+      "edge_id": "EDGE-FEAT-3o6zFbINX8ue3cLBEniaGh-FEAT-2z4FjdAgjF8BzQmj709ndM",
+      "source_id": "FEAT-3o6zFbINX8ue3cLBEniaGh",
+      "target_id": "FEAT-2z4FjdAgjF8BzQmj709ndM",
+      "distance": 2.5562,
+      "shore_linable": false,
+      "safety_score": 0.5,
+      "landmark_score": 0.0,
+      "tags": {}
+    },
+    {
+      "edge_id": "EDGE-FEAT-3o6zFbINX8ue3cLBEniaGh-ZONE-2zO1ky5n57$hlSP0I709Q7",
+      "source_id": "FEAT-3o6zFbINX8ue3cLBEniaGh",
+      "target_id": "ZONE-2zO1ky5n57$hlSP0I709Q7",
+      "distance": 3.2523,
+      "shore_linable": false,
+      "safety_score": 0.5,
+      "landmark_score": 0.0,
+      "tags": {}
+    },
+    {
+      "edge_id": "EDGE-FEAT-3o6zFbINX8ue3cLBEniaGh-ZONE-2RTFVvtPr83Q0UxafooW91",
+      "source_id": "FEAT-3o6zFbINX8ue3cLBEniaGh",
+      "target_id": "ZONE-2RTFVvtPr83Q0UxafooW91",
+      "distance": 3.8683,
+      "shore_linable": false,
+      "safety_score": 0.5,
+      "landmark_score": 0.0,
+      "tags": {}
+    },
+    {
+      "edge_id": "EDGE-FEAT-3BojDOt51BFRctjuYcdjPm-FEAT-0wp3zaH$L7VBlQRHvLq4Rl",
+      "source_id": "FEAT-3BojDOt51BFRctjuYcdjPm",
+      "target_id": "FEAT-0wp3zaH$L7VBlQRHvLq4Rl",
+      "distance": 3.2249,
+      "shore_linable": false,
+      "safety_score": 0.5,
+      "landmark_score": 0.0,
+      "tags": {}
+    },
+    {
+      "edge_id": "EDGE-FEAT-3BojDOt51BFRctjuYcdjPm-FEAT-0_ndkJyO9CVPHaFtnEM6Kk",
+      "source_id": "FEAT-3BojDOt51BFRctjuYcdjPm",
+      "target_id": "FEAT-0_ndkJyO9CVPHaFtnEM6Kk",
+      "distance": 5.2154,
+      "shore_linable": false,
+      "safety_score": 0.5,
+      "landmark_score": 0.0,
+      "tags": {}
+    },
+    {
+      "edge_id": "EDGE-FEAT-3BojDOt51BFRctjuYcdjPm-ZONE-0BGjw438P6JAPe2g$sDgcT",
+      "source_id": "FEAT-3BojDOt51BFRctjuYcdjPm",
+      "target_id": "ZONE-0BGjw438P6JAPe2g$sDgcT",
+      "distance": 15.1515,
+      "shore_linable": false,
+      "safety_score": 0.5,
+      "landmark_score": 0.0,
+      "tags": {}
+    },
+    {
+      "edge_id": "EDGE-ZONE-0BGjw438P6JAPe2g$sDgcT-FEAT-3jTK1b2NH4aPT0WWuekAnp",
+      "source_id": "ZONE-0BGjw438P6JAPe2g$sDgcT",
+      "target_id": "FEAT-3jTK1b2NH4aPT0WWuekAnp",
+      "distance": 14.6783,
+      "shore_linable": false,
+      "safety_score": 0.5,
+      "landmark_score": 0.0,
+      "tags": {}
+    },
+    {
+      "edge_id": "EDGE-ZONE-0BGjw438P6JAPe2g$sDgcT-FEAT-2C7bqjFAn4dRRXxCO5ljPg",
+      "source_id": "ZONE-0BGjw438P6JAPe2g$sDgcT",
+      "target_id": "FEAT-2C7bqjFAn4dRRXxCO5ljPg",
+      "distance": 15.108,
+      "shore_linable": false,
+      "safety_score": 0.5,
+      "landmark_score": 0.0,
+      "tags": {}
+    },
+    {
+      "edge_id": "EDGE-ZONE-0BGjw438P6JAPe2g$sDgcT-FEAT-3BojDOt51BFRctjuYcdjPm",
+      "source_id": "ZONE-0BGjw438P6JAPe2g$sDgcT",
+      "target_id": "FEAT-3BojDOt51BFRctjuYcdjPm",
+      "distance": 15.1515,
+      "shore_linable": false,
+      "safety_score": 0.5,
+      "landmark_score": 0.0,
+      "tags": {}
+    },
+    {
+      "edge_id": "EDGE-ZONE-2lyI2yiub9QBhgywjO7xcX-FEAT-0JV8FQB5b5DPTE76PusxqH",
+      "source_id": "ZONE-2lyI2yiub9QBhgywjO7xcX",
+      "target_id": "FEAT-0JV8FQB5b5DPTE76PusxqH",
+      "distance": 1.8542,
+      "shore_linable": false,
+      "safety_score": 0.5,
+      "landmark_score": 0.0,
+      "tags": {}
+    },
+    {
+      "edge_id": "EDGE-ZONE-2lyI2yiub9QBhgywjO7xcX-ZONE-2UG7dUO6vAYheCYwduYFZE",
+      "source_id": "ZONE-2lyI2yiub9QBhgywjO7xcX",
+      "target_id": "ZONE-2UG7dUO6vAYheCYwduYFZE",
+      "distance": 4.7064,
+      "shore_linable": false,
+      "safety_score": 0.5,
+      "landmark_score": 0.0,
+      "tags": {}
+    },
+    {
+      "edge_id": "EDGE-ZONE-2lyI2yiub9QBhgywjO7xcX-ZONE-2GDGci$en8jAR10fGEvA6l",
+      "source_id": "ZONE-2lyI2yiub9QBhgywjO7xcX",
+      "target_id": "ZONE-2GDGci$en8jAR10fGEvA6l",
+      "distance": 4.8761,
+      "shore_linable": false,
+      "safety_score": 0.5,
+      "landmark_score": 0.0,
+      "tags": {}
+    },
+    {
+      "edge_id": "EDGE-ZONE-2zO1ky5n57$hlSP0I709Q7-FEAT-2z4FjdAgjF8BzQmj709ndM",
+      "source_id": "ZONE-2zO1ky5n57$hlSP0I709Q7",
+      "target_id": "FEAT-2z4FjdAgjF8BzQmj709ndM",
+      "distance": 1.894,
+      "shore_linable": false,
+      "safety_score": 0.5,
+      "landmark_score": 0.0,
+      "tags": {}
+    },
+    {
+      "edge_id": "EDGE-ZONE-2zO1ky5n57$hlSP0I709Q7-FEAT-3MacNmU1rFHA3qwn4LY1Sp",
+      "source_id": "ZONE-2zO1ky5n57$hlSP0I709Q7",
+      "target_id": "FEAT-3MacNmU1rFHA3qwn4LY1Sp",
+      "distance": 3.042,
+      "shore_linable": false,
+      "safety_score": 0.5,
+      "landmark_score": 0.0,
+      "tags": {}
+    },
+    {
+      "edge_id": "EDGE-ZONE-2zO1ky5n57$hlSP0I709Q7-FEAT-3o6zFbINX8ue3cLBEniaGh",
+      "source_id": "ZONE-2zO1ky5n57$hlSP0I709Q7",
+      "target_id": "FEAT-3o6zFbINX8ue3cLBEniaGh",
+      "distance": 3.2523,
+      "shore_linable": false,
+      "safety_score": 0.5,
+      "landmark_score": 0.0,
+      "tags": {}
+    },
+    {
+      "edge_id": "EDGE-ZONE-2GDGci$en8jAR10fGEvA6l-FEAT-3MacNmU1rFHA3qwn4LY1Sp",
+      "source_id": "ZONE-2GDGci$en8jAR10fGEvA6l",
+      "target_id": "FEAT-3MacNmU1rFHA3qwn4LY1Sp",
+      "distance": 2.3286,
+      "shore_linable": false,
+      "safety_score": 0.5,
+      "landmark_score": 0.0,
+      "tags": {}
+    },
+    {
+      "edge_id": "EDGE-ZONE-2GDGci$en8jAR10fGEvA6l-FEAT-0JV8FQB5b5DPTE76PusxqH",
+      "source_id": "ZONE-2GDGci$en8jAR10fGEvA6l",
+      "target_id": "FEAT-0JV8FQB5b5DPTE76PusxqH",
+      "distance": 3.3454,
+      "shore_linable": false,
+      "safety_score": 0.5,
+      "landmark_score": 0.0,
+      "tags": {}
+    },
+    {
+      "edge_id": "EDGE-ZONE-2GDGci$en8jAR10fGEvA6l-FEAT-2z4FjdAgjF8BzQmj709ndM",
+      "source_id": "ZONE-2GDGci$en8jAR10fGEvA6l",
+      "target_id": "FEAT-2z4FjdAgjF8BzQmj709ndM",
+      "distance": 3.8178,
+      "shore_linable": false,
+      "safety_score": 0.5,
+      "landmark_score": 0.0,
+      "tags": {}
+    },
+    {
+      "edge_id": "EDGE-ZONE-2UG7dUO6vAYheCYwduYFZE-FEAT-0GgCLy2LP42eJhqSxCFQXc",
+      "source_id": "ZONE-2UG7dUO6vAYheCYwduYFZE",
+      "target_id": "FEAT-0GgCLy2LP42eJhqSxCFQXc",
+      "distance": 3.0809,
+      "shore_linable": false,
+      "safety_score": 0.5,
+      "landmark_score": 0.0,
+      "tags": {}
+    },
+    {
+      "edge_id": "EDGE-ZONE-2UG7dUO6vAYheCYwduYFZE-FEAT-3jTK1b2NH4aPT0WWuekAnp",
+      "source_id": "ZONE-2UG7dUO6vAYheCYwduYFZE",
+      "target_id": "FEAT-3jTK1b2NH4aPT0WWuekAnp",
+      "distance": 4.3918,
+      "shore_linable": false,
+      "safety_score": 0.5,
+      "landmark_score": 0.0,
+      "tags": {}
+    },
+    {
+      "edge_id": "EDGE-ZONE-2UG7dUO6vAYheCYwduYFZE-ZONE-2lyI2yiub9QBhgywjO7xcX",
+      "source_id": "ZONE-2UG7dUO6vAYheCYwduYFZE",
+      "target_id": "ZONE-2lyI2yiub9QBhgywjO7xcX",
+      "distance": 4.7064,
+      "shore_linable": false,
+      "safety_score": 0.5,
+      "landmark_score": 0.0,
+      "tags": {}
+    },
+    {
+      "edge_id": "EDGE-ZONE-2gbGtfPHrFnOw3AWmEVj8l-FEAT-3KZzX8BSn5$uXshxhC1MGX",
+      "source_id": "ZONE-2gbGtfPHrFnOw3AWmEVj8l",
+      "target_id": "FEAT-3KZzX8BSn5$uXshxhC1MGX",
+      "distance": 1.0135,
+      "shore_linable": false,
+      "safety_score": 0.5,
+      "landmark_score": 0.0,
+      "tags": {}
+    },
+    {
+      "edge_id": "EDGE-ZONE-2gbGtfPHrFnOw3AWmEVj8l-FEAT-1rcsg60O53_ukZNuZICUKt",
+      "source_id": "ZONE-2gbGtfPHrFnOw3AWmEVj8l",
+      "target_id": "FEAT-1rcsg60O53_ukZNuZICUKt",
+      "distance": 3.912,
+      "shore_linable": false,
+      "safety_score": 0.5,
+      "landmark_score": 0.0,
+      "tags": {}
+    },
+    {
+      "edge_id": "EDGE-ZONE-2gbGtfPHrFnOw3AWmEVj8l-ZONE-2lyI2yiub9QBhgywjO7xcX",
+      "source_id": "ZONE-2gbGtfPHrFnOw3AWmEVj8l",
+      "target_id": "ZONE-2lyI2yiub9QBhgywjO7xcX",
+      "distance": 5.9272,
+      "shore_linable": false,
+      "safety_score": 0.5,
+      "landmark_score": 0.0,
+      "tags": {}
+    },
+    {
+      "edge_id": "EDGE-ZONE-2RTFVvtPr83Q0UxafooW91-FEAT-3MacNmU1rFHA3qwn4LY1Sp",
+      "source_id": "ZONE-2RTFVvtPr83Q0UxafooW91",
+      "target_id": "FEAT-3MacNmU1rFHA3qwn4LY1Sp",
+      "distance": 1.5661,
+      "shore_linable": false,
+      "safety_score": 0.5,
+      "landmark_score": 0.0,
+      "tags": {}
+    },
+    {
+      "edge_id": "EDGE-ZONE-2RTFVvtPr83Q0UxafooW91-FEAT-2z4FjdAgjF8BzQmj709ndM",
+      "source_id": "ZONE-2RTFVvtPr83Q0UxafooW91",
+      "target_id": "FEAT-2z4FjdAgjF8BzQmj709ndM",
+      "distance": 2.0426,
+      "shore_linable": false,
+      "safety_score": 0.5,
+      "landmark_score": 0.0,
+      "tags": {}
+    },
+    {
+      "edge_id": "EDGE-ZONE-2RTFVvtPr83Q0UxafooW91-ZONE-2qT_j3zBf5_8BGICwHrmlI",
+      "source_id": "ZONE-2RTFVvtPr83Q0UxafooW91",
+      "target_id": "ZONE-2qT_j3zBf5_8BGICwHrmlI",
+      "distance": 3.517,
+      "shore_linable": false,
+      "safety_score": 0.5,
+      "landmark_score": 0.0,
+      "tags": {}
+    },
+    {
+      "edge_id": "EDGE-ZONE-2qT_j3zBf5_8BGICwHrmlI-FEAT-0XYyyamEP3Bxdj9fgnPmpr",
+      "source_id": "ZONE-2qT_j3zBf5_8BGICwHrmlI",
+      "target_id": "FEAT-0XYyyamEP3Bxdj9fgnPmpr",
+      "distance": 2.0706,
+      "shore_linable": false,
+      "safety_score": 0.5,
+      "landmark_score": 0.0,
+      "tags": {}
+    },
+    {
+      "edge_id": "EDGE-ZONE-2qT_j3zBf5_8BGICwHrmlI-ZONE-2RTFVvtPr83Q0UxafooW91",
+      "source_id": "ZONE-2qT_j3zBf5_8BGICwHrmlI",
+      "target_id": "ZONE-2RTFVvtPr83Q0UxafooW91",
+      "distance": 3.517,
+      "shore_linable": false,
+      "safety_score": 0.5,
+      "landmark_score": 0.0,
+      "tags": {}
+    },
+    {
+      "edge_id": "EDGE-ZONE-2qT_j3zBf5_8BGICwHrmlI-FEAT-2C7bqjFAn4dRRXxCO5ljPg",
+      "source_id": "ZONE-2qT_j3zBf5_8BGICwHrmlI",
+      "target_id": "FEAT-2C7bqjFAn4dRRXxCO5ljPg",
+      "distance": 3.9927,
+      "shore_linable": false,
+      "safety_score": 0.5,
+      "landmark_score": 0.0,
+      "tags": {}
+    }
+  ]
+}
