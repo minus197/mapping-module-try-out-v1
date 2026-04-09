@@ -316,638 +316,7022 @@
         "name": "4",
         "area_m2": "11.69"
       }
+    },
+    {
+      "node_id": "SKE-0000",
+      "label": "Junction (0.2,-0.1)",
+      "position": [
+        0.2,
+        -0.075
+      ],
+      "node_type": "junction",
+      "zone_id": null,
+      "tags": {
+        "clearance_m": "0.1",
+        "skel_degree": "1"
+      }
+    },
+    {
+      "node_id": "SKE-0001",
+      "label": "Junction (6.2,-0.1)",
+      "position": [
+        6.2,
+        -0.075
+      ],
+      "node_type": "junction",
+      "zone_id": null,
+      "tags": {
+        "clearance_m": "0.1",
+        "skel_degree": "1"
+      }
+    },
+    {
+      "node_id": "SKE-0002",
+      "label": "Junction (12.7,-0.1)",
+      "position": [
+        12.7,
+        -0.075
+      ],
+      "node_type": "junction",
+      "zone_id": null,
+      "tags": {
+        "clearance_m": "0.1",
+        "skel_degree": "1"
+      }
+    },
+    {
+      "node_id": "SKE-0003",
+      "label": "Junction (19.2,-0.1)",
+      "position": [
+        19.2,
+        -0.075
+      ],
+      "node_type": "junction",
+      "zone_id": null,
+      "tags": {
+        "clearance_m": "0.1",
+        "skel_degree": "1"
+      }
+    },
+    {
+      "node_id": "SKE-0004",
+      "label": "Junction (25.7,-0.1)",
+      "position": [
+        25.7,
+        -0.075
+      ],
+      "node_type": "junction",
+      "zone_id": null,
+      "tags": {
+        "clearance_m": "0.1",
+        "skel_degree": "1"
+      }
+    },
+    {
+      "node_id": "SKE-0005",
+      "label": "Junction (29.2,-0.1)",
+      "position": [
+        29.2,
+        -0.075
+      ],
+      "node_type": "junction",
+      "zone_id": null,
+      "tags": {
+        "clearance_m": "0.1",
+        "skel_degree": "1"
+      }
+    },
+    {
+      "node_id": "SKE-0006",
+      "label": "Junction (32.2,-0.1)",
+      "position": [
+        32.2,
+        -0.075
+      ],
+      "node_type": "junction",
+      "zone_id": null,
+      "tags": {
+        "clearance_m": "0.1",
+        "skel_degree": "1"
+      }
+    },
+    {
+      "node_id": "SKE-0007",
+      "label": "Junction (35.2,-0.1)",
+      "position": [
+        35.2,
+        -0.075
+      ],
+      "node_type": "junction",
+      "zone_id": null,
+      "tags": {
+        "clearance_m": "0.1",
+        "skel_degree": "1"
+      }
+    },
+    {
+      "node_id": "SKE-0008",
+      "label": "Junction (38.7,-0.1)",
+      "position": [
+        38.7,
+        -0.075
+      ],
+      "node_type": "junction",
+      "zone_id": null,
+      "tags": {
+        "clearance_m": "0.1",
+        "skel_degree": "1"
+      }
+    },
+    {
+      "node_id": "SKE-0009",
+      "label": "Junction (7.5,0.9)",
+      "position": [
+        7.5,
+        0.925
+      ],
+      "node_type": "junction",
+      "zone_id": "0BGjw438P6JAPe2g$sDgcT",
+      "tags": {
+        "clearance_m": "1.1",
+        "skel_degree": "3"
+      }
+    },
+    {
+      "node_id": "SKE-0010",
+      "label": "Junction (14.0,0.9)",
+      "position": [
+        14.0,
+        0.925
+      ],
+      "node_type": "junction",
+      "zone_id": "0BGjw438P6JAPe2g$sDgcT",
+      "tags": {
+        "clearance_m": "1.1",
+        "skel_degree": "3"
+      }
+    },
+    {
+      "node_id": "SKE-0011",
+      "label": "Junction (1.3,1.1)",
+      "position": [
+        1.3,
+        1.125
+      ],
+      "node_type": "junction",
+      "zone_id": "0BGjw438P6JAPe2g$sDgcT",
+      "tags": {
+        "clearance_m": "1.3",
+        "skel_degree": "3"
+      }
+    },
+    {
+      "node_id": "SKE-0012",
+      "label": "Junction (11.6,1.1)",
+      "position": [
+        11.6,
+        1.125
+      ],
+      "node_type": "junction",
+      "zone_id": "0BGjw438P6JAPe2g$sDgcT",
+      "tags": {
+        "clearance_m": "1.3",
+        "skel_degree": "3"
+      }
+    },
+    {
+      "node_id": "SKE-0013",
+      "label": "Junction (33.9,1.2)",
+      "position": [
+        33.9,
+        1.225
+      ],
+      "node_type": "junction",
+      "zone_id": "2RTFVvtPr83Q0UxafooW91",
+      "tags": {
+        "clearance_m": "1.4",
+        "skel_degree": "3"
+      }
+    },
+    {
+      "node_id": "SKE-0014",
+      "label": "Junction (20.7,1.4)",
+      "position": [
+        20.7,
+        1.425
+      ],
+      "node_type": "junction",
+      "zone_id": "0BGjw438P6JAPe2g$sDgcT",
+      "tags": {
+        "clearance_m": "1.6",
+        "skel_degree": "3"
+      }
+    },
+    {
+      "node_id": "SKE-0015",
+      "label": "Junction (30.9,1.4)",
+      "position": [
+        30.9,
+        1.425
+      ],
+      "node_type": "junction",
+      "zone_id": "2qT_j3zBf5_8BGICwHrmlI",
+      "tags": {
+        "clearance_m": "1.6",
+        "skel_degree": "3"
+      }
+    },
+    {
+      "node_id": "SKE-0016",
+      "label": "Junction (5.1,1.5)",
+      "position": [
+        5.1,
+        1.525
+      ],
+      "node_type": "junction",
+      "zone_id": "0BGjw438P6JAPe2g$sDgcT",
+      "tags": {
+        "clearance_m": "1.7",
+        "skel_degree": "3"
+      }
+    },
+    {
+      "node_id": "SKE-0017",
+      "label": "Junction (18.2,1.5)",
+      "position": [
+        18.2,
+        1.525
+      ],
+      "node_type": "junction",
+      "zone_id": "0BGjw438P6JAPe2g$sDgcT",
+      "tags": {
+        "clearance_m": "1.7",
+        "skel_degree": "3"
+      }
+    },
+    {
+      "node_id": "SKE-0018",
+      "label": "Junction (24.6,1.7)",
+      "position": [
+        24.6,
+        1.725
+      ],
+      "node_type": "junction",
+      "zone_id": "0BGjw438P6JAPe2g$sDgcT",
+      "tags": {
+        "clearance_m": "1.9",
+        "skel_degree": "3"
+      }
+    },
+    {
+      "node_id": "SKE-0019",
+      "label": "Junction (27.3,1.7)",
+      "position": [
+        27.3,
+        1.725
+      ],
+      "node_type": "junction",
+      "zone_id": "0BGjw438P6JAPe2g$sDgcT",
+      "tags": {
+        "clearance_m": "1.9",
+        "skel_degree": "3"
+      }
+    },
+    {
+      "node_id": "SKE-0020",
+      "label": "Junction (37.2,1.7)",
+      "position": [
+        37.2,
+        1.725
+      ],
+      "node_type": "junction",
+      "zone_id": "2zO1ky5n57$hlSP0I709Q7",
+      "tags": {
+        "clearance_m": "1.9",
+        "skel_degree": "3"
+      }
+    },
+    {
+      "node_id": "SKE-0021",
+      "label": "Junction (14.4,2.4)",
+      "position": [
+        14.4,
+        2.425
+      ],
+      "node_type": "junction",
+      "zone_id": "0BGjw438P6JAPe2g$sDgcT",
+      "tags": {
+        "clearance_m": "2.6",
+        "skel_degree": "3"
+      }
+    },
+    {
+      "node_id": "SKE-0022",
+      "label": "Junction (8.1,2.6)",
+      "position": [
+        8.1,
+        2.625
+      ],
+      "node_type": "junction",
+      "zone_id": "0BGjw438P6JAPe2g$sDgcT",
+      "tags": {
+        "clearance_m": "2.8",
+        "skel_degree": "3"
+      }
+    },
+    {
+      "node_id": "SKE-0023",
+      "label": "Junction (11.2,2.6)",
+      "position": [
+        11.2,
+        2.625
+      ],
+      "node_type": "junction",
+      "zone_id": "0BGjw438P6JAPe2g$sDgcT",
+      "tags": {
+        "clearance_m": "2.8",
+        "skel_degree": "3"
+      }
+    },
+    {
+      "node_id": "SKE-0024",
+      "label": "Junction (2.4,2.8)",
+      "position": [
+        2.4,
+        2.825
+      ],
+      "node_type": "junction",
+      "zone_id": "0BGjw438P6JAPe2g$sDgcT",
+      "tags": {
+        "clearance_m": "2.9",
+        "skel_degree": "3"
+      }
+    },
+    {
+      "node_id": "SKE-0025",
+      "label": "Junction (4.7,3.0)",
+      "position": [
+        4.7,
+        3.025
+      ],
+      "node_type": "junction",
+      "zone_id": "0BGjw438P6JAPe2g$sDgcT",
+      "tags": {
+        "clearance_m": "3.2",
+        "skel_degree": "3"
+      }
+    },
+    {
+      "node_id": "SKE-0026",
+      "label": "Junction (17.8,3.0)",
+      "position": [
+        17.8,
+        3.025
+      ],
+      "node_type": "junction",
+      "zone_id": "0BGjw438P6JAPe2g$sDgcT",
+      "tags": {
+        "clearance_m": "3.2",
+        "skel_degree": "3"
+      }
+    },
+    {
+      "node_id": "SKE-0027",
+      "label": "Junction (21.2,3.0)",
+      "position": [
+        21.2,
+        3.025
+      ],
+      "node_type": "junction",
+      "zone_id": "0BGjw438P6JAPe2g$sDgcT",
+      "tags": {
+        "clearance_m": "3.2",
+        "skel_degree": "3"
+      }
+    },
+    {
+      "node_id": "SKE-0028",
+      "label": "Junction (24.1,3.3)",
+      "position": [
+        24.1,
+        3.325
+      ],
+      "node_type": "junction",
+      "zone_id": "0BGjw438P6JAPe2g$sDgcT",
+      "tags": {
+        "clearance_m": "3.5",
+        "skel_degree": "3"
+      }
+    },
+    {
+      "node_id": "SKE-0029",
+      "label": "Junction (0.4,3.6)",
+      "position": [
+        0.4,
+        3.625
+      ],
+      "node_type": "junction",
+      "zone_id": "0BGjw438P6JAPe2g$sDgcT",
+      "tags": {
+        "clearance_m": "0.9",
+        "skel_degree": "3"
+      }
+    },
+    {
+      "node_id": "SKE-0030",
+      "label": "Junction (35.4,3.6)",
+      "position": [
+        35.4,
+        3.625
+      ],
+      "node_type": "junction",
+      "zone_id": null,
+      "tags": {
+        "clearance_m": "0.1",
+        "skel_degree": "1"
+      }
+    },
+    {
+      "node_id": "SKE-0031",
+      "label": "Junction (39.0,3.6)",
+      "position": [
+        39.0,
+        3.625
+      ],
+      "node_type": "junction",
+      "zone_id": "2zO1ky5n57$hlSP0I709Q7",
+      "tags": {
+        "clearance_m": "0.1",
+        "skel_degree": "1"
+      }
+    },
+    {
+      "node_id": "SKE-0032",
+      "label": "Junction (14.8,4.1)",
+      "position": [
+        14.8,
+        4.125
+      ],
+      "node_type": "junction",
+      "zone_id": "0BGjw438P6JAPe2g$sDgcT",
+      "tags": {
+        "clearance_m": "4.3",
+        "skel_degree": "3"
+      }
+    },
+    {
+      "node_id": "SKE-0033",
+      "label": "Junction (8.3,4.2)",
+      "position": [
+        8.3,
+        4.225
+      ],
+      "node_type": "junction",
+      "zone_id": "0BGjw438P6JAPe2g$sDgcT",
+      "tags": {
+        "clearance_m": "4.4",
+        "skel_degree": "3"
+      }
+    },
+    {
+      "node_id": "SKE-0034",
+      "label": "Junction (11.0,4.3)",
+      "position": [
+        11.0,
+        4.325
+      ],
+      "node_type": "junction",
+      "zone_id": "0BGjw438P6JAPe2g$sDgcT",
+      "tags": {
+        "clearance_m": "4.5",
+        "skel_degree": "3"
+      }
+    },
+    {
+      "node_id": "SKE-0035",
+      "label": "Junction (4.4,4.5)",
+      "position": [
+        4.4,
+        4.525
+      ],
+      "node_type": "junction",
+      "zone_id": "0BGjw438P6JAPe2g$sDgcT",
+      "tags": {
+        "clearance_m": "4.7",
+        "skel_degree": "3"
+      }
+    },
+    {
+      "node_id": "SKE-0036",
+      "label": "Junction (17.0,4.5)",
+      "position": [
+        17.0,
+        4.525
+      ],
+      "node_type": "junction",
+      "zone_id": "0BGjw438P6JAPe2g$sDgcT",
+      "tags": {
+        "clearance_m": "4.7",
+        "skel_degree": "3"
+      }
+    },
+    {
+      "node_id": "SKE-0037",
+      "label": "Junction (21.5,4.5)",
+      "position": [
+        21.5,
+        4.525
+      ],
+      "node_type": "junction",
+      "zone_id": "0BGjw438P6JAPe2g$sDgcT",
+      "tags": {
+        "clearance_m": "4.7",
+        "skel_degree": "3"
+      }
+    },
+    {
+      "node_id": "SKE-0038",
+      "label": "Junction (23.7,4.8)",
+      "position": [
+        23.7,
+        4.825
+      ],
+      "node_type": "junction",
+      "zone_id": "0BGjw438P6JAPe2g$sDgcT",
+      "tags": {
+        "clearance_m": "5.0",
+        "skel_degree": "3"
+      }
+    },
+    {
+      "node_id": "SKE-0039",
+      "label": "Junction (3.0,5.4)",
+      "position": [
+        3.0,
+        5.425
+      ],
+      "node_type": "junction",
+      "zone_id": "0BGjw438P6JAPe2g$sDgcT",
+      "tags": {
+        "clearance_m": "3.3",
+        "skel_degree": "3"
+      }
+    },
+    {
+      "node_id": "SKE-0040",
+      "label": "Junction (15.4,5.6)",
+      "position": [
+        15.4,
+        5.625
+      ],
+      "node_type": "junction",
+      "zone_id": "0BGjw438P6JAPe2g$sDgcT",
+      "tags": {
+        "clearance_m": "5.8",
+        "skel_degree": "4"
+      }
+    },
+    {
+      "node_id": "SKE-0041",
+      "label": "Junction (37.2,5.6)",
+      "position": [
+        37.2,
+        5.625
+      ],
+      "node_type": "junction",
+      "zone_id": "2GDGci$en8jAR10fGEvA6l",
+      "tags": {
+        "clearance_m": "1.9",
+        "skel_degree": "3"
+      }
+    },
+    {
+      "node_id": "SKE-0042",
+      "label": "Junction (22.2,5.9)",
+      "position": [
+        22.2,
+        5.925
+      ],
+      "node_type": "junction",
+      "zone_id": "0BGjw438P6JAPe2g$sDgcT",
+      "tags": {
+        "clearance_m": "6.1",
+        "skel_degree": "3"
+      }
+    },
+    {
+      "node_id": "SKE-0043",
+      "label": "Junction (17.1,6.0)",
+      "position": [
+        17.1,
+        6.025
+      ],
+      "node_type": "junction",
+      "zone_id": "0BGjw438P6JAPe2g$sDgcT",
+      "tags": {
+        "clearance_m": "6.2",
+        "skel_degree": "3"
+      }
+    },
+    {
+      "node_id": "SKE-0044",
+      "label": "Junction (31.0,6.2)",
+      "position": [
+        31.0,
+        6.225
+      ],
+      "node_type": "junction",
+      "zone_id": "2lyI2yiub9QBhgywjO7xcX",
+      "tags": {
+        "clearance_m": "1.5",
+        "skel_degree": "3"
+      }
+    },
+    {
+      "node_id": "SKE-0045",
+      "label": "Junction (33.9,6.2)",
+      "position": [
+        33.9,
+        6.225
+      ],
+      "node_type": "junction",
+      "zone_id": "2RTFVvtPr83Q0UxafooW91",
+      "tags": {
+        "clearance_m": "1.4",
+        "skel_degree": "3"
+      }
+    },
+    {
+      "node_id": "SKE-0046",
+      "label": "Junction (9.0,6.4)",
+      "position": [
+        9.0,
+        6.425
+      ],
+      "node_type": "junction",
+      "zone_id": "0BGjw438P6JAPe2g$sDgcT",
+      "tags": {
+        "clearance_m": "6.6",
+        "skel_degree": "3"
+      }
+    },
+    {
+      "node_id": "SKE-0047",
+      "label": "Junction (10.6,6.7)",
+      "position": [
+        10.6,
+        6.725
+      ],
+      "node_type": "junction",
+      "zone_id": "0BGjw438P6JAPe2g$sDgcT",
+      "tags": {
+        "clearance_m": "6.9",
+        "skel_degree": "3"
+      }
+    },
+    {
+      "node_id": "SKE-0048",
+      "label": "Junction (-0.2,7.2)",
+      "position": [
+        -0.2,
+        7.225
+      ],
+      "node_type": "junction",
+      "zone_id": null,
+      "tags": {
+        "clearance_m": "0.1",
+        "skel_degree": "1"
+      }
+    },
+    {
+      "node_id": "SKE-0049",
+      "label": "Junction (15.3,7.2)",
+      "position": [
+        15.3,
+        7.225
+      ],
+      "node_type": "junction",
+      "zone_id": "0BGjw438P6JAPe2g$sDgcT",
+      "tags": {
+        "clearance_m": "7.4",
+        "skel_degree": "3"
+      }
+    },
+    {
+      "node_id": "SKE-0050",
+      "label": "Junction (32.4,7.2)",
+      "position": [
+        32.4,
+        7.225
+      ],
+      "node_type": "junction",
+      "zone_id": "2lyI2yiub9QBhgywjO7xcX",
+      "tags": {
+        "clearance_m": "0.1",
+        "skel_degree": "1"
+      }
+    },
+    {
+      "node_id": "SKE-0051",
+      "label": "Junction (39.0,7.2)",
+      "position": [
+        39.0,
+        7.225
+      ],
+      "node_type": "junction",
+      "zone_id": "2GDGci$en8jAR10fGEvA6l",
+      "tags": {
+        "clearance_m": "0.1",
+        "skel_degree": "1"
+      }
+    },
+    {
+      "node_id": "SKE-0052",
+      "label": "Junction (7.4,7.4)",
+      "position": [
+        7.4,
+        7.425
+      ],
+      "node_type": "junction",
+      "zone_id": "0BGjw438P6JAPe2g$sDgcT",
+      "tags": {
+        "clearance_m": "7.3",
+        "skel_degree": "3"
+      }
+    },
+    {
+      "node_id": "SKE-0053",
+      "label": "Junction (21.6,7.4)",
+      "position": [
+        21.6,
+        7.425
+      ],
+      "node_type": "junction",
+      "zone_id": "0BGjw438P6JAPe2g$sDgcT",
+      "tags": {
+        "clearance_m": "7.57",
+        "skel_degree": "3"
+      }
+    },
+    {
+      "node_id": "SKE-0054",
+      "label": "Junction (16.9,7.5)",
+      "position": [
+        16.9,
+        7.525
+      ],
+      "node_type": "junction",
+      "zone_id": "0BGjw438P6JAPe2g$sDgcT",
+      "tags": {
+        "clearance_m": "7.6",
+        "skel_degree": "3"
+      }
+    },
+    {
+      "node_id": "SKE-0055",
+      "label": "Junction (35.2,7.5)",
+      "position": [
+        35.2,
+        7.525
+      ],
+      "node_type": "junction",
+      "zone_id": "2RTFVvtPr83Q0UxafooW91",
+      "tags": {
+        "clearance_m": "0.1",
+        "skel_degree": "1"
+      }
+    },
+    {
+      "node_id": "SKE-0056",
+      "label": "Junction (9.2,7.9)",
+      "position": [
+        9.2,
+        7.925
+      ],
+      "node_type": "junction",
+      "zone_id": "0BGjw438P6JAPe2g$sDgcT",
+      "tags": {
+        "clearance_m": "7.2",
+        "skel_degree": "3"
+      }
+    },
+    {
+      "node_id": "SKE-0057",
+      "label": "Junction (31.1,8.4)",
+      "position": [
+        31.1,
+        8.425
+      ],
+      "node_type": "junction",
+      "zone_id": "2lyI2yiub9QBhgywjO7xcX",
+      "tags": {
+        "clearance_m": "1.4",
+        "skel_degree": "3"
+      }
+    },
+    {
+      "node_id": "SKE-0058",
+      "label": "Junction (0.8,8.5)",
+      "position": [
+        0.8,
+        8.525
+      ],
+      "node_type": "junction",
+      "zone_id": "0BGjw438P6JAPe2g$sDgcT",
+      "tags": {
+        "clearance_m": "1.0",
+        "skel_degree": "3"
+      }
+    },
+    {
+      "node_id": "SKE-0059",
+      "label": "Junction (10.4,8.8)",
+      "position": [
+        10.4,
+        8.825
+      ],
+      "node_type": "junction",
+      "zone_id": "0BGjw438P6JAPe2g$sDgcT",
+      "tags": {
+        "clearance_m": "6.3",
+        "skel_degree": "3"
+      }
+    },
+    {
+      "node_id": "SKE-0060",
+      "label": "Junction (15.2,8.8)",
+      "position": [
+        15.2,
+        8.825
+      ],
+      "node_type": "junction",
+      "zone_id": "0BGjw438P6JAPe2g$sDgcT",
+      "tags": {
+        "clearance_m": "6.3",
+        "skel_degree": "4"
+      }
+    },
+    {
+      "node_id": "SKE-0061",
+      "label": "Junction (22.3,8.8)",
+      "position": [
+        22.3,
+        8.825
+      ],
+      "node_type": "junction",
+      "zone_id": "0BGjw438P6JAPe2g$sDgcT",
+      "tags": {
+        "clearance_m": "6.3",
+        "skel_degree": "3"
+      }
+    },
+    {
+      "node_id": "SKE-0062",
+      "label": "Junction (17.2,9.0)",
+      "position": [
+        17.2,
+        9.025
+      ],
+      "node_type": "junction",
+      "zone_id": "0BGjw438P6JAPe2g$sDgcT",
+      "tags": {
+        "clearance_m": "6.1",
+        "skel_degree": "3"
+      }
+    },
+    {
+      "node_id": "SKE-0063",
+      "label": "Junction (2.9,9.1)",
+      "position": [
+        2.9,
+        9.125
+      ],
+      "node_type": "junction",
+      "zone_id": "0BGjw438P6JAPe2g$sDgcT",
+      "tags": {
+        "clearance_m": "3.1",
+        "skel_degree": "3"
+      }
+    },
+    {
+      "node_id": "SKE-0064",
+      "label": "Junction (8.6,9.3)",
+      "position": [
+        8.6,
+        9.325
+      ],
+      "node_type": "junction",
+      "zone_id": "0BGjw438P6JAPe2g$sDgcT",
+      "tags": {
+        "clearance_m": "5.8",
+        "skel_degree": "3"
+      }
+    },
+    {
+      "node_id": "SKE-0065",
+      "label": "Junction (4.6,9.4)",
+      "position": [
+        4.6,
+        9.425
+      ],
+      "node_type": "junction",
+      "zone_id": "0BGjw438P6JAPe2g$sDgcT",
+      "tags": {
+        "clearance_m": "4.8",
+        "skel_degree": "3"
+      }
+    },
+    {
+      "node_id": "SKE-0066",
+      "label": "Junction (23.9,9.7)",
+      "position": [
+        23.9,
+        9.725
+      ],
+      "node_type": "junction",
+      "zone_id": "0BGjw438P6JAPe2g$sDgcT",
+      "tags": {
+        "clearance_m": "5.4",
+        "skel_degree": "3"
+      }
+    },
+    {
+      "node_id": "SKE-0067",
+      "label": "Junction (11.0,10.2)",
+      "position": [
+        11.0,
+        10.225
+      ],
+      "node_type": "junction",
+      "zone_id": "0BGjw438P6JAPe2g$sDgcT",
+      "tags": {
+        "clearance_m": "4.9",
+        "skel_degree": "3"
+      }
+    },
+    {
+      "node_id": "SKE-0068",
+      "label": "Junction (36.5,10.2)",
+      "position": [
+        36.5,
+        10.225
+      ],
+      "node_type": "junction",
+      "zone_id": "2lyI2yiub9QBhgywjO7xcX",
+      "tags": {
+        "clearance_m": "2.6",
+        "skel_degree": "3"
+      }
+    },
+    {
+      "node_id": "SKE-0069",
+      "label": "Junction (14.9,10.3)",
+      "position": [
+        14.9,
+        10.325
+      ],
+      "node_type": "junction",
+      "zone_id": "0BGjw438P6JAPe2g$sDgcT",
+      "tags": {
+        "clearance_m": "4.8",
+        "skel_degree": "3"
+      }
+    },
+    {
+      "node_id": "SKE-0070",
+      "label": "Junction (21.6,10.3)",
+      "position": [
+        21.6,
+        10.325
+      ],
+      "node_type": "junction",
+      "zone_id": "0BGjw438P6JAPe2g$sDgcT",
+      "tags": {
+        "clearance_m": "4.8",
+        "skel_degree": "3"
+      }
+    },
+    {
+      "node_id": "SKE-0071",
+      "label": "Junction (17.4,10.5)",
+      "position": [
+        17.4,
+        10.525
+      ],
+      "node_type": "junction",
+      "zone_id": "0BGjw438P6JAPe2g$sDgcT",
+      "tags": {
+        "clearance_m": "4.6",
+        "skel_degree": "4"
+      }
+    },
+    {
+      "node_id": "SKE-0072",
+      "label": "Junction (8.3,10.8)",
+      "position": [
+        8.3,
+        10.825
+      ],
+      "node_type": "junction",
+      "zone_id": "0BGjw438P6JAPe2g$sDgcT",
+      "tags": {
+        "clearance_m": "4.3",
+        "skel_degree": "3"
+      }
+    },
+    {
+      "node_id": "SKE-0073",
+      "label": "Junction (4.2,10.9)",
+      "position": [
+        4.2,
+        10.925
+      ],
+      "node_type": "junction",
+      "zone_id": "0BGjw438P6JAPe2g$sDgcT",
+      "tags": {
+        "clearance_m": "4.2",
+        "skel_degree": "3"
+      }
+    },
+    {
+      "node_id": "SKE-0074",
+      "label": "Junction (11.3,11.8)",
+      "position": [
+        11.3,
+        11.825
+      ],
+      "node_type": "junction",
+      "zone_id": "0BGjw438P6JAPe2g$sDgcT",
+      "tags": {
+        "clearance_m": "3.3",
+        "skel_degree": "4"
+      }
+    },
+    {
+      "node_id": "SKE-0075",
+      "label": "Junction (14.8,11.8)",
+      "position": [
+        14.8,
+        11.825
+      ],
+      "node_type": "junction",
+      "zone_id": "0BGjw438P6JAPe2g$sDgcT",
+      "tags": {
+        "clearance_m": "3.3",
+        "skel_degree": "3"
+      }
+    },
+    {
+      "node_id": "SKE-0076",
+      "label": "Junction (17.9,12.1)",
+      "position": [
+        17.9,
+        12.125
+      ],
+      "node_type": "junction",
+      "zone_id": "0BGjw438P6JAPe2g$sDgcT",
+      "tags": {
+        "clearance_m": "3.0",
+        "skel_degree": "3"
+      }
+    },
+    {
+      "node_id": "SKE-0077",
+      "label": "Junction (24.4,12.1)",
+      "position": [
+        24.4,
+        12.125
+      ],
+      "node_type": "junction",
+      "zone_id": "0BGjw438P6JAPe2g$sDgcT",
+      "tags": {
+        "clearance_m": "3.0",
+        "skel_degree": "3"
+      }
+    },
+    {
+      "node_id": "SKE-0078",
+      "label": "Junction (4.9,12.3)",
+      "position": [
+        4.9,
+        12.325
+      ],
+      "node_type": "junction",
+      "zone_id": "0BGjw438P6JAPe2g$sDgcT",
+      "tags": {
+        "clearance_m": "2.8",
+        "skel_degree": "4"
+      }
+    },
+    {
+      "node_id": "SKE-0079",
+      "label": "Junction (34.6,12.6)",
+      "position": [
+        34.6,
+        12.625
+      ],
+      "node_type": "junction",
+      "zone_id": "2lyI2yiub9QBhgywjO7xcX",
+      "tags": {
+        "clearance_m": "2.34",
+        "skel_degree": "3"
+      }
+    },
+    {
+      "node_id": "SKE-0080",
+      "label": "Junction (31.5,12.7)",
+      "position": [
+        31.5,
+        12.725
+      ],
+      "node_type": "junction",
+      "zone_id": "2lyI2yiub9QBhgywjO7xcX",
+      "tags": {
+        "clearance_m": "2.15",
+        "skel_degree": "3"
+      }
+    },
+    {
+      "node_id": "SKE-0081",
+      "label": "Junction (39.0,12.8)",
+      "position": [
+        39.0,
+        12.825
+      ],
+      "node_type": "junction",
+      "zone_id": "2lyI2yiub9QBhgywjO7xcX",
+      "tags": {
+        "clearance_m": "0.1",
+        "skel_degree": "1"
+      }
+    },
+    {
+      "node_id": "SKE-0082",
+      "label": "Junction (11.7,13.4)",
+      "position": [
+        11.7,
+        13.425
+      ],
+      "node_type": "junction",
+      "zone_id": "0BGjw438P6JAPe2g$sDgcT",
+      "tags": {
+        "clearance_m": "1.7",
+        "skel_degree": "3"
+      }
+    },
+    {
+      "node_id": "SKE-0083",
+      "label": "Junction (27.5,13.4)",
+      "position": [
+        27.5,
+        13.425
+      ],
+      "node_type": "junction",
+      "zone_id": "0BGjw438P6JAPe2g$sDgcT",
+      "tags": {
+        "clearance_m": "1.77",
+        "skel_degree": "3"
+      }
+    },
+    {
+      "node_id": "SKE-0084",
+      "label": "Junction (24.7,13.6)",
+      "position": [
+        24.7,
+        13.625
+      ],
+      "node_type": "junction",
+      "zone_id": "0BGjw438P6JAPe2g$sDgcT",
+      "tags": {
+        "clearance_m": "1.5",
+        "skel_degree": "3"
+      }
+    },
+    {
+      "node_id": "SKE-0085",
+      "label": "Junction (20.7,13.7)",
+      "position": [
+        20.7,
+        13.725
+      ],
+      "node_type": "junction",
+      "zone_id": "0BGjw438P6JAPe2g$sDgcT",
+      "tags": {
+        "clearance_m": "1.4",
+        "skel_degree": "3"
+      }
+    },
+    {
+      "node_id": "SKE-0086",
+      "label": "Junction (5.4,13.8)",
+      "position": [
+        5.4,
+        13.825
+      ],
+      "node_type": "junction",
+      "zone_id": "0BGjw438P6JAPe2g$sDgcT",
+      "tags": {
+        "clearance_m": "1.3",
+        "skel_degree": "3"
+      }
+    },
+    {
+      "node_id": "SKE-0087",
+      "label": "Junction (18.3,13.9)",
+      "position": [
+        18.3,
+        13.925
+      ],
+      "node_type": "junction",
+      "zone_id": "0BGjw438P6JAPe2g$sDgcT",
+      "tags": {
+        "clearance_m": "1.2",
+        "skel_degree": "3"
+      }
+    },
+    {
+      "node_id": "SKE-0088",
+      "label": "Junction (37.9,14.0)",
+      "position": [
+        37.9,
+        14.025
+      ],
+      "node_type": "junction",
+      "zone_id": "2gbGtfPHrFnOw3AWmEVj8l",
+      "tags": {
+        "clearance_m": "1.1",
+        "skel_degree": "3"
+      }
+    },
+    {
+      "node_id": "SKE-0089",
+      "label": "Junction (0.7,14.1)",
+      "position": [
+        0.7,
+        14.125
+      ],
+      "node_type": "junction",
+      "zone_id": "0BGjw438P6JAPe2g$sDgcT",
+      "tags": {
+        "clearance_m": "0.9",
+        "skel_degree": "3"
+      }
+    },
+    {
+      "node_id": "SKE-0090",
+      "label": "Junction (6.7,15.0)",
+      "position": [
+        6.7,
+        15.025
+      ],
+      "node_type": "junction",
+      "zone_id": null,
+      "tags": {
+        "clearance_m": "0.1",
+        "skel_degree": "1"
+      }
+    },
+    {
+      "node_id": "SKE-0091",
+      "label": "Junction (12.7,15.0)",
+      "position": [
+        12.7,
+        15.025
+      ],
+      "node_type": "junction",
+      "zone_id": "0BGjw438P6JAPe2g$sDgcT",
+      "tags": {
+        "clearance_m": "0.1",
+        "skel_degree": "1"
+      }
+    },
+    {
+      "node_id": "SKE-0092",
+      "label": "Junction (19.7,15.0)",
+      "position": [
+        19.7,
+        15.025
+      ],
+      "node_type": "junction",
+      "zone_id": null,
+      "tags": {
+        "clearance_m": "0.1",
+        "skel_degree": "1"
+      }
+    },
+    {
+      "node_id": "SKE-0093",
+      "label": "Junction (25.7,15.0)",
+      "position": [
+        25.7,
+        15.025
+      ],
+      "node_type": "junction",
+      "zone_id": "0BGjw438P6JAPe2g$sDgcT",
+      "tags": {
+        "clearance_m": "0.1",
+        "skel_degree": "1"
+      }
+    },
+    {
+      "node_id": "SKE-0094",
+      "label": "Junction (29.2,15.0)",
+      "position": [
+        29.2,
+        15.025
+      ],
+      "node_type": "junction",
+      "zone_id": "0BGjw438P6JAPe2g$sDgcT",
+      "tags": {
+        "clearance_m": "0.1",
+        "skel_degree": "1"
+      }
+    },
+    {
+      "node_id": "SKE-0095",
+      "label": "Junction (32.2,15.0)",
+      "position": [
+        32.2,
+        15.025
+      ],
+      "node_type": "junction",
+      "zone_id": "2lyI2yiub9QBhgywjO7xcX",
+      "tags": {
+        "clearance_m": "0.1",
+        "skel_degree": "1"
+      }
     }
   ],
   "edges": [
+    {
+      "edge_id": "EDGE-FEAT-0_ndkJyO9CVPHaFtnEM6Kk-SKE-0000",
+      "source_id": "FEAT-0_ndkJyO9CVPHaFtnEM6Kk",
+      "target_id": "SKE-0000",
+      "distance": 0.2557,
+      "shore_linable": true,
+      "safety_score": 0.05,
+      "landmark_score": 0.6667,
+      "tags": {
+        "shore_fraction": "1.0",
+        "mean_clearance": "0.1",
+        "straight_dist": "0.461"
+      }
+    },
+    {
+      "edge_id": "EDGE-FEAT-0_ndkJyO9CVPHaFtnEM6Kk-SKE-0011",
+      "source_id": "FEAT-0_ndkJyO9CVPHaFtnEM6Kk",
+      "target_id": "SKE-0011",
+      "distance": 1.6378,
+      "shore_linable": true,
+      "safety_score": 0.3423,
+      "landmark_score": 0.6667,
+      "tags": {
+        "shore_fraction": "0.9",
+        "mean_clearance": "0.685",
+        "straight_dist": "1.6378"
+      }
+    },
     {
       "edge_id": "EDGE-FEAT-0_ndkJyO9CVPHaFtnEM6Kk-FEAT-0wp3zaH$L7VBlQRHvLq4Rl",
       "source_id": "FEAT-0_ndkJyO9CVPHaFtnEM6Kk",
       "target_id": "FEAT-0wp3zaH$L7VBlQRHvLq4Rl",
       "distance": 2.0,
-      "shore_linable": false,
-      "safety_score": 0.5,
-      "landmark_score": 0.0,
-      "tags": {}
+      "shore_linable": true,
+      "safety_score": 0.13,
+      "landmark_score": 0.6667,
+      "tags": {
+        "shore_fraction": "1.0",
+        "mean_clearance": "0.26",
+        "straight_dist": "2.0"
+      }
+    },
+    {
+      "edge_id": "EDGE-FEAT-0_ndkJyO9CVPHaFtnEM6Kk-SKE-0029",
+      "source_id": "FEAT-0_ndkJyO9CVPHaFtnEM6Kk",
+      "target_id": "SKE-0029",
+      "distance": 3.3871,
+      "shore_linable": true,
+      "safety_score": 0.28,
+      "landmark_score": 1.0,
+      "tags": {
+        "shore_fraction": "1.0",
+        "mean_clearance": "0.56",
+        "straight_dist": "3.3871"
+      }
+    },
+    {
+      "edge_id": "EDGE-FEAT-0_ndkJyO9CVPHaFtnEM6Kk-SKE-0024",
+      "source_id": "FEAT-0_ndkJyO9CVPHaFtnEM6Kk",
+      "target_id": "SKE-0024",
+      "distance": 3.5711,
+      "shore_linable": true,
+      "safety_score": 0.7506,
+      "landmark_score": 0.6667,
+      "tags": {
+        "shore_fraction": "0.4",
+        "mean_clearance": "1.501",
+        "straight_dist": "3.5711"
+      }
     },
     {
       "edge_id": "EDGE-FEAT-0_ndkJyO9CVPHaFtnEM6Kk-FEAT-3BojDOt51BFRctjuYcdjPm",
       "source_id": "FEAT-0_ndkJyO9CVPHaFtnEM6Kk",
       "target_id": "FEAT-3BojDOt51BFRctjuYcdjPm",
-      "distance": 5.2154,
-      "shore_linable": false,
-      "safety_score": 0.5,
-      "landmark_score": 0.0,
-      "tags": {}
+      "distance": 3.6508,
+      "shore_linable": true,
+      "safety_score": 0.0667,
+      "landmark_score": 1.0,
+      "tags": {
+        "shore_fraction": "1.0",
+        "mean_clearance": "0.133",
+        "straight_dist": "5.2154"
+      }
     },
     {
-      "edge_id": "EDGE-FEAT-0_ndkJyO9CVPHaFtnEM6Kk-ZONE-0BGjw438P6JAPe2g$sDgcT",
-      "source_id": "FEAT-0_ndkJyO9CVPHaFtnEM6Kk",
-      "target_id": "ZONE-0BGjw438P6JAPe2g$sDgcT",
-      "distance": 16.3401,
-      "shore_linable": false,
-      "safety_score": 0.5,
-      "landmark_score": 0.0,
-      "tags": {}
-    },
-    {
-      "edge_id": "EDGE-FEAT-0wp3zaH$L7VBlQRHvLq4Rl-FEAT-0_ndkJyO9CVPHaFtnEM6Kk",
+      "edge_id": "EDGE-FEAT-0wp3zaH$L7VBlQRHvLq4Rl-SKE-0029",
       "source_id": "FEAT-0wp3zaH$L7VBlQRHvLq4Rl",
-      "target_id": "FEAT-0_ndkJyO9CVPHaFtnEM6Kk",
-      "distance": 2.0,
+      "target_id": "SKE-0029",
+      "distance": 1.4396,
+      "shore_linable": true,
+      "safety_score": 0.3,
+      "landmark_score": 1.0,
+      "tags": {
+        "shore_fraction": "1.0",
+        "mean_clearance": "0.6",
+        "straight_dist": "1.4396"
+      }
+    },
+    {
+      "edge_id": "EDGE-FEAT-0wp3zaH$L7VBlQRHvLq4Rl-SKE-0011",
+      "source_id": "FEAT-0wp3zaH$L7VBlQRHvLq4Rl",
+      "target_id": "SKE-0011",
+      "distance": 1.8118,
+      "shore_linable": true,
+      "safety_score": 0.48,
+      "landmark_score": 0.6667,
+      "tags": {
+        "shore_fraction": "0.5",
+        "mean_clearance": "0.96",
+        "straight_dist": "1.8118"
+      }
+    },
+    {
+      "edge_id": "EDGE-FEAT-0wp3zaH$L7VBlQRHvLq4Rl-SKE-0000",
+      "source_id": "FEAT-0wp3zaH$L7VBlQRHvLq4Rl",
+      "target_id": "SKE-0000",
+      "distance": 2.3691,
+      "shore_linable": true,
+      "safety_score": 0.16,
+      "landmark_score": 0.6667,
+      "tags": {
+        "shore_fraction": "1.0",
+        "mean_clearance": "0.32",
+        "straight_dist": "2.3691"
+      }
+    },
+    {
+      "edge_id": "EDGE-FEAT-0wp3zaH$L7VBlQRHvLq4Rl-SKE-0024",
+      "source_id": "FEAT-0wp3zaH$L7VBlQRHvLq4Rl",
+      "target_id": "SKE-0024",
+      "distance": 2.5598,
       "shore_linable": false,
-      "safety_score": 0.5,
-      "landmark_score": 0.0,
-      "tags": {}
+      "safety_score": 0.79,
+      "landmark_score": 0.6667,
+      "tags": {
+        "shore_fraction": "0.3",
+        "mean_clearance": "1.58",
+        "straight_dist": "2.5598"
+      }
     },
     {
       "edge_id": "EDGE-FEAT-0wp3zaH$L7VBlQRHvLq4Rl-FEAT-3BojDOt51BFRctjuYcdjPm",
       "source_id": "FEAT-0wp3zaH$L7VBlQRHvLq4Rl",
       "target_id": "FEAT-3BojDOt51BFRctjuYcdjPm",
-      "distance": 3.2249,
-      "shore_linable": false,
-      "safety_score": 0.5,
-      "landmark_score": 0.0,
-      "tags": {}
+      "distance": 2.0721,
+      "shore_linable": true,
+      "safety_score": 0.1,
+      "landmark_score": 1.0,
+      "tags": {
+        "shore_fraction": "1.0",
+        "mean_clearance": "0.2",
+        "straight_dist": "3.2249"
+      }
     },
     {
-      "edge_id": "EDGE-FEAT-0wp3zaH$L7VBlQRHvLq4Rl-ZONE-0BGjw438P6JAPe2g$sDgcT",
-      "source_id": "FEAT-0wp3zaH$L7VBlQRHvLq4Rl",
-      "target_id": "ZONE-0BGjw438P6JAPe2g$sDgcT",
-      "distance": 15.5451,
-      "shore_linable": false,
-      "safety_score": 0.5,
-      "landmark_score": 0.0,
-      "tags": {}
+      "edge_id": "EDGE-FEAT-1rcsg60O53_ukZNuZICUKt-SKE-0095",
+      "source_id": "FEAT-1rcsg60O53_ukZNuZICUKt",
+      "target_id": "SKE-0095",
+      "distance": 1.8112,
+      "shore_linable": true,
+      "safety_score": 0.05,
+      "landmark_score": 0.6667,
+      "tags": {
+        "shore_fraction": "1.0",
+        "mean_clearance": "0.1",
+        "straight_dist": "2.1013"
+      }
+    },
+    {
+      "edge_id": "EDGE-FEAT-1rcsg60O53_ukZNuZICUKt-SKE-0079",
+      "source_id": "FEAT-1rcsg60O53_ukZNuZICUKt",
+      "target_id": "SKE-0079",
+      "distance": 2.4931,
+      "shore_linable": true,
+      "safety_score": 0.6343,
+      "landmark_score": 0.6667,
+      "tags": {
+        "shore_fraction": "0.4",
+        "mean_clearance": "1.269",
+        "straight_dist": "2.4931"
+      }
     },
     {
       "edge_id": "EDGE-FEAT-1rcsg60O53_ukZNuZICUKt-FEAT-3KZzX8BSn5$uXshxhC1MGX",
       "source_id": "FEAT-1rcsg60O53_ukZNuZICUKt",
       "target_id": "FEAT-3KZzX8BSn5$uXshxhC1MGX",
-      "distance": 3.0325,
-      "shore_linable": false,
-      "safety_score": 0.5,
-      "landmark_score": 0.0,
-      "tags": {}
+      "distance": 3.0216,
+      "shore_linable": true,
+      "safety_score": 0.31,
+      "landmark_score": 0.6667,
+      "tags": {
+        "shore_fraction": "1.0",
+        "mean_clearance": "0.62",
+        "straight_dist": "3.0325"
+      }
+    },
+    {
+      "edge_id": "EDGE-FEAT-1rcsg60O53_ukZNuZICUKt-SKE-0080",
+      "source_id": "FEAT-1rcsg60O53_ukZNuZICUKt",
+      "target_id": "SKE-0080",
+      "distance": 3.6716,
+      "shore_linable": true,
+      "safety_score": 0.5594,
+      "landmark_score": 0.6667,
+      "tags": {
+        "shore_fraction": "0.8",
+        "mean_clearance": "1.119",
+        "straight_dist": "3.6716"
+      }
+    },
+    {
+      "edge_id": "EDGE-FEAT-1rcsg60O53_ukZNuZICUKt-SKE-0088",
+      "source_id": "FEAT-1rcsg60O53_ukZNuZICUKt",
+      "target_id": "SKE-0088",
+      "distance": 3.7466,
+      "shore_linable": true,
+      "safety_score": 0.3,
+      "landmark_score": 0.6667,
+      "tags": {
+        "shore_fraction": "1.0",
+        "mean_clearance": "0.6",
+        "straight_dist": "3.7571"
+      }
     },
     {
       "edge_id": "EDGE-FEAT-1rcsg60O53_ukZNuZICUKt-ZONE-2gbGtfPHrFnOw3AWmEVj8l",
       "source_id": "FEAT-1rcsg60O53_ukZNuZICUKt",
       "target_id": "ZONE-2gbGtfPHrFnOw3AWmEVj8l",
-      "distance": 3.912,
-      "shore_linable": false,
-      "safety_score": 0.5,
-      "landmark_score": 0.0,
-      "tags": {}
+      "distance": 3.9016,
+      "shore_linable": true,
+      "safety_score": 0.29,
+      "landmark_score": 0.6667,
+      "tags": {
+        "shore_fraction": "1.0",
+        "mean_clearance": "0.58",
+        "straight_dist": "3.912"
+      }
     },
     {
-      "edge_id": "EDGE-FEAT-1rcsg60O53_ukZNuZICUKt-FEAT-0GgCLy2LP42eJhqSxCFQXc",
-      "source_id": "FEAT-1rcsg60O53_ukZNuZICUKt",
-      "target_id": "FEAT-0GgCLy2LP42eJhqSxCFQXc",
-      "distance": 4.45,
-      "shore_linable": false,
-      "safety_score": 0.5,
-      "landmark_score": 0.0,
-      "tags": {}
+      "edge_id": "EDGE-FEAT-0GgCLy2LP42eJhqSxCFQXc-SKE-0094",
+      "source_id": "FEAT-0GgCLy2LP42eJhqSxCFQXc",
+      "target_id": "SKE-0094",
+      "distance": 0.6442,
+      "shore_linable": true,
+      "safety_score": 0.05,
+      "landmark_score": 0.6667,
+      "tags": {
+        "shore_fraction": "1.0",
+        "mean_clearance": "0.1",
+        "straight_dist": "0.6543"
+      }
+    },
+    {
+      "edge_id": "EDGE-FEAT-0GgCLy2LP42eJhqSxCFQXc-SKE-0095",
+      "source_id": "FEAT-0GgCLy2LP42eJhqSxCFQXc",
+      "target_id": "SKE-0095",
+      "distance": 2.3412,
+      "shore_linable": true,
+      "safety_score": 0.05,
+      "landmark_score": 1.0,
+      "tags": {
+        "shore_fraction": "1.0",
+        "mean_clearance": "0.1",
+        "straight_dist": "2.3512"
+      }
     },
     {
       "edge_id": "EDGE-FEAT-0GgCLy2LP42eJhqSxCFQXc-FEAT-3jTK1b2NH4aPT0WWuekAnp",
       "source_id": "FEAT-0GgCLy2LP42eJhqSxCFQXc",
       "target_id": "FEAT-3jTK1b2NH4aPT0WWuekAnp",
-      "distance": 2.725,
-      "shore_linable": false,
-      "safety_score": 0.5,
-      "landmark_score": 0.0,
-      "tags": {}
+      "distance": 2.715,
+      "shore_linable": true,
+      "safety_score": 0.0741,
+      "landmark_score": 0.6667,
+      "tags": {
+        "shore_fraction": "1.0",
+        "mean_clearance": "0.148",
+        "straight_dist": "2.725"
+      }
+    },
+    {
+      "edge_id": "EDGE-FEAT-0GgCLy2LP42eJhqSxCFQXc-SKE-0083",
+      "source_id": "FEAT-0GgCLy2LP42eJhqSxCFQXc",
+      "target_id": "SKE-0083",
+      "distance": 2.8736,
+      "shore_linable": true,
+      "safety_score": 0.3972,
+      "landmark_score": 0.6667,
+      "tags": {
+        "shore_fraction": "0.6",
+        "mean_clearance": "0.794",
+        "straight_dist": "2.8858"
+      }
+    },
+    {
+      "edge_id": "EDGE-FEAT-0GgCLy2LP42eJhqSxCFQXc-SKE-0080",
+      "source_id": "FEAT-0GgCLy2LP42eJhqSxCFQXc",
+      "target_id": "SKE-0080",
+      "distance": 2.8744,
+      "shore_linable": true,
+      "safety_score": 0.5947,
+      "landmark_score": 0.6667,
+      "tags": {
+        "shore_fraction": "1.0",
+        "mean_clearance": "1.189",
+        "straight_dist": "2.8919"
+      }
     },
     {
       "edge_id": "EDGE-FEAT-0GgCLy2LP42eJhqSxCFQXc-ZONE-2UG7dUO6vAYheCYwduYFZE",
       "source_id": "FEAT-0GgCLy2LP42eJhqSxCFQXc",
       "target_id": "ZONE-2UG7dUO6vAYheCYwduYFZE",
       "distance": 3.0809,
-      "shore_linable": false,
-      "safety_score": 0.5,
-      "landmark_score": 0.0,
-      "tags": {}
+      "shore_linable": true,
+      "safety_score": 0.31,
+      "landmark_score": 0.6667,
+      "tags": {
+        "shore_fraction": "1.0",
+        "mean_clearance": "0.62",
+        "straight_dist": "3.0809"
+      }
     },
     {
-      "edge_id": "EDGE-FEAT-0GgCLy2LP42eJhqSxCFQXc-FEAT-1rcsg60O53_ukZNuZICUKt",
-      "source_id": "FEAT-0GgCLy2LP42eJhqSxCFQXc",
-      "target_id": "FEAT-1rcsg60O53_ukZNuZICUKt",
-      "distance": 4.45,
-      "shore_linable": false,
-      "safety_score": 0.5,
-      "landmark_score": 0.0,
-      "tags": {}
-    },
-    {
-      "edge_id": "EDGE-FEAT-3jTK1b2NH4aPT0WWuekAnp-FEAT-0GgCLy2LP42eJhqSxCFQXc",
+      "edge_id": "EDGE-FEAT-3jTK1b2NH4aPT0WWuekAnp-SKE-0093",
       "source_id": "FEAT-3jTK1b2NH4aPT0WWuekAnp",
-      "target_id": "FEAT-0GgCLy2LP42eJhqSxCFQXc",
-      "distance": 2.725,
-      "shore_linable": false,
-      "safety_score": 0.5,
-      "landmark_score": 0.0,
-      "tags": {}
+      "target_id": "SKE-0093",
+      "distance": 1.1366,
+      "shore_linable": true,
+      "safety_score": 0.0552,
+      "landmark_score": 0.6667,
+      "tags": {
+        "shore_fraction": "1.0",
+        "mean_clearance": "0.11",
+        "straight_dist": "1.427"
+      }
     },
     {
-      "edge_id": "EDGE-FEAT-3jTK1b2NH4aPT0WWuekAnp-ZONE-2UG7dUO6vAYheCYwduYFZE",
+      "edge_id": "EDGE-FEAT-3jTK1b2NH4aPT0WWuekAnp-SKE-0083",
       "source_id": "FEAT-3jTK1b2NH4aPT0WWuekAnp",
-      "target_id": "ZONE-2UG7dUO6vAYheCYwduYFZE",
-      "distance": 4.3918,
-      "shore_linable": false,
-      "safety_score": 0.5,
-      "landmark_score": 0.0,
-      "tags": {}
+      "target_id": "SKE-0083",
+      "distance": 1.7165,
+      "shore_linable": true,
+      "safety_score": 0.4761,
+      "landmark_score": 0.6667,
+      "tags": {
+        "shore_fraction": "0.6",
+        "mean_clearance": "0.952",
+        "straight_dist": "1.7165"
+      }
     },
     {
-      "edge_id": "EDGE-FEAT-3jTK1b2NH4aPT0WWuekAnp-FEAT-1rcsg60O53_ukZNuZICUKt",
+      "edge_id": "EDGE-FEAT-3jTK1b2NH4aPT0WWuekAnp-SKE-0094",
       "source_id": "FEAT-3jTK1b2NH4aPT0WWuekAnp",
-      "target_id": "FEAT-1rcsg60O53_ukZNuZICUKt",
-      "distance": 7.175,
-      "shore_linable": false,
-      "safety_score": 0.5,
-      "landmark_score": 0.0,
-      "tags": {}
+      "target_id": "SKE-0094",
+      "distance": 2.0764,
+      "shore_linable": true,
+      "safety_score": 0.0941,
+      "landmark_score": 0.6667,
+      "tags": {
+        "shore_fraction": "1.0",
+        "mean_clearance": "0.188",
+        "straight_dist": "2.0764"
+      }
+    },
+    {
+      "edge_id": "EDGE-FEAT-3jTK1b2NH4aPT0WWuekAnp-SKE-0084",
+      "source_id": "FEAT-3jTK1b2NH4aPT0WWuekAnp",
+      "target_id": "SKE-0084",
+      "distance": 2.8384,
+      "shore_linable": true,
+      "safety_score": 0.3671,
+      "landmark_score": 0.6667,
+      "tags": {
+        "shore_fraction": "0.8",
+        "mean_clearance": "0.734",
+        "straight_dist": "2.8384"
+      }
+    },
+    {
+      "edge_id": "EDGE-FEAT-3jTK1b2NH4aPT0WWuekAnp-SKE-0077",
+      "source_id": "FEAT-3jTK1b2NH4aPT0WWuekAnp",
+      "target_id": "SKE-0077",
+      "distance": 4.0344,
+      "shore_linable": true,
+      "safety_score": 0.7182,
+      "landmark_score": 0.6667,
+      "tags": {
+        "shore_fraction": "0.4",
+        "mean_clearance": "1.436",
+        "straight_dist": "4.0344"
+      }
+    },
+    {
+      "edge_id": "EDGE-FEAT-0JV8FQB5b5DPTE76PusxqH-SKE-0055",
+      "source_id": "FEAT-0JV8FQB5b5DPTE76PusxqH",
+      "target_id": "SKE-0055",
+      "distance": 0.6008,
+      "shore_linable": true,
+      "safety_score": 0.05,
+      "landmark_score": 0.3333,
+      "tags": {
+        "shore_fraction": "1.0",
+        "mean_clearance": "0.1",
+        "straight_dist": "0.6325"
+      }
+    },
+    {
+      "edge_id": "EDGE-FEAT-0JV8FQB5b5DPTE76PusxqH-SKE-0045",
+      "source_id": "FEAT-0JV8FQB5b5DPTE76PusxqH",
+      "target_id": "SKE-0045",
+      "distance": 1.6443,
+      "shore_linable": true,
+      "safety_score": 0.36,
+      "landmark_score": 0.6667,
+      "tags": {
+        "shore_fraction": "0.7",
+        "mean_clearance": "0.72",
+        "straight_dist": "1.6553"
+      }
     },
     {
       "edge_id": "EDGE-FEAT-0JV8FQB5b5DPTE76PusxqH-ZONE-2lyI2yiub9QBhgywjO7xcX",
       "source_id": "FEAT-0JV8FQB5b5DPTE76PusxqH",
       "target_id": "ZONE-2lyI2yiub9QBhgywjO7xcX",
       "distance": 1.8542,
-      "shore_linable": false,
-      "safety_score": 0.5,
-      "landmark_score": 0.0,
-      "tags": {}
+      "shore_linable": true,
+      "safety_score": 0.39,
+      "landmark_score": 0.3333,
+      "tags": {
+        "shore_fraction": "0.5",
+        "mean_clearance": "0.78",
+        "straight_dist": "1.8542"
+      }
     },
     {
-      "edge_id": "EDGE-FEAT-0JV8FQB5b5DPTE76PusxqH-ZONE-2GDGci$en8jAR10fGEvA6l",
+      "edge_id": "EDGE-FEAT-0JV8FQB5b5DPTE76PusxqH-SKE-0050",
       "source_id": "FEAT-0JV8FQB5b5DPTE76PusxqH",
-      "target_id": "ZONE-2GDGci$en8jAR10fGEvA6l",
-      "distance": 3.3454,
-      "shore_linable": false,
-      "safety_score": 0.5,
-      "landmark_score": 0.0,
-      "tags": {}
+      "target_id": "SKE-0050",
+      "distance": 2.193,
+      "shore_linable": true,
+      "safety_score": 0.08,
+      "landmark_score": 0.3333,
+      "tags": {
+        "shore_fraction": "1.0",
+        "mean_clearance": "0.16",
+        "straight_dist": "2.2561"
+      }
     },
     {
-      "edge_id": "EDGE-FEAT-0JV8FQB5b5DPTE76PusxqH-FEAT-3MacNmU1rFHA3qwn4LY1Sp",
+      "edge_id": "EDGE-FEAT-0JV8FQB5b5DPTE76PusxqH-SKE-0068",
       "source_id": "FEAT-0JV8FQB5b5DPTE76PusxqH",
-      "target_id": "FEAT-3MacNmU1rFHA3qwn4LY1Sp",
-      "distance": 3.5884,
-      "shore_linable": false,
+      "target_id": "SKE-0068",
+      "distance": 3.1401,
+      "shore_linable": true,
+      "safety_score": 0.66,
+      "landmark_score": 0.3333,
+      "tags": {
+        "shore_fraction": "0.4",
+        "mean_clearance": "1.32",
+        "straight_dist": "3.1401"
+      }
+    },
+    {
+      "edge_id": "EDGE-FEAT-0JV8FQB5b5DPTE76PusxqH-SKE-0041",
+      "source_id": "FEAT-0JV8FQB5b5DPTE76PusxqH",
+      "target_id": "SKE-0041",
+      "distance": 3.3134,
+      "shore_linable": true,
+      "safety_score": 0.39,
+      "landmark_score": 0.6667,
+      "tags": {
+        "shore_fraction": "0.7",
+        "mean_clearance": "0.78",
+        "straight_dist": "3.3422"
+      }
+    },
+    {
+      "edge_id": "EDGE-FEAT-3KZzX8BSn5$uXshxhC1MGX-SKE-0088",
+      "source_id": "FEAT-3KZzX8BSn5$uXshxhC1MGX",
+      "target_id": "SKE-0088",
+      "distance": 0.8245,
+      "shore_linable": true,
       "safety_score": 0.5,
-      "landmark_score": 0.0,
-      "tags": {}
+      "landmark_score": 0.3333,
+      "tags": {
+        "shore_fraction": "1.0",
+        "mean_clearance": "1.0",
+        "straight_dist": "0.8245"
+      }
     },
     {
       "edge_id": "EDGE-FEAT-3KZzX8BSn5$uXshxhC1MGX-ZONE-2gbGtfPHrFnOw3AWmEVj8l",
       "source_id": "FEAT-3KZzX8BSn5$uXshxhC1MGX",
       "target_id": "ZONE-2gbGtfPHrFnOw3AWmEVj8l",
       "distance": 1.0135,
-      "shore_linable": false,
-      "safety_score": 0.5,
-      "landmark_score": 0.0,
-      "tags": {}
+      "shore_linable": true,
+      "safety_score": 0.51,
+      "landmark_score": 0.3333,
+      "tags": {
+        "shore_fraction": "1.0",
+        "mean_clearance": "1.02",
+        "straight_dist": "1.0135"
+      }
     },
     {
-      "edge_id": "EDGE-FEAT-3KZzX8BSn5$uXshxhC1MGX-FEAT-1rcsg60O53_ukZNuZICUKt",
+      "edge_id": "EDGE-FEAT-3KZzX8BSn5$uXshxhC1MGX-SKE-0081",
       "source_id": "FEAT-3KZzX8BSn5$uXshxhC1MGX",
-      "target_id": "FEAT-1rcsg60O53_ukZNuZICUKt",
-      "distance": 3.0325,
-      "shore_linable": false,
-      "safety_score": 0.5,
-      "landmark_score": 0.0,
-      "tags": {}
+      "target_id": "SKE-0081",
+      "distance": 2.1757,
+      "shore_linable": true,
+      "safety_score": 0.22,
+      "landmark_score": 0.3333,
+      "tags": {
+        "shore_fraction": "1.0",
+        "mean_clearance": "0.44",
+        "straight_dist": "2.1961"
+      }
     },
     {
-      "edge_id": "EDGE-FEAT-3KZzX8BSn5$uXshxhC1MGX-ZONE-2lyI2yiub9QBhgywjO7xcX",
+      "edge_id": "EDGE-FEAT-3KZzX8BSn5$uXshxhC1MGX-SKE-0079",
       "source_id": "FEAT-3KZzX8BSn5$uXshxhC1MGX",
-      "target_id": "ZONE-2lyI2yiub9QBhgywjO7xcX",
-      "distance": 5.18,
-      "shore_linable": false,
-      "safety_score": 0.5,
-      "landmark_score": 0.0,
-      "tags": {}
+      "target_id": "SKE-0079",
+      "distance": 2.7818,
+      "shore_linable": true,
+      "safety_score": 0.7129,
+      "landmark_score": 0.6667,
+      "tags": {
+        "shore_fraction": "0.4",
+        "mean_clearance": "1.426",
+        "straight_dist": "2.793"
+      }
+    },
+    {
+      "edge_id": "EDGE-FEAT-3KZzX8BSn5$uXshxhC1MGX-SKE-0068",
+      "source_id": "FEAT-3KZzX8BSn5$uXshxhC1MGX",
+      "target_id": "SKE-0068",
+      "distance": 3.6577,
+      "shore_linable": true,
+      "safety_score": 0.6393,
+      "landmark_score": 0.3333,
+      "tags": {
+        "shore_fraction": "0.5",
+        "mean_clearance": "1.279",
+        "straight_dist": "3.7213"
+      }
     },
     {
       "edge_id": "EDGE-FEAT-0XYyyamEP3Bxdj9fgnPmpr-FEAT-2C7bqjFAn4dRRXxCO5ljPg",
       "source_id": "FEAT-0XYyyamEP3Bxdj9fgnPmpr",
       "target_id": "FEAT-2C7bqjFAn4dRRXxCO5ljPg",
-      "distance": 1.927,
-      "shore_linable": false,
-      "safety_score": 0.5,
-      "landmark_score": 0.0,
-      "tags": {}
+      "distance": 1.916,
+      "shore_linable": true,
+      "safety_score": 0.25,
+      "landmark_score": 0.6667,
+      "tags": {
+        "shore_fraction": "1.0",
+        "mean_clearance": "0.5",
+        "straight_dist": "1.927"
+      }
     },
     {
       "edge_id": "EDGE-FEAT-0XYyyamEP3Bxdj9fgnPmpr-ZONE-2qT_j3zBf5_8BGICwHrmlI",
       "source_id": "FEAT-0XYyyamEP3Bxdj9fgnPmpr",
       "target_id": "ZONE-2qT_j3zBf5_8BGICwHrmlI",
       "distance": 2.0706,
-      "shore_linable": false,
-      "safety_score": 0.5,
-      "landmark_score": 0.0,
-      "tags": {}
+      "shore_linable": true,
+      "safety_score": 0.64,
+      "landmark_score": 0.6667,
+      "tags": {
+        "shore_fraction": "0.5",
+        "mean_clearance": "1.28",
+        "straight_dist": "2.0706"
+      }
+    },
+    {
+      "edge_id": "EDGE-FEAT-0XYyyamEP3Bxdj9fgnPmpr-SKE-0015",
+      "source_id": "FEAT-0XYyyamEP3Bxdj9fgnPmpr",
+      "target_id": "SKE-0015",
+      "distance": 2.4818,
+      "shore_linable": true,
+      "safety_score": 0.61,
+      "landmark_score": 0.6667,
+      "tags": {
+        "shore_fraction": "0.4",
+        "mean_clearance": "1.22",
+        "straight_dist": "2.4818"
+      }
+    },
+    {
+      "edge_id": "EDGE-FEAT-0XYyyamEP3Bxdj9fgnPmpr-SKE-0044",
+      "source_id": "FEAT-0XYyyamEP3Bxdj9fgnPmpr",
+      "target_id": "SKE-0044",
+      "distance": 2.4883,
+      "shore_linable": true,
+      "safety_score": 0.63,
+      "landmark_score": 0.6667,
+      "tags": {
+        "shore_fraction": "0.5",
+        "mean_clearance": "1.26",
+        "straight_dist": "2.4987"
+      }
+    },
+    {
+      "edge_id": "EDGE-FEAT-0XYyyamEP3Bxdj9fgnPmpr-SKE-0019",
+      "source_id": "FEAT-0XYyyamEP3Bxdj9fgnPmpr",
+      "target_id": "SKE-0019",
+      "distance": 3.6424,
+      "shore_linable": true,
+      "safety_score": 0.49,
+      "landmark_score": 0.6667,
+      "tags": {
+        "shore_fraction": "0.6",
+        "mean_clearance": "0.98",
+        "straight_dist": "3.6546"
+      }
     },
     {
       "edge_id": "EDGE-FEAT-0XYyyamEP3Bxdj9fgnPmpr-ZONE-2RTFVvtPr83Q0UxafooW91",
       "source_id": "FEAT-0XYyyamEP3Bxdj9fgnPmpr",
       "target_id": "ZONE-2RTFVvtPr83Q0UxafooW91",
-      "distance": 3.6736,
-      "shore_linable": false,
-      "safety_score": 0.5,
-      "landmark_score": 0.0,
-      "tags": {}
+      "distance": 3.6636,
+      "shore_linable": true,
+      "safety_score": 0.45,
+      "landmark_score": 1.0,
+      "tags": {
+        "shore_fraction": "0.9",
+        "mean_clearance": "0.9",
+        "straight_dist": "3.6736"
+      }
     },
     {
-      "edge_id": "EDGE-FEAT-2C7bqjFAn4dRRXxCO5ljPg-FEAT-0XYyyamEP3Bxdj9fgnPmpr",
+      "edge_id": "EDGE-FEAT-2C7bqjFAn4dRRXxCO5ljPg-SKE-0044",
       "source_id": "FEAT-2C7bqjFAn4dRRXxCO5ljPg",
-      "target_id": "FEAT-0XYyyamEP3Bxdj9fgnPmpr",
-      "distance": 1.927,
-      "shore_linable": false,
-      "safety_score": 0.5,
-      "landmark_score": 0.0,
-      "tags": {}
+      "target_id": "SKE-0044",
+      "distance": 1.6623,
+      "shore_linable": true,
+      "safety_score": 0.43,
+      "landmark_score": 0.6667,
+      "tags": {
+        "shore_fraction": "0.6",
+        "mean_clearance": "0.86",
+        "straight_dist": "1.6623"
+      }
+    },
+    {
+      "edge_id": "EDGE-FEAT-2C7bqjFAn4dRRXxCO5ljPg-SKE-0057",
+      "source_id": "FEAT-2C7bqjFAn4dRRXxCO5ljPg",
+      "target_id": "SKE-0057",
+      "distance": 3.2832,
+      "shore_linable": true,
+      "safety_score": 0.42,
+      "landmark_score": 0.6667,
+      "tags": {
+        "shore_fraction": "0.8",
+        "mean_clearance": "0.84",
+        "straight_dist": "3.2832"
+      }
+    },
+    {
+      "edge_id": "EDGE-FEAT-2C7bqjFAn4dRRXxCO5ljPg-SKE-0050",
+      "source_id": "FEAT-2C7bqjFAn4dRRXxCO5ljPg",
+      "target_id": "SKE-0050",
+      "distance": 3.3626,
+      "shore_linable": true,
+      "safety_score": 0.36,
+      "landmark_score": 1.0,
+      "tags": {
+        "shore_fraction": "0.7",
+        "mean_clearance": "0.72",
+        "straight_dist": "3.3626"
+      }
     },
     {
       "edge_id": "EDGE-FEAT-2C7bqjFAn4dRRXxCO5ljPg-ZONE-2qT_j3zBf5_8BGICwHrmlI",
       "source_id": "FEAT-2C7bqjFAn4dRRXxCO5ljPg",
       "target_id": "ZONE-2qT_j3zBf5_8BGICwHrmlI",
-      "distance": 3.9927,
-      "shore_linable": false,
-      "safety_score": 0.5,
-      "landmark_score": 0.0,
-      "tags": {}
+      "distance": 3.9819,
+      "shore_linable": true,
+      "safety_score": 0.44,
+      "landmark_score": 0.6667,
+      "tags": {
+        "shore_fraction": "0.7",
+        "mean_clearance": "0.88",
+        "straight_dist": "3.9927"
+      }
     },
     {
-      "edge_id": "EDGE-FEAT-2C7bqjFAn4dRRXxCO5ljPg-ZONE-2RTFVvtPr83Q0UxafooW91",
+      "edge_id": "EDGE-FEAT-2C7bqjFAn4dRRXxCO5ljPg-SKE-0015",
       "source_id": "FEAT-2C7bqjFAn4dRRXxCO5ljPg",
-      "target_id": "ZONE-2RTFVvtPr83Q0UxafooW91",
-      "distance": 4.8505,
-      "shore_linable": false,
-      "safety_score": 0.5,
-      "landmark_score": 0.0,
-      "tags": {}
+      "target_id": "SKE-0015",
+      "distance": 4.3789,
+      "shore_linable": true,
+      "safety_score": 0.41,
+      "landmark_score": 0.6667,
+      "tags": {
+        "shore_fraction": "0.6",
+        "mean_clearance": "0.82",
+        "straight_dist": "4.3895"
+      }
+    },
+    {
+      "edge_id": "EDGE-FEAT-3MacNmU1rFHA3qwn4LY1Sp-SKE-0030",
+      "source_id": "FEAT-3MacNmU1rFHA3qwn4LY1Sp",
+      "target_id": "SKE-0030",
+      "distance": 0.5871,
+      "shore_linable": true,
+      "safety_score": 0.05,
+      "landmark_score": 0.6667,
+      "tags": {
+        "shore_fraction": "1.0",
+        "mean_clearance": "0.1",
+        "straight_dist": "0.6142"
+      }
     },
     {
       "edge_id": "EDGE-FEAT-3MacNmU1rFHA3qwn4LY1Sp-ZONE-2RTFVvtPr83Q0UxafooW91",
       "source_id": "FEAT-3MacNmU1rFHA3qwn4LY1Sp",
       "target_id": "ZONE-2RTFVvtPr83Q0UxafooW91",
-      "distance": 1.5661,
-      "shore_linable": false,
-      "safety_score": 0.5,
-      "landmark_score": 0.0,
-      "tags": {}
+      "distance": 1.5556,
+      "shore_linable": true,
+      "safety_score": 0.34,
+      "landmark_score": 0.6667,
+      "tags": {
+        "shore_fraction": "0.7",
+        "mean_clearance": "0.68",
+        "straight_dist": "1.5661"
+      }
     },
     {
-      "edge_id": "EDGE-FEAT-3MacNmU1rFHA3qwn4LY1Sp-FEAT-2z4FjdAgjF8BzQmj709ndM",
+      "edge_id": "EDGE-FEAT-2z4FjdAgjF8BzQmj709ndM-FEAT-3MacNmU1rFHA3qwn4LY1Sp",
       "source_id": "FEAT-3MacNmU1rFHA3qwn4LY1Sp",
       "target_id": "FEAT-2z4FjdAgjF8BzQmj709ndM",
-      "distance": 1.9,
-      "shore_linable": false,
-      "safety_score": 0.5,
-      "landmark_score": 0.0,
-      "tags": {}
+      "distance": 1.89,
+      "shore_linable": true,
+      "safety_score": 0.05,
+      "landmark_score": 1.0,
+      "tags": {
+        "shore_fraction": "1.0",
+        "mean_clearance": "0.1",
+        "straight_dist": "1.9"
+      }
+    },
+    {
+      "edge_id": "EDGE-FEAT-3MacNmU1rFHA3qwn4LY1Sp-SKE-0041",
+      "source_id": "FEAT-3MacNmU1rFHA3qwn4LY1Sp",
+      "target_id": "SKE-0041",
+      "distance": 2.2372,
+      "shore_linable": true,
+      "safety_score": 0.49,
+      "landmark_score": 0.6667,
+      "tags": {
+        "shore_fraction": "0.5",
+        "mean_clearance": "0.98",
+        "straight_dist": "2.2372"
+      }
     },
     {
       "edge_id": "EDGE-FEAT-3MacNmU1rFHA3qwn4LY1Sp-ZONE-2GDGci$en8jAR10fGEvA6l",
       "source_id": "FEAT-3MacNmU1rFHA3qwn4LY1Sp",
       "target_id": "ZONE-2GDGci$en8jAR10fGEvA6l",
       "distance": 2.3286,
-      "shore_linable": false,
+      "shore_linable": true,
       "safety_score": 0.5,
-      "landmark_score": 0.0,
-      "tags": {}
+      "landmark_score": 0.6667,
+      "tags": {
+        "shore_fraction": "0.5",
+        "mean_clearance": "1.0",
+        "straight_dist": "2.3286"
+      }
+    },
+    {
+      "edge_id": "EDGE-FEAT-3MacNmU1rFHA3qwn4LY1Sp-SKE-0045",
+      "source_id": "FEAT-3MacNmU1rFHA3qwn4LY1Sp",
+      "target_id": "SKE-0045",
+      "distance": 2.5011,
+      "shore_linable": true,
+      "safety_score": 0.36,
+      "landmark_score": 1.0,
+      "tags": {
+        "shore_fraction": "0.7",
+        "mean_clearance": "0.72",
+        "straight_dist": "2.5174"
+      }
+    },
+    {
+      "edge_id": "EDGE-FEAT-2z4FjdAgjF8BzQmj709ndM-SKE-0030",
+      "source_id": "FEAT-2z4FjdAgjF8BzQmj709ndM",
+      "target_id": "SKE-0030",
+      "distance": 1.2883,
+      "shore_linable": true,
+      "safety_score": 0.05,
+      "landmark_score": 1.0,
+      "tags": {
+        "shore_fraction": "1.0",
+        "mean_clearance": "0.1",
+        "straight_dist": "1.2883"
+      }
+    },
+    {
+      "edge_id": "EDGE-FEAT-2z4FjdAgjF8BzQmj709ndM-SKE-0020",
+      "source_id": "FEAT-2z4FjdAgjF8BzQmj709ndM",
+      "target_id": "SKE-0020",
+      "distance": 1.8588,
+      "shore_linable": true,
+      "safety_score": 0.49,
+      "landmark_score": 1.0,
+      "tags": {
+        "shore_fraction": "0.5",
+        "mean_clearance": "0.98",
+        "straight_dist": "1.8588"
+      }
     },
     {
       "edge_id": "EDGE-FEAT-2z4FjdAgjF8BzQmj709ndM-ZONE-2zO1ky5n57$hlSP0I709Q7",
       "source_id": "FEAT-2z4FjdAgjF8BzQmj709ndM",
       "target_id": "ZONE-2zO1ky5n57$hlSP0I709Q7",
       "distance": 1.894,
-      "shore_linable": false,
+      "shore_linable": true,
       "safety_score": 0.5,
-      "landmark_score": 0.0,
-      "tags": {}
+      "landmark_score": 1.0,
+      "tags": {
+        "shore_fraction": "0.5",
+        "mean_clearance": "1.0",
+        "straight_dist": "1.894"
+      }
     },
     {
-      "edge_id": "EDGE-FEAT-2z4FjdAgjF8BzQmj709ndM-FEAT-3MacNmU1rFHA3qwn4LY1Sp",
+      "edge_id": "EDGE-FEAT-2z4FjdAgjF8BzQmj709ndM-SKE-0013",
       "source_id": "FEAT-2z4FjdAgjF8BzQmj709ndM",
-      "target_id": "FEAT-3MacNmU1rFHA3qwn4LY1Sp",
-      "distance": 1.9,
-      "shore_linable": false,
-      "safety_score": 0.5,
-      "landmark_score": 0.0,
-      "tags": {}
+      "target_id": "SKE-0013",
+      "distance": 1.8915,
+      "shore_linable": true,
+      "safety_score": 0.36,
+      "landmark_score": 1.0,
+      "tags": {
+        "shore_fraction": "0.7",
+        "mean_clearance": "0.72",
+        "straight_dist": "1.9039"
+      }
     },
     {
       "edge_id": "EDGE-FEAT-2z4FjdAgjF8BzQmj709ndM-ZONE-2RTFVvtPr83Q0UxafooW91",
       "source_id": "FEAT-2z4FjdAgjF8BzQmj709ndM",
       "target_id": "ZONE-2RTFVvtPr83Q0UxafooW91",
-      "distance": 2.0426,
-      "shore_linable": false,
-      "safety_score": 0.5,
-      "landmark_score": 0.0,
-      "tags": {}
+      "distance": 2.0288,
+      "shore_linable": true,
+      "safety_score": 0.34,
+      "landmark_score": 1.0,
+      "tags": {
+        "shore_fraction": "0.7",
+        "mean_clearance": "0.68",
+        "straight_dist": "2.0426"
+      }
     },
     {
-      "edge_id": "EDGE-FEAT-3o6zFbINX8ue3cLBEniaGh-FEAT-2z4FjdAgjF8BzQmj709ndM",
+      "edge_id": "EDGE-FEAT-3o6zFbINX8ue3cLBEniaGh-SKE-0007",
+      "source_id": "FEAT-3o6zFbINX8ue3cLBEniaGh",
+      "target_id": "SKE-0007",
+      "distance": 0.6,
+      "shore_linable": true,
+      "safety_score": 0.05,
+      "landmark_score": 0.6667,
+      "tags": {
+        "shore_fraction": "1.0",
+        "mean_clearance": "0.1",
+        "straight_dist": "0.6"
+      }
+    },
+    {
+      "edge_id": "EDGE-FEAT-3o6zFbINX8ue3cLBEniaGh-SKE-0013",
+      "source_id": "FEAT-3o6zFbINX8ue3cLBEniaGh",
+      "target_id": "SKE-0013",
+      "distance": 1.4765,
+      "shore_linable": true,
+      "safety_score": 0.4375,
+      "landmark_score": 0.6667,
+      "tags": {
+        "shore_fraction": "0.7",
+        "mean_clearance": "0.875",
+        "straight_dist": "1.4765"
+      }
+    },
+    {
+      "edge_id": "EDGE-FEAT-3o6zFbINX8ue3cLBEniaGh-SKE-0006",
+      "source_id": "FEAT-3o6zFbINX8ue3cLBEniaGh",
+      "target_id": "SKE-0006",
+      "distance": 2.11,
+      "shore_linable": true,
+      "safety_score": 0.05,
+      "landmark_score": 0.6667,
+      "tags": {
+        "shore_fraction": "1.0",
+        "mean_clearance": "0.1",
+        "straight_dist": "2.4"
+      }
+    },
+    {
+      "edge_id": "EDGE-FEAT-2z4FjdAgjF8BzQmj709ndM-FEAT-3o6zFbINX8ue3cLBEniaGh",
       "source_id": "FEAT-3o6zFbINX8ue3cLBEniaGh",
       "target_id": "FEAT-2z4FjdAgjF8BzQmj709ndM",
-      "distance": 2.5562,
-      "shore_linable": false,
-      "safety_score": 0.5,
-      "landmark_score": 0.0,
-      "tags": {}
+      "distance": 2.526,
+      "shore_linable": true,
+      "safety_score": 0.125,
+      "landmark_score": 1.0,
+      "tags": {
+        "shore_fraction": "1.0",
+        "mean_clearance": "0.25",
+        "straight_dist": "2.5562"
+      }
+    },
+    {
+      "edge_id": "EDGE-FEAT-3o6zFbINX8ue3cLBEniaGh-SKE-0020",
+      "source_id": "FEAT-3o6zFbINX8ue3cLBEniaGh",
+      "target_id": "SKE-0020",
+      "distance": 3.1501,
+      "shore_linable": true,
+      "safety_score": 0.475,
+      "landmark_score": 0.6667,
+      "tags": {
+        "shore_fraction": "0.7",
+        "mean_clearance": "0.95",
+        "straight_dist": "3.1623"
+      }
     },
     {
       "edge_id": "EDGE-FEAT-3o6zFbINX8ue3cLBEniaGh-ZONE-2zO1ky5n57$hlSP0I709Q7",
       "source_id": "FEAT-3o6zFbINX8ue3cLBEniaGh",
       "target_id": "ZONE-2zO1ky5n57$hlSP0I709Q7",
-      "distance": 3.2523,
-      "shore_linable": false,
-      "safety_score": 0.5,
-      "landmark_score": 0.0,
-      "tags": {}
+      "distance": 3.24,
+      "shore_linable": true,
+      "safety_score": 0.475,
+      "landmark_score": 0.6667,
+      "tags": {
+        "shore_fraction": "0.7",
+        "mean_clearance": "0.95",
+        "straight_dist": "3.2523"
+      }
     },
     {
-      "edge_id": "EDGE-FEAT-3o6zFbINX8ue3cLBEniaGh-ZONE-2RTFVvtPr83Q0UxafooW91",
-      "source_id": "FEAT-3o6zFbINX8ue3cLBEniaGh",
-      "target_id": "ZONE-2RTFVvtPr83Q0UxafooW91",
-      "distance": 3.8683,
-      "shore_linable": false,
-      "safety_score": 0.5,
-      "landmark_score": 0.0,
-      "tags": {}
-    },
-    {
-      "edge_id": "EDGE-FEAT-3BojDOt51BFRctjuYcdjPm-FEAT-0wp3zaH$L7VBlQRHvLq4Rl",
+      "edge_id": "EDGE-FEAT-3BojDOt51BFRctjuYcdjPm-SKE-0029",
       "source_id": "FEAT-3BojDOt51BFRctjuYcdjPm",
+      "target_id": "SKE-0029",
+      "distance": 1.3258,
+      "shore_linable": true,
+      "safety_score": 0.2667,
+      "landmark_score": 0.6667,
+      "tags": {
+        "shore_fraction": "1.0",
+        "mean_clearance": "0.533",
+        "straight_dist": "2.0573"
+      }
+    },
+    {
+      "edge_id": "EDGE-FEAT-3BojDOt51BFRctjuYcdjPm-SKE-0058",
+      "source_id": "FEAT-3BojDOt51BFRctjuYcdjPm",
+      "target_id": "SKE-0058",
+      "distance": 2.4994,
+      "shore_linable": true,
+      "safety_score": 0.227,
+      "landmark_score": 0.3333,
+      "tags": {
+        "shore_fraction": "1.0",
+        "mean_clearance": "0.454",
+        "straight_dist": "3.3155"
+      }
+    },
+    {
+      "edge_id": "EDGE-FEAT-3BojDOt51BFRctjuYcdjPm-SKE-0039",
+      "source_id": "FEAT-3BojDOt51BFRctjuYcdjPm",
+      "target_id": "SKE-0039",
+      "distance": 3.1803,
+      "shore_linable": true,
+      "safety_score": 0.975,
+      "landmark_score": 0.3333,
+      "tags": {
+        "shore_fraction": "0.4",
+        "mean_clearance": "1.95",
+        "straight_dist": "3.5004"
+      }
+    },
+    {
+      "edge_id": "EDGE-FEAT-3BojDOt51BFRctjuYcdjPm-SKE-0024",
+      "source_id": "FEAT-3BojDOt51BFRctjuYcdjPm",
+      "target_id": "SKE-0024",
+      "distance": 3.4949,
+      "shore_linable": true,
+      "safety_score": 0.8271,
+      "landmark_score": 0.6667,
+      "tags": {
+        "shore_fraction": "0.5",
+        "mean_clearance": "1.654",
+        "straight_dist": "3.9284"
+      }
+    },
+    {
+      "edge_id": "EDGE-SKE-0049-ZONE-0BGjw438P6JAPe2g$sDgcT",
+      "source_id": "ZONE-0BGjw438P6JAPe2g$sDgcT",
+      "target_id": "SKE-0049",
+      "distance": 0.8889,
+      "shore_linable": false,
+      "safety_score": 1.0,
+      "landmark_score": 0.0,
+      "tags": {
+        "shore_fraction": "0.0",
+        "mean_clearance": "7.403",
+        "straight_dist": "0.8889"
+      }
+    },
+    {
+      "edge_id": "EDGE-SKE-0060-ZONE-0BGjw438P6JAPe2g$sDgcT",
+      "source_id": "ZONE-0BGjw438P6JAPe2g$sDgcT",
+      "target_id": "SKE-0060",
+      "distance": 1.4001,
+      "shore_linable": false,
+      "safety_score": 1.0,
+      "landmark_score": 0.0,
+      "tags": {
+        "shore_fraction": "0.0",
+        "mean_clearance": "6.912",
+        "straight_dist": "1.4001"
+      }
+    },
+    {
+      "edge_id": "EDGE-SKE-0040-ZONE-0BGjw438P6JAPe2g$sDgcT",
+      "source_id": "ZONE-0BGjw438P6JAPe2g$sDgcT",
+      "target_id": "SKE-0040",
+      "distance": 2.1818,
+      "shore_linable": false,
+      "safety_score": 1.0,
+      "landmark_score": 0.0,
+      "tags": {
+        "shore_fraction": "0.0",
+        "mean_clearance": "6.629",
+        "straight_dist": "2.1818"
+      }
+    },
+    {
+      "edge_id": "EDGE-SKE-0054-ZONE-0BGjw438P6JAPe2g$sDgcT",
+      "source_id": "ZONE-0BGjw438P6JAPe2g$sDgcT",
+      "target_id": "SKE-0054",
+      "distance": 2.4016,
+      "shore_linable": false,
+      "safety_score": 1.0,
+      "landmark_score": 0.0,
+      "tags": {
+        "shore_fraction": "0.0",
+        "mean_clearance": "7.552",
+        "straight_dist": "2.4016"
+      }
+    },
+    {
+      "edge_id": "EDGE-SKE-0055-ZONE-2lyI2yiub9QBhgywjO7xcX",
+      "source_id": "ZONE-2lyI2yiub9QBhgywjO7xcX",
+      "target_id": "SKE-0055",
+      "distance": 2.2163,
+      "shore_linable": true,
+      "safety_score": 0.39,
+      "landmark_score": 0.3333,
+      "tags": {
+        "shore_fraction": "0.6",
+        "mean_clearance": "0.78",
+        "straight_dist": "2.2273"
+      }
+    },
+    {
+      "edge_id": "EDGE-SKE-0068-ZONE-2lyI2yiub9QBhgywjO7xcX",
+      "source_id": "ZONE-2lyI2yiub9QBhgywjO7xcX",
+      "target_id": "SKE-0068",
+      "distance": 2.3275,
+      "shore_linable": false,
+      "safety_score": 1.0,
+      "landmark_score": 0.3333,
+      "tags": {
+        "shore_fraction": "0.0",
+        "mean_clearance": "2.0",
+        "straight_dist": "2.3275"
+      }
+    },
+    {
+      "edge_id": "EDGE-SKE-0050-ZONE-2lyI2yiub9QBhgywjO7xcX",
+      "source_id": "ZONE-2lyI2yiub9QBhgywjO7xcX",
+      "target_id": "SKE-0050",
+      "distance": 2.0972,
+      "shore_linable": true,
+      "safety_score": 0.2625,
+      "landmark_score": 0.3333,
+      "tags": {
+        "shore_fraction": "0.9",
+        "mean_clearance": "0.525",
+        "straight_dist": "2.9853"
+      }
+    },
+    {
+      "edge_id": "EDGE-SKE-0020-ZONE-2zO1ky5n57$hlSP0I709Q7",
+      "source_id": "ZONE-2zO1ky5n57$hlSP0I709Q7",
+      "target_id": "SKE-0020",
+      "distance": 0.0931,
+      "shore_linable": false,
+      "safety_score": 0.95,
+      "landmark_score": 0.3333,
+      "tags": {
+        "shore_fraction": "0.0",
+        "mean_clearance": "1.9",
+        "straight_dist": "0.0931"
+      }
+    },
+    {
+      "edge_id": "EDGE-SKE-0008-ZONE-2zO1ky5n57$hlSP0I709Q7",
+      "source_id": "ZONE-2zO1ky5n57$hlSP0I709Q7",
+      "target_id": "SKE-0008",
+      "distance": 2.3612,
+      "shore_linable": true,
+      "safety_score": 0.5,
+      "landmark_score": 0.3333,
+      "tags": {
+        "shore_fraction": "0.6",
+        "mean_clearance": "1.0",
+        "straight_dist": "2.3612"
+      }
+    },
+    {
+      "edge_id": "EDGE-SKE-0031-ZONE-2zO1ky5n57$hlSP0I709Q7",
+      "source_id": "ZONE-2zO1ky5n57$hlSP0I709Q7",
+      "target_id": "SKE-0031",
+      "distance": 2.5243,
+      "shore_linable": true,
+      "safety_score": 0.51,
+      "landmark_score": 0.6667,
+      "tags": {
+        "shore_fraction": "0.5",
+        "mean_clearance": "1.02",
+        "straight_dist": "2.5243"
+      }
+    },
+    {
+      "edge_id": "EDGE-SKE-0041-ZONE-2GDGci$en8jAR10fGEvA6l",
+      "source_id": "ZONE-2GDGci$en8jAR10fGEvA6l",
+      "target_id": "SKE-0041",
+      "distance": 0.0931,
+      "shore_linable": false,
+      "safety_score": 0.95,
+      "landmark_score": 0.3333,
+      "tags": {
+        "shore_fraction": "0.0",
+        "mean_clearance": "1.9",
+        "straight_dist": "0.0931"
+      }
+    },
+    {
+      "edge_id": "EDGE-SKE-0051-ZONE-2GDGci$en8jAR10fGEvA6l",
+      "source_id": "ZONE-2GDGci$en8jAR10fGEvA6l",
+      "target_id": "SKE-0051",
+      "distance": 2.3162,
+      "shore_linable": true,
+      "safety_score": 0.5083,
+      "landmark_score": 0.3333,
+      "tags": {
+        "shore_fraction": "0.6",
+        "mean_clearance": "1.017",
+        "straight_dist": "2.3162"
+      }
+    },
+    {
+      "edge_id": "EDGE-SKE-0031-ZONE-2GDGci$en8jAR10fGEvA6l",
+      "source_id": "ZONE-2GDGci$en8jAR10fGEvA6l",
+      "target_id": "SKE-0031",
+      "distance": 2.6921,
+      "shore_linable": true,
+      "safety_score": 0.47,
+      "landmark_score": 0.3333,
+      "tags": {
+        "shore_fraction": "0.6",
+        "mean_clearance": "0.94",
+        "straight_dist": "2.7051"
+      }
+    },
+    {
+      "edge_id": "EDGE-SKE-0080-ZONE-2UG7dUO6vAYheCYwduYFZE",
+      "source_id": "ZONE-2UG7dUO6vAYheCYwduYFZE",
+      "target_id": "SKE-0080",
+      "distance": 1.3785,
+      "shore_linable": true,
+      "safety_score": 0.7547,
+      "landmark_score": 0.3333,
+      "tags": {
+        "shore_fraction": "1.0",
+        "mean_clearance": "1.509",
+        "straight_dist": "1.3899"
+      }
+    },
+    {
+      "edge_id": "EDGE-SKE-0083-ZONE-2UG7dUO6vAYheCYwduYFZE",
+      "source_id": "ZONE-2UG7dUO6vAYheCYwduYFZE",
+      "target_id": "SKE-0083",
+      "distance": 3.0948,
+      "shore_linable": true,
+      "safety_score": 0.4572,
+      "landmark_score": 0.6667,
+      "tags": {
+        "shore_fraction": "0.7",
+        "mean_clearance": "0.914",
+        "straight_dist": "3.1059"
+      }
+    },
+    {
+      "edge_id": "EDGE-SKE-0094-ZONE-2UG7dUO6vAYheCYwduYFZE",
+      "source_id": "ZONE-2UG7dUO6vAYheCYwduYFZE",
+      "target_id": "SKE-0094",
+      "distance": 3.1375,
+      "shore_linable": true,
+      "safety_score": 0.22,
+      "landmark_score": 0.6667,
+      "tags": {
+        "shore_fraction": "1.0",
+        "mean_clearance": "0.44",
+        "straight_dist": "3.1667"
+      }
+    },
+    {
+      "edge_id": "EDGE-SKE-0088-ZONE-2gbGtfPHrFnOw3AWmEVj8l",
+      "source_id": "ZONE-2gbGtfPHrFnOw3AWmEVj8l",
+      "target_id": "SKE-0088",
+      "distance": 0.1922,
+      "shore_linable": true,
+      "safety_score": 0.55,
+      "landmark_score": 0.3333,
+      "tags": {
+        "shore_fraction": "1.0",
+        "mean_clearance": "1.1",
+        "straight_dist": "0.1922"
+      }
+    },
+    {
+      "edge_id": "EDGE-SKE-0081-ZONE-2gbGtfPHrFnOw3AWmEVj8l",
+      "source_id": "ZONE-2gbGtfPHrFnOw3AWmEVj8l",
+      "target_id": "SKE-0081",
+      "distance": 1.5538,
+      "shore_linable": true,
+      "safety_score": 0.27,
+      "landmark_score": 0.3333,
+      "tags": {
+        "shore_fraction": "1.0",
+        "mean_clearance": "0.54",
+        "straight_dist": "1.5662"
+      }
+    },
+    {
+      "edge_id": "EDGE-SKE-0079-ZONE-2gbGtfPHrFnOw3AWmEVj8l",
+      "source_id": "ZONE-2gbGtfPHrFnOw3AWmEVj8l",
+      "target_id": "SKE-0079",
+      "distance": 3.7659,
+      "shore_linable": true,
+      "safety_score": 0.6649,
+      "landmark_score": 0.6667,
+      "tags": {
+        "shore_fraction": "0.6",
+        "mean_clearance": "1.33",
+        "straight_dist": "3.7768"
+      }
+    },
+    {
+      "edge_id": "EDGE-SKE-0030-ZONE-2RTFVvtPr83Q0UxafooW91",
+      "source_id": "ZONE-2RTFVvtPr83Q0UxafooW91",
+      "target_id": "SKE-0030",
+      "distance": 1.4346,
+      "shore_linable": true,
+      "safety_score": 0.35,
+      "landmark_score": 0.6667,
+      "tags": {
+        "shore_fraction": "0.7",
+        "mean_clearance": "0.7",
+        "straight_dist": "1.4446"
+      }
+    },
+    {
+      "edge_id": "EDGE-SKE-0045-ZONE-2RTFVvtPr83Q0UxafooW91",
+      "source_id": "ZONE-2RTFVvtPr83Q0UxafooW91",
+      "target_id": "SKE-0045",
+      "distance": 2.4857,
+      "shore_linable": false,
+      "safety_score": 0.7,
+      "landmark_score": 1.0,
+      "tags": {
+        "shore_fraction": "0.0",
+        "mean_clearance": "1.4",
+        "straight_dist": "2.4857"
+      }
+    },
+    {
+      "edge_id": "EDGE-SKE-0015-ZONE-2qT_j3zBf5_8BGICwHrmlI",
+      "source_id": "ZONE-2qT_j3zBf5_8BGICwHrmlI",
+      "target_id": "SKE-0015",
+      "distance": 0.459,
+      "shore_linable": false,
+      "safety_score": 0.79,
+      "landmark_score": 0.3333,
+      "tags": {
+        "shore_fraction": "0.0",
+        "mean_clearance": "1.58",
+        "straight_dist": "0.459"
+      }
+    },
+    {
+      "edge_id": "EDGE-SKE-0006-ZONE-2qT_j3zBf5_8BGICwHrmlI",
+      "source_id": "ZONE-2qT_j3zBf5_8BGICwHrmlI",
+      "target_id": "SKE-0006",
+      "distance": 2.3041,
+      "shore_linable": true,
+      "safety_score": 0.45,
+      "landmark_score": 0.6667,
+      "tags": {
+        "shore_fraction": "0.6",
+        "mean_clearance": "0.9",
+        "straight_dist": "2.3041"
+      }
+    },
+    {
+      "edge_id": "EDGE-SKE-0005-ZONE-2qT_j3zBf5_8BGICwHrmlI",
+      "source_id": "ZONE-2qT_j3zBf5_8BGICwHrmlI",
+      "target_id": "SKE-0005",
+      "distance": 2.625,
+      "shore_linable": true,
+      "safety_score": 0.39,
+      "landmark_score": 0.3333,
+      "tags": {
+        "shore_fraction": "0.7",
+        "mean_clearance": "0.78",
+        "straight_dist": "2.6399"
+      }
+    },
+    {
+      "edge_id": "EDGE-SKE-0000-SKE-0011",
+      "source_id": "SKE-0000",
+      "target_id": "SKE-0011",
+      "distance": 1.6279,
+      "shore_linable": true,
+      "safety_score": 0.4145,
+      "landmark_score": 0.6667,
+      "tags": {
+        "shore_fraction": "0.9",
+        "mean_clearance": "0.829",
+        "straight_dist": "1.6279"
+      }
+    },
+    {
+      "edge_id": "EDGE-SKE-0000-SKE-0024",
+      "source_id": "SKE-0000",
+      "target_id": "SKE-0024",
+      "distance": 3.6401,
+      "shore_linable": true,
+      "safety_score": 0.9101,
+      "landmark_score": 0.6667,
+      "tags": {
+        "shore_fraction": "0.5",
+        "mean_clearance": "1.82",
+        "straight_dist": "3.6401"
+      }
+    },
+    {
+      "edge_id": "EDGE-SKE-0000-SKE-0029",
+      "source_id": "SKE-0000",
+      "target_id": "SKE-0029",
+      "distance": 3.7054,
+      "shore_linable": true,
+      "safety_score": 0.4,
+      "landmark_score": 1.0,
+      "tags": {
+        "shore_fraction": "1.0",
+        "mean_clearance": "0.8",
+        "straight_dist": "3.7054"
+      }
+    },
+    {
+      "edge_id": "EDGE-SKE-0000-SKE-0016",
+      "source_id": "SKE-0000",
+      "target_id": "SKE-0016",
+      "distance": 5.1546,
+      "shore_linable": true,
+      "safety_score": 0.55,
+      "landmark_score": 0.6667,
+      "tags": {
+        "shore_fraction": "0.6",
+        "mean_clearance": "1.1",
+        "straight_dist": "5.1546"
+      }
+    },
+    {
+      "edge_id": "EDGE-SKE-0001-SKE-0009",
+      "source_id": "SKE-0001",
+      "target_id": "SKE-0009",
+      "distance": 1.4748,
+      "shore_linable": true,
+      "safety_score": 0.2835,
+      "landmark_score": 0.0,
+      "tags": {
+        "shore_fraction": "1.0",
+        "mean_clearance": "0.567",
+        "straight_dist": "1.6401"
+      }
+    },
+    {
+      "edge_id": "EDGE-SKE-0001-SKE-0016",
+      "source_id": "SKE-0001",
+      "target_id": "SKE-0016",
+      "distance": 1.9416,
+      "shore_linable": true,
+      "safety_score": 0.4447,
+      "landmark_score": 0.0,
+      "tags": {
+        "shore_fraction": "0.8",
+        "mean_clearance": "0.889",
+        "straight_dist": "1.9416"
+      }
+    },
+    {
+      "edge_id": "EDGE-SKE-0001-SKE-0022",
+      "source_id": "SKE-0001",
+      "target_id": "SKE-0022",
+      "distance": 3.3015,
+      "shore_linable": true,
+      "safety_score": 0.6567,
+      "landmark_score": 0.0,
+      "tags": {
+        "shore_fraction": "0.5",
+        "mean_clearance": "1.313",
+        "straight_dist": "3.3015"
+      }
+    },
+    {
+      "edge_id": "EDGE-SKE-0001-SKE-0025",
+      "source_id": "SKE-0001",
+      "target_id": "SKE-0025",
+      "distance": 3.4438,
+      "shore_linable": true,
+      "safety_score": 0.7988,
+      "landmark_score": 0.0,
+      "tags": {
+        "shore_fraction": "0.4",
+        "mean_clearance": "1.598",
+        "straight_dist": "3.4438"
+      }
+    },
+    {
+      "edge_id": "EDGE-SKE-0001-SKE-0024",
+      "source_id": "SKE-0001",
+      "target_id": "SKE-0024",
+      "distance": 4.7802,
+      "shore_linable": true,
+      "safety_score": 0.74,
+      "landmark_score": 0.3333,
+      "tags": {
+        "shore_fraction": "0.4",
+        "mean_clearance": "1.48",
+        "straight_dist": "4.7802"
+      }
+    },
+    {
+      "edge_id": "EDGE-SKE-0001-SKE-0033",
+      "source_id": "SKE-0001",
+      "target_id": "SKE-0033",
+      "distance": 4.7854,
+      "shore_linable": false,
+      "safety_score": 1.0,
+      "landmark_score": 0.0,
+      "tags": {
+        "shore_fraction": "0.3",
+        "mean_clearance": "2.099",
+        "straight_dist": "4.7854"
+      }
+    },
+    {
+      "edge_id": "EDGE-SKE-0002-SKE-0012",
+      "source_id": "SKE-0002",
+      "target_id": "SKE-0012",
+      "distance": 1.6279,
+      "shore_linable": true,
+      "safety_score": 0.35,
+      "landmark_score": 0.0,
+      "tags": {
+        "shore_fraction": "0.8",
+        "mean_clearance": "0.7",
+        "straight_dist": "1.6279"
+      }
+    },
+    {
+      "edge_id": "EDGE-SKE-0002-SKE-0010",
+      "source_id": "SKE-0002",
+      "target_id": "SKE-0010",
+      "distance": 1.4748,
+      "shore_linable": true,
+      "safety_score": 0.2835,
+      "landmark_score": 0.0,
+      "tags": {
+        "shore_fraction": "1.0",
+        "mean_clearance": "0.567",
+        "straight_dist": "1.6401"
+      }
+    },
+    {
+      "edge_id": "EDGE-SKE-0002-SKE-0021",
+      "source_id": "SKE-0002",
+      "target_id": "SKE-0021",
+      "distance": 3.0232,
+      "shore_linable": true,
+      "safety_score": 0.5966,
+      "landmark_score": 0.0,
+      "tags": {
+        "shore_fraction": "0.5",
+        "mean_clearance": "1.193",
+        "straight_dist": "3.0232"
+      }
+    },
+    {
+      "edge_id": "EDGE-SKE-0002-SKE-0023",
+      "source_id": "SKE-0002",
+      "target_id": "SKE-0023",
+      "distance": 3.0887,
+      "shore_linable": true,
+      "safety_score": 0.704,
+      "landmark_score": 0.0,
+      "tags": {
+        "shore_fraction": "0.5",
+        "mean_clearance": "1.408",
+        "straight_dist": "3.0887"
+      }
+    },
+    {
+      "edge_id": "EDGE-SKE-0002-SKE-0032",
+      "source_id": "SKE-0002",
+      "target_id": "SKE-0032",
+      "distance": 4.6957,
+      "shore_linable": false,
+      "safety_score": 1.0,
+      "landmark_score": 0.0,
+      "tags": {
+        "shore_fraction": "0.3",
+        "mean_clearance": "2.06",
+        "straight_dist": "4.6957"
+      }
+    },
+    {
+      "edge_id": "EDGE-SKE-0002-SKE-0034",
+      "source_id": "SKE-0002",
+      "target_id": "SKE-0034",
+      "distance": 4.717,
+      "shore_linable": false,
+      "safety_score": 1.0,
+      "landmark_score": 0.0,
+      "tags": {
+        "shore_fraction": "0.3",
+        "mean_clearance": "2.264",
+        "straight_dist": "4.717"
+      }
+    },
+    {
+      "edge_id": "EDGE-SKE-0003-SKE-0017",
+      "source_id": "SKE-0003",
+      "target_id": "SKE-0017",
+      "distance": 1.8868,
+      "shore_linable": true,
+      "safety_score": 0.4447,
+      "landmark_score": 0.0,
+      "tags": {
+        "shore_fraction": "0.8",
+        "mean_clearance": "0.889",
+        "straight_dist": "1.8868"
+      }
+    },
+    {
+      "edge_id": "EDGE-SKE-0003-SKE-0014",
+      "source_id": "SKE-0003",
+      "target_id": "SKE-0014",
+      "distance": 2.0294,
+      "shore_linable": true,
+      "safety_score": 0.3523,
+      "landmark_score": 0.0,
+      "tags": {
+        "shore_fraction": "0.8",
+        "mean_clearance": "0.705",
+        "straight_dist": "2.1213"
+      }
+    },
+    {
+      "edge_id": "EDGE-SKE-0003-SKE-0026",
+      "source_id": "SKE-0003",
+      "target_id": "SKE-0026",
+      "distance": 3.4015,
+      "shore_linable": true,
+      "safety_score": 0.7988,
+      "landmark_score": 0.0,
+      "tags": {
+        "shore_fraction": "0.4",
+        "mean_clearance": "1.598",
+        "straight_dist": "3.4015"
+      }
+    },
+    {
+      "edge_id": "EDGE-SKE-0003-SKE-0027",
+      "source_id": "SKE-0003",
+      "target_id": "SKE-0027",
+      "distance": 3.6892,
+      "shore_linable": true,
+      "safety_score": 0.7519,
+      "landmark_score": 0.0,
+      "tags": {
+        "shore_fraction": "0.4",
+        "mean_clearance": "1.504",
+        "straight_dist": "3.6892"
+      }
+    },
+    {
+      "edge_id": "EDGE-SKE-0003-SKE-0036",
+      "source_id": "SKE-0003",
+      "target_id": "SKE-0036",
+      "distance": 5.099,
+      "shore_linable": false,
+      "safety_score": 1.0,
+      "landmark_score": 0.0,
+      "tags": {
+        "shore_fraction": "0.3",
+        "mean_clearance": "2.368",
+        "straight_dist": "5.099"
+      }
+    },
+    {
+      "edge_id": "EDGE-SKE-0003-SKE-0037",
+      "source_id": "SKE-0003",
+      "target_id": "SKE-0037",
+      "distance": 5.143,
+      "shore_linable": false,
+      "safety_score": 1.0,
+      "landmark_score": 0.0,
+      "tags": {
+        "shore_fraction": "0.3",
+        "mean_clearance": "2.275",
+        "straight_dist": "5.143"
+      }
+    },
+    {
+      "edge_id": "EDGE-SKE-0004-SKE-0018",
+      "source_id": "SKE-0004",
+      "target_id": "SKE-0018",
+      "distance": 2.1095,
+      "shore_linable": true,
+      "safety_score": 0.4837,
+      "landmark_score": 0.0,
+      "tags": {
+        "shore_fraction": "0.7",
+        "mean_clearance": "0.967",
+        "straight_dist": "2.1095"
+      }
+    },
+    {
+      "edge_id": "EDGE-SKE-0004-SKE-0019",
+      "source_id": "SKE-0004",
+      "target_id": "SKE-0019",
+      "distance": 2.3473,
+      "shore_linable": true,
+      "safety_score": 0.431,
+      "landmark_score": 0.0,
+      "tags": {
+        "shore_fraction": "0.7",
+        "mean_clearance": "0.862",
+        "straight_dist": "2.4083"
+      }
+    },
+    {
+      "edge_id": "EDGE-SKE-0004-SKE-0005",
+      "source_id": "SKE-0004",
+      "target_id": "SKE-0005",
+      "distance": 3.21,
+      "shore_linable": true,
+      "safety_score": 0.05,
+      "landmark_score": 0.0,
+      "tags": {
+        "shore_fraction": "1.0",
+        "mean_clearance": "0.1",
+        "straight_dist": "3.5"
+      }
+    },
+    {
+      "edge_id": "EDGE-SKE-0004-SKE-0028",
+      "source_id": "SKE-0004",
+      "target_id": "SKE-0028",
+      "distance": 3.7577,
+      "shore_linable": true,
+      "safety_score": 0.8781,
+      "landmark_score": 0.0,
+      "tags": {
+        "shore_fraction": "0.4",
+        "mean_clearance": "1.756",
+        "straight_dist": "3.7577"
+      }
+    },
+    {
+      "edge_id": "EDGE-SKE-0004-SKE-0014",
+      "source_id": "SKE-0004",
+      "target_id": "SKE-0014",
+      "distance": 5.2202,
+      "shore_linable": true,
+      "safety_score": 0.41,
+      "landmark_score": 0.0,
+      "tags": {
+        "shore_fraction": "0.6",
+        "mean_clearance": "0.82",
+        "straight_dist": "5.2202"
+      }
+    },
+    {
+      "edge_id": "EDGE-SKE-0004-SKE-0038",
+      "source_id": "SKE-0004",
+      "target_id": "SKE-0038",
+      "distance": 5.2924,
+      "shore_linable": false,
+      "safety_score": 1.0,
+      "landmark_score": 0.0,
+      "tags": {
+        "shore_fraction": "0.3",
+        "mean_clearance": "2.504",
+        "straight_dist": "5.2924"
+      }
+    },
+    {
+      "edge_id": "EDGE-SKE-0005-SKE-0015",
+      "source_id": "SKE-0005",
+      "target_id": "SKE-0015",
+      "distance": 2.2538,
+      "shore_linable": true,
+      "safety_score": 0.37,
+      "landmark_score": 0.3333,
+      "tags": {
+        "shore_fraction": "0.7",
+        "mean_clearance": "0.74",
+        "straight_dist": "2.2672"
+      }
+    },
+    {
+      "edge_id": "EDGE-SKE-0005-SKE-0019",
+      "source_id": "SKE-0005",
+      "target_id": "SKE-0019",
+      "distance": 2.6173,
+      "shore_linable": true,
+      "safety_score": 0.49,
+      "landmark_score": 0.0,
+      "tags": {
+        "shore_fraction": "0.5",
+        "mean_clearance": "0.98",
+        "straight_dist": "2.6173"
+      }
+    },
+    {
+      "edge_id": "EDGE-SKE-0005-SKE-0006",
+      "source_id": "SKE-0005",
+      "target_id": "SKE-0006",
+      "distance": 2.99,
+      "shore_linable": true,
+      "safety_score": 0.05,
+      "landmark_score": 0.3333,
+      "tags": {
+        "shore_fraction": "1.0",
+        "mean_clearance": "0.1",
+        "straight_dist": "3.0"
+      }
+    },
+    {
+      "edge_id": "EDGE-FEAT-0XYyyamEP3Bxdj9fgnPmpr-SKE-0005",
+      "source_id": "SKE-0005",
+      "target_id": "FEAT-0XYyyamEP3Bxdj9fgnPmpr",
+      "distance": 4.0163,
+      "shore_linable": true,
+      "safety_score": 0.22,
+      "landmark_score": 0.6667,
+      "tags": {
+        "shore_fraction": "1.0",
+        "mean_clearance": "0.44",
+        "straight_dist": "4.0536"
+      }
+    },
+    {
+      "edge_id": "EDGE-SKE-0006-SKE-0015",
+      "source_id": "SKE-0006",
+      "target_id": "SKE-0015",
+      "distance": 1.9849,
+      "shore_linable": true,
+      "safety_score": 0.4,
+      "landmark_score": 0.6667,
+      "tags": {
+        "shore_fraction": "0.7",
+        "mean_clearance": "0.8",
+        "straight_dist": "1.9849"
+      }
+    },
+    {
+      "edge_id": "EDGE-SKE-0006-SKE-0013",
+      "source_id": "SKE-0006",
+      "target_id": "SKE-0013",
+      "distance": 1.9451,
+      "shore_linable": true,
+      "safety_score": 0.3,
+      "landmark_score": 0.6667,
+      "tags": {
+        "shore_fraction": "0.8",
+        "mean_clearance": "0.6",
+        "straight_dist": "2.1401"
+      }
+    },
+    {
+      "edge_id": "EDGE-SKE-0006-SKE-0007",
+      "source_id": "SKE-0006",
+      "target_id": "SKE-0007",
+      "distance": 2.71,
+      "shore_linable": true,
+      "safety_score": 0.05,
+      "landmark_score": 0.6667,
+      "tags": {
+        "shore_fraction": "1.0",
+        "mean_clearance": "0.1",
+        "straight_dist": "3.0"
+      }
+    },
+    {
+      "edge_id": "EDGE-SKE-0007-SKE-0013",
+      "source_id": "SKE-0007",
+      "target_id": "SKE-0013",
+      "distance": 1.8385,
+      "shore_linable": true,
+      "safety_score": 0.36,
+      "landmark_score": 0.6667,
+      "tags": {
+        "shore_fraction": "0.7",
+        "mean_clearance": "0.72",
+        "straight_dist": "1.8385"
+      }
+    },
+    {
+      "edge_id": "EDGE-FEAT-2z4FjdAgjF8BzQmj709ndM-SKE-0007",
+      "source_id": "SKE-0007",
+      "target_id": "FEAT-2z4FjdAgjF8BzQmj709ndM",
+      "distance": 2.3259,
+      "shore_linable": true,
+      "safety_score": 0.05,
+      "landmark_score": 1.0,
+      "tags": {
+        "shore_fraction": "1.0",
+        "mean_clearance": "0.1",
+        "straight_dist": "2.4249"
+      }
+    },
+    {
+      "edge_id": "EDGE-SKE-0007-SKE-0020",
+      "source_id": "SKE-0007",
+      "target_id": "SKE-0020",
+      "distance": 2.6773,
+      "shore_linable": true,
+      "safety_score": 0.47,
+      "landmark_score": 0.6667,
+      "tags": {
+        "shore_fraction": "0.6",
+        "mean_clearance": "0.94",
+        "straight_dist": "2.6907"
+      }
+    },
+    {
+      "edge_id": "EDGE-SKE-0007-ZONE-2zO1ky5n57$hlSP0I709Q7",
+      "source_id": "SKE-0007",
+      "target_id": "ZONE-2zO1ky5n57$hlSP0I709Q7",
+      "distance": 2.7695,
+      "shore_linable": true,
+      "safety_score": 0.47,
+      "landmark_score": 0.6667,
+      "tags": {
+        "shore_fraction": "0.6",
+        "mean_clearance": "0.94",
+        "straight_dist": "2.783"
+      }
+    },
+    {
+      "edge_id": "EDGE-SKE-0008-SKE-0020",
+      "source_id": "SKE-0008",
+      "target_id": "SKE-0020",
+      "distance": 2.3431,
+      "shore_linable": true,
+      "safety_score": 0.49,
+      "landmark_score": 0.3333,
+      "tags": {
+        "shore_fraction": "0.6",
+        "mean_clearance": "0.98",
+        "straight_dist": "2.3431"
+      }
+    },
+    {
+      "edge_id": "EDGE-SKE-0007-SKE-0008",
+      "source_id": "SKE-0008",
+      "target_id": "SKE-0007",
+      "distance": 3.49,
+      "shore_linable": true,
+      "safety_score": 0.05,
+      "landmark_score": 0.6667,
+      "tags": {
+        "shore_fraction": "1.0",
+        "mean_clearance": "0.1",
+        "straight_dist": "3.5"
+      }
+    },
+    {
+      "edge_id": "EDGE-SKE-0008-SKE-0031",
+      "source_id": "SKE-0008",
+      "target_id": "SKE-0031",
+      "distance": 3.7121,
+      "shore_linable": true,
+      "safety_score": 0.11,
+      "landmark_score": 0.0,
+      "tags": {
+        "shore_fraction": "1.0",
+        "mean_clearance": "0.22",
+        "straight_dist": "3.7121"
+      }
+    },
+    {
+      "edge_id": "EDGE-FEAT-2z4FjdAgjF8BzQmj709ndM-SKE-0008",
+      "source_id": "SKE-0008",
+      "target_id": "FEAT-2z4FjdAgjF8BzQmj709ndM",
+      "distance": 4.0516,
+      "shore_linable": true,
+      "safety_score": 0.31,
+      "landmark_score": 1.0,
+      "tags": {
+        "shore_fraction": "0.7",
+        "mean_clearance": "0.62",
+        "straight_dist": "4.0516"
+      }
+    },
+    {
+      "edge_id": "EDGE-FEAT-3o6zFbINX8ue3cLBEniaGh-SKE-0008",
+      "source_id": "SKE-0008",
+      "target_id": "FEAT-3o6zFbINX8ue3cLBEniaGh",
+      "distance": 4.09,
+      "shore_linable": true,
+      "safety_score": 0.05,
+      "landmark_score": 0.6667,
+      "tags": {
+        "shore_fraction": "1.0",
+        "mean_clearance": "0.1",
+        "straight_dist": "4.1"
+      }
+    },
+    {
+      "edge_id": "EDGE-SKE-0009-SKE-0022",
+      "source_id": "SKE-0009",
+      "target_id": "SKE-0022",
+      "distance": 1.8028,
+      "shore_linable": false,
+      "safety_score": 0.96,
+      "landmark_score": 0.0,
+      "tags": {
+        "shore_fraction": "0.2",
+        "mean_clearance": "1.92",
+        "straight_dist": "1.8028"
+      }
+    },
+    {
+      "edge_id": "EDGE-SKE-0009-SKE-0016",
+      "source_id": "SKE-0009",
+      "target_id": "SKE-0016",
+      "distance": 2.4739,
+      "shore_linable": true,
+      "safety_score": 0.6238,
+      "landmark_score": 0.0,
+      "tags": {
+        "shore_fraction": "0.5",
+        "mean_clearance": "1.248",
+        "straight_dist": "2.4739"
+      }
+    },
+    {
+      "edge_id": "EDGE-SKE-0009-SKE-0033",
+      "source_id": "SKE-0009",
+      "target_id": "SKE-0033",
+      "distance": 3.3956,
+      "shore_linable": false,
+      "safety_score": 1.0,
+      "landmark_score": 0.0,
+      "tags": {
+        "shore_fraction": "0.1",
+        "mean_clearance": "2.717",
+        "straight_dist": "3.3956"
+      }
+    },
+    {
+      "edge_id": "EDGE-SKE-0009-SKE-0025",
+      "source_id": "SKE-0009",
+      "target_id": "SKE-0025",
+      "distance": 3.5,
+      "shore_linable": false,
+      "safety_score": 0.9796,
+      "landmark_score": 0.0,
+      "tags": {
+        "shore_fraction": "0.2",
+        "mean_clearance": "1.959",
+        "straight_dist": "3.5"
+      }
+    },
+    {
+      "edge_id": "EDGE-SKE-0009-SKE-0023",
+      "source_id": "SKE-0009",
+      "target_id": "SKE-0023",
+      "distance": 4.0719,
+      "shore_linable": false,
+      "safety_score": 0.96,
+      "landmark_score": 0.0,
+      "tags": {
+        "shore_fraction": "0.1",
+        "mean_clearance": "1.92",
+        "straight_dist": "4.0719"
+      }
+    },
+    {
+      "edge_id": "EDGE-SKE-0010-SKE-0021",
+      "source_id": "SKE-0010",
+      "target_id": "SKE-0021",
+      "distance": 1.5524,
+      "shore_linable": false,
+      "safety_score": 0.91,
+      "landmark_score": 0.0,
+      "tags": {
+        "shore_fraction": "0.2",
+        "mean_clearance": "1.82",
+        "straight_dist": "1.5524"
+      }
+    },
+    {
+      "edge_id": "EDGE-SKE-0010-SKE-0012",
+      "source_id": "SKE-0010",
+      "target_id": "SKE-0012",
+      "distance": 2.4083,
+      "shore_linable": true,
+      "safety_score": 0.5295,
+      "landmark_score": 0.0,
+      "tags": {
+        "shore_fraction": "0.9",
+        "mean_clearance": "1.059",
+        "straight_dist": "2.4083"
+      }
+    },
+    {
+      "edge_id": "EDGE-SKE-0010-SKE-0023",
+      "source_id": "SKE-0010",
+      "target_id": "SKE-0023",
+      "distance": 3.2757,
+      "shore_linable": false,
+      "safety_score": 0.8981,
+      "landmark_score": 0.0,
+      "tags": {
+        "shore_fraction": "0.2",
+        "mean_clearance": "1.796",
+        "straight_dist": "3.2757"
+      }
+    },
+    {
+      "edge_id": "EDGE-SKE-0010-SKE-0032",
+      "source_id": "SKE-0010",
+      "target_id": "SKE-0032",
+      "distance": 3.2985,
+      "shore_linable": false,
+      "safety_score": 1.0,
+      "landmark_score": 0.0,
+      "tags": {
+        "shore_fraction": "0.1",
+        "mean_clearance": "2.697",
+        "straight_dist": "3.2985"
+      }
+    },
+    {
+      "edge_id": "EDGE-SKE-0010-SKE-0017",
+      "source_id": "SKE-0010",
+      "target_id": "SKE-0017",
+      "distance": 4.2426,
+      "shore_linable": false,
+      "safety_score": 0.69,
+      "landmark_score": 0.0,
+      "tags": {
+        "shore_fraction": "0.1",
+        "mean_clearance": "1.38",
+        "straight_dist": "4.2426"
+      }
+    },
+    {
+      "edge_id": "EDGE-SKE-0011-SKE-0024",
+      "source_id": "SKE-0011",
+      "target_id": "SKE-0024",
+      "distance": 2.0248,
+      "shore_linable": false,
+      "safety_score": 1.0,
+      "landmark_score": 0.6667,
+      "tags": {
+        "shore_fraction": "0.0",
+        "mean_clearance": "2.08",
+        "straight_dist": "2.0248"
+      }
+    },
+    {
+      "edge_id": "EDGE-SKE-0011-SKE-0029",
+      "source_id": "SKE-0011",
+      "target_id": "SKE-0029",
+      "distance": 2.6571,
+      "shore_linable": false,
+      "safety_score": 0.61,
+      "landmark_score": 1.0,
+      "tags": {
+        "shore_fraction": "0.2",
+        "mean_clearance": "1.22",
+        "straight_dist": "2.6571"
+      }
+    },
+    {
+      "edge_id": "EDGE-SKE-0011-SKE-0016",
+      "source_id": "SKE-0011",
+      "target_id": "SKE-0016",
+      "distance": 3.821,
+      "shore_linable": false,
+      "safety_score": 0.75,
+      "landmark_score": 0.6667,
+      "tags": {
+        "shore_fraction": "0.0",
+        "mean_clearance": "1.5",
+        "straight_dist": "3.821"
+      }
+    },
+    {
+      "edge_id": "EDGE-SKE-0012-SKE-0023",
+      "source_id": "SKE-0012",
+      "target_id": "SKE-0023",
+      "distance": 1.5524,
+      "shore_linable": false,
+      "safety_score": 1.0,
+      "landmark_score": 0.0,
+      "tags": {
+        "shore_fraction": "0.0",
+        "mean_clearance": "2.02",
+        "straight_dist": "1.5524"
+      }
+    },
+    {
+      "edge_id": "EDGE-SKE-0012-SKE-0021",
+      "source_id": "SKE-0012",
+      "target_id": "SKE-0021",
+      "distance": 3.0871,
+      "shore_linable": false,
+      "safety_score": 0.8858,
+      "landmark_score": 0.0,
+      "tags": {
+        "shore_fraction": "0.0",
+        "mean_clearance": "1.772",
+        "straight_dist": "3.0871"
+      }
+    },
+    {
+      "edge_id": "EDGE-SKE-0012-SKE-0034",
+      "source_id": "SKE-0012",
+      "target_id": "SKE-0034",
+      "distance": 3.2558,
+      "shore_linable": false,
+      "safety_score": 1.0,
+      "landmark_score": 0.0,
+      "tags": {
+        "shore_fraction": "0.0",
+        "mean_clearance": "2.9",
+        "straight_dist": "3.2558"
+      }
+    },
+    {
+      "edge_id": "EDGE-SKE-0012-SKE-0022",
+      "source_id": "SKE-0012",
+      "target_id": "SKE-0022",
+      "distance": 3.8079,
+      "shore_linable": false,
+      "safety_score": 1.0,
+      "landmark_score": 0.0,
+      "tags": {
+        "shore_fraction": "0.0",
+        "mean_clearance": "2.02",
+        "straight_dist": "3.8079"
+      }
+    },
+    {
+      "edge_id": "EDGE-SKE-0013-ZONE-2RTFVvtPr83Q0UxafooW91",
+      "source_id": "SKE-0013",
+      "target_id": "ZONE-2RTFVvtPr83Q0UxafooW91",
+      "distance": 2.5157,
+      "shore_linable": false,
+      "safety_score": 0.7,
+      "landmark_score": 1.0,
+      "tags": {
+        "shore_fraction": "0.0",
+        "mean_clearance": "1.4",
+        "straight_dist": "2.5157"
+      }
+    },
+    {
+      "edge_id": "EDGE-SKE-0013-SKE-0030",
+      "source_id": "SKE-0013",
+      "target_id": "SKE-0030",
+      "distance": 2.8113,
+      "shore_linable": true,
+      "safety_score": 0.36,
+      "landmark_score": 1.0,
+      "tags": {
+        "shore_fraction": "0.7",
+        "mean_clearance": "0.72",
+        "straight_dist": "2.8302"
+      }
+    },
+    {
+      "edge_id": "EDGE-SKE-0014-SKE-0027",
+      "source_id": "SKE-0014",
+      "target_id": "SKE-0027",
+      "distance": 1.6763,
+      "shore_linable": false,
+      "safety_score": 1.0,
+      "landmark_score": 0.0,
+      "tags": {
+        "shore_fraction": "0.0",
+        "mean_clearance": "2.4",
+        "straight_dist": "1.6763"
+      }
+    },
+    {
+      "edge_id": "EDGE-SKE-0014-SKE-0017",
+      "source_id": "SKE-0014",
+      "target_id": "SKE-0017",
+      "distance": 2.502,
+      "shore_linable": false,
+      "safety_score": 0.7353,
+      "landmark_score": 0.0,
+      "tags": {
+        "shore_fraction": "0.0",
+        "mean_clearance": "1.471",
+        "straight_dist": "2.502"
+      }
+    },
+    {
+      "edge_id": "EDGE-SKE-0014-SKE-0037",
+      "source_id": "SKE-0014",
+      "target_id": "SKE-0037",
+      "distance": 3.2016,
+      "shore_linable": false,
+      "safety_score": 1.0,
+      "landmark_score": 0.0,
+      "tags": {
+        "shore_fraction": "0.0",
+        "mean_clearance": "3.12",
+        "straight_dist": "3.2016"
+      }
+    },
+    {
+      "edge_id": "EDGE-SKE-0014-SKE-0026",
+      "source_id": "SKE-0014",
+      "target_id": "SKE-0026",
+      "distance": 3.3121,
+      "shore_linable": false,
+      "safety_score": 1.0,
+      "landmark_score": 0.0,
+      "tags": {
+        "shore_fraction": "0.0",
+        "mean_clearance": "2.251",
+        "straight_dist": "3.3121"
+      }
+    },
+    {
+      "edge_id": "EDGE-SKE-0014-SKE-0028",
+      "source_id": "SKE-0014",
+      "target_id": "SKE-0028",
+      "distance": 3.8949,
+      "shore_linable": false,
+      "safety_score": 1.0,
+      "landmark_score": 0.0,
+      "tags": {
+        "shore_fraction": "0.0",
+        "mean_clearance": "2.52",
+        "straight_dist": "3.8949"
+      }
+    },
+    {
+      "edge_id": "EDGE-SKE-0013-SKE-0015",
+      "source_id": "SKE-0015",
+      "target_id": "SKE-0013",
+      "distance": 2.9966,
+      "shore_linable": true,
+      "safety_score": 0.45,
+      "landmark_score": 1.0,
+      "tags": {
+        "shore_fraction": "0.7",
+        "mean_clearance": "0.9",
+        "straight_dist": "3.0067"
+      }
+    },
+    {
+      "edge_id": "EDGE-SKE-0015-SKE-0019",
+      "source_id": "SKE-0015",
+      "target_id": "SKE-0019",
+      "distance": 3.6024,
+      "shore_linable": true,
+      "safety_score": 0.55,
+      "landmark_score": 0.3333,
+      "tags": {
+        "shore_fraction": "0.5",
+        "mean_clearance": "1.1",
+        "straight_dist": "3.6125"
+      }
+    },
+    {
+      "edge_id": "EDGE-SKE-0016-SKE-0025",
+      "source_id": "SKE-0016",
+      "target_id": "SKE-0025",
+      "distance": 1.5524,
+      "shore_linable": false,
+      "safety_score": 1.0,
+      "landmark_score": 0.0,
+      "tags": {
+        "shore_fraction": "0.0",
+        "mean_clearance": "2.42",
+        "straight_dist": "1.5524"
+      }
+    },
+    {
+      "edge_id": "EDGE-SKE-0016-SKE-0024",
+      "source_id": "SKE-0016",
+      "target_id": "SKE-0024",
+      "distance": 2.9967,
+      "shore_linable": false,
+      "safety_score": 1.0,
+      "landmark_score": 0.3333,
+      "tags": {
+        "shore_fraction": "0.0",
+        "mean_clearance": "2.28",
+        "straight_dist": "2.9967"
+      }
+    },
+    {
+      "edge_id": "EDGE-SKE-0016-SKE-0035",
+      "source_id": "SKE-0016",
+      "target_id": "SKE-0035",
+      "distance": 3.0806,
+      "shore_linable": false,
+      "safety_score": 1.0,
+      "landmark_score": 0.0,
+      "tags": {
+        "shore_fraction": "0.0",
+        "mean_clearance": "3.18",
+        "straight_dist": "3.0806"
+      }
+    },
+    {
+      "edge_id": "EDGE-SKE-0016-SKE-0022",
+      "source_id": "SKE-0016",
+      "target_id": "SKE-0022",
+      "distance": 3.1953,
+      "shore_linable": false,
+      "safety_score": 1.0,
+      "landmark_score": 0.0,
+      "tags": {
+        "shore_fraction": "0.0",
+        "mean_clearance": "2.077",
+        "straight_dist": "3.1953"
+      }
+    },
+    {
+      "edge_id": "EDGE-SKE-0017-SKE-0026",
+      "source_id": "SKE-0017",
+      "target_id": "SKE-0026",
+      "distance": 1.5524,
+      "shore_linable": false,
+      "safety_score": 1.0,
+      "landmark_score": 0.0,
+      "tags": {
+        "shore_fraction": "0.0",
+        "mean_clearance": "2.42",
+        "straight_dist": "1.5524"
+      }
+    },
+    {
+      "edge_id": "EDGE-SKE-0017-SKE-0036",
+      "source_id": "SKE-0017",
+      "target_id": "SKE-0036",
+      "distance": 3.2311,
+      "shore_linable": false,
+      "safety_score": 1.0,
+      "landmark_score": 0.0,
+      "tags": {
+        "shore_fraction": "0.0",
+        "mean_clearance": "3.18",
+        "straight_dist": "3.2311"
+      }
+    },
+    {
+      "edge_id": "EDGE-SKE-0017-SKE-0027",
+      "source_id": "SKE-0017",
+      "target_id": "SKE-0027",
+      "distance": 3.3541,
+      "shore_linable": false,
+      "safety_score": 1.0,
+      "landmark_score": 0.0,
+      "tags": {
+        "shore_fraction": "0.0",
+        "mean_clearance": "2.274",
+        "straight_dist": "3.3541"
+      }
+    },
+    {
+      "edge_id": "EDGE-SKE-0017-SKE-0021",
+      "source_id": "SKE-0017",
+      "target_id": "SKE-0021",
+      "distance": 3.9051,
+      "shore_linable": false,
+      "safety_score": 1.0,
+      "landmark_score": 0.0,
+      "tags": {
+        "shore_fraction": "0.0",
+        "mean_clearance": "2.12",
+        "straight_dist": "3.9051"
+      }
+    },
+    {
+      "edge_id": "EDGE-SKE-0018-SKE-0028",
+      "source_id": "SKE-0018",
+      "target_id": "SKE-0028",
+      "distance": 1.6763,
+      "shore_linable": false,
+      "safety_score": 1.0,
+      "landmark_score": 0.0,
+      "tags": {
+        "shore_fraction": "0.0",
+        "mean_clearance": "2.7",
+        "straight_dist": "1.6763"
+      }
+    },
+    {
+      "edge_id": "EDGE-SKE-0018-SKE-0019",
+      "source_id": "SKE-0018",
+      "target_id": "SKE-0019",
+      "distance": 2.7,
+      "shore_linable": false,
+      "safety_score": 0.8785,
+      "landmark_score": 0.0,
+      "tags": {
+        "shore_fraction": "0.0",
+        "mean_clearance": "1.757",
+        "straight_dist": "2.7"
+      }
+    },
+    {
+      "edge_id": "EDGE-SKE-0018-SKE-0038",
+      "source_id": "SKE-0018",
+      "target_id": "SKE-0038",
+      "distance": 3.228,
+      "shore_linable": false,
+      "safety_score": 1.0,
+      "landmark_score": 0.0,
+      "tags": {
+        "shore_fraction": "0.0",
+        "mean_clearance": "3.42",
+        "straight_dist": "3.228"
+      }
+    },
+    {
+      "edge_id": "EDGE-SKE-0018-SKE-0027",
+      "source_id": "SKE-0018",
+      "target_id": "SKE-0027",
+      "distance": 3.6401,
+      "shore_linable": false,
+      "safety_score": 1.0,
+      "landmark_score": 0.0,
+      "tags": {
+        "shore_fraction": "0.0",
+        "mean_clearance": "2.52",
+        "straight_dist": "3.6401"
+      }
+    },
+    {
+      "edge_id": "EDGE-SKE-0014-SKE-0018",
+      "source_id": "SKE-0018",
+      "target_id": "SKE-0014",
+      "distance": 3.9115,
+      "shore_linable": false,
+      "safety_score": 0.86,
+      "landmark_score": 0.0,
+      "tags": {
+        "shore_fraction": "0.0",
+        "mean_clearance": "1.72",
+        "straight_dist": "3.9115"
+      }
+    },
+    {
+      "edge_id": "EDGE-SKE-0019-SKE-0028",
+      "source_id": "SKE-0019",
+      "target_id": "SKE-0028",
+      "distance": 3.5777,
+      "shore_linable": false,
+      "safety_score": 1.0,
+      "landmark_score": 0.0,
+      "tags": {
+        "shore_fraction": "0.0",
+        "mean_clearance": "2.557",
+        "straight_dist": "3.5777"
+      }
+    },
+    {
+      "edge_id": "EDGE-SKE-0020-SKE-0031",
+      "source_id": "SKE-0020",
+      "target_id": "SKE-0031",
+      "distance": 2.6173,
+      "shore_linable": true,
+      "safety_score": 0.51,
+      "landmark_score": 0.3333,
+      "tags": {
+        "shore_fraction": "0.5",
+        "mean_clearance": "1.02",
+        "straight_dist": "2.6173"
+      }
+    },
+    {
+      "edge_id": "EDGE-SKE-0020-SKE-0030",
+      "source_id": "SKE-0020",
+      "target_id": "SKE-0030",
+      "distance": 2.6173,
+      "shore_linable": true,
+      "safety_score": 0.49,
+      "landmark_score": 0.6667,
+      "tags": {
+        "shore_fraction": "0.5",
+        "mean_clearance": "0.98",
+        "straight_dist": "2.6173"
+      }
+    },
+    {
+      "edge_id": "EDGE-SKE-0021-SKE-0032",
+      "source_id": "SKE-0021",
+      "target_id": "SKE-0032",
+      "distance": 1.7464,
+      "shore_linable": false,
+      "safety_score": 1.0,
+      "landmark_score": 0.0,
+      "tags": {
+        "shore_fraction": "0.0",
+        "mean_clearance": "3.419",
+        "straight_dist": "1.7464"
+      }
+    },
+    {
+      "edge_id": "EDGE-SKE-0021-SKE-0023",
+      "source_id": "SKE-0021",
+      "target_id": "SKE-0023",
+      "distance": 3.2062,
+      "shore_linable": false,
+      "safety_score": 1.0,
+      "landmark_score": 0.0,
+      "tags": {
+        "shore_fraction": "0.0",
+        "mean_clearance": "2.54",
+        "straight_dist": "3.2062"
+      }
+    },
+    {
+      "edge_id": "EDGE-SKE-0021-SKE-0036",
+      "source_id": "SKE-0021",
+      "target_id": "SKE-0036",
+      "distance": 3.3422,
+      "shore_linable": false,
+      "safety_score": 1.0,
+      "landmark_score": 0.0,
+      "tags": {
+        "shore_fraction": "0.0",
+        "mean_clearance": "3.62",
+        "straight_dist": "3.3422"
+      }
+    },
+    {
+      "edge_id": "EDGE-SKE-0022-SKE-0033",
+      "source_id": "SKE-0022",
+      "target_id": "SKE-0033",
+      "distance": 1.6125,
+      "shore_linable": false,
+      "safety_score": 1.0,
+      "landmark_score": 0.0,
+      "tags": {
+        "shore_fraction": "0.0",
+        "mean_clearance": "3.58",
+        "straight_dist": "1.6125"
+      }
+    },
+    {
+      "edge_id": "EDGE-SKE-0022-SKE-0023",
+      "source_id": "SKE-0022",
+      "target_id": "SKE-0023",
+      "distance": 3.1,
+      "shore_linable": false,
+      "safety_score": 1.0,
+      "landmark_score": 0.0,
+      "tags": {
+        "shore_fraction": "0.0",
+        "mean_clearance": "2.8",
+        "straight_dist": "3.1"
+      }
+    },
+    {
+      "edge_id": "EDGE-SKE-0022-SKE-0034",
+      "source_id": "SKE-0022",
+      "target_id": "SKE-0034",
+      "distance": 3.3615,
+      "shore_linable": false,
+      "safety_score": 1.0,
+      "landmark_score": 0.0,
+      "tags": {
+        "shore_fraction": "0.0",
+        "mean_clearance": "3.62",
+        "straight_dist": "3.3615"
+      }
+    },
+    {
+      "edge_id": "EDGE-SKE-0023-SKE-0034",
+      "source_id": "SKE-0023",
+      "target_id": "SKE-0034",
+      "distance": 1.7117,
+      "shore_linable": false,
+      "safety_score": 1.0,
+      "landmark_score": 0.0,
+      "tags": {
+        "shore_fraction": "0.0",
+        "mean_clearance": "3.62",
+        "straight_dist": "1.7117"
+      }
+    },
+    {
+      "edge_id": "EDGE-SKE-0024-SKE-0029",
+      "source_id": "SKE-0024",
+      "target_id": "SKE-0029",
+      "distance": 2.1541,
+      "shore_linable": false,
+      "safety_score": 0.9,
+      "landmark_score": 0.6667,
+      "tags": {
+        "shore_fraction": "0.2",
+        "mean_clearance": "1.8",
+        "straight_dist": "2.1541"
+      }
+    },
+    {
+      "edge_id": "EDGE-SKE-0024-SKE-0025",
+      "source_id": "SKE-0024",
+      "target_id": "SKE-0025",
+      "distance": 2.3087,
+      "shore_linable": false,
+      "safety_score": 1.0,
+      "landmark_score": 0.3333,
+      "tags": {
+        "shore_fraction": "0.0",
+        "mean_clearance": "3.04",
+        "straight_dist": "2.3087"
+      }
+    },
+    {
+      "edge_id": "EDGE-SKE-0024-SKE-0035",
+      "source_id": "SKE-0024",
+      "target_id": "SKE-0035",
+      "distance": 2.6249,
+      "shore_linable": false,
+      "safety_score": 1.0,
+      "landmark_score": 0.3333,
+      "tags": {
+        "shore_fraction": "0.0",
+        "mean_clearance": "3.751",
+        "straight_dist": "2.6249"
+      }
+    },
+    {
+      "edge_id": "EDGE-SKE-0024-SKE-0039",
+      "source_id": "SKE-0024",
+      "target_id": "SKE-0039",
+      "distance": 2.6683,
+      "shore_linable": false,
+      "safety_score": 1.0,
+      "landmark_score": 0.3333,
+      "tags": {
+        "shore_fraction": "0.0",
+        "mean_clearance": "3.03",
+        "straight_dist": "2.6683"
+      }
+    },
+    {
+      "edge_id": "EDGE-SKE-0025-SKE-0035",
+      "source_id": "SKE-0025",
+      "target_id": "SKE-0035",
+      "distance": 1.5297,
+      "shore_linable": false,
+      "safety_score": 1.0,
+      "landmark_score": 0.0,
+      "tags": {
+        "shore_fraction": "0.0",
+        "mean_clearance": "3.92",
+        "straight_dist": "1.5297"
+      }
+    },
+    {
+      "edge_id": "EDGE-SKE-0025-SKE-0039",
+      "source_id": "SKE-0025",
+      "target_id": "SKE-0039",
+      "distance": 2.9411,
+      "shore_linable": false,
+      "safety_score": 1.0,
+      "landmark_score": 0.0,
+      "tags": {
+        "shore_fraction": "0.0",
+        "mean_clearance": "3.62",
+        "straight_dist": "2.9411"
+      }
+    },
+    {
+      "edge_id": "EDGE-SKE-0022-SKE-0025",
+      "source_id": "SKE-0025",
+      "target_id": "SKE-0022",
+      "distance": 3.4234,
+      "shore_linable": false,
+      "safety_score": 1.0,
+      "landmark_score": 0.0,
+      "tags": {
+        "shore_fraction": "0.0",
+        "mean_clearance": "2.856",
+        "straight_dist": "3.4234"
+      }
+    },
+    {
+      "edge_id": "EDGE-SKE-0026-SKE-0036",
+      "source_id": "SKE-0026",
+      "target_id": "SKE-0036",
+      "distance": 1.7,
+      "shore_linable": false,
+      "safety_score": 1.0,
+      "landmark_score": 0.0,
+      "tags": {
+        "shore_fraction": "0.0",
+        "mean_clearance": "3.92",
+        "straight_dist": "1.7"
+      }
+    },
+    {
+      "edge_id": "EDGE-SKE-0026-SKE-0043",
+      "source_id": "SKE-0026",
+      "target_id": "SKE-0043",
+      "distance": 3.0806,
+      "shore_linable": false,
+      "safety_score": 1.0,
+      "landmark_score": 0.0,
+      "tags": {
+        "shore_fraction": "0.0",
+        "mean_clearance": "4.68",
+        "straight_dist": "3.0806"
+      }
+    },
+    {
+      "edge_id": "EDGE-SKE-0026-SKE-0032",
+      "source_id": "SKE-0026",
+      "target_id": "SKE-0032",
+      "distance": 3.1953,
+      "shore_linable": false,
+      "safety_score": 1.0,
+      "landmark_score": 0.0,
+      "tags": {
+        "shore_fraction": "0.0",
+        "mean_clearance": "3.72",
+        "straight_dist": "3.1953"
+      }
+    },
+    {
+      "edge_id": "EDGE-SKE-0026-SKE-0027",
+      "source_id": "SKE-0026",
+      "target_id": "SKE-0027",
+      "distance": 3.4,
+      "shore_linable": false,
+      "safety_score": 1.0,
+      "landmark_score": 0.0,
+      "tags": {
+        "shore_fraction": "0.0",
+        "mean_clearance": "3.053",
+        "straight_dist": "3.4"
+      }
+    },
+    {
+      "edge_id": "EDGE-SKE-0027-SKE-0037",
+      "source_id": "SKE-0027",
+      "target_id": "SKE-0037",
+      "distance": 1.5297,
+      "shore_linable": false,
+      "safety_score": 1.0,
+      "landmark_score": 0.0,
+      "tags": {
+        "shore_fraction": "0.0",
+        "mean_clearance": "3.92",
+        "straight_dist": "1.5297"
+      }
+    },
+    {
+      "edge_id": "EDGE-SKE-0027-SKE-0028",
+      "source_id": "SKE-0027",
+      "target_id": "SKE-0028",
+      "distance": 2.9155,
+      "shore_linable": false,
+      "safety_score": 1.0,
+      "landmark_score": 0.0,
+      "tags": {
+        "shore_fraction": "0.0",
+        "mean_clearance": "3.32",
+        "straight_dist": "2.9155"
+      }
+    },
+    {
+      "edge_id": "EDGE-SKE-0027-SKE-0042",
+      "source_id": "SKE-0027",
+      "target_id": "SKE-0042",
+      "distance": 3.0676,
+      "shore_linable": false,
+      "safety_score": 1.0,
+      "landmark_score": 0.0,
+      "tags": {
+        "shore_fraction": "0.0",
+        "mean_clearance": "4.6",
+        "straight_dist": "3.0676"
+      }
+    },
+    {
+      "edge_id": "EDGE-SKE-0027-SKE-0038",
+      "source_id": "SKE-0027",
+      "target_id": "SKE-0038",
+      "distance": 3.0806,
+      "shore_linable": false,
+      "safety_score": 1.0,
+      "landmark_score": 0.0,
+      "tags": {
+        "shore_fraction": "0.0",
+        "mean_clearance": "4.08",
+        "straight_dist": "3.0806"
+      }
+    },
+    {
+      "edge_id": "EDGE-SKE-0028-SKE-0038",
+      "source_id": "SKE-0028",
+      "target_id": "SKE-0038",
+      "distance": 1.5524,
+      "shore_linable": false,
+      "safety_score": 1.0,
+      "landmark_score": 0.0,
+      "tags": {
+        "shore_fraction": "0.0",
+        "mean_clearance": "4.22",
+        "straight_dist": "1.5524"
+      }
+    },
+    {
+      "edge_id": "EDGE-SKE-0028-SKE-0037",
+      "source_id": "SKE-0028",
+      "target_id": "SKE-0037",
+      "distance": 2.8636,
+      "shore_linable": false,
+      "safety_score": 1.0,
+      "landmark_score": 0.0,
+      "tags": {
+        "shore_fraction": "0.0",
+        "mean_clearance": "4.1",
+        "straight_dist": "2.8636"
+      }
+    },
+    {
+      "edge_id": "EDGE-SKE-0028-SKE-0042",
+      "source_id": "SKE-0028",
+      "target_id": "SKE-0042",
+      "distance": 3.2202,
+      "shore_linable": false,
+      "safety_score": 1.0,
+      "landmark_score": 0.0,
+      "tags": {
+        "shore_fraction": "0.0",
+        "mean_clearance": "4.76",
+        "straight_dist": "3.2202"
+      }
+    },
+    {
+      "edge_id": "EDGE-SKE-0029-SKE-0039",
+      "source_id": "SKE-0029",
+      "target_id": "SKE-0039",
+      "distance": 3.1623,
+      "shore_linable": false,
+      "safety_score": 1.0,
+      "landmark_score": 0.6667,
+      "tags": {
+        "shore_fraction": "0.2",
+        "mean_clearance": "2.027",
+        "straight_dist": "3.1623"
+      }
+    },
+    {
+      "edge_id": "EDGE-SKE-0030-ZONE-2zO1ky5n57$hlSP0I709Q7",
+      "source_id": "SKE-0030",
+      "target_id": "ZONE-2zO1ky5n57$hlSP0I709Q7",
+      "distance": 2.6084,
+      "shore_linable": true,
+      "safety_score": 0.49,
+      "landmark_score": 0.6667,
+      "tags": {
+        "shore_fraction": "0.5",
+        "mean_clearance": "0.98",
+        "straight_dist": "2.6084"
+      }
+    },
+    {
+      "edge_id": "EDGE-SKE-0030-SKE-0041",
+      "source_id": "SKE-0030",
+      "target_id": "SKE-0041",
+      "distance": 2.6773,
+      "shore_linable": true,
+      "safety_score": 0.47,
+      "landmark_score": 0.6667,
+      "tags": {
+        "shore_fraction": "0.6",
+        "mean_clearance": "0.94",
+        "straight_dist": "2.6907"
+      }
+    },
+    {
+      "edge_id": "EDGE-SKE-0031-SKE-0041",
+      "source_id": "SKE-0031",
+      "target_id": "SKE-0041",
+      "distance": 2.6773,
+      "shore_linable": true,
+      "safety_score": 0.47,
+      "landmark_score": 0.3333,
+      "tags": {
+        "shore_fraction": "0.6",
+        "mean_clearance": "0.94",
+        "straight_dist": "2.6907"
+      }
+    },
+    {
+      "edge_id": "EDGE-SKE-0031-SKE-0051",
+      "source_id": "SKE-0031",
+      "target_id": "SKE-0051",
+      "distance": 3.59,
+      "shore_linable": true,
+      "safety_score": 0.05,
+      "landmark_score": 0.0,
+      "tags": {
+        "shore_fraction": "1.0",
+        "mean_clearance": "0.1",
+        "straight_dist": "3.6"
+      }
+    },
+    {
+      "edge_id": "EDGE-SKE-0030-SKE-0031",
+      "source_id": "SKE-0031",
+      "target_id": "SKE-0030",
+      "distance": 3.6,
+      "shore_linable": true,
+      "safety_score": 0.05,
+      "landmark_score": 0.6667,
+      "tags": {
+        "shore_fraction": "1.0",
+        "mean_clearance": "0.1",
+        "straight_dist": "3.6"
+      }
+    },
+    {
+      "edge_id": "EDGE-SKE-0032-SKE-0040",
+      "source_id": "SKE-0032",
+      "target_id": "SKE-0040",
+      "distance": 1.6155,
+      "shore_linable": false,
+      "safety_score": 1.0,
+      "landmark_score": 0.0,
+      "tags": {
+        "shore_fraction": "0.0",
+        "mean_clearance": "5.02",
+        "straight_dist": "1.6155"
+      }
+    },
+    {
+      "edge_id": "EDGE-SKE-0032-SKE-0036",
+      "source_id": "SKE-0032",
+      "target_id": "SKE-0036",
+      "distance": 2.2361,
+      "shore_linable": false,
+      "safety_score": 1.0,
+      "landmark_score": 0.0,
+      "tags": {
+        "shore_fraction": "0.0",
+        "mean_clearance": "4.5",
+        "straight_dist": "2.2361"
+      }
+    },
+    {
+      "edge_id": "EDGE-SKE-0032-SKE-0043",
+      "source_id": "SKE-0032",
+      "target_id": "SKE-0043",
+      "distance": 2.9833,
+      "shore_linable": false,
+      "safety_score": 1.0,
+      "landmark_score": 0.0,
+      "tags": {
+        "shore_fraction": "0.0",
+        "mean_clearance": "5.22",
+        "straight_dist": "2.9833"
+      }
+    },
+    {
+      "edge_id": "EDGE-SKE-0032-SKE-0049",
+      "source_id": "SKE-0032",
+      "target_id": "SKE-0049",
+      "distance": 3.1401,
+      "shore_linable": false,
+      "safety_score": 1.0,
+      "landmark_score": 0.0,
+      "tags": {
+        "shore_fraction": "0.0",
+        "mean_clearance": "5.82",
+        "straight_dist": "3.1401"
+      }
+    },
+    {
+      "edge_id": "EDGE-SKE-0033-SKE-0046",
+      "source_id": "SKE-0033",
+      "target_id": "SKE-0046",
+      "distance": 2.3087,
+      "shore_linable": false,
+      "safety_score": 1.0,
+      "landmark_score": 0.0,
+      "tags": {
+        "shore_fraction": "0.0",
+        "mean_clearance": "5.44",
+        "straight_dist": "2.3087"
+      }
+    },
+    {
+      "edge_id": "EDGE-SKE-0033-SKE-0034",
+      "source_id": "SKE-0033",
+      "target_id": "SKE-0034",
+      "distance": 2.7019,
+      "shore_linable": false,
+      "safety_score": 1.0,
+      "landmark_score": 0.0,
+      "tags": {
+        "shore_fraction": "0.0",
+        "mean_clearance": "4.42",
+        "straight_dist": "2.7019"
+      }
+    },
+    {
+      "edge_id": "EDGE-SKE-0023-SKE-0033",
+      "source_id": "SKE-0033",
+      "target_id": "SKE-0023",
+      "distance": 3.3121,
+      "shore_linable": false,
+      "safety_score": 1.0,
+      "landmark_score": 0.0,
+      "tags": {
+        "shore_fraction": "0.0",
+        "mean_clearance": "3.58",
+        "straight_dist": "3.3121"
+      }
+    },
+    {
+      "edge_id": "EDGE-SKE-0033-SKE-0052",
+      "source_id": "SKE-0033",
+      "target_id": "SKE-0052",
+      "distance": 3.3242,
+      "shore_linable": false,
+      "safety_score": 1.0,
+      "landmark_score": 0.0,
+      "tags": {
+        "shore_fraction": "0.0",
+        "mean_clearance": "5.8",
+        "straight_dist": "3.3242"
+      }
+    },
+    {
+      "edge_id": "EDGE-SKE-0034-SKE-0047",
+      "source_id": "SKE-0034",
+      "target_id": "SKE-0047",
+      "distance": 2.4331,
+      "shore_linable": false,
+      "safety_score": 1.0,
+      "landmark_score": 0.0,
+      "tags": {
+        "shore_fraction": "0.0",
+        "mean_clearance": "5.7",
+        "straight_dist": "2.4331"
+      }
+    },
+    {
+      "edge_id": "EDGE-SKE-0034-SKE-0046",
+      "source_id": "SKE-0034",
+      "target_id": "SKE-0046",
+      "distance": 2.9,
+      "shore_linable": false,
+      "safety_score": 1.0,
+      "landmark_score": 0.0,
+      "tags": {
+        "shore_fraction": "0.0",
+        "mean_clearance": "5.5",
+        "straight_dist": "2.9"
+      }
+    },
+    {
+      "edge_id": "EDGE-SKE-0035-SKE-0039",
+      "source_id": "SKE-0035",
+      "target_id": "SKE-0039",
+      "distance": 1.6643,
+      "shore_linable": false,
+      "safety_score": 1.0,
+      "landmark_score": 0.0,
+      "tags": {
+        "shore_fraction": "0.0",
+        "mean_clearance": "3.98",
+        "straight_dist": "1.6643"
+      }
+    },
+    {
+      "edge_id": "EDGE-SKE-0033-SKE-0035",
+      "source_id": "SKE-0035",
+      "target_id": "SKE-0033",
+      "distance": 3.9115,
+      "shore_linable": false,
+      "safety_score": 1.0,
+      "landmark_score": 0.0,
+      "tags": {
+        "shore_fraction": "0.0",
+        "mean_clearance": "4.375",
+        "straight_dist": "3.9115"
+      }
+    },
+    {
+      "edge_id": "EDGE-SKE-0029-SKE-0035",
+      "source_id": "SKE-0035",
+      "target_id": "SKE-0029",
+      "distance": 4.1,
+      "shore_linable": false,
+      "safety_score": 1.0,
+      "landmark_score": 0.6667,
+      "tags": {
+        "shore_fraction": "0.1",
+        "mean_clearance": "2.758",
+        "straight_dist": "4.1"
+      }
+    },
+    {
+      "edge_id": "EDGE-SKE-0036-SKE-0043",
+      "source_id": "SKE-0036",
+      "target_id": "SKE-0043",
+      "distance": 1.5033,
+      "shore_linable": false,
+      "safety_score": 1.0,
+      "landmark_score": 0.0,
+      "tags": {
+        "shore_fraction": "0.0",
+        "mean_clearance": "5.42",
+        "straight_dist": "1.5033"
+      }
+    },
+    {
+      "edge_id": "EDGE-SKE-0036-SKE-0040",
+      "source_id": "SKE-0036",
+      "target_id": "SKE-0040",
+      "distance": 1.9416,
+      "shore_linable": false,
+      "safety_score": 1.0,
+      "landmark_score": 0.0,
+      "tags": {
+        "shore_fraction": "0.0",
+        "mean_clearance": "5.22",
+        "straight_dist": "1.9416"
+      }
+    },
+    {
+      "edge_id": "EDGE-SKE-0036-SKE-0054",
+      "source_id": "SKE-0036",
+      "target_id": "SKE-0054",
+      "distance": 3.0017,
+      "shore_linable": false,
+      "safety_score": 1.0,
+      "landmark_score": 0.0,
+      "tags": {
+        "shore_fraction": "0.0",
+        "mean_clearance": "6.16",
+        "straight_dist": "3.0017"
+      }
+    },
+    {
+      "edge_id": "EDGE-SKE-0036-SKE-0049",
+      "source_id": "SKE-0036",
+      "target_id": "SKE-0049",
+      "distance": 3.1906,
+      "shore_linable": false,
+      "safety_score": 1.0,
+      "landmark_score": 0.0,
+      "tags": {
+        "shore_fraction": "0.0",
+        "mean_clearance": "6.02",
+        "straight_dist": "3.1906"
+      }
+    },
+    {
+      "edge_id": "EDGE-SKE-0037-SKE-0042",
+      "source_id": "SKE-0037",
+      "target_id": "SKE-0042",
+      "distance": 1.5652,
+      "shore_linable": false,
+      "safety_score": 1.0,
+      "landmark_score": 0.0,
+      "tags": {
+        "shore_fraction": "0.0",
+        "mean_clearance": "5.36",
+        "straight_dist": "1.5652"
+      }
+    },
+    {
+      "edge_id": "EDGE-SKE-0037-SKE-0038",
+      "source_id": "SKE-0037",
+      "target_id": "SKE-0038",
+      "distance": 2.2204,
+      "shore_linable": false,
+      "safety_score": 1.0,
+      "landmark_score": 0.0,
+      "tags": {
+        "shore_fraction": "0.0",
+        "mean_clearance": "4.82",
+        "straight_dist": "2.2204"
+      }
+    },
+    {
+      "edge_id": "EDGE-SKE-0037-SKE-0053",
+      "source_id": "SKE-0037",
+      "target_id": "SKE-0053",
+      "distance": 2.9017,
+      "shore_linable": false,
+      "safety_score": 1.0,
+      "landmark_score": 0.0,
+      "tags": {
+        "shore_fraction": "0.0",
+        "mean_clearance": "6.089",
+        "straight_dist": "2.9017"
+      }
+    },
+    {
+      "edge_id": "EDGE-SKE-0038-SKE-0042",
+      "source_id": "SKE-0038",
+      "target_id": "SKE-0042",
+      "distance": 1.8601,
+      "shore_linable": false,
+      "safety_score": 1.0,
+      "landmark_score": 0.0,
+      "tags": {
+        "shore_fraction": "0.0",
+        "mean_clearance": "5.5",
+        "straight_dist": "1.8601"
+      }
+    },
+    {
+      "edge_id": "EDGE-SKE-0038-SKE-0053",
+      "source_id": "SKE-0038",
+      "target_id": "SKE-0053",
+      "distance": 3.3422,
+      "shore_linable": false,
+      "safety_score": 1.0,
+      "landmark_score": 0.0,
+      "tags": {
+        "shore_fraction": "0.0",
+        "mean_clearance": "6.255",
+        "straight_dist": "3.3422"
+      }
+    },
+    {
+      "edge_id": "EDGE-SKE-0039-SKE-0048",
+      "source_id": "SKE-0039",
+      "target_id": "SKE-0048",
+      "distance": 3.6486,
+      "shore_linable": true,
+      "safety_score": 1.0,
+      "landmark_score": 0.3333,
+      "tags": {
+        "shore_fraction": "0.4",
+        "mean_clearance": "2.03",
+        "straight_dist": "3.6715"
+      }
+    },
+    {
+      "edge_id": "EDGE-SKE-0040-SKE-0049",
+      "source_id": "SKE-0040",
+      "target_id": "SKE-0049",
+      "distance": 1.6031,
+      "shore_linable": false,
+      "safety_score": 1.0,
+      "landmark_score": 0.0,
+      "tags": {
+        "shore_fraction": "0.0",
+        "mean_clearance": "6.56",
+        "straight_dist": "1.6031"
+      }
+    },
+    {
+      "edge_id": "EDGE-SKE-0040-SKE-0043",
+      "source_id": "SKE-0040",
+      "target_id": "SKE-0043",
+      "distance": 1.7464,
+      "shore_linable": false,
+      "safety_score": 1.0,
+      "landmark_score": 0.0,
+      "tags": {
+        "shore_fraction": "0.0",
+        "mean_clearance": "6.0",
+        "straight_dist": "1.7464"
+      }
+    },
+    {
+      "edge_id": "EDGE-SKE-0040-SKE-0054",
+      "source_id": "SKE-0040",
+      "target_id": "SKE-0054",
+      "distance": 2.4207,
+      "shore_linable": false,
+      "safety_score": 1.0,
+      "landmark_score": 0.0,
+      "tags": {
+        "shore_fraction": "0.0",
+        "mean_clearance": "6.7",
+        "straight_dist": "2.4207"
+      }
+    },
+    {
+      "edge_id": "EDGE-SKE-0041-SKE-0051",
+      "source_id": "SKE-0041",
+      "target_id": "SKE-0051",
+      "distance": 2.4083,
+      "shore_linable": true,
+      "safety_score": 0.51,
+      "landmark_score": 0.3333,
+      "tags": {
+        "shore_fraction": "0.6",
+        "mean_clearance": "1.02",
+        "straight_dist": "2.4083"
+      }
+    },
+    {
+      "edge_id": "EDGE-SKE-0041-SKE-0055",
+      "source_id": "SKE-0041",
+      "target_id": "SKE-0055",
+      "distance": 2.7448,
+      "shore_linable": true,
+      "safety_score": 0.47,
+      "landmark_score": 0.6667,
+      "tags": {
+        "shore_fraction": "0.6",
+        "mean_clearance": "0.94",
+        "straight_dist": "2.7586"
+      }
+    },
+    {
+      "edge_id": "EDGE-SKE-0042-SKE-0053",
+      "source_id": "SKE-0042",
+      "target_id": "SKE-0053",
+      "distance": 1.6155,
+      "shore_linable": false,
+      "safety_score": 1.0,
+      "landmark_score": 0.0,
+      "tags": {
+        "shore_fraction": "0.0",
+        "mean_clearance": "6.775",
+        "straight_dist": "1.6155"
+      }
+    },
+    {
+      "edge_id": "EDGE-SKE-0042-SKE-0061",
+      "source_id": "SKE-0042",
+      "target_id": "SKE-0061",
+      "distance": 2.9017,
+      "shore_linable": false,
+      "safety_score": 1.0,
+      "landmark_score": 0.0,
+      "tags": {
+        "shore_fraction": "0.0",
+        "mean_clearance": "6.68",
+        "straight_dist": "2.9017"
+      }
+    },
+    {
+      "edge_id": "EDGE-SKE-0043-SKE-0054",
+      "source_id": "SKE-0043",
+      "target_id": "SKE-0054",
+      "distance": 1.5133,
+      "shore_linable": false,
+      "safety_score": 1.0,
+      "landmark_score": 0.0,
+      "tags": {
+        "shore_fraction": "0.0",
+        "mean_clearance": "6.9",
+        "straight_dist": "1.5133"
+      }
+    },
+    {
+      "edge_id": "EDGE-SKE-0043-SKE-0049",
+      "source_id": "SKE-0043",
+      "target_id": "SKE-0049",
+      "distance": 2.1633,
+      "shore_linable": false,
+      "safety_score": 1.0,
+      "landmark_score": 0.0,
+      "tags": {
+        "shore_fraction": "0.0",
+        "mean_clearance": "6.78",
+        "straight_dist": "2.1633"
+      }
+    },
+    {
+      "edge_id": "EDGE-SKE-0043-SKE-0062",
+      "source_id": "SKE-0043",
+      "target_id": "SKE-0062",
+      "distance": 3.0017,
+      "shore_linable": false,
+      "safety_score": 1.0,
+      "landmark_score": 0.0,
+      "tags": {
+        "shore_fraction": "0.0",
+        "mean_clearance": "6.74",
+        "straight_dist": "3.0017"
+      }
+    },
+    {
+      "edge_id": "EDGE-SKE-0044-SKE-0050",
+      "source_id": "SKE-0044",
+      "target_id": "SKE-0050",
+      "distance": 1.7205,
+      "shore_linable": true,
+      "safety_score": 0.42,
+      "landmark_score": 1.0,
+      "tags": {
+        "shore_fraction": "0.8",
+        "mean_clearance": "0.84",
+        "straight_dist": "1.7205"
+      }
+    },
+    {
+      "edge_id": "EDGE-SKE-0044-SKE-0057",
+      "source_id": "SKE-0044",
+      "target_id": "SKE-0057",
+      "distance": 2.2023,
+      "shore_linable": false,
+      "safety_score": 0.6947,
+      "landmark_score": 0.6667,
+      "tags": {
+        "shore_fraction": "0.3",
+        "mean_clearance": "1.389",
+        "straight_dist": "2.2023"
+      }
+    },
+    {
+      "edge_id": "EDGE-SKE-0044-SKE-0045",
+      "source_id": "SKE-0044",
+      "target_id": "SKE-0045",
+      "distance": 2.8848,
+      "shore_linable": true,
+      "safety_score": 0.44,
+      "landmark_score": 1.0,
+      "tags": {
+        "shore_fraction": "0.7",
+        "mean_clearance": "0.88",
+        "straight_dist": "2.9"
+      }
+    },
+    {
+      "edge_id": "EDGE-SKE-0044-ZONE-2RTFVvtPr83Q0UxafooW91",
+      "source_id": "SKE-0044",
+      "target_id": "ZONE-2RTFVvtPr83Q0UxafooW91",
+      "distance": 3.849,
+      "shore_linable": true,
+      "safety_score": 0.45,
+      "landmark_score": 1.0,
+      "tags": {
+        "shore_fraction": "0.6",
+        "mean_clearance": "0.9",
+        "straight_dist": "3.8648"
+      }
+    },
+    {
+      "edge_id": "EDGE-SKE-0045-SKE-0050",
+      "source_id": "SKE-0045",
+      "target_id": "SKE-0050",
+      "distance": 1.7821,
+      "shore_linable": true,
+      "safety_score": 0.33,
+      "landmark_score": 0.6667,
+      "tags": {
+        "shore_fraction": "0.8",
+        "mean_clearance": "0.66",
+        "straight_dist": "1.8028"
+      }
+    },
+    {
+      "edge_id": "EDGE-SKE-0045-SKE-0055",
+      "source_id": "SKE-0045",
+      "target_id": "SKE-0055",
+      "distance": 1.8385,
+      "shore_linable": true,
+      "safety_score": 0.39,
+      "landmark_score": 0.6667,
+      "tags": {
+        "shore_fraction": "0.7",
+        "mean_clearance": "0.78",
+        "straight_dist": "1.8385"
+      }
+    },
+    {
+      "edge_id": "EDGE-SKE-0046-SKE-0056",
+      "source_id": "SKE-0046",
+      "target_id": "SKE-0056",
+      "distance": 1.5133,
+      "shore_linable": false,
+      "safety_score": 1.0,
+      "landmark_score": 0.0,
+      "tags": {
+        "shore_fraction": "0.0",
+        "mean_clearance": "7.12",
+        "straight_dist": "1.5133"
+      }
+    },
+    {
+      "edge_id": "EDGE-SKE-0046-SKE-0047",
+      "source_id": "SKE-0046",
+      "target_id": "SKE-0047",
+      "distance": 1.6279,
+      "shore_linable": false,
+      "safety_score": 1.0,
+      "landmark_score": 0.0,
+      "tags": {
+        "shore_fraction": "0.0",
+        "mean_clearance": "6.7",
+        "straight_dist": "1.6279"
+      }
+    },
+    {
+      "edge_id": "EDGE-SKE-0046-SKE-0052",
+      "source_id": "SKE-0046",
+      "target_id": "SKE-0052",
+      "distance": 1.8868,
+      "shore_linable": false,
+      "safety_score": 1.0,
+      "landmark_score": 0.0,
+      "tags": {
+        "shore_fraction": "0.0",
+        "mean_clearance": "6.888",
+        "straight_dist": "1.8868"
+      }
+    },
+    {
+      "edge_id": "EDGE-SKE-0046-SKE-0059",
+      "source_id": "SKE-0046",
+      "target_id": "SKE-0059",
+      "distance": 2.7785,
+      "shore_linable": false,
+      "safety_score": 1.0,
+      "landmark_score": 0.0,
+      "tags": {
+        "shore_fraction": "0.0",
+        "mean_clearance": "6.9",
+        "straight_dist": "2.7785"
+      }
+    },
+    {
+      "edge_id": "EDGE-SKE-0047-SKE-0056",
+      "source_id": "SKE-0047",
+      "target_id": "SKE-0056",
+      "distance": 1.8439,
+      "shore_linable": false,
+      "safety_score": 1.0,
+      "landmark_score": 0.0,
+      "tags": {
+        "shore_fraction": "0.0",
+        "mean_clearance": "7.26",
+        "straight_dist": "1.8439"
+      }
+    },
+    {
+      "edge_id": "EDGE-SKE-0047-SKE-0059",
+      "source_id": "SKE-0047",
+      "target_id": "SKE-0059",
+      "distance": 2.1095,
+      "shore_linable": false,
+      "safety_score": 1.0,
+      "landmark_score": 0.0,
+      "tags": {
+        "shore_fraction": "0.0",
+        "mean_clearance": "7.0",
+        "straight_dist": "2.1095"
+      }
+    },
+    {
+      "edge_id": "EDGE-SKE-0047-SKE-0052",
+      "source_id": "SKE-0047",
+      "target_id": "SKE-0052",
+      "distance": 3.2757,
+      "shore_linable": false,
+      "safety_score": 1.0,
+      "landmark_score": 0.0,
+      "tags": {
+        "shore_fraction": "0.0",
+        "mean_clearance": "7.111",
+        "straight_dist": "3.2757"
+      }
+    },
+    {
+      "edge_id": "EDGE-SKE-0047-SKE-0064",
+      "source_id": "SKE-0047",
+      "target_id": "SKE-0064",
+      "distance": 3.2802,
+      "shore_linable": false,
+      "safety_score": 1.0,
+      "landmark_score": 0.0,
+      "tags": {
+        "shore_fraction": "0.0",
+        "mean_clearance": "6.8",
+        "straight_dist": "3.2802"
+      }
+    },
+    {
+      "edge_id": "EDGE-SKE-0048-SKE-0058",
+      "source_id": "SKE-0048",
+      "target_id": "SKE-0058",
+      "distance": 1.2414,
+      "shore_linable": true,
+      "safety_score": 0.3205,
+      "landmark_score": 0.3333,
+      "tags": {
+        "shore_fraction": "1.0",
+        "mean_clearance": "0.641",
+        "straight_dist": "1.6401"
+      }
+    },
+    {
+      "edge_id": "EDGE-SKE-0048-SKE-0063",
+      "source_id": "SKE-0048",
+      "target_id": "SKE-0063",
+      "distance": 3.4566,
+      "shore_linable": true,
+      "safety_score": 0.867,
+      "landmark_score": 0.3333,
+      "tags": {
+        "shore_fraction": "0.5",
+        "mean_clearance": "1.734",
+        "straight_dist": "3.6359"
+      }
+    },
+    {
+      "edge_id": "EDGE-SKE-0029-SKE-0048",
+      "source_id": "SKE-0048",
+      "target_id": "SKE-0029",
+      "distance": 3.528,
+      "shore_linable": true,
+      "safety_score": 0.25,
+      "landmark_score": 0.6667,
+      "tags": {
+        "shore_fraction": "1.0",
+        "mean_clearance": "0.5",
+        "straight_dist": "3.6497"
+      }
+    },
+    {
+      "edge_id": "EDGE-FEAT-0wp3zaH$L7VBlQRHvLq4Rl-SKE-0048",
+      "source_id": "SKE-0048",
       "target_id": "FEAT-0wp3zaH$L7VBlQRHvLq4Rl",
+      "distance": 3.9608,
+      "shore_linable": true,
+      "safety_score": 0.1,
+      "landmark_score": 1.0,
+      "tags": {
+        "shore_fraction": "1.0",
+        "mean_clearance": "0.2",
+        "straight_dist": "4.951"
+      }
+    },
+    {
+      "edge_id": "EDGE-SKE-0049-SKE-0060",
+      "source_id": "SKE-0049",
+      "target_id": "SKE-0060",
+      "distance": 1.6031,
+      "shore_linable": false,
+      "safety_score": 1.0,
+      "landmark_score": 0.0,
+      "tags": {
+        "shore_fraction": "0.0",
+        "mean_clearance": "7.06",
+        "straight_dist": "1.6031"
+      }
+    },
+    {
+      "edge_id": "EDGE-SKE-0049-SKE-0054",
+      "source_id": "SKE-0049",
+      "target_id": "SKE-0054",
+      "distance": 1.6279,
+      "shore_linable": false,
+      "safety_score": 1.0,
+      "landmark_score": 0.0,
+      "tags": {
+        "shore_fraction": "0.0",
+        "mean_clearance": "7.5",
+        "straight_dist": "1.6279"
+      }
+    },
+    {
+      "edge_id": "EDGE-SKE-0049-SKE-0062",
+      "source_id": "SKE-0049",
+      "target_id": "SKE-0062",
+      "distance": 2.6173,
+      "shore_linable": false,
+      "safety_score": 1.0,
+      "landmark_score": 0.0,
+      "tags": {
+        "shore_fraction": "0.0",
+        "mean_clearance": "6.92",
+        "straight_dist": "2.6173"
+      }
+    },
+    {
+      "edge_id": "EDGE-SKE-0050-SKE-0057",
+      "source_id": "SKE-0050",
+      "target_id": "SKE-0057",
+      "distance": 1.7692,
+      "shore_linable": true,
+      "safety_score": 0.3462,
+      "landmark_score": 0.3333,
+      "tags": {
+        "shore_fraction": "1.0",
+        "mean_clearance": "0.692",
+        "straight_dist": "1.7692"
+      }
+    },
+    {
+      "edge_id": "EDGE-SKE-0050-SKE-0055",
+      "source_id": "SKE-0050",
+      "target_id": "SKE-0055",
+      "distance": 2.7984,
+      "shore_linable": true,
+      "safety_score": 0.11,
+      "landmark_score": 0.3333,
+      "tags": {
+        "shore_fraction": "1.0",
+        "mean_clearance": "0.22",
+        "straight_dist": "2.816"
+      }
+    },
+    {
+      "edge_id": "EDGE-SKE-0051-SKE-0055",
+      "source_id": "SKE-0051",
+      "target_id": "SKE-0055",
+      "distance": 3.8018,
+      "shore_linable": true,
+      "safety_score": 0.11,
+      "landmark_score": 0.3333,
+      "tags": {
+        "shore_fraction": "1.0",
+        "mean_clearance": "0.22",
+        "straight_dist": "3.8118"
+      }
+    },
+    {
+      "edge_id": "EDGE-SKE-0051-SKE-0068",
+      "source_id": "SKE-0051",
+      "target_id": "SKE-0068",
+      "distance": 3.8348,
+      "shore_linable": true,
+      "safety_score": 0.59,
+      "landmark_score": 0.0,
+      "tags": {
+        "shore_fraction": "0.5",
+        "mean_clearance": "1.18",
+        "straight_dist": "3.9051"
+      }
+    },
+    {
+      "edge_id": "EDGE-FEAT-0JV8FQB5b5DPTE76PusxqH-SKE-0051",
+      "source_id": "SKE-0051",
+      "target_id": "FEAT-0JV8FQB5b5DPTE76PusxqH",
+      "distance": 4.3096,
+      "shore_linable": true,
+      "safety_score": 0.08,
+      "landmark_score": 0.3333,
+      "tags": {
+        "shore_fraction": "1.0",
+        "mean_clearance": "0.16",
+        "straight_dist": "4.4283"
+      }
+    },
+    {
+      "edge_id": "EDGE-SKE-0052-SKE-0056",
+      "source_id": "SKE-0052",
+      "target_id": "SKE-0056",
+      "distance": 1.8682,
+      "shore_linable": false,
+      "safety_score": 1.0,
+      "landmark_score": 0.0,
+      "tags": {
+        "shore_fraction": "0.0",
+        "mean_clearance": "7.339",
+        "straight_dist": "1.8682"
+      }
+    },
+    {
+      "edge_id": "EDGE-SKE-0052-SKE-0064",
+      "source_id": "SKE-0052",
+      "target_id": "SKE-0064",
+      "distance": 2.2472,
+      "shore_linable": false,
+      "safety_score": 1.0,
+      "landmark_score": 0.0,
+      "tags": {
+        "shore_fraction": "0.0",
+        "mean_clearance": "6.61",
+        "straight_dist": "2.2472"
+      }
+    },
+    {
+      "edge_id": "EDGE-SKE-0052-SKE-0059",
+      "source_id": "SKE-0052",
+      "target_id": "SKE-0059",
+      "distance": 3.3106,
+      "shore_linable": false,
+      "safety_score": 1.0,
+      "landmark_score": 0.0,
+      "tags": {
+        "shore_fraction": "0.0",
+        "mean_clearance": "6.911",
+        "straight_dist": "3.3106"
+      }
+    },
+    {
+      "edge_id": "EDGE-SKE-0053-SKE-0061",
+      "source_id": "SKE-0053",
+      "target_id": "SKE-0061",
+      "distance": 1.5652,
+      "shore_linable": false,
+      "safety_score": 1.0,
+      "landmark_score": 0.0,
+      "tags": {
+        "shore_fraction": "0.0",
+        "mean_clearance": "6.995",
+        "straight_dist": "1.5652"
+      }
+    },
+    {
+      "edge_id": "EDGE-SKE-0053-SKE-0070",
+      "source_id": "SKE-0053",
+      "target_id": "SKE-0070",
+      "distance": 2.9,
+      "shore_linable": false,
+      "safety_score": 1.0,
+      "landmark_score": 0.0,
+      "tags": {
+        "shore_fraction": "0.0",
+        "mean_clearance": "6.233",
+        "straight_dist": "2.9"
+      }
+    },
+    {
+      "edge_id": "EDGE-SKE-0053-SKE-0066",
+      "source_id": "SKE-0053",
+      "target_id": "SKE-0066",
+      "distance": 3.2527,
+      "shore_linable": false,
+      "safety_score": 1.0,
+      "landmark_score": 0.0,
+      "tags": {
+        "shore_fraction": "0.0",
+        "mean_clearance": "6.535",
+        "straight_dist": "3.2527"
+      }
+    },
+    {
+      "edge_id": "EDGE-SKE-0054-SKE-0062",
+      "source_id": "SKE-0054",
+      "target_id": "SKE-0062",
+      "distance": 1.5297,
+      "shore_linable": false,
+      "safety_score": 1.0,
+      "landmark_score": 0.0,
+      "tags": {
+        "shore_fraction": "0.0",
+        "mean_clearance": "6.88",
+        "straight_dist": "1.5297"
+      }
+    },
+    {
+      "edge_id": "EDGE-SKE-0054-SKE-0060",
+      "source_id": "SKE-0054",
+      "target_id": "SKE-0060",
+      "distance": 2.1401,
+      "shore_linable": false,
+      "safety_score": 1.0,
+      "landmark_score": 0.0,
+      "tags": {
+        "shore_fraction": "0.0",
+        "mean_clearance": "7.0",
+        "straight_dist": "2.1401"
+      }
+    },
+    {
+      "edge_id": "EDGE-SKE-0055-ZONE-2GDGci$en8jAR10fGEvA6l",
+      "source_id": "SKE-0055",
+      "target_id": "ZONE-2GDGci$en8jAR10fGEvA6l",
+      "distance": 2.7412,
+      "shore_linable": true,
+      "safety_score": 0.47,
+      "landmark_score": 0.6667,
+      "tags": {
+        "shore_fraction": "0.6",
+        "mean_clearance": "0.94",
+        "straight_dist": "2.7546"
+      }
+    },
+    {
+      "edge_id": "EDGE-SKE-0056-SKE-0059",
+      "source_id": "SKE-0056",
+      "target_id": "SKE-0059",
+      "distance": 1.5,
+      "shore_linable": false,
+      "safety_score": 1.0,
+      "landmark_score": 0.0,
+      "tags": {
+        "shore_fraction": "0.0",
+        "mean_clearance": "6.82",
+        "straight_dist": "1.5"
+      }
+    },
+    {
+      "edge_id": "EDGE-SKE-0056-SKE-0064",
+      "source_id": "SKE-0056",
+      "target_id": "SKE-0064",
+      "distance": 1.5232,
+      "shore_linable": false,
+      "safety_score": 1.0,
+      "landmark_score": 0.0,
+      "tags": {
+        "shore_fraction": "0.0",
+        "mean_clearance": "6.56",
+        "straight_dist": "1.5232"
+      }
+    },
+    {
+      "edge_id": "EDGE-SKE-0056-SKE-0067",
+      "source_id": "SKE-0056",
+      "target_id": "SKE-0067",
+      "distance": 2.9206,
+      "shore_linable": false,
+      "safety_score": 1.0,
+      "landmark_score": 0.0,
+      "tags": {
+        "shore_fraction": "0.0",
+        "mean_clearance": "6.1",
+        "straight_dist": "2.9206"
+      }
+    },
+    {
+      "edge_id": "EDGE-SKE-0057-ZONE-2lyI2yiub9QBhgywjO7xcX",
+      "source_id": "SKE-0057",
+      "target_id": "ZONE-2lyI2yiub9QBhgywjO7xcX",
+      "distance": 2.7615,
+      "shore_linable": true,
+      "safety_score": 0.4375,
+      "landmark_score": 0.3333,
+      "tags": {
+        "shore_fraction": "0.9",
+        "mean_clearance": "0.875",
+        "straight_dist": "3.3661"
+      }
+    },
+    {
+      "edge_id": "EDGE-SKE-0045-SKE-0057",
+      "source_id": "SKE-0057",
+      "target_id": "SKE-0045",
+      "distance": 3.4027,
+      "shore_linable": true,
+      "safety_score": 0.5048,
+      "landmark_score": 0.6667,
+      "tags": {
+        "shore_fraction": "0.9",
+        "mean_clearance": "1.01",
+        "straight_dist": "3.5609"
+      }
+    },
+    {
+      "edge_id": "EDGE-FEAT-0JV8FQB5b5DPTE76PusxqH-SKE-0057",
+      "source_id": "SKE-0057",
+      "target_id": "FEAT-0JV8FQB5b5DPTE76PusxqH",
+      "distance": 2.9863,
+      "shore_linable": true,
+      "safety_score": 0.2875,
+      "landmark_score": 0.3333,
+      "tags": {
+        "shore_fraction": "1.0",
+        "mean_clearance": "0.575",
+        "straight_dist": "3.5693"
+      }
+    },
+    {
+      "edge_id": "EDGE-SKE-0058-SKE-0063",
+      "source_id": "SKE-0058",
+      "target_id": "SKE-0063",
+      "distance": 2.184,
+      "shore_linable": false,
+      "safety_score": 1.0,
+      "landmark_score": 0.0,
+      "tags": {
+        "shore_fraction": "0.2",
+        "mean_clearance": "2.0",
+        "straight_dist": "2.184"
+      }
+    },
+    {
+      "edge_id": "EDGE-SKE-0039-SKE-0058",
+      "source_id": "SKE-0058",
+      "target_id": "SKE-0039",
+      "distance": 3.8013,
+      "shore_linable": false,
+      "safety_score": 0.9942,
+      "landmark_score": 0.3333,
+      "tags": {
+        "shore_fraction": "0.2",
+        "mean_clearance": "1.988",
+        "straight_dist": "3.8013"
+      }
+    },
+    {
+      "edge_id": "EDGE-SKE-0058-SKE-0065",
+      "source_id": "SKE-0058",
+      "target_id": "SKE-0065",
+      "distance": 3.9051,
+      "shore_linable": false,
+      "safety_score": 1.0,
+      "landmark_score": 0.0,
+      "tags": {
+        "shore_fraction": "0.1",
+        "mean_clearance": "2.86",
+        "straight_dist": "3.9051"
+      }
+    },
+    {
+      "edge_id": "EDGE-SKE-0058-SKE-0073",
+      "source_id": "SKE-0058",
+      "target_id": "SKE-0073",
+      "distance": 4.1617,
+      "shore_linable": false,
+      "safety_score": 1.0,
+      "landmark_score": 0.0,
+      "tags": {
+        "shore_fraction": "0.1",
+        "mean_clearance": "2.64",
+        "straight_dist": "4.1617"
+      }
+    },
+    {
+      "edge_id": "EDGE-SKE-0059-SKE-0067",
+      "source_id": "SKE-0059",
+      "target_id": "SKE-0067",
+      "distance": 1.5232,
+      "shore_linable": false,
+      "safety_score": 1.0,
+      "landmark_score": 0.0,
+      "tags": {
+        "shore_fraction": "0.0",
+        "mean_clearance": "5.66",
+        "straight_dist": "1.5232"
+      }
+    },
+    {
+      "edge_id": "EDGE-SKE-0059-SKE-0064",
+      "source_id": "SKE-0059",
+      "target_id": "SKE-0064",
+      "distance": 1.8682,
+      "shore_linable": false,
+      "safety_score": 1.0,
+      "landmark_score": 0.0,
+      "tags": {
+        "shore_fraction": "0.0",
+        "mean_clearance": "6.12",
+        "straight_dist": "1.8682"
+      }
+    },
+    {
+      "edge_id": "EDGE-SKE-0059-SKE-0072",
+      "source_id": "SKE-0059",
+      "target_id": "SKE-0072",
+      "distance": 2.9,
+      "shore_linable": false,
+      "safety_score": 1.0,
+      "landmark_score": 0.0,
+      "tags": {
+        "shore_fraction": "0.0",
+        "mean_clearance": "5.36",
+        "straight_dist": "2.9"
+      }
+    },
+    {
+      "edge_id": "EDGE-SKE-0060-SKE-0069",
+      "source_id": "SKE-0060",
+      "target_id": "SKE-0069",
+      "distance": 1.5297,
+      "shore_linable": false,
+      "safety_score": 1.0,
+      "landmark_score": 0.0,
+      "tags": {
+        "shore_fraction": "0.0",
+        "mean_clearance": "5.6",
+        "straight_dist": "1.5297"
+      }
+    },
+    {
+      "edge_id": "EDGE-SKE-0060-SKE-0062",
+      "source_id": "SKE-0060",
+      "target_id": "SKE-0062",
+      "distance": 2.01,
+      "shore_linable": false,
+      "safety_score": 1.0,
+      "landmark_score": 0.0,
+      "tags": {
+        "shore_fraction": "0.0",
+        "mean_clearance": "6.24",
+        "straight_dist": "2.01"
+      }
+    },
+    {
+      "edge_id": "EDGE-SKE-0060-SKE-0071",
+      "source_id": "SKE-0060",
+      "target_id": "SKE-0071",
+      "distance": 2.7803,
+      "shore_linable": false,
+      "safety_score": 1.0,
+      "landmark_score": 0.0,
+      "tags": {
+        "shore_fraction": "0.0",
+        "mean_clearance": "5.5",
+        "straight_dist": "2.7803"
+      }
+    },
+    {
+      "edge_id": "EDGE-SKE-0061-SKE-0070",
+      "source_id": "SKE-0061",
+      "target_id": "SKE-0070",
+      "distance": 1.6553,
+      "shore_linable": false,
+      "safety_score": 1.0,
+      "landmark_score": 0.0,
+      "tags": {
+        "shore_fraction": "0.0",
+        "mean_clearance": "5.6",
+        "straight_dist": "1.6553"
+      }
+    },
+    {
+      "edge_id": "EDGE-SKE-0061-SKE-0066",
+      "source_id": "SKE-0061",
+      "target_id": "SKE-0066",
+      "distance": 1.8358,
+      "shore_linable": false,
+      "safety_score": 1.0,
+      "landmark_score": 0.0,
+      "tags": {
+        "shore_fraction": "0.0",
+        "mean_clearance": "5.9",
+        "straight_dist": "1.8358"
+      }
+    },
+    {
+      "edge_id": "EDGE-SKE-0061-SKE-0077",
+      "source_id": "SKE-0061",
+      "target_id": "SKE-0077",
+      "distance": 3.9115,
+      "shore_linable": false,
+      "safety_score": 1.0,
+      "landmark_score": 0.0,
+      "tags": {
+        "shore_fraction": "0.0",
+        "mean_clearance": "4.7",
+        "straight_dist": "3.9115"
+      }
+    },
+    {
+      "edge_id": "EDGE-SKE-0038-SKE-0061",
+      "source_id": "SKE-0061",
+      "target_id": "SKE-0038",
+      "distance": 4.2379,
+      "shore_linable": false,
+      "safety_score": 1.0,
+      "landmark_score": 0.0,
+      "tags": {
+        "shore_fraction": "0.0",
+        "mean_clearance": "6.1",
+        "straight_dist": "4.2379"
+      }
+    },
+    {
+      "edge_id": "EDGE-SKE-0062-SKE-0071",
+      "source_id": "SKE-0062",
+      "target_id": "SKE-0071",
+      "distance": 1.5133,
+      "shore_linable": false,
+      "safety_score": 1.0,
+      "landmark_score": 0.0,
+      "tags": {
+        "shore_fraction": "0.0",
+        "mean_clearance": "5.38",
+        "straight_dist": "1.5133"
+      }
+    },
+    {
+      "edge_id": "EDGE-SKE-0062-SKE-0069",
+      "source_id": "SKE-0062",
+      "target_id": "SKE-0069",
+      "distance": 2.642,
+      "shore_linable": false,
+      "safety_score": 1.0,
+      "landmark_score": 0.0,
+      "tags": {
+        "shore_fraction": "0.0",
+        "mean_clearance": "5.48",
+        "straight_dist": "2.642"
+      }
+    },
+    {
+      "edge_id": "EDGE-SKE-0063-SKE-0065",
+      "source_id": "SKE-0063",
+      "target_id": "SKE-0065",
+      "distance": 1.7263,
+      "shore_linable": false,
+      "safety_score": 1.0,
+      "landmark_score": 0.0,
+      "tags": {
+        "shore_fraction": "0.0",
+        "mean_clearance": "3.88",
+        "straight_dist": "1.7263"
+      }
+    },
+    {
+      "edge_id": "EDGE-SKE-0063-SKE-0073",
+      "source_id": "SKE-0063",
+      "target_id": "SKE-0073",
+      "distance": 2.2204,
+      "shore_linable": false,
+      "safety_score": 1.0,
+      "landmark_score": 0.0,
+      "tags": {
+        "shore_fraction": "0.0",
+        "mean_clearance": "3.66",
+        "straight_dist": "2.2204"
+      }
+    },
+    {
+      "edge_id": "EDGE-SKE-0039-SKE-0063",
+      "source_id": "SKE-0063",
+      "target_id": "SKE-0039",
+      "distance": 3.7014,
+      "shore_linable": false,
+      "safety_score": 1.0,
+      "landmark_score": 0.0,
+      "tags": {
+        "shore_fraction": "0.0",
+        "mean_clearance": "2.984",
+        "straight_dist": "3.7014"
+      }
+    },
+    {
+      "edge_id": "EDGE-SKE-0063-SKE-0078",
+      "source_id": "SKE-0063",
+      "target_id": "SKE-0078",
+      "distance": 3.7736,
+      "shore_linable": false,
+      "safety_score": 1.0,
+      "landmark_score": 0.0,
+      "tags": {
+        "shore_fraction": "0.0",
+        "mean_clearance": "3.42",
+        "straight_dist": "3.7736"
+      }
+    },
+    {
+      "edge_id": "EDGE-SKE-0064-SKE-0072",
+      "source_id": "SKE-0064",
+      "target_id": "SKE-0072",
+      "distance": 1.5297,
+      "shore_linable": false,
+      "safety_score": 1.0,
+      "landmark_score": 0.0,
+      "tags": {
+        "shore_fraction": "0.0",
+        "mean_clearance": "5.1",
+        "straight_dist": "1.5297"
+      }
+    },
+    {
+      "edge_id": "EDGE-SKE-0064-SKE-0067",
+      "source_id": "SKE-0064",
+      "target_id": "SKE-0067",
+      "distance": 2.5632,
+      "shore_linable": false,
+      "safety_score": 1.0,
+      "landmark_score": 0.0,
+      "tags": {
+        "shore_fraction": "0.0",
+        "mean_clearance": "5.4",
+        "straight_dist": "2.5632"
+      }
+    },
+    {
+      "edge_id": "EDGE-SKE-0046-SKE-0064",
+      "source_id": "SKE-0064",
+      "target_id": "SKE-0046",
+      "distance": 2.9275,
+      "shore_linable": false,
+      "safety_score": 1.0,
+      "landmark_score": 0.0,
+      "tags": {
+        "shore_fraction": "0.0",
+        "mean_clearance": "6.72",
+        "straight_dist": "2.9275"
+      }
+    },
+    {
+      "edge_id": "EDGE-SKE-0065-SKE-0073",
+      "source_id": "SKE-0065",
+      "target_id": "SKE-0073",
+      "distance": 1.5524,
+      "shore_linable": false,
+      "safety_score": 1.0,
+      "landmark_score": 0.0,
+      "tags": {
+        "shore_fraction": "0.0",
+        "mean_clearance": "4.54",
+        "straight_dist": "1.5524"
+      }
+    },
+    {
+      "edge_id": "EDGE-SKE-0065-SKE-0078",
+      "source_id": "SKE-0065",
+      "target_id": "SKE-0078",
+      "distance": 2.9155,
+      "shore_linable": false,
+      "safety_score": 1.0,
+      "landmark_score": 0.0,
+      "tags": {
+        "shore_fraction": "0.0",
+        "mean_clearance": "4.04",
+        "straight_dist": "2.9155"
+      }
+    },
+    {
+      "edge_id": "EDGE-SKE-0052-SKE-0065",
+      "source_id": "SKE-0065",
+      "target_id": "SKE-0052",
+      "distance": 3.4409,
+      "shore_linable": false,
+      "safety_score": 1.0,
+      "landmark_score": 0.0,
+      "tags": {
+        "shore_fraction": "0.0",
+        "mean_clearance": "5.963",
+        "straight_dist": "3.4409"
+      }
+    },
+    {
+      "edge_id": "EDGE-SKE-0065-SKE-0072",
+      "source_id": "SKE-0065",
+      "target_id": "SKE-0072",
+      "distance": 3.956,
+      "shore_linable": false,
+      "safety_score": 1.0,
+      "landmark_score": 0.0,
+      "tags": {
+        "shore_fraction": "0.0",
+        "mean_clearance": "4.664",
+        "straight_dist": "3.956"
+      }
+    },
+    {
+      "edge_id": "EDGE-SKE-0066-SKE-0070",
+      "source_id": "SKE-0066",
+      "target_id": "SKE-0070",
+      "distance": 2.377,
+      "shore_linable": false,
+      "safety_score": 1.0,
+      "landmark_score": 0.0,
+      "tags": {
+        "shore_fraction": "0.0",
+        "mean_clearance": "5.14",
+        "straight_dist": "2.377"
+      }
+    },
+    {
+      "edge_id": "EDGE-SKE-0066-SKE-0077",
+      "source_id": "SKE-0066",
+      "target_id": "SKE-0077",
+      "distance": 2.4515,
+      "shore_linable": false,
+      "safety_score": 1.0,
+      "landmark_score": 0.0,
+      "tags": {
+        "shore_fraction": "0.0",
+        "mean_clearance": "4.2",
+        "straight_dist": "2.4515"
+      }
+    },
+    {
+      "edge_id": "EDGE-SKE-0066-SKE-0084",
+      "source_id": "SKE-0066",
+      "target_id": "SKE-0084",
+      "distance": 3.9812,
+      "shore_linable": false,
+      "safety_score": 1.0,
+      "landmark_score": 0.3333,
+      "tags": {
+        "shore_fraction": "0.0",
+        "mean_clearance": "3.5",
+        "straight_dist": "3.9812"
+      }
+    },
+    {
+      "edge_id": "EDGE-SKE-0042-SKE-0066",
+      "source_id": "SKE-0066",
+      "target_id": "SKE-0042",
+      "distance": 4.1629,
+      "shore_linable": false,
+      "safety_score": 1.0,
+      "landmark_score": 0.0,
+      "tags": {
+        "shore_fraction": "0.0",
+        "mean_clearance": "6.06",
+        "straight_dist": "4.1629"
+      }
+    },
+    {
+      "edge_id": "EDGE-SKE-0067-SKE-0074",
+      "source_id": "SKE-0067",
+      "target_id": "SKE-0074",
+      "distance": 1.6279,
+      "shore_linable": false,
+      "safety_score": 1.0,
+      "landmark_score": 0.0,
+      "tags": {
+        "shore_fraction": "0.0",
+        "mean_clearance": "4.14",
+        "straight_dist": "1.6279"
+      }
+    },
+    {
+      "edge_id": "EDGE-SKE-0067-SKE-0072",
+      "source_id": "SKE-0067",
+      "target_id": "SKE-0072",
+      "distance": 2.7659,
+      "shore_linable": false,
+      "safety_score": 1.0,
+      "landmark_score": 0.0,
+      "tags": {
+        "shore_fraction": "0.0",
+        "mean_clearance": "4.64",
+        "straight_dist": "2.7659"
+      }
+    },
+    {
+      "edge_id": "EDGE-SKE-0067-SKE-0082",
+      "source_id": "SKE-0067",
+      "target_id": "SKE-0082",
+      "distance": 3.2757,
+      "shore_linable": false,
+      "safety_score": 1.0,
+      "landmark_score": 0.0,
+      "tags": {
+        "shore_fraction": "0.0",
+        "mean_clearance": "3.3",
+        "straight_dist": "3.2757"
+      }
+    },
+    {
+      "edge_id": "EDGE-SKE-0055-SKE-0068",
+      "source_id": "SKE-0068",
+      "target_id": "SKE-0055",
+      "distance": 2.9856,
+      "shore_linable": true,
+      "safety_score": 0.63,
+      "landmark_score": 0.3333,
+      "tags": {
+        "shore_fraction": "0.4",
+        "mean_clearance": "1.26",
+        "straight_dist": "2.9967"
+      }
+    },
+    {
+      "edge_id": "EDGE-SKE-0068-SKE-0079",
+      "source_id": "SKE-0068",
+      "target_id": "SKE-0079",
+      "distance": 3.061,
+      "shore_linable": false,
+      "safety_score": 1.0,
+      "landmark_score": 0.6667,
+      "tags": {
+        "shore_fraction": "0.0",
+        "mean_clearance": "2.317",
+        "straight_dist": "3.061"
+      }
+    },
+    {
+      "edge_id": "EDGE-SKE-0068-SKE-0081",
+      "source_id": "SKE-0068",
+      "target_id": "SKE-0081",
+      "distance": 3.6069,
+      "shore_linable": true,
+      "safety_score": 0.69,
+      "landmark_score": 0.3333,
+      "tags": {
+        "shore_fraction": "0.4",
+        "mean_clearance": "1.38",
+        "straight_dist": "3.6069"
+      }
+    },
+    {
+      "edge_id": "EDGE-SKE-0069-SKE-0075",
+      "source_id": "SKE-0069",
+      "target_id": "SKE-0075",
+      "distance": 1.5033,
+      "shore_linable": false,
+      "safety_score": 1.0,
+      "landmark_score": 0.0,
+      "tags": {
+        "shore_fraction": "0.0",
+        "mean_clearance": "4.08",
+        "straight_dist": "1.5033"
+      }
+    },
+    {
+      "edge_id": "EDGE-SKE-0069-SKE-0071",
+      "source_id": "SKE-0069",
+      "target_id": "SKE-0071",
+      "distance": 2.508,
+      "shore_linable": false,
+      "safety_score": 1.0,
+      "landmark_score": 0.0,
+      "tags": {
+        "shore_fraction": "0.0",
+        "mean_clearance": "4.72",
+        "straight_dist": "2.508"
+      }
+    },
+    {
+      "edge_id": "EDGE-SKE-0069-ZONE-0BGjw438P6JAPe2g$sDgcT",
+      "source_id": "SKE-0069",
+      "target_id": "ZONE-0BGjw438P6JAPe2g$sDgcT",
+      "distance": 2.7418,
+      "shore_linable": false,
+      "safety_score": 1.0,
+      "landmark_score": 0.0,
+      "tags": {
+        "shore_fraction": "0.0",
+        "mean_clearance": "6.098",
+        "straight_dist": "2.7418"
+      }
+    },
+    {
+      "edge_id": "EDGE-SKE-0049-SKE-0069",
+      "source_id": "SKE-0069",
+      "target_id": "SKE-0049",
+      "distance": 3.1257,
+      "shore_linable": false,
+      "safety_score": 1.0,
+      "landmark_score": 0.0,
+      "tags": {
+        "shore_fraction": "0.0",
+        "mean_clearance": "6.279",
+        "straight_dist": "3.1257"
+      }
+    },
+    {
+      "edge_id": "EDGE-SKE-0070-SKE-0077",
+      "source_id": "SKE-0070",
+      "target_id": "SKE-0077",
+      "distance": 3.3287,
+      "shore_linable": false,
+      "safety_score": 1.0,
+      "landmark_score": 0.0,
+      "tags": {
+        "shore_fraction": "0.0",
+        "mean_clearance": "3.92",
+        "straight_dist": "3.3287"
+      }
+    },
+    {
+      "edge_id": "EDGE-SKE-0070-SKE-0085",
+      "source_id": "SKE-0070",
+      "target_id": "SKE-0085",
+      "distance": 3.5171,
+      "shore_linable": false,
+      "safety_score": 1.0,
+      "landmark_score": 0.0,
+      "tags": {
+        "shore_fraction": "0.0",
+        "mean_clearance": "3.14",
+        "straight_dist": "3.5171"
+      }
+    },
+    {
+      "edge_id": "EDGE-SKE-0070-SKE-0076",
+      "source_id": "SKE-0070",
+      "target_id": "SKE-0076",
+      "distance": 4.1146,
+      "shore_linable": false,
+      "safety_score": 1.0,
+      "landmark_score": 0.0,
+      "tags": {
+        "shore_fraction": "0.0",
+        "mean_clearance": "3.772",
+        "straight_dist": "4.1146"
+      }
+    },
+    {
+      "edge_id": "EDGE-SKE-0071-SKE-0076",
+      "source_id": "SKE-0071",
+      "target_id": "SKE-0076",
+      "distance": 1.6763,
+      "shore_linable": false,
+      "safety_score": 1.0,
+      "landmark_score": 0.0,
+      "tags": {
+        "shore_fraction": "0.0",
+        "mean_clearance": "3.8",
+        "straight_dist": "1.6763"
+      }
+    },
+    {
+      "edge_id": "EDGE-SKE-0071-SKE-0075",
+      "source_id": "SKE-0071",
+      "target_id": "SKE-0075",
+      "distance": 2.9069,
+      "shore_linable": false,
+      "safety_score": 1.0,
+      "landmark_score": 0.0,
+      "tags": {
+        "shore_fraction": "0.0",
+        "mean_clearance": "3.98",
+        "straight_dist": "2.9069"
+      }
+    },
+    {
+      "edge_id": "EDGE-SKE-0054-SKE-0071",
+      "source_id": "SKE-0071",
+      "target_id": "SKE-0054",
+      "distance": 3.0414,
+      "shore_linable": false,
+      "safety_score": 1.0,
+      "landmark_score": 0.0,
+      "tags": {
+        "shore_fraction": "0.0",
+        "mean_clearance": "6.12",
+        "straight_dist": "3.0414"
+      }
+    },
+    {
+      "edge_id": "EDGE-SKE-0056-SKE-0072",
+      "source_id": "SKE-0072",
+      "target_id": "SKE-0056",
+      "distance": 3.0364,
+      "shore_linable": false,
+      "safety_score": 1.0,
+      "landmark_score": 0.0,
+      "tags": {
+        "shore_fraction": "0.0",
+        "mean_clearance": "5.8",
+        "straight_dist": "3.0364"
+      }
+    },
+    {
+      "edge_id": "EDGE-SKE-0072-SKE-0074",
+      "source_id": "SKE-0072",
+      "target_id": "SKE-0074",
+      "distance": 3.1623,
+      "shore_linable": false,
+      "safety_score": 1.0,
+      "landmark_score": 0.0,
+      "tags": {
+        "shore_fraction": "0.0",
+        "mean_clearance": "3.82",
+        "straight_dist": "3.1623"
+      }
+    },
+    {
+      "edge_id": "EDGE-SKE-0052-SKE-0072",
+      "source_id": "SKE-0072",
+      "target_id": "SKE-0052",
+      "distance": 3.5171,
+      "shore_linable": false,
+      "safety_score": 1.0,
+      "landmark_score": 0.0,
+      "tags": {
+        "shore_fraction": "0.0",
+        "mean_clearance": "5.819",
+        "straight_dist": "3.5171"
+      }
+    },
+    {
+      "edge_id": "EDGE-SKE-0073-SKE-0078",
+      "source_id": "SKE-0073",
+      "target_id": "SKE-0078",
+      "distance": 1.5652,
+      "shore_linable": false,
+      "safety_score": 1.0,
+      "landmark_score": 0.0,
+      "tags": {
+        "shore_fraction": "0.0",
+        "mean_clearance": "3.52",
+        "straight_dist": "1.5652"
+      }
+    },
+    {
+      "edge_id": "EDGE-SKE-0073-SKE-0086",
+      "source_id": "SKE-0073",
+      "target_id": "SKE-0086",
+      "distance": 3.1385,
+      "shore_linable": false,
+      "safety_score": 1.0,
+      "landmark_score": 0.0,
+      "tags": {
+        "shore_fraction": "0.1",
+        "mean_clearance": "2.78",
+        "straight_dist": "3.1385"
+      }
+    },
+    {
+      "edge_id": "EDGE-SKE-0072-SKE-0073",
+      "source_id": "SKE-0073",
+      "target_id": "SKE-0072",
+      "distance": 4.1012,
+      "shore_linable": false,
+      "safety_score": 1.0,
+      "landmark_score": 0.0,
+      "tags": {
+        "shore_fraction": "0.0",
+        "mean_clearance": "4.139",
+        "straight_dist": "4.1012"
+      }
+    },
+    {
+      "edge_id": "EDGE-SKE-0074-SKE-0082",
+      "source_id": "SKE-0074",
+      "target_id": "SKE-0082",
+      "distance": 1.6492,
+      "shore_linable": false,
+      "safety_score": 1.0,
+      "landmark_score": 0.0,
+      "tags": {
+        "shore_fraction": "0.0",
+        "mean_clearance": "2.5",
+        "straight_dist": "1.6492"
+      }
+    },
+    {
+      "edge_id": "EDGE-SKE-0059-SKE-0074",
+      "source_id": "SKE-0074",
+      "target_id": "SKE-0059",
+      "distance": 3.1321,
+      "shore_linable": false,
+      "safety_score": 1.0,
+      "landmark_score": 0.0,
+      "tags": {
+        "shore_fraction": "0.0",
+        "mean_clearance": "4.84",
+        "straight_dist": "3.1321"
+      }
+    },
+    {
+      "edge_id": "EDGE-SKE-0074-SKE-0091",
+      "source_id": "SKE-0074",
+      "target_id": "SKE-0091",
+      "distance": 3.4928,
+      "shore_linable": true,
+      "safety_score": 0.8345,
+      "landmark_score": 0.0,
+      "tags": {
+        "shore_fraction": "0.4",
+        "mean_clearance": "1.669",
+        "straight_dist": "3.4928"
+      }
+    },
+    {
+      "edge_id": "EDGE-SKE-0074-SKE-0075",
+      "source_id": "SKE-0074",
+      "target_id": "SKE-0075",
+      "distance": 3.5,
+      "shore_linable": false,
+      "safety_score": 1.0,
+      "landmark_score": 0.0,
+      "tags": {
+        "shore_fraction": "0.0",
+        "mean_clearance": "3.157",
+        "straight_dist": "3.5"
+      }
+    },
+    {
+      "edge_id": "EDGE-SKE-0060-SKE-0075",
+      "source_id": "SKE-0075",
+      "target_id": "SKE-0060",
+      "distance": 3.0265,
+      "shore_linable": false,
+      "safety_score": 1.0,
+      "landmark_score": 0.0,
+      "tags": {
+        "shore_fraction": "0.0",
+        "mean_clearance": "4.84",
+        "straight_dist": "3.0265"
+      }
+    },
+    {
+      "edge_id": "EDGE-SKE-0075-SKE-0076",
+      "source_id": "SKE-0075",
+      "target_id": "SKE-0076",
+      "distance": 3.1145,
+      "shore_linable": false,
+      "safety_score": 1.0,
+      "landmark_score": 0.0,
+      "tags": {
+        "shore_fraction": "0.0",
+        "mean_clearance": "3.18",
+        "straight_dist": "3.1145"
+      }
+    },
+    {
+      "edge_id": "EDGE-SKE-0075-SKE-0082",
+      "source_id": "SKE-0075",
+      "target_id": "SKE-0082",
+      "distance": 3.4886,
+      "shore_linable": false,
+      "safety_score": 1.0,
+      "landmark_score": 0.0,
+      "tags": {
+        "shore_fraction": "0.0",
+        "mean_clearance": "2.36",
+        "straight_dist": "3.4886"
+      }
+    },
+    {
+      "edge_id": "EDGE-SKE-0076-SKE-0087",
+      "source_id": "SKE-0076",
+      "target_id": "SKE-0087",
+      "distance": 1.8439,
+      "shore_linable": false,
+      "safety_score": 1.0,
+      "landmark_score": 0.0,
+      "tags": {
+        "shore_fraction": "0.1",
+        "mean_clearance": "2.12",
+        "straight_dist": "1.8439"
+      }
+    },
+    {
+      "edge_id": "EDGE-SKE-0062-SKE-0076",
+      "source_id": "SKE-0076",
+      "target_id": "SKE-0062",
+      "distance": 3.178,
+      "shore_linable": false,
+      "safety_score": 1.0,
+      "landmark_score": 0.0,
+      "tags": {
+        "shore_fraction": "0.0",
+        "mean_clearance": "4.58",
+        "straight_dist": "3.178"
+      }
+    },
+    {
+      "edge_id": "EDGE-SKE-0076-SKE-0085",
+      "source_id": "SKE-0076",
+      "target_id": "SKE-0085",
       "distance": 3.2249,
       "shore_linable": false,
-      "safety_score": 0.5,
+      "safety_score": 1.0,
       "landmark_score": 0.0,
-      "tags": {}
+      "tags": {
+        "shore_fraction": "0.0",
+        "mean_clearance": "2.053",
+        "straight_dist": "3.2249"
+      }
     },
     {
-      "edge_id": "EDGE-FEAT-3BojDOt51BFRctjuYcdjPm-FEAT-0_ndkJyO9CVPHaFtnEM6Kk",
-      "source_id": "FEAT-3BojDOt51BFRctjuYcdjPm",
-      "target_id": "FEAT-0_ndkJyO9CVPHaFtnEM6Kk",
-      "distance": 5.2154,
+      "edge_id": "EDGE-SKE-0076-SKE-0092",
+      "source_id": "SKE-0076",
+      "target_id": "SKE-0092",
+      "distance": 3.3174,
+      "shore_linable": true,
+      "safety_score": 0.9095,
+      "landmark_score": 0.0,
+      "tags": {
+        "shore_fraction": "0.4",
+        "mean_clearance": "1.819",
+        "straight_dist": "3.4132"
+      }
+    },
+    {
+      "edge_id": "EDGE-SKE-0077-SKE-0084",
+      "source_id": "SKE-0077",
+      "target_id": "SKE-0084",
+      "distance": 1.5297,
       "shore_linable": false,
-      "safety_score": 0.5,
-      "landmark_score": 0.0,
-      "tags": {}
+      "safety_score": 1.0,
+      "landmark_score": 0.3333,
+      "tags": {
+        "shore_fraction": "0.0",
+        "mean_clearance": "2.3",
+        "straight_dist": "1.5297"
+      }
     },
     {
-      "edge_id": "EDGE-FEAT-3BojDOt51BFRctjuYcdjPm-ZONE-0BGjw438P6JAPe2g$sDgcT",
-      "source_id": "FEAT-3BojDOt51BFRctjuYcdjPm",
-      "target_id": "ZONE-0BGjw438P6JAPe2g$sDgcT",
-      "distance": 15.1515,
+      "edge_id": "EDGE-SKE-0077-SKE-0093",
+      "source_id": "SKE-0077",
+      "target_id": "SKE-0093",
+      "distance": 3.178,
+      "shore_linable": true,
+      "safety_score": 0.769,
+      "landmark_score": 0.3333,
+      "tags": {
+        "shore_fraction": "0.4",
+        "mean_clearance": "1.538",
+        "straight_dist": "3.178"
+      }
+    },
+    {
+      "edge_id": "EDGE-SKE-0077-SKE-0083",
+      "source_id": "SKE-0077",
+      "target_id": "SKE-0083",
+      "distance": 3.3615,
       "shore_linable": false,
-      "safety_score": 0.5,
-      "landmark_score": 0.0,
-      "tags": {}
+      "safety_score": 1.0,
+      "landmark_score": 0.6667,
+      "tags": {
+        "shore_fraction": "0.0",
+        "mean_clearance": "2.254",
+        "straight_dist": "3.3615"
+      }
     },
     {
-      "edge_id": "EDGE-ZONE-0BGjw438P6JAPe2g$sDgcT-FEAT-3jTK1b2NH4aPT0WWuekAnp",
-      "source_id": "ZONE-0BGjw438P6JAPe2g$sDgcT",
-      "target_id": "FEAT-3jTK1b2NH4aPT0WWuekAnp",
-      "distance": 14.6783,
+      "edge_id": "EDGE-SKE-0078-SKE-0086",
+      "source_id": "SKE-0078",
+      "target_id": "SKE-0086",
+      "distance": 1.5811,
       "shore_linable": false,
-      "safety_score": 0.5,
+      "safety_score": 1.0,
       "landmark_score": 0.0,
-      "tags": {}
+      "tags": {
+        "shore_fraction": "0.1",
+        "mean_clearance": "2.08",
+        "straight_dist": "1.5811"
+      }
     },
     {
-      "edge_id": "EDGE-ZONE-0BGjw438P6JAPe2g$sDgcT-FEAT-2C7bqjFAn4dRRXxCO5ljPg",
-      "source_id": "ZONE-0BGjw438P6JAPe2g$sDgcT",
-      "target_id": "FEAT-2C7bqjFAn4dRRXxCO5ljPg",
-      "distance": 15.108,
+      "edge_id": "EDGE-SKE-0078-SKE-0090",
+      "source_id": "SKE-0078",
+      "target_id": "SKE-0090",
+      "distance": 3.1398,
+      "shore_linable": true,
+      "safety_score": 0.6857,
+      "landmark_score": 0.0,
+      "tags": {
+        "shore_fraction": "0.5",
+        "mean_clearance": "1.371",
+        "straight_dist": "3.245"
+      }
+    },
+    {
+      "edge_id": "EDGE-SKE-0072-SKE-0078",
+      "source_id": "SKE-0078",
+      "target_id": "SKE-0072",
+      "distance": 3.7162,
       "shore_linable": false,
-      "safety_score": 0.5,
+      "safety_score": 1.0,
       "landmark_score": 0.0,
-      "tags": {}
+      "tags": {
+        "shore_fraction": "0.0",
+        "mean_clearance": "3.429",
+        "straight_dist": "3.7162"
+      }
     },
     {
-      "edge_id": "EDGE-ZONE-0BGjw438P6JAPe2g$sDgcT-FEAT-3BojDOt51BFRctjuYcdjPm",
-      "source_id": "ZONE-0BGjw438P6JAPe2g$sDgcT",
-      "target_id": "FEAT-3BojDOt51BFRctjuYcdjPm",
-      "distance": 15.1515,
-      "shore_linable": false,
-      "safety_score": 0.5,
-      "landmark_score": 0.0,
-      "tags": {}
-    },
-    {
-      "edge_id": "EDGE-ZONE-2lyI2yiub9QBhgywjO7xcX-FEAT-0JV8FQB5b5DPTE76PusxqH",
-      "source_id": "ZONE-2lyI2yiub9QBhgywjO7xcX",
-      "target_id": "FEAT-0JV8FQB5b5DPTE76PusxqH",
-      "distance": 1.8542,
-      "shore_linable": false,
-      "safety_score": 0.5,
-      "landmark_score": 0.0,
-      "tags": {}
-    },
-    {
-      "edge_id": "EDGE-ZONE-2lyI2yiub9QBhgywjO7xcX-ZONE-2UG7dUO6vAYheCYwduYFZE",
-      "source_id": "ZONE-2lyI2yiub9QBhgywjO7xcX",
-      "target_id": "ZONE-2UG7dUO6vAYheCYwduYFZE",
-      "distance": 4.7064,
-      "shore_linable": false,
-      "safety_score": 0.5,
-      "landmark_score": 0.0,
-      "tags": {}
-    },
-    {
-      "edge_id": "EDGE-ZONE-2lyI2yiub9QBhgywjO7xcX-ZONE-2GDGci$en8jAR10fGEvA6l",
-      "source_id": "ZONE-2lyI2yiub9QBhgywjO7xcX",
-      "target_id": "ZONE-2GDGci$en8jAR10fGEvA6l",
-      "distance": 4.8761,
-      "shore_linable": false,
-      "safety_score": 0.5,
-      "landmark_score": 0.0,
-      "tags": {}
-    },
-    {
-      "edge_id": "EDGE-ZONE-2zO1ky5n57$hlSP0I709Q7-FEAT-2z4FjdAgjF8BzQmj709ndM",
-      "source_id": "ZONE-2zO1ky5n57$hlSP0I709Q7",
-      "target_id": "FEAT-2z4FjdAgjF8BzQmj709ndM",
-      "distance": 1.894,
-      "shore_linable": false,
-      "safety_score": 0.5,
-      "landmark_score": 0.0,
-      "tags": {}
-    },
-    {
-      "edge_id": "EDGE-ZONE-2zO1ky5n57$hlSP0I709Q7-FEAT-3MacNmU1rFHA3qwn4LY1Sp",
-      "source_id": "ZONE-2zO1ky5n57$hlSP0I709Q7",
-      "target_id": "FEAT-3MacNmU1rFHA3qwn4LY1Sp",
-      "distance": 3.042,
-      "shore_linable": false,
-      "safety_score": 0.5,
-      "landmark_score": 0.0,
-      "tags": {}
-    },
-    {
-      "edge_id": "EDGE-ZONE-2zO1ky5n57$hlSP0I709Q7-FEAT-3o6zFbINX8ue3cLBEniaGh",
-      "source_id": "ZONE-2zO1ky5n57$hlSP0I709Q7",
-      "target_id": "FEAT-3o6zFbINX8ue3cLBEniaGh",
-      "distance": 3.2523,
-      "shore_linable": false,
-      "safety_score": 0.5,
-      "landmark_score": 0.0,
-      "tags": {}
-    },
-    {
-      "edge_id": "EDGE-ZONE-2GDGci$en8jAR10fGEvA6l-FEAT-3MacNmU1rFHA3qwn4LY1Sp",
-      "source_id": "ZONE-2GDGci$en8jAR10fGEvA6l",
-      "target_id": "FEAT-3MacNmU1rFHA3qwn4LY1Sp",
-      "distance": 2.3286,
-      "shore_linable": false,
-      "safety_score": 0.5,
-      "landmark_score": 0.0,
-      "tags": {}
-    },
-    {
-      "edge_id": "EDGE-ZONE-2GDGci$en8jAR10fGEvA6l-FEAT-0JV8FQB5b5DPTE76PusxqH",
-      "source_id": "ZONE-2GDGci$en8jAR10fGEvA6l",
-      "target_id": "FEAT-0JV8FQB5b5DPTE76PusxqH",
-      "distance": 3.3454,
-      "shore_linable": false,
-      "safety_score": 0.5,
-      "landmark_score": 0.0,
-      "tags": {}
-    },
-    {
-      "edge_id": "EDGE-ZONE-2GDGci$en8jAR10fGEvA6l-FEAT-2z4FjdAgjF8BzQmj709ndM",
-      "source_id": "ZONE-2GDGci$en8jAR10fGEvA6l",
-      "target_id": "FEAT-2z4FjdAgjF8BzQmj709ndM",
-      "distance": 3.8178,
-      "shore_linable": false,
-      "safety_score": 0.5,
-      "landmark_score": 0.0,
-      "tags": {}
-    },
-    {
-      "edge_id": "EDGE-ZONE-2UG7dUO6vAYheCYwduYFZE-FEAT-0GgCLy2LP42eJhqSxCFQXc",
-      "source_id": "ZONE-2UG7dUO6vAYheCYwduYFZE",
-      "target_id": "FEAT-0GgCLy2LP42eJhqSxCFQXc",
-      "distance": 3.0809,
-      "shore_linable": false,
-      "safety_score": 0.5,
-      "landmark_score": 0.0,
-      "tags": {}
-    },
-    {
-      "edge_id": "EDGE-ZONE-2UG7dUO6vAYheCYwduYFZE-FEAT-3jTK1b2NH4aPT0WWuekAnp",
-      "source_id": "ZONE-2UG7dUO6vAYheCYwduYFZE",
-      "target_id": "FEAT-3jTK1b2NH4aPT0WWuekAnp",
-      "distance": 4.3918,
-      "shore_linable": false,
-      "safety_score": 0.5,
-      "landmark_score": 0.0,
-      "tags": {}
-    },
-    {
-      "edge_id": "EDGE-ZONE-2UG7dUO6vAYheCYwduYFZE-ZONE-2lyI2yiub9QBhgywjO7xcX",
-      "source_id": "ZONE-2UG7dUO6vAYheCYwduYFZE",
+      "edge_id": "EDGE-SKE-0079-ZONE-2lyI2yiub9QBhgywjO7xcX",
+      "source_id": "SKE-0079",
       "target_id": "ZONE-2lyI2yiub9QBhgywjO7xcX",
-      "distance": 4.7064,
+      "distance": 3.0924,
       "shore_linable": false,
-      "safety_score": 0.5,
-      "landmark_score": 0.0,
-      "tags": {}
+      "safety_score": 0.7679,
+      "landmark_score": 1.0,
+      "tags": {
+        "shore_fraction": "0.0",
+        "mean_clearance": "1.536",
+        "straight_dist": "3.0924"
+      }
     },
     {
-      "edge_id": "EDGE-ZONE-2gbGtfPHrFnOw3AWmEVj8l-FEAT-3KZzX8BSn5$uXshxhC1MGX",
-      "source_id": "ZONE-2gbGtfPHrFnOw3AWmEVj8l",
-      "target_id": "FEAT-3KZzX8BSn5$uXshxhC1MGX",
-      "distance": 1.0135,
+      "edge_id": "EDGE-SKE-0079-SKE-0080",
+      "source_id": "SKE-0079",
+      "target_id": "SKE-0080",
+      "distance": 3.1016,
       "shore_linable": false,
-      "safety_score": 0.5,
-      "landmark_score": 0.0,
-      "tags": {}
+      "safety_score": 1.0,
+      "landmark_score": 1.0,
+      "tags": {
+        "shore_fraction": "0.3",
+        "mean_clearance": "2.009",
+        "straight_dist": "3.1016"
+      }
     },
     {
-      "edge_id": "EDGE-ZONE-2gbGtfPHrFnOw3AWmEVj8l-FEAT-1rcsg60O53_ukZNuZICUKt",
-      "source_id": "ZONE-2gbGtfPHrFnOw3AWmEVj8l",
+      "edge_id": "EDGE-SKE-0079-SKE-0095",
+      "source_id": "SKE-0079",
+      "target_id": "SKE-0095",
+      "distance": 3.3729,
+      "shore_linable": true,
+      "safety_score": 0.6071,
+      "landmark_score": 1.0,
+      "tags": {
+        "shore_fraction": "0.5",
+        "mean_clearance": "1.214",
+        "straight_dist": "3.3941"
+      }
+    },
+    {
+      "edge_id": "EDGE-SKE-0080-SKE-0095",
+      "source_id": "SKE-0080",
+      "target_id": "SKE-0095",
+      "distance": 2.4042,
+      "shore_linable": true,
+      "safety_score": 0.5612,
+      "landmark_score": 0.6667,
+      "tags": {
+        "shore_fraction": "1.0",
+        "mean_clearance": "1.122",
+        "straight_dist": "2.4042"
+      }
+    },
+    {
+      "edge_id": "EDGE-SKE-0080-SKE-0094",
+      "source_id": "SKE-0080",
+      "target_id": "SKE-0094",
+      "distance": 3.2244,
+      "shore_linable": true,
+      "safety_score": 0.5247,
+      "landmark_score": 0.6667,
+      "tags": {
+        "shore_fraction": "1.0",
+        "mean_clearance": "1.049",
+        "straight_dist": "3.2527"
+      }
+    },
+    {
+      "edge_id": "EDGE-SKE-0081-SKE-0088",
+      "source_id": "SKE-0081",
+      "target_id": "SKE-0088",
+      "distance": 1.6143,
+      "shore_linable": true,
+      "safety_score": 0.27,
+      "landmark_score": 0.3333,
+      "tags": {
+        "shore_fraction": "1.0",
+        "mean_clearance": "0.54",
+        "straight_dist": "1.6279"
+      }
+    },
+    {
+      "edge_id": "EDGE-SKE-0079-SKE-0081",
+      "source_id": "SKE-0081",
+      "target_id": "SKE-0079",
+      "distance": 4.4045,
+      "shore_linable": true,
+      "safety_score": 0.426,
+      "landmark_score": 0.6667,
+      "tags": {
+        "shore_fraction": "0.7",
+        "mean_clearance": "0.852",
+        "straight_dist": "4.4045"
+      }
+    },
+    {
+      "edge_id": "EDGE-FEAT-1rcsg60O53_ukZNuZICUKt-SKE-0081",
+      "source_id": "SKE-0081",
       "target_id": "FEAT-1rcsg60O53_ukZNuZICUKt",
-      "distance": 3.912,
-      "shore_linable": false,
-      "safety_score": 0.5,
-      "landmark_score": 0.0,
-      "tags": {}
+      "distance": 5.1876,
+      "shore_linable": true,
+      "safety_score": 0.2277,
+      "landmark_score": 0.6667,
+      "tags": {
+        "shore_fraction": "1.0",
+        "mean_clearance": "0.455",
+        "straight_dist": "5.2216"
+      }
     },
     {
-      "edge_id": "EDGE-ZONE-2gbGtfPHrFnOw3AWmEVj8l-ZONE-2lyI2yiub9QBhgywjO7xcX",
-      "source_id": "ZONE-2gbGtfPHrFnOw3AWmEVj8l",
-      "target_id": "ZONE-2lyI2yiub9QBhgywjO7xcX",
-      "distance": 5.9272,
-      "shore_linable": false,
-      "safety_score": 0.5,
+      "edge_id": "EDGE-SKE-0082-SKE-0091",
+      "source_id": "SKE-0082",
+      "target_id": "SKE-0091",
+      "distance": 1.8868,
+      "shore_linable": true,
+      "safety_score": 0.45,
       "landmark_score": 0.0,
-      "tags": {}
+      "tags": {
+        "shore_fraction": "0.7",
+        "mean_clearance": "0.9",
+        "straight_dist": "1.8868"
+      }
     },
     {
-      "edge_id": "EDGE-ZONE-2RTFVvtPr83Q0UxafooW91-FEAT-3MacNmU1rFHA3qwn4LY1Sp",
-      "source_id": "ZONE-2RTFVvtPr83Q0UxafooW91",
-      "target_id": "FEAT-3MacNmU1rFHA3qwn4LY1Sp",
-      "distance": 1.5661,
+      "edge_id": "EDGE-SKE-0072-SKE-0082",
+      "source_id": "SKE-0082",
+      "target_id": "SKE-0072",
+      "distance": 4.2802,
       "shore_linable": false,
-      "safety_score": 0.5,
+      "safety_score": 1.0,
       "landmark_score": 0.0,
-      "tags": {}
+      "tags": {
+        "shore_fraction": "0.0",
+        "mean_clearance": "3.02",
+        "straight_dist": "4.2802"
+      }
     },
     {
-      "edge_id": "EDGE-ZONE-2RTFVvtPr83Q0UxafooW91-FEAT-2z4FjdAgjF8BzQmj709ndM",
-      "source_id": "ZONE-2RTFVvtPr83Q0UxafooW91",
-      "target_id": "FEAT-2z4FjdAgjF8BzQmj709ndM",
-      "distance": 2.0426,
+      "edge_id": "EDGE-SKE-0069-SKE-0082",
+      "source_id": "SKE-0082",
+      "target_id": "SKE-0069",
+      "distance": 4.4553,
       "shore_linable": false,
-      "safety_score": 0.5,
+      "safety_score": 1.0,
       "landmark_score": 0.0,
-      "tags": {}
+      "tags": {
+        "shore_fraction": "0.0",
+        "mean_clearance": "3.13",
+        "straight_dist": "4.4553"
+      }
     },
     {
-      "edge_id": "EDGE-ZONE-2RTFVvtPr83Q0UxafooW91-ZONE-2qT_j3zBf5_8BGICwHrmlI",
-      "source_id": "ZONE-2RTFVvtPr83Q0UxafooW91",
-      "target_id": "ZONE-2qT_j3zBf5_8BGICwHrmlI",
-      "distance": 3.517,
-      "shore_linable": false,
-      "safety_score": 0.5,
-      "landmark_score": 0.0,
-      "tags": {}
+      "edge_id": "EDGE-SKE-0083-SKE-0094",
+      "source_id": "SKE-0083",
+      "target_id": "SKE-0094",
+      "distance": 2.3345,
+      "shore_linable": true,
+      "safety_score": 0.477,
+      "landmark_score": 0.6667,
+      "tags": {
+        "shore_fraction": "0.6",
+        "mean_clearance": "0.954",
+        "straight_dist": "2.3345"
+      }
     },
     {
-      "edge_id": "EDGE-ZONE-2qT_j3zBf5_8BGICwHrmlI-FEAT-0XYyyamEP3Bxdj9fgnPmpr",
-      "source_id": "ZONE-2qT_j3zBf5_8BGICwHrmlI",
-      "target_id": "FEAT-0XYyyamEP3Bxdj9fgnPmpr",
-      "distance": 2.0706,
-      "shore_linable": false,
-      "safety_score": 0.5,
-      "landmark_score": 0.0,
-      "tags": {}
+      "edge_id": "EDGE-SKE-0083-SKE-0093",
+      "source_id": "SKE-0083",
+      "target_id": "SKE-0093",
+      "distance": 2.3598,
+      "shore_linable": true,
+      "safety_score": 0.4253,
+      "landmark_score": 0.6667,
+      "tags": {
+        "shore_fraction": "0.7",
+        "mean_clearance": "0.851",
+        "straight_dist": "2.4083"
+      }
     },
     {
-      "edge_id": "EDGE-ZONE-2qT_j3zBf5_8BGICwHrmlI-ZONE-2RTFVvtPr83Q0UxafooW91",
-      "source_id": "ZONE-2qT_j3zBf5_8BGICwHrmlI",
-      "target_id": "ZONE-2RTFVvtPr83Q0UxafooW91",
-      "distance": 3.517,
+      "edge_id": "EDGE-SKE-0083-SKE-0084",
+      "source_id": "SKE-0083",
+      "target_id": "SKE-0084",
+      "distance": 2.8071,
       "shore_linable": false,
-      "safety_score": 0.5,
-      "landmark_score": 0.0,
-      "tags": {}
+      "safety_score": 0.763,
+      "landmark_score": 0.6667,
+      "tags": {
+        "shore_fraction": "0.0",
+        "mean_clearance": "1.526",
+        "straight_dist": "2.8071"
+      }
     },
     {
-      "edge_id": "EDGE-ZONE-2qT_j3zBf5_8BGICwHrmlI-FEAT-2C7bqjFAn4dRRXxCO5ljPg",
-      "source_id": "ZONE-2qT_j3zBf5_8BGICwHrmlI",
-      "target_id": "FEAT-2C7bqjFAn4dRRXxCO5ljPg",
-      "distance": 3.9927,
+      "edge_id": "EDGE-SKE-0084-SKE-0093",
+      "source_id": "SKE-0084",
+      "target_id": "SKE-0093",
+      "distance": 1.7205,
+      "shore_linable": true,
+      "safety_score": 0.4147,
+      "landmark_score": 0.3333,
+      "tags": {
+        "shore_fraction": "0.8",
+        "mean_clearance": "0.829",
+        "straight_dist": "1.7205"
+      }
+    },
+    {
+      "edge_id": "EDGE-SKE-0084-SKE-0085",
+      "source_id": "SKE-0084",
+      "target_id": "SKE-0085",
+      "distance": 4.0012,
       "shore_linable": false,
-      "safety_score": 0.5,
+      "safety_score": 0.75,
+      "landmark_score": 0.3333,
+      "tags": {
+        "shore_fraction": "0.0",
+        "mean_clearance": "1.5",
+        "straight_dist": "4.0012"
+      }
+    },
+    {
+      "edge_id": "EDGE-SKE-0085-SKE-0092",
+      "source_id": "SKE-0085",
+      "target_id": "SKE-0092",
+      "distance": 1.6401,
+      "shore_linable": true,
+      "safety_score": 0.446,
       "landmark_score": 0.0,
-      "tags": {}
+      "tags": {
+        "shore_fraction": "0.9",
+        "mean_clearance": "0.892",
+        "straight_dist": "1.6401"
+      }
+    },
+    {
+      "edge_id": "EDGE-SKE-0085-SKE-0087",
+      "source_id": "SKE-0085",
+      "target_id": "SKE-0087",
+      "distance": 2.4083,
+      "shore_linable": true,
+      "safety_score": 0.5926,
+      "landmark_score": 0.0,
+      "tags": {
+        "shore_fraction": "0.5",
+        "mean_clearance": "1.185",
+        "straight_dist": "2.4083"
+      }
+    },
+    {
+      "edge_id": "EDGE-SKE-0077-SKE-0085",
+      "source_id": "SKE-0085",
+      "target_id": "SKE-0077",
+      "distance": 4.0311,
+      "shore_linable": false,
+      "safety_score": 1.0,
+      "landmark_score": 0.0,
+      "tags": {
+        "shore_fraction": "0.0",
+        "mean_clearance": "2.2",
+        "straight_dist": "4.0311"
+      }
+    },
+    {
+      "edge_id": "EDGE-SKE-0086-SKE-0090",
+      "source_id": "SKE-0086",
+      "target_id": "SKE-0090",
+      "distance": 1.5934,
+      "shore_linable": true,
+      "safety_score": 0.3,
+      "landmark_score": 0.0,
+      "tags": {
+        "shore_fraction": "1.0",
+        "mean_clearance": "0.6",
+        "straight_dist": "1.7692"
+      }
+    },
+    {
+      "edge_id": "EDGE-SKE-0072-SKE-0086",
+      "source_id": "SKE-0086",
+      "target_id": "SKE-0072",
+      "distance": 4.1725,
+      "shore_linable": false,
+      "safety_score": 1.0,
+      "landmark_score": 0.0,
+      "tags": {
+        "shore_fraction": "0.1",
+        "mean_clearance": "2.668",
+        "straight_dist": "4.1725"
+      }
+    },
+    {
+      "edge_id": "EDGE-SKE-0065-SKE-0086",
+      "source_id": "SKE-0086",
+      "target_id": "SKE-0065",
+      "distance": 4.4721,
+      "shore_linable": false,
+      "safety_score": 1.0,
+      "landmark_score": 0.0,
+      "tags": {
+        "shore_fraction": "0.1",
+        "mean_clearance": "3.276",
+        "straight_dist": "4.4721"
+      }
+    },
+    {
+      "edge_id": "EDGE-SKE-0086-SKE-0089",
+      "source_id": "SKE-0086",
+      "target_id": "SKE-0089",
+      "distance": 4.7096,
+      "shore_linable": false,
+      "safety_score": 0.58,
+      "landmark_score": 0.0,
+      "tags": {
+        "shore_fraction": "0.2",
+        "mean_clearance": "1.16",
+        "straight_dist": "4.7096"
+      }
+    },
+    {
+      "edge_id": "EDGE-SKE-0087-SKE-0092",
+      "source_id": "SKE-0087",
+      "target_id": "SKE-0092",
+      "distance": 1.5752,
+      "shore_linable": true,
+      "safety_score": 0.357,
+      "landmark_score": 0.0,
+      "tags": {
+        "shore_fraction": "1.0",
+        "mean_clearance": "0.714",
+        "straight_dist": "1.7804"
+      }
+    },
+    {
+      "edge_id": "EDGE-SKE-0071-SKE-0087",
+      "source_id": "SKE-0087",
+      "target_id": "SKE-0071",
+      "distance": 3.5171,
+      "shore_linable": false,
+      "safety_score": 1.0,
+      "landmark_score": 0.0,
+      "tags": {
+        "shore_fraction": "0.1",
+        "mean_clearance": "2.92",
+        "straight_dist": "3.5171"
+      }
+    },
+    {
+      "edge_id": "EDGE-SKE-0075-SKE-0087",
+      "source_id": "SKE-0087",
+      "target_id": "SKE-0075",
+      "distance": 4.0817,
+      "shore_linable": false,
+      "safety_score": 1.0,
+      "landmark_score": 0.0,
+      "tags": {
+        "shore_fraction": "0.1",
+        "mean_clearance": "2.28",
+        "straight_dist": "4.0817"
+      }
+    },
+    {
+      "edge_id": "EDGE-SKE-0070-SKE-0087",
+      "source_id": "SKE-0087",
+      "target_id": "SKE-0070",
+      "distance": 4.8836,
+      "shore_linable": false,
+      "safety_score": 1.0,
+      "landmark_score": 0.0,
+      "tags": {
+        "shore_fraction": "0.1",
+        "mean_clearance": "2.858",
+        "straight_dist": "4.8836"
+      }
+    },
+    {
+      "edge_id": "EDGE-SKE-0079-SKE-0088",
+      "source_id": "SKE-0088",
+      "target_id": "SKE-0079",
+      "distance": 3.5738,
+      "shore_linable": true,
+      "safety_score": 0.6638,
+      "landmark_score": 0.6667,
+      "tags": {
+        "shore_fraction": "0.6",
+        "mean_clearance": "1.328",
+        "straight_dist": "3.5847"
+      }
+    },
+    {
+      "edge_id": "EDGE-SKE-0068-SKE-0088",
+      "source_id": "SKE-0088",
+      "target_id": "SKE-0068",
+      "distance": 4.039,
+      "shore_linable": true,
+      "safety_score": 0.6411,
+      "landmark_score": 0.3333,
+      "tags": {
+        "shore_fraction": "0.5",
+        "mean_clearance": "1.282",
+        "straight_dist": "4.0497"
+      }
+    },
+    {
+      "edge_id": "EDGE-SKE-0078-SKE-0089",
+      "source_id": "SKE-0089",
+      "target_id": "SKE-0078",
+      "distance": 4.5695,
+      "shore_linable": false,
+      "safety_score": 0.94,
+      "landmark_score": 0.0,
+      "tags": {
+        "shore_fraction": "0.2",
+        "mean_clearance": "1.88",
+        "straight_dist": "4.5695"
+      }
+    },
+    {
+      "edge_id": "EDGE-SKE-0073-SKE-0089",
+      "source_id": "SKE-0089",
+      "target_id": "SKE-0073",
+      "distance": 4.7424,
+      "shore_linable": false,
+      "safety_score": 1.0,
+      "landmark_score": 0.0,
+      "tags": {
+        "shore_fraction": "0.1",
+        "mean_clearance": "2.54",
+        "straight_dist": "4.7424"
+      }
+    },
+    {
+      "edge_id": "EDGE-SKE-0063-SKE-0089",
+      "source_id": "SKE-0089",
+      "target_id": "SKE-0063",
+      "distance": 5.4626,
+      "shore_linable": false,
+      "safety_score": 0.98,
+      "landmark_score": 0.0,
+      "tags": {
+        "shore_fraction": "0.1",
+        "mean_clearance": "1.96",
+        "straight_dist": "5.4626"
+      }
+    },
+    {
+      "edge_id": "EDGE-SKE-0058-SKE-0089",
+      "source_id": "SKE-0089",
+      "target_id": "SKE-0058",
+      "distance": 5.6009,
+      "shore_linable": true,
+      "safety_score": 0.45,
+      "landmark_score": 0.0,
+      "tags": {
+        "shore_fraction": "1.0",
+        "mean_clearance": "0.9",
+        "straight_dist": "5.6009"
+      }
+    },
+    {
+      "edge_id": "EDGE-SKE-0089-SKE-0090",
+      "source_id": "SKE-0089",
+      "target_id": "SKE-0090",
+      "distance": 5.7739,
+      "shore_linable": true,
+      "safety_score": 0.27,
+      "landmark_score": 0.0,
+      "tags": {
+        "shore_fraction": "1.0",
+        "mean_clearance": "0.54",
+        "straight_dist": "6.0671"
+      }
+    },
+    {
+      "edge_id": "EDGE-SKE-0072-SKE-0090",
+      "source_id": "SKE-0090",
+      "target_id": "SKE-0072",
+      "distance": 4.4944,
+      "shore_linable": false,
+      "safety_score": 1.0,
+      "landmark_score": 0.0,
+      "tags": {
+        "shore_fraction": "0.3",
+        "mean_clearance": "2.144",
+        "straight_dist": "4.4944"
+      }
+    },
+    {
+      "edge_id": "EDGE-SKE-0073-SKE-0090",
+      "source_id": "SKE-0090",
+      "target_id": "SKE-0073",
+      "distance": 4.7086,
+      "shore_linable": false,
+      "safety_score": 1.0,
+      "landmark_score": 0.0,
+      "tags": {
+        "shore_fraction": "0.3",
+        "mean_clearance": "2.11",
+        "straight_dist": "4.8021"
+      }
+    },
+    {
+      "edge_id": "EDGE-SKE-0082-SKE-0090",
+      "source_id": "SKE-0090",
+      "target_id": "SKE-0082",
+      "distance": 5.2498,
+      "shore_linable": true,
+      "safety_score": 0.46,
+      "landmark_score": 0.0,
+      "tags": {
+        "shore_fraction": "0.6",
+        "mean_clearance": "0.92",
+        "straight_dist": "5.2498"
+      }
+    },
+    {
+      "edge_id": "EDGE-SKE-0074-SKE-0090",
+      "source_id": "SKE-0090",
+      "target_id": "SKE-0074",
+      "distance": 5.6036,
+      "shore_linable": false,
+      "safety_score": 0.85,
+      "landmark_score": 0.0,
+      "tags": {
+        "shore_fraction": "0.3",
+        "mean_clearance": "1.7",
+        "straight_dist": "5.6036"
+      }
+    },
+    {
+      "edge_id": "EDGE-SKE-0075-SKE-0091",
+      "source_id": "SKE-0091",
+      "target_id": "SKE-0075",
+      "distance": 3.8275,
+      "shore_linable": true,
+      "safety_score": 0.7991,
+      "landmark_score": 0.0,
+      "tags": {
+        "shore_fraction": "0.4",
+        "mean_clearance": "1.598",
+        "straight_dist": "3.8275"
+      }
+    },
+    {
+      "edge_id": "EDGE-SKE-0067-SKE-0091",
+      "source_id": "SKE-0091",
+      "target_id": "SKE-0067",
+      "distance": 5.0922,
+      "shore_linable": false,
+      "safety_score": 1.0,
+      "landmark_score": 0.0,
+      "tags": {
+        "shore_fraction": "0.3",
+        "mean_clearance": "2.452",
+        "straight_dist": "5.0922"
+      }
+    },
+    {
+      "edge_id": "EDGE-SKE-0069-SKE-0091",
+      "source_id": "SKE-0091",
+      "target_id": "SKE-0069",
+      "distance": 5.1894,
+      "shore_linable": false,
+      "safety_score": 1.0,
+      "landmark_score": 0.0,
+      "tags": {
+        "shore_fraction": "0.3",
+        "mean_clearance": "2.364",
+        "straight_dist": "5.1894"
+      }
+    },
+    {
+      "edge_id": "EDGE-SKE-0087-SKE-0091",
+      "source_id": "SKE-0091",
+      "target_id": "SKE-0087",
+      "distance": 5.4115,
+      "shore_linable": true,
+      "safety_score": 0.34,
+      "landmark_score": 0.0,
+      "tags": {
+        "shore_fraction": "0.9",
+        "mean_clearance": "0.68",
+        "straight_dist": "5.707"
+      }
+    },
+    {
+      "edge_id": "EDGE-SKE-0071-SKE-0092",
+      "source_id": "SKE-0092",
+      "target_id": "SKE-0071",
+      "distance": 4.9836,
+      "shore_linable": false,
+      "safety_score": 1.0,
+      "landmark_score": 0.0,
+      "tags": {
+        "shore_fraction": "0.3",
+        "mean_clearance": "2.84",
+        "straight_dist": "5.0537"
+      }
+    },
+    {
+      "edge_id": "EDGE-SKE-0070-SKE-0092",
+      "source_id": "SKE-0092",
+      "target_id": "SKE-0070",
+      "distance": 5.0695,
+      "shore_linable": false,
+      "safety_score": 1.0,
+      "landmark_score": 0.0,
+      "tags": {
+        "shore_fraction": "0.3",
+        "mean_clearance": "3.009",
+        "straight_dist": "5.0695"
+      }
+    },
+    {
+      "edge_id": "EDGE-SKE-0084-SKE-0092",
+      "source_id": "SKE-0092",
+      "target_id": "SKE-0084",
+      "distance": 5.1923,
+      "shore_linable": true,
+      "safety_score": 0.5125,
+      "landmark_score": 0.3333,
+      "tags": {
+        "shore_fraction": "0.6",
+        "mean_clearance": "1.025",
+        "straight_dist": "5.1923"
+      }
+    },
+    {
+      "edge_id": "EDGE-SKE-0093-SKE-0094",
+      "source_id": "SKE-0093",
+      "target_id": "SKE-0094",
+      "distance": 3.21,
+      "shore_linable": true,
+      "safety_score": 0.0741,
+      "landmark_score": 0.6667,
+      "tags": {
+        "shore_fraction": "1.0",
+        "mean_clearance": "0.148",
+        "straight_dist": "3.5"
+      }
+    },
+    {
+      "edge_id": "EDGE-FEAT-0GgCLy2LP42eJhqSxCFQXc-SKE-0093",
+      "source_id": "SKE-0093",
+      "target_id": "FEAT-0GgCLy2LP42eJhqSxCFQXc",
+      "distance": 3.8506,
+      "shore_linable": true,
+      "safety_score": 0.07,
+      "landmark_score": 0.6667,
+      "tags": {
+        "shore_fraction": "1.0",
+        "mean_clearance": "0.14",
+        "straight_dist": "4.1507"
+      }
+    },
+    {
+      "edge_id": "EDGE-SKE-0094-SKE-0095",
+      "source_id": "SKE-0094",
+      "target_id": "SKE-0095",
+      "distance": 2.98,
+      "shore_linable": true,
+      "safety_score": 0.05,
+      "landmark_score": 1.0,
+      "tags": {
+        "shore_fraction": "1.0",
+        "mean_clearance": "0.1",
+        "straight_dist": "3.0"
+      }
+    },
+    {
+      "edge_id": "EDGE-SKE-0095-ZONE-2UG7dUO6vAYheCYwduYFZE",
+      "source_id": "SKE-0095",
+      "target_id": "ZONE-2UG7dUO6vAYheCYwduYFZE",
+      "distance": 3.5196,
+      "shore_linable": true,
+      "safety_score": 0.4849,
+      "landmark_score": 0.6667,
+      "tags": {
+        "shore_fraction": "1.0",
+        "mean_clearance": "0.97",
+        "straight_dist": "3.5381"
+      }
     }
   ]
 }
