@@ -1,9 +1,9 @@
 """
-map_extraction/graph_builder.py  —  Sprint 3 + 4  (Option A)
+map_extraction/graph_builder.py  —  Sprint 3 + 4 
 -------------------------------------------------------------
 Converts a SemanticFloorMap into a FloorGraph (navigation graph).
 
-Rasterisation scope (Option A)
+Rasterisation scope
 --------------------------------
 The binary grid and medial-axis skeleton are used ONLY for:
   - Finding junction node positions (centreline of walkable corridors)
