@@ -1,9 +1,9 @@
 """
-map_extraction/graph_builder.py  —  Sprint 3 + 4 
+map_extraction/graph_builder.py  —  Sprint 3 + 4  (Option A)
 -------------------------------------------------------------
 Converts a SemanticFloorMap into a FloorGraph (navigation graph).
 
-Rasterisation scope
+Rasterisation scope (Option A)
 --------------------------------
 The binary grid and medial-axis skeleton are used ONLY for:
   - Finding junction node positions (centreline of walkable corridors)
@@ -514,6 +514,9 @@ class GraphBuilder:
 
     def _add_node(self, node: NavigationNode) -> None:
         if node.node_id not in self._node_map:
+            # Stamp every node with its floor label so inter-floor
+            # linker can identify which floor each node belongs to
+            node.tags.setdefault("floor_label", self.sfm.floor_label)
             self._nodes.append(node)
             self._node_map[node.node_id] = node
 
