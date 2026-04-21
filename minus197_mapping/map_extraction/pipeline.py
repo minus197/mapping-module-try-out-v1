@@ -21,6 +21,12 @@ Multi-floor usage (one IFC file per floor):
     )
     building = pipeline.run_multi()    # → BuildingGraph
     pipeline.save_multi("data/outputs/")
+
+Outputs produced per floor
+--------------------------
+  <stem>_graph.json       -- navigation graph (nodes + edges)
+  <stem>_sfm.json         -- semantic floor map
+  <stem>_occupancy.json   -- hybrid occupancy grid for perception module
 """
 
 from __future__ import annotations
@@ -33,6 +39,7 @@ from map_extraction.ifc_parser import IFCParser
 from map_extraction.semantic_floor_map import SemanticFloorMapBuilder
 from map_extraction.graph_builder import GraphBuilder
 from map_extraction.inter_floor_linker import InterFloorLinker, AdminConfig
+from map_extraction.occupancy_grid import OccupancyGridExporter
 from shared.types import BuildingGraph, FloorGraph
 
 
@@ -42,10 +49,10 @@ class MapExtractionPipeline:
 
     Parameters
     ----------
-    ifc_path    : str | Path  — path to .ifc file
-    floor_label : str         — floor identifier, e.g. 'L1', 'Ground'
-    grid_res    : float       — skeleton grid resolution in metres (default 0.1)
-    admin_config: dict        — optional admin tag overrides for this floor
+    ifc_path    : str | Path  -- path to .ifc file
+    floor_label : str         -- floor identifier, e.g. 'L1', 'Ground'
+    grid_res    : float       -- skeleton grid resolution in metres (default 0.1)
+    admin_config: dict        -- optional admin tag overrides for this floor
     """
 
     def __init__(self,
@@ -53,15 +60,15 @@ class MapExtractionPipeline:
                  floor_label: str   = "L1",
                  grid_res:    float = 0.1,
                  admin_config: Optional[AdminConfig] = None):
-        self.ifc_path    = Path(ifc_path)
-        self.floor_label = floor_label
-        self.grid_res    = grid_res
+        self.ifc_path     = Path(ifc_path)
+        self.floor_label  = floor_label
+        self.grid_res     = grid_res
         self.admin_config = admin_config or {}
 
         self._sfm:   Optional[object]     = None
         self._graph: Optional[FloorGraph] = None
 
-    # ── Single-floor API ──────────────────────────────────────────────────────
+    # -- Single-floor API -----------------------------------------------------
 
     def run(self) -> FloorGraph:
         """Execute the single-floor extraction pipeline."""
@@ -93,23 +100,34 @@ class MapExtractionPipeline:
         return self._graph
 
     def save(self, output_dir: str | Path = "data/outputs/") -> Path:
-        """Save FloorGraph JSON to output_dir."""
+        """
+        Save all three outputs to output_dir:
+          <stem>_graph.json      -- navigation graph
+          <stem>_sfm.json        -- semantic floor map
+          <stem>_occupancy.json  -- hybrid occupancy grid (perception module)
+        """
         if self._graph is None:
             raise RuntimeError("Call run() before save().")
         out = Path(output_dir)
         out.mkdir(parents=True, exist_ok=True)
 
-        stem  = self.ifc_path.stem
+        stem       = self.ifc_path.stem
         graph_path = out / f"{stem}_graph.json"
         sfm_path   = out / f"{stem}_sfm.json"
+        occ_path   = out / f"{stem}_occupancy.json"
 
         _save_floor_graph(self._graph, graph_path)
+
         if self._sfm:
             self._sfm.save(sfm_path)
 
+            # Occupancy grid for perception module
+            print("[MapExtraction] Building occupancy grid ...")
+            OccupancyGridExporter(self._sfm).build().save(occ_path)
+
         return graph_path
 
-    # ── Multi-floor API ───────────────────────────────────────────────────────
+    # -- Multi-floor API -------------------------------------------------------
 
     @classmethod
     def multi_floor(
@@ -137,11 +155,14 @@ class MapExtractionPipeline:
         instance._building:  Optional[BuildingGraph] = None
         instance._sfm        = None
         instance._graph      = None
+        instance._floor_sfms: List[Tuple[str, object]] = []
         return instance
 
     def run_multi(self) -> BuildingGraph:
         """Execute the multi-floor extraction pipeline."""
         linker = InterFloorLinker(building_name=self._building_name)
+
+        self._floor_sfms = []    # (ifc_stem, sfm) per floor
 
         for ifc_path, floor_label, admin_cfg in self._floors_spec:
             print(f"\n{'─'*50}")
@@ -157,12 +178,23 @@ class MapExtractionPipeline:
             fg = p.run()
             linker.add_floor(fg, admin_cfg)
 
+            # Collect the SFM for occupancy grid generation in save_multi()
+            if p._sfm:
+                self._floor_sfms.append((Path(ifc_path).stem, p._sfm))
+
         self._building = linker.build()
         return self._building
 
     def save_multi(self,
                    output_dir: str | Path = "data/outputs/") -> Path:
-        """Save BuildingGraph JSON."""
+        """
+        Save BuildingGraph JSON and one occupancy grid per floor.
+
+          <building_name>_building_graph.json
+          <stem_L1>_occupancy.json
+          <stem_L2>_occupancy.json
+          ...
+        """
         if self._building is None:
             raise RuntimeError("Call run_multi() before save_multi().")
         out = Path(output_dir)
@@ -173,9 +205,16 @@ class MapExtractionPipeline:
         linker = InterFloorLinker(self._building_name)
         linker._result = self._building
         linker.save(path)
+
+        # One occupancy grid per floor
+        for stem, sfm in getattr(self, "_floor_sfms", []):
+            occ_path = out / f"{stem}_occupancy.json"
+            print(f"[MapExtraction] Building occupancy grid for {stem} ...")
+            OccupancyGridExporter(sfm).build().save(occ_path)
+
         return path
 
-    # ── Properties ────────────────────────────────────────────────────────────
+    # -- Properties -----------------------------------------------------------
 
     @property
     def sfm(self):
