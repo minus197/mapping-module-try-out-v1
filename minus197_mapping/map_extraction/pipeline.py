@@ -116,7 +116,10 @@ class MapExtractionPipeline:
         sfm_path   = out / f"{stem}_sfm.json"
         occ_path   = out / f"{stem}_occupancy.json"
 
-        _save_floor_graph(self._graph, graph_path)
+        bb = self._sfm.bounding_box if self._sfm else None
+        _save_floor_graph(self._graph, graph_path,
+                        bounding_box=bb,
+                        grid_res=self.grid_res)
 
         if self._sfm:
             self._sfm.save(sfm_path)
@@ -233,10 +236,33 @@ class MapExtractionPipeline:
 # Helpers
 # ---------------------------------------------------------------------------
 
-def _save_floor_graph(fg: FloorGraph, path: Path) -> None:
+def _save_floor_graph(fg: FloorGraph,
+                      path: Path,
+                      bounding_box: dict = None,
+                      grid_res: float = 0.1) -> None:
     data = {
         "floor_label": fg.floor_label,
         "source_file": fg.source_file,
+
+        # ── Spatial metadata ──────────────────────────────────────────────
+        # Navigation module needs this to interpret node positions.
+        # All node positions are in the same IFC coordinate system.
+        "spatial_meta": {
+            "units": "metres",
+            "coordinate_frame": "IFC project coordinate system",
+            "x_axis": "IFC project X axis",
+            "y_axis": "IFC project Y axis",
+            "bounding_box": (
+                {k: float(v) for k, v in bounding_box.items()}
+                if bounding_box else None
+            ),
+            "skeleton_grid_resolution_m": grid_res,
+            "note": (
+                "Node positions are exact Shapely coordinates — "
+                "not quantised to the skeleton grid resolution"
+            ),
+        },
+
         "nodes": [
             {
                 "node_id":   n.node_id,

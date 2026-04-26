@@ -277,23 +277,51 @@ class OccupancyGridExporter:
                     if _point_to_segment_dist(wx, wy, sx, sy, ex, ey) <= t:
                         self._grid[r, c] = CELL_WALL
 
-    # ── Pass 4: doors ─────────────────────────────────────────────────────────
-
     def _stamp_doors(self) -> None:
         """
         Mark door feature positions as CELL_DOOR (2).
-        Doors override wall or outside cells — not walkable interior cells.
+
+        Case A — perimeter doors:
+            Cell is CELL_WALL or CELL_OUTSIDE → stamp directly.
+
+        Case B — interior shop-front doors:
+            Cell is CELL_WALKABLE but within DOOR_SNAP_M of a wall cell
+            → stamp as CELL_DOOR so the perception module knows this is
+            a zone-boundary passage, not open corridor.
+
+        Walkable cells far from any wall are left untouched.
         """
+        DOOR_SNAP_M = 0.30
+        snap_cells  = max(1, int(DOOR_SNAP_M / self.resolution))
+
         for feat in self.sfm.features:
             if feat.feature_type != "door":
                 continue
             px, py = feat.position
             r = self._world_to_row(py)
             c = self._world_to_col(px)
-            if 0 <= r < self._rows and 0 <= c < self._cols:
-                if self._grid[r, c] in (CELL_WALL, CELL_OUTSIDE):
-                    self._grid[r, c] = CELL_DOOR
+            if not (0 <= r < self._rows and 0 <= c < self._cols):
+                continue
 
+            cell = self._grid[r, c]
+
+            # Case A: perimeter door sitting on wall or outside cell
+            if cell in (CELL_WALL, CELL_OUTSIDE):
+                self._grid[r, c] = CELL_DOOR
+
+            # Case B: interior shop-front door inside walkable zone
+            elif cell == CELL_WALKABLE:
+                r0 = max(0, r - snap_cells)
+                r1 = min(self._rows - 1, r + snap_cells)
+                c0 = max(0, c - snap_cells)
+                c1 = min(self._cols - 1, c + snap_cells)
+                neighbourhood = self._grid[r0:r1+1, c0:c1+1]
+                near_wall = np.any(
+                    (neighbourhood == CELL_WALL) |
+                    (neighbourhood == CELL_OUTSIDE)
+                )
+                if near_wall:
+                    self._grid[r, c] = CELL_DOOR
     # ── Pass 5: uncertain boundary (Method 1 — neighbour disagreement) ────────
 
     def _stamp_uncertain_boundary(self) -> None:
@@ -430,6 +458,27 @@ class OccupancyGridExporter:
             #   from shapely import wkt as shapely_wkt
             #   poly = shapely_wkt.loads(occ["walkable_wkt"])
             "walkable_wkt": walkable_wkt,
+
+            # ── Coordinate frame declaration ──────────────────────────────────
+            # All coordinates in this file are in this frame.
+            # Perception module must align sensor readings to this frame
+            # before calling is_walkable() or crosses_wall().
+            "coordinate_frame": {
+                "units": "metres",
+                "source": "IFC project coordinate system",
+                "x_axis": "IFC project X axis",
+                "y_axis": "IFC project Y axis",
+                "origin_description": (
+                    "grid cell (row=0, col=0) top-left corner — "
+                    "bounding box minimum minus padding"
+                ),
+            "grid_origin_x": round(self._origin_x, 6),
+            "grid_origin_y": round(self._origin_y, 6),
+            "building_min_x": float(bb["min_x"]),
+            "building_min_y": float(bb["min_y"]),
+            "building_max_x": float(bb["max_x"]),
+            "building_max_y": float(bb["max_y"]),
+            },
 
             # ── Query hints for the perception module ─────────────────────────
             "query_hint": {
