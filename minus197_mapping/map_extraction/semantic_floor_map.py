@@ -168,11 +168,11 @@ class SemanticFloorMap:
             "meta": {
                 "source_file":   self.source_file,
                 "floor_label":   self.floor_label,
-                "bounding_box":  {k: float(v) for k, v in self.bounding_box.items()},
                 "zone_count":    len(self.zones),
                 "wall_count":    len(self.walls),
                 "feature_count": len(self.features),
             },
+            "bounding_box": {k: float(v) for k, v in self.bounding_box.items()},
             "zones":    [z.to_dict() for z in self.zones],
             "walls":    [w.to_dict() for w in self.walls],
             "features": [f.to_dict() for f in self.features],
