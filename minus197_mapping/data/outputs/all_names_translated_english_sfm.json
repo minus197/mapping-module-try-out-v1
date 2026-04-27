@@ -2,15 +2,15 @@
   "meta": {
     "source_file": "data\\ifc_files\\all_names_translated_english.ifc",
     "floor_label": "L1",
-    "bounding_box": {
-      "min_x": -0.5,
-      "min_y": -2.575,
-      "max_x": 39.475,
-      "max_y": 17.0
-    },
     "zone_count": 8,
     "wall_count": 33,
     "feature_count": 13
+  },
+  "bounding_box": {
+    "min_x": -0.5,
+    "min_y": -2.575,
+    "max_x": 39.475,
+    "max_y": 17.0
   },
   "zones": [
     {
