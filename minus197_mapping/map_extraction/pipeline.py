@@ -249,9 +249,16 @@ def _save_floor_graph(fg: FloorGraph,
         # All node positions are in the same IFC coordinate system.
         "spatial_meta": {
             "units": "metres",
-            "coordinate_frame": "IFC project coordinate system",
-            "x_axis": "IFC project X axis",
-            "y_axis": "IFC project Y axis",
+            "coordinate_frame": {
+                "units": "metres",
+                "source": "IFC project coordinate system",
+                "x_axis": "IFC project X axis",
+                "y_axis": "IFC project Y axis",
+                "origin_description": (
+                    "IFC project origin — node positions are exact "
+                    "Shapely coordinates in this frame"
+                ),
+            },
             "bounding_box": (
                 {k: float(v) for k, v in bounding_box.items()}
                 if bounding_box else None
