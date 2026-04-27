@@ -472,13 +472,13 @@ class OccupancyGridExporter:
                     "grid cell (row=0, col=0) top-left corner — "
                     "bounding box minimum minus padding"
                 ),
+            },
             "grid_origin_x": round(self._origin_x, 6),
             "grid_origin_y": round(self._origin_y, 6),
             "building_min_x": float(bb["min_x"]),
             "building_min_y": float(bb["min_y"]),
             "building_max_x": float(bb["max_x"]),
             "building_max_y": float(bb["max_y"]),
-            },
 
             # ── Query hints for the perception module ─────────────────────────
             "query_hint": {
