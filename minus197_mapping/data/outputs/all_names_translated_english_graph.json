@@ -1,0 +1,7333 @@
+{
+  "floor_label": "L1",
+  "source_file": "data\\ifc_files\\all_names_translated_english.ifc",
+  "spatial_meta": {
+    "units": "metres",
+    "coordinate_frame": {
+      "units": "metres",
+      "source": "IFC project coordinate system",
+      "x_axis": "IFC project X axis",
+      "y_axis": "IFC project Y axis",
+      "origin_description": "IFC project origin — node positions are exact Shapely coordinates in this frame"
+    },
+    "bounding_box": {
+      "min_x": -0.5,
+      "min_y": -2.575,
+      "max_x": 39.475,
+      "max_y": 17.0
+    },
+    "skeleton_grid_resolution_m": 0.1,
+    "note": "Node positions are exact Shapely coordinates — not quantised to the skeleton grid resolution"
+  },
+  "nodes": [
+    {
+      "node_id": "FEAT-0_ndkJyO9CVPHaFtnEM6Kk",
+      "label": "Dver - Dvupolnaya raspashnaya s polotnami raznoy shiriny (glukhoe): 1300,00 mm x 2100,00 mm",
+      "position": [
+        -0.1,
+        0.27500000010527675
+      ],
+      "node_type": "door",
+      "zone_id": "0BGjw438P6JAPe2g$sDgcT",
+      "tags": {
+        "feature_type": "door",
+        "priority": "2",
+        "ifc_guid": "0_ndkJyO9CVPHaFtnEM6Kk",
+        "floor_label": "L1"
+      }
+    },
+    {
+      "node_id": "FEAT-0wp3zaH$L7VBlQRHvLq4Rl",
+      "label": "Dver - Dvupolnaya raspashnaya s polotnami raznoy shiriny (glukhoe): 1300,00 mm x 2100,00 mm",
+      "position": [
+        -0.1,
+        2.2750000001054542
+      ],
+      "node_type": "door",
+      "zone_id": "0BGjw438P6JAPe2g$sDgcT",
+      "tags": {
+        "feature_type": "door",
+        "priority": "2",
+        "ifc_guid": "0wp3zaH$L7VBlQRHvLq4Rl",
+        "floor_label": "L1"
+      }
+    },
+    {
+      "node_id": "FEAT-1rcsg60O53_ukZNuZICUKt",
+      "label": "Dver - Dvupolnaya raspashnaya s polotnami raznoy shiriny (glukhoe): 1400,00 mm x 2100,00 mm",
+      "position": [
+        34.300000000000004,
+        15.10000000010491
+      ],
+      "node_type": "door",
+      "zone_id": "2lyI2yiub9QBhgywjO7xcX",
+      "tags": {
+        "feature_type": "door",
+        "priority": "2",
+        "ifc_guid": "1rcsg60O53_ukZNuZICUKt",
+        "floor_label": "L1"
+      }
+    },
+    {
+      "node_id": "FEAT-0GgCLy2LP42eJhqSxCFQXc",
+      "label": "Dver - Odnopolnaya raspashnaya (glukhoe temnoe): 900,00 mm x 2100,00 mm",
+      "position": [
+        29.849999999981424,
+        15.100000000104911
+      ],
+      "node_type": "door",
+      "zone_id": "2UG7dUO6vAYheCYwduYFZE",
+      "tags": {
+        "feature_type": "door",
+        "priority": "2",
+        "ifc_guid": "0GgCLy2LP42eJhqSxCFQXc",
+        "floor_label": "L1"
+      }
+    },
+    {
+      "node_id": "FEAT-3jTK1b2NH4aPT0WWuekAnp",
+      "label": "Dver - Dvupolnaya raspashnaya s polotnami raznoy shiriny (glukhoe): 1200,00 mm x 2100,00 mm",
+      "position": [
+        27.12499999998142,
+        15.100000000104913
+      ],
+      "node_type": "door",
+      "zone_id": "0BGjw438P6JAPe2g$sDgcT",
+      "tags": {
+        "feature_type": "door",
+        "priority": "2",
+        "ifc_guid": "3jTK1b2NH4aPT0WWuekAnp",
+        "floor_label": "L1"
+      }
+    },
+    {
+      "node_id": "FEAT-0JV8FQB5b5DPTE76PusxqH",
+      "label": "Dver - Dvupolnaya raspashnaya s polotnami raznoy shiriny (glukhoe): 1200,00 mm x 2100,00 mm",
+      "position": [
+        34.6,
+        7.725000000104912
+      ],
+      "node_type": "door",
+      "zone_id": "2lyI2yiub9QBhgywjO7xcX",
+      "tags": {
+        "feature_type": "door",
+        "priority": "2",
+        "ifc_guid": "0JV8FQB5b5DPTE76PusxqH",
+        "floor_label": "L1"
+      }
+    },
+    {
+      "node_id": "FEAT-3KZzX8BSn5$uXshxhC1MGX",
+      "label": "Dver - Odnopolnaya raspashnaya (glukhoe temnoe): 900,00 mm x 2100,00 mm",
+      "position": [
+        37.085,
+        13.9
+      ],
+      "node_type": "door",
+      "zone_id": "2gbGtfPHrFnOw3AWmEVj8l",
+      "tags": {
+        "feature_type": "door",
+        "priority": "2",
+        "ifc_guid": "3KZzX8BSn5$uXshxhC1MGX",
+        "floor_label": "L1"
+      }
+    },
+    {
+      "node_id": "FEAT-0XYyyamEP3Bxdj9fgnPmpr",
+      "label": "Dver - Odnopolnaya raspashnaya (glukhoe temnoe): 900,00 mm x 2100,00 mm",
+      "position": [
+        30.28749999998147,
+        3.8300000001049055
+      ],
+      "node_type": "door",
+      "zone_id": "2lyI2yiub9QBhgywjO7xcX",
+      "tags": {
+        "feature_type": "door",
+        "priority": "2",
+        "ifc_guid": "0XYyyamEP3Bxdj9fgnPmpr",
+        "floor_label": "L1"
+      }
+    },
+    {
+      "node_id": "FEAT-2C7bqjFAn4dRRXxCO5ljPg",
+      "label": "Dver - Dvupolnaya raspashnaya s polotnami raznoy shiriny (glukhoe): 1400,00 mm x 2100,00 mm",
+      "position": [
+        29.46999999998144,
+        5.574999999999485
+      ],
+      "node_type": "door",
+      "zone_id": "0BGjw438P6JAPe2g$sDgcT",
+      "tags": {
+        "feature_type": "door",
+        "priority": "2",
+        "ifc_guid": "2C7bqjFAn4dRRXxCO5ljPg",
+        "floor_label": "L1"
+      }
+    },
+    {
+      "node_id": "FEAT-3MacNmU1rFHA3qwn4LY1Sp",
+      "label": "Dver - Odnopolnaya raspashnaya (glukhoe temnoe): 900,00 mm x 2100,00 mm",
+      "position": [
+        35.44499999998144,
+        4.237500000104897
+      ],
+      "node_type": "door",
+      "zone_id": "2GDGci$en8jAR10fGEvA6l",
+      "tags": {
+        "feature_type": "door",
+        "priority": "2",
+        "ifc_guid": "3MacNmU1rFHA3qwn4LY1Sp",
+        "floor_label": "L1"
+      }
+    },
+    {
+      "node_id": "FEAT-2z4FjdAgjF8BzQmj709ndM",
+      "label": "Dver - Odnopolnaya raspashnaya (glukhoe temnoe): 900,00 mm x 2100,00 mm",
+      "position": [
+        35.44499999998144,
+        2.3375000001049058
+      ],
+      "node_type": "door",
+      "zone_id": "2zO1ky5n57$hlSP0I709Q7",
+      "tags": {
+        "feature_type": "door",
+        "priority": "2",
+        "ifc_guid": "2z4FjdAgjF8BzQmj709ndM",
+        "floor_label": "L1"
+      }
+    },
+    {
+      "node_id": "FEAT-3o6zFbINX8ue3cLBEniaGh",
+      "label": "Dver - Dvupolnaya raspashnaya s polotnami raznoy shiriny (glukhoe): 1200,00 mm x 2100,00 mm",
+      "position": [
+        34.60000000001858,
+        -0.07500000000003712
+      ],
+      "node_type": "door",
+      "zone_id": "2RTFVvtPr83Q0UxafooW91",
+      "tags": {
+        "feature_type": "door",
+        "priority": "2",
+        "ifc_guid": "3o6zFbINX8ue3cLBEniaGh",
+        "floor_label": "L1"
+      }
+    },
+    {
+      "node_id": "FEAT-3BojDOt51BFRctjuYcdjPm",
+      "label": "Lestnitsa 3 stupeni",
+      "position": [
+        -0.5000000000185628,
+        5.475000000105418
+      ],
+      "node_type": "stair",
+      "zone_id": "0BGjw438P6JAPe2g$sDgcT",
+      "tags": {
+        "feature_type": "stair",
+        "priority": "3",
+        "ifc_guid": "3BojDOt51BFRctjuYcdjPm",
+        "floor_label": "L1"
+      }
+    },
+    {
+      "node_id": "ZONE-0BGjw438P6JAPe2g$sDgcT",
+      "label": "Torgovyy zal",
+      "position": [
+        14.499999999981446,
+        7.612500000104919
+      ],
+      "node_type": "zone_centroid",
+      "zone_id": "0BGjw438P6JAPe2g$sDgcT",
+      "tags": {
+        "category": "unknown",
+        "name": "1",
+        "area_m2": "445.63",
+        "floor_label": "L1"
+      }
+    },
+    {
+      "node_id": "ZONE-2lyI2yiub9QBhgywjO7xcX",
+      "label": "Sklad",
+      "position": [
+        34.272499999981456,
+        9.550000000105179
+      ],
+      "node_type": "zone_centroid",
+      "zone_id": "2lyI2yiub9QBhgywjO7xcX",
+      "tags": {
+        "category": "unknown",
+        "name": "3",
+        "area_m2": "63.43",
+        "floor_label": "L1"
+      }
+    },
+    {
+      "node_id": "ZONE-2zO1ky5n57$hlSP0I709Q7",
+      "label": "Kabinet",
+      "position": [
+        37.25999999998145,
+        1.7962500001049102
+      ],
+      "node_type": "zone_centroid",
+      "zone_id": "2zO1ky5n57$hlSP0I709Q7",
+      "tags": {
+        "category": "unknown",
+        "name": "6",
+        "area_m2": "13.5",
+        "floor_label": "L1"
+      }
+    },
+    {
+      "node_id": "ZONE-2GDGci$en8jAR10fGEvA6l",
+      "label": "Razdevalka",
+      "position": [
+        37.25999999998146,
+        5.696250000104912
+      ],
+      "node_type": "zone_centroid",
+      "zone_id": "2GDGci$en8jAR10fGEvA6l",
+      "tags": {
+        "category": "unknown",
+        "name": "7",
+        "area_m2": "13.41",
+        "floor_label": "L1"
+      }
+    },
+    {
+      "node_id": "ZONE-2UG7dUO6vAYheCYwduYFZE",
+      "label": "Razdelochnaya",
+      "position": [
+        30.284999999990724,
+        12.050000000055032
+      ],
+      "node_type": "zone_centroid",
+      "zone_id": "2UG7dUO6vAYheCYwduYFZE",
+      "tags": {
+        "category": "unknown",
+        "name": "2",
+        "area_m2": "9.94",
+        "floor_label": "L1"
+      }
+    },
+    {
+      "node_id": "ZONE-2gbGtfPHrFnOw3AWmEVj8l",
+      "label": "San. uzel",
+      "position": [
+        38.07999999999073,
+        14.092500000052445
+      ],
+      "node_type": "zone_centroid",
+      "zone_id": "2gbGtfPHrFnOw3AWmEVj8l",
+      "tags": {
+        "category": "unknown",
+        "name": "8",
+        "area_m2": "3.91",
+        "floor_label": "L1"
+      }
+    },
+    {
+      "node_id": "ZONE-2RTFVvtPr83Q0UxafooW91",
+      "label": "Koridor",
+      "position": [
+        33.96000022876049,
+        3.740000000104916
+      ],
+      "node_type": "zone_centroid",
+      "zone_id": "2RTFVvtPr83Q0UxafooW91",
+      "tags": {
+        "category": "corridor",
+        "name": "5",
+        "area_m2": "19.96",
+        "floor_label": "L1"
+      }
+    },
+    {
+      "node_id": "ZONE-2qT_j3zBf5_8BGICwHrmlI",
+      "label": "Kholodilnaya kamera",
+      "position": [
+        30.976682134546103,
+        1.8775000001049078
+      ],
+      "node_type": "zone_centroid",
+      "zone_id": "2qT_j3zBf5_8BGICwHrmlI",
+      "tags": {
+        "category": "unknown",
+        "name": "4",
+        "area_m2": "11.69",
+        "floor_label": "L1"
+      }
+    },
+    {
+      "node_id": "SKE-0000",
+      "label": "Junction (0.2,-0.1)",
+      "position": [
+        0.2,
+        -0.075
+      ],
+      "node_type": "junction",
+      "zone_id": null,
+      "tags": {
+        "clearance_m": "0.1",
+        "skel_degree": "1",
+        "floor_label": "L1"
+      }
+    },
+    {
+      "node_id": "SKE-0001",
+      "label": "Junction (6.2,-0.1)",
+      "position": [
+        6.2,
+        -0.075
+      ],
+      "node_type": "junction",
+      "zone_id": null,
+      "tags": {
+        "clearance_m": "0.1",
+        "skel_degree": "1",
+        "floor_label": "L1"
+      }
+    },
+    {
+      "node_id": "SKE-0002",
+      "label": "Junction (12.7,-0.1)",
+      "position": [
+        12.7,
+        -0.075
+      ],
+      "node_type": "junction",
+      "zone_id": null,
+      "tags": {
+        "clearance_m": "0.1",
+        "skel_degree": "1",
+        "floor_label": "L1"
+      }
+    },
+    {
+      "node_id": "SKE-0003",
+      "label": "Junction (19.2,-0.1)",
+      "position": [
+        19.2,
+        -0.075
+      ],
+      "node_type": "junction",
+      "zone_id": null,
+      "tags": {
+        "clearance_m": "0.1",
+        "skel_degree": "1",
+        "floor_label": "L1"
+      }
+    },
+    {
+      "node_id": "SKE-0004",
+      "label": "Junction (25.7,-0.1)",
+      "position": [
+        25.7,
+        -0.075
+      ],
+      "node_type": "junction",
+      "zone_id": null,
+      "tags": {
+        "clearance_m": "0.1",
+        "skel_degree": "1",
+        "floor_label": "L1"
+      }
+    },
+    {
+      "node_id": "SKE-0005",
+      "label": "Junction (29.2,-0.1)",
+      "position": [
+        29.2,
+        -0.075
+      ],
+      "node_type": "junction",
+      "zone_id": null,
+      "tags": {
+        "clearance_m": "0.1",
+        "skel_degree": "1",
+        "floor_label": "L1"
+      }
+    },
+    {
+      "node_id": "SKE-0006",
+      "label": "Junction (32.2,-0.1)",
+      "position": [
+        32.2,
+        -0.075
+      ],
+      "node_type": "junction",
+      "zone_id": null,
+      "tags": {
+        "clearance_m": "0.1",
+        "skel_degree": "1",
+        "floor_label": "L1"
+      }
+    },
+    {
+      "node_id": "SKE-0007",
+      "label": "Junction (35.2,-0.1)",
+      "position": [
+        35.2,
+        -0.075
+      ],
+      "node_type": "junction",
+      "zone_id": null,
+      "tags": {
+        "clearance_m": "0.1",
+        "skel_degree": "1",
+        "floor_label": "L1"
+      }
+    },
+    {
+      "node_id": "SKE-0008",
+      "label": "Junction (38.7,-0.1)",
+      "position": [
+        38.7,
+        -0.075
+      ],
+      "node_type": "junction",
+      "zone_id": null,
+      "tags": {
+        "clearance_m": "0.1",
+        "skel_degree": "1",
+        "floor_label": "L1"
+      }
+    },
+    {
+      "node_id": "SKE-0009",
+      "label": "Junction (18.1,1.0)",
+      "position": [
+        18.1,
+        1.025
+      ],
+      "node_type": "junction",
+      "zone_id": "0BGjw438P6JAPe2g$sDgcT",
+      "tags": {
+        "clearance_m": "1.2",
+        "skel_degree": "3",
+        "floor_label": "L1"
+      }
+    },
+    {
+      "node_id": "SKE-0010",
+      "label": "Junction (5.2,1.1)",
+      "position": [
+        5.2,
+        1.125
+      ],
+      "node_type": "junction",
+      "zone_id": "0BGjw438P6JAPe2g$sDgcT",
+      "tags": {
+        "clearance_m": "1.3",
+        "skel_degree": "3",
+        "floor_label": "L1"
+      }
+    },
+    {
+      "node_id": "SKE-0011",
+      "label": "Junction (20.6,1.1)",
+      "position": [
+        20.6,
+        1.125
+      ],
+      "node_type": "junction",
+      "zone_id": "0BGjw438P6JAPe2g$sDgcT",
+      "tags": {
+        "clearance_m": "1.3",
+        "skel_degree": "3",
+        "floor_label": "L1"
+      }
+    },
+    {
+      "node_id": "SKE-0012",
+      "label": "Junction (24.7,1.1)",
+      "position": [
+        24.7,
+        1.125
+      ],
+      "node_type": "junction",
+      "zone_id": "0BGjw438P6JAPe2g$sDgcT",
+      "tags": {
+        "clearance_m": "1.3",
+        "skel_degree": "3",
+        "floor_label": "L1"
+      }
+    },
+    {
+      "node_id": "SKE-0013",
+      "label": "Junction (1.1,1.2)",
+      "position": [
+        1.1,
+        1.225
+      ],
+      "node_type": "junction",
+      "zone_id": "0BGjw438P6JAPe2g$sDgcT",
+      "tags": {
+        "clearance_m": "1.4",
+        "skel_degree": "3",
+        "floor_label": "L1"
+      }
+    },
+    {
+      "node_id": "SKE-0014",
+      "label": "Junction (11.8,1.2)",
+      "position": [
+        11.8,
+        1.225
+      ],
+      "node_type": "junction",
+      "zone_id": "0BGjw438P6JAPe2g$sDgcT",
+      "tags": {
+        "clearance_m": "1.4",
+        "skel_degree": "3",
+        "floor_label": "L1"
+      }
+    },
+    {
+      "node_id": "SKE-0015",
+      "label": "Junction (33.9,1.2)",
+      "position": [
+        33.9,
+        1.225
+      ],
+      "node_type": "junction",
+      "zone_id": "2RTFVvtPr83Q0UxafooW91",
+      "tags": {
+        "clearance_m": "1.4",
+        "skel_degree": "3",
+        "floor_label": "L1"
+      }
+    },
+    {
+      "node_id": "SKE-0016",
+      "label": "Junction (30.9,1.4)",
+      "position": [
+        30.9,
+        1.425
+      ],
+      "node_type": "junction",
+      "zone_id": "2qT_j3zBf5_8BGICwHrmlI",
+      "tags": {
+        "clearance_m": "1.6",
+        "skel_degree": "3",
+        "floor_label": "L1"
+      }
+    },
+    {
+      "node_id": "SKE-0017",
+      "label": "Junction (37.2,1.7)",
+      "position": [
+        37.2,
+        1.725
+      ],
+      "node_type": "junction",
+      "zone_id": "2zO1ky5n57$hlSP0I709Q7",
+      "tags": {
+        "clearance_m": "1.9",
+        "skel_degree": "3",
+        "floor_label": "L1"
+      }
+    },
+    {
+      "node_id": "SKE-0018",
+      "label": "Junction (14.3,1.8)",
+      "position": [
+        14.3,
+        1.825
+      ],
+      "node_type": "junction",
+      "zone_id": "0BGjw438P6JAPe2g$sDgcT",
+      "tags": {
+        "clearance_m": "2.0",
+        "skel_degree": "3",
+        "floor_label": "L1"
+      }
+    },
+    {
+      "node_id": "SKE-0019",
+      "label": "Junction (27.3,1.8)",
+      "position": [
+        27.3,
+        1.825
+      ],
+      "node_type": "junction",
+      "zone_id": "0BGjw438P6JAPe2g$sDgcT",
+      "tags": {
+        "clearance_m": "2.0",
+        "skel_degree": "3",
+        "floor_label": "L1"
+      }
+    },
+    {
+      "node_id": "SKE-0020",
+      "label": "Junction (4.6,2.5)",
+      "position": [
+        4.6,
+        2.525
+      ],
+      "node_type": "junction",
+      "zone_id": "0BGjw438P6JAPe2g$sDgcT",
+      "tags": {
+        "clearance_m": "2.7",
+        "skel_degree": "3",
+        "floor_label": "L1"
+      }
+    },
+    {
+      "node_id": "SKE-0021",
+      "label": "Junction (8.0,2.6)",
+      "position": [
+        8.0,
+        2.625
+      ],
+      "node_type": "junction",
+      "zone_id": "0BGjw438P6JAPe2g$sDgcT",
+      "tags": {
+        "clearance_m": "2.8",
+        "skel_degree": "3",
+        "floor_label": "L1"
+      }
+    },
+    {
+      "node_id": "SKE-0022",
+      "label": "Junction (17.9,2.6)",
+      "position": [
+        17.9,
+        2.625
+      ],
+      "node_type": "junction",
+      "zone_id": "0BGjw438P6JAPe2g$sDgcT",
+      "tags": {
+        "clearance_m": "2.8",
+        "skel_degree": "3",
+        "floor_label": "L1"
+      }
+    },
+    {
+      "node_id": "SKE-0023",
+      "label": "Junction (21.1,2.6)",
+      "position": [
+        21.1,
+        2.625
+      ],
+      "node_type": "junction",
+      "zone_id": "0BGjw438P6JAPe2g$sDgcT",
+      "tags": {
+        "clearance_m": "2.8",
+        "skel_degree": "3",
+        "floor_label": "L1"
+      }
+    },
+    {
+      "node_id": "SKE-0024",
+      "label": "Junction (2.4,2.7)",
+      "position": [
+        2.4,
+        2.725
+      ],
+      "node_type": "junction",
+      "zone_id": "0BGjw438P6JAPe2g$sDgcT",
+      "tags": {
+        "clearance_m": "2.9",
+        "skel_degree": "3",
+        "floor_label": "L1"
+      }
+    },
+    {
+      "node_id": "SKE-0025",
+      "label": "Junction (24.2,2.7)",
+      "position": [
+        24.2,
+        2.725
+      ],
+      "node_type": "junction",
+      "zone_id": "0BGjw438P6JAPe2g$sDgcT",
+      "tags": {
+        "clearance_m": "2.9",
+        "skel_degree": "3",
+        "floor_label": "L1"
+      }
+    },
+    {
+      "node_id": "SKE-0026",
+      "label": "Junction (14.7,3.4)",
+      "position": [
+        14.7,
+        3.425
+      ],
+      "node_type": "junction",
+      "zone_id": "0BGjw438P6JAPe2g$sDgcT",
+      "tags": {
+        "clearance_m": "3.6",
+        "skel_degree": "3",
+        "floor_label": "L1"
+      }
+    },
+    {
+      "node_id": "SKE-0027",
+      "label": "Junction (0.4,3.5)",
+      "position": [
+        0.4,
+        3.525
+      ],
+      "node_type": "junction",
+      "zone_id": "0BGjw438P6JAPe2g$sDgcT",
+      "tags": {
+        "clearance_m": "0.9",
+        "skel_degree": "3",
+        "floor_label": "L1"
+      }
+    },
+    {
+      "node_id": "SKE-0028",
+      "label": "Junction (11.1,3.5)",
+      "position": [
+        11.1,
+        3.525
+      ],
+      "node_type": "junction",
+      "zone_id": "0BGjw438P6JAPe2g$sDgcT",
+      "tags": {
+        "clearance_m": "3.7",
+        "skel_degree": "3",
+        "floor_label": "L1"
+      }
+    },
+    {
+      "node_id": "SKE-0029",
+      "label": "Junction (35.4,3.6)",
+      "position": [
+        35.4,
+        3.625
+      ],
+      "node_type": "junction",
+      "zone_id": null,
+      "tags": {
+        "clearance_m": "0.1",
+        "skel_degree": "1",
+        "floor_label": "L1"
+      }
+    },
+    {
+      "node_id": "SKE-0030",
+      "label": "Junction (39.0,3.6)",
+      "position": [
+        39.0,
+        3.625
+      ],
+      "node_type": "junction",
+      "zone_id": "2zO1ky5n57$hlSP0I709Q7",
+      "tags": {
+        "clearance_m": "0.1",
+        "skel_degree": "1",
+        "floor_label": "L1"
+      }
+    },
+    {
+      "node_id": "SKE-0031",
+      "label": "Junction (22.1,3.8)",
+      "position": [
+        22.1,
+        3.825
+      ],
+      "node_type": "junction",
+      "zone_id": "0BGjw438P6JAPe2g$sDgcT",
+      "tags": {
+        "clearance_m": "4.0",
+        "skel_degree": "3",
+        "floor_label": "L1"
+      }
+    },
+    {
+      "node_id": "SKE-0032",
+      "label": "Junction (17.5,4.1)",
+      "position": [
+        17.5,
+        4.125
+      ],
+      "node_type": "junction",
+      "zone_id": "0BGjw438P6JAPe2g$sDgcT",
+      "tags": {
+        "clearance_m": "4.3",
+        "skel_degree": "4",
+        "floor_label": "L1"
+      }
+    },
+    {
+      "node_id": "SKE-0033",
+      "label": "Junction (4.2,4.2)",
+      "position": [
+        4.2,
+        4.225
+      ],
+      "node_type": "junction",
+      "zone_id": "0BGjw438P6JAPe2g$sDgcT",
+      "tags": {
+        "clearance_m": "4.4",
+        "skel_degree": "3",
+        "floor_label": "L1"
+      }
+    },
+    {
+      "node_id": "SKE-0034",
+      "label": "Junction (8.3,4.2)",
+      "position": [
+        8.3,
+        4.225
+      ],
+      "node_type": "junction",
+      "zone_id": "0BGjw438P6JAPe2g$sDgcT",
+      "tags": {
+        "clearance_m": "4.4",
+        "skel_degree": "3",
+        "floor_label": "L1"
+      }
+    },
+    {
+      "node_id": "SKE-0035",
+      "label": "Junction (23.8,4.2)",
+      "position": [
+        23.8,
+        4.225
+      ],
+      "node_type": "junction",
+      "zone_id": "0BGjw438P6JAPe2g$sDgcT",
+      "tags": {
+        "clearance_m": "4.4",
+        "skel_degree": "3",
+        "floor_label": "L1"
+      }
+    },
+    {
+      "node_id": "SKE-0036",
+      "label": "Junction (15.2,4.9)",
+      "position": [
+        15.2,
+        4.925
+      ],
+      "node_type": "junction",
+      "zone_id": "0BGjw438P6JAPe2g$sDgcT",
+      "tags": {
+        "clearance_m": "5.1",
+        "skel_degree": "3",
+        "floor_label": "L1"
+      }
+    },
+    {
+      "node_id": "SKE-0037",
+      "label": "Junction (10.9,5.1)",
+      "position": [
+        10.9,
+        5.125
+      ],
+      "node_type": "junction",
+      "zone_id": "0BGjw438P6JAPe2g$sDgcT",
+      "tags": {
+        "clearance_m": "5.3",
+        "skel_degree": "3",
+        "floor_label": "L1"
+      }
+    },
+    {
+      "node_id": "SKE-0038",
+      "label": "Junction (21.7,5.3)",
+      "position": [
+        21.7,
+        5.325
+      ],
+      "node_type": "junction",
+      "zone_id": "0BGjw438P6JAPe2g$sDgcT",
+      "tags": {
+        "clearance_m": "5.5",
+        "skel_degree": "3",
+        "floor_label": "L1"
+      }
+    },
+    {
+      "node_id": "SKE-0039",
+      "label": "Junction (3.3,5.4)",
+      "position": [
+        3.3,
+        5.425
+      ],
+      "node_type": "junction",
+      "zone_id": "0BGjw438P6JAPe2g$sDgcT",
+      "tags": {
+        "clearance_m": "3.6",
+        "skel_degree": "3",
+        "floor_label": "L1"
+      }
+    },
+    {
+      "node_id": "SKE-0040",
+      "label": "Junction (16.7,5.5)",
+      "position": [
+        16.7,
+        5.525
+      ],
+      "node_type": "junction",
+      "zone_id": "0BGjw438P6JAPe2g$sDgcT",
+      "tags": {
+        "clearance_m": "5.7",
+        "skel_degree": "3",
+        "floor_label": "L1"
+      }
+    },
+    {
+      "node_id": "SKE-0041",
+      "label": "Junction (37.2,5.6)",
+      "position": [
+        37.2,
+        5.625
+      ],
+      "node_type": "junction",
+      "zone_id": "2GDGci$en8jAR10fGEvA6l",
+      "tags": {
+        "clearance_m": "1.9",
+        "skel_degree": "3",
+        "floor_label": "L1"
+      }
+    },
+    {
+      "node_id": "SKE-0042",
+      "label": "Junction (8.7,5.8)",
+      "position": [
+        8.7,
+        5.825
+      ],
+      "node_type": "junction",
+      "zone_id": "0BGjw438P6JAPe2g$sDgcT",
+      "tags": {
+        "clearance_m": "6.0",
+        "skel_degree": "3",
+        "floor_label": "L1"
+      }
+    },
+    {
+      "node_id": "SKE-0043",
+      "label": "Junction (23.3,5.8)",
+      "position": [
+        23.3,
+        5.825
+      ],
+      "node_type": "junction",
+      "zone_id": "0BGjw438P6JAPe2g$sDgcT",
+      "tags": {
+        "clearance_m": "6.0",
+        "skel_degree": "3",
+        "floor_label": "L1"
+      }
+    },
+    {
+      "node_id": "SKE-0044",
+      "label": "Junction (33.9,6.2)",
+      "position": [
+        33.9,
+        6.225
+      ],
+      "node_type": "junction",
+      "zone_id": "2RTFVvtPr83Q0UxafooW91",
+      "tags": {
+        "clearance_m": "1.4",
+        "skel_degree": "3",
+        "floor_label": "L1"
+      }
+    },
+    {
+      "node_id": "SKE-0045",
+      "label": "Junction (15.3,6.5)",
+      "position": [
+        15.3,
+        6.525
+      ],
+      "node_type": "junction",
+      "zone_id": "0BGjw438P6JAPe2g$sDgcT",
+      "tags": {
+        "clearance_m": "6.7",
+        "skel_degree": "3",
+        "floor_label": "L1"
+      }
+    },
+    {
+      "node_id": "SKE-0046",
+      "label": "Junction (31.0,6.5)",
+      "position": [
+        31.0,
+        6.525
+      ],
+      "node_type": "junction",
+      "zone_id": "2lyI2yiub9QBhgywjO7xcX",
+      "tags": {
+        "clearance_m": "1.5",
+        "skel_degree": "3",
+        "floor_label": "L1"
+      }
+    },
+    {
+      "node_id": "SKE-0047",
+      "label": "Junction (10.6,6.7)",
+      "position": [
+        10.6,
+        6.725
+      ],
+      "node_type": "junction",
+      "zone_id": "0BGjw438P6JAPe2g$sDgcT",
+      "tags": {
+        "clearance_m": "6.9",
+        "skel_degree": "3",
+        "floor_label": "L1"
+      }
+    },
+    {
+      "node_id": "SKE-0048",
+      "label": "Junction (22.1,6.8)",
+      "position": [
+        22.1,
+        6.825
+      ],
+      "node_type": "junction",
+      "zone_id": "0BGjw438P6JAPe2g$sDgcT",
+      "tags": {
+        "clearance_m": "7.0",
+        "skel_degree": "3",
+        "floor_label": "L1"
+      }
+    },
+    {
+      "node_id": "SKE-0049",
+      "label": "Junction (16.8,7.0)",
+      "position": [
+        16.8,
+        7.025
+      ],
+      "node_type": "junction",
+      "zone_id": "0BGjw438P6JAPe2g$sDgcT",
+      "tags": {
+        "clearance_m": "7.2",
+        "skel_degree": "3",
+        "floor_label": "L1"
+      }
+    },
+    {
+      "node_id": "SKE-0050",
+      "label": "Junction (-0.2,7.2)",
+      "position": [
+        -0.2,
+        7.225
+      ],
+      "node_type": "junction",
+      "zone_id": null,
+      "tags": {
+        "clearance_m": "0.1",
+        "skel_degree": "1",
+        "floor_label": "L1"
+      }
+    },
+    {
+      "node_id": "SKE-0051",
+      "label": "Junction (32.4,7.2)",
+      "position": [
+        32.4,
+        7.225
+      ],
+      "node_type": "junction",
+      "zone_id": "2lyI2yiub9QBhgywjO7xcX",
+      "tags": {
+        "clearance_m": "0.1",
+        "skel_degree": "1",
+        "floor_label": "L1"
+      }
+    },
+    {
+      "node_id": "SKE-0052",
+      "label": "Junction (39.0,7.2)",
+      "position": [
+        39.0,
+        7.225
+      ],
+      "node_type": "junction",
+      "zone_id": "2GDGci$en8jAR10fGEvA6l",
+      "tags": {
+        "clearance_m": "0.1",
+        "skel_degree": "1",
+        "floor_label": "L1"
+      }
+    },
+    {
+      "node_id": "SKE-0053",
+      "label": "Junction (9.2,7.3)",
+      "position": [
+        9.2,
+        7.325
+      ],
+      "node_type": "junction",
+      "zone_id": "0BGjw438P6JAPe2g$sDgcT",
+      "tags": {
+        "clearance_m": "7.5",
+        "skel_degree": "3",
+        "floor_label": "L1"
+      }
+    },
+    {
+      "node_id": "SKE-0054",
+      "label": "Junction (7.4,7.4)",
+      "position": [
+        7.4,
+        7.425
+      ],
+      "node_type": "junction",
+      "zone_id": "0BGjw438P6JAPe2g$sDgcT",
+      "tags": {
+        "clearance_m": "7.3",
+        "skel_degree": "3",
+        "floor_label": "L1"
+      }
+    },
+    {
+      "node_id": "SKE-0055",
+      "label": "Junction (35.2,7.5)",
+      "position": [
+        35.2,
+        7.525
+      ],
+      "node_type": "junction",
+      "zone_id": "2RTFVvtPr83Q0UxafooW91",
+      "tags": {
+        "clearance_m": "0.1",
+        "skel_degree": "1",
+        "floor_label": "L1"
+      }
+    },
+    {
+      "node_id": "SKE-0056",
+      "label": "Junction (15.3,8.1)",
+      "position": [
+        15.3,
+        8.125
+      ],
+      "node_type": "junction",
+      "zone_id": "0BGjw438P6JAPe2g$sDgcT",
+      "tags": {
+        "clearance_m": "7.0",
+        "skel_degree": "3",
+        "floor_label": "L1"
+      }
+    },
+    {
+      "node_id": "SKE-0057",
+      "label": "Junction (10.5,8.3)",
+      "position": [
+        10.5,
+        8.325
+      ],
+      "node_type": "junction",
+      "zone_id": "0BGjw438P6JAPe2g$sDgcT",
+      "tags": {
+        "clearance_m": "6.8",
+        "skel_degree": "3",
+        "floor_label": "L1"
+      }
+    },
+    {
+      "node_id": "SKE-0058",
+      "label": "Junction (22.0,8.3)",
+      "position": [
+        22.0,
+        8.325
+      ],
+      "node_type": "junction",
+      "zone_id": "0BGjw438P6JAPe2g$sDgcT",
+      "tags": {
+        "clearance_m": "6.8",
+        "skel_degree": "4",
+        "floor_label": "L1"
+      }
+    },
+    {
+      "node_id": "SKE-0059",
+      "label": "Junction (31.0,8.4)",
+      "position": [
+        31.0,
+        8.425
+      ],
+      "node_type": "junction",
+      "zone_id": "2lyI2yiub9QBhgywjO7xcX",
+      "tags": {
+        "clearance_m": "1.5",
+        "skel_degree": "3",
+        "floor_label": "L1"
+      }
+    },
+    {
+      "node_id": "SKE-0060",
+      "label": "Junction (17.1,8.5)",
+      "position": [
+        17.1,
+        8.525
+      ],
+      "node_type": "junction",
+      "zone_id": "0BGjw438P6JAPe2g$sDgcT",
+      "tags": {
+        "clearance_m": "6.6",
+        "skel_degree": "3",
+        "floor_label": "L1"
+      }
+    },
+    {
+      "node_id": "SKE-0061",
+      "label": "Junction (1.1,8.6)",
+      "position": [
+        1.1,
+        8.625
+      ],
+      "node_type": "junction",
+      "zone_id": "0BGjw438P6JAPe2g$sDgcT",
+      "tags": {
+        "clearance_m": "1.3",
+        "skel_degree": "3",
+        "floor_label": "L1"
+      }
+    },
+    {
+      "node_id": "SKE-0062",
+      "label": "Junction (8.6,8.9)",
+      "position": [
+        8.6,
+        8.925
+      ],
+      "node_type": "junction",
+      "zone_id": "0BGjw438P6JAPe2g$sDgcT",
+      "tags": {
+        "clearance_m": "6.2",
+        "skel_degree": "3",
+        "floor_label": "L1"
+      }
+    },
+    {
+      "node_id": "SKE-0063",
+      "label": "Junction (3.0,9.1)",
+      "position": [
+        3.0,
+        9.125
+      ],
+      "node_type": "junction",
+      "zone_id": "0BGjw438P6JAPe2g$sDgcT",
+      "tags": {
+        "clearance_m": "3.2",
+        "skel_degree": "3",
+        "floor_label": "L1"
+      }
+    },
+    {
+      "node_id": "SKE-0064",
+      "label": "Junction (23.3,9.1)",
+      "position": [
+        23.3,
+        9.125
+      ],
+      "node_type": "junction",
+      "zone_id": "0BGjw438P6JAPe2g$sDgcT",
+      "tags": {
+        "clearance_m": "6.0",
+        "skel_degree": "3",
+        "floor_label": "L1"
+      }
+    },
+    {
+      "node_id": "SKE-0065",
+      "label": "Junction (4.6,9.4)",
+      "position": [
+        4.6,
+        9.425
+      ],
+      "node_type": "junction",
+      "zone_id": "0BGjw438P6JAPe2g$sDgcT",
+      "tags": {
+        "clearance_m": "4.8",
+        "skel_degree": "3",
+        "floor_label": "L1"
+      }
+    },
+    {
+      "node_id": "SKE-0066",
+      "label": "Junction (15.1,9.6)",
+      "position": [
+        15.1,
+        9.625
+      ],
+      "node_type": "junction",
+      "zone_id": "0BGjw438P6JAPe2g$sDgcT",
+      "tags": {
+        "clearance_m": "5.5",
+        "skel_degree": "3",
+        "floor_label": "L1"
+      }
+    },
+    {
+      "node_id": "SKE-0067",
+      "label": "Junction (10.3,9.8)",
+      "position": [
+        10.3,
+        9.825
+      ],
+      "node_type": "junction",
+      "zone_id": "0BGjw438P6JAPe2g$sDgcT",
+      "tags": {
+        "clearance_m": "5.3",
+        "skel_degree": "3",
+        "floor_label": "L1"
+      }
+    },
+    {
+      "node_id": "SKE-0068",
+      "label": "Junction (21.5,9.8)",
+      "position": [
+        21.5,
+        9.825
+      ],
+      "node_type": "junction",
+      "zone_id": "0BGjw438P6JAPe2g$sDgcT",
+      "tags": {
+        "clearance_m": "5.3",
+        "skel_degree": "4",
+        "floor_label": "L1"
+      }
+    },
+    {
+      "node_id": "SKE-0069",
+      "label": "Junction (17.2,10.0)",
+      "position": [
+        17.2,
+        10.025
+      ],
+      "node_type": "junction",
+      "zone_id": "0BGjw438P6JAPe2g$sDgcT",
+      "tags": {
+        "clearance_m": "5.1",
+        "skel_degree": "3",
+        "floor_label": "L1"
+      }
+    },
+    {
+      "node_id": "SKE-0070",
+      "label": "Junction (36.5,10.2)",
+      "position": [
+        36.5,
+        10.225
+      ],
+      "node_type": "junction",
+      "zone_id": "2lyI2yiub9QBhgywjO7xcX",
+      "tags": {
+        "clearance_m": "2.6",
+        "skel_degree": "3",
+        "floor_label": "L1"
+      }
+    },
+    {
+      "node_id": "SKE-0071",
+      "label": "Junction (8.4,10.4)",
+      "position": [
+        8.4,
+        10.425
+      ],
+      "node_type": "junction",
+      "zone_id": "0BGjw438P6JAPe2g$sDgcT",
+      "tags": {
+        "clearance_m": "4.7",
+        "skel_degree": "3",
+        "floor_label": "L1"
+      }
+    },
+    {
+      "node_id": "SKE-0072",
+      "label": "Junction (23.9,10.5)",
+      "position": [
+        23.9,
+        10.525
+      ],
+      "node_type": "junction",
+      "zone_id": "0BGjw438P6JAPe2g$sDgcT",
+      "tags": {
+        "clearance_m": "4.6",
+        "skel_degree": "3",
+        "floor_label": "L1"
+      }
+    },
+    {
+      "node_id": "SKE-0073",
+      "label": "Junction (4.7,11.1)",
+      "position": [
+        4.7,
+        11.125
+      ],
+      "node_type": "junction",
+      "zone_id": "0BGjw438P6JAPe2g$sDgcT",
+      "tags": {
+        "clearance_m": "4.0",
+        "skel_degree": "3",
+        "floor_label": "L1"
+      }
+    },
+    {
+      "node_id": "SKE-0074",
+      "label": "Junction (14.9,11.1)",
+      "position": [
+        14.9,
+        11.125
+      ],
+      "node_type": "junction",
+      "zone_id": "0BGjw438P6JAPe2g$sDgcT",
+      "tags": {
+        "clearance_m": "4.0",
+        "skel_degree": "3",
+        "floor_label": "L1"
+      }
+    },
+    {
+      "node_id": "SKE-0075",
+      "label": "Junction (11.2,11.3)",
+      "position": [
+        11.2,
+        11.325
+      ],
+      "node_type": "junction",
+      "zone_id": "0BGjw438P6JAPe2g$sDgcT",
+      "tags": {
+        "clearance_m": "3.8",
+        "skel_degree": "3",
+        "floor_label": "L1"
+      }
+    },
+    {
+      "node_id": "SKE-0076",
+      "label": "Junction (21.3,11.3)",
+      "position": [
+        21.3,
+        11.325
+      ],
+      "node_type": "junction",
+      "zone_id": "0BGjw438P6JAPe2g$sDgcT",
+      "tags": {
+        "clearance_m": "3.8",
+        "skel_degree": "3",
+        "floor_label": "L1"
+      }
+    },
+    {
+      "node_id": "SKE-0077",
+      "label": "Junction (17.7,11.6)",
+      "position": [
+        17.7,
+        11.625
+      ],
+      "node_type": "junction",
+      "zone_id": "0BGjw438P6JAPe2g$sDgcT",
+      "tags": {
+        "clearance_m": "3.5",
+        "skel_degree": "3",
+        "floor_label": "L1"
+      }
+    },
+    {
+      "node_id": "SKE-0078",
+      "label": "Junction (8.1,11.9)",
+      "position": [
+        8.1,
+        11.925
+      ],
+      "node_type": "junction",
+      "zone_id": "0BGjw438P6JAPe2g$sDgcT",
+      "tags": {
+        "clearance_m": "3.2",
+        "skel_degree": "3",
+        "floor_label": "L1"
+      }
+    },
+    {
+      "node_id": "SKE-0079",
+      "label": "Junction (24.3,12.0)",
+      "position": [
+        24.3,
+        12.025
+      ],
+      "node_type": "junction",
+      "zone_id": "0BGjw438P6JAPe2g$sDgcT",
+      "tags": {
+        "clearance_m": "3.1",
+        "skel_degree": "4",
+        "floor_label": "L1"
+      }
+    },
+    {
+      "node_id": "SKE-0080",
+      "label": "Junction (34.6,12.6)",
+      "position": [
+        34.6,
+        12.625
+      ],
+      "node_type": "junction",
+      "zone_id": "2lyI2yiub9QBhgywjO7xcX",
+      "tags": {
+        "clearance_m": "2.34",
+        "skel_degree": "3",
+        "floor_label": "L1"
+      }
+    },
+    {
+      "node_id": "SKE-0081",
+      "label": "Junction (4.9,12.7)",
+      "position": [
+        4.9,
+        12.725
+      ],
+      "node_type": "junction",
+      "zone_id": "0BGjw438P6JAPe2g$sDgcT",
+      "tags": {
+        "clearance_m": "2.4",
+        "skel_degree": "3",
+        "floor_label": "L1"
+      }
+    },
+    {
+      "node_id": "SKE-0082",
+      "label": "Junction (31.5,12.7)",
+      "position": [
+        31.5,
+        12.725
+      ],
+      "node_type": "junction",
+      "zone_id": "2lyI2yiub9QBhgywjO7xcX",
+      "tags": {
+        "clearance_m": "2.15",
+        "skel_degree": "3",
+        "floor_label": "L1"
+      }
+    },
+    {
+      "node_id": "SKE-0083",
+      "label": "Junction (21.0,12.8)",
+      "position": [
+        21.0,
+        12.825
+      ],
+      "node_type": "junction",
+      "zone_id": "0BGjw438P6JAPe2g$sDgcT",
+      "tags": {
+        "clearance_m": "2.3",
+        "skel_degree": "3",
+        "floor_label": "L1"
+      }
+    },
+    {
+      "node_id": "SKE-0084",
+      "label": "Junction (39.0,12.8)",
+      "position": [
+        39.0,
+        12.825
+      ],
+      "node_type": "junction",
+      "zone_id": "2lyI2yiub9QBhgywjO7xcX",
+      "tags": {
+        "clearance_m": "0.1",
+        "skel_degree": "1",
+        "floor_label": "L1"
+      }
+    },
+    {
+      "node_id": "SKE-0085",
+      "label": "Junction (11.5,12.9)",
+      "position": [
+        11.5,
+        12.925
+      ],
+      "node_type": "junction",
+      "zone_id": "0BGjw438P6JAPe2g$sDgcT",
+      "tags": {
+        "clearance_m": "2.2",
+        "skel_degree": "3",
+        "floor_label": "L1"
+      }
+    },
+    {
+      "node_id": "SKE-0086",
+      "label": "Junction (27.5,13.4)",
+      "position": [
+        27.5,
+        13.425
+      ],
+      "node_type": "junction",
+      "zone_id": "0BGjw438P6JAPe2g$sDgcT",
+      "tags": {
+        "clearance_m": "1.77",
+        "skel_degree": "3",
+        "floor_label": "L1"
+      }
+    },
+    {
+      "node_id": "SKE-0087",
+      "label": "Junction (24.7,13.5)",
+      "position": [
+        24.7,
+        13.525
+      ],
+      "node_type": "junction",
+      "zone_id": "0BGjw438P6JAPe2g$sDgcT",
+      "tags": {
+        "clearance_m": "1.6",
+        "skel_degree": "3",
+        "floor_label": "L1"
+      }
+    },
+    {
+      "node_id": "SKE-0088",
+      "label": "Junction (14.0,13.8)",
+      "position": [
+        14.0,
+        13.825
+      ],
+      "node_type": "junction",
+      "zone_id": "0BGjw438P6JAPe2g$sDgcT",
+      "tags": {
+        "clearance_m": "1.3",
+        "skel_degree": "3",
+        "floor_label": "L1"
+      }
+    },
+    {
+      "node_id": "SKE-0089",
+      "label": "Junction (18.4,13.8)",
+      "position": [
+        18.4,
+        13.825
+      ],
+      "node_type": "junction",
+      "zone_id": "0BGjw438P6JAPe2g$sDgcT",
+      "tags": {
+        "clearance_m": "1.3",
+        "skel_degree": "3",
+        "floor_label": "L1"
+      }
+    },
+    {
+      "node_id": "SKE-0090",
+      "label": "Junction (37.9,14.0)",
+      "position": [
+        37.9,
+        14.025
+      ],
+      "node_type": "junction",
+      "zone_id": "2gbGtfPHrFnOw3AWmEVj8l",
+      "tags": {
+        "clearance_m": "1.1",
+        "skel_degree": "3",
+        "floor_label": "L1"
+      }
+    },
+    {
+      "node_id": "SKE-0091",
+      "label": "Junction (0.9,14.1)",
+      "position": [
+        0.9,
+        14.125
+      ],
+      "node_type": "junction",
+      "zone_id": "0BGjw438P6JAPe2g$sDgcT",
+      "tags": {
+        "clearance_m": "1.0",
+        "skel_degree": "3",
+        "floor_label": "L1"
+      }
+    },
+    {
+      "node_id": "SKE-0092",
+      "label": "Junction (5.5,14.1)",
+      "position": [
+        5.5,
+        14.125
+      ],
+      "node_type": "junction",
+      "zone_id": "0BGjw438P6JAPe2g$sDgcT",
+      "tags": {
+        "clearance_m": "1.0",
+        "skel_degree": "3",
+        "floor_label": "L1"
+      }
+    },
+    {
+      "node_id": "SKE-0093",
+      "label": "Junction (7.4,14.1)",
+      "position": [
+        7.4,
+        14.125
+      ],
+      "node_type": "junction",
+      "zone_id": "0BGjw438P6JAPe2g$sDgcT",
+      "tags": {
+        "clearance_m": "1.0",
+        "skel_degree": "3",
+        "floor_label": "L1"
+      }
+    },
+    {
+      "node_id": "SKE-0094",
+      "label": "Junction (12.7,15.0)",
+      "position": [
+        12.7,
+        15.025
+      ],
+      "node_type": "junction",
+      "zone_id": "0BGjw438P6JAPe2g$sDgcT",
+      "tags": {
+        "clearance_m": "0.1",
+        "skel_degree": "1",
+        "floor_label": "L1"
+      }
+    },
+    {
+      "node_id": "SKE-0095",
+      "label": "Junction (19.7,15.0)",
+      "position": [
+        19.7,
+        15.025
+      ],
+      "node_type": "junction",
+      "zone_id": null,
+      "tags": {
+        "clearance_m": "0.1",
+        "skel_degree": "1",
+        "floor_label": "L1"
+      }
+    },
+    {
+      "node_id": "SKE-0096",
+      "label": "Junction (25.7,15.0)",
+      "position": [
+        25.7,
+        15.025
+      ],
+      "node_type": "junction",
+      "zone_id": "0BGjw438P6JAPe2g$sDgcT",
+      "tags": {
+        "clearance_m": "0.1",
+        "skel_degree": "1",
+        "floor_label": "L1"
+      }
+    },
+    {
+      "node_id": "SKE-0097",
+      "label": "Junction (29.2,15.0)",
+      "position": [
+        29.2,
+        15.025
+      ],
+      "node_type": "junction",
+      "zone_id": "0BGjw438P6JAPe2g$sDgcT",
+      "tags": {
+        "clearance_m": "0.1",
+        "skel_degree": "1",
+        "floor_label": "L1"
+      }
+    },
+    {
+      "node_id": "SKE-0098",
+      "label": "Junction (32.2,15.0)",
+      "position": [
+        32.2,
+        15.025
+      ],
+      "node_type": "junction",
+      "zone_id": "2lyI2yiub9QBhgywjO7xcX",
+      "tags": {
+        "clearance_m": "0.1",
+        "skel_degree": "1",
+        "floor_label": "L1"
+      }
+    }
+  ],
+  "edges": [
+    {
+      "edge_id": "EDGE-FEAT-0_ndkJyO9CVPHaFtnEM6Kk-SKE-0000",
+      "source_id": "FEAT-0_ndkJyO9CVPHaFtnEM6Kk",
+      "target_id": "SKE-0000",
+      "distance": 0.2557,
+      "shore_linable": true,
+      "safety_score": 0.05,
+      "landmark_score": 0.6667,
+      "tags": {
+        "shore_fraction": "1.0",
+        "straight_dist": "0.461"
+      }
+    },
+    {
+      "edge_id": "EDGE-FEAT-0_ndkJyO9CVPHaFtnEM6Kk-SKE-0013",
+      "source_id": "FEAT-0_ndkJyO9CVPHaFtnEM6Kk",
+      "target_id": "SKE-0013",
+      "distance": 1.5305,
+      "shore_linable": true,
+      "safety_score": 0.3629,
+      "landmark_score": 0.6667,
+      "tags": {
+        "shore_fraction": "0.6",
+        "straight_dist": "1.5305"
+      }
+    },
+    {
+      "edge_id": "EDGE-FEAT-0_ndkJyO9CVPHaFtnEM6Kk-FEAT-0wp3zaH$L7VBlQRHvLq4Rl",
+      "source_id": "FEAT-0_ndkJyO9CVPHaFtnEM6Kk",
+      "target_id": "FEAT-0wp3zaH$L7VBlQRHvLq4Rl",
+      "distance": 2.0,
+      "shore_linable": true,
+      "safety_score": 0.1229,
+      "landmark_score": 0.6667,
+      "tags": {
+        "shore_fraction": "1.0",
+        "straight_dist": "2.0"
+      }
+    },
+    {
+      "edge_id": "EDGE-FEAT-0_ndkJyO9CVPHaFtnEM6Kk-SKE-0027",
+      "source_id": "FEAT-0_ndkJyO9CVPHaFtnEM6Kk",
+      "target_id": "SKE-0027",
+      "distance": 3.2882,
+      "shore_linable": true,
+      "safety_score": 0.2479,
+      "landmark_score": 1.0,
+      "tags": {
+        "shore_fraction": "1.0",
+        "straight_dist": "3.2882"
+      }
+    },
+    {
+      "edge_id": "EDGE-FEAT-0_ndkJyO9CVPHaFtnEM6Kk-SKE-0024",
+      "source_id": "FEAT-0_ndkJyO9CVPHaFtnEM6Kk",
+      "target_id": "SKE-0024",
+      "distance": 3.5004,
+      "shore_linable": false,
+      "safety_score": 0.7408,
+      "landmark_score": 0.6667,
+      "tags": {
+        "shore_fraction": "0.3",
+        "straight_dist": "3.5004"
+      }
+    },
+    {
+      "edge_id": "EDGE-FEAT-0_ndkJyO9CVPHaFtnEM6Kk-SKE-0020",
+      "source_id": "FEAT-0_ndkJyO9CVPHaFtnEM6Kk",
+      "target_id": "SKE-0020",
+      "distance": 5.2108,
+      "shore_linable": false,
+      "safety_score": 0.7454,
+      "landmark_score": 0.6667,
+      "tags": {
+        "shore_fraction": "0.2",
+        "straight_dist": "5.2108"
+      }
+    },
+    {
+      "edge_id": "EDGE-FEAT-0wp3zaH$L7VBlQRHvLq4Rl-SKE-0027",
+      "source_id": "FEAT-0wp3zaH$L7VBlQRHvLq4Rl",
+      "target_id": "SKE-0027",
+      "distance": 1.3463,
+      "shore_linable": true,
+      "safety_score": 0.265,
+      "landmark_score": 1.0,
+      "tags": {
+        "shore_fraction": "1.0",
+        "straight_dist": "1.3463"
+      }
+    },
+    {
+      "edge_id": "EDGE-FEAT-0wp3zaH$L7VBlQRHvLq4Rl-SKE-0013",
+      "source_id": "FEAT-0wp3zaH$L7VBlQRHvLq4Rl",
+      "target_id": "SKE-0013",
+      "distance": 1.5945,
+      "shore_linable": true,
+      "safety_score": 0.43,
+      "landmark_score": 0.6667,
+      "tags": {
+        "shore_fraction": "0.5",
+        "straight_dist": "1.5945"
+      }
+    },
+    {
+      "edge_id": "EDGE-FEAT-0wp3zaH$L7VBlQRHvLq4Rl-SKE-0000",
+      "source_id": "FEAT-0wp3zaH$L7VBlQRHvLq4Rl",
+      "target_id": "SKE-0000",
+      "distance": 2.3691,
+      "shore_linable": true,
+      "safety_score": 0.1487,
+      "landmark_score": 0.6667,
+      "tags": {
+        "shore_fraction": "1.0",
+        "straight_dist": "2.3691"
+      }
+    },
+    {
+      "edge_id": "EDGE-FEAT-0wp3zaH$L7VBlQRHvLq4Rl-SKE-0024",
+      "source_id": "FEAT-0wp3zaH$L7VBlQRHvLq4Rl",
+      "target_id": "SKE-0024",
+      "distance": 2.5402,
+      "shore_linable": false,
+      "safety_score": 0.765,
+      "landmark_score": 0.6667,
+      "tags": {
+        "shore_fraction": "0.3",
+        "straight_dist": "2.5402"
+      }
+    },
+    {
+      "edge_id": "EDGE-FEAT-0wp3zaH$L7VBlQRHvLq4Rl-FEAT-3BojDOt51BFRctjuYcdjPm",
+      "source_id": "FEAT-0wp3zaH$L7VBlQRHvLq4Rl",
+      "target_id": "FEAT-3BojDOt51BFRctjuYcdjPm",
+      "distance": 2.0721,
+      "shore_linable": true,
+      "safety_score": 0.054,
+      "landmark_score": 1.0,
+      "tags": {
+        "shore_fraction": "1.0",
+        "straight_dist": "3.2249"
+      }
+    },
+    {
+      "edge_id": "EDGE-FEAT-1rcsg60O53_ukZNuZICUKt-SKE-0098",
+      "source_id": "FEAT-1rcsg60O53_ukZNuZICUKt",
+      "target_id": "SKE-0098",
+      "distance": 1.8112,
+      "shore_linable": true,
+      "safety_score": 0.0531,
+      "landmark_score": 0.6667,
+      "tags": {
+        "shore_fraction": "1.0",
+        "straight_dist": "2.1013"
+      }
+    },
+    {
+      "edge_id": "EDGE-FEAT-1rcsg60O53_ukZNuZICUKt-SKE-0080",
+      "source_id": "FEAT-1rcsg60O53_ukZNuZICUKt",
+      "target_id": "SKE-0080",
+      "distance": 2.4931,
+      "shore_linable": false,
+      "safety_score": 0.6274,
+      "landmark_score": 0.6667,
+      "tags": {
+        "shore_fraction": "0.3",
+        "straight_dist": "2.4931"
+      }
+    },
+    {
+      "edge_id": "EDGE-FEAT-1rcsg60O53_ukZNuZICUKt-FEAT-3KZzX8BSn5$uXshxhC1MGX",
+      "source_id": "FEAT-1rcsg60O53_ukZNuZICUKt",
+      "target_id": "FEAT-3KZzX8BSn5$uXshxhC1MGX",
+      "distance": 3.0216,
+      "shore_linable": true,
+      "safety_score": 0.1826,
+      "landmark_score": 0.6667,
+      "tags": {
+        "shore_fraction": "1.0",
+        "straight_dist": "3.0325"
+      }
+    },
+    {
+      "edge_id": "EDGE-FEAT-1rcsg60O53_ukZNuZICUKt-SKE-0082",
+      "source_id": "FEAT-1rcsg60O53_ukZNuZICUKt",
+      "target_id": "SKE-0082",
+      "distance": 3.6716,
+      "shore_linable": true,
+      "safety_score": 0.305,
+      "landmark_score": 0.6667,
+      "tags": {
+        "shore_fraction": "0.6",
+        "straight_dist": "3.6716"
+      }
+    },
+    {
+      "edge_id": "EDGE-FEAT-1rcsg60O53_ukZNuZICUKt-SKE-0090",
+      "source_id": "FEAT-1rcsg60O53_ukZNuZICUKt",
+      "target_id": "SKE-0090",
+      "distance": 3.7466,
+      "shore_linable": true,
+      "safety_score": 0.1941,
+      "landmark_score": 0.6667,
+      "tags": {
+        "shore_fraction": "0.9",
+        "straight_dist": "3.7571"
+      }
+    },
+    {
+      "edge_id": "EDGE-FEAT-1rcsg60O53_ukZNuZICUKt-ZONE-2gbGtfPHrFnOw3AWmEVj8l",
+      "source_id": "FEAT-1rcsg60O53_ukZNuZICUKt",
+      "target_id": "ZONE-2gbGtfPHrFnOw3AWmEVj8l",
+      "distance": 3.9016,
+      "shore_linable": true,
+      "safety_score": 0.2201,
+      "landmark_score": 0.6667,
+      "tags": {
+        "shore_fraction": "0.9",
+        "straight_dist": "3.912"
+      }
+    },
+    {
+      "edge_id": "EDGE-FEAT-0GgCLy2LP42eJhqSxCFQXc-SKE-0097",
+      "source_id": "FEAT-0GgCLy2LP42eJhqSxCFQXc",
+      "target_id": "SKE-0097",
+      "distance": 0.6442,
+      "shore_linable": true,
+      "safety_score": 0.05,
+      "landmark_score": 0.6667,
+      "tags": {
+        "shore_fraction": "1.0",
+        "straight_dist": "0.6543"
+      }
+    },
+    {
+      "edge_id": "EDGE-FEAT-0GgCLy2LP42eJhqSxCFQXc-SKE-0098",
+      "source_id": "FEAT-0GgCLy2LP42eJhqSxCFQXc",
+      "target_id": "SKE-0098",
+      "distance": 2.3412,
+      "shore_linable": true,
+      "safety_score": 0.0588,
+      "landmark_score": 1.0,
+      "tags": {
+        "shore_fraction": "1.0",
+        "straight_dist": "2.3512"
+      }
+    },
+    {
+      "edge_id": "EDGE-FEAT-0GgCLy2LP42eJhqSxCFQXc-FEAT-3jTK1b2NH4aPT0WWuekAnp",
+      "source_id": "FEAT-0GgCLy2LP42eJhqSxCFQXc",
+      "target_id": "FEAT-3jTK1b2NH4aPT0WWuekAnp",
+      "distance": 2.715,
+      "shore_linable": true,
+      "safety_score": 0.0633,
+      "landmark_score": 0.6667,
+      "tags": {
+        "shore_fraction": "1.0",
+        "straight_dist": "2.725"
+      }
+    },
+    {
+      "edge_id": "EDGE-FEAT-0GgCLy2LP42eJhqSxCFQXc-SKE-0086",
+      "source_id": "FEAT-0GgCLy2LP42eJhqSxCFQXc",
+      "target_id": "SKE-0086",
+      "distance": 2.8736,
+      "shore_linable": true,
+      "safety_score": 0.4008,
+      "landmark_score": 0.6667,
+      "tags": {
+        "shore_fraction": "0.6",
+        "straight_dist": "2.8858"
+      }
+    },
+    {
+      "edge_id": "EDGE-FEAT-0GgCLy2LP42eJhqSxCFQXc-SKE-0082",
+      "source_id": "FEAT-0GgCLy2LP42eJhqSxCFQXc",
+      "target_id": "SKE-0082",
+      "distance": 2.8744,
+      "shore_linable": true,
+      "safety_score": 0.1661,
+      "landmark_score": 0.6667,
+      "tags": {
+        "shore_fraction": "1.0",
+        "straight_dist": "2.8919"
+      }
+    },
+    {
+      "edge_id": "EDGE-FEAT-0GgCLy2LP42eJhqSxCFQXc-ZONE-2UG7dUO6vAYheCYwduYFZE",
+      "source_id": "FEAT-0GgCLy2LP42eJhqSxCFQXc",
+      "target_id": "ZONE-2UG7dUO6vAYheCYwduYFZE",
+      "distance": 3.0809,
+      "shore_linable": true,
+      "safety_score": 0.3007,
+      "landmark_score": 0.6667,
+      "tags": {
+        "shore_fraction": "0.9",
+        "straight_dist": "3.0809"
+      }
+    },
+    {
+      "edge_id": "EDGE-FEAT-3jTK1b2NH4aPT0WWuekAnp-SKE-0096",
+      "source_id": "FEAT-3jTK1b2NH4aPT0WWuekAnp",
+      "target_id": "SKE-0096",
+      "distance": 1.1366,
+      "shore_linable": true,
+      "safety_score": 0.05,
+      "landmark_score": 0.6667,
+      "tags": {
+        "shore_fraction": "1.0",
+        "straight_dist": "1.427"
+      }
+    },
+    {
+      "edge_id": "EDGE-FEAT-3jTK1b2NH4aPT0WWuekAnp-SKE-0086",
+      "source_id": "FEAT-3jTK1b2NH4aPT0WWuekAnp",
+      "target_id": "SKE-0086",
+      "distance": 1.7165,
+      "shore_linable": true,
+      "safety_score": 0.4794,
+      "landmark_score": 0.6667,
+      "tags": {
+        "shore_fraction": "0.5",
+        "straight_dist": "1.7165"
+      }
+    },
+    {
+      "edge_id": "EDGE-FEAT-3jTK1b2NH4aPT0WWuekAnp-SKE-0097",
+      "source_id": "FEAT-3jTK1b2NH4aPT0WWuekAnp",
+      "target_id": "SKE-0097",
+      "distance": 2.0764,
+      "shore_linable": true,
+      "safety_score": 0.0973,
+      "landmark_score": 0.6667,
+      "tags": {
+        "shore_fraction": "1.0",
+        "straight_dist": "2.0764"
+      }
+    },
+    {
+      "edge_id": "EDGE-FEAT-3jTK1b2NH4aPT0WWuekAnp-SKE-0087",
+      "source_id": "FEAT-3jTK1b2NH4aPT0WWuekAnp",
+      "target_id": "SKE-0087",
+      "distance": 2.8916,
+      "shore_linable": true,
+      "safety_score": 0.3798,
+      "landmark_score": 0.6667,
+      "tags": {
+        "shore_fraction": "0.7",
+        "straight_dist": "2.8916"
+      }
+    },
+    {
+      "edge_id": "EDGE-FEAT-3jTK1b2NH4aPT0WWuekAnp-SKE-0079",
+      "source_id": "FEAT-3jTK1b2NH4aPT0WWuekAnp",
+      "target_id": "SKE-0079",
+      "distance": 4.1757,
+      "shore_linable": true,
+      "safety_score": 0.7389,
+      "landmark_score": 0.6667,
+      "tags": {
+        "shore_fraction": "0.4",
+        "straight_dist": "4.1757"
+      }
+    },
+    {
+      "edge_id": "EDGE-FEAT-0JV8FQB5b5DPTE76PusxqH-SKE-0055",
+      "source_id": "FEAT-0JV8FQB5b5DPTE76PusxqH",
+      "target_id": "SKE-0055",
+      "distance": 0.6008,
+      "shore_linable": true,
+      "safety_score": 0.05,
+      "landmark_score": 0.3333,
+      "tags": {
+        "shore_fraction": "1.0",
+        "straight_dist": "0.6325"
+      }
+    },
+    {
+      "edge_id": "EDGE-FEAT-0JV8FQB5b5DPTE76PusxqH-SKE-0044",
+      "source_id": "FEAT-0JV8FQB5b5DPTE76PusxqH",
+      "target_id": "SKE-0044",
+      "distance": 1.6443,
+      "shore_linable": true,
+      "safety_score": 0.3381,
+      "landmark_score": 0.6667,
+      "tags": {
+        "shore_fraction": "0.6",
+        "straight_dist": "1.6553"
+      }
+    },
+    {
+      "edge_id": "EDGE-FEAT-0JV8FQB5b5DPTE76PusxqH-ZONE-2lyI2yiub9QBhgywjO7xcX",
+      "source_id": "FEAT-0JV8FQB5b5DPTE76PusxqH",
+      "target_id": "ZONE-2lyI2yiub9QBhgywjO7xcX",
+      "distance": 1.8542,
+      "shore_linable": true,
+      "safety_score": 0.3946,
+      "landmark_score": 0.3333,
+      "tags": {
+        "shore_fraction": "0.4",
+        "straight_dist": "1.8542"
+      }
+    },
+    {
+      "edge_id": "EDGE-FEAT-0JV8FQB5b5DPTE76PusxqH-SKE-0051",
+      "source_id": "FEAT-0JV8FQB5b5DPTE76PusxqH",
+      "target_id": "SKE-0051",
+      "distance": 2.193,
+      "shore_linable": true,
+      "safety_score": 0.069,
+      "landmark_score": 0.3333,
+      "tags": {
+        "shore_fraction": "1.0",
+        "straight_dist": "2.2561"
+      }
+    },
+    {
+      "edge_id": "EDGE-FEAT-0JV8FQB5b5DPTE76PusxqH-SKE-0070",
+      "source_id": "FEAT-0JV8FQB5b5DPTE76PusxqH",
+      "target_id": "SKE-0070",
+      "distance": 3.1401,
+      "shore_linable": false,
+      "safety_score": 0.665,
+      "landmark_score": 0.3333,
+      "tags": {
+        "shore_fraction": "0.3",
+        "straight_dist": "3.1401"
+      }
+    },
+    {
+      "edge_id": "EDGE-FEAT-0JV8FQB5b5DPTE76PusxqH-SKE-0041",
+      "source_id": "FEAT-0JV8FQB5b5DPTE76PusxqH",
+      "target_id": "SKE-0041",
+      "distance": 3.3134,
+      "shore_linable": true,
+      "safety_score": 0.374,
+      "landmark_score": 0.6667,
+      "tags": {
+        "shore_fraction": "0.6",
+        "straight_dist": "3.3422"
+      }
+    },
+    {
+      "edge_id": "EDGE-FEAT-3KZzX8BSn5$uXshxhC1MGX-SKE-0090",
+      "source_id": "FEAT-3KZzX8BSn5$uXshxhC1MGX",
+      "target_id": "SKE-0090",
+      "distance": 0.8245,
+      "shore_linable": true,
+      "safety_score": 0.2437,
+      "landmark_score": 0.3333,
+      "tags": {
+        "shore_fraction": "0.9",
+        "straight_dist": "0.8245"
+      }
+    },
+    {
+      "edge_id": "EDGE-FEAT-3KZzX8BSn5$uXshxhC1MGX-ZONE-2gbGtfPHrFnOw3AWmEVj8l",
+      "source_id": "FEAT-3KZzX8BSn5$uXshxhC1MGX",
+      "target_id": "ZONE-2gbGtfPHrFnOw3AWmEVj8l",
+      "distance": 1.0135,
+      "shore_linable": true,
+      "safety_score": 0.2887,
+      "landmark_score": 0.3333,
+      "tags": {
+        "shore_fraction": "0.8",
+        "straight_dist": "1.0135"
+      }
+    },
+    {
+      "edge_id": "EDGE-FEAT-3KZzX8BSn5$uXshxhC1MGX-SKE-0084",
+      "source_id": "FEAT-3KZzX8BSn5$uXshxhC1MGX",
+      "target_id": "SKE-0084",
+      "distance": 2.1757,
+      "shore_linable": true,
+      "safety_score": 0.124,
+      "landmark_score": 0.3333,
+      "tags": {
+        "shore_fraction": "1.0",
+        "straight_dist": "2.1961"
+      }
+    },
+    {
+      "edge_id": "EDGE-FEAT-3KZzX8BSn5$uXshxhC1MGX-SKE-0080",
+      "source_id": "FEAT-3KZzX8BSn5$uXshxhC1MGX",
+      "target_id": "SKE-0080",
+      "distance": 2.7818,
+      "shore_linable": true,
+      "safety_score": 0.578,
+      "landmark_score": 0.6667,
+      "tags": {
+        "shore_fraction": "0.4",
+        "straight_dist": "2.793"
+      }
+    },
+    {
+      "edge_id": "EDGE-FEAT-3KZzX8BSn5$uXshxhC1MGX-SKE-0070",
+      "source_id": "FEAT-3KZzX8BSn5$uXshxhC1MGX",
+      "target_id": "SKE-0070",
+      "distance": 3.6577,
+      "shore_linable": true,
+      "safety_score": 0.5556,
+      "landmark_score": 0.3333,
+      "tags": {
+        "shore_fraction": "0.5",
+        "straight_dist": "3.7213"
+      }
+    },
+    {
+      "edge_id": "EDGE-FEAT-0XYyyamEP3Bxdj9fgnPmpr-FEAT-2C7bqjFAn4dRRXxCO5ljPg",
+      "source_id": "FEAT-0XYyyamEP3Bxdj9fgnPmpr",
+      "target_id": "FEAT-2C7bqjFAn4dRRXxCO5ljPg",
+      "distance": 1.916,
+      "shore_linable": true,
+      "safety_score": 0.1279,
+      "landmark_score": 0.6667,
+      "tags": {
+        "shore_fraction": "1.0",
+        "straight_dist": "1.927"
+      }
+    },
+    {
+      "edge_id": "EDGE-FEAT-0XYyyamEP3Bxdj9fgnPmpr-ZONE-2qT_j3zBf5_8BGICwHrmlI",
+      "source_id": "FEAT-0XYyyamEP3Bxdj9fgnPmpr",
+      "target_id": "ZONE-2qT_j3zBf5_8BGICwHrmlI",
+      "distance": 2.0706,
+      "shore_linable": true,
+      "safety_score": 0.4701,
+      "landmark_score": 0.6667,
+      "tags": {
+        "shore_fraction": "0.4",
+        "straight_dist": "2.0706"
+      }
+    },
+    {
+      "edge_id": "EDGE-FEAT-0XYyyamEP3Bxdj9fgnPmpr-SKE-0016",
+      "source_id": "FEAT-0XYyyamEP3Bxdj9fgnPmpr",
+      "target_id": "SKE-0016",
+      "distance": 2.4818,
+      "shore_linable": false,
+      "safety_score": 0.4832,
+      "landmark_score": 0.6667,
+      "tags": {
+        "shore_fraction": "0.3",
+        "straight_dist": "2.4818"
+      }
+    },
+    {
+      "edge_id": "EDGE-FEAT-0XYyyamEP3Bxdj9fgnPmpr-SKE-0046",
+      "source_id": "FEAT-0XYyyamEP3Bxdj9fgnPmpr",
+      "target_id": "SKE-0046",
+      "distance": 2.7773,
+      "shore_linable": true,
+      "safety_score": 0.4913,
+      "landmark_score": 0.6667,
+      "tags": {
+        "shore_fraction": "0.4",
+        "straight_dist": "2.7876"
+      }
+    },
+    {
+      "edge_id": "EDGE-FEAT-0XYyyamEP3Bxdj9fgnPmpr-SKE-0019",
+      "source_id": "FEAT-0XYyyamEP3Bxdj9fgnPmpr",
+      "target_id": "SKE-0019",
+      "distance": 3.5859,
+      "shore_linable": true,
+      "safety_score": 0.413,
+      "landmark_score": 0.6667,
+      "tags": {
+        "shore_fraction": "0.6",
+        "straight_dist": "3.5979"
+      }
+    },
+    {
+      "edge_id": "EDGE-FEAT-0XYyyamEP3Bxdj9fgnPmpr-ZONE-2RTFVvtPr83Q0UxafooW91",
+      "source_id": "FEAT-0XYyyamEP3Bxdj9fgnPmpr",
+      "target_id": "ZONE-2RTFVvtPr83Q0UxafooW91",
+      "distance": 3.6636,
+      "shore_linable": true,
+      "safety_score": 0.2163,
+      "landmark_score": 1.0,
+      "tags": {
+        "shore_fraction": "0.8",
+        "straight_dist": "3.6736"
+      }
+    },
+    {
+      "edge_id": "EDGE-FEAT-2C7bqjFAn4dRRXxCO5ljPg-SKE-0046",
+      "source_id": "FEAT-2C7bqjFAn4dRRXxCO5ljPg",
+      "target_id": "SKE-0046",
+      "distance": 1.8009,
+      "shore_linable": true,
+      "safety_score": 0.4179,
+      "landmark_score": 0.6667,
+      "tags": {
+        "shore_fraction": "0.5",
+        "straight_dist": "1.8009"
+      }
+    },
+    {
+      "edge_id": "EDGE-FEAT-2C7bqjFAn4dRRXxCO5ljPg-SKE-0059",
+      "source_id": "FEAT-2C7bqjFAn4dRRXxCO5ljPg",
+      "target_id": "SKE-0059",
+      "distance": 3.2347,
+      "shore_linable": true,
+      "safety_score": 0.307,
+      "landmark_score": 0.6667,
+      "tags": {
+        "shore_fraction": "0.7",
+        "straight_dist": "3.2347"
+      }
+    },
+    {
+      "edge_id": "EDGE-FEAT-2C7bqjFAn4dRRXxCO5ljPg-SKE-0051",
+      "source_id": "FEAT-2C7bqjFAn4dRRXxCO5ljPg",
+      "target_id": "SKE-0051",
+      "distance": 3.3626,
+      "shore_linable": true,
+      "safety_score": 0.3443,
+      "landmark_score": 1.0,
+      "tags": {
+        "shore_fraction": "0.6",
+        "straight_dist": "3.3626"
+      }
+    },
+    {
+      "edge_id": "EDGE-FEAT-2C7bqjFAn4dRRXxCO5ljPg-ZONE-2qT_j3zBf5_8BGICwHrmlI",
+      "source_id": "FEAT-2C7bqjFAn4dRRXxCO5ljPg",
+      "target_id": "ZONE-2qT_j3zBf5_8BGICwHrmlI",
+      "distance": 3.9819,
+      "shore_linable": true,
+      "safety_score": 0.3411,
+      "landmark_score": 0.6667,
+      "tags": {
+        "shore_fraction": "0.7",
+        "straight_dist": "3.9927"
+      }
+    },
+    {
+      "edge_id": "EDGE-FEAT-2C7bqjFAn4dRRXxCO5ljPg-SKE-0019",
+      "source_id": "FEAT-2C7bqjFAn4dRRXxCO5ljPg",
+      "target_id": "SKE-0019",
+      "distance": 4.3126,
+      "shore_linable": true,
+      "safety_score": 0.5045,
+      "landmark_score": 0.6667,
+      "tags": {
+        "shore_fraction": "0.5",
+        "straight_dist": "4.3326"
+      }
+    },
+    {
+      "edge_id": "EDGE-FEAT-3MacNmU1rFHA3qwn4LY1Sp-SKE-0029",
+      "source_id": "FEAT-3MacNmU1rFHA3qwn4LY1Sp",
+      "target_id": "SKE-0029",
+      "distance": 0.5871,
+      "shore_linable": true,
+      "safety_score": 0.05,
+      "landmark_score": 0.6667,
+      "tags": {
+        "shore_fraction": "1.0",
+        "straight_dist": "0.6142"
+      }
+    },
+    {
+      "edge_id": "EDGE-FEAT-3MacNmU1rFHA3qwn4LY1Sp-ZONE-2RTFVvtPr83Q0UxafooW91",
+      "source_id": "FEAT-3MacNmU1rFHA3qwn4LY1Sp",
+      "target_id": "ZONE-2RTFVvtPr83Q0UxafooW91",
+      "distance": 1.5556,
+      "shore_linable": true,
+      "safety_score": 0.3424,
+      "landmark_score": 0.6667,
+      "tags": {
+        "shore_fraction": "0.6",
+        "straight_dist": "1.5661"
+      }
+    },
+    {
+      "edge_id": "EDGE-FEAT-2z4FjdAgjF8BzQmj709ndM-FEAT-3MacNmU1rFHA3qwn4LY1Sp",
+      "source_id": "FEAT-3MacNmU1rFHA3qwn4LY1Sp",
+      "target_id": "FEAT-2z4FjdAgjF8BzQmj709ndM",
+      "distance": 1.89,
+      "shore_linable": true,
+      "safety_score": 0.05,
+      "landmark_score": 1.0,
+      "tags": {
+        "shore_fraction": "1.0",
+        "straight_dist": "1.9"
+      }
+    },
+    {
+      "edge_id": "EDGE-FEAT-3MacNmU1rFHA3qwn4LY1Sp-SKE-0041",
+      "source_id": "FEAT-3MacNmU1rFHA3qwn4LY1Sp",
+      "target_id": "SKE-0041",
+      "distance": 2.2372,
+      "shore_linable": true,
+      "safety_score": 0.4788,
+      "landmark_score": 0.6667,
+      "tags": {
+        "shore_fraction": "0.5",
+        "straight_dist": "2.2372"
+      }
+    },
+    {
+      "edge_id": "EDGE-FEAT-3MacNmU1rFHA3qwn4LY1Sp-ZONE-2GDGci$en8jAR10fGEvA6l",
+      "source_id": "FEAT-3MacNmU1rFHA3qwn4LY1Sp",
+      "target_id": "ZONE-2GDGci$en8jAR10fGEvA6l",
+      "distance": 2.3286,
+      "shore_linable": true,
+      "safety_score": 0.4937,
+      "landmark_score": 0.6667,
+      "tags": {
+        "shore_fraction": "0.4",
+        "straight_dist": "2.3286"
+      }
+    },
+    {
+      "edge_id": "EDGE-FEAT-3MacNmU1rFHA3qwn4LY1Sp-SKE-0044",
+      "source_id": "FEAT-3MacNmU1rFHA3qwn4LY1Sp",
+      "target_id": "SKE-0044",
+      "distance": 2.5011,
+      "shore_linable": true,
+      "safety_score": 0.3449,
+      "landmark_score": 1.0,
+      "tags": {
+        "shore_fraction": "0.6",
+        "straight_dist": "2.5174"
+      }
+    },
+    {
+      "edge_id": "EDGE-FEAT-2z4FjdAgjF8BzQmj709ndM-SKE-0029",
+      "source_id": "FEAT-2z4FjdAgjF8BzQmj709ndM",
+      "target_id": "SKE-0029",
+      "distance": 1.2883,
+      "shore_linable": true,
+      "safety_score": 0.05,
+      "landmark_score": 1.0,
+      "tags": {
+        "shore_fraction": "1.0",
+        "straight_dist": "1.2883"
+      }
+    },
+    {
+      "edge_id": "EDGE-FEAT-2z4FjdAgjF8BzQmj709ndM-SKE-0017",
+      "source_id": "FEAT-2z4FjdAgjF8BzQmj709ndM",
+      "target_id": "SKE-0017",
+      "distance": 1.8588,
+      "shore_linable": true,
+      "safety_score": 0.4788,
+      "landmark_score": 1.0,
+      "tags": {
+        "shore_fraction": "0.5",
+        "straight_dist": "1.8588"
+      }
+    },
+    {
+      "edge_id": "EDGE-FEAT-2z4FjdAgjF8BzQmj709ndM-ZONE-2zO1ky5n57$hlSP0I709Q7",
+      "source_id": "FEAT-2z4FjdAgjF8BzQmj709ndM",
+      "target_id": "ZONE-2zO1ky5n57$hlSP0I709Q7",
+      "distance": 1.894,
+      "shore_linable": true,
+      "safety_score": 0.4937,
+      "landmark_score": 1.0,
+      "tags": {
+        "shore_fraction": "0.4",
+        "straight_dist": "1.894"
+      }
+    },
+    {
+      "edge_id": "EDGE-FEAT-2z4FjdAgjF8BzQmj709ndM-SKE-0015",
+      "source_id": "FEAT-2z4FjdAgjF8BzQmj709ndM",
+      "target_id": "SKE-0015",
+      "distance": 1.8915,
+      "shore_linable": true,
+      "safety_score": 0.346,
+      "landmark_score": 1.0,
+      "tags": {
+        "shore_fraction": "0.6",
+        "straight_dist": "1.9039"
+      }
+    },
+    {
+      "edge_id": "EDGE-FEAT-2z4FjdAgjF8BzQmj709ndM-ZONE-2RTFVvtPr83Q0UxafooW91",
+      "source_id": "FEAT-2z4FjdAgjF8BzQmj709ndM",
+      "target_id": "ZONE-2RTFVvtPr83Q0UxafooW91",
+      "distance": 2.0288,
+      "shore_linable": true,
+      "safety_score": 0.3424,
+      "landmark_score": 1.0,
+      "tags": {
+        "shore_fraction": "0.6",
+        "straight_dist": "2.0426"
+      }
+    },
+    {
+      "edge_id": "EDGE-FEAT-3o6zFbINX8ue3cLBEniaGh-SKE-0007",
+      "source_id": "FEAT-3o6zFbINX8ue3cLBEniaGh",
+      "target_id": "SKE-0007",
+      "distance": 0.6,
+      "shore_linable": true,
+      "safety_score": 0.05,
+      "landmark_score": 0.6667,
+      "tags": {
+        "shore_fraction": "1.0",
+        "straight_dist": "0.6"
+      }
+    },
+    {
+      "edge_id": "EDGE-FEAT-3o6zFbINX8ue3cLBEniaGh-SKE-0015",
+      "source_id": "FEAT-3o6zFbINX8ue3cLBEniaGh",
+      "target_id": "SKE-0015",
+      "distance": 1.4765,
+      "shore_linable": true,
+      "safety_score": 0.3603,
+      "landmark_score": 0.6667,
+      "tags": {
+        "shore_fraction": "0.6",
+        "straight_dist": "1.4765"
+      }
+    },
+    {
+      "edge_id": "EDGE-FEAT-3o6zFbINX8ue3cLBEniaGh-SKE-0006",
+      "source_id": "FEAT-3o6zFbINX8ue3cLBEniaGh",
+      "target_id": "SKE-0006",
+      "distance": 2.11,
+      "shore_linable": true,
+      "safety_score": 0.05,
+      "landmark_score": 0.6667,
+      "tags": {
+        "shore_fraction": "1.0",
+        "straight_dist": "2.4"
+      }
+    },
+    {
+      "edge_id": "EDGE-FEAT-2z4FjdAgjF8BzQmj709ndM-FEAT-3o6zFbINX8ue3cLBEniaGh",
+      "source_id": "FEAT-3o6zFbINX8ue3cLBEniaGh",
+      "target_id": "FEAT-2z4FjdAgjF8BzQmj709ndM",
+      "distance": 2.526,
+      "shore_linable": true,
+      "safety_score": 0.1157,
+      "landmark_score": 1.0,
+      "tags": {
+        "shore_fraction": "1.0",
+        "straight_dist": "2.5562"
+      }
+    },
+    {
+      "edge_id": "EDGE-FEAT-3o6zFbINX8ue3cLBEniaGh-SKE-0017",
+      "source_id": "FEAT-3o6zFbINX8ue3cLBEniaGh",
+      "target_id": "SKE-0017",
+      "distance": 3.1501,
+      "shore_linable": true,
+      "safety_score": 0.374,
+      "landmark_score": 0.6667,
+      "tags": {
+        "shore_fraction": "0.6",
+        "straight_dist": "3.1623"
+      }
+    },
+    {
+      "edge_id": "EDGE-FEAT-3o6zFbINX8ue3cLBEniaGh-ZONE-2zO1ky5n57$hlSP0I709Q7",
+      "source_id": "FEAT-3o6zFbINX8ue3cLBEniaGh",
+      "target_id": "ZONE-2zO1ky5n57$hlSP0I709Q7",
+      "distance": 3.24,
+      "shore_linable": true,
+      "safety_score": 0.386,
+      "landmark_score": 0.6667,
+      "tags": {
+        "shore_fraction": "0.6",
+        "straight_dist": "3.2523"
+      }
+    },
+    {
+      "edge_id": "EDGE-FEAT-3BojDOt51BFRctjuYcdjPm-SKE-0027",
+      "source_id": "FEAT-3BojDOt51BFRctjuYcdjPm",
+      "target_id": "SKE-0027",
+      "distance": 1.3841,
+      "shore_linable": true,
+      "safety_score": 0.1403,
+      "landmark_score": 0.6667,
+      "tags": {
+        "shore_fraction": "1.0",
+        "straight_dist": "2.1477"
+      }
+    },
+    {
+      "edge_id": "EDGE-FEAT-3BojDOt51BFRctjuYcdjPm-SKE-0061",
+      "source_id": "FEAT-3BojDOt51BFRctjuYcdjPm",
+      "target_id": "SKE-0061",
+      "distance": 2.8264,
+      "shore_linable": true,
+      "safety_score": 0.2289,
+      "landmark_score": 0.3333,
+      "tags": {
+        "shore_fraction": "0.8",
+        "straight_dist": "3.5331"
+      }
+    },
+    {
+      "edge_id": "EDGE-FEAT-3BojDOt51BFRctjuYcdjPm-SKE-0039",
+      "source_id": "FEAT-3BojDOt51BFRctjuYcdjPm",
+      "target_id": "SKE-0039",
+      "distance": 3.4803,
+      "shore_linable": false,
+      "safety_score": 0.822,
+      "landmark_score": 0.3333,
+      "tags": {
+        "shore_fraction": "0.3",
+        "straight_dist": "3.8003"
+      }
+    },
+    {
+      "edge_id": "EDGE-FEAT-3BojDOt51BFRctjuYcdjPm-SKE-0024",
+      "source_id": "FEAT-3BojDOt51BFRctjuYcdjPm",
+      "target_id": "SKE-0024",
+      "distance": 3.5556,
+      "shore_linable": true,
+      "safety_score": 0.6398,
+      "landmark_score": 0.6667,
+      "tags": {
+        "shore_fraction": "0.4",
+        "straight_dist": "3.9966"
+      }
+    },
+    {
+      "edge_id": "EDGE-SKE-0056-ZONE-0BGjw438P6JAPe2g$sDgcT",
+      "source_id": "ZONE-0BGjw438P6JAPe2g$sDgcT",
+      "target_id": "SKE-0056",
+      "distance": 0.9501,
+      "shore_linable": false,
+      "safety_score": 1.0,
+      "landmark_score": 0.0,
+      "tags": {
+        "shore_fraction": "0.0",
+        "straight_dist": "0.9501"
+      }
+    },
+    {
+      "edge_id": "EDGE-SKE-0045-ZONE-0BGjw438P6JAPe2g$sDgcT",
+      "source_id": "ZONE-0BGjw438P6JAPe2g$sDgcT",
+      "target_id": "SKE-0045",
+      "distance": 1.3501,
+      "shore_linable": false,
+      "safety_score": 1.0,
+      "landmark_score": 0.0,
+      "tags": {
+        "shore_fraction": "0.0",
+        "straight_dist": "1.3501"
+      }
+    },
+    {
+      "edge_id": "EDGE-SKE-0066-ZONE-0BGjw438P6JAPe2g$sDgcT",
+      "source_id": "ZONE-0BGjw438P6JAPe2g$sDgcT",
+      "target_id": "SKE-0066",
+      "distance": 2.1,
+      "shore_linable": false,
+      "safety_score": 1.0,
+      "landmark_score": 0.0,
+      "tags": {
+        "shore_fraction": "0.0",
+        "straight_dist": "2.1"
+      }
+    },
+    {
+      "edge_id": "EDGE-SKE-0049-ZONE-0BGjw438P6JAPe2g$sDgcT",
+      "source_id": "ZONE-0BGjw438P6JAPe2g$sDgcT",
+      "target_id": "SKE-0049",
+      "distance": 2.3738,
+      "shore_linable": false,
+      "safety_score": 1.0,
+      "landmark_score": 0.0,
+      "tags": {
+        "shore_fraction": "0.0",
+        "straight_dist": "2.3738"
+      }
+    },
+    {
+      "edge_id": "EDGE-SKE-0055-ZONE-2lyI2yiub9QBhgywjO7xcX",
+      "source_id": "ZONE-2lyI2yiub9QBhgywjO7xcX",
+      "target_id": "SKE-0055",
+      "distance": 2.2163,
+      "shore_linable": true,
+      "safety_score": 0.3876,
+      "landmark_score": 0.3333,
+      "tags": {
+        "shore_fraction": "0.5",
+        "straight_dist": "2.2273"
+      }
+    },
+    {
+      "edge_id": "EDGE-SKE-0070-ZONE-2lyI2yiub9QBhgywjO7xcX",
+      "source_id": "ZONE-2lyI2yiub9QBhgywjO7xcX",
+      "target_id": "SKE-0070",
+      "distance": 2.3275,
+      "shore_linable": false,
+      "safety_score": 1.0,
+      "landmark_score": 0.3333,
+      "tags": {
+        "shore_fraction": "0.0",
+        "straight_dist": "2.3275"
+      }
+    },
+    {
+      "edge_id": "EDGE-SKE-0051-ZONE-2lyI2yiub9QBhgywjO7xcX",
+      "source_id": "ZONE-2lyI2yiub9QBhgywjO7xcX",
+      "target_id": "SKE-0051",
+      "distance": 2.0972,
+      "shore_linable": true,
+      "safety_score": 0.2108,
+      "landmark_score": 0.3333,
+      "tags": {
+        "shore_fraction": "0.8",
+        "straight_dist": "2.9853"
+      }
+    },
+    {
+      "edge_id": "EDGE-SKE-0017-ZONE-2zO1ky5n57$hlSP0I709Q7",
+      "source_id": "ZONE-2zO1ky5n57$hlSP0I709Q7",
+      "target_id": "SKE-0017",
+      "distance": 0.0931,
+      "shore_linable": false,
+      "safety_score": 0.9325,
+      "landmark_score": 0.3333,
+      "tags": {
+        "shore_fraction": "0.0",
+        "straight_dist": "0.0931"
+      }
+    },
+    {
+      "edge_id": "EDGE-SKE-0008-ZONE-2zO1ky5n57$hlSP0I709Q7",
+      "source_id": "ZONE-2zO1ky5n57$hlSP0I709Q7",
+      "target_id": "SKE-0008",
+      "distance": 2.3612,
+      "shore_linable": true,
+      "safety_score": 0.5022,
+      "landmark_score": 0.3333,
+      "tags": {
+        "shore_fraction": "0.4",
+        "straight_dist": "2.3612"
+      }
+    },
+    {
+      "edge_id": "EDGE-SKE-0030-ZONE-2zO1ky5n57$hlSP0I709Q7",
+      "source_id": "ZONE-2zO1ky5n57$hlSP0I709Q7",
+      "target_id": "SKE-0030",
+      "distance": 2.5243,
+      "shore_linable": true,
+      "safety_score": 0.5082,
+      "landmark_score": 0.6667,
+      "tags": {
+        "shore_fraction": "0.4",
+        "straight_dist": "2.5243"
+      }
+    },
+    {
+      "edge_id": "EDGE-SKE-0041-ZONE-2GDGci$en8jAR10fGEvA6l",
+      "source_id": "ZONE-2GDGci$en8jAR10fGEvA6l",
+      "target_id": "SKE-0041",
+      "distance": 0.0931,
+      "shore_linable": false,
+      "safety_score": 0.9325,
+      "landmark_score": 0.3333,
+      "tags": {
+        "shore_fraction": "0.0",
+        "straight_dist": "0.0931"
+      }
+    },
+    {
+      "edge_id": "EDGE-SKE-0052-ZONE-2GDGci$en8jAR10fGEvA6l",
+      "source_id": "ZONE-2GDGci$en8jAR10fGEvA6l",
+      "target_id": "SKE-0052",
+      "distance": 2.3162,
+      "shore_linable": true,
+      "safety_score": 0.5099,
+      "landmark_score": 0.3333,
+      "tags": {
+        "shore_fraction": "0.4",
+        "straight_dist": "2.3162"
+      }
+    },
+    {
+      "edge_id": "EDGE-SKE-0030-ZONE-2GDGci$en8jAR10fGEvA6l",
+      "source_id": "ZONE-2GDGci$en8jAR10fGEvA6l",
+      "target_id": "SKE-0030",
+      "distance": 2.6921,
+      "shore_linable": true,
+      "safety_score": 0.4727,
+      "landmark_score": 0.3333,
+      "tags": {
+        "shore_fraction": "0.5",
+        "straight_dist": "2.7051"
+      }
+    },
+    {
+      "edge_id": "EDGE-SKE-0082-ZONE-2UG7dUO6vAYheCYwduYFZE",
+      "source_id": "ZONE-2UG7dUO6vAYheCYwduYFZE",
+      "target_id": "SKE-0082",
+      "distance": 1.3785,
+      "shore_linable": true,
+      "safety_score": 0.209,
+      "landmark_score": 0.3333,
+      "tags": {
+        "shore_fraction": "0.9",
+        "straight_dist": "1.3899"
+      }
+    },
+    {
+      "edge_id": "EDGE-SKE-0086-ZONE-2UG7dUO6vAYheCYwduYFZE",
+      "source_id": "ZONE-2UG7dUO6vAYheCYwduYFZE",
+      "target_id": "SKE-0086",
+      "distance": 3.0948,
+      "shore_linable": true,
+      "safety_score": 0.4578,
+      "landmark_score": 0.6667,
+      "tags": {
+        "shore_fraction": "0.5",
+        "straight_dist": "3.1059"
+      }
+    },
+    {
+      "edge_id": "EDGE-SKE-0097-ZONE-2UG7dUO6vAYheCYwduYFZE",
+      "source_id": "ZONE-2UG7dUO6vAYheCYwduYFZE",
+      "target_id": "SKE-0097",
+      "distance": 3.1375,
+      "shore_linable": true,
+      "safety_score": 0.2108,
+      "landmark_score": 0.6667,
+      "tags": {
+        "shore_fraction": "0.9",
+        "straight_dist": "3.1667"
+      }
+    },
+    {
+      "edge_id": "EDGE-SKE-0090-ZONE-2gbGtfPHrFnOw3AWmEVj8l",
+      "source_id": "ZONE-2gbGtfPHrFnOw3AWmEVj8l",
+      "target_id": "SKE-0090",
+      "distance": 0.1922,
+      "shore_linable": false,
+      "safety_score": 0.4925,
+      "landmark_score": 0.3333,
+      "tags": {
+        "shore_fraction": "0.0",
+        "straight_dist": "0.1922"
+      }
+    },
+    {
+      "edge_id": "EDGE-SKE-0084-ZONE-2gbGtfPHrFnOw3AWmEVj8l",
+      "source_id": "ZONE-2gbGtfPHrFnOw3AWmEVj8l",
+      "target_id": "SKE-0084",
+      "distance": 1.5538,
+      "shore_linable": true,
+      "safety_score": 0.2591,
+      "landmark_score": 0.3333,
+      "tags": {
+        "shore_fraction": "0.8",
+        "straight_dist": "1.5662"
+      }
+    },
+    {
+      "edge_id": "EDGE-SKE-0080-ZONE-2gbGtfPHrFnOw3AWmEVj8l",
+      "source_id": "ZONE-2gbGtfPHrFnOw3AWmEVj8l",
+      "target_id": "SKE-0080",
+      "distance": 3.7659,
+      "shore_linable": true,
+      "safety_score": 0.5701,
+      "landmark_score": 0.6667,
+      "tags": {
+        "shore_fraction": "0.5",
+        "straight_dist": "3.7768"
+      }
+    },
+    {
+      "edge_id": "EDGE-SKE-0029-ZONE-2RTFVvtPr83Q0UxafooW91",
+      "source_id": "ZONE-2RTFVvtPr83Q0UxafooW91",
+      "target_id": "SKE-0029",
+      "distance": 1.4346,
+      "shore_linable": true,
+      "safety_score": 0.3447,
+      "landmark_score": 0.6667,
+      "tags": {
+        "shore_fraction": "0.6",
+        "straight_dist": "1.4446"
+      }
+    },
+    {
+      "edge_id": "EDGE-SKE-0044-ZONE-2RTFVvtPr83Q0UxafooW91",
+      "source_id": "ZONE-2RTFVvtPr83Q0UxafooW91",
+      "target_id": "SKE-0044",
+      "distance": 2.4857,
+      "shore_linable": false,
+      "safety_score": 0.677,
+      "landmark_score": 1.0,
+      "tags": {
+        "shore_fraction": "0.0",
+        "straight_dist": "2.4857"
+      }
+    },
+    {
+      "edge_id": "EDGE-SKE-0016-ZONE-2qT_j3zBf5_8BGICwHrmlI",
+      "source_id": "ZONE-2qT_j3zBf5_8BGICwHrmlI",
+      "target_id": "SKE-0016",
+      "distance": 0.459,
+      "shore_linable": false,
+      "safety_score": 0.7737,
+      "landmark_score": 0.3333,
+      "tags": {
+        "shore_fraction": "0.0",
+        "straight_dist": "0.459"
+      }
+    },
+    {
+      "edge_id": "EDGE-SKE-0006-ZONE-2qT_j3zBf5_8BGICwHrmlI",
+      "source_id": "ZONE-2qT_j3zBf5_8BGICwHrmlI",
+      "target_id": "SKE-0006",
+      "distance": 2.3041,
+      "shore_linable": true,
+      "safety_score": 0.4439,
+      "landmark_score": 0.6667,
+      "tags": {
+        "shore_fraction": "0.4",
+        "straight_dist": "2.3041"
+      }
+    },
+    {
+      "edge_id": "EDGE-SKE-0005-ZONE-2qT_j3zBf5_8BGICwHrmlI",
+      "source_id": "ZONE-2qT_j3zBf5_8BGICwHrmlI",
+      "target_id": "SKE-0005",
+      "distance": 2.625,
+      "shore_linable": true,
+      "safety_score": 0.3757,
+      "landmark_score": 0.3333,
+      "tags": {
+        "shore_fraction": "0.6",
+        "straight_dist": "2.6399"
+      }
+    },
+    {
+      "edge_id": "EDGE-SKE-0000-SKE-0013",
+      "source_id": "SKE-0000",
+      "target_id": "SKE-0013",
+      "distance": 1.5811,
+      "shore_linable": true,
+      "safety_score": 0.3447,
+      "landmark_score": 0.6667,
+      "tags": {
+        "shore_fraction": "0.6",
+        "straight_dist": "1.5811"
+      }
+    },
+    {
+      "edge_id": "EDGE-SKE-0000-SKE-0024",
+      "source_id": "SKE-0000",
+      "target_id": "SKE-0024",
+      "distance": 3.5609,
+      "shore_linable": false,
+      "safety_score": 0.7267,
+      "landmark_score": 0.6667,
+      "tags": {
+        "shore_fraction": "0.3",
+        "straight_dist": "3.5609"
+      }
+    },
+    {
+      "edge_id": "EDGE-SKE-0000-SKE-0027",
+      "source_id": "SKE-0000",
+      "target_id": "SKE-0027",
+      "distance": 3.6056,
+      "shore_linable": true,
+      "safety_score": 0.2875,
+      "landmark_score": 1.0,
+      "tags": {
+        "shore_fraction": "1.0",
+        "straight_dist": "3.6056"
+      }
+    },
+    {
+      "edge_id": "EDGE-SKE-0000-SKE-0020",
+      "source_id": "SKE-0000",
+      "target_id": "SKE-0020",
+      "distance": 5.1108,
+      "shore_linable": false,
+      "safety_score": 0.6875,
+      "landmark_score": 0.6667,
+      "tags": {
+        "shore_fraction": "0.3",
+        "straight_dist": "5.1108"
+      }
+    },
+    {
+      "edge_id": "EDGE-SKE-0001-SKE-0010",
+      "source_id": "SKE-0001",
+      "target_id": "SKE-0010",
+      "distance": 1.562,
+      "shore_linable": true,
+      "safety_score": 0.34,
+      "landmark_score": 0.0,
+      "tags": {
+        "shore_fraction": "0.7",
+        "straight_dist": "1.562"
+      }
+    },
+    {
+      "edge_id": "EDGE-SKE-0001-SKE-0020",
+      "source_id": "SKE-0001",
+      "target_id": "SKE-0020",
+      "distance": 3.0529,
+      "shore_linable": false,
+      "safety_score": 0.6872,
+      "landmark_score": 0.0,
+      "tags": {
+        "shore_fraction": "0.3",
+        "straight_dist": "3.0529"
+      }
+    },
+    {
+      "edge_id": "EDGE-SKE-0001-SKE-0021",
+      "source_id": "SKE-0001",
+      "target_id": "SKE-0021",
+      "distance": 3.245,
+      "shore_linable": true,
+      "safety_score": 0.6552,
+      "landmark_score": 0.0,
+      "tags": {
+        "shore_fraction": "0.4",
+        "straight_dist": "3.245"
+      }
+    },
+    {
+      "edge_id": "EDGE-SKE-0001-SKE-0024",
+      "source_id": "SKE-0001",
+      "target_id": "SKE-0024",
+      "distance": 4.7202,
+      "shore_linable": false,
+      "safety_score": 0.73,
+      "landmark_score": 0.3333,
+      "tags": {
+        "shore_fraction": "0.3",
+        "straight_dist": "4.7202"
+      }
+    },
+    {
+      "edge_id": "EDGE-SKE-0001-SKE-0033",
+      "source_id": "SKE-0001",
+      "target_id": "SKE-0033",
+      "distance": 4.7424,
+      "shore_linable": false,
+      "safety_score": 1.0,
+      "landmark_score": 0.0,
+      "tags": {
+        "shore_fraction": "0.2",
+        "straight_dist": "4.7424"
+      }
+    },
+    {
+      "edge_id": "EDGE-SKE-0001-SKE-0034",
+      "source_id": "SKE-0001",
+      "target_id": "SKE-0034",
+      "distance": 4.7854,
+      "shore_linable": false,
+      "safety_score": 1.0,
+      "landmark_score": 0.0,
+      "tags": {
+        "shore_fraction": "0.3",
+        "straight_dist": "4.7854"
+      }
+    },
+    {
+      "edge_id": "EDGE-SKE-0002-SKE-0014",
+      "source_id": "SKE-0002",
+      "target_id": "SKE-0014",
+      "distance": 1.5811,
+      "shore_linable": true,
+      "safety_score": 0.3639,
+      "landmark_score": 0.0,
+      "tags": {
+        "shore_fraction": "0.6",
+        "straight_dist": "1.5811"
+      }
+    },
+    {
+      "edge_id": "EDGE-SKE-0002-SKE-0018",
+      "source_id": "SKE-0002",
+      "target_id": "SKE-0018",
+      "distance": 2.437,
+      "shore_linable": true,
+      "safety_score": 0.4544,
+      "landmark_score": 0.0,
+      "tags": {
+        "shore_fraction": "0.5",
+        "straight_dist": "2.4839"
+      }
+    },
+    {
+      "edge_id": "EDGE-SKE-0002-SKE-0028",
+      "source_id": "SKE-0002",
+      "target_id": "SKE-0028",
+      "distance": 3.9395,
+      "shore_linable": false,
+      "safety_score": 0.9264,
+      "landmark_score": 0.0,
+      "tags": {
+        "shore_fraction": "0.3",
+        "straight_dist": "3.9395"
+      }
+    },
+    {
+      "edge_id": "EDGE-SKE-0002-SKE-0026",
+      "source_id": "SKE-0002",
+      "target_id": "SKE-0026",
+      "distance": 4.0311,
+      "shore_linable": false,
+      "safety_score": 0.8565,
+      "landmark_score": 0.0,
+      "tags": {
+        "shore_fraction": "0.3",
+        "straight_dist": "4.0311"
+      }
+    },
+    {
+      "edge_id": "EDGE-SKE-0002-SKE-0021",
+      "source_id": "SKE-0002",
+      "target_id": "SKE-0021",
+      "distance": 5.4203,
+      "shore_linable": false,
+      "safety_score": 0.715,
+      "landmark_score": 0.0,
+      "tags": {
+        "shore_fraction": "0.3",
+        "straight_dist": "5.4203"
+      }
+    },
+    {
+      "edge_id": "EDGE-SKE-0002-SKE-0037",
+      "source_id": "SKE-0002",
+      "target_id": "SKE-0037",
+      "distance": 5.5027,
+      "shore_linable": false,
+      "safety_score": 1.0,
+      "landmark_score": 0.0,
+      "tags": {
+        "shore_fraction": "0.2",
+        "straight_dist": "5.5027"
+      }
+    },
+    {
+      "edge_id": "EDGE-SKE-0003-SKE-0009",
+      "source_id": "SKE-0003",
+      "target_id": "SKE-0009",
+      "distance": 1.5556,
+      "shore_linable": true,
+      "safety_score": 0.3042,
+      "landmark_score": 0.0,
+      "tags": {
+        "shore_fraction": "0.7",
+        "straight_dist": "1.5556"
+      }
+    },
+    {
+      "edge_id": "EDGE-SKE-0003-SKE-0011",
+      "source_id": "SKE-0003",
+      "target_id": "SKE-0011",
+      "distance": 1.71,
+      "shore_linable": true,
+      "safety_score": 0.2784,
+      "landmark_score": 0.0,
+      "tags": {
+        "shore_fraction": "0.7",
+        "straight_dist": "1.8439"
+      }
+    },
+    {
+      "edge_id": "EDGE-SKE-0003-SKE-0022",
+      "source_id": "SKE-0003",
+      "target_id": "SKE-0022",
+      "distance": 2.9967,
+      "shore_linable": true,
+      "safety_score": 0.6951,
+      "landmark_score": 0.0,
+      "tags": {
+        "shore_fraction": "0.4",
+        "straight_dist": "2.9967"
+      }
+    },
+    {
+      "edge_id": "EDGE-SKE-0003-SKE-0023",
+      "source_id": "SKE-0003",
+      "target_id": "SKE-0023",
+      "distance": 3.3015,
+      "shore_linable": true,
+      "safety_score": 0.6584,
+      "landmark_score": 0.0,
+      "tags": {
+        "shore_fraction": "0.4",
+        "straight_dist": "3.3015"
+      }
+    },
+    {
+      "edge_id": "EDGE-SKE-0003-SKE-0032",
+      "source_id": "SKE-0003",
+      "target_id": "SKE-0032",
+      "distance": 4.531,
+      "shore_linable": false,
+      "safety_score": 1.0,
+      "landmark_score": 0.0,
+      "tags": {
+        "shore_fraction": "0.3",
+        "straight_dist": "4.531"
+      }
+    },
+    {
+      "edge_id": "EDGE-SKE-0003-SKE-0031",
+      "source_id": "SKE-0003",
+      "target_id": "SKE-0031",
+      "distance": 4.8456,
+      "shore_linable": false,
+      "safety_score": 0.9847,
+      "landmark_score": 0.0,
+      "tags": {
+        "shore_fraction": "0.3",
+        "straight_dist": "4.86"
+      }
+    },
+    {
+      "edge_id": "EDGE-SKE-0004-SKE-0012",
+      "source_id": "SKE-0004",
+      "target_id": "SKE-0012",
+      "distance": 1.562,
+      "shore_linable": true,
+      "safety_score": 0.34,
+      "landmark_score": 0.0,
+      "tags": {
+        "shore_fraction": "0.7",
+        "straight_dist": "1.562"
+      }
+    },
+    {
+      "edge_id": "EDGE-SKE-0004-SKE-0019",
+      "source_id": "SKE-0004",
+      "target_id": "SKE-0019",
+      "distance": 2.437,
+      "shore_linable": true,
+      "safety_score": 0.4549,
+      "landmark_score": 0.0,
+      "tags": {
+        "shore_fraction": "0.5",
+        "straight_dist": "2.4839"
+      }
+    },
+    {
+      "edge_id": "EDGE-SKE-0004-SKE-0025",
+      "source_id": "SKE-0004",
+      "target_id": "SKE-0025",
+      "distance": 3.1765,
+      "shore_linable": false,
+      "safety_score": 0.7335,
+      "landmark_score": 0.0,
+      "tags": {
+        "shore_fraction": "0.3",
+        "straight_dist": "3.1765"
+      }
+    },
+    {
+      "edge_id": "EDGE-SKE-0004-SKE-0005",
+      "source_id": "SKE-0004",
+      "target_id": "SKE-0005",
+      "distance": 3.21,
+      "shore_linable": true,
+      "safety_score": 0.05,
+      "landmark_score": 0.0,
+      "tags": {
+        "shore_fraction": "1.0",
+        "straight_dist": "3.5"
+      }
+    },
+    {
+      "edge_id": "EDGE-SKE-0004-SKE-0035",
+      "source_id": "SKE-0004",
+      "target_id": "SKE-0035",
+      "distance": 4.7011,
+      "shore_linable": false,
+      "safety_score": 1.0,
+      "landmark_score": 0.0,
+      "tags": {
+        "shore_fraction": "0.2",
+        "straight_dist": "4.7011"
+      }
+    },
+    {
+      "edge_id": "EDGE-SKE-0004-SKE-0011",
+      "source_id": "SKE-0004",
+      "target_id": "SKE-0011",
+      "distance": 5.2393,
+      "shore_linable": true,
+      "safety_score": 0.34,
+      "landmark_score": 0.0,
+      "tags": {
+        "shore_fraction": "0.7",
+        "straight_dist": "5.2393"
+      }
+    },
+    {
+      "edge_id": "EDGE-SKE-0005-SKE-0016",
+      "source_id": "SKE-0005",
+      "target_id": "SKE-0016",
+      "distance": 2.2538,
+      "shore_linable": true,
+      "safety_score": 0.357,
+      "landmark_score": 0.3333,
+      "tags": {
+        "shore_fraction": "0.6",
+        "straight_dist": "2.2672"
+      }
+    },
+    {
+      "edge_id": "EDGE-SKE-0005-SKE-0019",
+      "source_id": "SKE-0005",
+      "target_id": "SKE-0019",
+      "distance": 2.687,
+      "shore_linable": true,
+      "safety_score": 0.515,
+      "landmark_score": 0.0,
+      "tags": {
+        "shore_fraction": "0.4",
+        "straight_dist": "2.687"
+      }
+    },
+    {
+      "edge_id": "EDGE-SKE-0005-SKE-0006",
+      "source_id": "SKE-0005",
+      "target_id": "SKE-0006",
+      "distance": 2.99,
+      "shore_linable": true,
+      "safety_score": 0.05,
+      "landmark_score": 0.3333,
+      "tags": {
+        "shore_fraction": "1.0",
+        "straight_dist": "3.0"
+      }
+    },
+    {
+      "edge_id": "EDGE-FEAT-0XYyyamEP3Bxdj9fgnPmpr-SKE-0005",
+      "source_id": "SKE-0005",
+      "target_id": "FEAT-0XYyyamEP3Bxdj9fgnPmpr",
+      "distance": 4.0163,
+      "shore_linable": true,
+      "safety_score": 0.1221,
+      "landmark_score": 0.6667,
+      "tags": {
+        "shore_fraction": "1.0",
+        "straight_dist": "4.0536"
+      }
+    },
+    {
+      "edge_id": "EDGE-SKE-0006-SKE-0016",
+      "source_id": "SKE-0006",
+      "target_id": "SKE-0016",
+      "distance": 1.9849,
+      "shore_linable": true,
+      "safety_score": 0.408,
+      "landmark_score": 0.6667,
+      "tags": {
+        "shore_fraction": "0.5",
+        "straight_dist": "1.9849"
+      }
+    },
+    {
+      "edge_id": "EDGE-SKE-0006-SKE-0015",
+      "source_id": "SKE-0006",
+      "target_id": "SKE-0015",
+      "distance": 1.9451,
+      "shore_linable": true,
+      "safety_score": 0.2865,
+      "landmark_score": 0.6667,
+      "tags": {
+        "shore_fraction": "0.7",
+        "straight_dist": "2.1401"
+      }
+    },
+    {
+      "edge_id": "EDGE-SKE-0006-SKE-0007",
+      "source_id": "SKE-0006",
+      "target_id": "SKE-0007",
+      "distance": 2.71,
+      "shore_linable": true,
+      "safety_score": 0.05,
+      "landmark_score": 0.6667,
+      "tags": {
+        "shore_fraction": "1.0",
+        "straight_dist": "3.0"
+      }
+    },
+    {
+      "edge_id": "EDGE-SKE-0007-SKE-0015",
+      "source_id": "SKE-0007",
+      "target_id": "SKE-0015",
+      "distance": 1.8385,
+      "shore_linable": true,
+      "safety_score": 0.3603,
+      "landmark_score": 0.6667,
+      "tags": {
+        "shore_fraction": "0.6",
+        "straight_dist": "1.8385"
+      }
+    },
+    {
+      "edge_id": "EDGE-FEAT-2z4FjdAgjF8BzQmj709ndM-SKE-0007",
+      "source_id": "SKE-0007",
+      "target_id": "FEAT-2z4FjdAgjF8BzQmj709ndM",
+      "distance": 2.3259,
+      "shore_linable": true,
+      "safety_score": 0.05,
+      "landmark_score": 1.0,
+      "tags": {
+        "shore_fraction": "1.0",
+        "straight_dist": "2.4249"
+      }
+    },
+    {
+      "edge_id": "EDGE-SKE-0007-SKE-0017",
+      "source_id": "SKE-0007",
+      "target_id": "SKE-0017",
+      "distance": 2.6773,
+      "shore_linable": true,
+      "safety_score": 0.442,
+      "landmark_score": 0.6667,
+      "tags": {
+        "shore_fraction": "0.5",
+        "straight_dist": "2.6907"
+      }
+    },
+    {
+      "edge_id": "EDGE-SKE-0007-ZONE-2zO1ky5n57$hlSP0I709Q7",
+      "source_id": "SKE-0007",
+      "target_id": "ZONE-2zO1ky5n57$hlSP0I709Q7",
+      "distance": 2.7695,
+      "shore_linable": true,
+      "safety_score": 0.457,
+      "landmark_score": 0.6667,
+      "tags": {
+        "shore_fraction": "0.5",
+        "straight_dist": "2.783"
+      }
+    },
+    {
+      "edge_id": "EDGE-SKE-0008-SKE-0017",
+      "source_id": "SKE-0008",
+      "target_id": "SKE-0017",
+      "distance": 2.3431,
+      "shore_linable": true,
+      "safety_score": 0.4855,
+      "landmark_score": 0.3333,
+      "tags": {
+        "shore_fraction": "0.5",
+        "straight_dist": "2.3431"
+      }
+    },
+    {
+      "edge_id": "EDGE-SKE-0007-SKE-0008",
+      "source_id": "SKE-0008",
+      "target_id": "SKE-0007",
+      "distance": 3.49,
+      "shore_linable": true,
+      "safety_score": 0.05,
+      "landmark_score": 0.6667,
+      "tags": {
+        "shore_fraction": "1.0",
+        "straight_dist": "3.5"
+      }
+    },
+    {
+      "edge_id": "EDGE-SKE-0008-SKE-0030",
+      "source_id": "SKE-0008",
+      "target_id": "SKE-0030",
+      "distance": 3.7121,
+      "shore_linable": true,
+      "safety_score": 0.1117,
+      "landmark_score": 0.0,
+      "tags": {
+        "shore_fraction": "1.0",
+        "straight_dist": "3.7121"
+      }
+    },
+    {
+      "edge_id": "EDGE-FEAT-2z4FjdAgjF8BzQmj709ndM-SKE-0008",
+      "source_id": "SKE-0008",
+      "target_id": "FEAT-2z4FjdAgjF8BzQmj709ndM",
+      "distance": 4.0516,
+      "shore_linable": true,
+      "safety_score": 0.3023,
+      "landmark_score": 1.0,
+      "tags": {
+        "shore_fraction": "0.6",
+        "straight_dist": "4.0516"
+      }
+    },
+    {
+      "edge_id": "EDGE-FEAT-3o6zFbINX8ue3cLBEniaGh-SKE-0008",
+      "source_id": "SKE-0008",
+      "target_id": "FEAT-3o6zFbINX8ue3cLBEniaGh",
+      "distance": 4.09,
+      "shore_linable": true,
+      "safety_score": 0.05,
+      "landmark_score": 0.6667,
+      "tags": {
+        "shore_fraction": "1.0",
+        "straight_dist": "4.1"
+      }
+    },
+    {
+      "edge_id": "EDGE-SKE-0009-SKE-0022",
+      "source_id": "SKE-0009",
+      "target_id": "SKE-0022",
+      "distance": 1.6125,
+      "shore_linable": false,
+      "safety_score": 0.9805,
+      "landmark_score": 0.0,
+      "tags": {
+        "shore_fraction": "0.0",
+        "straight_dist": "1.6125"
+      }
+    },
+    {
+      "edge_id": "EDGE-SKE-0009-SKE-0011",
+      "source_id": "SKE-0009",
+      "target_id": "SKE-0011",
+      "distance": 2.502,
+      "shore_linable": false,
+      "safety_score": 0.5484,
+      "landmark_score": 0.0,
+      "tags": {
+        "shore_fraction": "0.0",
+        "straight_dist": "2.502"
+      }
+    },
+    {
+      "edge_id": "EDGE-SKE-0009-SKE-0032",
+      "source_id": "SKE-0009",
+      "target_id": "SKE-0032",
+      "distance": 3.1575,
+      "shore_linable": false,
+      "safety_score": 1.0,
+      "landmark_score": 0.0,
+      "tags": {
+        "shore_fraction": "0.0",
+        "straight_dist": "3.1575"
+      }
+    },
+    {
+      "edge_id": "EDGE-SKE-0009-SKE-0023",
+      "source_id": "SKE-0009",
+      "target_id": "SKE-0023",
+      "distance": 3.4,
+      "shore_linable": false,
+      "safety_score": 0.9193,
+      "landmark_score": 0.0,
+      "tags": {
+        "shore_fraction": "0.0",
+        "straight_dist": "3.4"
+      }
+    },
+    {
+      "edge_id": "EDGE-SKE-0009-SKE-0018",
+      "source_id": "SKE-0009",
+      "target_id": "SKE-0018",
+      "distance": 3.8833,
+      "shore_linable": false,
+      "safety_score": 0.7841,
+      "landmark_score": 0.0,
+      "tags": {
+        "shore_fraction": "0.0",
+        "straight_dist": "3.8833"
+      }
+    },
+    {
+      "edge_id": "EDGE-SKE-0010-SKE-0020",
+      "source_id": "SKE-0010",
+      "target_id": "SKE-0020",
+      "distance": 1.5232,
+      "shore_linable": false,
+      "safety_score": 0.99,
+      "landmark_score": 0.0,
+      "tags": {
+        "shore_fraction": "0.0",
+        "straight_dist": "1.5232"
+      }
+    },
+    {
+      "edge_id": "EDGE-SKE-0010-SKE-0021",
+      "source_id": "SKE-0010",
+      "target_id": "SKE-0021",
+      "distance": 3.1765,
+      "shore_linable": false,
+      "safety_score": 0.9424,
+      "landmark_score": 0.0,
+      "tags": {
+        "shore_fraction": "0.0",
+        "straight_dist": "3.1765"
+      }
+    },
+    {
+      "edge_id": "EDGE-SKE-0010-SKE-0024",
+      "source_id": "SKE-0010",
+      "target_id": "SKE-0024",
+      "distance": 3.2249,
+      "shore_linable": false,
+      "safety_score": 1.0,
+      "landmark_score": 0.3333,
+      "tags": {
+        "shore_fraction": "0.0",
+        "straight_dist": "3.2249"
+      }
+    },
+    {
+      "edge_id": "EDGE-SKE-0010-SKE-0033",
+      "source_id": "SKE-0010",
+      "target_id": "SKE-0033",
+      "distance": 3.2573,
+      "shore_linable": false,
+      "safety_score": 1.0,
+      "landmark_score": 0.0,
+      "tags": {
+        "shore_fraction": "0.0",
+        "straight_dist": "3.2573"
+      }
+    },
+    {
+      "edge_id": "EDGE-SKE-0010-SKE-0013",
+      "source_id": "SKE-0010",
+      "target_id": "SKE-0013",
+      "distance": 4.1012,
+      "shore_linable": false,
+      "safety_score": 0.665,
+      "landmark_score": 0.6667,
+      "tags": {
+        "shore_fraction": "0.0",
+        "straight_dist": "4.1012"
+      }
+    },
+    {
+      "edge_id": "EDGE-SKE-0011-SKE-0023",
+      "source_id": "SKE-0011",
+      "target_id": "SKE-0023",
+      "distance": 1.5811,
+      "shore_linable": false,
+      "safety_score": 1.0,
+      "landmark_score": 0.0,
+      "tags": {
+        "shore_fraction": "0.0",
+        "straight_dist": "1.5811"
+      }
+    },
+    {
+      "edge_id": "EDGE-SKE-0011-SKE-0031",
+      "source_id": "SKE-0011",
+      "target_id": "SKE-0031",
+      "distance": 3.0887,
+      "shore_linable": false,
+      "safety_score": 1.0,
+      "landmark_score": 0.0,
+      "tags": {
+        "shore_fraction": "0.0",
+        "straight_dist": "3.0887"
+      }
+    },
+    {
+      "edge_id": "EDGE-SKE-0011-SKE-0022",
+      "source_id": "SKE-0011",
+      "target_id": "SKE-0022",
+      "distance": 3.0887,
+      "shore_linable": false,
+      "safety_score": 0.9403,
+      "landmark_score": 0.0,
+      "tags": {
+        "shore_fraction": "0.0",
+        "straight_dist": "3.0887"
+      }
+    },
+    {
+      "edge_id": "EDGE-SKE-0011-SKE-0025",
+      "source_id": "SKE-0011",
+      "target_id": "SKE-0025",
+      "distance": 3.9395,
+      "shore_linable": false,
+      "safety_score": 1.0,
+      "landmark_score": 0.0,
+      "tags": {
+        "shore_fraction": "0.0",
+        "straight_dist": "3.9395"
+      }
+    },
+    {
+      "edge_id": "EDGE-SKE-0012-SKE-0025",
+      "source_id": "SKE-0012",
+      "target_id": "SKE-0025",
+      "distance": 1.6763,
+      "shore_linable": false,
+      "safety_score": 1.0,
+      "landmark_score": 0.0,
+      "tags": {
+        "shore_fraction": "0.0",
+        "straight_dist": "1.6763"
+      }
+    },
+    {
+      "edge_id": "EDGE-SKE-0012-SKE-0019",
+      "source_id": "SKE-0012",
+      "target_id": "SKE-0019",
+      "distance": 2.6926,
+      "shore_linable": false,
+      "safety_score": 0.7438,
+      "landmark_score": 0.0,
+      "tags": {
+        "shore_fraction": "0.0",
+        "straight_dist": "2.6926"
+      }
+    },
+    {
+      "edge_id": "EDGE-SKE-0012-SKE-0035",
+      "source_id": "SKE-0012",
+      "target_id": "SKE-0035",
+      "distance": 3.228,
+      "shore_linable": false,
+      "safety_score": 1.0,
+      "landmark_score": 0.0,
+      "tags": {
+        "shore_fraction": "0.0",
+        "straight_dist": "3.228"
+      }
+    },
+    {
+      "edge_id": "EDGE-SKE-0012-SKE-0031",
+      "source_id": "SKE-0012",
+      "target_id": "SKE-0031",
+      "distance": 3.7483,
+      "shore_linable": false,
+      "safety_score": 1.0,
+      "landmark_score": 0.0,
+      "tags": {
+        "shore_fraction": "0.0",
+        "straight_dist": "3.7483"
+      }
+    },
+    {
+      "edge_id": "EDGE-SKE-0012-SKE-0023",
+      "source_id": "SKE-0012",
+      "target_id": "SKE-0023",
+      "distance": 3.9,
+      "shore_linable": false,
+      "safety_score": 1.0,
+      "landmark_score": 0.0,
+      "tags": {
+        "shore_fraction": "0.0",
+        "straight_dist": "3.9"
+      }
+    },
+    {
+      "edge_id": "EDGE-SKE-0013-SKE-0024",
+      "source_id": "SKE-0013",
+      "target_id": "SKE-0024",
+      "distance": 1.9849,
+      "shore_linable": false,
+      "safety_score": 1.0,
+      "landmark_score": 0.6667,
+      "tags": {
+        "shore_fraction": "0.0",
+        "straight_dist": "1.9849"
+      }
+    },
+    {
+      "edge_id": "EDGE-SKE-0013-SKE-0027",
+      "source_id": "SKE-0013",
+      "target_id": "SKE-0027",
+      "distance": 2.4042,
+      "shore_linable": false,
+      "safety_score": 0.555,
+      "landmark_score": 1.0,
+      "tags": {
+        "shore_fraction": "0.2",
+        "straight_dist": "2.4042"
+      }
+    },
+    {
+      "edge_id": "EDGE-SKE-0013-SKE-0020",
+      "source_id": "SKE-0013",
+      "target_id": "SKE-0020",
+      "distance": 3.7336,
+      "shore_linable": false,
+      "safety_score": 1.0,
+      "landmark_score": 0.6667,
+      "tags": {
+        "shore_fraction": "0.0",
+        "straight_dist": "3.7336"
+      }
+    },
+    {
+      "edge_id": "EDGE-SKE-0014-SKE-0028",
+      "source_id": "SKE-0014",
+      "target_id": "SKE-0028",
+      "distance": 2.4042,
+      "shore_linable": false,
+      "safety_score": 1.0,
+      "landmark_score": 0.0,
+      "tags": {
+        "shore_fraction": "0.0",
+        "straight_dist": "2.4042"
+      }
+    },
+    {
+      "edge_id": "EDGE-SKE-0014-SKE-0018",
+      "source_id": "SKE-0014",
+      "target_id": "SKE-0018",
+      "distance": 2.571,
+      "shore_linable": false,
+      "safety_score": 0.7658,
+      "landmark_score": 0.0,
+      "tags": {
+        "shore_fraction": "0.0",
+        "straight_dist": "2.571"
+      }
+    },
+    {
+      "edge_id": "EDGE-SKE-0014-SKE-0026",
+      "source_id": "SKE-0014",
+      "target_id": "SKE-0026",
+      "distance": 3.6401,
+      "shore_linable": false,
+      "safety_score": 1.0,
+      "landmark_score": 0.0,
+      "tags": {
+        "shore_fraction": "0.0",
+        "straight_dist": "3.6401"
+      }
+    },
+    {
+      "edge_id": "EDGE-SKE-0014-SKE-0037",
+      "source_id": "SKE-0014",
+      "target_id": "SKE-0037",
+      "distance": 4.0025,
+      "shore_linable": false,
+      "safety_score": 1.0,
+      "landmark_score": 0.0,
+      "tags": {
+        "shore_fraction": "0.0",
+        "straight_dist": "4.0025"
+      }
+    },
+    {
+      "edge_id": "EDGE-SKE-0014-SKE-0021",
+      "source_id": "SKE-0014",
+      "target_id": "SKE-0021",
+      "distance": 4.0497,
+      "shore_linable": false,
+      "safety_score": 1.0,
+      "landmark_score": 0.0,
+      "tags": {
+        "shore_fraction": "0.0",
+        "straight_dist": "4.0497"
+      }
+    },
+    {
+      "edge_id": "EDGE-SKE-0015-ZONE-2RTFVvtPr83Q0UxafooW91",
+      "source_id": "SKE-0015",
+      "target_id": "ZONE-2RTFVvtPr83Q0UxafooW91",
+      "distance": 2.5157,
+      "shore_linable": false,
+      "safety_score": 0.6799,
+      "landmark_score": 1.0,
+      "tags": {
+        "shore_fraction": "0.0",
+        "straight_dist": "2.5157"
+      }
+    },
+    {
+      "edge_id": "EDGE-SKE-0015-SKE-0029",
+      "source_id": "SKE-0015",
+      "target_id": "SKE-0029",
+      "distance": 2.8113,
+      "shore_linable": true,
+      "safety_score": 0.3483,
+      "landmark_score": 1.0,
+      "tags": {
+        "shore_fraction": "0.6",
+        "straight_dist": "2.8302"
+      }
+    },
+    {
+      "edge_id": "EDGE-SKE-0015-SKE-0016",
+      "source_id": "SKE-0016",
+      "target_id": "SKE-0015",
+      "distance": 2.9966,
+      "shore_linable": true,
+      "safety_score": 0.449,
+      "landmark_score": 1.0,
+      "tags": {
+        "shore_fraction": "0.5",
+        "straight_dist": "3.0067"
+      }
+    },
+    {
+      "edge_id": "EDGE-SKE-0016-SKE-0019",
+      "source_id": "SKE-0016",
+      "target_id": "SKE-0019",
+      "distance": 3.6121,
+      "shore_linable": true,
+      "safety_score": 0.556,
+      "landmark_score": 0.3333,
+      "tags": {
+        "shore_fraction": "0.5",
+        "straight_dist": "3.6222"
+      }
+    },
+    {
+      "edge_id": "EDGE-SKE-0017-SKE-0030",
+      "source_id": "SKE-0017",
+      "target_id": "SKE-0030",
+      "distance": 2.6173,
+      "shore_linable": true,
+      "safety_score": 0.5115,
+      "landmark_score": 0.3333,
+      "tags": {
+        "shore_fraction": "0.4",
+        "straight_dist": "2.6173"
+      }
+    },
+    {
+      "edge_id": "EDGE-SKE-0017-SKE-0029",
+      "source_id": "SKE-0017",
+      "target_id": "SKE-0029",
+      "distance": 2.6173,
+      "shore_linable": true,
+      "safety_score": 0.4675,
+      "landmark_score": 0.6667,
+      "tags": {
+        "shore_fraction": "0.5",
+        "straight_dist": "2.6173"
+      }
+    },
+    {
+      "edge_id": "EDGE-SKE-0018-SKE-0026",
+      "source_id": "SKE-0018",
+      "target_id": "SKE-0026",
+      "distance": 1.6492,
+      "shore_linable": false,
+      "safety_score": 1.0,
+      "landmark_score": 0.0,
+      "tags": {
+        "shore_fraction": "0.0",
+        "straight_dist": "1.6492"
+      }
+    },
+    {
+      "edge_id": "EDGE-SKE-0018-SKE-0036",
+      "source_id": "SKE-0018",
+      "target_id": "SKE-0036",
+      "distance": 3.228,
+      "shore_linable": false,
+      "safety_score": 1.0,
+      "landmark_score": 0.0,
+      "tags": {
+        "shore_fraction": "0.0",
+        "straight_dist": "3.228"
+      }
+    },
+    {
+      "edge_id": "EDGE-SKE-0018-SKE-0028",
+      "source_id": "SKE-0018",
+      "target_id": "SKE-0028",
+      "distance": 3.6235,
+      "shore_linable": false,
+      "safety_score": 1.0,
+      "landmark_score": 0.0,
+      "tags": {
+        "shore_fraction": "0.0",
+        "straight_dist": "3.6235"
+      }
+    },
+    {
+      "edge_id": "EDGE-SKE-0018-SKE-0022",
+      "source_id": "SKE-0018",
+      "target_id": "SKE-0022",
+      "distance": 3.6878,
+      "shore_linable": false,
+      "safety_score": 1.0,
+      "landmark_score": 0.0,
+      "tags": {
+        "shore_fraction": "0.0",
+        "straight_dist": "3.6878"
+      }
+    },
+    {
+      "edge_id": "EDGE-SKE-0019-SKE-0025",
+      "source_id": "SKE-0019",
+      "target_id": "SKE-0025",
+      "distance": 3.228,
+      "shore_linable": false,
+      "safety_score": 1.0,
+      "landmark_score": 0.0,
+      "tags": {
+        "shore_fraction": "0.0",
+        "straight_dist": "3.228"
+      }
+    },
+    {
+      "edge_id": "EDGE-SKE-0020-SKE-0033",
+      "source_id": "SKE-0020",
+      "target_id": "SKE-0033",
+      "distance": 1.7464,
+      "shore_linable": false,
+      "safety_score": 1.0,
+      "landmark_score": 0.0,
+      "tags": {
+        "shore_fraction": "0.0",
+        "straight_dist": "1.7464"
+      }
+    },
+    {
+      "edge_id": "EDGE-SKE-0020-SKE-0024",
+      "source_id": "SKE-0020",
+      "target_id": "SKE-0024",
+      "distance": 2.2091,
+      "shore_linable": false,
+      "safety_score": 1.0,
+      "landmark_score": 0.3333,
+      "tags": {
+        "shore_fraction": "0.0",
+        "straight_dist": "2.2091"
+      }
+    },
+    {
+      "edge_id": "EDGE-SKE-0020-SKE-0039",
+      "source_id": "SKE-0020",
+      "target_id": "SKE-0039",
+      "distance": 3.178,
+      "shore_linable": false,
+      "safety_score": 1.0,
+      "landmark_score": 0.0,
+      "tags": {
+        "shore_fraction": "0.0",
+        "straight_dist": "3.178"
+      }
+    },
+    {
+      "edge_id": "EDGE-SKE-0020-SKE-0021",
+      "source_id": "SKE-0020",
+      "target_id": "SKE-0021",
+      "distance": 3.4015,
+      "shore_linable": false,
+      "safety_score": 1.0,
+      "landmark_score": 0.0,
+      "tags": {
+        "shore_fraction": "0.0",
+        "straight_dist": "3.4015"
+      }
+    },
+    {
+      "edge_id": "EDGE-SKE-0021-SKE-0034",
+      "source_id": "SKE-0021",
+      "target_id": "SKE-0034",
+      "distance": 1.6279,
+      "shore_linable": false,
+      "safety_score": 1.0,
+      "landmark_score": 0.0,
+      "tags": {
+        "shore_fraction": "0.0",
+        "straight_dist": "1.6279"
+      }
+    },
+    {
+      "edge_id": "EDGE-SKE-0021-SKE-0028",
+      "source_id": "SKE-0021",
+      "target_id": "SKE-0028",
+      "distance": 3.228,
+      "shore_linable": false,
+      "safety_score": 1.0,
+      "landmark_score": 0.0,
+      "tags": {
+        "shore_fraction": "0.0",
+        "straight_dist": "3.228"
+      }
+    },
+    {
+      "edge_id": "EDGE-SKE-0021-SKE-0042",
+      "source_id": "SKE-0021",
+      "target_id": "SKE-0042",
+      "distance": 3.2757,
+      "shore_linable": false,
+      "safety_score": 1.0,
+      "landmark_score": 0.0,
+      "tags": {
+        "shore_fraction": "0.0",
+        "straight_dist": "3.2757"
+      }
+    },
+    {
+      "edge_id": "EDGE-SKE-0022-SKE-0032",
+      "source_id": "SKE-0022",
+      "target_id": "SKE-0032",
+      "distance": 1.5524,
+      "shore_linable": false,
+      "safety_score": 1.0,
+      "landmark_score": 0.0,
+      "tags": {
+        "shore_fraction": "0.0",
+        "straight_dist": "1.5524"
+      }
+    },
+    {
+      "edge_id": "EDGE-SKE-0022-SKE-0040",
+      "source_id": "SKE-0022",
+      "target_id": "SKE-0040",
+      "distance": 3.1385,
+      "shore_linable": false,
+      "safety_score": 1.0,
+      "landmark_score": 0.0,
+      "tags": {
+        "shore_fraction": "0.0",
+        "straight_dist": "3.1385"
+      }
+    },
+    {
+      "edge_id": "EDGE-SKE-0022-SKE-0023",
+      "source_id": "SKE-0022",
+      "target_id": "SKE-0023",
+      "distance": 3.2,
+      "shore_linable": false,
+      "safety_score": 1.0,
+      "landmark_score": 0.0,
+      "tags": {
+        "shore_fraction": "0.0",
+        "straight_dist": "3.2"
+      }
+    },
+    {
+      "edge_id": "EDGE-SKE-0023-SKE-0031",
+      "source_id": "SKE-0023",
+      "target_id": "SKE-0031",
+      "distance": 1.562,
+      "shore_linable": false,
+      "safety_score": 1.0,
+      "landmark_score": 0.0,
+      "tags": {
+        "shore_fraction": "0.0",
+        "straight_dist": "1.562"
+      }
+    },
+    {
+      "edge_id": "EDGE-SKE-0023-SKE-0038",
+      "source_id": "SKE-0023",
+      "target_id": "SKE-0038",
+      "distance": 2.7659,
+      "shore_linable": false,
+      "safety_score": 1.0,
+      "landmark_score": 0.0,
+      "tags": {
+        "shore_fraction": "0.0",
+        "straight_dist": "2.7659"
+      }
+    },
+    {
+      "edge_id": "EDGE-SKE-0023-SKE-0025",
+      "source_id": "SKE-0023",
+      "target_id": "SKE-0025",
+      "distance": 3.1016,
+      "shore_linable": false,
+      "safety_score": 1.0,
+      "landmark_score": 0.0,
+      "tags": {
+        "shore_fraction": "0.0",
+        "straight_dist": "3.1016"
+      }
+    },
+    {
+      "edge_id": "EDGE-SKE-0023-SKE-0035",
+      "source_id": "SKE-0023",
+      "target_id": "SKE-0035",
+      "distance": 3.1385,
+      "shore_linable": false,
+      "safety_score": 1.0,
+      "landmark_score": 0.0,
+      "tags": {
+        "shore_fraction": "0.0",
+        "straight_dist": "3.1385"
+      }
+    },
+    {
+      "edge_id": "EDGE-SKE-0024-SKE-0027",
+      "source_id": "SKE-0024",
+      "target_id": "SKE-0027",
+      "distance": 2.1541,
+      "shore_linable": false,
+      "safety_score": 0.89,
+      "landmark_score": 0.6667,
+      "tags": {
+        "shore_fraction": "0.1",
+        "straight_dist": "2.1541"
+      }
+    },
+    {
+      "edge_id": "EDGE-SKE-0024-SKE-0033",
+      "source_id": "SKE-0024",
+      "target_id": "SKE-0033",
+      "distance": 2.3431,
+      "shore_linable": false,
+      "safety_score": 1.0,
+      "landmark_score": 0.3333,
+      "tags": {
+        "shore_fraction": "0.0",
+        "straight_dist": "2.3431"
+      }
+    },
+    {
+      "edge_id": "EDGE-SKE-0024-SKE-0039",
+      "source_id": "SKE-0024",
+      "target_id": "SKE-0039",
+      "distance": 2.846,
+      "shore_linable": false,
+      "safety_score": 1.0,
+      "landmark_score": 0.3333,
+      "tags": {
+        "shore_fraction": "0.0",
+        "straight_dist": "2.846"
+      }
+    },
+    {
+      "edge_id": "EDGE-SKE-0025-SKE-0035",
+      "source_id": "SKE-0025",
+      "target_id": "SKE-0035",
+      "distance": 1.5524,
+      "shore_linable": false,
+      "safety_score": 1.0,
+      "landmark_score": 0.0,
+      "tags": {
+        "shore_fraction": "0.0",
+        "straight_dist": "1.5524"
+      }
+    },
+    {
+      "edge_id": "EDGE-SKE-0025-SKE-0031",
+      "source_id": "SKE-0025",
+      "target_id": "SKE-0031",
+      "distance": 2.3707,
+      "shore_linable": false,
+      "safety_score": 1.0,
+      "landmark_score": 0.0,
+      "tags": {
+        "shore_fraction": "0.0",
+        "straight_dist": "2.3707"
+      }
+    },
+    {
+      "edge_id": "EDGE-SKE-0025-SKE-0043",
+      "source_id": "SKE-0025",
+      "target_id": "SKE-0043",
+      "distance": 3.228,
+      "shore_linable": false,
+      "safety_score": 1.0,
+      "landmark_score": 0.0,
+      "tags": {
+        "shore_fraction": "0.0",
+        "straight_dist": "3.228"
+      }
+    },
+    {
+      "edge_id": "EDGE-SKE-0026-SKE-0036",
+      "source_id": "SKE-0026",
+      "target_id": "SKE-0036",
+      "distance": 1.5811,
+      "shore_linable": false,
+      "safety_score": 1.0,
+      "landmark_score": 0.0,
+      "tags": {
+        "shore_fraction": "0.0",
+        "straight_dist": "1.5811"
+      }
+    },
+    {
+      "edge_id": "EDGE-SKE-0026-SKE-0032",
+      "source_id": "SKE-0026",
+      "target_id": "SKE-0032",
+      "distance": 2.8862,
+      "shore_linable": false,
+      "safety_score": 1.0,
+      "landmark_score": 0.0,
+      "tags": {
+        "shore_fraction": "0.0",
+        "straight_dist": "2.8862"
+      }
+    },
+    {
+      "edge_id": "EDGE-SKE-0026-SKE-0040",
+      "source_id": "SKE-0026",
+      "target_id": "SKE-0040",
+      "distance": 2.9,
+      "shore_linable": false,
+      "safety_score": 1.0,
+      "landmark_score": 0.0,
+      "tags": {
+        "shore_fraction": "0.0",
+        "straight_dist": "2.9"
+      }
+    },
+    {
+      "edge_id": "EDGE-SKE-0026-SKE-0045",
+      "source_id": "SKE-0026",
+      "target_id": "SKE-0045",
+      "distance": 3.1575,
+      "shore_linable": false,
+      "safety_score": 1.0,
+      "landmark_score": 0.0,
+      "tags": {
+        "shore_fraction": "0.0",
+        "straight_dist": "3.1575"
+      }
+    },
+    {
+      "edge_id": "EDGE-SKE-0022-SKE-0026",
+      "source_id": "SKE-0026",
+      "target_id": "SKE-0022",
+      "distance": 3.2985,
+      "shore_linable": false,
+      "safety_score": 1.0,
+      "landmark_score": 0.0,
+      "tags": {
+        "shore_fraction": "0.0",
+        "straight_dist": "3.2985"
+      }
+    },
+    {
+      "edge_id": "EDGE-SKE-0027-SKE-0039",
+      "source_id": "SKE-0027",
+      "target_id": "SKE-0039",
+      "distance": 3.467,
+      "shore_linable": false,
+      "safety_score": 1.0,
+      "landmark_score": 0.6667,
+      "tags": {
+        "shore_fraction": "0.1",
+        "straight_dist": "3.467"
+      }
+    },
+    {
+      "edge_id": "EDGE-SKE-0028-SKE-0037",
+      "source_id": "SKE-0028",
+      "target_id": "SKE-0037",
+      "distance": 1.6125,
+      "shore_linable": false,
+      "safety_score": 1.0,
+      "landmark_score": 0.0,
+      "tags": {
+        "shore_fraction": "0.0",
+        "straight_dist": "1.6125"
+      }
+    },
+    {
+      "edge_id": "EDGE-SKE-0028-SKE-0034",
+      "source_id": "SKE-0028",
+      "target_id": "SKE-0034",
+      "distance": 2.8862,
+      "shore_linable": false,
+      "safety_score": 1.0,
+      "landmark_score": 0.0,
+      "tags": {
+        "shore_fraction": "0.0",
+        "straight_dist": "2.8862"
+      }
+    },
+    {
+      "edge_id": "EDGE-SKE-0028-SKE-0047",
+      "source_id": "SKE-0028",
+      "target_id": "SKE-0047",
+      "distance": 3.2388,
+      "shore_linable": false,
+      "safety_score": 1.0,
+      "landmark_score": 0.0,
+      "tags": {
+        "shore_fraction": "0.0",
+        "straight_dist": "3.2388"
+      }
+    },
+    {
+      "edge_id": "EDGE-SKE-0028-SKE-0042",
+      "source_id": "SKE-0028",
+      "target_id": "SKE-0042",
+      "distance": 3.3242,
+      "shore_linable": false,
+      "safety_score": 1.0,
+      "landmark_score": 0.0,
+      "tags": {
+        "shore_fraction": "0.0",
+        "straight_dist": "3.3242"
+      }
+    },
+    {
+      "edge_id": "EDGE-SKE-0029-ZONE-2zO1ky5n57$hlSP0I709Q7",
+      "source_id": "SKE-0029",
+      "target_id": "ZONE-2zO1ky5n57$hlSP0I709Q7",
+      "distance": 2.6084,
+      "shore_linable": true,
+      "safety_score": 0.4825,
+      "landmark_score": 0.6667,
+      "tags": {
+        "shore_fraction": "0.5",
+        "straight_dist": "2.6084"
+      }
+    },
+    {
+      "edge_id": "EDGE-SKE-0029-SKE-0041",
+      "source_id": "SKE-0029",
+      "target_id": "SKE-0041",
+      "distance": 2.6773,
+      "shore_linable": true,
+      "safety_score": 0.4472,
+      "landmark_score": 0.6667,
+      "tags": {
+        "shore_fraction": "0.5",
+        "straight_dist": "2.6907"
+      }
+    },
+    {
+      "edge_id": "EDGE-SKE-0030-SKE-0041",
+      "source_id": "SKE-0030",
+      "target_id": "SKE-0041",
+      "distance": 2.6773,
+      "shore_linable": true,
+      "safety_score": 0.456,
+      "landmark_score": 0.3333,
+      "tags": {
+        "shore_fraction": "0.5",
+        "straight_dist": "2.6907"
+      }
+    },
+    {
+      "edge_id": "EDGE-SKE-0030-SKE-0052",
+      "source_id": "SKE-0030",
+      "target_id": "SKE-0052",
+      "distance": 3.59,
+      "shore_linable": true,
+      "safety_score": 0.0718,
+      "landmark_score": 0.0,
+      "tags": {
+        "shore_fraction": "1.0",
+        "straight_dist": "3.6"
+      }
+    },
+    {
+      "edge_id": "EDGE-SKE-0029-SKE-0030",
+      "source_id": "SKE-0030",
+      "target_id": "SKE-0029",
+      "distance": 3.6,
+      "shore_linable": true,
+      "safety_score": 0.0525,
+      "landmark_score": 0.6667,
+      "tags": {
+        "shore_fraction": "1.0",
+        "straight_dist": "3.6"
+      }
+    },
+    {
+      "edge_id": "EDGE-SKE-0031-SKE-0038",
+      "source_id": "SKE-0031",
+      "target_id": "SKE-0038",
+      "distance": 1.5524,
+      "shore_linable": false,
+      "safety_score": 1.0,
+      "landmark_score": 0.0,
+      "tags": {
+        "shore_fraction": "0.0",
+        "straight_dist": "1.5524"
+      }
+    },
+    {
+      "edge_id": "EDGE-SKE-0031-SKE-0035",
+      "source_id": "SKE-0031",
+      "target_id": "SKE-0035",
+      "distance": 1.7464,
+      "shore_linable": false,
+      "safety_score": 1.0,
+      "landmark_score": 0.0,
+      "tags": {
+        "shore_fraction": "0.0",
+        "straight_dist": "1.7464"
+      }
+    },
+    {
+      "edge_id": "EDGE-SKE-0031-SKE-0043",
+      "source_id": "SKE-0031",
+      "target_id": "SKE-0043",
+      "distance": 2.3324,
+      "shore_linable": false,
+      "safety_score": 1.0,
+      "landmark_score": 0.0,
+      "tags": {
+        "shore_fraction": "0.0",
+        "straight_dist": "2.3324"
+      }
+    },
+    {
+      "edge_id": "EDGE-SKE-0031-SKE-0048",
+      "source_id": "SKE-0031",
+      "target_id": "SKE-0048",
+      "distance": 3.0,
+      "shore_linable": false,
+      "safety_score": 1.0,
+      "landmark_score": 0.0,
+      "tags": {
+        "shore_fraction": "0.0",
+        "straight_dist": "3.0"
+      }
+    },
+    {
+      "edge_id": "EDGE-SKE-0032-SKE-0040",
+      "source_id": "SKE-0032",
+      "target_id": "SKE-0040",
+      "distance": 1.6125,
+      "shore_linable": false,
+      "safety_score": 1.0,
+      "landmark_score": 0.0,
+      "tags": {
+        "shore_fraction": "0.0",
+        "straight_dist": "1.6125"
+      }
+    },
+    {
+      "edge_id": "EDGE-SKE-0032-SKE-0036",
+      "source_id": "SKE-0032",
+      "target_id": "SKE-0036",
+      "distance": 2.4352,
+      "shore_linable": false,
+      "safety_score": 1.0,
+      "landmark_score": 0.0,
+      "tags": {
+        "shore_fraction": "0.0",
+        "straight_dist": "2.4352"
+      }
+    },
+    {
+      "edge_id": "EDGE-SKE-0032-SKE-0049",
+      "source_id": "SKE-0032",
+      "target_id": "SKE-0049",
+      "distance": 2.9833,
+      "shore_linable": false,
+      "safety_score": 1.0,
+      "landmark_score": 0.0,
+      "tags": {
+        "shore_fraction": "0.0",
+        "straight_dist": "2.9833"
+      }
+    },
+    {
+      "edge_id": "EDGE-SKE-0033-SKE-0039",
+      "source_id": "SKE-0033",
+      "target_id": "SKE-0039",
+      "distance": 1.5,
+      "shore_linable": false,
+      "safety_score": 1.0,
+      "landmark_score": 0.0,
+      "tags": {
+        "shore_fraction": "0.0",
+        "straight_dist": "1.5"
+      }
+    },
+    {
+      "edge_id": "EDGE-SKE-0027-SKE-0033",
+      "source_id": "SKE-0033",
+      "target_id": "SKE-0027",
+      "distance": 3.8639,
+      "shore_linable": false,
+      "safety_score": 1.0,
+      "landmark_score": 0.6667,
+      "tags": {
+        "shore_fraction": "0.1",
+        "straight_dist": "3.8639"
+      }
+    },
+    {
+      "edge_id": "EDGE-SKE-0033-SKE-0034",
+      "source_id": "SKE-0033",
+      "target_id": "SKE-0034",
+      "distance": 4.1,
+      "shore_linable": false,
+      "safety_score": 1.0,
+      "landmark_score": 0.0,
+      "tags": {
+        "shore_fraction": "0.0",
+        "straight_dist": "4.1"
+      }
+    },
+    {
+      "edge_id": "EDGE-SKE-0034-SKE-0042",
+      "source_id": "SKE-0034",
+      "target_id": "SKE-0042",
+      "distance": 1.6492,
+      "shore_linable": false,
+      "safety_score": 1.0,
+      "landmark_score": 0.0,
+      "tags": {
+        "shore_fraction": "0.0",
+        "straight_dist": "1.6492"
+      }
+    },
+    {
+      "edge_id": "EDGE-SKE-0034-SKE-0037",
+      "source_id": "SKE-0034",
+      "target_id": "SKE-0037",
+      "distance": 2.7514,
+      "shore_linable": false,
+      "safety_score": 1.0,
+      "landmark_score": 0.0,
+      "tags": {
+        "shore_fraction": "0.0",
+        "straight_dist": "2.7514"
+      }
+    },
+    {
+      "edge_id": "EDGE-SKE-0034-SKE-0053",
+      "source_id": "SKE-0034",
+      "target_id": "SKE-0053",
+      "distance": 3.228,
+      "shore_linable": false,
+      "safety_score": 1.0,
+      "landmark_score": 0.0,
+      "tags": {
+        "shore_fraction": "0.0",
+        "straight_dist": "3.228"
+      }
+    },
+    {
+      "edge_id": "EDGE-SKE-0034-SKE-0054",
+      "source_id": "SKE-0034",
+      "target_id": "SKE-0054",
+      "distance": 3.3242,
+      "shore_linable": false,
+      "safety_score": 1.0,
+      "landmark_score": 0.0,
+      "tags": {
+        "shore_fraction": "0.0",
+        "straight_dist": "3.3242"
+      }
+    },
+    {
+      "edge_id": "EDGE-SKE-0035-SKE-0043",
+      "source_id": "SKE-0035",
+      "target_id": "SKE-0043",
+      "distance": 1.6763,
+      "shore_linable": false,
+      "safety_score": 1.0,
+      "landmark_score": 0.0,
+      "tags": {
+        "shore_fraction": "0.0",
+        "straight_dist": "1.6763"
+      }
+    },
+    {
+      "edge_id": "EDGE-SKE-0035-SKE-0038",
+      "source_id": "SKE-0035",
+      "target_id": "SKE-0038",
+      "distance": 2.3707,
+      "shore_linable": false,
+      "safety_score": 1.0,
+      "landmark_score": 0.0,
+      "tags": {
+        "shore_fraction": "0.0",
+        "straight_dist": "2.3707"
+      }
+    },
+    {
+      "edge_id": "EDGE-SKE-0035-SKE-0048",
+      "source_id": "SKE-0035",
+      "target_id": "SKE-0048",
+      "distance": 3.1064,
+      "shore_linable": false,
+      "safety_score": 1.0,
+      "landmark_score": 0.0,
+      "tags": {
+        "shore_fraction": "0.0",
+        "straight_dist": "3.1064"
+      }
+    },
+    {
+      "edge_id": "EDGE-SKE-0036-SKE-0045",
+      "source_id": "SKE-0036",
+      "target_id": "SKE-0045",
+      "distance": 1.6031,
+      "shore_linable": false,
+      "safety_score": 1.0,
+      "landmark_score": 0.0,
+      "tags": {
+        "shore_fraction": "0.0",
+        "straight_dist": "1.6031"
+      }
+    },
+    {
+      "edge_id": "EDGE-SKE-0036-SKE-0040",
+      "source_id": "SKE-0036",
+      "target_id": "SKE-0040",
+      "distance": 1.6155,
+      "shore_linable": false,
+      "safety_score": 1.0,
+      "landmark_score": 0.0,
+      "tags": {
+        "shore_fraction": "0.0",
+        "straight_dist": "1.6155"
+      }
+    },
+    {
+      "edge_id": "EDGE-SKE-0036-SKE-0049",
+      "source_id": "SKE-0036",
+      "target_id": "SKE-0049",
+      "distance": 2.6401,
+      "shore_linable": false,
+      "safety_score": 1.0,
+      "landmark_score": 0.0,
+      "tags": {
+        "shore_fraction": "0.0",
+        "straight_dist": "2.6401"
+      }
+    },
+    {
+      "edge_id": "EDGE-SKE-0036-ZONE-0BGjw438P6JAPe2g$sDgcT",
+      "source_id": "SKE-0036",
+      "target_id": "ZONE-0BGjw438P6JAPe2g$sDgcT",
+      "distance": 2.7772,
+      "shore_linable": false,
+      "safety_score": 1.0,
+      "landmark_score": 0.0,
+      "tags": {
+        "shore_fraction": "0.0",
+        "straight_dist": "2.7772"
+      }
+    },
+    {
+      "edge_id": "EDGE-SKE-0037-SKE-0047",
+      "source_id": "SKE-0037",
+      "target_id": "SKE-0047",
+      "distance": 1.6279,
+      "shore_linable": false,
+      "safety_score": 1.0,
+      "landmark_score": 0.0,
+      "tags": {
+        "shore_fraction": "0.0",
+        "straight_dist": "1.6279"
+      }
+    },
+    {
+      "edge_id": "EDGE-SKE-0037-SKE-0042",
+      "source_id": "SKE-0037",
+      "target_id": "SKE-0042",
+      "distance": 2.3087,
+      "shore_linable": false,
+      "safety_score": 1.0,
+      "landmark_score": 0.0,
+      "tags": {
+        "shore_fraction": "0.0",
+        "straight_dist": "2.3087"
+      }
+    },
+    {
+      "edge_id": "EDGE-SKE-0037-SKE-0053",
+      "source_id": "SKE-0037",
+      "target_id": "SKE-0053",
+      "distance": 2.7803,
+      "shore_linable": false,
+      "safety_score": 1.0,
+      "landmark_score": 0.0,
+      "tags": {
+        "shore_fraction": "0.0",
+        "straight_dist": "2.7803"
+      }
+    },
+    {
+      "edge_id": "EDGE-SKE-0037-SKE-0057",
+      "source_id": "SKE-0037",
+      "target_id": "SKE-0057",
+      "distance": 3.2249,
+      "shore_linable": false,
+      "safety_score": 1.0,
+      "landmark_score": 0.0,
+      "tags": {
+        "shore_fraction": "0.0",
+        "straight_dist": "3.2249"
+      }
+    },
+    {
+      "edge_id": "EDGE-SKE-0038-SKE-0048",
+      "source_id": "SKE-0038",
+      "target_id": "SKE-0048",
+      "distance": 1.5524,
+      "shore_linable": false,
+      "safety_score": 1.0,
+      "landmark_score": 0.0,
+      "tags": {
+        "shore_fraction": "0.0",
+        "straight_dist": "1.5524"
+      }
+    },
+    {
+      "edge_id": "EDGE-SKE-0038-SKE-0043",
+      "source_id": "SKE-0038",
+      "target_id": "SKE-0043",
+      "distance": 1.6763,
+      "shore_linable": false,
+      "safety_score": 1.0,
+      "landmark_score": 0.0,
+      "tags": {
+        "shore_fraction": "0.0",
+        "straight_dist": "1.6763"
+      }
+    },
+    {
+      "edge_id": "EDGE-SKE-0038-SKE-0058",
+      "source_id": "SKE-0038",
+      "target_id": "SKE-0058",
+      "distance": 3.015,
+      "shore_linable": false,
+      "safety_score": 1.0,
+      "landmark_score": 0.0,
+      "tags": {
+        "shore_fraction": "0.0",
+        "straight_dist": "3.015"
+      }
+    },
+    {
+      "edge_id": "EDGE-SKE-0039-SKE-0063",
+      "source_id": "SKE-0039",
+      "target_id": "SKE-0063",
+      "distance": 3.7121,
+      "shore_linable": false,
+      "safety_score": 1.0,
+      "landmark_score": 0.0,
+      "tags": {
+        "shore_fraction": "0.0",
+        "straight_dist": "3.7121"
+      }
+    },
+    {
+      "edge_id": "EDGE-SKE-0040-SKE-0049",
+      "source_id": "SKE-0040",
+      "target_id": "SKE-0049",
+      "distance": 1.5033,
+      "shore_linable": false,
+      "safety_score": 1.0,
+      "landmark_score": 0.0,
+      "tags": {
+        "shore_fraction": "0.0",
+        "straight_dist": "1.5033"
+      }
+    },
+    {
+      "edge_id": "EDGE-SKE-0040-SKE-0045",
+      "source_id": "SKE-0040",
+      "target_id": "SKE-0045",
+      "distance": 1.7205,
+      "shore_linable": false,
+      "safety_score": 1.0,
+      "landmark_score": 0.0,
+      "tags": {
+        "shore_fraction": "0.0",
+        "straight_dist": "1.7205"
+      }
+    },
+    {
+      "edge_id": "EDGE-SKE-0040-SKE-0056",
+      "source_id": "SKE-0040",
+      "target_id": "SKE-0056",
+      "distance": 2.953,
+      "shore_linable": false,
+      "safety_score": 1.0,
+      "landmark_score": 0.0,
+      "tags": {
+        "shore_fraction": "0.0",
+        "straight_dist": "2.953"
+      }
+    },
+    {
+      "edge_id": "EDGE-SKE-0041-SKE-0052",
+      "source_id": "SKE-0041",
+      "target_id": "SKE-0052",
+      "distance": 2.4083,
+      "shore_linable": true,
+      "safety_score": 0.513,
+      "landmark_score": 0.3333,
+      "tags": {
+        "shore_fraction": "0.4",
+        "straight_dist": "2.4083"
+      }
+    },
+    {
+      "edge_id": "EDGE-SKE-0041-SKE-0055",
+      "source_id": "SKE-0041",
+      "target_id": "SKE-0055",
+      "distance": 2.7448,
+      "shore_linable": true,
+      "safety_score": 0.445,
+      "landmark_score": 0.6667,
+      "tags": {
+        "shore_fraction": "0.5",
+        "straight_dist": "2.7586"
+      }
+    },
+    {
+      "edge_id": "EDGE-SKE-0042-SKE-0053",
+      "source_id": "SKE-0042",
+      "target_id": "SKE-0053",
+      "distance": 1.5811,
+      "shore_linable": false,
+      "safety_score": 1.0,
+      "landmark_score": 0.0,
+      "tags": {
+        "shore_fraction": "0.0",
+        "straight_dist": "1.5811"
+      }
+    },
+    {
+      "edge_id": "EDGE-SKE-0042-SKE-0054",
+      "source_id": "SKE-0042",
+      "target_id": "SKE-0054",
+      "distance": 2.0616,
+      "shore_linable": false,
+      "safety_score": 1.0,
+      "landmark_score": 0.0,
+      "tags": {
+        "shore_fraction": "0.0",
+        "straight_dist": "2.0616"
+      }
+    },
+    {
+      "edge_id": "EDGE-SKE-0042-SKE-0047",
+      "source_id": "SKE-0042",
+      "target_id": "SKE-0047",
+      "distance": 2.1024,
+      "shore_linable": false,
+      "safety_score": 1.0,
+      "landmark_score": 0.0,
+      "tags": {
+        "shore_fraction": "0.0",
+        "straight_dist": "2.1024"
+      }
+    },
+    {
+      "edge_id": "EDGE-SKE-0042-SKE-0057",
+      "source_id": "SKE-0042",
+      "target_id": "SKE-0057",
+      "distance": 3.0806,
+      "shore_linable": false,
+      "safety_score": 1.0,
+      "landmark_score": 0.0,
+      "tags": {
+        "shore_fraction": "0.0",
+        "straight_dist": "3.0806"
+      }
+    },
+    {
+      "edge_id": "EDGE-SKE-0043-SKE-0048",
+      "source_id": "SKE-0043",
+      "target_id": "SKE-0048",
+      "distance": 1.562,
+      "shore_linable": false,
+      "safety_score": 1.0,
+      "landmark_score": 0.0,
+      "tags": {
+        "shore_fraction": "0.0",
+        "straight_dist": "1.562"
+      }
+    },
+    {
+      "edge_id": "EDGE-SKE-0043-SKE-0058",
+      "source_id": "SKE-0043",
+      "target_id": "SKE-0058",
+      "distance": 2.8178,
+      "shore_linable": false,
+      "safety_score": 1.0,
+      "landmark_score": 0.0,
+      "tags": {
+        "shore_fraction": "0.0",
+        "straight_dist": "2.8178"
+      }
+    },
+    {
+      "edge_id": "EDGE-SKE-0044-SKE-0051",
+      "source_id": "SKE-0044",
+      "target_id": "SKE-0051",
+      "distance": 1.7821,
+      "shore_linable": true,
+      "safety_score": 0.3161,
+      "landmark_score": 0.6667,
+      "tags": {
+        "shore_fraction": "0.7",
+        "straight_dist": "1.8028"
+      }
+    },
+    {
+      "edge_id": "EDGE-SKE-0044-SKE-0055",
+      "source_id": "SKE-0044",
+      "target_id": "SKE-0055",
+      "distance": 1.8385,
+      "shore_linable": true,
+      "safety_score": 0.3711,
+      "landmark_score": 0.6667,
+      "tags": {
+        "shore_fraction": "0.6",
+        "straight_dist": "1.8385"
+      }
+    },
+    {
+      "edge_id": "EDGE-SKE-0044-SKE-0046",
+      "source_id": "SKE-0044",
+      "target_id": "SKE-0046",
+      "distance": 2.8999,
+      "shore_linable": true,
+      "safety_score": 0.4433,
+      "landmark_score": 1.0,
+      "tags": {
+        "shore_fraction": "0.5",
+        "straight_dist": "2.9155"
+      }
+    },
+    {
+      "edge_id": "EDGE-SKE-0045-SKE-0049",
+      "source_id": "SKE-0045",
+      "target_id": "SKE-0049",
+      "distance": 1.5811,
+      "shore_linable": false,
+      "safety_score": 1.0,
+      "landmark_score": 0.0,
+      "tags": {
+        "shore_fraction": "0.0",
+        "straight_dist": "1.5811"
+      }
+    },
+    {
+      "edge_id": "EDGE-SKE-0045-SKE-0056",
+      "source_id": "SKE-0045",
+      "target_id": "SKE-0056",
+      "distance": 1.6,
+      "shore_linable": false,
+      "safety_score": 1.0,
+      "landmark_score": 0.0,
+      "tags": {
+        "shore_fraction": "0.0",
+        "straight_dist": "1.6"
+      }
+    },
+    {
+      "edge_id": "EDGE-SKE-0045-SKE-0060",
+      "source_id": "SKE-0045",
+      "target_id": "SKE-0060",
+      "distance": 2.6907,
+      "shore_linable": false,
+      "safety_score": 1.0,
+      "landmark_score": 0.0,
+      "tags": {
+        "shore_fraction": "0.0",
+        "straight_dist": "2.6907"
+      }
+    },
+    {
+      "edge_id": "EDGE-SKE-0046-SKE-0051",
+      "source_id": "SKE-0046",
+      "target_id": "SKE-0051",
+      "distance": 1.5652,
+      "shore_linable": true,
+      "safety_score": 0.4137,
+      "landmark_score": 1.0,
+      "tags": {
+        "shore_fraction": "0.6",
+        "straight_dist": "1.5652"
+      }
+    },
+    {
+      "edge_id": "EDGE-SKE-0046-SKE-0059",
+      "source_id": "SKE-0046",
+      "target_id": "SKE-0059",
+      "distance": 1.9,
+      "shore_linable": false,
+      "safety_score": 0.5764,
+      "landmark_score": 0.6667,
+      "tags": {
+        "shore_fraction": "0.2",
+        "straight_dist": "1.9"
+      }
+    },
+    {
+      "edge_id": "EDGE-FEAT-0JV8FQB5b5DPTE76PusxqH-SKE-0046",
+      "source_id": "SKE-0046",
+      "target_id": "FEAT-0JV8FQB5b5DPTE76PusxqH",
+      "distance": 3.7451,
+      "shore_linable": true,
+      "safety_score": 0.2737,
+      "landmark_score": 1.0,
+      "tags": {
+        "shore_fraction": "0.8",
+        "straight_dist": "3.7947"
+      }
+    },
+    {
+      "edge_id": "EDGE-SKE-0047-SKE-0053",
+      "source_id": "SKE-0047",
+      "target_id": "SKE-0053",
+      "distance": 1.5232,
+      "shore_linable": false,
+      "safety_score": 1.0,
+      "landmark_score": 0.0,
+      "tags": {
+        "shore_fraction": "0.0",
+        "straight_dist": "1.5232"
+      }
+    },
+    {
+      "edge_id": "EDGE-SKE-0047-SKE-0057",
+      "source_id": "SKE-0047",
+      "target_id": "SKE-0057",
+      "distance": 1.6031,
+      "shore_linable": false,
+      "safety_score": 1.0,
+      "landmark_score": 0.0,
+      "tags": {
+        "shore_fraction": "0.0",
+        "straight_dist": "1.6031"
+      }
+    },
+    {
+      "edge_id": "EDGE-SKE-0047-SKE-0062",
+      "source_id": "SKE-0047",
+      "target_id": "SKE-0062",
+      "distance": 2.9732,
+      "shore_linable": false,
+      "safety_score": 1.0,
+      "landmark_score": 0.0,
+      "tags": {
+        "shore_fraction": "0.0",
+        "straight_dist": "2.9732"
+      }
+    },
+    {
+      "edge_id": "EDGE-SKE-0047-SKE-0067",
+      "source_id": "SKE-0047",
+      "target_id": "SKE-0067",
+      "distance": 3.1145,
+      "shore_linable": false,
+      "safety_score": 1.0,
+      "landmark_score": 0.0,
+      "tags": {
+        "shore_fraction": "0.0",
+        "straight_dist": "3.1145"
+      }
+    },
+    {
+      "edge_id": "EDGE-SKE-0048-SKE-0058",
+      "source_id": "SKE-0048",
+      "target_id": "SKE-0058",
+      "distance": 1.5033,
+      "shore_linable": false,
+      "safety_score": 1.0,
+      "landmark_score": 0.0,
+      "tags": {
+        "shore_fraction": "0.0",
+        "straight_dist": "1.5033"
+      }
+    },
+    {
+      "edge_id": "EDGE-SKE-0048-SKE-0064",
+      "source_id": "SKE-0048",
+      "target_id": "SKE-0064",
+      "distance": 2.5942,
+      "shore_linable": false,
+      "safety_score": 1.0,
+      "landmark_score": 0.0,
+      "tags": {
+        "shore_fraction": "0.0",
+        "straight_dist": "2.5942"
+      }
+    },
+    {
+      "edge_id": "EDGE-SKE-0048-SKE-0068",
+      "source_id": "SKE-0048",
+      "target_id": "SKE-0068",
+      "distance": 3.0594,
+      "shore_linable": false,
+      "safety_score": 1.0,
+      "landmark_score": 0.0,
+      "tags": {
+        "shore_fraction": "0.0",
+        "straight_dist": "3.0594"
+      }
+    },
+    {
+      "edge_id": "EDGE-SKE-0049-SKE-0060",
+      "source_id": "SKE-0049",
+      "target_id": "SKE-0060",
+      "distance": 1.5297,
+      "shore_linable": false,
+      "safety_score": 1.0,
+      "landmark_score": 0.0,
+      "tags": {
+        "shore_fraction": "0.0",
+        "straight_dist": "1.5297"
+      }
+    },
+    {
+      "edge_id": "EDGE-SKE-0049-SKE-0056",
+      "source_id": "SKE-0049",
+      "target_id": "SKE-0056",
+      "distance": 1.8601,
+      "shore_linable": false,
+      "safety_score": 1.0,
+      "landmark_score": 0.0,
+      "tags": {
+        "shore_fraction": "0.0",
+        "straight_dist": "1.8601"
+      }
+    },
+    {
+      "edge_id": "EDGE-SKE-0050-SKE-0061",
+      "source_id": "SKE-0050",
+      "target_id": "SKE-0061",
+      "distance": 1.5515,
+      "shore_linable": true,
+      "safety_score": 0.2585,
+      "landmark_score": 0.3333,
+      "tags": {
+        "shore_fraction": "0.7",
+        "straight_dist": "1.9105"
+      }
+    },
+    {
+      "edge_id": "EDGE-SKE-0050-SKE-0063",
+      "source_id": "SKE-0050",
+      "target_id": "SKE-0063",
+      "distance": 3.5517,
+      "shore_linable": true,
+      "safety_score": 0.7288,
+      "landmark_score": 0.3333,
+      "tags": {
+        "shore_fraction": "0.4",
+        "straight_dist": "3.7216"
+      }
+    },
+    {
+      "edge_id": "EDGE-SKE-0027-SKE-0050",
+      "source_id": "SKE-0050",
+      "target_id": "SKE-0027",
+      "distance": 3.6234,
+      "shore_linable": true,
+      "safety_score": 0.162,
+      "landmark_score": 0.6667,
+      "tags": {
+        "shore_fraction": "1.0",
+        "straight_dist": "3.7483"
+      }
+    },
+    {
+      "edge_id": "EDGE-SKE-0039-SKE-0050",
+      "source_id": "SKE-0050",
+      "target_id": "SKE-0039",
+      "distance": 3.9132,
+      "shore_linable": false,
+      "safety_score": 0.8601,
+      "landmark_score": 0.3333,
+      "tags": {
+        "shore_fraction": "0.3",
+        "straight_dist": "3.9357"
+      }
+    },
+    {
+      "edge_id": "EDGE-FEAT-0wp3zaH$L7VBlQRHvLq4Rl-SKE-0050",
+      "source_id": "SKE-0050",
+      "target_id": "FEAT-0wp3zaH$L7VBlQRHvLq4Rl",
+      "distance": 3.9608,
+      "shore_linable": true,
+      "safety_score": 0.057,
+      "landmark_score": 1.0,
+      "tags": {
+        "shore_fraction": "1.0",
+        "straight_dist": "4.951"
+      }
+    },
+    {
+      "edge_id": "EDGE-SKE-0051-SKE-0059",
+      "source_id": "SKE-0051",
+      "target_id": "SKE-0059",
+      "distance": 1.8439,
+      "shore_linable": true,
+      "safety_score": 0.24,
+      "landmark_score": 0.3333,
+      "tags": {
+        "shore_fraction": "0.9",
+        "straight_dist": "1.8439"
+      }
+    },
+    {
+      "edge_id": "EDGE-SKE-0051-SKE-0055",
+      "source_id": "SKE-0051",
+      "target_id": "SKE-0055",
+      "distance": 2.7984,
+      "shore_linable": true,
+      "safety_score": 0.102,
+      "landmark_score": 0.3333,
+      "tags": {
+        "shore_fraction": "1.0",
+        "straight_dist": "2.816"
+      }
+    },
+    {
+      "edge_id": "EDGE-SKE-0052-SKE-0055",
+      "source_id": "SKE-0052",
+      "target_id": "SKE-0055",
+      "distance": 3.8018,
+      "shore_linable": true,
+      "safety_score": 0.102,
+      "landmark_score": 0.3333,
+      "tags": {
+        "shore_fraction": "1.0",
+        "straight_dist": "3.8118"
+      }
+    },
+    {
+      "edge_id": "EDGE-SKE-0052-SKE-0070",
+      "source_id": "SKE-0052",
+      "target_id": "SKE-0070",
+      "distance": 3.8348,
+      "shore_linable": true,
+      "safety_score": 0.595,
+      "landmark_score": 0.0,
+      "tags": {
+        "shore_fraction": "0.4",
+        "straight_dist": "3.9051"
+      }
+    },
+    {
+      "edge_id": "EDGE-FEAT-0JV8FQB5b5DPTE76PusxqH-SKE-0052",
+      "source_id": "SKE-0052",
+      "target_id": "FEAT-0JV8FQB5b5DPTE76PusxqH",
+      "distance": 4.3096,
+      "shore_linable": true,
+      "safety_score": 0.069,
+      "landmark_score": 0.3333,
+      "tags": {
+        "shore_fraction": "1.0",
+        "straight_dist": "4.4283"
+      }
+    },
+    {
+      "edge_id": "EDGE-SKE-0053-SKE-0057",
+      "source_id": "SKE-0053",
+      "target_id": "SKE-0057",
+      "distance": 1.6401,
+      "shore_linable": false,
+      "safety_score": 1.0,
+      "landmark_score": 0.0,
+      "tags": {
+        "shore_fraction": "0.0",
+        "straight_dist": "1.6401"
+      }
+    },
+    {
+      "edge_id": "EDGE-SKE-0053-SKE-0062",
+      "source_id": "SKE-0053",
+      "target_id": "SKE-0062",
+      "distance": 1.7088,
+      "shore_linable": false,
+      "safety_score": 1.0,
+      "landmark_score": 0.0,
+      "tags": {
+        "shore_fraction": "0.0",
+        "straight_dist": "1.7088"
+      }
+    },
+    {
+      "edge_id": "EDGE-SKE-0053-SKE-0054",
+      "source_id": "SKE-0053",
+      "target_id": "SKE-0054",
+      "distance": 1.8028,
+      "shore_linable": false,
+      "safety_score": 1.0,
+      "landmark_score": 0.0,
+      "tags": {
+        "shore_fraction": "0.0",
+        "straight_dist": "1.8028"
+      }
+    },
+    {
+      "edge_id": "EDGE-SKE-0053-SKE-0067",
+      "source_id": "SKE-0053",
+      "target_id": "SKE-0067",
+      "distance": 2.7313,
+      "shore_linable": false,
+      "safety_score": 1.0,
+      "landmark_score": 0.0,
+      "tags": {
+        "shore_fraction": "0.0",
+        "straight_dist": "2.7313"
+      }
+    },
+    {
+      "edge_id": "EDGE-SKE-0054-SKE-0062",
+      "source_id": "SKE-0054",
+      "target_id": "SKE-0062",
+      "distance": 1.9209,
+      "shore_linable": false,
+      "safety_score": 1.0,
+      "landmark_score": 0.0,
+      "tags": {
+        "shore_fraction": "0.0",
+        "straight_dist": "1.9209"
+      }
+    },
+    {
+      "edge_id": "EDGE-SKE-0054-SKE-0071",
+      "source_id": "SKE-0054",
+      "target_id": "SKE-0071",
+      "distance": 3.1623,
+      "shore_linable": false,
+      "safety_score": 1.0,
+      "landmark_score": 0.0,
+      "tags": {
+        "shore_fraction": "0.0",
+        "straight_dist": "3.1623"
+      }
+    },
+    {
+      "edge_id": "EDGE-SKE-0054-SKE-0057",
+      "source_id": "SKE-0054",
+      "target_id": "SKE-0057",
+      "distance": 3.228,
+      "shore_linable": false,
+      "safety_score": 1.0,
+      "landmark_score": 0.0,
+      "tags": {
+        "shore_fraction": "0.0",
+        "straight_dist": "3.228"
+      }
+    },
+    {
+      "edge_id": "EDGE-SKE-0047-SKE-0054",
+      "source_id": "SKE-0054",
+      "target_id": "SKE-0047",
+      "distance": 3.2757,
+      "shore_linable": false,
+      "safety_score": 1.0,
+      "landmark_score": 0.0,
+      "tags": {
+        "shore_fraction": "0.0",
+        "straight_dist": "3.2757"
+      }
+    },
+    {
+      "edge_id": "EDGE-SKE-0055-ZONE-2GDGci$en8jAR10fGEvA6l",
+      "source_id": "SKE-0055",
+      "target_id": "ZONE-2GDGci$en8jAR10fGEvA6l",
+      "distance": 2.7412,
+      "shore_linable": true,
+      "safety_score": 0.46,
+      "landmark_score": 0.6667,
+      "tags": {
+        "shore_fraction": "0.5",
+        "straight_dist": "2.7546"
+      }
+    },
+    {
+      "edge_id": "EDGE-SKE-0056-SKE-0066",
+      "source_id": "SKE-0056",
+      "target_id": "SKE-0066",
+      "distance": 1.5133,
+      "shore_linable": false,
+      "safety_score": 1.0,
+      "landmark_score": 0.0,
+      "tags": {
+        "shore_fraction": "0.0",
+        "straight_dist": "1.5133"
+      }
+    },
+    {
+      "edge_id": "EDGE-SKE-0056-SKE-0060",
+      "source_id": "SKE-0056",
+      "target_id": "SKE-0060",
+      "distance": 1.8439,
+      "shore_linable": false,
+      "safety_score": 1.0,
+      "landmark_score": 0.0,
+      "tags": {
+        "shore_fraction": "0.0",
+        "straight_dist": "1.8439"
+      }
+    },
+    {
+      "edge_id": "EDGE-SKE-0056-SKE-0069",
+      "source_id": "SKE-0056",
+      "target_id": "SKE-0069",
+      "distance": 2.687,
+      "shore_linable": false,
+      "safety_score": 1.0,
+      "landmark_score": 0.0,
+      "tags": {
+        "shore_fraction": "0.0",
+        "straight_dist": "2.687"
+      }
+    },
+    {
+      "edge_id": "EDGE-SKE-0057-SKE-0067",
+      "source_id": "SKE-0057",
+      "target_id": "SKE-0067",
+      "distance": 1.5133,
+      "shore_linable": false,
+      "safety_score": 1.0,
+      "landmark_score": 0.0,
+      "tags": {
+        "shore_fraction": "0.0",
+        "straight_dist": "1.5133"
+      }
+    },
+    {
+      "edge_id": "EDGE-SKE-0057-SKE-0062",
+      "source_id": "SKE-0057",
+      "target_id": "SKE-0062",
+      "distance": 1.9925,
+      "shore_linable": false,
+      "safety_score": 1.0,
+      "landmark_score": 0.0,
+      "tags": {
+        "shore_fraction": "0.0",
+        "straight_dist": "1.9925"
+      }
+    },
+    {
+      "edge_id": "EDGE-SKE-0057-SKE-0071",
+      "source_id": "SKE-0057",
+      "target_id": "SKE-0071",
+      "distance": 2.9698,
+      "shore_linable": false,
+      "safety_score": 1.0,
+      "landmark_score": 0.0,
+      "tags": {
+        "shore_fraction": "0.0",
+        "straight_dist": "2.9698"
+      }
+    },
+    {
+      "edge_id": "EDGE-SKE-0058-SKE-0064",
+      "source_id": "SKE-0058",
+      "target_id": "SKE-0064",
+      "distance": 1.5264,
+      "shore_linable": false,
+      "safety_score": 1.0,
+      "landmark_score": 0.0,
+      "tags": {
+        "shore_fraction": "0.0",
+        "straight_dist": "1.5264"
+      }
+    },
+    {
+      "edge_id": "EDGE-SKE-0058-SKE-0068",
+      "source_id": "SKE-0058",
+      "target_id": "SKE-0068",
+      "distance": 1.5811,
+      "shore_linable": false,
+      "safety_score": 1.0,
+      "landmark_score": 0.0,
+      "tags": {
+        "shore_fraction": "0.0",
+        "straight_dist": "1.5811"
+      }
+    },
+    {
+      "edge_id": "EDGE-SKE-0058-SKE-0072",
+      "source_id": "SKE-0058",
+      "target_id": "SKE-0072",
+      "distance": 2.9069,
+      "shore_linable": false,
+      "safety_score": 1.0,
+      "landmark_score": 0.0,
+      "tags": {
+        "shore_fraction": "0.0",
+        "straight_dist": "2.9069"
+      }
+    },
+    {
+      "edge_id": "EDGE-SKE-0059-ZONE-2lyI2yiub9QBhgywjO7xcX",
+      "source_id": "SKE-0059",
+      "target_id": "ZONE-2lyI2yiub9QBhgywjO7xcX",
+      "distance": 2.858,
+      "shore_linable": true,
+      "safety_score": 0.2582,
+      "landmark_score": 0.3333,
+      "tags": {
+        "shore_fraction": "0.9",
+        "straight_dist": "3.4605"
+      }
+    },
+    {
+      "edge_id": "EDGE-SKE-0044-SKE-0059",
+      "source_id": "SKE-0059",
+      "target_id": "SKE-0044",
+      "distance": 3.5485,
+      "shore_linable": true,
+      "safety_score": 0.3102,
+      "landmark_score": 0.6667,
+      "tags": {
+        "shore_fraction": "0.8",
+        "straight_dist": "3.6401"
+      }
+    },
+    {
+      "edge_id": "EDGE-FEAT-0JV8FQB5b5DPTE76PusxqH-SKE-0059",
+      "source_id": "SKE-0059",
+      "target_id": "FEAT-0JV8FQB5b5DPTE76PusxqH",
+      "distance": 3.085,
+      "shore_linable": true,
+      "safety_score": 0.1494,
+      "landmark_score": 0.3333,
+      "tags": {
+        "shore_fraction": "1.0",
+        "straight_dist": "3.6674"
+      }
+    },
+    {
+      "edge_id": "EDGE-SKE-0060-SKE-0069",
+      "source_id": "SKE-0060",
+      "target_id": "SKE-0069",
+      "distance": 1.5033,
+      "shore_linable": false,
+      "safety_score": 1.0,
+      "landmark_score": 0.0,
+      "tags": {
+        "shore_fraction": "0.0",
+        "straight_dist": "1.5033"
+      }
+    },
+    {
+      "edge_id": "EDGE-SKE-0060-SKE-0066",
+      "source_id": "SKE-0060",
+      "target_id": "SKE-0066",
+      "distance": 2.2825,
+      "shore_linable": false,
+      "safety_score": 1.0,
+      "landmark_score": 0.0,
+      "tags": {
+        "shore_fraction": "0.0",
+        "straight_dist": "2.2825"
+      }
+    },
+    {
+      "edge_id": "EDGE-SKE-0060-ZONE-0BGjw438P6JAPe2g$sDgcT",
+      "source_id": "SKE-0060",
+      "target_id": "ZONE-0BGjw438P6JAPe2g$sDgcT",
+      "distance": 2.7555,
+      "shore_linable": false,
+      "safety_score": 1.0,
+      "landmark_score": 0.0,
+      "tags": {
+        "shore_fraction": "0.0",
+        "straight_dist": "2.7555"
+      }
+    },
+    {
+      "edge_id": "EDGE-SKE-0061-SKE-0063",
+      "source_id": "SKE-0061",
+      "target_id": "SKE-0063",
+      "distance": 1.9647,
+      "shore_linable": false,
+      "safety_score": 1.0,
+      "landmark_score": 0.0,
+      "tags": {
+        "shore_fraction": "0.0",
+        "straight_dist": "1.9647"
+      }
+    },
+    {
+      "edge_id": "EDGE-SKE-0061-SKE-0065",
+      "source_id": "SKE-0061",
+      "target_id": "SKE-0065",
+      "distance": 3.5903,
+      "shore_linable": false,
+      "safety_score": 1.0,
+      "landmark_score": 0.0,
+      "tags": {
+        "shore_fraction": "0.0",
+        "straight_dist": "3.5903"
+      }
+    },
+    {
+      "edge_id": "EDGE-SKE-0039-SKE-0061",
+      "source_id": "SKE-0061",
+      "target_id": "SKE-0039",
+      "distance": 3.8833,
+      "shore_linable": false,
+      "safety_score": 1.0,
+      "landmark_score": 0.0,
+      "tags": {
+        "shore_fraction": "0.0",
+        "straight_dist": "3.8833"
+      }
+    },
+    {
+      "edge_id": "EDGE-SKE-0061-SKE-0073",
+      "source_id": "SKE-0061",
+      "target_id": "SKE-0073",
+      "distance": 4.3829,
+      "shore_linable": false,
+      "safety_score": 1.0,
+      "landmark_score": 0.0,
+      "tags": {
+        "shore_fraction": "0.0",
+        "straight_dist": "4.3829"
+      }
+    },
+    {
+      "edge_id": "EDGE-SKE-0062-SKE-0071",
+      "source_id": "SKE-0062",
+      "target_id": "SKE-0071",
+      "distance": 1.5133,
+      "shore_linable": false,
+      "safety_score": 1.0,
+      "landmark_score": 0.0,
+      "tags": {
+        "shore_fraction": "0.0",
+        "straight_dist": "1.5133"
+      }
+    },
+    {
+      "edge_id": "EDGE-SKE-0062-SKE-0067",
+      "source_id": "SKE-0062",
+      "target_id": "SKE-0067",
+      "distance": 1.9235,
+      "shore_linable": false,
+      "safety_score": 1.0,
+      "landmark_score": 0.0,
+      "tags": {
+        "shore_fraction": "0.0",
+        "straight_dist": "1.9235"
+      }
+    },
+    {
+      "edge_id": "EDGE-SKE-0063-SKE-0065",
+      "source_id": "SKE-0063",
+      "target_id": "SKE-0065",
+      "distance": 1.6279,
+      "shore_linable": false,
+      "safety_score": 1.0,
+      "landmark_score": 0.0,
+      "tags": {
+        "shore_fraction": "0.0",
+        "straight_dist": "1.6279"
+      }
+    },
+    {
+      "edge_id": "EDGE-SKE-0063-SKE-0073",
+      "source_id": "SKE-0063",
+      "target_id": "SKE-0073",
+      "distance": 2.6249,
+      "shore_linable": false,
+      "safety_score": 1.0,
+      "landmark_score": 0.0,
+      "tags": {
+        "shore_fraction": "0.0",
+        "straight_dist": "2.6249"
+      }
+    },
+    {
+      "edge_id": "EDGE-SKE-0063-SKE-0081",
+      "source_id": "SKE-0063",
+      "target_id": "SKE-0081",
+      "distance": 4.0706,
+      "shore_linable": false,
+      "safety_score": 1.0,
+      "landmark_score": 0.0,
+      "tags": {
+        "shore_fraction": "0.0",
+        "straight_dist": "4.0706"
+      }
+    },
+    {
+      "edge_id": "EDGE-SKE-0064-SKE-0072",
+      "source_id": "SKE-0064",
+      "target_id": "SKE-0072",
+      "distance": 1.5232,
+      "shore_linable": false,
+      "safety_score": 1.0,
+      "landmark_score": 0.0,
+      "tags": {
+        "shore_fraction": "0.0",
+        "straight_dist": "1.5232"
+      }
+    },
+    {
+      "edge_id": "EDGE-SKE-0064-SKE-0068",
+      "source_id": "SKE-0064",
+      "target_id": "SKE-0068",
+      "distance": 1.9313,
+      "shore_linable": false,
+      "safety_score": 1.0,
+      "landmark_score": 0.0,
+      "tags": {
+        "shore_fraction": "0.0",
+        "straight_dist": "1.9313"
+      }
+    },
+    {
+      "edge_id": "EDGE-SKE-0064-SKE-0076",
+      "source_id": "SKE-0064",
+      "target_id": "SKE-0076",
+      "distance": 2.9732,
+      "shore_linable": false,
+      "safety_score": 1.0,
+      "landmark_score": 0.0,
+      "tags": {
+        "shore_fraction": "0.0",
+        "straight_dist": "2.9732"
+      }
+    },
+    {
+      "edge_id": "EDGE-SKE-0064-SKE-0079",
+      "source_id": "SKE-0064",
+      "target_id": "SKE-0079",
+      "distance": 3.0676,
+      "shore_linable": false,
+      "safety_score": 1.0,
+      "landmark_score": 0.0,
+      "tags": {
+        "shore_fraction": "0.0",
+        "straight_dist": "3.0676"
+      }
+    },
+    {
+      "edge_id": "EDGE-SKE-0065-SKE-0073",
+      "source_id": "SKE-0065",
+      "target_id": "SKE-0073",
+      "distance": 1.7029,
+      "shore_linable": false,
+      "safety_score": 1.0,
+      "landmark_score": 0.0,
+      "tags": {
+        "shore_fraction": "0.0",
+        "straight_dist": "1.7029"
+      }
+    },
+    {
+      "edge_id": "EDGE-SKE-0065-SKE-0081",
+      "source_id": "SKE-0065",
+      "target_id": "SKE-0081",
+      "distance": 3.3136,
+      "shore_linable": false,
+      "safety_score": 1.0,
+      "landmark_score": 0.0,
+      "tags": {
+        "shore_fraction": "0.0",
+        "straight_dist": "3.3136"
+      }
+    },
+    {
+      "edge_id": "EDGE-SKE-0054-SKE-0065",
+      "source_id": "SKE-0065",
+      "target_id": "SKE-0054",
+      "distance": 3.4409,
+      "shore_linable": false,
+      "safety_score": 1.0,
+      "landmark_score": 0.0,
+      "tags": {
+        "shore_fraction": "0.0",
+        "straight_dist": "3.4409"
+      }
+    },
+    {
+      "edge_id": "EDGE-SKE-0065-SKE-0071",
+      "source_id": "SKE-0065",
+      "target_id": "SKE-0071",
+      "distance": 3.9294,
+      "shore_linable": false,
+      "safety_score": 1.0,
+      "landmark_score": 0.0,
+      "tags": {
+        "shore_fraction": "0.0",
+        "straight_dist": "3.9294"
+      }
+    },
+    {
+      "edge_id": "EDGE-SKE-0066-SKE-0074",
+      "source_id": "SKE-0066",
+      "target_id": "SKE-0074",
+      "distance": 1.5133,
+      "shore_linable": false,
+      "safety_score": 1.0,
+      "landmark_score": 0.0,
+      "tags": {
+        "shore_fraction": "0.0",
+        "straight_dist": "1.5133"
+      }
+    },
+    {
+      "edge_id": "EDGE-SKE-0066-SKE-0069",
+      "source_id": "SKE-0066",
+      "target_id": "SKE-0069",
+      "distance": 2.1378,
+      "shore_linable": false,
+      "safety_score": 1.0,
+      "landmark_score": 0.0,
+      "tags": {
+        "shore_fraction": "0.0",
+        "straight_dist": "2.1378"
+      }
+    },
+    {
+      "edge_id": "EDGE-SKE-0045-SKE-0066",
+      "source_id": "SKE-0066",
+      "target_id": "SKE-0045",
+      "distance": 3.1064,
+      "shore_linable": false,
+      "safety_score": 1.0,
+      "landmark_score": 0.0,
+      "tags": {
+        "shore_fraction": "0.0",
+        "straight_dist": "3.1064"
+      }
+    },
+    {
+      "edge_id": "EDGE-SKE-0067-SKE-0075",
+      "source_id": "SKE-0067",
+      "target_id": "SKE-0075",
+      "distance": 1.7493,
+      "shore_linable": false,
+      "safety_score": 1.0,
+      "landmark_score": 0.0,
+      "tags": {
+        "shore_fraction": "0.0",
+        "straight_dist": "1.7493"
+      }
+    },
+    {
+      "edge_id": "EDGE-SKE-0067-SKE-0071",
+      "source_id": "SKE-0067",
+      "target_id": "SKE-0071",
+      "distance": 1.9925,
+      "shore_linable": false,
+      "safety_score": 1.0,
+      "landmark_score": 0.0,
+      "tags": {
+        "shore_fraction": "0.0",
+        "straight_dist": "1.9925"
+      }
+    },
+    {
+      "edge_id": "EDGE-SKE-0067-SKE-0078",
+      "source_id": "SKE-0067",
+      "target_id": "SKE-0078",
+      "distance": 3.0414,
+      "shore_linable": false,
+      "safety_score": 1.0,
+      "landmark_score": 0.0,
+      "tags": {
+        "shore_fraction": "0.0",
+        "straight_dist": "3.0414"
+      }
+    },
+    {
+      "edge_id": "EDGE-SKE-0068-SKE-0076",
+      "source_id": "SKE-0068",
+      "target_id": "SKE-0076",
+      "distance": 1.5133,
+      "shore_linable": false,
+      "safety_score": 1.0,
+      "landmark_score": 0.0,
+      "tags": {
+        "shore_fraction": "0.0",
+        "straight_dist": "1.5133"
+      }
+    },
+    {
+      "edge_id": "EDGE-SKE-0068-SKE-0072",
+      "source_id": "SKE-0068",
+      "target_id": "SKE-0072",
+      "distance": 2.5,
+      "shore_linable": false,
+      "safety_score": 1.0,
+      "landmark_score": 0.0,
+      "tags": {
+        "shore_fraction": "0.0",
+        "straight_dist": "2.5"
+      }
+    },
+    {
+      "edge_id": "EDGE-SKE-0068-SKE-0083",
+      "source_id": "SKE-0068",
+      "target_id": "SKE-0083",
+      "distance": 3.0414,
+      "shore_linable": false,
+      "safety_score": 1.0,
+      "landmark_score": 0.0,
+      "tags": {
+        "shore_fraction": "0.0",
+        "straight_dist": "3.0414"
+      }
+    },
+    {
+      "edge_id": "EDGE-SKE-0069-SKE-0077",
+      "source_id": "SKE-0069",
+      "target_id": "SKE-0077",
+      "distance": 1.6763,
+      "shore_linable": false,
+      "safety_score": 1.0,
+      "landmark_score": 0.0,
+      "tags": {
+        "shore_fraction": "0.0",
+        "straight_dist": "1.6763"
+      }
+    },
+    {
+      "edge_id": "EDGE-SKE-0069-SKE-0074",
+      "source_id": "SKE-0069",
+      "target_id": "SKE-0074",
+      "distance": 2.5495,
+      "shore_linable": false,
+      "safety_score": 1.0,
+      "landmark_score": 0.0,
+      "tags": {
+        "shore_fraction": "0.0",
+        "straight_dist": "2.5495"
+      }
+    },
+    {
+      "edge_id": "EDGE-SKE-0049-SKE-0069",
+      "source_id": "SKE-0069",
+      "target_id": "SKE-0049",
+      "distance": 3.0265,
+      "shore_linable": false,
+      "safety_score": 1.0,
+      "landmark_score": 0.0,
+      "tags": {
+        "shore_fraction": "0.0",
+        "straight_dist": "3.0265"
+      }
+    },
+    {
+      "edge_id": "EDGE-SKE-0055-SKE-0070",
+      "source_id": "SKE-0070",
+      "target_id": "SKE-0055",
+      "distance": 2.9856,
+      "shore_linable": true,
+      "safety_score": 0.638,
+      "landmark_score": 0.3333,
+      "tags": {
+        "shore_fraction": "0.4",
+        "straight_dist": "2.9967"
+      }
+    },
+    {
+      "edge_id": "EDGE-SKE-0070-SKE-0080",
+      "source_id": "SKE-0070",
+      "target_id": "SKE-0080",
+      "distance": 3.061,
+      "shore_linable": false,
+      "safety_score": 1.0,
+      "landmark_score": 0.6667,
+      "tags": {
+        "shore_fraction": "0.0",
+        "straight_dist": "3.061"
+      }
+    },
+    {
+      "edge_id": "EDGE-SKE-0070-SKE-0084",
+      "source_id": "SKE-0070",
+      "target_id": "SKE-0084",
+      "distance": 3.6069,
+      "shore_linable": false,
+      "safety_score": 0.695,
+      "landmark_score": 0.3333,
+      "tags": {
+        "shore_fraction": "0.3",
+        "straight_dist": "3.6069"
+      }
+    },
+    {
+      "edge_id": "EDGE-SKE-0071-SKE-0078",
+      "source_id": "SKE-0071",
+      "target_id": "SKE-0078",
+      "distance": 1.5297,
+      "shore_linable": false,
+      "safety_score": 1.0,
+      "landmark_score": 0.0,
+      "tags": {
+        "shore_fraction": "0.0",
+        "straight_dist": "1.5297"
+      }
+    },
+    {
+      "edge_id": "EDGE-SKE-0071-SKE-0075",
+      "source_id": "SKE-0071",
+      "target_id": "SKE-0075",
+      "distance": 2.9411,
+      "shore_linable": false,
+      "safety_score": 1.0,
+      "landmark_score": 0.0,
+      "tags": {
+        "shore_fraction": "0.0",
+        "straight_dist": "2.9411"
+      }
+    },
+    {
+      "edge_id": "EDGE-SKE-0072-SKE-0079",
+      "source_id": "SKE-0072",
+      "target_id": "SKE-0079",
+      "distance": 1.5524,
+      "shore_linable": false,
+      "safety_score": 1.0,
+      "landmark_score": 0.0,
+      "tags": {
+        "shore_fraction": "0.0",
+        "straight_dist": "1.5524"
+      }
+    },
+    {
+      "edge_id": "EDGE-SKE-0072-SKE-0076",
+      "source_id": "SKE-0072",
+      "target_id": "SKE-0076",
+      "distance": 2.7203,
+      "shore_linable": false,
+      "safety_score": 1.0,
+      "landmark_score": 0.0,
+      "tags": {
+        "shore_fraction": "0.0",
+        "straight_dist": "2.7203"
+      }
+    },
+    {
+      "edge_id": "EDGE-SKE-0072-SKE-0087",
+      "source_id": "SKE-0072",
+      "target_id": "SKE-0087",
+      "distance": 3.1048,
+      "shore_linable": false,
+      "safety_score": 1.0,
+      "landmark_score": 0.3333,
+      "tags": {
+        "shore_fraction": "0.0",
+        "straight_dist": "3.1048"
+      }
+    },
+    {
+      "edge_id": "EDGE-SKE-0073-SKE-0081",
+      "source_id": "SKE-0073",
+      "target_id": "SKE-0081",
+      "distance": 1.6125,
+      "shore_linable": false,
+      "safety_score": 1.0,
+      "landmark_score": 0.0,
+      "tags": {
+        "shore_fraction": "0.0",
+        "straight_dist": "1.6125"
+      }
+    },
+    {
+      "edge_id": "EDGE-SKE-0073-SKE-0092",
+      "source_id": "SKE-0073",
+      "target_id": "SKE-0092",
+      "distance": 3.1048,
+      "shore_linable": false,
+      "safety_score": 1.0,
+      "landmark_score": 0.0,
+      "tags": {
+        "shore_fraction": "0.0",
+        "straight_dist": "3.1048"
+      }
+    },
+    {
+      "edge_id": "EDGE-SKE-0073-SKE-0078",
+      "source_id": "SKE-0073",
+      "target_id": "SKE-0078",
+      "distance": 3.4928,
+      "shore_linable": false,
+      "safety_score": 1.0,
+      "landmark_score": 0.0,
+      "tags": {
+        "shore_fraction": "0.0",
+        "straight_dist": "3.4928"
+      }
+    },
+    {
+      "edge_id": "EDGE-SKE-0071-SKE-0073",
+      "source_id": "SKE-0073",
+      "target_id": "SKE-0071",
+      "distance": 3.7656,
+      "shore_linable": false,
+      "safety_score": 1.0,
+      "landmark_score": 0.0,
+      "tags": {
+        "shore_fraction": "0.0",
+        "straight_dist": "3.7656"
+      }
+    },
+    {
+      "edge_id": "EDGE-SKE-0074-SKE-0077",
+      "source_id": "SKE-0074",
+      "target_id": "SKE-0077",
+      "distance": 2.8443,
+      "shore_linable": false,
+      "safety_score": 1.0,
+      "landmark_score": 0.0,
+      "tags": {
+        "shore_fraction": "0.0",
+        "straight_dist": "2.8443"
+      }
+    },
+    {
+      "edge_id": "EDGE-SKE-0074-SKE-0088",
+      "source_id": "SKE-0074",
+      "target_id": "SKE-0088",
+      "distance": 2.846,
+      "shore_linable": false,
+      "safety_score": 1.0,
+      "landmark_score": 0.0,
+      "tags": {
+        "shore_fraction": "0.0",
+        "straight_dist": "2.846"
+      }
+    },
+    {
+      "edge_id": "EDGE-SKE-0056-SKE-0074",
+      "source_id": "SKE-0074",
+      "target_id": "SKE-0056",
+      "distance": 3.0265,
+      "shore_linable": false,
+      "safety_score": 1.0,
+      "landmark_score": 0.0,
+      "tags": {
+        "shore_fraction": "0.0",
+        "straight_dist": "3.0265"
+      }
+    },
+    {
+      "edge_id": "EDGE-SKE-0060-SKE-0074",
+      "source_id": "SKE-0074",
+      "target_id": "SKE-0060",
+      "distance": 3.4059,
+      "shore_linable": false,
+      "safety_score": 1.0,
+      "landmark_score": 0.0,
+      "tags": {
+        "shore_fraction": "0.0",
+        "straight_dist": "3.4059"
+      }
+    },
+    {
+      "edge_id": "EDGE-SKE-0075-SKE-0085",
+      "source_id": "SKE-0075",
+      "target_id": "SKE-0085",
+      "distance": 1.6279,
+      "shore_linable": false,
+      "safety_score": 1.0,
+      "landmark_score": 0.0,
+      "tags": {
+        "shore_fraction": "0.0",
+        "straight_dist": "1.6279"
+      }
+    },
+    {
+      "edge_id": "EDGE-SKE-0057-SKE-0075",
+      "source_id": "SKE-0075",
+      "target_id": "SKE-0057",
+      "distance": 3.0806,
+      "shore_linable": false,
+      "safety_score": 1.0,
+      "landmark_score": 0.0,
+      "tags": {
+        "shore_fraction": "0.0",
+        "straight_dist": "3.0806"
+      }
+    },
+    {
+      "edge_id": "EDGE-SKE-0075-SKE-0078",
+      "source_id": "SKE-0075",
+      "target_id": "SKE-0078",
+      "distance": 3.1575,
+      "shore_linable": false,
+      "safety_score": 1.0,
+      "landmark_score": 0.0,
+      "tags": {
+        "shore_fraction": "0.0",
+        "straight_dist": "3.1575"
+      }
+    },
+    {
+      "edge_id": "EDGE-SKE-0062-SKE-0075",
+      "source_id": "SKE-0075",
+      "target_id": "SKE-0062",
+      "distance": 3.5384,
+      "shore_linable": false,
+      "safety_score": 1.0,
+      "landmark_score": 0.0,
+      "tags": {
+        "shore_fraction": "0.0",
+        "straight_dist": "3.5384"
+      }
+    },
+    {
+      "edge_id": "EDGE-SKE-0076-SKE-0083",
+      "source_id": "SKE-0076",
+      "target_id": "SKE-0083",
+      "distance": 1.5297,
+      "shore_linable": false,
+      "safety_score": 1.0,
+      "landmark_score": 0.0,
+      "tags": {
+        "shore_fraction": "0.0",
+        "straight_dist": "1.5297"
+      }
+    },
+    {
+      "edge_id": "EDGE-SKE-0058-SKE-0076",
+      "source_id": "SKE-0076",
+      "target_id": "SKE-0058",
+      "distance": 3.0806,
+      "shore_linable": false,
+      "safety_score": 1.0,
+      "landmark_score": 0.0,
+      "tags": {
+        "shore_fraction": "0.0",
+        "straight_dist": "3.0806"
+      }
+    },
+    {
+      "edge_id": "EDGE-SKE-0076-SKE-0079",
+      "source_id": "SKE-0076",
+      "target_id": "SKE-0079",
+      "distance": 3.0806,
+      "shore_linable": false,
+      "safety_score": 1.0,
+      "landmark_score": 0.0,
+      "tags": {
+        "shore_fraction": "0.0",
+        "straight_dist": "3.0806"
+      }
+    },
+    {
+      "edge_id": "EDGE-SKE-0077-SKE-0089",
+      "source_id": "SKE-0077",
+      "target_id": "SKE-0089",
+      "distance": 2.3087,
+      "shore_linable": false,
+      "safety_score": 1.0,
+      "landmark_score": 0.0,
+      "tags": {
+        "shore_fraction": "0.0",
+        "straight_dist": "2.3087"
+      }
+    },
+    {
+      "edge_id": "EDGE-SKE-0060-SKE-0077",
+      "source_id": "SKE-0077",
+      "target_id": "SKE-0060",
+      "distance": 3.1575,
+      "shore_linable": false,
+      "safety_score": 1.0,
+      "landmark_score": 0.0,
+      "tags": {
+        "shore_fraction": "0.0",
+        "straight_dist": "3.1575"
+      }
+    },
+    {
+      "edge_id": "EDGE-SKE-0066-SKE-0077",
+      "source_id": "SKE-0077",
+      "target_id": "SKE-0066",
+      "distance": 3.2802,
+      "shore_linable": false,
+      "safety_score": 1.0,
+      "landmark_score": 0.0,
+      "tags": {
+        "shore_fraction": "0.0",
+        "straight_dist": "3.2802"
+      }
+    },
+    {
+      "edge_id": "EDGE-SKE-0077-SKE-0083",
+      "source_id": "SKE-0077",
+      "target_id": "SKE-0083",
+      "distance": 3.5114,
+      "shore_linable": false,
+      "safety_score": 1.0,
+      "landmark_score": 0.0,
+      "tags": {
+        "shore_fraction": "0.0",
+        "straight_dist": "3.5114"
+      }
+    },
+    {
+      "edge_id": "EDGE-SKE-0078-SKE-0093",
+      "source_id": "SKE-0078",
+      "target_id": "SKE-0093",
+      "distance": 2.3087,
+      "shore_linable": false,
+      "safety_score": 1.0,
+      "landmark_score": 0.0,
+      "tags": {
+        "shore_fraction": "0.0",
+        "straight_dist": "2.3087"
+      }
+    },
+    {
+      "edge_id": "EDGE-SKE-0062-SKE-0078",
+      "source_id": "SKE-0078",
+      "target_id": "SKE-0062",
+      "distance": 3.0414,
+      "shore_linable": false,
+      "safety_score": 1.0,
+      "landmark_score": 0.0,
+      "tags": {
+        "shore_fraction": "0.0",
+        "straight_dist": "3.0414"
+      }
+    },
+    {
+      "edge_id": "EDGE-SKE-0078-SKE-0081",
+      "source_id": "SKE-0078",
+      "target_id": "SKE-0081",
+      "distance": 3.2985,
+      "shore_linable": false,
+      "safety_score": 1.0,
+      "landmark_score": 0.0,
+      "tags": {
+        "shore_fraction": "0.0",
+        "straight_dist": "3.2985"
+      }
+    },
+    {
+      "edge_id": "EDGE-SKE-0079-SKE-0087",
+      "source_id": "SKE-0079",
+      "target_id": "SKE-0087",
+      "distance": 1.5524,
+      "shore_linable": false,
+      "safety_score": 1.0,
+      "landmark_score": 0.3333,
+      "tags": {
+        "shore_fraction": "0.0",
+        "straight_dist": "1.5524"
+      }
+    },
+    {
+      "edge_id": "EDGE-SKE-0079-SKE-0096",
+      "source_id": "SKE-0079",
+      "target_id": "SKE-0096",
+      "distance": 3.3106,
+      "shore_linable": false,
+      "safety_score": 0.8064,
+      "landmark_score": 0.3333,
+      "tags": {
+        "shore_fraction": "0.3",
+        "straight_dist": "3.3106"
+      }
+    },
+    {
+      "edge_id": "EDGE-SKE-0079-SKE-0083",
+      "source_id": "SKE-0079",
+      "target_id": "SKE-0083",
+      "distance": 3.3956,
+      "shore_linable": false,
+      "safety_score": 1.0,
+      "landmark_score": 0.0,
+      "tags": {
+        "shore_fraction": "0.0",
+        "straight_dist": "3.3956"
+      }
+    },
+    {
+      "edge_id": "EDGE-SKE-0080-ZONE-2lyI2yiub9QBhgywjO7xcX",
+      "source_id": "SKE-0080",
+      "target_id": "ZONE-2lyI2yiub9QBhgywjO7xcX",
+      "distance": 3.0924,
+      "shore_linable": false,
+      "safety_score": 0.7542,
+      "landmark_score": 1.0,
+      "tags": {
+        "shore_fraction": "0.0",
+        "straight_dist": "3.0924"
+      }
+    },
+    {
+      "edge_id": "EDGE-SKE-0080-SKE-0082",
+      "source_id": "SKE-0080",
+      "target_id": "SKE-0082",
+      "distance": 3.1016,
+      "shore_linable": false,
+      "safety_score": 0.725,
+      "landmark_score": 1.0,
+      "tags": {
+        "shore_fraction": "0.2",
+        "straight_dist": "3.1016"
+      }
+    },
+    {
+      "edge_id": "EDGE-SKE-0080-SKE-0098",
+      "source_id": "SKE-0080",
+      "target_id": "SKE-0098",
+      "distance": 3.3729,
+      "shore_linable": true,
+      "safety_score": 0.6086,
+      "landmark_score": 1.0,
+      "tags": {
+        "shore_fraction": "0.4",
+        "straight_dist": "3.3941"
+      }
+    },
+    {
+      "edge_id": "EDGE-SKE-0081-SKE-0092",
+      "source_id": "SKE-0081",
+      "target_id": "SKE-0092",
+      "distance": 1.5232,
+      "shore_linable": false,
+      "safety_score": 0.8775,
+      "landmark_score": 0.0,
+      "tags": {
+        "shore_fraction": "0.0",
+        "straight_dist": "1.5232"
+      }
+    },
+    {
+      "edge_id": "EDGE-SKE-0081-SKE-0093",
+      "source_id": "SKE-0081",
+      "target_id": "SKE-0093",
+      "distance": 2.8653,
+      "shore_linable": false,
+      "safety_score": 0.8002,
+      "landmark_score": 0.0,
+      "tags": {
+        "shore_fraction": "0.0",
+        "straight_dist": "2.8653"
+      }
+    },
+    {
+      "edge_id": "EDGE-SKE-0082-SKE-0098",
+      "source_id": "SKE-0082",
+      "target_id": "SKE-0098",
+      "distance": 2.4042,
+      "shore_linable": true,
+      "safety_score": 0.2132,
+      "landmark_score": 0.6667,
+      "tags": {
+        "shore_fraction": "1.0",
+        "straight_dist": "2.4042"
+      }
+    },
+    {
+      "edge_id": "EDGE-SKE-0082-SKE-0097",
+      "source_id": "SKE-0082",
+      "target_id": "SKE-0097",
+      "distance": 3.2244,
+      "shore_linable": true,
+      "safety_score": 0.1935,
+      "landmark_score": 0.6667,
+      "tags": {
+        "shore_fraction": "1.0",
+        "straight_dist": "3.2527"
+      }
+    },
+    {
+      "edge_id": "EDGE-SKE-0083-SKE-0095",
+      "source_id": "SKE-0083",
+      "target_id": "SKE-0095",
+      "distance": 2.5554,
+      "shore_linable": true,
+      "safety_score": 0.5918,
+      "landmark_score": 0.0,
+      "tags": {
+        "shore_fraction": "0.4",
+        "straight_dist": "2.5554"
+      }
+    },
+    {
+      "edge_id": "EDGE-SKE-0083-SKE-0089",
+      "source_id": "SKE-0083",
+      "target_id": "SKE-0089",
+      "distance": 2.7857,
+      "shore_linable": false,
+      "safety_score": 0.8471,
+      "landmark_score": 0.0,
+      "tags": {
+        "shore_fraction": "0.0",
+        "straight_dist": "2.7857"
+      }
+    },
+    {
+      "edge_id": "EDGE-SKE-0084-SKE-0090",
+      "source_id": "SKE-0084",
+      "target_id": "SKE-0090",
+      "distance": 1.6143,
+      "shore_linable": true,
+      "safety_score": 0.231,
+      "landmark_score": 0.3333,
+      "tags": {
+        "shore_fraction": "0.8",
+        "straight_dist": "1.6279"
+      }
+    },
+    {
+      "edge_id": "EDGE-SKE-0080-SKE-0084",
+      "source_id": "SKE-0084",
+      "target_id": "SKE-0080",
+      "distance": 4.4045,
+      "shore_linable": true,
+      "safety_score": 0.4283,
+      "landmark_score": 0.6667,
+      "tags": {
+        "shore_fraction": "0.6",
+        "straight_dist": "4.4045"
+      }
+    },
+    {
+      "edge_id": "EDGE-FEAT-1rcsg60O53_ukZNuZICUKt-SKE-0084",
+      "source_id": "SKE-0084",
+      "target_id": "FEAT-1rcsg60O53_ukZNuZICUKt",
+      "distance": 5.1876,
+      "shore_linable": true,
+      "safety_score": 0.1618,
+      "landmark_score": 0.6667,
+      "tags": {
+        "shore_fraction": "1.0",
+        "straight_dist": "5.2216"
+      }
+    },
+    {
+      "edge_id": "EDGE-SKE-0085-SKE-0094",
+      "source_id": "SKE-0085",
+      "target_id": "SKE-0094",
+      "distance": 2.4187,
+      "shore_linable": true,
+      "safety_score": 0.5877,
+      "landmark_score": 0.0,
+      "tags": {
+        "shore_fraction": "0.4",
+        "straight_dist": "2.4187"
+      }
+    },
+    {
+      "edge_id": "EDGE-SKE-0085-SKE-0088",
+      "source_id": "SKE-0085",
+      "target_id": "SKE-0088",
+      "distance": 2.6571,
+      "shore_linable": false,
+      "safety_score": 0.8208,
+      "landmark_score": 0.0,
+      "tags": {
+        "shore_fraction": "0.0",
+        "straight_dist": "2.6571"
+      }
+    },
+    {
+      "edge_id": "EDGE-SKE-0067-SKE-0085",
+      "source_id": "SKE-0085",
+      "target_id": "SKE-0067",
+      "distance": 3.3242,
+      "shore_linable": false,
+      "safety_score": 1.0,
+      "landmark_score": 0.0,
+      "tags": {
+        "shore_fraction": "0.0",
+        "straight_dist": "3.3242"
+      }
+    },
+    {
+      "edge_id": "EDGE-SKE-0078-SKE-0085",
+      "source_id": "SKE-0085",
+      "target_id": "SKE-0078",
+      "distance": 3.544,
+      "shore_linable": false,
+      "safety_score": 1.0,
+      "landmark_score": 0.0,
+      "tags": {
+        "shore_fraction": "0.0",
+        "straight_dist": "3.544"
+      }
+    },
+    {
+      "edge_id": "EDGE-SKE-0074-SKE-0085",
+      "source_id": "SKE-0085",
+      "target_id": "SKE-0074",
+      "distance": 3.8471,
+      "shore_linable": false,
+      "safety_score": 1.0,
+      "landmark_score": 0.0,
+      "tags": {
+        "shore_fraction": "0.0",
+        "straight_dist": "3.8471"
+      }
+    },
+    {
+      "edge_id": "EDGE-SKE-0086-SKE-0097",
+      "source_id": "SKE-0086",
+      "target_id": "SKE-0097",
+      "distance": 2.3345,
+      "shore_linable": true,
+      "safety_score": 0.4917,
+      "landmark_score": 0.6667,
+      "tags": {
+        "shore_fraction": "0.5",
+        "straight_dist": "2.3345"
+      }
+    },
+    {
+      "edge_id": "EDGE-SKE-0086-SKE-0096",
+      "source_id": "SKE-0086",
+      "target_id": "SKE-0096",
+      "distance": 2.3598,
+      "shore_linable": true,
+      "safety_score": 0.433,
+      "landmark_score": 0.6667,
+      "tags": {
+        "shore_fraction": "0.6",
+        "straight_dist": "2.4083"
+      }
+    },
+    {
+      "edge_id": "EDGE-SKE-0086-SKE-0087",
+      "source_id": "SKE-0086",
+      "target_id": "SKE-0087",
+      "distance": 2.8018,
+      "shore_linable": false,
+      "safety_score": 0.7828,
+      "landmark_score": 0.6667,
+      "tags": {
+        "shore_fraction": "0.0",
+        "straight_dist": "2.8018"
+      }
+    },
+    {
+      "edge_id": "EDGE-SKE-0087-SKE-0096",
+      "source_id": "SKE-0087",
+      "target_id": "SKE-0096",
+      "distance": 1.8028,
+      "shore_linable": true,
+      "safety_score": 0.4419,
+      "landmark_score": 0.3333,
+      "tags": {
+        "shore_fraction": "0.5",
+        "straight_dist": "1.8028"
+      }
+    },
+    {
+      "edge_id": "EDGE-SKE-0083-SKE-0087",
+      "source_id": "SKE-0087",
+      "target_id": "SKE-0083",
+      "distance": 3.7656,
+      "shore_linable": false,
+      "safety_score": 1.0,
+      "landmark_score": 0.3333,
+      "tags": {
+        "shore_fraction": "0.0",
+        "straight_dist": "3.7656"
+      }
+    },
+    {
+      "edge_id": "EDGE-SKE-0088-SKE-0094",
+      "source_id": "SKE-0088",
+      "target_id": "SKE-0094",
+      "distance": 1.7295,
+      "shore_linable": true,
+      "safety_score": 0.3002,
+      "landmark_score": 0.0,
+      "tags": {
+        "shore_fraction": "0.7",
+        "straight_dist": "1.7692"
+      }
+    },
+    {
+      "edge_id": "EDGE-SKE-0075-SKE-0088",
+      "source_id": "SKE-0088",
+      "target_id": "SKE-0075",
+      "distance": 3.7537,
+      "shore_linable": false,
+      "safety_score": 1.0,
+      "landmark_score": 0.0,
+      "tags": {
+        "shore_fraction": "0.0",
+        "straight_dist": "3.7537"
+      }
+    },
+    {
+      "edge_id": "EDGE-SKE-0077-SKE-0088",
+      "source_id": "SKE-0088",
+      "target_id": "SKE-0077",
+      "distance": 4.3046,
+      "shore_linable": false,
+      "safety_score": 1.0,
+      "landmark_score": 0.0,
+      "tags": {
+        "shore_fraction": "0.0",
+        "straight_dist": "4.3046"
+      }
+    },
+    {
+      "edge_id": "EDGE-SKE-0066-SKE-0088",
+      "source_id": "SKE-0088",
+      "target_id": "SKE-0066",
+      "distance": 4.3417,
+      "shore_linable": false,
+      "safety_score": 1.0,
+      "landmark_score": 0.0,
+      "tags": {
+        "shore_fraction": "0.0",
+        "straight_dist": "4.3417"
+      }
+    },
+    {
+      "edge_id": "EDGE-SKE-0089-SKE-0095",
+      "source_id": "SKE-0089",
+      "target_id": "SKE-0095",
+      "distance": 1.5934,
+      "shore_linable": true,
+      "safety_score": 0.3031,
+      "landmark_score": 0.0,
+      "tags": {
+        "shore_fraction": "0.7",
+        "straight_dist": "1.7692"
+      }
+    },
+    {
+      "edge_id": "EDGE-SKE-0076-SKE-0089",
+      "source_id": "SKE-0089",
+      "target_id": "SKE-0076",
+      "distance": 3.8288,
+      "shore_linable": false,
+      "safety_score": 1.0,
+      "landmark_score": 0.0,
+      "tags": {
+        "shore_fraction": "0.0",
+        "straight_dist": "3.8288"
+      }
+    },
+    {
+      "edge_id": "EDGE-SKE-0069-SKE-0089",
+      "source_id": "SKE-0089",
+      "target_id": "SKE-0069",
+      "distance": 3.985,
+      "shore_linable": false,
+      "safety_score": 1.0,
+      "landmark_score": 0.0,
+      "tags": {
+        "shore_fraction": "0.0",
+        "straight_dist": "3.985"
+      }
+    },
+    {
+      "edge_id": "EDGE-SKE-0088-SKE-0089",
+      "source_id": "SKE-0089",
+      "target_id": "SKE-0088",
+      "distance": 4.4,
+      "shore_linable": false,
+      "safety_score": 0.6759,
+      "landmark_score": 0.0,
+      "tags": {
+        "shore_fraction": "0.0",
+        "straight_dist": "4.4"
+      }
+    },
+    {
+      "edge_id": "EDGE-SKE-0080-SKE-0090",
+      "source_id": "SKE-0090",
+      "target_id": "SKE-0080",
+      "distance": 3.5738,
+      "shore_linable": true,
+      "safety_score": 0.5522,
+      "landmark_score": 0.6667,
+      "tags": {
+        "shore_fraction": "0.4",
+        "straight_dist": "3.5847"
+      }
+    },
+    {
+      "edge_id": "EDGE-SKE-0070-SKE-0090",
+      "source_id": "SKE-0090",
+      "target_id": "SKE-0070",
+      "distance": 4.039,
+      "shore_linable": true,
+      "safety_score": 0.6241,
+      "landmark_score": 0.3333,
+      "tags": {
+        "shore_fraction": "0.4",
+        "straight_dist": "4.0497"
+      }
+    },
+    {
+      "edge_id": "EDGE-SKE-0081-SKE-0091",
+      "source_id": "SKE-0091",
+      "target_id": "SKE-0081",
+      "distance": 4.2379,
+      "shore_linable": false,
+      "safety_score": 0.877,
+      "landmark_score": 0.0,
+      "tags": {
+        "shore_fraction": "0.0",
+        "straight_dist": "4.2379"
+      }
+    },
+    {
+      "edge_id": "EDGE-SKE-0091-SKE-0092",
+      "source_id": "SKE-0091",
+      "target_id": "SKE-0092",
+      "distance": 4.6,
+      "shore_linable": false,
+      "safety_score": 0.527,
+      "landmark_score": 0.0,
+      "tags": {
+        "shore_fraction": "0.0",
+        "straight_dist": "4.6"
+      }
+    },
+    {
+      "edge_id": "EDGE-SKE-0073-SKE-0091",
+      "source_id": "SKE-0091",
+      "target_id": "SKE-0073",
+      "distance": 4.8415,
+      "shore_linable": false,
+      "safety_score": 1.0,
+      "landmark_score": 0.0,
+      "tags": {
+        "shore_fraction": "0.0",
+        "straight_dist": "4.8415"
+      }
+    },
+    {
+      "edge_id": "EDGE-SKE-0063-SKE-0091",
+      "source_id": "SKE-0091",
+      "target_id": "SKE-0063",
+      "distance": 5.4231,
+      "shore_linable": false,
+      "safety_score": 1.0,
+      "landmark_score": 0.0,
+      "tags": {
+        "shore_fraction": "0.0",
+        "straight_dist": "5.4231"
+      }
+    },
+    {
+      "edge_id": "EDGE-SKE-0061-SKE-0091",
+      "source_id": "SKE-0091",
+      "target_id": "SKE-0061",
+      "distance": 5.5036,
+      "shore_linable": false,
+      "safety_score": 0.5865,
+      "landmark_score": 0.0,
+      "tags": {
+        "shore_fraction": "0.0",
+        "straight_dist": "5.5036"
+      }
+    },
+    {
+      "edge_id": "EDGE-SKE-0065-SKE-0091",
+      "source_id": "SKE-0091",
+      "target_id": "SKE-0065",
+      "distance": 5.9816,
+      "shore_linable": false,
+      "safety_score": 1.0,
+      "landmark_score": 0.0,
+      "tags": {
+        "shore_fraction": "0.0",
+        "straight_dist": "5.9816"
+      }
+    },
+    {
+      "edge_id": "EDGE-SKE-0092-SKE-0093",
+      "source_id": "SKE-0092",
+      "target_id": "SKE-0093",
+      "distance": 1.9,
+      "shore_linable": true,
+      "safety_score": 0.444,
+      "landmark_score": 0.0,
+      "tags": {
+        "shore_fraction": "0.7",
+        "straight_dist": "1.9"
+      }
+    },
+    {
+      "edge_id": "EDGE-SKE-0078-SKE-0092",
+      "source_id": "SKE-0092",
+      "target_id": "SKE-0078",
+      "distance": 3.4059,
+      "shore_linable": false,
+      "safety_score": 0.9955,
+      "landmark_score": 0.0,
+      "tags": {
+        "shore_fraction": "0.0",
+        "straight_dist": "3.4059"
+      }
+    },
+    {
+      "edge_id": "EDGE-SKE-0071-SKE-0092",
+      "source_id": "SKE-0092",
+      "target_id": "SKE-0071",
+      "distance": 4.7011,
+      "shore_linable": false,
+      "safety_score": 1.0,
+      "landmark_score": 0.0,
+      "tags": {
+        "shore_fraction": "0.0",
+        "straight_dist": "4.7011"
+      }
+    },
+    {
+      "edge_id": "EDGE-SKE-0071-SKE-0093",
+      "source_id": "SKE-0093",
+      "target_id": "SKE-0071",
+      "distance": 3.8328,
+      "shore_linable": false,
+      "safety_score": 1.0,
+      "landmark_score": 0.0,
+      "tags": {
+        "shore_fraction": "0.0",
+        "straight_dist": "3.8328"
+      }
+    },
+    {
+      "edge_id": "EDGE-SKE-0073-SKE-0093",
+      "source_id": "SKE-0093",
+      "target_id": "SKE-0073",
+      "distance": 4.0361,
+      "shore_linable": false,
+      "safety_score": 1.0,
+      "landmark_score": 0.0,
+      "tags": {
+        "shore_fraction": "0.0",
+        "straight_dist": "4.0361"
+      }
+    },
+    {
+      "edge_id": "EDGE-SKE-0085-SKE-0093",
+      "source_id": "SKE-0093",
+      "target_id": "SKE-0085",
+      "distance": 4.272,
+      "shore_linable": false,
+      "safety_score": 0.827,
+      "landmark_score": 0.0,
+      "tags": {
+        "shore_fraction": "0.0",
+        "straight_dist": "4.272"
+      }
+    },
+    {
+      "edge_id": "EDGE-SKE-0075-SKE-0094",
+      "source_id": "SKE-0094",
+      "target_id": "SKE-0075",
+      "distance": 3.9925,
+      "shore_linable": false,
+      "safety_score": 0.9743,
+      "landmark_score": 0.0,
+      "tags": {
+        "shore_fraction": "0.3",
+        "straight_dist": "3.9925"
+      }
+    },
+    {
+      "edge_id": "EDGE-SKE-0074-SKE-0094",
+      "source_id": "SKE-0094",
+      "target_id": "SKE-0074",
+      "distance": 4.4777,
+      "shore_linable": false,
+      "safety_score": 0.9926,
+      "landmark_score": 0.0,
+      "tags": {
+        "shore_fraction": "0.3",
+        "straight_dist": "4.4777"
+      }
+    },
+    {
+      "edge_id": "EDGE-SKE-0093-SKE-0094",
+      "source_id": "SKE-0094",
+      "target_id": "SKE-0093",
+      "distance": 5.3759,
+      "shore_linable": true,
+      "safety_score": 0.302,
+      "landmark_score": 0.0,
+      "tags": {
+        "shore_fraction": "0.8",
+        "straight_dist": "5.3759"
+      }
+    },
+    {
+      "edge_id": "EDGE-SKE-0078-SKE-0094",
+      "source_id": "SKE-0094",
+      "target_id": "SKE-0078",
+      "distance": 5.5471,
+      "shore_linable": false,
+      "safety_score": 0.8525,
+      "landmark_score": 0.0,
+      "tags": {
+        "shore_fraction": "0.3",
+        "straight_dist": "5.5471"
+      }
+    },
+    {
+      "edge_id": "EDGE-SKE-0077-SKE-0095",
+      "source_id": "SKE-0095",
+      "target_id": "SKE-0077",
+      "distance": 3.8559,
+      "shore_linable": false,
+      "safety_score": 0.8617,
+      "landmark_score": 0.0,
+      "tags": {
+        "shore_fraction": "0.3",
+        "straight_dist": "3.9446"
+      }
+    },
+    {
+      "edge_id": "EDGE-SKE-0076-SKE-0095",
+      "source_id": "SKE-0095",
+      "target_id": "SKE-0076",
+      "distance": 4.0311,
+      "shore_linable": false,
+      "safety_score": 0.9568,
+      "landmark_score": 0.0,
+      "tags": {
+        "shore_fraction": "0.3",
+        "straight_dist": "4.0311"
+      }
+    },
+    {
+      "edge_id": "EDGE-SKE-0087-SKE-0095",
+      "source_id": "SKE-0095",
+      "target_id": "SKE-0087",
+      "distance": 5.2202,
+      "shore_linable": true,
+      "safety_score": 0.4425,
+      "landmark_score": 0.3333,
+      "tags": {
+        "shore_fraction": "0.5",
+        "straight_dist": "5.2202"
+      }
+    },
+    {
+      "edge_id": "EDGE-SKE-0079-SKE-0095",
+      "source_id": "SKE-0095",
+      "target_id": "SKE-0079",
+      "distance": 5.4918,
+      "shore_linable": false,
+      "safety_score": 0.8175,
+      "landmark_score": 0.0,
+      "tags": {
+        "shore_fraction": "0.3",
+        "straight_dist": "5.4918"
+      }
+    },
+    {
+      "edge_id": "EDGE-SKE-0096-SKE-0097",
+      "source_id": "SKE-0096",
+      "target_id": "SKE-0097",
+      "distance": 3.21,
+      "shore_linable": true,
+      "safety_score": 0.0994,
+      "landmark_score": 0.6667,
+      "tags": {
+        "shore_fraction": "1.0",
+        "straight_dist": "3.5"
+      }
+    },
+    {
+      "edge_id": "EDGE-FEAT-0GgCLy2LP42eJhqSxCFQXc-SKE-0096",
+      "source_id": "SKE-0096",
+      "target_id": "FEAT-0GgCLy2LP42eJhqSxCFQXc",
+      "distance": 3.8506,
+      "shore_linable": true,
+      "safety_score": 0.0788,
+      "landmark_score": 0.6667,
+      "tags": {
+        "shore_fraction": "1.0",
+        "straight_dist": "4.1507"
+      }
+    },
+    {
+      "edge_id": "EDGE-SKE-0097-SKE-0098",
+      "source_id": "SKE-0097",
+      "target_id": "SKE-0098",
+      "distance": 2.98,
+      "shore_linable": true,
+      "safety_score": 0.0775,
+      "landmark_score": 1.0,
+      "tags": {
+        "shore_fraction": "1.0",
+        "straight_dist": "3.0"
+      }
+    },
+    {
+      "edge_id": "EDGE-SKE-0098-ZONE-2UG7dUO6vAYheCYwduYFZE",
+      "source_id": "SKE-0098",
+      "target_id": "ZONE-2UG7dUO6vAYheCYwduYFZE",
+      "distance": 3.5196,
+      "shore_linable": true,
+      "safety_score": 0.205,
+      "landmark_score": 0.6667,
+      "tags": {
+        "shore_fraction": "0.9",
+        "straight_dist": "3.5381"
+      }
+    }
+  ]
+}
