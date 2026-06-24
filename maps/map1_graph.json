@@ -1,0 +1,929 @@
+{
+  "floor_label": "L1",
+  "source_file": "data\\ifc_files\\map1.ifc",
+  "spatial_meta": {
+    "units": "metres",
+    "coordinate_frame": {
+      "units": "metres",
+      "source": "IFC project coordinate system",
+      "x_axis": "IFC project X axis",
+      "y_axis": "IFC project Y axis",
+      "origin_description": "IFC project origin — node positions are exact Shapely coordinates in this frame"
+    },
+    "bounding_box": {
+      "min_x": 3.0,
+      "min_y": 1.5,
+      "max_x": 39.6,
+      "max_y": 15.5
+    },
+    "skeleton_grid_resolution_m": 0.1,
+    "note": "Node positions are exact Shapely coordinates — not quantised to the skeleton grid resolution"
+  },
+  "nodes": [
+    {
+      "node_id": "FEAT-1aB2cD3eF4gH5iJ6kL7mN0",
+      "label": "Door — Elevator lobby entrance",
+      "position": [
+        6.05,
+        11.5
+      ],
+      "node_type": "door",
+      "zone_id": "0ELEV8lobby4Aa1Bb2Cc3Dd",
+      "tags": {
+        "feature_type": "door",
+        "priority": "2",
+        "ifc_guid": "1aB2cD3eF4gH5iJ6kL7mN0",
+        "floor_label": "L1"
+      }
+    },
+    {
+      "node_id": "FEAT-2bC3dE4fG5hI6jK7lM8nO1",
+      "label": "Door — S001 Nike shopfront",
+      "position": [
+        11.0,
+        11.5
+      ],
+      "node_type": "door",
+      "zone_id": "1NIKE9store5Bb2Cc3Dd4Ee",
+      "tags": {
+        "feature_type": "door",
+        "priority": "2",
+        "ifc_guid": "2bC3dE4fG5hI6jK7lM8nO1",
+        "floor_label": "L1"
+      }
+    },
+    {
+      "node_id": "FEAT-3cD4eF5gH6iJ7kL8mN9oP2",
+      "label": "Door — S002 Starbucks shopfront",
+      "position": [
+        17.75,
+        11.5
+      ],
+      "node_type": "door",
+      "zone_id": "2STAR0bucks6Cc3Dd4Ee5Ff",
+      "tags": {
+        "feature_type": "door",
+        "priority": "2",
+        "ifc_guid": "3cD4eF5gH6iJ7kL8mN9oP2",
+        "floor_label": "L1"
+      }
+    },
+    {
+      "node_id": "FEAT-4dE5fG6hI7jK8lM9nO0pQ3",
+      "label": "Door — Restroom entrance",
+      "position": [
+        24.5,
+        11.5
+      ],
+      "node_type": "door",
+      "zone_id": "3REST1room7Dd4Ee5Ff6Gg7",
+      "tags": {
+        "feature_type": "door",
+        "priority": "2",
+        "ifc_guid": "4dE5fG6hI7jK8lM9nO0pQ3",
+        "floor_label": "L1"
+      }
+    },
+    {
+      "node_id": "FEAT-5eF6gH7iJ8kL9mN0oP1qR4",
+      "label": "Door — S003 FamilyMart shopfront",
+      "position": [
+        30.5,
+        9.25
+      ],
+      "node_type": "door",
+      "zone_id": "4FAML2mart8Ee5Ff6Gg7Hh8",
+      "tags": {
+        "feature_type": "door",
+        "priority": "2",
+        "ifc_guid": "5eF6gH7iJ8kL9mN0oP1qR4",
+        "floor_label": "L1"
+      }
+    },
+    {
+      "node_id": "FEAT-6fG7hI8jK9lM0nO1pQ2rS5",
+      "label": "Door — S004 MyBasket shopfront",
+      "position": [
+        35.8,
+        8.1
+      ],
+      "node_type": "door",
+      "zone_id": "5MYBA3sket9Ff6Gg7Hh8Ii9",
+      "tags": {
+        "feature_type": "door",
+        "priority": "2",
+        "ifc_guid": "6fG7hI8jK9lM0nO1pQ2rS5",
+        "floor_label": "L1"
+      }
+    },
+    {
+      "node_id": "FEAT-7gH8iJ9kL0mN1oP2qR3sT6",
+      "label": "Door — S005 Uniqlo shopfront",
+      "position": [
+        28.6,
+        6.15
+      ],
+      "node_type": "door",
+      "zone_id": "6UNIQ4lo0aGg7Hh8Ii9Jj0",
+      "tags": {
+        "feature_type": "door",
+        "priority": "2",
+        "ifc_guid": "7gH8iJ9kL0mN1oP2qR3sT6",
+        "floor_label": "L1"
+      }
+    },
+    {
+      "node_id": "FEAT-8hI9jK0lM1nO2pQ3rS4tU7",
+      "label": "Door — S006 KFC shopfront",
+      "position": [
+        24.5,
+        6.15
+      ],
+      "node_type": "door",
+      "zone_id": "7KFC05rest1Hh8Ii9Jj0Kk1",
+      "tags": {
+        "feature_type": "door",
+        "priority": "2",
+        "ifc_guid": "8hI9jK0lM1nO2pQ3rS4tU7",
+        "floor_label": "L1"
+      }
+    },
+    {
+      "node_id": "FEAT-9iJ0kL1mN2oP3qR4sT5uV8",
+      "label": "Door — S007 Dominos shopfront",
+      "position": [
+        17.75,
+        6.15
+      ],
+      "node_type": "door",
+      "zone_id": "8DOMI6nos2Ii9Jj0Kk1Ll2",
+      "tags": {
+        "feature_type": "door",
+        "priority": "2",
+        "ifc_guid": "9iJ0kL1mN2oP3qR4sT5uV8",
+        "floor_label": "L1"
+      }
+    },
+    {
+      "node_id": "FEAT-0jK1lM2nO3pQ4rS5tU6vW9",
+      "label": "Elevator",
+      "position": [
+        6.05,
+        13.8
+      ],
+      "node_type": "elevator",
+      "zone_id": "0ELEV8lobby4Aa1Bb2Cc3Dd",
+      "tags": {
+        "feature_type": "elevator",
+        "priority": "3",
+        "ifc_guid": "0jK1lM2nO3pQ4rS5tU6vW9",
+        "floor_label": "L1",
+        "connects_to": "L2,L3",
+        "is_accessible": "true"
+      }
+    },
+    {
+      "node_id": "ZONE-0ELEV8lobby4Aa1Bb2Cc3Dd",
+      "label": "Elevator Lobby",
+      "position": [
+        6.05,
+        13.5
+      ],
+      "node_type": "zone_centroid",
+      "zone_id": "0ELEV8lobby4Aa1Bb2Cc3Dd",
+      "tags": {
+        "category": "entrance",
+        "name": "Elevator",
+        "area_m2": "21.28",
+        "floor_label": "L1"
+      }
+    },
+    {
+      "node_id": "ZONE-1NIKE9store5Bb2Cc3Dd4Ee",
+      "label": "Nike Store",
+      "position": [
+        11.75,
+        13.5
+      ],
+      "node_type": "zone_centroid",
+      "zone_id": "1NIKE9store5Bb2Cc3Dd4Ee",
+      "tags": {
+        "category": "shop",
+        "name": "S001",
+        "area_m2": "21.66",
+        "floor_label": "L1"
+      }
+    },
+    {
+      "node_id": "ZONE-2STAR0bucks6Cc3Dd4Ee5Ff",
+      "label": "Starbucks Cafe",
+      "position": [
+        18.1,
+        13.5
+      ],
+      "node_type": "zone_centroid",
+      "zone_id": "2STAR0bucks6Cc3Dd4Ee5Ff",
+      "tags": {
+        "category": "food_court",
+        "name": "S002",
+        "area_m2": "26.6",
+        "floor_label": "L1"
+      }
+    },
+    {
+      "node_id": "ZONE-3REST1room7Dd4Ee5Ff6Gg7",
+      "label": "Restroom",
+      "position": [
+        24.5,
+        13.5
+      ],
+      "node_type": "zone_centroid",
+      "zone_id": "3REST1room7Dd4Ee5Ff6Gg7",
+      "tags": {
+        "category": "restroom",
+        "name": "Restroom",
+        "area_m2": "22.04",
+        "floor_label": "L1"
+      }
+    },
+    {
+      "node_id": "ZONE-4FAML2mart8Ee5Ff6Gg7Hh8",
+      "label": "FamilyMart",
+      "position": [
+        33.0,
+        9.25
+      ],
+      "node_type": "zone_centroid",
+      "zone_id": "4FAML2mart8Ee5Ff6Gg7Hh8",
+      "tags": {
+        "category": "shop",
+        "name": "S003",
+        "area_m2": "15.3",
+        "floor_label": "L1"
+      }
+    },
+    {
+      "node_id": "ZONE-5MYBA3sket9Ff6Gg7Hh8Ii9",
+      "label": "MyBasket",
+      "position": [
+        37.7,
+        7.2
+      ],
+      "node_type": "zone_centroid",
+      "zone_id": "5MYBA3sket9Ff6Gg7Hh8Ii9",
+      "tags": {
+        "category": "shop",
+        "name": "S004",
+        "area_m2": "13.68",
+        "floor_label": "L1"
+      }
+    },
+    {
+      "node_id": "ZONE-6UNIQ4lo0aGg7Hh8Ii9Jj0",
+      "label": "Uniqlo",
+      "position": [
+        28.6,
+        4.8
+      ],
+      "node_type": "zone_centroid",
+      "zone_id": "6UNIQ4lo0aGg7Hh8Ii9Jj0",
+      "tags": {
+        "category": "shop",
+        "name": "S005",
+        "area_m2": "10.2",
+        "floor_label": "L1"
+      }
+    },
+    {
+      "node_id": "ZONE-7KFC05rest1Hh8Ii9Jj0Kk1",
+      "label": "KFC",
+      "position": [
+        24.5,
+        3.95
+      ],
+      "node_type": "zone_centroid",
+      "zone_id": "7KFC05rest1Hh8Ii9Jj0Kk1",
+      "tags": {
+        "category": "food_court",
+        "name": "S006",
+        "area_m2": "17.6",
+        "floor_label": "L1"
+      }
+    },
+    {
+      "node_id": "ZONE-8DOMI6nos2Ii9Jj0Kk1Ll2",
+      "label": "Dominos",
+      "position": [
+        18.8,
+        3.95
+      ],
+      "node_type": "zone_centroid",
+      "zone_id": "8DOMI6nos2Ii9Jj0Kk1Ll2",
+      "tags": {
+        "category": "food_court",
+        "name": "S007",
+        "area_m2": "36.96",
+        "floor_label": "L1"
+      }
+    },
+    {
+      "node_id": "ZONE-9CORR7idor3Jj0Kk1Ll2Mm3",
+      "label": "Main Corridor",
+      "position": [
+        17.0,
+        10.9
+      ],
+      "node_type": "zone_centroid",
+      "zone_id": "9CORR7idor3Jj0Kk1Ll2Mm3",
+      "tags": {
+        "category": "corridor",
+        "name": "Corridor",
+        "area_m2": "61.4",
+        "floor_label": "L1"
+      }
+    },
+    {
+      "node_id": "SKE-0000",
+      "label": "Junction (6.0,11.0)",
+      "position": [
+        6.0,
+        11.0
+      ],
+      "node_type": "junction",
+      "zone_id": "9CORR7idor3Jj0Kk1Ll2Mm3",
+      "tags": {
+        "clearance_m": "0.9",
+        "skel_degree": "1",
+        "floor_label": "L1"
+      }
+    },
+    {
+      "node_id": "SKE-0001",
+      "label": "Junction (11.0,11.0)",
+      "position": [
+        11.0,
+        11.0
+      ],
+      "node_type": "junction",
+      "zone_id": "9CORR7idor3Jj0Kk1Ll2Mm3",
+      "tags": {
+        "clearance_m": "1.0",
+        "skel_degree": "3",
+        "floor_label": "L1"
+      }
+    },
+    {
+      "node_id": "SKE-0002",
+      "label": "Junction (17.75,11.0)",
+      "position": [
+        17.75,
+        11.0
+      ],
+      "node_type": "junction",
+      "zone_id": "9CORR7idor3Jj0Kk1Ll2Mm3",
+      "tags": {
+        "clearance_m": "1.0",
+        "skel_degree": "3",
+        "floor_label": "L1"
+      }
+    },
+    {
+      "node_id": "SKE-0003",
+      "label": "Junction (24.5,11.0)",
+      "position": [
+        24.5,
+        11.0
+      ],
+      "node_type": "junction",
+      "zone_id": "9CORR7idor3Jj0Kk1Ll2Mm3",
+      "tags": {
+        "clearance_m": "1.0",
+        "skel_degree": "3",
+        "floor_label": "L1"
+      }
+    },
+    {
+      "node_id": "SKE-0004",
+      "label": "Junction (29.5,11.0)",
+      "position": [
+        29.5,
+        11.0
+      ],
+      "node_type": "junction",
+      "zone_id": "9CORR7idor3Jj0Kk1Ll2Mm3",
+      "tags": {
+        "clearance_m": "0.8",
+        "skel_degree": "3",
+        "floor_label": "L1"
+      }
+    },
+    {
+      "node_id": "SKE-0005",
+      "label": "Junction (29.8,9.25)",
+      "position": [
+        29.8,
+        9.25
+      ],
+      "node_type": "junction",
+      "zone_id": "9CORR7idor3Jj0Kk1Ll2Mm3",
+      "tags": {
+        "clearance_m": "0.7",
+        "skel_degree": "3",
+        "floor_label": "L1"
+      }
+    },
+    {
+      "node_id": "SKE-0006",
+      "label": "Junction (29.8,6.0)",
+      "position": [
+        29.8,
+        6.0
+      ],
+      "node_type": "junction",
+      "zone_id": "9CORR7idor3Jj0Kk1Ll2Mm3",
+      "tags": {
+        "clearance_m": "0.7",
+        "skel_degree": "3",
+        "floor_label": "L1"
+      }
+    },
+    {
+      "node_id": "SKE-0007",
+      "label": "Junction (28.6,5.8)",
+      "position": [
+        28.6,
+        5.8
+      ],
+      "node_type": "junction",
+      "zone_id": "9CORR7idor3Jj0Kk1Ll2Mm3",
+      "tags": {
+        "clearance_m": "0.6",
+        "skel_degree": "3",
+        "floor_label": "L1"
+      }
+    },
+    {
+      "node_id": "SKE-0008",
+      "label": "Junction (24.5,5.8)",
+      "position": [
+        24.5,
+        5.8
+      ],
+      "node_type": "junction",
+      "zone_id": "9CORR7idor3Jj0Kk1Ll2Mm3",
+      "tags": {
+        "clearance_m": "0.6",
+        "skel_degree": "3",
+        "floor_label": "L1"
+      }
+    },
+    {
+      "node_id": "SKE-0009",
+      "label": "Junction (17.75,5.8)",
+      "position": [
+        17.75,
+        5.8
+      ],
+      "node_type": "junction",
+      "zone_id": "9CORR7idor3Jj0Kk1Ll2Mm3",
+      "tags": {
+        "clearance_m": "0.6",
+        "skel_degree": "1",
+        "floor_label": "L1"
+      }
+    },
+    {
+      "node_id": "SKE-0010",
+      "label": "Junction (33.0,8.6)",
+      "position": [
+        33.0,
+        8.6
+      ],
+      "node_type": "junction",
+      "zone_id": "4FAML2mart8Ee5Ff6Gg7Hh8",
+      "tags": {
+        "clearance_m": "0.7",
+        "skel_degree": "3",
+        "floor_label": "L1"
+      }
+    }
+  ],
+  "edges": [
+    {
+      "edge_id": "EDGE-FEAT-0jK1lM2nO3pQ4rS5tU6vW9-FEAT-1aB2cD3eF4gH5iJ6kL7mN0",
+      "source_id": "FEAT-0jK1lM2nO3pQ4rS5tU6vW9",
+      "target_id": "FEAT-1aB2cD3eF4gH5iJ6kL7mN0",
+      "distance": 2.3,
+      "shore_linable": true,
+      "safety_score": 0.2,
+      "landmark_score": 0.6667,
+      "tags": {
+        "shore_fraction": "0.8",
+        "straight_dist": "2.3"
+      }
+    },
+    {
+      "edge_id": "EDGE-FEAT-0jK1lM2nO3pQ4rS5tU6vW9-ZONE-0ELEV8lobby4Aa1Bb2Cc3Dd",
+      "source_id": "FEAT-0jK1lM2nO3pQ4rS5tU6vW9",
+      "target_id": "ZONE-0ELEV8lobby4Aa1Bb2Cc3Dd",
+      "distance": 0.3,
+      "shore_linable": true,
+      "safety_score": 0.15,
+      "landmark_score": 0.3333,
+      "tags": {
+        "shore_fraction": "1.0",
+        "straight_dist": "0.3"
+      }
+    },
+    {
+      "edge_id": "EDGE-FEAT-1aB2cD3eF4gH5iJ6kL7mN0-SKE-0000",
+      "source_id": "FEAT-1aB2cD3eF4gH5iJ6kL7mN0",
+      "target_id": "SKE-0000",
+      "distance": 0.5,
+      "shore_linable": true,
+      "safety_score": 0.45,
+      "landmark_score": 0.6667,
+      "tags": {
+        "shore_fraction": "0.6",
+        "straight_dist": "0.5"
+      }
+    },
+    {
+      "edge_id": "EDGE-FEAT-1aB2cD3eF4gH5iJ6kL7mN0-ZONE-0ELEV8lobby4Aa1Bb2Cc3Dd",
+      "source_id": "FEAT-1aB2cD3eF4gH5iJ6kL7mN0",
+      "target_id": "ZONE-0ELEV8lobby4Aa1Bb2Cc3Dd",
+      "distance": 2.0,
+      "shore_linable": true,
+      "safety_score": 0.2,
+      "landmark_score": 0.6667,
+      "tags": {
+        "shore_fraction": "0.7",
+        "straight_dist": "2.0"
+      }
+    },
+    {
+      "edge_id": "EDGE-FEAT-2bC3dE4fG5hI6jK7lM8nO1-SKE-0001",
+      "source_id": "FEAT-2bC3dE4fG5hI6jK7lM8nO1",
+      "target_id": "SKE-0001",
+      "distance": 0.5,
+      "shore_linable": true,
+      "safety_score": 0.45,
+      "landmark_score": 0.3333,
+      "tags": {
+        "shore_fraction": "0.6",
+        "straight_dist": "0.5"
+      }
+    },
+    {
+      "edge_id": "EDGE-FEAT-2bC3dE4fG5hI6jK7lM8nO1-ZONE-1NIKE9store5Bb2Cc3Dd4Ee",
+      "source_id": "FEAT-2bC3dE4fG5hI6jK7lM8nO1",
+      "target_id": "ZONE-1NIKE9store5Bb2Cc3Dd4Ee",
+      "distance": 2.135,
+      "shore_linable": true,
+      "safety_score": 0.25,
+      "landmark_score": 0.3333,
+      "tags": {
+        "shore_fraction": "0.7",
+        "straight_dist": "2.135"
+      }
+    },
+    {
+      "edge_id": "EDGE-FEAT-3cD4eF5gH6iJ7kL8mN9oP2-SKE-0002",
+      "source_id": "FEAT-3cD4eF5gH6iJ7kL8mN9oP2",
+      "target_id": "SKE-0002",
+      "distance": 0.5,
+      "shore_linable": true,
+      "safety_score": 0.45,
+      "landmark_score": 0.3333,
+      "tags": {
+        "shore_fraction": "0.6",
+        "straight_dist": "0.5"
+      }
+    },
+    {
+      "edge_id": "EDGE-FEAT-3cD4eF5gH6iJ7kL8mN9oP2-ZONE-2STAR0bucks6Cc3Dd4Ee5Ff",
+      "source_id": "FEAT-3cD4eF5gH6iJ7kL8mN9oP2",
+      "target_id": "ZONE-2STAR0bucks6Cc3Dd4Ee5Ff",
+      "distance": 2.03,
+      "shore_linable": true,
+      "safety_score": 0.25,
+      "landmark_score": 0.3333,
+      "tags": {
+        "shore_fraction": "0.7",
+        "straight_dist": "2.03"
+      }
+    },
+    {
+      "edge_id": "EDGE-FEAT-4dE5fG6hI7jK8lM9nO0pQ3-SKE-0003",
+      "source_id": "FEAT-4dE5fG6hI7jK8lM9nO0pQ3",
+      "target_id": "SKE-0003",
+      "distance": 0.5,
+      "shore_linable": true,
+      "safety_score": 0.45,
+      "landmark_score": 0.3333,
+      "tags": {
+        "shore_fraction": "0.6",
+        "straight_dist": "0.5"
+      }
+    },
+    {
+      "edge_id": "EDGE-FEAT-4dE5fG6hI7jK8lM9nO0pQ3-ZONE-3REST1room7Dd4Ee5Ff6Gg7",
+      "source_id": "FEAT-4dE5fG6hI7jK8lM9nO0pQ3",
+      "target_id": "ZONE-3REST1room7Dd4Ee5Ff6Gg7",
+      "distance": 2.0,
+      "shore_linable": true,
+      "safety_score": 0.25,
+      "landmark_score": 0.3333,
+      "tags": {
+        "shore_fraction": "0.7",
+        "straight_dist": "2.0"
+      }
+    },
+    {
+      "edge_id": "EDGE-FEAT-5eF6gH7iJ8kL9mN0oP1qR4-SKE-0005",
+      "source_id": "FEAT-5eF6gH7iJ8kL9mN0oP1qR4",
+      "target_id": "SKE-0005",
+      "distance": 0.7,
+      "shore_linable": true,
+      "safety_score": 0.35,
+      "landmark_score": 0.3333,
+      "tags": {
+        "shore_fraction": "0.7",
+        "straight_dist": "0.7"
+      }
+    },
+    {
+      "edge_id": "EDGE-FEAT-5eF6gH7iJ8kL9mN0oP1qR4-ZONE-4FAML2mart8Ee5Ff6Gg7Hh8",
+      "source_id": "FEAT-5eF6gH7iJ8kL9mN0oP1qR4",
+      "target_id": "ZONE-4FAML2mart8Ee5Ff6Gg7Hh8",
+      "distance": 2.5,
+      "shore_linable": true,
+      "safety_score": 0.3,
+      "landmark_score": 0.3333,
+      "tags": {
+        "shore_fraction": "0.6",
+        "straight_dist": "2.5"
+      }
+    },
+    {
+      "edge_id": "EDGE-FEAT-5eF6gH7iJ8kL9mN0oP1qR4-SKE-0010",
+      "source_id": "FEAT-5eF6gH7iJ8kL9mN0oP1qR4",
+      "target_id": "SKE-0010",
+      "distance": 2.626,
+      "shore_linable": false,
+      "safety_score": 0.3,
+      "landmark_score": 0.3333,
+      "tags": {
+        "shore_fraction": "0.3",
+        "straight_dist": "2.626"
+      }
+    },
+    {
+      "edge_id": "EDGE-FEAT-6fG7hI8jK9lM0nO1pQ2rS5-SKE-0010",
+      "source_id": "FEAT-6fG7hI8jK9lM0nO1pQ2rS5",
+      "target_id": "SKE-0010",
+      "distance": 2.844,
+      "shore_linable": false,
+      "safety_score": 0.3,
+      "landmark_score": 0.3333,
+      "tags": {
+        "shore_fraction": "0.2",
+        "straight_dist": "2.844"
+      }
+    },
+    {
+      "edge_id": "EDGE-FEAT-6fG7hI8jK9lM0nO1pQ2rS5-ZONE-5MYBA3sket9Ff6Gg7Hh8Ii9",
+      "source_id": "FEAT-6fG7hI8jK9lM0nO1pQ2rS5",
+      "target_id": "ZONE-5MYBA3sket9Ff6Gg7Hh8Ii9",
+      "distance": 2.102,
+      "shore_linable": true,
+      "safety_score": 0.25,
+      "landmark_score": 0.3333,
+      "tags": {
+        "shore_fraction": "0.7",
+        "straight_dist": "2.102"
+      }
+    },
+    {
+      "edge_id": "EDGE-FEAT-7gH8iJ9kL0mN1oP2qR3sT6-SKE-0007",
+      "source_id": "FEAT-7gH8iJ9kL0mN1oP2qR3sT6",
+      "target_id": "SKE-0007",
+      "distance": 0.35,
+      "shore_linable": true,
+      "safety_score": 0.4,
+      "landmark_score": 0.3333,
+      "tags": {
+        "shore_fraction": "0.6",
+        "straight_dist": "0.35"
+      }
+    },
+    {
+      "edge_id": "EDGE-FEAT-7gH8iJ9kL0mN1oP2qR3sT6-ZONE-6UNIQ4lo0aGg7Hh8Ii9Jj0",
+      "source_id": "FEAT-7gH8iJ9kL0mN1oP2qR3sT6",
+      "target_id": "ZONE-6UNIQ4lo0aGg7Hh8Ii9Jj0",
+      "distance": 1.35,
+      "shore_linable": true,
+      "safety_score": 0.3,
+      "landmark_score": 0.3333,
+      "tags": {
+        "shore_fraction": "0.7",
+        "straight_dist": "1.35"
+      }
+    },
+    {
+      "edge_id": "EDGE-FEAT-8hI9jK0lM1nO2pQ3rS4tU7-SKE-0008",
+      "source_id": "FEAT-8hI9jK0lM1nO2pQ3rS4tU7",
+      "target_id": "SKE-0008",
+      "distance": 0.35,
+      "shore_linable": true,
+      "safety_score": 0.4,
+      "landmark_score": 0.3333,
+      "tags": {
+        "shore_fraction": "0.6",
+        "straight_dist": "0.35"
+      }
+    },
+    {
+      "edge_id": "EDGE-FEAT-8hI9jK0lM1nO2pQ3rS4tU7-ZONE-7KFC05rest1Hh8Ii9Jj0Kk1",
+      "source_id": "FEAT-8hI9jK0lM1nO2pQ3rS4tU7",
+      "target_id": "ZONE-7KFC05rest1Hh8Ii9Jj0Kk1",
+      "distance": 2.2,
+      "shore_linable": true,
+      "safety_score": 0.3,
+      "landmark_score": 0.3333,
+      "tags": {
+        "shore_fraction": "0.7",
+        "straight_dist": "2.2"
+      }
+    },
+    {
+      "edge_id": "EDGE-FEAT-9iJ0kL1mN2oP3qR4sT5uV8-SKE-0009",
+      "source_id": "FEAT-9iJ0kL1mN2oP3qR4sT5uV8",
+      "target_id": "SKE-0009",
+      "distance": 0.35,
+      "shore_linable": true,
+      "safety_score": 0.4,
+      "landmark_score": 0.3333,
+      "tags": {
+        "shore_fraction": "0.6",
+        "straight_dist": "0.35"
+      }
+    },
+    {
+      "edge_id": "EDGE-FEAT-9iJ0kL1mN2oP3qR4sT5uV8-ZONE-8DOMI6nos2Ii9Jj0Kk1Ll2",
+      "source_id": "FEAT-9iJ0kL1mN2oP3qR4sT5uV8",
+      "target_id": "ZONE-8DOMI6nos2Ii9Jj0Kk1Ll2",
+      "distance": 2.438,
+      "shore_linable": true,
+      "safety_score": 0.3,
+      "landmark_score": 0.3333,
+      "tags": {
+        "shore_fraction": "0.6",
+        "straight_dist": "2.438"
+      }
+    },
+    {
+      "edge_id": "EDGE-SKE-0000-SKE-0001",
+      "source_id": "SKE-0000",
+      "target_id": "SKE-0001",
+      "distance": 5.0,
+      "shore_linable": false,
+      "safety_score": 0.5,
+      "landmark_score": 0.6667,
+      "tags": {
+        "shore_fraction": "0.3",
+        "straight_dist": "5.0"
+      }
+    },
+    {
+      "edge_id": "EDGE-SKE-0001-SKE-0002",
+      "source_id": "SKE-0001",
+      "target_id": "SKE-0002",
+      "distance": 6.75,
+      "shore_linable": false,
+      "safety_score": 0.5,
+      "landmark_score": 0.6667,
+      "tags": {
+        "shore_fraction": "0.2",
+        "straight_dist": "6.75"
+      }
+    },
+    {
+      "edge_id": "EDGE-SKE-0002-SKE-0003",
+      "source_id": "SKE-0002",
+      "target_id": "SKE-0003",
+      "distance": 6.75,
+      "shore_linable": false,
+      "safety_score": 0.5,
+      "landmark_score": 0.6667,
+      "tags": {
+        "shore_fraction": "0.2",
+        "straight_dist": "6.75"
+      }
+    },
+    {
+      "edge_id": "EDGE-SKE-0003-SKE-0004",
+      "source_id": "SKE-0003",
+      "target_id": "SKE-0004",
+      "distance": 5.0,
+      "shore_linable": false,
+      "safety_score": 0.4,
+      "landmark_score": 0.3333,
+      "tags": {
+        "shore_fraction": "0.3",
+        "straight_dist": "5.0"
+      }
+    },
+    {
+      "edge_id": "EDGE-SKE-0004-SKE-0005",
+      "source_id": "SKE-0004",
+      "target_id": "SKE-0005",
+      "distance": 1.776,
+      "shore_linable": true,
+      "safety_score": 0.35,
+      "landmark_score": 0.3333,
+      "tags": {
+        "shore_fraction": "0.5",
+        "straight_dist": "1.776"
+      }
+    },
+    {
+      "edge_id": "EDGE-SKE-0005-SKE-0006",
+      "source_id": "SKE-0005",
+      "target_id": "SKE-0006",
+      "distance": 3.25,
+      "shore_linable": true,
+      "safety_score": 0.35,
+      "landmark_score": 0.3333,
+      "tags": {
+        "shore_fraction": "0.5",
+        "straight_dist": "3.25"
+      }
+    },
+    {
+      "edge_id": "EDGE-SKE-0006-SKE-0007",
+      "source_id": "SKE-0006",
+      "target_id": "SKE-0007",
+      "distance": 1.217,
+      "shore_linable": true,
+      "safety_score": 0.3,
+      "landmark_score": 0.3333,
+      "tags": {
+        "shore_fraction": "0.6",
+        "straight_dist": "1.217"
+      }
+    },
+    {
+      "edge_id": "EDGE-SKE-0007-SKE-0008",
+      "source_id": "SKE-0007",
+      "target_id": "SKE-0008",
+      "distance": 4.1,
+      "shore_linable": false,
+      "safety_score": 0.3,
+      "landmark_score": 0.6667,
+      "tags": {
+        "shore_fraction": "0.3",
+        "straight_dist": "4.1"
+      }
+    },
+    {
+      "edge_id": "EDGE-SKE-0008-SKE-0009",
+      "source_id": "SKE-0008",
+      "target_id": "SKE-0009",
+      "distance": 6.75,
+      "shore_linable": false,
+      "safety_score": 0.3,
+      "landmark_score": 0.6667,
+      "tags": {
+        "shore_fraction": "0.3",
+        "straight_dist": "6.75"
+      }
+    },
+    {
+      "edge_id": "EDGE-SKE-0005-SKE-0010",
+      "source_id": "SKE-0005",
+      "target_id": "SKE-0010",
+      "distance": 3.265,
+      "shore_linable": false,
+      "safety_score": 0.3,
+      "landmark_score": 0.3333,
+      "tags": {
+        "shore_fraction": "0.3",
+        "straight_dist": "3.265"
+      }
+    },
+    {
+      "edge_id": "EDGE-SKE-0002-ZONE-9CORR7idor3Jj0Kk1Ll2Mm3",
+      "source_id": "SKE-0002",
+      "target_id": "ZONE-9CORR7idor3Jj0Kk1Ll2Mm3",
+      "distance": 0.763,
+      "shore_linable": false,
+      "safety_score": 0.5,
+      "landmark_score": 0.6667,
+      "tags": {
+        "shore_fraction": "0.2",
+        "straight_dist": "0.763"
+      }
+    }
+  ]
+}

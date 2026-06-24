@@ -200,19 +200,59 @@ class OccupancyGridExporter:
         )
         return self
 
-    def save(self, path: str | Path = "occupancy.json") -> Path:
-        """Serialise and write the occupancy grid JSON file."""
+    def save(self, path: str | Path = "occupancy.json",
+             pretty: bool = True) -> Path:
+        """
+        Serialise and write the occupancy grid JSON file.
+
+        pretty=True (default) writes human-readable JSON: every key is
+        indented with spaces after commas/colons, exactly like the other
+        mapping outputs (_graph.json, _sfm.json). The large "grid" field is
+        kept readable too — each row is rendered on its own single line
+        rather than exploding every integer onto a separate line.
+
+        pretty=False writes the original compact single-line form
+        (separators=(",", ":")), which is smallest on disk.
+        """
         if self._grid is None:
             raise RuntimeError("Call build() before save().")
 
         p = Path(path)
         p.parent.mkdir(parents=True, exist_ok=True)
-        p.write_text(
-            json.dumps(self._to_dict(), separators=(",", ":")),
-            encoding="utf-8",
-        )
+
+        if pretty:
+            text = self._dumps_pretty(self._to_dict())
+        else:
+            text = json.dumps(self._to_dict(), separators=(",", ":"))
+
+        p.write_text(text, encoding="utf-8")
         print(f"[OccupancyGrid] Saved → {p.resolve()}")
         return p
+
+    @staticmethod
+    def _dumps_pretty(data: dict) -> str:
+        """
+        Pretty-print the occupancy dict with indent=2, but collapse each
+        grid row onto a single line so the file stays readable instead of
+        spanning millions of lines (one per cell).
+        """
+        grid = data.get("grid")
+        # Temporarily replace the grid with a placeholder so json.dumps does
+        # not expand every integer onto its own line.
+        placeholder = "<<__GRID_ROWS__>>"
+        data_for_dump = {**data, "grid": placeholder}
+        text = json.dumps(data_for_dump, indent=2, ensure_ascii=False)
+
+        if grid is None:
+            return text
+
+        # Render each row compactly on one line, indented to match indent=2.
+        row_indent = " " * 6   # 2 (object) + 2 (array) + 2 padding
+        rows = [row_indent + json.dumps(row, separators=(",", ":"))
+                for row in grid]
+        grid_block = "[\n" + ",\n".join(rows) + "\n    ]"
+
+        return text.replace(f'"{placeholder}"', grid_block)
 
     # ── Pass 1: grid initialisation ───────────────────────────────────────────
 

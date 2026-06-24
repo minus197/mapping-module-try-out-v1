@@ -13,7 +13,7 @@ sys.path.insert(0, str(Path(__file__).parent.parent.parent))
 import pytest
 from map_extraction.ifc_parser import IFCParser, IFCParseResult
 
-IFC_CONVENIENCE = Path("data/ifc_files/20201022mapping_IFC4_Convenience_store.ifc")
+IFC_CONVENIENCE = Path("data/ifc_files/20201022mapping IFC4 Convenience store.ifc")
 IFC_SIMPLE      = Path("data/ifc_files/ifc_simple_house.ifc")
 
 # Skip if test files are not present

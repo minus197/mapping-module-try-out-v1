@@ -15,7 +15,7 @@ import pytest
 from map_extraction.ifc_parser import IFCParser
 from map_extraction.semantic_floor_map import SemanticFloorMapBuilder
 
-IFC_CONVENIENCE = Path("data/ifc_files/20201022mapping_IFC4_Convenience_store.ifc")
+IFC_CONVENIENCE = Path("data/ifc_files/20201022mapping IFC4 Convenience store.ifc")
 skip_no_ifc = pytest.mark.skipif(
     not IFC_CONVENIENCE.exists(),
     reason="IFC test files not in data/ifc_files/"
