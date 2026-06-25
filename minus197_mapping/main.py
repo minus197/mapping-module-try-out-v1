@@ -9,6 +9,9 @@ Single-floor:
 Single-floor with destination query:
     python main.py --ifc data/ifc_files/mall_L1.ifc --floor L1 --query "food court"
 
+Single-floor with admin shop naming:
+    python main.py --ifc data/ifc_files/mall_L1.ifc --floor L1 --admin-name
+
 Multi-floor (one IFC per floor, floors in order bottom→top):
     python main.py \\
         --ifc data/ifc_files/mall_L1.ifc --floor L1 \\
@@ -30,19 +33,21 @@ def main():
     parser = argparse.ArgumentParser(
         description="Minus197 — Map Extraction + Pathfinding"
     )
-    parser.add_argument("--ifc",      action="append", required=True,
+    parser.add_argument("--ifc",        action="append", required=True,
                         help="Path to .ifc file (repeat for multiple floors)")
-    parser.add_argument("--floor",    action="append",
+    parser.add_argument("--floor",      action="append",
                         help="Floor label e.g. L1  (one per --ifc)")
-    parser.add_argument("--building", default="Building",
+    parser.add_argument("--building",   default="Building",
                         help="Building name for multi-floor output")
-    parser.add_argument("--query",    default=None,
+    parser.add_argument("--query",      default=None,
                         help="(Reserved) Destination query — handled by minus197_path_finding engine")
-    parser.add_argument("--no-save",  action="store_true",
+    parser.add_argument("--no-save",    action="store_true",
                         help="Do not save output JSON files")
+    parser.add_argument("--admin-name", action="store_true",
+                        help="Launch interactive shop-naming UI after saving outputs")
     args = parser.parse_args()
 
-    ifc_paths   = args.ifc
+    ifc_paths    = args.ifc
     floor_labels = args.floor or [f"L{i+1}" for i in range(len(ifc_paths))]
 
     if len(floor_labels) != len(ifc_paths):
@@ -50,6 +55,8 @@ def main():
               f"{len(floor_labels)} --floor labels. "
               f"Supply one --floor per --ifc.")
         sys.exit(1)
+
+    OUTPUT_DIR = "data/outputs/"
 
     # ── Single-floor ──────────────────────────────────────────────────────────
     if len(ifc_paths) == 1:
@@ -60,11 +67,17 @@ def main():
         graph = pipeline.run()
 
         if not args.no_save:
-            pipeline.save("data/outputs/")
+            pipeline.save(OUTPUT_DIR)
 
         if args.query:
             print("\n[Info] Pathfinding is handled by the minus197_path_finding module.")
             print(f"       Load the saved graph and run PathfindingEngine from there.")
+
+        if args.admin_name and not args.no_save:
+            stem     = Path(ifc_paths[0]).stem
+            sfm_path = Path(OUTPUT_DIR) / f"{stem}_sfm.json"
+            from admin_naming.shop_name_ui import run_ui
+            run_ui(sfm_path=sfm_path, output_dir=OUTPUT_DIR)
 
     # ── Multi-floor ───────────────────────────────────────────────────────────
     else:
@@ -79,7 +92,16 @@ def main():
         building = pipeline.run_multi()
 
         if not args.no_save:
-            pipeline.save_multi("data/outputs/")
+            pipeline.save_multi(OUTPUT_DIR)
+
+        if args.admin_name and not args.no_save:
+            from admin_naming.shop_name_ui import run_ui
+            for ifc_path, floor_label, _ in floors_spec:
+                stem     = Path(ifc_path).stem
+                sfm_path = Path(OUTPUT_DIR) / f"{stem}_sfm.json"
+                if sfm_path.exists():
+                    print(f"\n[AdminNaming] Floor {floor_label} ({stem})")
+                    run_ui(sfm_path=sfm_path, output_dir=OUTPUT_DIR)
 
 
 if __name__ == "__main__":
