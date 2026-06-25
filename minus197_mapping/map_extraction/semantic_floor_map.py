@@ -93,6 +93,7 @@ class Zone:
     width:            float           # bounding box width (m)
     depth:            float           # bounding box depth (m)
     area:             float           # shoelace area (m²)
+    admin_name:       str             = ""
 
     def to_dict(self) -> Dict[str, Any]:
         return {
@@ -101,6 +102,7 @@ class Zone:
             "name":             self.name,
             "long_name":        self.long_name,
             "category":         self.category,
+            "admin_name":       self.admin_name,
             "centroid":         [float(v) for v in self.centroid],
             "boundary_polygon": [[float(x), float(y)] for x, y in self.boundary_polygon],
             "width_m":          round(float(self.width), 4),

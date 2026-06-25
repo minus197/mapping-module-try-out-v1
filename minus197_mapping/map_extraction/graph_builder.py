@@ -178,9 +178,11 @@ class GraphBuilder:
                 node_type = "zone_centroid",
                 zone_id   = zone.zone_id,
                 tags      = {
-                    "category": zone.category,
-                    "name":     zone.name,
-                    "area_m2":  str(round(zone.area, 2)),
+                    "category":    zone.category,
+                    "name":        zone.name,
+                    "area_m2":     str(round(zone.area, 2)),
+                    "admin_label": "",
+                    "admin_name":  "",
                 },
             ))
 
