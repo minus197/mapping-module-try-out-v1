@@ -23,7 +23,8 @@ find_path(wx, wy, dest_id)
 
 from __future__ import annotations
 
-from typing import Callable, Dict, List, Optional, Tuple
+import json
+from typing import Any, Callable, Dict, List, Optional, Tuple
 
 from shared.types import (
     FloorGraph, NavigationEdge, NavigationNode, PathResult, PathStep, Point2D,
@@ -219,3 +220,64 @@ def _path_edges(
 
 def _empty_result() -> PathResult:
     return PathResult(found=False)
+
+
+# ── Feedback-module serialiser ────────────────────────────────────────────────
+
+def to_feedback_json(result: PathResult) -> str:
+    """
+    Serialise a PathResult into the feedback-module action format.
+
+    Each PathStep becomes one action object:
+      - "continue"  — straight or start-walking segments
+      - "turn"      — any turn (left/right/bear/around), with direction
+      - "stop"      — final step only, with landmark name
+
+    Distance is rounded to the nearest metre and omitted on "stop".
+    """
+    if not result.found or not result.steps:
+        return json.dumps([])
+
+    actions: List[Dict[str, Any]] = []
+    steps = result.steps
+
+    for i, step in enumerate(steps):
+        is_last = (i == len(steps) - 1)
+        phrase = _first_sentence(step.instruction)   # e.g. "Turn left"
+        dist_m = round(step.distance)
+
+        if is_last:
+            landmark = (
+                step.to_node.tags.get("admin_label", "").strip()
+                or step.to_node.label
+            )
+            action: Dict[str, Any] = {"action": "stop", "landmark": landmark}
+        elif _is_turn(phrase):
+            direction = _turn_direction(phrase)
+            action = {"action": "turn", "direction": direction, "distance": dist_m}
+        else:
+            action = {"action": "continue", "distance": dist_m}
+
+        actions.append(action)
+
+    return json.dumps(actions, indent=2)
+
+
+def _first_sentence(instruction: str) -> str:
+    """Extract the first sentence (up to the first period)."""
+    return instruction.split(".")[0].strip()
+
+
+_TURN_KEYWORDS = {"turn", "bear", "around"}
+
+def _is_turn(phrase: str) -> bool:
+    return any(kw in phrase.lower() for kw in _TURN_KEYWORDS)
+
+
+def _turn_direction(phrase: str) -> str:
+    lower = phrase.lower()
+    if "left" in lower:
+        return "left"
+    if "right" in lower:
+        return "right"
+    return "around"
