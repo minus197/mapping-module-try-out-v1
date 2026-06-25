@@ -24,7 +24,6 @@ from pathlib import Path
 sys.path.insert(0, str(Path(__file__).parent))
 
 from map_extraction import MapExtractionPipeline
-from pathfinding import PathfindingEngine
 
 
 def main():
@@ -38,9 +37,7 @@ def main():
     parser.add_argument("--building", default="Building",
                         help="Building name for multi-floor output")
     parser.add_argument("--query",    default=None,
-                        help="Destination query e.g. 'food court'")
-    parser.add_argument("--start",    default=None,
-                        help="Start node_id (default: first node)")
+                        help="(Reserved) Destination query — handled by minus197_path_finding engine")
     parser.add_argument("--no-save",  action="store_true",
                         help="Do not save output JSON files")
     args = parser.parse_args()
@@ -66,7 +63,8 @@ def main():
             pipeline.save("data/outputs/")
 
         if args.query:
-            _run_pathfinding(graph, args.start, args.query)
+            print("\n[Info] Pathfinding is handled by the minus197_path_finding module.")
+            print(f"       Load the saved graph and run PathfindingEngine from there.")
 
     # ── Multi-floor ───────────────────────────────────────────────────────────
     else:
@@ -82,30 +80,6 @@ def main():
 
         if not args.no_save:
             pipeline.save_multi("data/outputs/")
-
-        if args.query:
-            # Use ground floor for pathfinding demo
-            ground_fg = building.floors[0]
-            _run_pathfinding(ground_fg, args.start, args.query)
-
-
-def _run_pathfinding(graph, start_id, query):
-    from pathfinding import PathfindingEngine
-    engine   = PathfindingEngine(graph)
-    start_id = start_id or graph.nodes[0].node_id
-
-    print(f"\n[Pathfinding] Start : {start_id}")
-    print(f"[Pathfinding] Query : {query!r}")
-
-    result = engine.find_path(start_id, query)
-    print("\n" + result.summary())
-
-    if result.found:
-        print("Steps:")
-        for i, step in enumerate(result.steps, 1):
-            print(f"  {i:2d}. {step.instruction}")
-    else:
-        print("No path found for that destination.")
 
 
 if __name__ == "__main__":
