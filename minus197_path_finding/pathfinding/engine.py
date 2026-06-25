@@ -4,7 +4,7 @@ pathfinding/engine.py  —  WP6  (Section 6 integrator)
 PathfindingEngine wires WP0–WP5 into a single public call:
 
     engine = PathfindingEngine(graph, wall_checker)
-    result = engine.find_path(start_wx, start_wy, destination_node_id)
+    result = engine.find_path(start_node_id, destination_node_id)
 
 Construction (runs once)
     Stage 0  normalise_landmark_scores()
@@ -12,8 +12,8 @@ Construction (runs once)
     Stage 3  build_nx_graph()
     Stage 1  StartNodeResolver (KD-tree)
 
-find_path(wx, wy, dest_id)
-    Stage 1  resolve start node from user world position
+find_path(start_node_id, dest_id)
+    Stage 1  look up start node by id
     Stage 3  Dijkstra to confirm dest reachable; bail early if not
     Stage 4  k_best_paths() — winner + alternatives
     Stage 5  score_path()   — quality scores for each path
@@ -85,28 +85,30 @@ class PathfindingEngine:
 
     def find_path(
         self,
-        start_wx:          float,
-        start_wy:          float,
+        start_node_id:       str,
         destination_node_id: str,
     ) -> PathResult:
         """
-        Find the optimal path from a world position to a destination node.
+        Find the optimal path from a start node to a destination node.
 
         Parameters
         ----------
-        start_wx / start_wy  : user world coordinates (metres)
+        start_node_id        : node_id string of the current location
         destination_node_id  : node_id string of the destination
 
         Returns
         -------
-        PathResult — found=False with empty lists if dest is unknown/unreachable.
+        PathResult — found=False with empty lists if either node is unknown/unreachable.
         """
         dest_node = self.graph.node(destination_node_id)
         if dest_node is None:
             return _empty_result()
 
-        # Stage 1 — resolve start
-        start_node, user_xy = self._resolver.resolve(start_wx, start_wy)
+        start_node = self.graph.node(start_node_id)
+        if start_node is None:
+            return _empty_result()
+
+        user_xy: Point2D = start_node.position
 
         # Quick reachability check (also handles start == dest)
         if start_node.node_id == dest_node.node_id:
