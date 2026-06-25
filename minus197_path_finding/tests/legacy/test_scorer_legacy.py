@@ -12,7 +12,7 @@ sys.path.insert(0, str(Path(__file__).parent.parent.parent))
 
 import pytest
 from shared.types import NavigationEdge
-from pathfinding.scorer import score_path, select_best, ScoredPath
+from legacy.scorer_sprint6_stub import score_path, select_best, ScoredPath
 
 
 def _edge(eid, dist, shore, safety, landmark) -> NavigationEdge:

@@ -12,7 +12,7 @@ sys.path.insert(0, str(Path(__file__).parent.parent.parent))
 
 import pytest
 from shared.types import FloorGraph, NavigationNode
-from pathfinding.node_resolver import NodeResolver, _extract_location_phrase
+from legacy.node_resolver_nlp_stub import NodeResolver, _extract_location_phrase
 
 
 def _make_graph() -> FloorGraph:
