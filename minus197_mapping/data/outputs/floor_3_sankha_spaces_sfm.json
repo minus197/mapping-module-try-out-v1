@@ -1,0 +1,1609 @@
+{
+  "meta": {
+    "source_file": "data\\ifc_files\\floor_3_sankha_spaces.ifc",
+    "floor_label": "L1",
+    "zone_count": 14,
+    "wall_count": 54,
+    "feature_count": 15
+  },
+  "bounding_box": {
+    "min_x": -105.7689,
+    "min_y": -30.189,
+    "max_x": 95.4864,
+    "max_y": 44.9174
+  },
+  "zones": [
+    {
+      "zone_id": "1oR51g91X15vVBFBcFNG0Z",
+      "ifc_guid": "1oR51g91X15vVBFBcFNG0Z",
+      "name": "3-01",
+      "long_name": "Corridor",
+      "category": "corridor",
+      "admin_name": "",
+      "centroid": [
+        -9.891248949093317,
+        9.614202191917014
+      ],
+      "boundary_polygon": [
+        [
+          49.513230217573245,
+          25.92863239475098
+        ],
+        [
+          -86.05010311576011,
+          25.92863239475098
+        ],
+        [
+          -86.05010311576011,
+          26.60404906141765
+        ],
+        [
+          -78.40343644909349,
+          26.60404906141765
+        ],
+        [
+          -78.40343644909349,
+          33.67863239475146
+        ],
+        [
+          -84.0701031157601,
+          33.69863239475147
+        ],
+        [
+          -84.0701031157601,
+          37.92863239475146
+        ],
+        [
+          -93.86343644909344,
+          37.92863239475146
+        ],
+        [
+          -93.86343644909344,
+          26.6040490614181
+        ],
+        [
+          -91.46676978242675,
+          26.6040490614181
+        ],
+        [
+          -91.46676978242675,
+          25.928632394751435
+        ],
+        [
+          -105.11343644909346,
+          25.928632394751435
+        ],
+        [
+          -105.11343644909346,
+          19.133105322415943
+        ],
+        [
+          -21.946769782426735,
+          19.113105322415944
+        ],
+        [
+          -21.946769782426735,
+          -18.70022801091743
+        ],
+        [
+          49.51323021757318,
+          -18.70022801091743
+        ],
+        [
+          49.51323021757318,
+          -3.204603010917534
+        ],
+        [
+          85.33093855090682,
+          -3.184603010917537
+        ],
+        [
+          85.33093855090682,
+          3.4420636557491378
+        ],
+        [
+          49.513230217573245,
+          3.4620636557491373
+        ],
+        [
+          49.513230217573245,
+          25.92863239475098
+        ]
+      ],
+      "width_m": 190.4444,
+      "depth_m": 56.6289,
+      "area_m2": 4147.9496
+    },
+    {
+      "zone_id": "1cCNt9hxj0nuyAW9Qvamhi",
+      "ifc_guid": "1cCNt9hxj0nuyAW9Qvamhi",
+      "name": "3-02",
+      "long_name": "Room",
+      "category": "unknown",
+      "admin_name": "",
+      "centroid": [
+        14.53323021757323,
+        5.404771989082521
+      ],
+      "boundary_polygon": [
+        [
+          -12.811353115760133,
+          -5.481478010917574
+        ],
+        [
+          41.877813550906595,
+          -5.481478010917574
+        ],
+        [
+          41.877813550906595,
+          16.291021989082616
+        ],
+        [
+          -12.811353115760133,
+          16.291021989082616
+        ],
+        [
+          -12.811353115760133,
+          -5.481478010917574
+        ]
+      ],
+      "width_m": 54.6892,
+      "depth_m": 21.7725,
+      "area_m2": 1190.7199
+    },
+    {
+      "zone_id": "1KUruSCRzAFhGGOwQJSW1G",
+      "ifc_guid": "1KUruSCRzAFhGGOwQJSW1G",
+      "name": "3-03",
+      "long_name": "Room",
+      "category": "unknown",
+      "admin_name": "",
+      "centroid": [
+        -50.60218644909338,
+        8.477688655749335
+      ],
+      "boundary_polygon": [
+        [
+          -60.58218644909337,
+          -1.502311344250604
+        ],
+        [
+          -40.622186449093384,
+          -1.502311344250604
+        ],
+        [
+          -40.622186449093384,
+          18.457688655749273
+        ],
+        [
+          -60.58218644909337,
+          18.457688655749273
+        ],
+        [
+          -60.58218644909337,
+          -1.502311344250604
+        ]
+      ],
+      "width_m": 19.96,
+      "depth_m": 19.96,
+      "area_m2": 398.4016
+    },
+    {
+      "zone_id": "1sYKO0WufBMB9sm$f5HP5R",
+      "ifc_guid": "1sYKO0WufBMB9sm$f5HP5R",
+      "name": "3-04",
+      "long_name": "Room",
+      "category": "unknown",
+      "admin_name": "",
+      "centroid": [
+        -75.74020728242678,
+        35.41738239475108
+      ],
+      "boundary_polygon": [
+        [
+          -83.39468644909346,
+          34.35404906141814
+        ],
+        [
+          -77.74801978242682,
+          34.35404906141814
+        ],
+        [
+          -77.72801978242681,
+          26.60404906141765
+        ],
+        [
+          -67.76801978242679,
+          26.60404906141765
+        ],
+        [
+          -67.76801978242679,
+          44.230715728084505
+        ],
+        [
+          -83.71239478242678,
+          44.230715728084505
+        ],
+        [
+          -83.71239478242678,
+          38.60404906141814
+        ],
+        [
+          -83.41468644909345,
+          38.60404906141814
+        ],
+        [
+          -83.39468644909346,
+          34.35404906141814
+        ]
+      ],
+      "width_m": 15.9444,
+      "depth_m": 17.6267,
+      "area_m2": 233.437
+    },
+    {
+      "zone_id": "2DQOFuSfHB18Q7YCerQtG2",
+      "ifc_guid": "2DQOFuSfHB18Q7YCerQtG2",
+      "name": "3-05",
+      "long_name": "Room",
+      "category": "unknown",
+      "admin_name": "",
+      "centroid": [
+        68.75198021757329,
+        9.014146989082452
+      ],
+      "boundary_polygon": [
+        [
+          61.35531355090662,
+          4.117480322415804
+        ],
+        [
+          76.14864688423997,
+          4.117480322415804
+        ],
+        [
+          76.14864688423997,
+          13.910813655749099
+        ],
+        [
+          61.35531355090662,
+          13.910813655749099
+        ],
+        [
+          61.35531355090662,
+          4.117480322415804
+        ]
+      ],
+      "width_m": 14.7933,
+      "depth_m": 9.7933,
+      "area_m2": 144.876
+    },
+    {
+      "zone_id": "0PmKa8yD95G9hwtvgdKbV$",
+      "ifc_guid": "0PmKa8yD95G9hwtvgdKbV$",
+      "name": "3-06",
+      "long_name": "Room",
+      "category": "unknown",
+      "admin_name": "",
+      "centroid": [
+        69.33531355090659,
+        -8.998873844250861
+      ],
+      "boundary_polygon": [
+        [
+          64.3553135509066,
+          -3.860019677584204
+        ],
+        [
+          64.3553135509066,
+          -14.137728010917519
+        ],
+        [
+          74.3153135509066,
+          -14.137728010917519
+        ],
+        [
+          74.3153135509066,
+          -3.860019677584204
+        ],
+        [
+          64.3553135509066,
+          -3.860019677584204
+        ]
+      ],
+      "width_m": 9.96,
+      "depth_m": 10.2777,
+      "area_m2": 102.366
+    },
+    {
+      "zone_id": "3Xr9NFJRD0Sf8LpvS0C$ZM",
+      "ifc_guid": "3Xr9NFJRD0Sf8LpvS0C$ZM",
+      "name": "3-07",
+      "long_name": "Room",
+      "category": "unknown",
+      "admin_name": "",
+      "centroid": [
+        -45.60218644909338,
+        31.584049061417694
+      ],
+      "boundary_polygon": [
+        [
+          -50.58218644909337,
+          26.60404906141765
+        ],
+        [
+          -40.622186449093384,
+          26.60404906141765
+        ],
+        [
+          -40.622186449093384,
+          36.564049061417734
+        ],
+        [
+          -50.58218644909337,
+          36.564049061417734
+        ],
+        [
+          -50.58218644909337,
+          26.60404906141765
+        ]
+      ],
+      "width_m": 9.96,
+      "depth_m": 9.96,
+      "area_m2": 99.2016
+    },
+    {
+      "zone_id": "1v0N9aLuvA_uf6pfgkM3lF",
+      "ifc_guid": "1v0N9aLuvA_uf6pfgkM3lF",
+      "name": "3-08",
+      "long_name": "Room",
+      "category": "unknown",
+      "admin_name": "",
+      "centroid": [
+        35.231146884239934,
+        31.584049061417637
+      ],
+      "boundary_polygon": [
+        [
+          30.251146884239933,
+          26.60404906141765
+        ],
+        [
+          40.21114688423993,
+          26.60404906141765
+        ],
+        [
+          40.21114688423993,
+          36.56404906141763
+        ],
+        [
+          30.251146884239933,
+          36.56404906141763
+        ],
+        [
+          30.251146884239933,
+          26.60404906141765
+        ]
+      ],
+      "width_m": 9.96,
+      "depth_m": 9.96,
+      "area_m2": 99.2016
+    },
+    {
+      "zone_id": "1LjzbZFvr5Jw_e09uV5ONn",
+      "ifc_guid": "1LjzbZFvr5Jw_e09uV5ONn",
+      "name": "3-09",
+      "long_name": "Room",
+      "category": "unknown",
+      "admin_name": "",
+      "centroid": [
+        -2.268853115760032,
+        31.58404906141763
+      ],
+      "boundary_polygon": [
+        [
+          2.7111468842399717,
+          36.56404906141761
+        ],
+        [
+          -7.248853115760035,
+          36.56404906141761
+        ],
+        [
+          -7.248853115760035,
+          26.60404906141765
+        ],
+        [
+          2.7111468842399717,
+          26.60404906141765
+        ],
+        [
+          2.7111468842399717,
+          36.56404906141761
+        ]
+      ],
+      "width_m": 9.96,
+      "depth_m": 9.96,
+      "area_m2": 99.2016
+    },
+    {
+      "zone_id": "0Zwk9kmsH2cv0B3smeo7R4",
+      "ifc_guid": "0Zwk9kmsH2cv0B3smeo7R4",
+      "name": "3-10",
+      "long_name": "Room",
+      "category": "unknown",
+      "admin_name": "",
+      "centroid": [
+        -16.935519782426802,
+        -24.355644677584053
+      ],
+      "boundary_polygon": [
+        [
+          -21.915519782426802,
+          -19.375644677584102
+        ],
+        [
+          -21.915519782426802,
+          -29.335644677584
+        ],
+        [
+          -11.955519782426805,
+          -29.335644677584
+        ],
+        [
+          -11.955519782426805,
+          -19.375644677584102
+        ],
+        [
+          -21.915519782426802,
+          -19.375644677584102
+        ]
+      ],
+      "width_m": 9.96,
+      "depth_m": 9.96,
+      "area_m2": 99.2016
+    },
+    {
+      "zone_id": "3ZgQ2os6X3nu2TO_w1FyP_",
+      "ifc_guid": "3ZgQ2os6X3nu2TO_w1FyP_",
+      "name": "3-11",
+      "long_name": "Room",
+      "category": "unknown",
+      "admin_name": "",
+      "centroid": [
+        44.69989688423986,
+        -24.438978010917538
+      ],
+      "boundary_polygon": [
+        [
+          39.886563550906544,
+          -19.375644677584102
+        ],
+        [
+          39.886563550906544,
+          -29.50231134425097
+        ],
+        [
+          49.51323021757318,
+          -29.50231134425097
+        ],
+        [
+          49.51323021757318,
+          -19.375644677584102
+        ],
+        [
+          39.886563550906544,
+          -19.375644677584102
+        ]
+      ],
+      "width_m": 9.6267,
+      "depth_m": 10.1267,
+      "area_m2": 97.486
+    },
+    {
+      "zone_id": "2km63x$gvARxlJJhmiNJ4C",
+      "ifc_guid": "2km63x$gvARxlJJhmiNJ4C",
+      "name": "3-12",
+      "long_name": "Room",
+      "category": "unknown",
+      "admin_name": "",
+      "centroid": [
+        -99.15947811576012,
+        31.258528228084757
+      ],
+      "boundary_polygon": [
+        [
+          -94.53885311576012,
+          26.6040490614181
+        ],
+        [
+          -94.53885311576012,
+          35.91300739475141
+        ],
+        [
+          -103.78010311576011,
+          35.91300739475141
+        ],
+        [
+          -103.78010311576011,
+          26.6040490614181
+        ],
+        [
+          -94.53885311576012,
+          26.6040490614181
+        ]
+      ],
+      "width_m": 9.2412,
+      "depth_m": 9.309,
+      "area_m2": 86.0264
+    },
+    {
+      "zone_id": "1S4j8ROVTDtfnBwa3R1d3u",
+      "ifc_guid": "1S4j8ROVTDtfnBwa3R1d3u",
+      "name": "3-13",
+      "long_name": "Room",
+      "category": "unknown",
+      "admin_name": "",
+      "centroid": [
+        90.40302188424019,
+        -0.8608530109176977
+      ],
+      "boundary_polygon": [
+        [
+          94.79968855090686,
+          3.4108136557490147
+        ],
+        [
+          86.0063552175735,
+          3.4108136557490147
+        ],
+        [
+          86.0063552175735,
+          -5.13251967758441
+        ],
+        [
+          94.79968855090686,
+          -5.13251967758441
+        ],
+        [
+          94.79968855090686,
+          3.4108136557490147
+        ]
+      ],
+      "width_m": 8.7933,
+      "depth_m": 8.5433,
+      "area_m2": 75.1244
+    },
+    {
+      "zone_id": "082GxDT25CL90UwWZQmUtg",
+      "ifc_guid": "082GxDT25CL90UwWZQmUtg",
+      "name": "3-14",
+      "long_name": "Room",
+      "category": "unknown",
+      "admin_name": "",
+      "centroid": [
+        -89.12562394909344,
+        41.41738239475132
+      ],
+      "boundary_polygon": [
+        [
+          -93.83218644909346,
+          38.60404906141814
+        ],
+        [
+          -84.41906144909343,
+          38.60404906141814
+        ],
+        [
+          -84.41906144909343,
+          44.230715728084505
+        ],
+        [
+          -93.83218644909346,
+          44.230715728084505
+        ],
+        [
+          -93.83218644909346,
+          38.60404906141814
+        ]
+      ],
+      "width_m": 9.4131,
+      "depth_m": 5.6267,
+      "area_m2": 52.9645
+    }
+  ],
+  "walls": [
+    {
+      "wall_id": "26jjhu0DH0Lxf54dTa$KpX",
+      "ifc_guid": "26jjhu0DH0Lxf54dTa$KpX",
+      "name": "Basic Wall:Generic - 8\" Masonry:1240485",
+      "start": [
+        49.85093855090652,
+        -29.522311344251
+      ],
+      "end": [
+        49.85093855090652,
+        -3.204603010917534
+      ],
+      "length_m": 26.3177,
+      "shore_linable": true
+    },
+    {
+      "wall_id": "26jjhu0DH0Lxf54dTa$KpY",
+      "ifc_guid": "26jjhu0DH0Lxf54dTa$KpY",
+      "name": "Basic Wall:Generic - 8\" Masonry:1240486",
+      "start": [
+        49.850938550906584,
+        25.948632394750984
+      ],
+      "end": [
+        49.850938550906584,
+        3.4620636557491373
+      ],
+      "length_m": 22.4866,
+      "shore_linable": true
+    },
+    {
+      "wall_id": "26jjhu0DH0Lxf54dTa$KpZ",
+      "ifc_guid": "26jjhu0DH0Lxf54dTa$KpZ",
+      "name": "Basic Wall:Generic - 8\" Masonry:1240487",
+      "start": [
+        50.16864688423992,
+        26.266340728084316
+      ],
+      "end": [
+        -23.550103115760123,
+        26.266340728084316
+      ],
+      "length_m": 73.7188,
+      "shore_linable": true
+    },
+    {
+      "wall_id": "26jjhu0DH0Lxf54dTa$Kpi",
+      "ifc_guid": "26jjhu0DH0Lxf54dTa$Kpi",
+      "name": "Basic Wall:Generic - 8\" Masonry:1240488",
+      "start": [
+        49.53323021757325,
+        -19.037936344250767
+      ],
+      "end": [
+        -22.602186449093466,
+        -19.037936344250767
+      ],
+      "length_m": 72.1354,
+      "shore_linable": true
+    },
+    {
+      "wall_id": "26jjhu0DH0Lxf54dTa$Kpj",
+      "ifc_guid": "26jjhu0DH0Lxf54dTa$Kpj",
+      "name": "Basic Wall:Generic - 8\" Masonry:1240489",
+      "start": [
+        -22.284478115760066,
+        19.113105322415944
+      ],
+      "end": [
+        -22.284478115760066,
+        -18.720228010917427
+      ],
+      "length_m": 37.8333,
+      "shore_linable": true
+    },
+    {
+      "wall_id": "26jjhu0DH0Lxf54dTa$Kpk",
+      "ifc_guid": "26jjhu0DH0Lxf54dTa$Kpk",
+      "name": "Basic Wall:Generic - 8\" Masonry:1240490",
+      "start": [
+        -22.602186449093395,
+        18.795396989082608
+      ],
+      "end": [
+        -105.76885311576011,
+        18.795396989082608
+      ],
+      "length_m": 83.1667,
+      "shore_linable": true
+    },
+    {
+      "wall_id": "26jjhu0DH0Lxf54dTa$Kpl",
+      "ifc_guid": "26jjhu0DH0Lxf54dTa$Kpl",
+      "name": "Basic Wall:Generic - 8\" Masonry:1240491",
+      "start": [
+        -105.45114478242678,
+        19.11310532241621
+      ],
+      "end": [
+        -105.45114478242678,
+        26.58404906141811
+      ],
+      "length_m": 7.4709,
+      "shore_linable": true
+    },
+    {
+      "wall_id": "26jjhu0DH0Lxf54dTa$Kpe",
+      "ifc_guid": "26jjhu0DH0Lxf54dTa$Kpe",
+      "name": "Basic Wall:Generic - 8\" Masonry:1240492",
+      "start": [
+        -105.13343644909344,
+        26.266340728084767
+      ],
+      "end": [
+        -91.46676978242675,
+        26.266340728084767
+      ],
+      "length_m": 13.6667,
+      "shore_linable": true
+    },
+    {
+      "wall_id": "26jjhu0DH0Lxf54dTa$Kpf",
+      "ifc_guid": "26jjhu0DH0Lxf54dTa$Kpf",
+      "name": "Basic Wall:Generic - 8\" Masonry:1240493",
+      "start": [
+        -94.20114478242678,
+        26.584049061417907
+      ],
+      "end": [
+        -94.20114478242678,
+        38.58404906141791
+      ],
+      "length_m": 12.0,
+      "shore_linable": true
+    },
+    {
+      "wall_id": "26jjhu0DH0Lxf54dTa$Kpg",
+      "ifc_guid": "26jjhu0DH0Lxf54dTa$Kpg",
+      "name": "Basic Wall:Generic - 8\" Masonry:1240494",
+      "start": [
+        -93.88343644909344,
+        38.2663407280848
+      ],
+      "end": [
+        -83.41468644909345,
+        38.2663407280848
+      ],
+      "length_m": 10.4687,
+      "shore_linable": true
+    },
+    {
+      "wall_id": "26jjhu0DH0Lxf54dTa$Kph",
+      "ifc_guid": "26jjhu0DH0Lxf54dTa$Kph",
+      "name": "Basic Wall:Generic - 8\" Masonry:1240495",
+      "start": [
+        -83.73239478242678,
+        37.94863239475147
+      ],
+      "end": [
+        -83.73239478242678,
+        33.69863239475147
+      ],
+      "length_m": 4.25,
+      "shore_linable": true
+    },
+    {
+      "wall_id": "26jjhu0DH0Lxf54dTa$Kpq",
+      "ifc_guid": "26jjhu0DH0Lxf54dTa$Kpq",
+      "name": "Basic Wall:Generic - 8\" Masonry:1240496",
+      "start": [
+        -83.41468644909345,
+        34.0163407280848
+      ],
+      "end": [
+        -77.74801978242682,
+        34.0163407280848
+      ],
+      "length_m": 5.6667,
+      "shore_linable": true
+    },
+    {
+      "wall_id": "26jjhu0DH0Lxf54dTa$Kpr",
+      "ifc_guid": "26jjhu0DH0Lxf54dTa$Kpr",
+      "name": "Basic Wall:Generic - 8\" Masonry:1240497",
+      "start": [
+        -78.06572811576015,
+        33.69863239475147
+      ],
+      "end": [
+        -78.06572811576015,
+        26.584049061417826
+      ],
+      "length_m": 7.1146,
+      "shore_linable": true
+    },
+    {
+      "wall_id": "26jjhu0DH0Lxf54dTa$Kps",
+      "ifc_guid": "26jjhu0DH0Lxf54dTa$Kps",
+      "name": "Basic Wall:Generic - 8\" Masonry:1240498",
+      "start": [
+        -23.550103115760106,
+        26.266340728084316
+      ],
+      "end": [
+        -86.05010311576011,
+        26.266340728084316
+      ],
+      "length_m": 62.5,
+      "shore_linable": true
+    },
+    {
+      "wall_id": "26jjhu0DH0Lxf54dTa$Kpt",
+      "ifc_guid": "26jjhu0DH0Lxf54dTa$Kpt",
+      "name": "Basic Wall:Generic - 8\" Masonry:1240499",
+      "start": [
+        -13.149061449093466,
+        -5.501478010917394
+      ],
+      "end": [
+        -13.149061449093466,
+        16.31102198908261
+      ],
+      "length_m": 21.8125,
+      "shore_linable": true
+    },
+    {
+      "wall_id": "26jjhu0DH0Lxf54dTa$Kpm",
+      "ifc_guid": "26jjhu0DH0Lxf54dTa$Kpm",
+      "name": "Basic Wall:Generic - 8\" Masonry:1240500",
+      "start": [
+        -13.466769782426764,
+        16.628730322415947
+      ],
+      "end": [
+        42.533230217573234,
+        16.628730322415947
+      ],
+      "length_m": 56.0,
+      "shore_linable": true
+    },
+    {
+      "wall_id": "26jjhu0DH0Lxf54dTa$Kpn",
+      "ifc_guid": "26jjhu0DH0Lxf54dTa$Kpn",
+      "name": "Basic Wall:Generic - 8\" Masonry:1240501",
+      "start": [
+        42.215521884239934,
+        16.311021989082437
+      ],
+      "end": [
+        42.215521884239934,
+        -6.136894677584241
+      ],
+      "length_m": 22.4479,
+      "shore_linable": true
+    },
+    {
+      "wall_id": "26jjhu0DH0Lxf54dTa$Kpo",
+      "ifc_guid": "26jjhu0DH0Lxf54dTa$Kpo",
+      "name": "Basic Wall:Generic - 8\" Masonry:1240502",
+      "start": [
+        41.897813550906605,
+        -5.819186344250906
+      ],
+      "end": [
+        -13.466769782426802,
+        -5.819186344250906
+      ],
+      "length_m": 55.3646,
+      "shore_linable": true
+    },
+    {
+      "wall_id": "05o6FGHbvAcep$f8mox0ZS",
+      "ifc_guid": "05o6FGHbvAcep$f8mox0ZS",
+      "name": "Basic Wall:Generic - 8\":1242155",
+      "start": [
+        -104.13343644909344,
+        26.584049061418078
+      ],
+      "end": [
+        -104.13343644909344,
+        36.599674061418085
+      ],
+      "length_m": 10.0156,
+      "shore_linable": true
+    },
+    {
+      "wall_id": "05o6FGHbvAcep$f8mox0X0",
+      "ifc_guid": "05o6FGHbvAcep$f8mox0X0",
+      "name": "Basic Wall:Generic - 8\":1242295",
+      "start": [
+        -103.80010311576008,
+        36.26634072808475
+      ],
+      "end": [
+        -94.51885311576011,
+        36.26634072808475
+      ],
+      "length_m": 9.2812,
+      "shore_linable": true
+    },
+    {
+      "wall_id": "05o6FGHbvAcep$f8mox0bU",
+      "ifc_guid": "05o6FGHbvAcep$f8mox0bU",
+      "name": "Basic Wall:Generic - 8\":1242537",
+      "start": [
+        -94.18551978242678,
+        38.584049061418135
+      ],
+      "end": [
+        -94.18551978242678,
+        44.91738239475118
+      ],
+      "length_m": 6.3333,
+      "shore_linable": true
+    },
+    {
+      "wall_id": "05o6FGHbvAcep$f8mox0gn",
+      "ifc_guid": "05o6FGHbvAcep$f8mox0gn",
+      "name": "Basic Wall:Generic - 8\":1242694",
+      "start": [
+        -93.85218644909344,
+        44.58404906141784
+      ],
+      "end": [
+        -67.08135311576014,
+        44.58404906141784
+      ],
+      "length_m": 26.7708,
+      "shore_linable": false
+    },
+    {
+      "wall_id": "05o6FGHbvAcep$f8mox0et",
+      "ifc_guid": "05o6FGHbvAcep$f8mox0et",
+      "name": "Basic Wall:Generic - 8\":1242816",
+      "start": [
+        -84.06572811576011,
+        44.25071572808449
+      ],
+      "end": [
+        -84.06572811576011,
+        38.584049061418135
+      ],
+      "length_m": 5.6667,
+      "shore_linable": true
+    },
+    {
+      "wall_id": "05o6FGHbvAcep$f8mox0HC",
+      "ifc_guid": "05o6FGHbvAcep$f8mox0HC",
+      "name": "Basic Wall:Generic - 8\":1243323",
+      "start": [
+        -67.41468644909347,
+        44.25071572808443
+      ],
+      "end": [
+        -67.41468644909347,
+        26.584049061417794
+      ],
+      "length_m": 17.6667,
+      "shore_linable": true
+    },
+    {
+      "wall_id": "05o6FGHbvAcep$f8mox0T8",
+      "ifc_guid": "05o6FGHbvAcep$f8mox0T8",
+      "name": "Basic Wall:Generic - 8\":1244095",
+      "start": [
+        40.56448021757327,
+        26.58404906141765
+      ],
+      "end": [
+        40.56448021757327,
+        37.250715728084266
+      ],
+      "length_m": 10.6667,
+      "shore_linable": true
+    },
+    {
+      "wall_id": "05o6FGHbvAcep$f8mox01d",
+      "ifc_guid": "05o6FGHbvAcep$f8mox01d",
+      "name": "Basic Wall:Generic - 8\":1244304",
+      "start": [
+        -40.268853115760045,
+        26.584049061417705
+      ],
+      "end": [
+        -40.268853115760045,
+        37.25071572808437
+      ],
+      "length_m": 10.6667,
+      "shore_linable": true
+    },
+    {
+      "wall_id": "05o6FGHbvAcep$f8mox005",
+      "ifc_guid": "05o6FGHbvAcep$f8mox005",
+      "name": "Basic Wall:Generic - 8\":1244402",
+      "start": [
+        29.8978135509066,
+        26.58404906141765
+      ],
+      "end": [
+        29.8978135509066,
+        37.2507157280843
+      ],
+      "length_m": 10.6667,
+      "shore_linable": true
+    },
+    {
+      "wall_id": "05o6FGHbvAcep$f8mox0BM",
+      "ifc_guid": "05o6FGHbvAcep$f8mox0BM",
+      "name": "Basic Wall:Generic - 8\":1244705",
+      "start": [
+        -60.93551978242671,
+        18.4776886557494
+      ],
+      "end": [
+        -60.93551978242671,
+        -2.188978010917271
+      ],
+      "length_m": 20.6667,
+      "shore_linable": true
+    },
+    {
+      "wall_id": "05o6FGHbvAcep$f8mox09n",
+      "ifc_guid": "05o6FGHbvAcep$f8mox09n",
+      "name": "Basic Wall:Generic - 8\":1244806",
+      "start": [
+        -60.60218644909341,
+        -1.8556446775839375
+      ],
+      "end": [
+        -39.74801978242681,
+        -1.8556446775839375
+      ],
+      "length_m": 20.8542,
+      "shore_linable": false
+    },
+    {
+      "wall_id": "05o6FGHbvAcep$f8mox08R",
+      "ifc_guid": "05o6FGHbvAcep$f8mox08R",
+      "name": "Basic Wall:Generic - 8\":1244908",
+      "start": [
+        -40.268853115760045,
+        18.477688655749333
+      ],
+      "end": [
+        -40.268853115760045,
+        -1.5223113442506673
+      ],
+      "length_m": 20.0,
+      "shore_linable": true
+    },
+    {
+      "wall_id": "05o6FGHbvAcep$f8moxVqR",
+      "ifc_guid": "05o6FGHbvAcep$f8moxVqR",
+      "name": "Basic Wall:Generic - 8\":1245676",
+      "start": [
+        -22.268853115760134,
+        -19.3556446775841
+      ],
+      "end": [
+        -22.268853115760134,
+        -30.022311344250667
+      ],
+      "length_m": 10.6667,
+      "shore_linable": true
+    },
+    {
+      "wall_id": "05o6FGHbvAcep$f8moxVvl",
+      "ifc_guid": "05o6FGHbvAcep$f8moxVvl",
+      "name": "Basic Wall:Generic - 8\":1245848",
+      "start": [
+        -21.93551978242682,
+        -29.68897801091733
+      ],
+      "end": [
+        -11.93551978242682,
+        -29.68897801091733
+      ],
+      "length_m": 10.0,
+      "shore_linable": false
+    },
+    {
+      "wall_id": "05o6FGHbvAcep$f8moxVu5",
+      "ifc_guid": "05o6FGHbvAcep$f8moxVu5",
+      "name": "Basic Wall:Generic - 8\":1245938",
+      "start": [
+        39.533230217573205,
+        -19.3556446775841
+      ],
+      "end": [
+        39.533230217573205,
+        -30.188978010917637
+      ],
+      "length_m": 10.8333,
+      "shore_linable": true
+    },
+    {
+      "wall_id": "05o6FGHbvAcep$f8moxVk8",
+      "ifc_guid": "05o6FGHbvAcep$f8moxVk8",
+      "name": "Basic Wall:Generic - 8\":1247103",
+      "start": [
+        -11.602186449093471,
+        -19.3556446775841
+      ],
+      "end": [
+        -11.602186449093471,
+        -30.022311344250703
+      ],
+      "length_m": 10.6667,
+      "shore_linable": true
+    },
+    {
+      "wall_id": "05o6FGHbvAcep$f8moxVIq",
+      "ifc_guid": "05o6FGHbvAcep$f8moxVIq",
+      "name": "Basic Wall:Generic - 8\":1247299",
+      "start": [
+        39.86656355090652,
+        -29.8556446775843
+      ],
+      "end": [
+        50.16864688423985,
+        -29.8556446775843
+      ],
+      "length_m": 10.3021,
+      "shore_linable": false
+    },
+    {
+      "wall_id": "05o6FGHbvAcep$f8moxVNa",
+      "ifc_guid": "05o6FGHbvAcep$f8moxVNa",
+      "name": "Basic Wall:Generic - 8\":1247507",
+      "start": [
+        -7.6021864490933675,
+        37.25071572808429
+      ],
+      "end": [
+        -7.6021864490933675,
+        26.58404906141765
+      ],
+      "length_m": 10.6667,
+      "shore_linable": true
+    },
+    {
+      "wall_id": "05o6FGHbvAcep$f8moxVLd",
+      "ifc_guid": "05o6FGHbvAcep$f8moxVLd",
+      "name": "Basic Wall:Generic - 8\":1247632",
+      "start": [
+        3.0644802175733052,
+        37.25071572808425
+      ],
+      "end": [
+        3.0644802175733052,
+        26.58404906141765
+      ],
+      "length_m": 10.6667,
+      "shore_linable": true
+    },
+    {
+      "wall_id": "05o6FGHbvAcep$f8moxVPj",
+      "ifc_guid": "05o6FGHbvAcep$f8moxVPj",
+      "name": "Basic Wall:Generic - 8\":1247898",
+      "start": [
+        -7.2688531157600345,
+        36.91738239475095
+      ],
+      "end": [
+        2.7311468842399655,
+        36.91738239475095
+      ],
+      "length_m": 10.0,
+      "shore_linable": false
+    },
+    {
+      "wall_id": "05o6FGHbvAcep$f8moxVVT",
+      "ifc_guid": "05o6FGHbvAcep$f8moxVVT",
+      "name": "Basic Wall:Generic - 8\":1248042",
+      "start": [
+        30.231146884239955,
+        36.917382394750966
+      ],
+      "end": [
+        40.231146884239955,
+        36.917382394750966
+      ],
+      "length_m": 10.0,
+      "shore_linable": false
+    },
+    {
+      "wall_id": "05o6FGHbvAcep$f8moxV7w",
+      "ifc_guid": "05o6FGHbvAcep$f8moxV7w",
+      "name": "Basic Wall:Generic - 8\":1248525",
+      "start": [
+        -50.93551978242671,
+        26.584049061417737
+      ],
+      "end": [
+        -50.93551978242671,
+        37.25071572808441
+      ],
+      "length_m": 10.6667,
+      "shore_linable": true
+    },
+    {
+      "wall_id": "05o6FGHbvAcep$f8moxV5i",
+      "ifc_guid": "05o6FGHbvAcep$f8moxV5i",
+      "name": "Basic Wall:Generic - 8\":1248667",
+      "start": [
+        -50.60218644909337,
+        36.91738239475107
+      ],
+      "end": [
+        -40.60218644909337,
+        36.91738239475107
+      ],
+      "length_m": 10.0,
+      "shore_linable": false
+    },
+    {
+      "wall_id": "1$OMQ8oJ13yg_ewC4wyShX",
+      "ifc_guid": "1$OMQ8oJ13yg_ewC4wyShX",
+      "name": "Basic Wall:Generic - 8\" Masonry:1249127",
+      "start": [
+        50.16864688423999,
+        -3.5223113442508707
+      ],
+      "end": [
+        85.9863552175735,
+        -3.5223113442508707
+      ],
+      "length_m": 35.8177,
+      "shore_linable": true
+    },
+    {
+      "wall_id": "1$OMQ8oJ13yg_ewC4wyShj",
+      "ifc_guid": "1$OMQ8oJ13yg_ewC4wyShj",
+      "name": "Basic Wall:Generic - 8\" Masonry:1249131",
+      "start": [
+        50.16864688423988,
+        3.779771989082471
+      ],
+      "end": [
+        85.98635521757352,
+        3.779771989082471
+      ],
+      "length_m": 35.8177,
+      "shore_linable": true
+    },
+    {
+      "wall_id": "1$OMQ8oJ13yg_ewC4wyShh",
+      "ifc_guid": "1$OMQ8oJ13yg_ewC4wyShh",
+      "name": "Basic Wall:Generic - 8\" Masonry:1249133",
+      "start": [
+        85.66864688424016,
+        -3.204603010917659
+      ],
+      "end": [
+        85.66864688424016,
+        3.462063655749018
+      ],
+      "length_m": 6.6667,
+      "shore_linable": true
+    },
+    {
+      "wall_id": "1$OMQ8oJ13yg_ewC4wyTKV",
+      "ifc_guid": "1$OMQ8oJ13yg_ewC4wyTKV",
+      "name": "Basic Wall:Generic - 8\":1249433",
+      "start": [
+        64.00198021757326,
+        -3.8400196775842503
+      ],
+      "end": [
+        64.00198021757326,
+        -14.824394677584184
+      ],
+      "length_m": 10.9844,
+      "shore_linable": true
+    },
+    {
+      "wall_id": "1$OMQ8oJ13yg_ewC4wyTKS",
+      "ifc_guid": "1$OMQ8oJ13yg_ewC4wyTKS",
+      "name": "Basic Wall:Generic - 8\":1249434",
+      "start": [
+        64.33531355090658,
+        -14.491061344250852
+      ],
+      "end": [
+        74.33531355090658,
+        -14.491061344250852
+      ],
+      "length_m": 10.0,
+      "shore_linable": false
+    },
+    {
+      "wall_id": "1$OMQ8oJ13yg_ewC4wyTKR",
+      "ifc_guid": "1$OMQ8oJ13yg_ewC4wyTKR",
+      "name": "Basic Wall:Generic - 8\":1249437",
+      "start": [
+        74.66864688423992,
+        -3.840019677584286
+      ],
+      "end": [
+        74.66864688423992,
+        -14.82439467758422
+      ],
+      "length_m": 10.9844,
+      "shore_linable": true
+    },
+    {
+      "wall_id": "1$OMQ8oJ13yg_ewC4wyTG6",
+      "ifc_guid": "1$OMQ8oJ13yg_ewC4wyTG6",
+      "name": "Basic Wall:Generic - 8\":1249664",
+      "start": [
+        61.00198021757328,
+        4.097480322415765
+      ],
+      "end": [
+        61.00198021757328,
+        14.597480322415766
+      ],
+      "length_m": 10.5,
+      "shore_linable": true
+    },
+    {
+      "wall_id": "1$OMQ8oJ13yg_ewC4wyTHc",
+      "ifc_guid": "1$OMQ8oJ13yg_ewC4wyTHc",
+      "name": "Basic Wall:Generic - 8\":1249760",
+      "start": [
+        61.335313550906626,
+        14.264146989082432
+      ],
+      "end": [
+        76.83531355090662,
+        14.264146989082432
+      ],
+      "length_m": 15.5,
+      "shore_linable": false
+    },
+    {
+      "wall_id": "1$OMQ8oJ13yg_ewC4wyTUO",
+      "ifc_guid": "1$OMQ8oJ13yg_ewC4wyTUO",
+      "name": "Basic Wall:Generic - 8\":1249822",
+      "start": [
+        76.50198021757329,
+        13.9308136557491
+      ],
+      "end": [
+        76.50198021757329,
+        4.097480322415713
+      ],
+      "length_m": 9.8333,
+      "shore_linable": true
+    },
+    {
+      "wall_id": "1$OMQ8oJ13yg_ewC4wyTV8",
+      "ifc_guid": "1$OMQ8oJ13yg_ewC4wyTV8",
+      "name": "Basic Wall:Generic - 8\":1249870",
+      "start": [
+        85.98635521757352,
+        3.7641469890823482
+      ],
+      "end": [
+        95.48635521757352,
+        3.7641469890823482
+      ],
+      "length_m": 9.5,
+      "shore_linable": true
+    },
+    {
+      "wall_id": "1$OMQ8oJ13yg_ewC4wyTSl",
+      "ifc_guid": "1$OMQ8oJ13yg_ewC4wyTSl",
+      "name": "Basic Wall:Generic - 8\":1249961",
+      "start": [
+        95.15302188424019,
+        3.430813655748987
+      ],
+      "end": [
+        95.15302188424019,
+        -5.819186344251078
+      ],
+      "length_m": 9.25,
+      "shore_linable": false
+    },
+    {
+      "wall_id": "1$OMQ8oJ13yg_ewC4wyTTT",
+      "ifc_guid": "1$OMQ8oJ13yg_ewC4wyTTT",
+      "name": "Basic Wall:Generic - 8\":1250011",
+      "start": [
+        94.81968855090683,
+        -5.485853010917744
+      ],
+      "end": [
+        85.31968855090683,
+        -5.485853010917744
+      ],
+      "length_m": 9.5,
+      "shore_linable": false
+    },
+    {
+      "wall_id": "1$OMQ8oJ13yg_ewC4wyTR6",
+      "ifc_guid": "1$OMQ8oJ13yg_ewC4wyTR6",
+      "name": "Basic Wall:Generic - 8\":1250112",
+      "start": [
+        85.65302188424018,
+        -3.8400196775843236
+      ],
+      "end": [
+        85.65302188424018,
+        -5.152519677584381
+      ],
+      "length_m": 1.3125,
+      "shore_linable": true
+    }
+  ],
+  "features": [
+    {
+      "feature_id": "26jjhu0DH0Lxf54dTa$Ko8",
+      "ifc_guid": "26jjhu0DH0Lxf54dTa$Ko8",
+      "name": "Door-Passage-Single-Vision_Lite:36\" x 84\":1240524",
+      "feature_type": "door",
+      "position": [
+        -93.38343644909332,
+        37.90696572808482
+      ],
+      "zone_id": "1oR51g91X15vVBFBcFNG0Z",
+      "priority": 2
+    },
+    {
+      "feature_id": "26jjhu0DH0Lxf54dTa$Ko9",
+      "ifc_guid": "26jjhu0DH0Lxf54dTa$Ko9",
+      "name": "Door-Passage-Single-Vision_Lite:36\" x 84\":1240525",
+      "feature_type": "door",
+      "position": [
+        -87.88343644909344,
+        37.94863239475147
+      ],
+      "zone_id": "1oR51g91X15vVBFBcFNG0Z",
+      "priority": 2
+    },
+    {
+      "feature_id": "26jjhu0DH0Lxf54dTa$KoA",
+      "ifc_guid": "26jjhu0DH0Lxf54dTa$KoA",
+      "name": "Door-Passage-Single-Vision_Lite:36\" x 84\":1240526",
+      "feature_type": "door",
+      "position": [
+        -82.91468644909344,
+        33.65696572808482
+      ],
+      "zone_id": "1oR51g91X15vVBFBcFNG0Z",
+      "priority": 2
+    },
+    {
+      "feature_id": "26jjhu0DH0Lxf54dTa$KoB",
+      "ifc_guid": "26jjhu0DH0Lxf54dTa$KoB",
+      "name": "Door-Passage-Single-Vision_Lite:36\" x 84\":1240527",
+      "feature_type": "door",
+      "position": [
+        -78.3834364490935,
+        32.1986323947515
+      ],
+      "zone_id": "1oR51g91X15vVBFBcFNG0Z",
+      "priority": 2
+    },
+    {
+      "feature_id": "26jjhu0DH0Lxf54dTa$KoK",
+      "ifc_guid": "26jjhu0DH0Lxf54dTa$KoK",
+      "name": "Door-Passage-Single-Vision_Lite:36\" x 84\":1240528",
+      "feature_type": "door",
+      "position": [
+        -93.88343644909344,
+        28.584049061417907
+      ],
+      "zone_id": "1oR51g91X15vVBFBcFNG0Z",
+      "priority": 2
+    },
+    {
+      "feature_id": "26jjhu0DH0Lxf54dTa$KoL",
+      "ifc_guid": "26jjhu0DH0Lxf54dTa$KoL",
+      "name": "Door-Passage-Single-Vision_Lite:36\" x 84\":1240529",
+      "feature_type": "door",
+      "position": [
+        -44.38343644909345,
+        25.94863239475105
+      ],
+      "zone_id": "1oR51g91X15vVBFBcFNG0Z",
+      "priority": 2
+    },
+    {
+      "feature_id": "26jjhu0DH0Lxf54dTa$KoM",
+      "ifc_guid": "26jjhu0DH0Lxf54dTa$KoM",
+      "name": "Door-Passage-Single-Vision_Lite:36\" x 84\":1240530",
+      "feature_type": "door",
+      "position": [
+        -41.10218644909337,
+        19.113105322416
+      ],
+      "zone_id": "1oR51g91X15vVBFBcFNG0Z",
+      "priority": 2
+    },
+    {
+      "feature_id": "26jjhu0DH0Lxf54dTa$KoN",
+      "ifc_guid": "26jjhu0DH0Lxf54dTa$KoN",
+      "name": "Door-Passage-Single-Vision_Lite:36\" x 84\":1240531",
+      "feature_type": "door",
+      "position": [
+        -4.5501031157601375,
+        25.948632394750984
+      ],
+      "zone_id": "1oR51g91X15vVBFBcFNG0Z",
+      "priority": 2
+    },
+    {
+      "feature_id": "26jjhu0DH0Lxf54dTa$KoG",
+      "ifc_guid": "26jjhu0DH0Lxf54dTa$KoG",
+      "name": "Door-Passage-Single-Vision_Lite:36\" x 84\":1240532",
+      "feature_type": "door",
+      "position": [
+        36.69989688423995,
+        25.948632394750984
+      ],
+      "zone_id": "1oR51g91X15vVBFBcFNG0Z",
+      "priority": 2
+    },
+    {
+      "feature_id": "26jjhu0DH0Lxf54dTa$KoH",
+      "ifc_guid": "26jjhu0DH0Lxf54dTa$KoH",
+      "name": "Door-Passage-Single-Vision_Lite:36\" x 84\":1240533",
+      "feature_type": "door",
+      "position": [
+        -17.633436449093423,
+        -18.720228010917435
+      ],
+      "zone_id": "1oR51g91X15vVBFBcFNG0Z",
+      "priority": 2
+    },
+    {
+      "feature_id": "26jjhu0DH0Lxf54dTa$KoI",
+      "ifc_guid": "26jjhu0DH0Lxf54dTa$KoI",
+      "name": "Door-Passage-Single-Vision_Lite:36\" x 84\":1240534",
+      "feature_type": "door",
+      "position": [
+        48.53323021757325,
+        -18.678561344250788
+      ],
+      "zone_id": "1oR51g91X15vVBFBcFNG0Z",
+      "priority": 2
+    },
+    {
+      "feature_id": "1$OMQ8oJ13yg_ewC4wyShf",
+      "ifc_guid": "1$OMQ8oJ13yg_ewC4wyShf",
+      "name": "Door-Passage-Single-Vision_Lite:36\" x 84\":1249135",
+      "feature_type": "door",
+      "position": [
+        70.85093855090683,
+        -3.204603010917608
+      ],
+      "zone_id": "1oR51g91X15vVBFBcFNG0Z",
+      "priority": 2
+    },
+    {
+      "feature_id": "1$OMQ8oJ13yg_ewC4wyShs",
+      "ifc_guid": "1$OMQ8oJ13yg_ewC4wyShs",
+      "name": "Door-Passage-Single-Vision_Lite:36\" x 84\":1249136",
+      "feature_type": "door",
+      "position": [
+        64.98635521757335,
+        3.462063655749087
+      ],
+      "zone_id": "1oR51g91X15vVBFBcFNG0Z",
+      "priority": 2
+    },
+    {
+      "feature_id": "1$OMQ8oJ13yg_ewC4wySht",
+      "ifc_guid": "1$OMQ8oJ13yg_ewC4wySht",
+      "name": "Door-Passage-Single-Vision_Lite:36\" x 84\":1249137",
+      "feature_type": "door",
+      "position": [
+        68.81968855090666,
+        3.462063655749074
+      ],
+      "zone_id": "1oR51g91X15vVBFBcFNG0Z",
+      "priority": 2
+    },
+    {
+      "feature_id": "1$OMQ8oJ13yg_ewC4wyShq",
+      "ifc_guid": "1$OMQ8oJ13yg_ewC4wyShq",
+      "name": "Door-Passage-Single-Vision_Lite:36\" x 84\":1249138",
+      "feature_type": "door",
+      "position": [
+        85.35093855090683,
+        1.7953969890823411
+      ],
+      "zone_id": "1oR51g91X15vVBFBcFNG0Z",
+      "priority": 2
+    }
+  ]
+}
