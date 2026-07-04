@@ -62,25 +62,32 @@ def run_patcher(
         if m.get("admin_name", "").strip()
     }
 
+    # Optional lookup: zone_id → admin_description (GUI-written mappings only).
+    desc_map: Dict[str, str] = {
+        m["zone_id"]: m["admin_description"]
+        for m in mappings
+        if m.get("admin_description", "").strip()
+    }
+
     patched: List[str] = []
 
     sfm_path = output_dir / f"{stem}_sfm.json"
     if sfm_path.exists():
-        _patch_sfm(sfm_path, name_map)
+        _patch_sfm(sfm_path, name_map, desc_map)
         patched.append(sfm_path.name)
     else:
         print(f"[AdminNaming] WARNING: {sfm_path} not found — skipped.")
 
     graph_path = output_dir / f"{stem}_graph.json"
     if graph_path.exists():
-        _patch_graph(graph_path, name_map)
+        _patch_graph(graph_path, name_map, desc_map)
         patched.append(graph_path.name)
     else:
         print(f"[AdminNaming] WARNING: {graph_path} not found — skipped.")
 
     occ_path = output_dir / f"{stem}_occupancy.json"
     if occ_path.exists():
-        _patch_occupancy(occ_path, name_map)
+        _patch_occupancy(occ_path, name_map, desc_map)
         patched.append(occ_path.name)
     else:
         print(f"[AdminNaming] WARNING: {occ_path} not found — skipped.")
@@ -93,46 +100,80 @@ def run_patcher(
 # Per-file patchers
 # ---------------------------------------------------------------------------
 
-def _patch_sfm(path: Path, name_map: Dict[str, str]) -> None:
+def _patch_sfm(
+    path: Path,
+    name_map: Dict[str, str],
+    desc_map: Optional[Dict[str, str]] = None,
+) -> None:
+    desc_map = desc_map or {}
     data   = json.loads(path.read_text(encoding="utf-8"))
     count  = 0
     for zone in data.get("zones", []):
         zone_id = zone.get("zone_id", "")
+        touched = False
         if zone_id in name_map:
             zone["admin_name"] = name_map[zone_id]
+            touched = True
+        if zone_id in desc_map:
+            zone["admin_description"] = desc_map[zone_id]
+            touched = True
+        if touched:
             count += 1
     path.write_text(json.dumps(data, indent=2, ensure_ascii=False),
                     encoding="utf-8")
     print(f"[AdminNaming] _sfm.json: {count} zone(s) updated.")
 
 
-def _patch_graph(path: Path, name_map: Dict[str, str]) -> None:
+def _patch_graph(
+    path: Path,
+    name_map: Dict[str, str],
+    desc_map: Optional[Dict[str, str]] = None,
+) -> None:
+    desc_map = desc_map or {}
     data  = json.loads(path.read_text(encoding="utf-8"))
     count = 0
     for node in data.get("nodes", []):
         if node.get("node_type") != "zone_centroid":
             continue
         zone_id = node.get("zone_id", "")
+        touched = False
         if zone_id in name_map:
             admin_name = name_map[zone_id]
             node["label"] = admin_name
             tags = node.setdefault("tags", {})
             tags["admin_label"] = admin_name
             tags["admin_name"]  = admin_name
+            touched = True
+        if zone_id in desc_map:
+            tags = node.setdefault("tags", {})
+            tags["admin_description"] = desc_map[zone_id]
+            touched = True
+        if touched:
             count += 1
     path.write_text(json.dumps(data, indent=2, ensure_ascii=False),
                     encoding="utf-8")
     print(f"[AdminNaming] _graph.json: {count} node(s) updated.")
 
 
-def _patch_occupancy(path: Path, name_map: Dict[str, str]) -> None:
+def _patch_occupancy(
+    path: Path,
+    name_map: Dict[str, str],
+    desc_map: Optional[Dict[str, str]] = None,
+) -> None:
+    desc_map = desc_map or {}
     data  = json.loads(path.read_text(encoding="utf-8"))
     count = 0
     # Occupancy grid may carry a top-level "zones" metadata block
     for zone in data.get("zones", []):
         zone_id = zone.get("zone_id", "")
+        touched = False
         if zone_id in name_map:
             zone["admin_name"] = name_map[zone_id]
+            touched = True
+        if zone_id in desc_map:
+            zone["admin_description"] = desc_map[zone_id]
+            touched = True
+        if touched:
             count += 1
     path.write_text(json.dumps(data, indent=2, ensure_ascii=False),
                     encoding="utf-8")

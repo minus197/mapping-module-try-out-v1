@@ -58,8 +58,14 @@ minus197_mapping/
     ├── README.md               this file
     ├── __init__.py
     ├── shop_name_ui.py         interactive CLI — reads SFM, writes _shop_names.json
+    ├── shop_name_gui.py        graphical click-to-name UI (title + description)
     └── shop_name_patcher.py    patches the three JSON outputs in-place
 ```
+
+Two front-ends write the **same** `{stem}_shop_names.json` and share the same
+patcher: the text CLI (`shop_name_ui.py`, `--admin-name`) and the graphical UI
+(`shop_name_gui.py`, `--admin-gui`). Use whichever you prefer — the GUI is easier
+because you *see* which zone you are naming instead of guessing from a code.
 
 ---
 
@@ -134,6 +140,57 @@ storage rooms, and offices are filtered out automatically.
 ──────────────────────────────────────────────────────────────
 ```
 
+### Graphical naming (`--admin-gui`) — recommended
+
+The CLI lists zones by their architect codes (`401`, `402`, `C4`) which are
+impossible to place by eye. The GUI draws the floor plan instead so you can
+**click the zone you mean** and give it a **title** and a **description**.
+
+```bash
+# As part of the pipeline
+python main.py --ifc data/ifc_files/mall_L1.ifc --floor L1 --admin-gui
+
+# Standalone against already-generated outputs
+python -m admin_naming.shop_name_gui \
+    --sfm data/outputs/mall_L1_sfm.json \
+    --output data/outputs/
+```
+
+The window shows the plan on the left (zones coloured by category, walls and
+features rendered by reusing `visualizer/map_visualizer.py`) and a control panel
+on the right:
+
+```
+┌─────────────────────────────┬──────────────────────────┐
+│                             │  mall_L1  ·  Floor L1     │
+│     floor plan (pan/zoom)   │  3 / 14 zones named       │
+│                             │  Filter: [________]       │
+│      ┌────┐   ┌─────┐       │  ┌──── zone list ──────┐  │
+│      │401 │   │ 402 │  ◀────┼─▶│ 401  shop   45  ✓   │  │
+│      └────┘   └─────┘       │  │ 402  unknown 62  —  │  │
+│         (click a zone)      │  └────────────────────┘  │
+│                             │  Title:       [________]  │
+│                             │  Description: [________]  │
+│                             │  [Save zone] [Clear]      │
+│                             │  [Save & Apply to outputs]│
+│                             │  [Save & Close] [Cancel]  │
+└─────────────────────────────┴──────────────────────────┘
+```
+
+- **Click a zone** on the map (or pick it from the list) → it highlights and the
+  form fills with any existing title/description.
+- Type a **Title** and **Description**, then **Save zone** (or press `Ctrl+S`).
+  The zone turns green ("named"), its label switches to the title, the counter
+  updates, and the file is **auto-saved immediately** (crash-safe).
+- **All zones** are nameable — including corridors — so nothing is unselectable.
+- Use the toolbar to **pan/zoom**; clicks are ignored while a pan/zoom tool is
+  active so you never name a zone by accident.
+- **Save & Apply to outputs** saves *and* runs the patcher; **Save & Close** just
+  saves the `_shop_names.json`.
+
+If the environment has no display (headless/SSH), the GUI prints a message and
+points you at the text CLI instead — nothing crashes.
+
 ### Step 4 — Re-running to update names
 
 If `{stem}_shop_names.json` already exists, the UI pre-fills every prompt with
@@ -168,18 +225,23 @@ The UI writes a single file per floor:
   "generated_at": "2026-06-26T10:30:00",
   "mappings": [
     {
-      "zone_id":    "0BGjw438P6JAPe2g$sDgcT",
-      "ifc_name":   "Z1",
-      "admin_name": "Starbucks"
+      "zone_id":           "0BGjw438P6JAPe2g$sDgcT",
+      "ifc_name":          "Z1",
+      "admin_name":        "Starbucks",
+      "admin_description": "Coffee shop near the east entrance"
     },
     {
-      "zone_id":    "2lyI2yiub9QBhgywjO7xcX",
-      "ifc_name":   "Z2",
-      "admin_name": "Zara"
+      "zone_id":           "2lyI2yiub9QBhgywjO7xcX",
+      "ifc_name":          "Z2",
+      "admin_name":        "Zara"
     }
   ]
 }
 ```
+
+`admin_description` is written by the **GUI** front-end. The text CLI omits it;
+the field is optional and every reader tolerates its absence, so files from
+either front-end interoperate.
 
 `zone_id` is the IFC **GlobalId** (the 22-character GUID on every `IfcSpace`).
 This is the globally unique, stable identifier assigned by the BIM tool. The
@@ -196,15 +258,17 @@ patcher leaves those zones unchanged.
 
 ### `{stem}_sfm.json`
 
-Each zone that has a mapping gains an `admin_name` field:
+Each zone that has a mapping gains an `admin_name` field (and `admin_description`
+when the GUI supplied one):
 
 ```json
 {
-  "zone_id":    "0BGjw438P6JAPe2g$sDgcT",
-  "ifc_name":   "Z1",
-  "name":       "Z1",
-  "long_name":  "Z1",
-  "admin_name": "Starbucks",
+  "zone_id":           "0BGjw438P6JAPe2g$sDgcT",
+  "ifc_name":          "Z1",
+  "name":              "Z1",
+  "long_name":         "Z1",
+  "admin_name":        "Starbucks",
+  "admin_description": "Coffee shop near the east entrance",
   ...
 }
 ```
@@ -220,8 +284,9 @@ two tag fields updated:
   "label":     "Starbucks",
   "node_type": "zone_centroid",
   "tags": {
-    "admin_label": "Starbucks",
-    "admin_name":  "Starbucks",
+    "admin_label":       "Starbucks",
+    "admin_name":        "Starbucks",
+    "admin_description": "Coffee shop near the east entrance",
     ...
   }
 }
