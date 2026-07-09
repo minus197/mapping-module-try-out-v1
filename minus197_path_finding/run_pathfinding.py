@@ -16,6 +16,10 @@ Run a route query:
 Run a route query by shop/admin name instead of node_id:
     python run_pathfinding.py --graph ../minus197_mapping/data/outputs/FLOOR_graph.json \\
         --from-name SINGER --to-name POPEYES
+
+Evaluate the found path (endpoint check — starts/ends at requested nodes):
+    python run_pathfinding.py --graph ../minus197_mapping/data/outputs/FLOOR_graph.json \\
+        --from-name SINGER --to-name POPEYES --evaluate
 """
 
 from __future__ import annotations
@@ -34,6 +38,7 @@ from shared.types import FloorGraph
 from pathfinding.engine import PathfindingEngine, to_feedback_json
 from pathfinding.search import build_nx_graph
 from pathfinding.cost import CostWeights, compute_edge_costs, normalise_landmark_scores
+from evaluation import EndpointEvaluator, EvaluationRunner
 
 
 def _no_wall_checker(x1: float, y1: float, x2: float, y2: float) -> bool:
@@ -90,6 +95,10 @@ def main() -> None:
     parser.add_argument(
         "--save-feedback", dest="save_feedback_path", default=None,
         help="Write the feedback-module action JSON to this file path",
+    )
+    parser.add_argument(
+        "--evaluate", action="store_true",
+        help="Run evaluation checks on the found path (e.g. endpoint check)",
     )
     args = parser.parse_args()
 
@@ -154,6 +163,17 @@ def main() -> None:
         with open(args.save_feedback_path, "w", encoding="utf-8") as f:
             f.write(feedback_json)
         print(f"\nSaved feedback JSON -> {args.save_feedback_path}")
+
+    if args.evaluate:
+        runner = EvaluationRunner([EndpointEvaluator()])
+        report = runner.run(result, start_id, dest_id)
+
+        print()
+        print("evaluation:")
+        for r in report.results:
+            status = "PASS" if r.passed else "FAIL"
+            print(f"  [{status}] {r.name}: {r.message}")
+        print(f"  overall: {'PASS' if report.all_passed() else 'FAIL'}")
 
 
 if __name__ == "__main__":
