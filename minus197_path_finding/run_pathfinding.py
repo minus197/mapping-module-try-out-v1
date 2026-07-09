@@ -87,6 +87,10 @@ def main() -> None:
         "--feedback-json", action="store_true",
         help="Also print the simplified feedback-module action JSON",
     )
+    parser.add_argument(
+        "--save-feedback", dest="save_feedback_path", default=None,
+        help="Write the feedback-module action JSON to this file path",
+    )
     args = parser.parse_args()
 
     with open(args.graph, encoding="utf-8") as f:
@@ -137,10 +141,19 @@ def main() -> None:
     for step in result.steps:
         print(f"  - {step.instruction}")
 
+    feedback_json = None
+    if args.feedback_json or args.save_feedback_path:
+        feedback_json = to_feedback_json(result)
+
     if args.feedback_json:
         print()
         print("feedback json:")
-        print(to_feedback_json(result))
+        print(feedback_json)
+
+    if args.save_feedback_path:
+        with open(args.save_feedback_path, "w", encoding="utf-8") as f:
+            f.write(feedback_json)
+        print(f"\nSaved feedback JSON -> {args.save_feedback_path}")
 
 
 if __name__ == "__main__":
