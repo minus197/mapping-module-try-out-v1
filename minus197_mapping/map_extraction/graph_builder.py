@@ -123,6 +123,8 @@ class GraphBuilder:
         # Raster — skeleton use only
         self._grid:       Optional[_Grid]    = None
         self._skel_graph: Optional[nx.Graph] = None
+        self._skel_nodes: List[Tuple[int, int]] = []
+        self._skel_tree:  Optional[KDTree]   = None
 
         # Shapely — exact geometry, no pixel error
         self._walkable:   Optional[object]   = None  # union of walkable zones
@@ -295,6 +297,19 @@ class GraphBuilder:
                                    weight=math.hypot(dr, dc) * self.res)
         self._skel_graph = G
 
+        # KDTree over skeleton pixel world-coordinates, so any node can be
+        # snapped to its nearest point on the walkable centreline. Used by
+        # _skeleton_route_distance() to measure true go-around walking
+        # distance between two nodes when a straight line is blocked.
+        self._skel_nodes = list(G.nodes())
+        if self._skel_nodes:
+            skel_world = np.array(
+                [g.grid_to_world(r, c) for (r, c) in self._skel_nodes]
+            ) if (g := self._grid) else np.empty((0, 2))
+            self._skel_tree = KDTree(skel_world) if len(skel_world) else None
+        else:
+            self._skel_tree = None
+
     # ── Step 3: skeletonise → junction nodes ─────────────────────────────────
 
     def _skeletonise(self) -> None:
@@ -388,12 +403,12 @@ class GraphBuilder:
                     continue
                 edge_ids_seen.add(eid)
 
-                # ── Distance (Shapely exact) ──────────────────────────────────
-                exact_dist = _exact_walkable_distance(
-                    src.position, tgt.position, self._walkable, d_straight
+                # ── Distance (straight-if-walkable, else skeleton route) ──────
+                exact_dist = self._edge_distance(
+                    src.position, tgt.position, d_straight
                 )
                 if exact_dist is None:
-                    continue   # edge crosses a wall with no walkable segment
+                    continue   # edge crosses a wall with no walkable route
 
                 # ── Safety score (Shapely exact clearance) ────────────────────
                 safety_score = self._shapely_clearance(
@@ -477,16 +492,16 @@ class GraphBuilder:
             src = node_by_id[a_id]
             tgt = node_by_id[b_id]
 
-            exact_dist = _exact_walkable_distance(
-                src.position, tgt.position, self._walkable, d_straight
+            exact_dist = self._edge_distance(
+                src.position, tgt.position, d_straight
             )
             if exact_dist is None:
-                # No walkable line between the two closest nodes of these
-                # components — merge them anyway to avoid an infinite loop,
-                # but skip adding a (physically invalid) edge.
+                # No walkable route (straight OR around obstacles) between the
+                # two closest nodes of these components — merge them anyway to
+                # avoid an infinite loop, but skip a physically invalid edge.
                 print(f"[GraphBuilder]   WARNING: nearest pair "
                       f"{a_id} <-> {b_id} ({d_straight:.1f} m) has no "
-                      f"walkable line — components left unbridged.")
+                      f"walkable route — components left unbridged.")
                 comp_lists[i].extend(comp_lists[j])
                 del comp_lists[j]
                 continue
@@ -516,6 +531,69 @@ class GraphBuilder:
 
         print(f"[GraphBuilder] Connectivity repair added {bridges_added} "
               f"bridge edge(s).")
+
+    # ── Skeleton routing (true go-around distance) ────────────────────────────
+
+    def _skeleton_route_distance(
+        self,
+        p1: Point2D,
+        p2: Point2D,
+    ) -> Optional[float]:
+        """
+        True walkable distance between p1 and p2 by routing along the
+        medial-axis skeleton (the walkable centreline), so the path goes
+        AROUND obstacles instead of straight through them.
+
+        Snaps each endpoint to its nearest skeleton pixel, then runs
+        Dijkstra on the pixel graph (edge weights already in metres).
+        Adds the small snap offsets at each end.
+
+        Returns None if either endpoint cannot be snapped or no skeleton
+        path exists.
+        """
+        if self._skel_tree is None or self._skel_graph is None:
+            return None
+
+        try:
+            d1, i1 = self._skel_tree.query(p1)
+            d2, i2 = self._skel_tree.query(p2)
+            src = self._skel_nodes[i1]
+            dst = self._skel_nodes[i2]
+            if src == dst:
+                return max(float(d1 + d2), 0.05)
+            path_len = nx.dijkstra_path_length(
+                self._skel_graph, src, dst, weight="weight"
+            )
+            return float(d1) + float(path_len) + float(d2)
+        except (nx.NetworkXNoPath, nx.NodeNotFound, IndexError, ValueError):
+            return None
+
+    def _edge_distance(
+        self,
+        p1: Point2D,
+        p2: Point2D,
+        d_straight: float,
+    ) -> Optional[float]:
+        """
+        Best walkable distance for an edge p1→p2:
+
+          1. If the straight segment is (near) fully walkable → d_straight.
+          2. Otherwise route around obstacles along the skeleton.
+          3. If neither yields a path → None (edge dropped).
+
+        The returned distance is never less than the straight-line distance,
+        which is a hard geometric lower bound for any real walking path.
+        """
+        straight = _exact_walkable_distance(
+            p1, p2, self._walkable, d_straight
+        )
+        if straight is not None:
+            return straight
+
+        routed = self._skeleton_route_distance(p1, p2)
+        if routed is None:
+            return None
+        return max(routed, d_straight)
 
     # ── Shapely scoring helpers (Option A — no raster) ────────────────────────
 
@@ -670,13 +748,35 @@ def _exact_walkable_distance(
     d_straight: float,
 ) -> Optional[float]:
     """
-    Exact walkable distance between p1 and p2 via Shapely.
+    Straight-line walking distance between p1 and p2, but only for edges
+    whose straight segment is (almost) entirely inside the walkable area.
 
-      - Fully inside walkable area  → exact Euclidean (zero error)
-      - Partially inside            → length of walkable intersection
-      - No walkable intersection    → None  (edge is blocked)
+    Rationale
+    ---------
+    A direct edge is only meaningful when a person can walk in a straight
+    line between the two nodes. If the straight segment leaves the walkable
+    area (clips a shop, crosses a non-walkable gap), the two nodes are NOT
+    directly connected — the real route detours through intermediate
+    junction nodes, which the skeleton already provides as separate edges.
+
+    So this returns:
+      - d_straight  when the segment is (essentially) fully walkable
+      - None        when a meaningful fraction of the segment is blocked
+                    (edge dropped; router uses intermediate junctions)
+
+    A previous version returned the *length of the walkable intersection*
+    for partially-blocked segments. That was a bug: the walkable fraction
+    of a straight line (e.g. 0.1 m of a 32 m span) is not a walking
+    distance, and storing it made long cross-floor edges look almost free,
+    which corrupted shortest-path costs. A real walkable path can never be
+    SHORTER than the straight line, so any value < d_straight is invalid.
+
+    WALKABLE_MIN_FRACTION — how much of the straight segment must lie inside
+    the walkable area for the edge to be accepted as a direct connection.
     """
     MIN_DIST = 0.05
+    WALKABLE_MIN_FRACTION = 0.98   # ≥98% of the segment must be walkable
+
     if walkable is None:
         return max(d_straight, MIN_DIST)
     if d_straight < MIN_DIST:
@@ -686,7 +786,7 @@ def _exact_walkable_distance(
         line = LineString([p1, p2])
 
         if walkable.contains(line):
-            return d_straight          # fastest path, zero clipping needed
+            return d_straight          # fully walkable — exact Euclidean
 
         intersection = walkable.intersection(line)
         if intersection.is_empty:
@@ -694,16 +794,23 @@ def _exact_walkable_distance(
 
         gtype = intersection.geom_type
         if gtype == "LineString":
-            dist = intersection.length
+            walkable_len = intersection.length
         elif gtype == "MultiLineString":
-            dist = sum(seg.length for seg in intersection.geoms)
+            walkable_len = sum(seg.length for seg in intersection.geoms)
         elif gtype == "GeometryCollection":
-            dist = sum(g.length for g in intersection.geoms
-                       if "Line" in g.geom_type)
+            walkable_len = sum(g.length for g in intersection.geoms
+                               if "Line" in g.geom_type)
         else:
-            dist = 0.0
+            walkable_len = 0.0
 
-        return max(dist, MIN_DIST) if dist > 0 else None
+        # Accept only near-fully-walkable segments; otherwise the nodes are
+        # not directly connected and the edge must be dropped so the router
+        # detours through intermediate junctions. Never return a value below
+        # the straight-line distance — that is geometrically impossible for a
+        # real walking path.
+        if walkable_len >= WALKABLE_MIN_FRACTION * d_straight:
+            return d_straight
+        return None
 
     except Exception:
         return max(d_straight, MIN_DIST)
