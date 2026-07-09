@@ -1,0 +1,76 @@
+[
+  {
+    "action": "continue",
+    "distance": 8
+  },
+  {
+    "action": "turn",
+    "direction": "right",
+    "distance": 6
+  },
+  {
+    "action": "turn",
+    "direction": "right",
+    "distance": 7
+  },
+  {
+    "action": "turn",
+    "direction": "left",
+    "distance": 7
+  },
+  {
+    "action": "turn",
+    "direction": "left",
+    "distance": 12
+  },
+  {
+    "action": "turn",
+    "direction": "right",
+    "distance": 0
+  },
+  {
+    "action": "turn",
+    "direction": "left",
+    "distance": 11
+  },
+  {
+    "action": "continue",
+    "distance": 0
+  },
+  {
+    "action": "continue",
+    "distance": 11
+  },
+  {
+    "action": "continue",
+    "distance": 0
+  },
+  {
+    "action": "continue",
+    "distance": 11
+  },
+  {
+    "action": "turn",
+    "direction": "right",
+    "distance": 0
+  },
+  {
+    "action": "turn",
+    "direction": "left",
+    "distance": 16
+  },
+  {
+    "action": "turn",
+    "direction": "right",
+    "distance": 0
+  },
+  {
+    "action": "turn",
+    "direction": "left",
+    "distance": 8
+  },
+  {
+    "action": "stop",
+    "landmark": "EXIT"
+  }
+]
