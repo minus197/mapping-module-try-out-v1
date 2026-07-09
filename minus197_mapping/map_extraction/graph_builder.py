@@ -58,6 +58,9 @@ SHORE_FRACTION  = 0.40   # fraction of edge sample points that must be shore-lin
 LANDMARK_RADIUS = 3.0    # m — landmark within this radius of an edge boosts score
 MAX_EDGES       = 6      # max edges per node (zone centroids use 4)
 MAX_CLEARANCE   = 2.0    # m — clearance at or above this → safety_score = 1.0
+MAX_SEARCH_R    = 100.0  # m — hard cap on neighbour search radius (was 20.0;
+                         # too low for wide plazas, left corridor clusters
+                         # unreachable from each other — see _connect_components)
 
 WALKABLE_CATEGORIES: Set[str] = {
     "corridor", "entrance", "exit", "shop",
@@ -140,6 +143,9 @@ class GraphBuilder:
 
         print("[GraphBuilder] Building edges (Shapely exact distances) ...")
         self._build_edges()
+
+        print("[GraphBuilder] Checking graph connectivity ...")
+        self._connect_components()
 
         graph = FloorGraph(
             floor_label = self.sfm.floor_label,
@@ -356,7 +362,7 @@ class GraphBuilder:
         search_r = min(
             math.hypot(bb["max_x"] - bb["min_x"],
                        bb["max_y"] - bb["min_y"]),
-            20.0,
+            MAX_SEARCH_R,
         )
 
         lm_nodes = [nd for nd in nodes
@@ -418,6 +424,98 @@ class GraphBuilder:
                         "straight_dist":  str(round(d_straight,  4)),
                     },
                 ))
+
+    # ── Step 5: connectivity repair ───────────────────────────────────────────
+
+    def _connect_components(self) -> None:
+        """
+        Bridge any disconnected components left over after _build_edges().
+
+        The KDTree neighbour search only considers nodes within search_r of
+        each other, so two clusters of nodes farther apart than that (e.g.
+        across a very wide plaza) can end up with no edge between them even
+        though a walkable path exists. This pass finds the nearest pair of
+        nodes across each remaining pair of components and adds a bridging
+        edge if — and only if — Shapely confirms a walkable connection.
+        """
+        nodes = self._nodes
+        if not nodes:
+            return
+
+        G = nx.Graph()
+        G.add_nodes_from(nd.node_id for nd in nodes)
+        for e in self._edges:
+            G.add_edge(e.source_id, e.target_id)
+
+        components = list(nx.connected_components(G))
+        if len(components) <= 1:
+            return
+
+        print(f"[GraphBuilder] Found {len(components)} disconnected "
+              f"components — attempting to bridge ...")
+
+        node_by_id  = {nd.node_id: nd for nd in nodes}
+        # Union-find style: merge components as bridges are added, so a
+        # bridge chain (A-B, B-C) also connects A to C in the same pass.
+        comp_lists  = [list(c) for c in components]
+
+        bridges_added = 0
+        while len(comp_lists) > 1:
+            best = None  # (dist, i, j, src_id, tgt_id)
+            for i in range(len(comp_lists)):
+                for j in range(i + 1, len(comp_lists)):
+                    for a_id in comp_lists[i]:
+                        a_pos = node_by_id[a_id].position
+                        for b_id in comp_lists[j]:
+                            d = _euclidean(a_pos, node_by_id[b_id].position)
+                            if best is None or d < best[0]:
+                                best = (d, i, j, a_id, b_id)
+
+            if best is None:
+                break
+            d_straight, i, j, a_id, b_id = best
+            src = node_by_id[a_id]
+            tgt = node_by_id[b_id]
+
+            exact_dist = _exact_walkable_distance(
+                src.position, tgt.position, self._walkable, d_straight
+            )
+            if exact_dist is None:
+                # No walkable line between the two closest nodes of these
+                # components — merge them anyway to avoid an infinite loop,
+                # but skip adding a (physically invalid) edge.
+                print(f"[GraphBuilder]   WARNING: nearest pair "
+                      f"{a_id} <-> {b_id} ({d_straight:.1f} m) has no "
+                      f"walkable line — components left unbridged.")
+                comp_lists[i].extend(comp_lists[j])
+                del comp_lists[j]
+                continue
+
+            eid = _canonical_edge_id(src.node_id, tgt.node_id)
+            self._edges.append(NavigationEdge(
+                edge_id        = eid,
+                source_id      = src.node_id,
+                target_id      = tgt.node_id,
+                distance       = round(float(exact_dist), 4),
+                shore_linable  = self._shapely_shore_fraction(
+                    src.position, tgt.position) >= SHORE_FRACTION,
+                safety_score   = round(float(self._shapely_clearance(
+                    src.position, tgt.position)), 4),
+                landmark_score = 0.0,
+                tags           = {
+                    "straight_dist": str(round(d_straight, 4)),
+                    "bridge_edge":   "true",
+                },
+            ))
+            bridges_added += 1
+            print(f"[GraphBuilder]   Bridged {src.node_id} <-> "
+                  f"{tgt.node_id} ({exact_dist:.1f} m)")
+
+            comp_lists[i].extend(comp_lists[j])
+            del comp_lists[j]
+
+        print(f"[GraphBuilder] Connectivity repair added {bridges_added} "
+              f"bridge edge(s).")
 
     # ── Shapely scoring helpers (Option A — no raster) ────────────────────────
 
