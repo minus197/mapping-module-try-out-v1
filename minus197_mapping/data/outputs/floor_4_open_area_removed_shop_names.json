@@ -1,0 +1,13 @@
+{
+  "source_stem": "floor_4_open_area_removed",
+  "floor_label": "L4",
+  "generated_at": "2026-07-10T10:23:37",
+  "mappings": [
+    {
+      "zone_id": "1i$2JbPrrAMOUePJPoCKpR",
+      "ifc_name": "C4",
+      "admin_name": "Corridor",
+      "admin_description": ""
+    }
+  ]
+}
