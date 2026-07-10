@@ -34,6 +34,11 @@ Usage
     # Save straight to PNG instead of opening a window
     python visualizer/map_visualizer.py floor_4_sankha_spaces --save floor4.png
 
+    # Render the standard 5-image progression (zones/features, +nodes,
+    # +shore-linable edges, +width&safety edges, +both edge kinds) straight
+    # into the visualizer/ folder
+    python visualizer/map_visualizer.py floor_4_sankha_spaces --stages
+
     # List available prefixes in the output dir and exit
     python visualizer/map_visualizer.py --list
 """
@@ -195,7 +200,42 @@ def draw_features(ax, sfm):
                    edgecolors="black", linewidths=0.4, zorder=7)
 
 
-def draw_edges(ax, graph):
+def draw_edges_shorelinable(ax, graph):
+    """Edge layer emphasising the shore-linable flag: shore-linable edges in
+    blue, all others thin and grey. Line width is constant (flag-only view)."""
+    pos = {n["node_id"]: n["position"] for n in graph.get("nodes", [])}
+    for e in graph.get("edges", []):
+        a = pos.get(e["source_id"])
+        b = pos.get(e["target_id"])
+        if a is None or b is None:
+            continue
+        shore = e.get("shore_linable", False)
+        ax.plot([a[0], b[0]], [a[1], b[1]],
+                color="#1e88e5" if shore else "#9e9e9e",
+                linewidth=1.8 if shore else 0.6,
+                alpha=0.9 if shore else 0.75,
+                zorder=4.5 if shore else 4, solid_capstyle="round")
+
+
+def draw_edges_width_safety(ax, graph):
+    """Edge layer emphasising width/safety: line width scales with the
+    edge's safety_score, coloured uniformly (safety-only view)."""
+    pos = {n["node_id"]: n["position"] for n in graph.get("nodes", [])}
+    for e in graph.get("edges", []):
+        a = pos.get(e["source_id"])
+        b = pos.get(e["target_id"])
+        if a is None or b is None:
+            continue
+        safety = float(e.get("safety_score", 0.5))
+        ax.plot([a[0], b[0]], [a[1], b[1]],
+                color="#43a047",
+                linewidth=0.6 + 1.8 * safety,
+                alpha=0.75, zorder=4, solid_capstyle="round")
+
+
+def draw_edges_combined(ax, graph):
+    """Edge layer combining both: colour by shore-linable flag, width by
+    safety score. This is the original behaviour, kept for the 'all' image."""
     pos = {n["node_id"]: n["position"] for n in graph.get("nodes", [])}
     for e in graph.get("edges", []):
         a = pos.get(e["source_id"])
@@ -234,7 +274,15 @@ def build_legend(ax, layers_drawn):
         handles.append(Line2D([0], [0], color="#555555", lw=1.5, label="wall"))
         handles.append(Line2D([0], [0], color="#1565c0", lw=1.8,
                               label="wall (shore-linable)"))
-    if "edges" in layers_drawn:
+    if "edges_shorelinable" in layers_drawn:
+        handles.append(Line2D([0], [0], color="#9e9e9e", lw=0.6,
+                              label="edge"))
+        handles.append(Line2D([0], [0], color="#1e88e5", lw=1.8,
+                              label="edge (shore-linable)"))
+    if "edges_width_safety" in layers_drawn:
+        handles.append(Line2D([0], [0], color="#43a047", lw=1.8,
+                              label="edge (width ∝ safety)"))
+    if "edges_combined" in layers_drawn:
         handles.append(Line2D([0], [0], color="#9e9e9e", lw=1.5,
                               label="edge (width ∝ safety)"))
         handles.append(Line2D([0], [0], color="#1e88e5", lw=1.8,
@@ -253,49 +301,61 @@ def build_legend(ax, layers_drawn):
 
 # ── Orchestration ──────────────────────────────────────────────────────────────
 
-def visualize(prefix, out_dir, want, save_path=None):
+def load_artefacts(prefix, out_dir, want_occupancy):
+    """Load sfm/graph/occupancy JSON for a prefix and report their state."""
     paths = resolve_paths(prefix, out_dir)
     sfm = _load(paths["sfm"])
     graph = _load(paths["graph"])
-    occ = _load(paths["occupancy"]) if want["occupancy"] else None
+    occ = _load(paths["occupancy"]) if want_occupancy else None
 
     if sfm is None and graph is None:
         sys.exit(f"No _sfm.json or _graph.json found for prefix '{prefix}' "
                  f"in {out_dir}. Try --list to see available prefixes.")
 
-    # Report what was found / skipped.
     for key, data in (("sfm", sfm), ("graph", graph)):
         state = "loaded" if data is not None else "MISSING"
         print(f"  {paths[key].name:<45} {state}")
-    if want["occupancy"]:
+    if want_occupancy:
         state = "loaded" if occ is not None else "MISSING"
         print(f"  {paths['occupancy'].name:<45} {state}")
 
+    return sfm, graph, occ
+
+
+def render_figure(prefix, sfm, graph, occ, want, title_suffix=""):
+    """Build one Matplotlib figure/axes for the requested layer combination.
+
+    `want` keys: occupancy, zones, walls, features, nodes,
+    edges_shorelinable, edges_width_safety, edges_combined.
+    Returns the created Figure.
+    """
     fig, ax = plt.subplots(figsize=(15, 9))
     layers_drawn = set()
 
-    if occ is not None:
+    if occ is not None and want.get("occupancy"):
         draw_occupancy(ax, occ)
         layers_drawn.add("occupancy")
 
     if sfm is not None:
-        if want["zones"]:
+        if want.get("zones"):
             draw_zones(ax, sfm); layers_drawn.add("zones")
-        if want["walls"]:
+        if want.get("walls"):
             draw_walls(ax, sfm); layers_drawn.add("walls")
-        if want["features"]:
+        if want.get("features"):
             draw_features(ax, sfm); layers_drawn.add("features")
 
     if graph is not None:
-        if want["edges"]:
-            draw_edges(ax, graph); layers_drawn.add("edges")
-        if want["nodes"]:
+        # width/safety drawn before shore-linable so the shore-linable
+        # highlight (drawn on top) stays visible when both layers are on.
+        if want.get("edges_width_safety"):
+            draw_edges_width_safety(ax, graph); layers_drawn.add("edges_width_safety")
+        if want.get("edges_shorelinable"):
+            draw_edges_shorelinable(ax, graph); layers_drawn.add("edges_shorelinable")
+        if want.get("edges_combined"):
+            draw_edges_combined(ax, graph); layers_drawn.add("edges_combined")
+        if want.get("nodes"):
             draw_nodes(ax, graph); layers_drawn.add("nodes")
 
-    # Stats banner from whatever metadata is available.
-    meta_src = (sfm or graph or {})
-    bbox = meta_src.get("bounding_box") or (graph or {}).get(
-        "spatial_meta", {}).get("bounding_box", {})
     n_zones = len(sfm.get("zones", [])) if sfm else 0
     n_walls = len(sfm.get("walls", [])) if sfm else 0
     n_feats = len(sfm.get("features", [])) if sfm else 0
@@ -304,6 +364,8 @@ def visualize(prefix, out_dir, want, save_path=None):
 
     title = (f"{prefix}   |   zones={n_zones}  walls={n_walls}  "
              f"features={n_feats}  nodes={n_nodes}  edges={n_edges}")
+    if title_suffix:
+        title += f"   |   {title_suffix}"
     ax.set_title(title, fontsize=11)
     ax.set_xlabel("X (metres, IFC project frame)")
     ax.set_ylabel("Y (metres, IFC project frame)")
@@ -312,6 +374,21 @@ def visualize(prefix, out_dir, want, save_path=None):
 
     build_legend(ax, layers_drawn)
     fig.tight_layout()
+    return fig
+
+
+def visualize(prefix, out_dir, want, save_path=None):
+    sfm, graph, occ = load_artefacts(prefix, out_dir, want["occupancy"])
+
+    render_want = {
+        "occupancy": want["occupancy"],
+        "zones": want["zones"],
+        "walls": want["walls"],
+        "features": want["features"],
+        "nodes": want["nodes"],
+        "edges_combined": want["edges"],
+    }
+    fig = render_figure(prefix, sfm, graph, occ, render_want)
 
     if save_path:
         fig.savefig(save_path, dpi=150, bbox_inches="tight")
@@ -319,6 +396,62 @@ def visualize(prefix, out_dir, want, save_path=None):
     else:
         print("\nOpening interactive window (close it to exit)...")
         plt.show()
+    plt.close(fig)
+
+
+# The five standard stages, in order: each dict is the `want` layer selection
+# for render_figure, and each tuple also carries the output filename suffix
+# and a human title suffix.
+STAGES = [
+    (
+        "1_zones_features",
+        "Zones + features (no nodes/edges)",
+        {"zones": True, "walls": True, "features": True},
+    ),
+    (
+        "2_zones_features_nodes",
+        "Zones + features + nodes (no edges)",
+        {"zones": True, "walls": True, "features": True, "nodes": True},
+    ),
+    (
+        "3_edges_shorelinable",
+        "Zones + features + nodes + edges (shore-linable)",
+        {"zones": True, "walls": True, "features": True, "nodes": True,
+         "edges_shorelinable": True},
+    ),
+    (
+        "4_edges_width_safety",
+        "Zones + features + nodes + edges (width & safety)",
+        {"zones": True, "walls": True, "features": True, "nodes": True,
+         "edges_width_safety": True},
+    ),
+    (
+        "5_all_edges",
+        "Zones + features + nodes + edges (shore-linable + width & safety)",
+        {"zones": True, "walls": True, "features": True, "nodes": True,
+         "edges_shorelinable": True, "edges_width_safety": True},
+    ),
+]
+
+
+def render_stages(prefix, out_dir, save_dir, occupancy=False):
+    """Render the 5 standard progression images and save them into save_dir."""
+    sfm, graph, occ = load_artefacts(prefix, out_dir, occupancy)
+    save_dir.mkdir(parents=True, exist_ok=True)
+
+    saved = []
+    for suffix, title_suffix, want in STAGES:
+        render_want = dict(want)
+        render_want["occupancy"] = occupancy
+        fig = render_figure(prefix, sfm, graph, occ, render_want,
+                             title_suffix=title_suffix)
+        out_path = save_dir / f"{prefix}_stage{suffix}.png"
+        fig.savefig(out_path, dpi=150, bbox_inches="tight")
+        plt.close(fig)
+        print(f"  Saved -> {out_path}")
+        saved.append(out_path)
+
+    return saved
 
 
 def main():
@@ -339,6 +472,11 @@ def main():
     parser.add_argument("--no-nodes",    action="store_true", help="Hide graph nodes")
     parser.add_argument("--save", default=None,
                         help="Save to this PNG path instead of showing a window")
+    parser.add_argument("--stages", action="store_true",
+                        help="Render the 5 standard progressive images "
+                             "(zones/features -> +nodes -> +shore-linable "
+                             "edges -> +width&safety edges -> +both) and "
+                             "save them into the visualizer/ folder")
     parser.add_argument("--list", action="store_true",
                         help="List available prefixes in the output dir and exit")
     args = parser.parse_args()
@@ -360,6 +498,14 @@ def main():
     if not args.prefix:
         parser.error("a prefix is required (or use --list). "
                      "e.g. python visualizer/map_visualizer.py floor_4_sankha_spaces")
+
+    if args.stages:
+        visualizer_dir = Path(__file__).resolve().parent
+        print(f"Rendering 5-stage progression for prefix '{args.prefix}' "
+              f"from {out_dir}")
+        render_stages(args.prefix, out_dir, visualizer_dir,
+                      occupancy=args.occupancy)
+        return
 
     want = {
         "occupancy": args.occupancy,
