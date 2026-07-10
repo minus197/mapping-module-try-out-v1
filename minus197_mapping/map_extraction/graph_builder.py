@@ -492,45 +492,104 @@ class GraphBuilder:
             src = node_by_id[a_id]
             tgt = node_by_id[b_id]
 
-            exact_dist = self._edge_distance(
-                src.position, tgt.position, d_straight
-            )
-            if exact_dist is None:
+            bridged = self._bridge_via_waypoints(src, tgt, d_straight, node_by_id)
+            if bridged:
+                bridges_added += 1
+            else:
                 # No walkable route (straight OR around obstacles) between the
                 # two closest nodes of these components — merge them anyway to
-                # avoid an infinite loop, but skip a physically invalid edge.
+                # avoid an infinite loop, but leave them physically unbridged.
                 print(f"[GraphBuilder]   WARNING: nearest pair "
                       f"{a_id} <-> {b_id} ({d_straight:.1f} m) has no "
                       f"walkable route — components left unbridged.")
-                comp_lists[i].extend(comp_lists[j])
-                del comp_lists[j]
-                continue
-
-            eid = _canonical_edge_id(src.node_id, tgt.node_id)
-            self._edges.append(NavigationEdge(
-                edge_id        = eid,
-                source_id      = src.node_id,
-                target_id      = tgt.node_id,
-                distance       = round(float(exact_dist), 4),
-                shore_linable  = self._shapely_shore_fraction(
-                    src.position, tgt.position) >= SHORE_FRACTION,
-                safety_score   = round(float(self._shapely_clearance(
-                    src.position, tgt.position)), 4),
-                landmark_score = 0.0,
-                tags           = {
-                    "straight_dist": str(round(d_straight, 4)),
-                    "bridge_edge":   "true",
-                },
-            ))
-            bridges_added += 1
-            print(f"[GraphBuilder]   Bridged {src.node_id} <-> "
-                  f"{tgt.node_id} ({exact_dist:.1f} m)")
 
             comp_lists[i].extend(comp_lists[j])
             del comp_lists[j]
 
         print(f"[GraphBuilder] Connectivity repair added {bridges_added} "
-              f"bridge edge(s).")
+              f"bridge chain(s).")
+
+    def _bridge_via_waypoints(
+        self,
+        src:         NavigationNode,
+        tgt:         NavigationNode,
+        d_straight:  float,
+        node_by_id:  Dict[str, NavigationNode],
+    ) -> bool:
+        """
+        Connect src → tgt with STRAIGHT edges only.
+
+        If the straight line src→tgt is walkable, add a single straight edge.
+        Otherwise trace the skeleton polyline between them, insert its interior
+        corners as real junction nodes, and chain them with straight edges so
+        every edge remains a genuine straight walkable segment. Returns True if
+        a chain was added, False if no walkable route exists.
+        """
+        # Case 1 — straight line already walkable: one straight edge.
+        if _exact_walkable_distance(
+            src.position, tgt.position, self._walkable, d_straight
+        ) is not None:
+            self._add_bridge_edge(src, tgt)
+            print(f"[GraphBuilder]   Bridged {src.node_id} <-> "
+                  f"{tgt.node_id} (straight, {d_straight:.1f} m)")
+            return True
+
+        # Case 2 — detour around obstacles via materialised waypoints.
+        waypoints = self._skeleton_route_waypoints(src.position, tgt.position)
+        if waypoints is None:
+            return False
+
+        chain: List[NavigationNode] = [src]
+        for (wx, wy) in waypoints:
+            wp_id = f"WP-{len(self._nodes):04d}"
+            wp = NavigationNode(
+                node_id   = wp_id,
+                label     = f"Waypoint ({wx:.1f},{wy:.1f})",
+                position  = (wx, wy),
+                node_type = "junction",
+                zone_id   = self._zone_id_at(wx, wy),
+                tags      = {"waypoint": "true"},
+            )
+            self._add_node(wp)
+            node_by_id[wp_id] = wp
+            chain.append(wp)
+        chain.append(tgt)
+
+        added_any = False
+        for a, b in zip(chain, chain[1:]):
+            if _exact_walkable_distance(
+                a.position, b.position, self._walkable,
+                _euclidean(a.position, b.position)
+            ) is not None:
+                self._add_bridge_edge(a, b)
+                added_any = True
+        if added_any:
+            print(f"[GraphBuilder]   Bridged {src.node_id} <-> "
+                  f"{tgt.node_id} via {len(waypoints)} waypoint(s)")
+        return added_any
+
+    def _add_bridge_edge(
+        self,
+        src: NavigationNode,
+        tgt: NavigationNode,
+    ) -> None:
+        """Add a single straight bridge edge with exact-straight distance."""
+        d = _euclidean(src.position, tgt.position)
+        self._edges.append(NavigationEdge(
+            edge_id        = _canonical_edge_id(src.node_id, tgt.node_id),
+            source_id      = src.node_id,
+            target_id      = tgt.node_id,
+            distance       = round(float(d), 4),
+            shore_linable  = self._shapely_shore_fraction(
+                src.position, tgt.position) >= SHORE_FRACTION,
+            safety_score   = round(float(self._shapely_clearance(
+                src.position, tgt.position)), 4),
+            landmark_score = 0.0,
+            tags           = {
+                "straight_dist": str(round(d, 4)),
+                "bridge_edge":   "true",
+            },
+        ))
 
     # ── Skeleton routing (true go-around distance) ────────────────────────────
 
@@ -568,6 +627,57 @@ class GraphBuilder:
         except (nx.NetworkXNoPath, nx.NodeNotFound, IndexError, ValueError):
             return None
 
+    def _skeleton_route_waypoints(
+        self,
+        p1: Point2D,
+        p2: Point2D,
+    ) -> Optional[List[Point2D]]:
+        """
+        Ordered list of world-coordinate waypoints tracing the walkable
+        centreline from p1 to p2, going AROUND obstacles.
+
+        Unlike _skeleton_route_distance (which returns only a scalar), this
+        returns the actual polyline so the caller can materialise it as real
+        intermediate junction nodes joined by STRAIGHT edges. That keeps the
+        graph invariant "one edge == one straight walkable segment", which
+        the turn-by-turn instruction layer relies on (bearing is computed
+        from the straight line between an edge's endpoints).
+
+        The raw pixel path is simplified with Shapely's Douglas–Peucker so
+        only genuine corners survive — collinear runs collapse to a single
+        straight segment. Returns None if no skeleton path exists.
+        """
+        if self._skel_tree is None or self._skel_graph is None:
+            return None
+        g = self._grid
+        if g is None:
+            return None
+
+        try:
+            _, i1 = self._skel_tree.query(p1)
+            _, i2 = self._skel_tree.query(p2)
+            src = self._skel_nodes[i1]
+            dst = self._skel_nodes[i2]
+            if src == dst:
+                return None
+            pixel_path = nx.dijkstra_path(
+                self._skel_graph, src, dst, weight="weight"
+            )
+        except (nx.NetworkXNoPath, nx.NodeNotFound, IndexError, ValueError):
+            return None
+
+        world_pts = [g.grid_to_world(r, c) for (r, c) in pixel_path]
+        if len(world_pts) < 2:
+            return None
+
+        # Simplify to corner waypoints (Douglas–Peucker, ~0.5 m tolerance).
+        simplified = LineString(world_pts).simplify(0.5, preserve_topology=False)
+        coords = list(simplified.coords)
+        # Drop the first/last if they coincide with p1/p2 (the real endpoints
+        # are added by the caller); keep only the interior corners.
+        interior = coords[1:-1] if len(coords) >= 2 else []
+        return [(round(x, 3), round(y, 3)) for (x, y) in interior]
+
     def _edge_distance(
         self,
         p1: Point2D,
@@ -575,25 +685,22 @@ class GraphBuilder:
         d_straight: float,
     ) -> Optional[float]:
         """
-        Best walkable distance for an edge p1→p2:
+        Walkable distance for a DIRECT edge p1→p2.
 
-          1. If the straight segment is (near) fully walkable → d_straight.
-          2. Otherwise route around obstacles along the skeleton.
-          3. If neither yields a path → None (edge dropped).
+        A direct edge must be a straight walkable segment, because the
+        instruction layer derives its bearing from the straight line between
+        the edge's endpoints. If the straight line is (near) fully walkable,
+        the distance is the straight-line length; otherwise there is no valid
+        direct edge and None is returned (the router must detour through
+        intermediate junction nodes, which _connect_components materialises).
 
-        The returned distance is never less than the straight-line distance,
-        which is a hard geometric lower bound for any real walking path.
+        NOTE: this deliberately does NOT fall back to a skeleton go-around
+        distance. Doing so produced edges whose stored distance (long, curved)
+        disagreed with their bearing (straight), which sent turn-by-turn
+        traces off-map. Go-around connectivity is handled by materialising
+        real waypoint nodes instead — see _connect_components.
         """
-        straight = _exact_walkable_distance(
-            p1, p2, self._walkable, d_straight
-        )
-        if straight is not None:
-            return straight
-
-        routed = self._skeleton_route_distance(p1, p2)
-        if routed is None:
-            return None
-        return max(routed, d_straight)
+        return _exact_walkable_distance(p1, p2, self._walkable, d_straight)
 
     # ── Shapely scoring helpers (Option A — no raster) ────────────────────────
 
