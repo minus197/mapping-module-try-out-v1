@@ -4,7 +4,7 @@
     "floor_label": "L4",
     "zone_count": 13,
     "wall_count": 57,
-    "feature_count": 14
+    "feature_count": 12
   },
   "bounding_box": {
     "min_x": -105.7689,
@@ -1613,30 +1613,6 @@
       "position": [
         -93.38343644909332,
         37.90696572808482
-      ],
-      "zone_id": "1i$2JbPrrAMOUePJPoCKpR",
-      "priority": 2
-    },
-    {
-      "feature_id": "26jjhu0DH0Lxf54dTa$Ko9",
-      "ifc_guid": "26jjhu0DH0Lxf54dTa$Ko9",
-      "name": "Door-Passage-Single-Vision_Lite:36\" x 84\":1240525",
-      "feature_type": "door",
-      "position": [
-        -87.88343644909344,
-        37.94863239475147
-      ],
-      "zone_id": "1i$2JbPrrAMOUePJPoCKpR",
-      "priority": 2
-    },
-    {
-      "feature_id": "26jjhu0DH0Lxf54dTa$KoA",
-      "ifc_guid": "26jjhu0DH0Lxf54dTa$KoA",
-      "name": "Door-Passage-Single-Vision_Lite:36\" x 84\":1240526",
-      "feature_type": "door",
-      "position": [
-        -82.91468644909344,
-        33.65696572808482
       ],
       "zone_id": "1i$2JbPrrAMOUePJPoCKpR",
       "priority": 2
