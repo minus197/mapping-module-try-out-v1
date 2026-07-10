@@ -67,6 +67,17 @@ WALKABLE_CATEGORIES: Set[str] = {
     "food_court", "restroom", "office", "storage", "unknown",
 }
 
+# Categories whose interior forms the walkable *circulation network*.
+# The medial-axis skeleton — and therefore every "junction" node it
+# produces — is derived ONLY from these zones. Shops, rooms, offices,
+# storage, etc. are still walkable (they stay in WALKABLE_CATEGORIES so
+# edges may reach their centroids/doors), but junction nodes are never
+# placed inside them or at their corners. This is what keeps junctions on
+# corridor centrelines and out of shop interiors/corners.
+CIRCULATION_CATEGORIES: Set[str] = {
+    "corridor", "entrance", "exit",
+}
+
 # ---------------------------------------------------------------------------
 # Internal raster grid helper (skeleton only)
 # ---------------------------------------------------------------------------
@@ -215,6 +226,11 @@ class GraphBuilder:
         origin_y = bb["min_y"] - pad * self.res
 
         # ── A: Raster grid (skeleton only) ────────────────────────────────────
+        # The grid feeds the medial-axis skeleton, whose branch/end points
+        # become "junction" nodes. To keep junctions on corridor centrelines
+        # (and OUT of shop interiors and off shop corners), the grid is
+        # rasterised ONLY from circulation zones. Shops/rooms still contribute
+        # to the Shapely walkable union below so edges can still reach them.
         grid         = np.zeros((rows, cols), dtype=np.uint8)
         shapely_polys: List[object] = []
 
@@ -224,15 +240,17 @@ class GraphBuilder:
             if len(zone.boundary_polygon) < 3:
                 continue
 
-            # Rasterise
-            poly_rows = [int((py - origin_y) / self.res)
-                         for _, py in zone.boundary_polygon]
-            poly_cols = [int((px - origin_x) / self.res)
-                         for px, _ in zone.boundary_polygon]
-            rr, cc = sk_polygon(poly_rows, poly_cols, shape=grid.shape)
-            grid[rr, cc] = 1
+            # Rasterise — circulation zones only (skeleton source)
+            if zone.category in CIRCULATION_CATEGORIES:
+                poly_rows = [int((py - origin_y) / self.res)
+                             for _, py in zone.boundary_polygon]
+                poly_cols = [int((px - origin_x) / self.res)
+                             for px, _ in zone.boundary_polygon]
+                rr, cc = sk_polygon(poly_rows, poly_cols, shape=grid.shape)
+                grid[rr, cc] = 1
 
-            # Shapely polygon for exact geometry
+            # Shapely polygon for exact geometry — ALL walkable zones, so
+            # edges to shop/room centroids and doors remain valid.
             try:
                 sp = Polygon(zone.boundary_polygon).buffer(0)
                 if sp.is_valid and sp.area > 0:
