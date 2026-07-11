@@ -62,6 +62,28 @@ MAX_SEARCH_R    = 100.0  # m — hard cap on neighbour search radius (was 20.0;
                          # too low for wide plazas, left corridor clusters
                          # unreachable from each other — see _connect_components)
 
+# Walls come from the SFM as centreline segments (no thickness). They are
+# treated as hard obstacles: an edge whose straight segment crosses any wall
+# line is rejected (requirement: "no edge should penetrate walls"). The wall
+# lines are buffered by this half-thickness so near-parallel grazing edges are
+# also caught.
+WALL_BUFFER     = 0.05   # m — half-thickness applied to wall centrelines
+# IFC wall centrelines run UNBROKEN behind door openings (the door is a
+# separate element). To let edges pass through a doorway without being counted
+# as wall penetration, a disc of this radius is punched out of the wall
+# obstacle at every door / vertical-connector node — modelling the opening.
+DOOR_GAP_RADIUS = 1.10   # m — radius of the opening cut into walls at each door
+# Door / vertical-connector nodes sit *in* a wall opening, so an edge leaving
+# such a node necessarily starts on the wall line. Endpoints within this radius
+# of a node are exempt from the wall-crossing test so a door's own doorway does
+# not block its edges.
+DOOR_WALL_TOL   = 0.60   # m — endpoint exemption radius around door/vertical nodes
+# Medial-axis junctions can land exactly on a wall corner/endpoint, so the wall
+# they sit on grazes every edge leaving them. Exempt a short stub at a junction
+# endpoint (much smaller than the door tolerance, so it only clears the node's
+# own contact point, never a mid-edge crossing).
+JUNC_WALL_TOL   = 0.25   # m — endpoint exemption radius around junction nodes
+
 WALKABLE_CATEGORIES: Set[str] = {
     "corridor", "entrance", "exit", "shop",
     "food_court", "restroom", "office", "storage", "unknown",
@@ -131,6 +153,12 @@ class GraphBuilder:
         self._edges:     List[NavigationEdge] = []
         self._node_map:  Dict[str, NavigationNode] = {}
 
+        # Edge bookkeeping — populated in _build_edges(), also used by the
+        # connectivity-repair bridge helpers.
+        self._edge_ids_seen:      Set[str]       = set()
+        self._edge_degree:        Dict[str, int] = {}
+        self._landmark_positions: Optional[np.ndarray] = None
+
         # Raster — skeleton use only
         self._grid:       Optional[_Grid]    = None
         self._skel_graph: Optional[nx.Graph] = None
@@ -140,6 +168,7 @@ class GraphBuilder:
         # Shapely — exact geometry, no pixel error
         self._walkable:   Optional[object]   = None  # union of walkable zones
         self._wall_union: Optional[object]   = None  # zone perimeters buffered
+        self._wall_obst:  Optional[object]   = None  # wall centrelines as obstacles
 
     # ── Public ────────────────────────────────────────────────────────────────
 
@@ -287,6 +316,37 @@ class GraphBuilder:
         else:
             self._wall_union = None
 
+        # ── Wall obstacle geometry ────────────────────────────────────────────
+        # Walls are centreline segments from the SFM. Treat them as hard
+        # obstacles: any edge whose straight segment crosses a wall is rejected
+        # (requirement: "no edge should penetrate walls"). Buffer each wall line
+        # by WALL_BUFFER so near-parallel grazing edges are also caught.
+        wall_lines: List[object] = []
+        for wall in self.sfm.walls:
+            try:
+                if _euclidean(wall.start, wall.end) < 1e-6:
+                    continue
+                wall_lines.append(LineString([wall.start, wall.end]))
+            except Exception:
+                pass
+        if wall_lines:
+            wall_obst = unary_union(wall_lines).buffer(WALL_BUFFER)
+            # IFC wall centrelines run unbroken behind door openings. Punch a
+            # disc out of the wall obstacle at every door / vertical-connector
+            # so edges may pass through a doorway without being flagged as wall
+            # penetration.
+            gaps: List[object] = []
+            for feat in self.sfm.features:
+                if _feat_to_node_type(feat.feature_type) in (
+                    "door", "elevator", "escalator", "stair"
+                ):
+                    gaps.append(Point(feat.position).buffer(DOOR_GAP_RADIUS))
+            if gaps:
+                wall_obst = wall_obst.difference(unary_union(gaps))
+            self._wall_obst = wall_obst
+        else:
+            self._wall_obst = None
+
         # ── Medial axis + skeleton graph ──────────────────────────────────────
         skel, dist = medial_axis(grid, return_distance=True)
 
@@ -376,13 +436,19 @@ class GraphBuilder:
 
     def _build_edges(self) -> None:
         """
-        Connect nodes with weighted edges.  All four scores use exact
-        Shapely geometry — no raster sampling.
+        Connect nodes with weighted edges under the node-type connection rules
+        (see _types_may_connect) and the no-wall-penetration rule.
 
-        distance       — Shapely exact walkable distance (mean error < 3 cm)
-        safety_score   — mean clearance along edge via Shapely boundary distance
-        shore_linable  — fraction of edge inside shore buffer via Shapely
-        landmark_score — landmarks within LANDMARK_RADIUS of any edge point
+        An edge from src→tgt is added only when ALL of the following hold:
+          * the src/tgt node types are allowed to connect (rules 3-7)
+          * the straight segment does not penetrate a wall  (rule 1)
+          * the straight segment is walkable end-to-end
+
+        All four scores use exact Shapely geometry — no raster sampling.
+
+        A final pass guarantees every node ends up with at least one edge
+        (rule 2), attaching any orphan to its nearest rule-legal, wall-free,
+        walkable neighbour.
         """
         nodes = self._nodes
         if not nodes:
@@ -401,62 +467,119 @@ class GraphBuilder:
         lm_nodes = [nd for nd in nodes
                     if nd.node_type in ("elevator", "escalator",
                                         "stair", "landmark", "door")]
-        landmark_positions = (np.array([nd.position for nd in lm_nodes])
-                              if lm_nodes else None)
+        self._landmark_positions = (np.array([nd.position for nd in lm_nodes])
+                                    if lm_nodes else None)
 
-        edge_ids_seen: Set[str] = set()
+        self._edge_ids_seen: Set[str] = set()
+        # node_id -> count of edges incident, so the orphan pass can find nodes
+        # left without any connection.
+        self._edge_degree: Dict[str, int] = {nd.node_id: 0 for nd in nodes}
 
         for i, src in enumerate(nodes):
             indices    = tree.query_ball_point(src.position, r=search_r)
+            # Rank candidate neighbours by distance, keeping only those whose
+            # node type is permitted to connect to src.
             neighbours = sorted(
-                [(_euclidean(src.position, nodes[j].position), j)
-                 for j in indices if j != i]
+                (_euclidean(src.position, nodes[j].position), j)
+                for j in indices
+                if j != i and _types_may_connect(src, nodes[j])
             )
             max_neigh = 4 if src.node_type == "zone_centroid" else MAX_EDGES
 
-            for d_straight, j in neighbours[:max_neigh]:
-                tgt = nodes[j]
-                eid = _canonical_edge_id(src.node_id, tgt.node_id)
-                if eid in edge_ids_seen:
-                    continue
-                edge_ids_seen.add(eid)
+            added = 0
+            for d_straight, j in neighbours:
+                if added >= max_neigh:
+                    break
+                if self._try_add_edge(src, nodes[j], d_straight):
+                    added += 1
 
-                # ── Distance (straight-if-walkable, else skeleton route) ──────
-                exact_dist = self._edge_distance(
-                    src.position, tgt.position, d_straight
-                )
-                if exact_dist is None:
-                    continue   # edge crosses a wall with no walkable route
+        # ── Rule 2: no node left without an edge ──────────────────────────────
+        self._attach_orphan_nodes(tree, nodes, search_r)
 
-                # ── Safety score (Shapely exact clearance) ────────────────────
-                safety_score = self._shapely_clearance(
-                    src.position, tgt.position
-                )
+    def _try_add_edge(
+        self,
+        src: NavigationNode,
+        tgt: NavigationNode,
+        d_straight: float,
+    ) -> bool:
+        """
+        Add a single edge src→tgt if it is rule-legal, wall-free and walkable.
+        Returns True if an edge was added (or already existed), False otherwise.
+        Caller is responsible for having checked _types_may_connect.
+        """
+        eid = _canonical_edge_id(src.node_id, tgt.node_id)
+        if eid in self._edge_ids_seen:
+            return True   # already connected — counts as connected
 
-                # ── Shore fraction (Shapely exact) ────────────────────────────
-                shore_frac    = self._shapely_shore_fraction(
-                    src.position, tgt.position
-                )
-                shore_linable = shore_frac >= SHORE_FRACTION
+        # ── Rule 1: reject edges that penetrate a wall ────────────────────────
+        if self._edge_crosses_wall(src, tgt):
+            return False
 
-                # ── Landmark score (Euclidean sample — already exact) ─────────
-                landmark_score = self._landmark_score(
-                    src.position, tgt.position, landmark_positions
-                )
+        # ── Distance: must be a straight walkable segment ─────────────────────
+        exact_dist = self._edge_distance(src.position, tgt.position, d_straight)
+        if exact_dist is None:
+            return False   # not walkable straight-line
 
-                self._edges.append(NavigationEdge(
-                    edge_id        = eid,
-                    source_id      = src.node_id,
-                    target_id      = tgt.node_id,
-                    distance       = round(float(exact_dist),    4),
-                    shore_linable  = shore_linable,
-                    safety_score   = round(float(safety_score),  4),
-                    landmark_score = round(float(landmark_score), 4),
-                    tags           = {
-                        "shore_fraction": str(round(shore_frac,  3)),
-                        "straight_dist":  str(round(d_straight,  4)),
-                    },
-                ))
+        self._edge_ids_seen.add(eid)
+        self._edge_degree[src.node_id] += 1
+        self._edge_degree[tgt.node_id] += 1
+
+        safety_score = self._shapely_clearance(src.position, tgt.position)
+        shore_frac   = self._shapely_shore_fraction(src.position, tgt.position)
+        landmark_score = self._landmark_score(
+            src.position, tgt.position, self._landmark_positions
+        )
+
+        self._edges.append(NavigationEdge(
+            edge_id        = eid,
+            source_id      = src.node_id,
+            target_id      = tgt.node_id,
+            distance       = round(float(exact_dist),    4),
+            shore_linable  = shore_frac >= SHORE_FRACTION,
+            safety_score   = round(float(safety_score),  4),
+            landmark_score = round(float(landmark_score), 4),
+            tags           = {
+                "shore_fraction": str(round(shore_frac,  3)),
+                "straight_dist":  str(round(d_straight,  4)),
+            },
+        ))
+        return True
+
+    def _attach_orphan_nodes(
+        self,
+        tree: KDTree,
+        nodes: List[NavigationNode],
+        search_r: float,
+    ) -> None:
+        """
+        Rule 2: every node must be connected to at least one edge.
+
+        Any node left with zero edges after the main pass is attached to its
+        nearest rule-legal, wall-free, walkable neighbour. Candidates are tried
+        in ascending distance order, so the shortest valid connection wins.
+
+        A node can still remain unconnected if NO rule-legal wall-free walkable
+        neighbour exists (e.g. a shop centroid whose zone has no door node); we
+        warn rather than break rules 1/3-7 to force an edge.
+        """
+        for i, src in enumerate(nodes):
+            if self._edge_degree[src.node_id] > 0:
+                continue
+            indices    = tree.query_ball_point(src.position, r=search_r)
+            neighbours = sorted(
+                (_euclidean(src.position, nodes[j].position), j)
+                for j in indices
+                if j != i and _types_may_connect(src, nodes[j])
+            )
+            connected = False
+            for d_straight, j in neighbours:
+                if self._try_add_edge(src, nodes[j], d_straight):
+                    connected = True
+                    break
+            if not connected:
+                print(f"[GraphBuilder]   WARNING: node {src.node_id} "
+                      f"({src.node_type}) has no rule-legal, wall-free, "
+                      f"walkable neighbour — left unconnected.")
 
     # ── Step 5: connectivity repair ───────────────────────────────────────────
 
@@ -498,13 +621,23 @@ class GraphBuilder:
             for i in range(len(comp_lists)):
                 for j in range(i + 1, len(comp_lists)):
                     for a_id in comp_lists[i]:
-                        a_pos = node_by_id[a_id].position
+                        a_node = node_by_id[a_id]
+                        a_pos  = a_node.position
                         for b_id in comp_lists[j]:
-                            d = _euclidean(a_pos, node_by_id[b_id].position)
+                            b_node = node_by_id[b_id]
+                            # Only bridge across rule-legal endpoint pairs, so
+                            # connectivity repair never creates a forbidden
+                            # centroid-centroid / door-door / centroid-junction
+                            # link (rules 3,6,7).
+                            if not _types_may_connect(a_node, b_node):
+                                continue
+                            d = _euclidean(a_pos, b_node.position)
                             if best is None or d < best[0]:
                                 best = (d, i, j, a_id, b_id)
 
             if best is None:
+                # No rule-legal cross-component pair remains; nothing more we
+                # can legally bridge.
                 break
             d_straight, i, j, a_id, b_id = best
             src = node_by_id[a_id]
@@ -543,8 +676,8 @@ class GraphBuilder:
         every edge remains a genuine straight walkable segment. Returns True if
         a chain was added, False if no walkable route exists.
         """
-        # Case 1 — straight line already walkable: one straight edge.
-        if _exact_walkable_distance(
+        # Case 1 — straight line already walkable AND wall-free: one edge.
+        if (not self._edge_crosses_wall(src, tgt)) and _exact_walkable_distance(
             src.position, tgt.position, self._walkable, d_straight
         ) is not None:
             self._add_bridge_edge(src, tgt)
@@ -575,7 +708,7 @@ class GraphBuilder:
 
         added_any = False
         for a, b in zip(chain, chain[1:]):
-            if _exact_walkable_distance(
+            if (not self._edge_crosses_wall(a, b)) and _exact_walkable_distance(
                 a.position, b.position, self._walkable,
                 _euclidean(a.position, b.position)
             ) is not None:
@@ -592,9 +725,12 @@ class GraphBuilder:
         tgt: NavigationNode,
     ) -> None:
         """Add a single straight bridge edge with exact-straight distance."""
+        eid = _canonical_edge_id(src.node_id, tgt.node_id)
+        if eid in self._edge_ids_seen:
+            return
         d = _euclidean(src.position, tgt.position)
         self._edges.append(NavigationEdge(
-            edge_id        = _canonical_edge_id(src.node_id, tgt.node_id),
+            edge_id        = eid,
             source_id      = src.node_id,
             target_id      = tgt.node_id,
             distance       = round(float(d), 4),
@@ -608,6 +744,9 @@ class GraphBuilder:
                 "bridge_edge":   "true",
             },
         ))
+        self._edge_ids_seen.add(eid)
+        self._edge_degree[src.node_id] = self._edge_degree.get(src.node_id, 0) + 1
+        self._edge_degree[tgt.node_id] = self._edge_degree.get(tgt.node_id, 0) + 1
 
     # ── Skeleton routing (true go-around distance) ────────────────────────────
 
@@ -720,6 +859,51 @@ class GraphBuilder:
         """
         return _exact_walkable_distance(p1, p2, self._walkable, d_straight)
 
+    def _edge_crosses_wall(
+        self,
+        src: NavigationNode,
+        tgt: NavigationNode,
+    ) -> bool:
+        """
+        True if the straight segment src→tgt penetrates a wall.
+
+        Door and vertical-connector nodes sit inside a wall opening, so an edge
+        leaving such a node necessarily touches the wall line at its endpoint.
+        To avoid rejecting a door's own doorway edge, the portion of the segment
+        within DOOR_WALL_TOL of a door/vertical endpoint is exempt: we test only
+        the trimmed interior of the segment against the wall obstacle.
+        """
+        if self._wall_obst is None:
+            return False
+
+        p1 = np.array(src.position, dtype=float)
+        p2 = np.array(tgt.position, dtype=float)
+        seg_len = float(np.hypot(*(p2 - p1)))
+        if seg_len < 1e-6:
+            return False
+
+        unit = (p2 - p1) / seg_len
+        t0, t1 = 0.0, seg_len
+        # Trim a stub at each endpoint so the wall a door/junction physically
+        # sits on doesn't count as a penetration. Doors get a wider exemption
+        # (they span a real opening); junctions only a small one (they may
+        # merely graze a wall corner).
+        tol_src = _endpoint_wall_tol(src)
+        tol_tgt = _endpoint_wall_tol(tgt)
+        if tol_src:
+            t0 = min(tol_src, seg_len)
+        if tol_tgt:
+            t1 = max(seg_len - tol_tgt, t0)
+        if t1 - t0 < 1e-6:
+            return False   # whole segment inside the endpoint tolerances
+
+        a = p1 + unit * t0
+        b = p1 + unit * t1
+        try:
+            return LineString([tuple(a), tuple(b)]).intersects(self._wall_obst)
+        except Exception:
+            return False
+
     # ── Shapely scoring helpers (Option A — no raster) ────────────────────────
 
     def _shapely_clearance(
@@ -827,6 +1011,88 @@ class GraphBuilder:
 # ---------------------------------------------------------------------------
 # Module-level utility functions
 # ---------------------------------------------------------------------------
+
+# ---------------------------------------------------------------------------
+# Node-type connection rules
+# ---------------------------------------------------------------------------
+#
+# Every node is placed into one of three connection classes:
+#
+#   "centroid" — zone_centroid (the interior point of a room/shop)
+#   "door"     — door + vertical connectors (elevator/escalator/stair); these
+#                are the access points on a room/zone boundary
+#   "junction" — junction (corridor centreline waypoints)
+#   "landmark" — landmarks (benches, info desks …)
+#
+# The permitted edges between classes (symmetric) are:
+#
+#   centroid — door        (rule 3: a centroid connects ONLY to its own doors)
+#   door     — junction    (rule 4)
+#   junction — junction    (rule 5)
+#   landmark — junction     (landmarks attach to the circulation network)
+#
+# Explicitly forbidden:
+#   centroid — junction    (rule 3)
+#   door     — door        (rule 6)
+#   centroid — centroid    (rule 7)
+#
+def _node_class(node: NavigationNode) -> str:
+    node_type = node.node_type
+    if node_type == "zone_centroid":
+        # A corridor/circulation zone's centroid is part of the walkable
+        # circulation network, not an enclosed room — treat it like a junction
+        # so it wires into the corridor spine (rules 3/7 target room/shop
+        # centroids, which stay class "centroid" and reach only their doors).
+        if node.tags.get("category") in CIRCULATION_CATEGORIES:
+            return "junction"
+        return "centroid"
+    if node_type in ("door", "elevator", "escalator", "stair"):
+        return "door"
+    if node_type == "junction":
+        return "junction"
+    return "landmark"
+
+
+# Symmetric adjacency table of permitted class pairs.
+_ALLOWED_CLASS_PAIRS: Set[frozenset] = {
+    frozenset({"centroid", "door"}),
+    frozenset({"door", "junction"}),
+    frozenset({"junction", "junction"}),
+    frozenset({"landmark", "junction"}),
+}
+
+
+def _types_may_connect(a: NavigationNode, b: NavigationNode) -> bool:
+    """
+    True if an edge between nodes a and b is permitted by the node-type rules
+    (rules 3-7).
+
+    Note on "own door" (rule 3): doors in the IFC are geometrically assigned to
+    the corridor zone, not to the room they serve, so zone_id cannot identify a
+    room's own door. Instead, ownership is enforced GEOMETRICALLY: a door punches
+    an opening in its room's wall, so a straight wall-free line exists from the
+    room centroid to that door but NOT to any other room's door (which would
+    have to cross this room's wall). The wall-crossing test in _edge_crosses_wall
+    therefore restricts each centroid to its own door(s) on its own.
+    """
+    ca, cb = _node_class(a), _node_class(b)
+    return frozenset({ca, cb}) in _ALLOWED_CLASS_PAIRS
+
+
+def _endpoint_wall_tol(node: NavigationNode) -> float:
+    """
+    Length of segment stub (m) to exempt from the wall-crossing test at an
+    endpoint of this node. Doors/vertical connectors span a real wall opening
+    (wide exemption); junctions may only graze a wall corner (small exemption);
+    everything else gets none.
+    """
+    cls = _node_class(node)
+    if cls == "door":
+        return DOOR_WALL_TOL
+    if cls == "junction":
+        return JUNC_WALL_TOL
+    return 0.0
+
 
 def _feat_to_node_type(feature_type: str) -> str:
     return {
