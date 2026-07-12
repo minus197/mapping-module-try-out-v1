@@ -1,0 +1,39 @@
+[
+  {
+    "action": "continue",
+    "distance": 6,
+    "node_id": "ZONE-2H1fgGRlD5k8YRFrovf7Qo",
+    "position": [
+      -16.9355,
+      -24.3635
+    ]
+  },
+  {
+    "action": "continue",
+    "distance": 39,
+    "node_id": "FEAT-26jjhu0DH0Lxf54dTa$KoH",
+    "position": [
+      -17.6334,
+      -18.7202
+    ]
+  },
+  {
+    "action": "turn",
+    "direction": "right",
+    "distance": 14,
+    "node_id": "SKE-0014",
+    "position": [
+      -17.069,
+      20.529
+    ]
+  },
+  {
+    "action": "stop",
+    "landmark": "ODEL",
+    "node_id": "ZONE-2aQOv7Awv2XAeFI_6R_KbE",
+    "position": [
+      -2.2689,
+      31.5919
+    ]
+  }
+]
