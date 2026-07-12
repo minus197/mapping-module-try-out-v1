@@ -1,0 +1,79 @@
+[
+  {
+    "action": "continue",
+    "distance": 6,
+    "node_id": "ZONE-37u8JI5e1DzuzHo5nRFQEL",
+    "position": [
+      -99.1672,
+      31.2663
+    ]
+  },
+  {
+    "action": "turn",
+    "direction": "left",
+    "distance": 6,
+    "node_id": "FEAT-26jjhu0DH0Lxf54dTa$KoK",
+    "position": [
+      -93.8834,
+      28.584
+    ]
+  },
+  {
+    "action": "turn",
+    "direction": "right",
+    "distance": 8,
+    "node_id": "SKE-0028",
+    "position": [
+      -88.869,
+      31.229
+    ]
+  },
+  {
+    "action": "turn",
+    "direction": "left",
+    "distance": 84,
+    "node_id": "SKE-0019",
+    "position": [
+      -88.769,
+      22.929
+    ]
+  },
+  {
+    "action": "continue",
+    "distance": 50,
+    "node_id": "FEAT-26jjhu0DH0Lxf54dTa$KoN",
+    "position": [
+      -4.5501,
+      25.9486
+    ]
+  },
+  {
+    "action": "turn",
+    "direction": "right",
+    "distance": 23,
+    "node_id": "SKE-0015",
+    "position": [
+      44.731,
+      21.029
+    ]
+  },
+  {
+    "action": "turn",
+    "direction": "left",
+    "distance": 55,
+    "node_id": "SKE-0010",
+    "position": [
+      46.731,
+      -2.271
+    ]
+  },
+  {
+    "action": "stop",
+    "landmark": "EXIT",
+    "node_id": "ZONE-07ws35hnz3mP6mOcSCf7VJ",
+    "position": [
+      107.2962,
+      -5.3192
+    ]
+  }
+]
