@@ -9,8 +9,11 @@ Single-floor:
 Single-floor with destination query:
     python main.py --ifc data/ifc_files/mall_L1.ifc --floor L1 --query "food court"
 
-Single-floor with admin shop naming:
+Single-floor with admin shop naming (text CLI):
     python main.py --ifc data/ifc_files/mall_L1.ifc --floor L1 --admin-name
+
+Single-floor with admin shop naming (click-to-name GUI):
+    python main.py --ifc data/ifc_files/mall_L1.ifc --floor L1 --admin-gui
 
 Multi-floor (one IFC per floor, floors in order bottom→top):
     python main.py \\
@@ -44,7 +47,9 @@ def main():
     parser.add_argument("--no-save",    action="store_true",
                         help="Do not save output JSON files")
     parser.add_argument("--admin-name", action="store_true",
-                        help="Launch interactive shop-naming UI after saving outputs")
+                        help="Launch the text-based shop-naming CLI after saving outputs")
+    parser.add_argument("--admin-gui",  action="store_true",
+                        help="Launch the graphical click-to-name UI after saving outputs")
     args = parser.parse_args()
 
     ifc_paths    = args.ifc
@@ -79,6 +84,12 @@ def main():
             from admin_naming.shop_name_ui import run_ui
             run_ui(sfm_path=sfm_path, output_dir=OUTPUT_DIR)
 
+        if args.admin_gui and not args.no_save:
+            stem     = Path(ifc_paths[0]).stem
+            sfm_path = Path(OUTPUT_DIR) / f"{stem}_sfm.json"
+            from admin_naming.shop_name_gui import run_gui
+            run_gui(sfm_path=sfm_path, output_dir=OUTPUT_DIR)
+
     # ── Multi-floor ───────────────────────────────────────────────────────────
     else:
         floors_spec = [
@@ -102,6 +113,15 @@ def main():
                 if sfm_path.exists():
                     print(f"\n[AdminNaming] Floor {floor_label} ({stem})")
                     run_ui(sfm_path=sfm_path, output_dir=OUTPUT_DIR)
+
+        if args.admin_gui and not args.no_save:
+            from admin_naming.shop_name_gui import run_gui
+            for ifc_path, floor_label, _ in floors_spec:
+                stem     = Path(ifc_path).stem
+                sfm_path = Path(OUTPUT_DIR) / f"{stem}_sfm.json"
+                if sfm_path.exists():
+                    print(f"\n[AdminNamingGUI] Floor {floor_label} ({stem})")
+                    run_gui(sfm_path=sfm_path, output_dir=OUTPUT_DIR)
 
 
 if __name__ == "__main__":

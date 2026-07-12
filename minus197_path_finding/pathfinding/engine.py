@@ -248,6 +248,11 @@ def to_feedback_json(result: PathResult) -> str:
         phrase = _first_sentence(step.instruction)   # e.g. "Turn left"
         dist_m = round(step.distance)
 
+        # The node at which the action is performed. turn/continue are acted
+        # at the node the user is standing on (from_node); the final stop is
+        # acted at the destination/landmark node reached (to_node).
+        anchor = step.to_node if is_last else step.from_node
+
         if is_last:
             landmark = (
                 step.to_node.tags.get("admin_label", "").strip()
@@ -259,6 +264,11 @@ def to_feedback_json(result: PathResult) -> str:
             action = {"action": "turn", "direction": direction, "distance": dist_m}
         else:
             action = {"action": "continue", "distance": dist_m}
+
+        # World coordinates in metres — see NavigationNode.position.
+        action["node_id"] = anchor.node_id
+        action["position"] = [round(anchor.position[0], 4),
+                              round(anchor.position[1], 4)]
 
         actions.append(action)
 

@@ -20,6 +20,9 @@ sentence-transformers>=2.2.0 # MiniLM node resolution (Sprint 5)
 # ── Fuzzy matching (lightweight fallback) ────────────────────────────────────
 rapidfuzz>=3.0.0             # Tier-2 destination resolution (Sprint 5)
 
+# ── Visualization (standalone inspector, not used by the pipeline) ───────────
+matplotlib>=3.7.0            # visualizer/map_visualizer.py
+
 # ── Dev / test ───────────────────────────────────────────────────────────────
 pytest>=7.4.0
 pytest-cov>=4.1.0
