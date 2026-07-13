@@ -588,9 +588,9 @@
     },
     {
       "node_id": "SKE-0006",
-      "label": "Junction (95.9,-4.7)",
+      "label": "Junction (95.8,-4.7)",
       "position": [
-        95.931,
+        95.831,
         -4.671
       ],
       "node_type": "junction",
@@ -1442,13 +1442,13 @@
       "edge_id": "EDGE-FEAT-0NrdkfQ69FhA8iVi0WZ06j-SKE-0006",
       "source_id": "FEAT-0NrdkfQ69FhA8iVi0WZ06j",
       "target_id": "SKE-0006",
-      "distance": 5.9845,
+      "distance": 6.0802,
       "shore_linable": false,
       "safety_score": 1.0,
       "landmark_score": 0.3333,
       "tags": {
         "shore_fraction": "0.1",
-        "straight_dist": "5.9845"
+        "straight_dist": "6.0802"
       }
     },
     {
@@ -1572,13 +1572,13 @@
       "edge_id": "EDGE-SKE-0004-SKE-0006",
       "source_id": "SKE-0004",
       "target_id": "SKE-0006",
-      "distance": 8.4853,
+      "distance": 8.5563,
       "shore_linable": false,
       "safety_score": 1.0,
       "landmark_score": 0.0,
       "tags": {
         "shore_fraction": "0.2",
-        "straight_dist": "8.4853"
+        "straight_dist": "8.5563"
       }
     },
     {
@@ -1611,26 +1611,26 @@
       "edge_id": "EDGE-SKE-0006-SKE-0007",
       "source_id": "SKE-0006",
       "target_id": "SKE-0007",
-      "distance": 8.5563,
+      "distance": 8.6267,
       "shore_linable": false,
       "safety_score": 1.0,
       "landmark_score": 0.0,
       "tags": {
         "shore_fraction": "0.2",
-        "straight_dist": "8.5563"
+        "straight_dist": "8.6267"
       }
     },
     {
       "edge_id": "EDGE-SKE-0005-SKE-0006",
       "source_id": "SKE-0006",
       "target_id": "SKE-0005",
-      "distance": 42.9,
+      "distance": 42.8,
       "shore_linable": false,
       "safety_score": 1.0,
       "landmark_score": 0.0,
       "tags": {
         "shore_fraction": "0.0",
-        "straight_dist": "42.9"
+        "straight_dist": "42.8"
       }
     },
     {
