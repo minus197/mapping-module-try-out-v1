@@ -26,6 +26,34 @@ Definition (as specified by the requirement)
          the building / not inside a corridor, so it is rejected).
 4. No edges are produced — this layer is purely a set of node positions.
 
+Per-node search circle (added on top of the basic layer)
+--------------------------------------------------------
+For every path node two extra pieces of information are computed:
+
+  * ``nearest_wall_dist_m`` (x) — the TRUE distance from the node's position
+    to the nearest wall, recomputed by geometry rather than assumed equal to
+    the node's stored ``gap_m``::
+
+        x(node) = min over all walls in sfm.walls of
+                  distance(node.position, wall_segment)
+
+    In most cases x ≈ PATH_GAP_M (the node's own gap). Only near a dead end /
+    corner — where the wall capping the corridor in front of the node is
+    closer than the wall it shore-lines along — does x come out smaller.
+
+  * ``search_circle`` — a circle of radius 2·x centred on the node. Every
+    non-circulation zone (rooms / shops) and every feature (doors + landmarks
+    such as staircases / elevators / washrooms) whose boundary falls inside
+    this circle is reported with:
+        - ``node_id``          — the graph node id (ZONE-<id> / FEAT-<id>),
+        - ``perp_dist_m``      — perpendicular distance from the path node to
+                                 the target's boundary (for a point-only
+                                 target this equals the centroid distance),
+        - ``centroid_dist_m``  — distance from the path node to the target's
+                                 centroid.
+    A target without a boundary polygon (doors and point-only landmarks) is
+    matched on, and measured to, its centroid.
+
 Method
 ------
 For every wall segment:
@@ -46,7 +74,7 @@ from __future__ import annotations
 
 import json
 import math
-from dataclasses import dataclass
+from dataclasses import dataclass, field
 from pathlib import Path
 from typing import Dict, List, Optional, Tuple
 
@@ -87,20 +115,52 @@ CIRCULATION_CATEGORIES = {"corridor", "entrance", "exit"}
 # ---------------------------------------------------------------------------
 
 @dataclass
+class SearchHit:
+    """
+    One zone / feature whose boundary falls inside a path node's search circle.
+
+    A target without a boundary polygon (doors, point-only landmarks) is
+    matched on its centroid, and ``perp_dist_m`` then equals ``centroid_dist_m``.
+    """
+    node_id:         str    # graph node id of the target (ZONE-<id> / FEAT-<id>)
+    kind:            str    # "zone" | "feature"
+    perp_dist_m:     float  # perpendicular distance node → target boundary
+    centroid_dist_m: float  # distance node → target centroid
+
+    def to_dict(self) -> Dict[str, object]:
+        return {
+            "node_id":         self.node_id,
+            "kind":            self.kind,
+            "perp_dist_m":     round(float(self.perp_dist_m), 4),
+            "centroid_dist_m": round(float(self.centroid_dist_m), 4),
+        }
+
+
+@dataclass
 class PathNode:
     """One cane-trailing waypoint offset PATH_GAP_M from a wall."""
     node_id:   str
     position:  Point2D
     wall_id:   str        # the wall this node shore-lines against
     gap_m:     float      # actual gap to the wall (≈ PATH_GAP_M)
+    # Populated by PathNodeBuilder._annotate() after de-duplication.
+    nearest_wall_dist_m: float = 0.0          # x — true nearest-wall distance
+    search_hits: List["SearchHit"] = field(default_factory=list)
 
     def to_dict(self) -> Dict[str, object]:
+        # x is the true nearest-wall distance; the search circle has radius 2·x.
+        x = self.nearest_wall_dist_m
         return {
             "node_id":  self.node_id,
             "position": [round(float(self.position[0]), 4),
                          round(float(self.position[1]), 4)],
             "wall_id":  self.wall_id,
             "gap_m":    round(float(self.gap_m), 4),
+            "nearest_wall_dist_m": round(float(x), 4),
+            "search_circle": {
+                "radius_m": round(float(2.0 * x), 4),
+                "hits":     [h.to_dict() for h in self.search_hits],
+            },
         }
 
 
@@ -127,6 +187,8 @@ class PathNodeBuilder:
         self._nodes: List[PathNode] = []
         self._corridor: Optional[object] = None   # Shapely corridor union
         self._wall_obst: Optional[object] = None   # all wall lines buffered
+        self._wall_lines: List[object] = []        # per-wall LineStrings (for x)
+        self._targets: List["_Target"] = []        # search-circle candidates
 
     # ── Public build / save ───────────────────────────────────────────────────
 
@@ -149,6 +211,14 @@ class PathNodeBuilder:
         print(f"[PathNodes] Done: {len(self._nodes)} path nodes "
               f"(from {len(raw)} pre-dedup) along "
               f"{len({n.wall_id for n in self._nodes})} walls")
+
+        print("[PathNodes] Computing nearest-wall distance (x) and search "
+              "circles ...")
+        self._targets = self._build_targets()
+        self._annotate()
+        n_hits = sum(len(n.search_hits) for n in self._nodes)
+        print(f"[PathNodes]   {n_hits} search-circle hits across "
+              f"{len(self._nodes)} nodes over {len(self._targets)} targets")
         return self
 
     def save(self, path: str | Path = "path_nodes.json") -> Path:
@@ -203,6 +273,10 @@ class PathNodeBuilder:
                     lines.append(seg)
             except Exception:
                 pass
+        # Keep the individual segments so nearest-wall distance (x) can be
+        # measured against each wall; the buffered union below is only used for
+        # the on-wall rejection test.
+        self._wall_lines = lines
         if not lines:
             return None
         return unary_union(lines).buffer(WALL_CLEARANCE_M)
@@ -287,6 +361,106 @@ class PathNodeBuilder:
             return False
         return self._wall_obst.contains(Point(float(pos[0]), float(pos[1])))
 
+    # ── Nearest-wall distance (x) + per-node search circle ────────────────────
+
+    def _build_targets(self) -> List["_Target"]:
+        """
+        The zones and features a search circle can match.
+
+        Included:
+          * every zone that is NOT a circulation zone (rooms / shops), carried
+            as its boundary polygon — path nodes already live in the corridor,
+            so matching the corridor/entrance/exit zones back to themselves
+            would only add noise;
+          * every feature (doors + landmarks such as staircases / elevators /
+            washrooms), carried as a point (features have no boundary polygon).
+
+        The ``node_id`` mirrors the graph builder's ids: ``ZONE-<zone_id>`` for a
+        zone centroid and ``FEAT-<feature_id>`` for a feature, so a consumer can
+        join these hits straight onto the navigation graph.
+        """
+        targets: List["_Target"] = []
+
+        for zone in self.sfm.zones:
+            if zone.category in CIRCULATION_CATEGORIES:
+                continue
+            poly = None
+            if len(zone.boundary_polygon) >= 3:
+                try:
+                    sp = Polygon(zone.boundary_polygon).buffer(0)
+                    if sp.is_valid and sp.area > 0:
+                        poly = sp
+                except Exception:
+                    poly = None
+            centroid = (float(zone.centroid[0]), float(zone.centroid[1]))
+            targets.append(_Target(
+                node_id  = f"ZONE-{zone.zone_id}",
+                kind     = "zone",
+                polygon  = poly,
+                centroid = centroid,
+            ))
+
+        for feat in self.sfm.features:
+            centroid = (float(feat.position[0]), float(feat.position[1]))
+            targets.append(_Target(
+                node_id  = f"FEAT-{feat.feature_id}",
+                kind     = "feature",
+                polygon  = None,          # features are point-only
+                centroid = centroid,
+            ))
+
+        return targets
+
+    def _annotate(self) -> None:
+        """
+        Fill in each node's nearest-wall distance x and its search-circle hits.
+
+        x = min distance from the node to any wall segment (recomputed by
+        geometry). The search circle has radius 2·x; a target is a hit when its
+        boundary is within 2·x of the node (or, for a point-only target, when
+        its centroid is). ``perp_dist_m`` is the perpendicular distance to the
+        boundary — for a point-only target this collapses to the centroid
+        distance.
+        """
+        for node in self._nodes:
+            p = Point(node.position[0], node.position[1])
+
+            x = self._nearest_wall_dist(p)
+            node.nearest_wall_dist_m = x
+            radius = 2.0 * x
+
+            hits: List[SearchHit] = []
+            for tgt in self._targets:
+                cx, cy = tgt.centroid
+                centroid_dist = math.hypot(node.position[0] - cx,
+                                           node.position[1] - cy)
+                if tgt.polygon is not None:
+                    perp_dist = tgt.polygon.distance(p)      # 0 if inside
+                    inside = perp_dist <= radius or centroid_dist <= radius
+                else:
+                    perp_dist = centroid_dist                # point-only target
+                    inside = centroid_dist <= radius
+                if not inside:
+                    continue
+                hits.append(SearchHit(
+                    node_id         = tgt.node_id,
+                    kind            = tgt.kind,
+                    perp_dist_m     = perp_dist,
+                    centroid_dist_m = centroid_dist,
+                ))
+
+            hits.sort(key=lambda h: h.perp_dist_m)
+            node.search_hits = hits
+
+    def _nearest_wall_dist(self, p: object) -> float:
+        """
+        True distance from point ``p`` to the nearest wall segment. Falls back
+        to the node's gap (PATH_GAP_M) if there are no walls to measure against.
+        """
+        if not self._wall_lines:
+            return PATH_GAP_M
+        return min(line.distance(p) for line in self._wall_lines)
+
     # ── Serialisation ─────────────────────────────────────────────────────────
 
     def _to_dict(self) -> Dict[str, object]:
@@ -301,6 +475,7 @@ class PathNodeBuilder:
                 "spacing_min_m":   SPACING_MIN,
                 "spacing_max_m":   SPACING_MAX,
                 "wall_clearance_m": WALL_CLEARANCE_M,
+                "search_circle_radius": "2 * nearest_wall_dist_m (x) per node",
                 "description": (
                     f"Cane-trailing waypoints ~{PATH_GAP_M} m off the "
                     "corridor-facing side of walls that line the walkable "
@@ -308,7 +483,13 @@ class PathNodeBuilder:
                     "Building-perimeter walls and shop-interior wall faces are "
                     "excluded. Walls with corridor on both sides carry nodes on "
                     "both sides. Nodes that would land on a wall (e.g. at a "
-                    "corridor corner) are skipped."
+                    "corridor corner) are skipped. Each node also carries "
+                    "nearest_wall_dist_m (x, the true geometric distance to the "
+                    "closest wall) and a search_circle of radius 2*x listing "
+                    "non-circulation zones (rooms/shops) and features "
+                    "(doors/landmarks) whose boundary falls inside it, each with "
+                    "perpendicular distance to the boundary and distance to the "
+                    "centroid. Point-only targets are matched on their centroid."
                 ),
             },
 
@@ -332,6 +513,15 @@ class PathNodeBuilder:
 # ---------------------------------------------------------------------------
 # Module-level helpers
 # ---------------------------------------------------------------------------
+
+@dataclass
+class _Target:
+    """A zone / feature the search circle can match (internal, not serialised)."""
+    node_id:  str               # graph node id (ZONE-<id> / FEAT-<id>)
+    kind:     str               # "zone" | "feature"
+    polygon:  Optional[object]  # Shapely polygon, or None for point-only targets
+    centroid: Point2D
+
 
 def _spacing_positions(seg_len: float, spacing: float) -> List[float]:
     """
