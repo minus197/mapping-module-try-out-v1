@@ -40,6 +40,7 @@ from map_extraction.semantic_floor_map import SemanticFloorMapBuilder
 from map_extraction.graph_builder import GraphBuilder
 from map_extraction.inter_floor_linker import InterFloorLinker, AdminConfig
 from map_extraction.occupancy_grid import OccupancyGridExporter
+from map_extraction.path_nodes import PathNodeBuilder
 from shared.types import BuildingGraph, FloorGraph
 
 
@@ -115,6 +116,7 @@ class MapExtractionPipeline:
         graph_path = out / f"{stem}_graph.json"
         sfm_path   = out / f"{stem}_sfm.json"
         occ_path   = out / f"{stem}_occupancy.json"
+        path_path  = out / f"{stem}_path_nodes.json"
 
         bb = self._sfm.bounding_box if self._sfm else None
         _save_floor_graph(self._graph, graph_path,
@@ -127,6 +129,10 @@ class MapExtractionPipeline:
             # Occupancy grid for perception module
             print("[MapExtraction] Building occupancy grid ...")
             OccupancyGridExporter(self._sfm).build().save(occ_path)
+
+            # Path nodes — cane-trailing waypoints along corridor-facing walls
+            print("[MapExtraction] Building path nodes ...")
+            PathNodeBuilder(self._sfm).build().save(path_path)
 
         return graph_path
 
@@ -209,11 +215,15 @@ class MapExtractionPipeline:
         linker._result = self._building
         linker.save(path)
 
-        # One occupancy grid per floor
+        # One occupancy grid + path-node layer per floor
         for stem, sfm in getattr(self, "_floor_sfms", []):
             occ_path = out / f"{stem}_occupancy.json"
             print(f"[MapExtraction] Building occupancy grid for {stem} ...")
             OccupancyGridExporter(sfm).build().save(occ_path)
+
+            path_path = out / f"{stem}_path_nodes.json"
+            print(f"[MapExtraction] Building path nodes for {stem} ...")
+            PathNodeBuilder(sfm).build().save(path_path)
 
         return path
 

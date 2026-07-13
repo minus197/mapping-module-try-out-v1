@@ -1,0 +1,1259 @@
+{
+  "floor_label": "L4",
+  "source_file": "data\\ifc_files\\floor_4_itfac_mall_with_open_area.ifc",
+  "meta": {
+    "path_node_count": 137,
+    "gap_to_wall_m": 0.3,
+    "spacing_min_m": 5.5,
+    "spacing_max_m": 6.0,
+    "description": "Cane-trailing waypoints ~0.3 m off the corridor-facing side of walls that line the walkable circulation area, spaced ~5.5-6 m apart. No edges. Building-perimeter walls and shop-interior wall faces are excluded."
+  },
+  "coordinate_frame": {
+    "units": "metres",
+    "source": "IFC project coordinate system",
+    "x_axis": "IFC project X axis",
+    "y_axis": "IFC project Y axis",
+    "origin_description": "IFC project origin — positions are exact Shapely coordinates in this frame"
+  },
+  "bounding_box": {
+    "min_x": -105.7689,
+    "min_y": -45.3713,
+    "max_x": 112.9551,
+    "max_y": 44.9174
+  },
+  "path_nodes": [
+    {
+      "node_id": "PATH-0000",
+      "position": [
+        49.8509,
+        25.9663
+      ],
+      "wall_id": "26jjhu0DH0Lxf54dTa$KpZ",
+      "gap_m": 0.3
+    },
+    {
+      "node_id": "PATH-0001",
+      "position": [
+        44.2047,
+        25.9663
+      ],
+      "wall_id": "26jjhu0DH0Lxf54dTa$KpZ",
+      "gap_m": 0.3
+    },
+    {
+      "node_id": "PATH-0002",
+      "position": [
+        38.5585,
+        25.9663
+      ],
+      "wall_id": "26jjhu0DH0Lxf54dTa$KpZ",
+      "gap_m": 0.3
+    },
+    {
+      "node_id": "PATH-0003",
+      "position": [
+        32.9122,
+        25.9663
+      ],
+      "wall_id": "26jjhu0DH0Lxf54dTa$KpZ",
+      "gap_m": 0.3
+    },
+    {
+      "node_id": "PATH-0004",
+      "position": [
+        27.266,
+        25.9663
+      ],
+      "wall_id": "26jjhu0DH0Lxf54dTa$KpZ",
+      "gap_m": 0.3
+    },
+    {
+      "node_id": "PATH-0005",
+      "position": [
+        21.6198,
+        25.9663
+      ],
+      "wall_id": "26jjhu0DH0Lxf54dTa$KpZ",
+      "gap_m": 0.3
+    },
+    {
+      "node_id": "PATH-0006",
+      "position": [
+        15.9735,
+        25.9663
+      ],
+      "wall_id": "26jjhu0DH0Lxf54dTa$KpZ",
+      "gap_m": 0.3
+    },
+    {
+      "node_id": "PATH-0007",
+      "position": [
+        10.3273,
+        25.9663
+      ],
+      "wall_id": "26jjhu0DH0Lxf54dTa$KpZ",
+      "gap_m": 0.3
+    },
+    {
+      "node_id": "PATH-0008",
+      "position": [
+        4.6811,
+        25.9663
+      ],
+      "wall_id": "26jjhu0DH0Lxf54dTa$KpZ",
+      "gap_m": 0.3
+    },
+    {
+      "node_id": "PATH-0009",
+      "position": [
+        -0.9652,
+        25.9663
+      ],
+      "wall_id": "26jjhu0DH0Lxf54dTa$KpZ",
+      "gap_m": 0.3
+    },
+    {
+      "node_id": "PATH-0010",
+      "position": [
+        -6.6114,
+        25.9663
+      ],
+      "wall_id": "26jjhu0DH0Lxf54dTa$KpZ",
+      "gap_m": 0.3
+    },
+    {
+      "node_id": "PATH-0011",
+      "position": [
+        -12.2576,
+        25.9663
+      ],
+      "wall_id": "26jjhu0DH0Lxf54dTa$KpZ",
+      "gap_m": 0.3
+    },
+    {
+      "node_id": "PATH-0012",
+      "position": [
+        -17.9039,
+        25.9663
+      ],
+      "wall_id": "26jjhu0DH0Lxf54dTa$KpZ",
+      "gap_m": 0.3
+    },
+    {
+      "node_id": "PATH-0013",
+      "position": [
+        -23.5501,
+        25.9663
+      ],
+      "wall_id": "26jjhu0DH0Lxf54dTa$KpZ",
+      "gap_m": 0.3
+    },
+    {
+      "node_id": "PATH-0014",
+      "position": [
+        49.8509,
+        -18.7379
+      ],
+      "wall_id": "26jjhu0DH0Lxf54dTa$Kpi",
+      "gap_m": 0.3
+    },
+    {
+      "node_id": "PATH-0015",
+      "position": [
+        44.2776,
+        -18.7379
+      ],
+      "wall_id": "26jjhu0DH0Lxf54dTa$Kpi",
+      "gap_m": 0.3
+    },
+    {
+      "node_id": "PATH-0016",
+      "position": [
+        38.7043,
+        -18.7379
+      ],
+      "wall_id": "26jjhu0DH0Lxf54dTa$Kpi",
+      "gap_m": 0.3
+    },
+    {
+      "node_id": "PATH-0017",
+      "position": [
+        33.131,
+        -18.7379
+      ],
+      "wall_id": "26jjhu0DH0Lxf54dTa$Kpi",
+      "gap_m": 0.3
+    },
+    {
+      "node_id": "PATH-0018",
+      "position": [
+        27.5577,
+        -18.7379
+      ],
+      "wall_id": "26jjhu0DH0Lxf54dTa$Kpi",
+      "gap_m": 0.3
+    },
+    {
+      "node_id": "PATH-0019",
+      "position": [
+        21.9844,
+        -18.7379
+      ],
+      "wall_id": "26jjhu0DH0Lxf54dTa$Kpi",
+      "gap_m": 0.3
+    },
+    {
+      "node_id": "PATH-0020",
+      "position": [
+        16.411,
+        -18.7379
+      ],
+      "wall_id": "26jjhu0DH0Lxf54dTa$Kpi",
+      "gap_m": 0.3
+    },
+    {
+      "node_id": "PATH-0021",
+      "position": [
+        10.8377,
+        -18.7379
+      ],
+      "wall_id": "26jjhu0DH0Lxf54dTa$Kpi",
+      "gap_m": 0.3
+    },
+    {
+      "node_id": "PATH-0022",
+      "position": [
+        5.2644,
+        -18.7379
+      ],
+      "wall_id": "26jjhu0DH0Lxf54dTa$Kpi",
+      "gap_m": 0.3
+    },
+    {
+      "node_id": "PATH-0023",
+      "position": [
+        -0.3089,
+        -18.7379
+      ],
+      "wall_id": "26jjhu0DH0Lxf54dTa$Kpi",
+      "gap_m": 0.3
+    },
+    {
+      "node_id": "PATH-0024",
+      "position": [
+        -5.8822,
+        -18.7379
+      ],
+      "wall_id": "26jjhu0DH0Lxf54dTa$Kpi",
+      "gap_m": 0.3
+    },
+    {
+      "node_id": "PATH-0025",
+      "position": [
+        -11.4556,
+        -18.7379
+      ],
+      "wall_id": "26jjhu0DH0Lxf54dTa$Kpi",
+      "gap_m": 0.3
+    },
+    {
+      "node_id": "PATH-0026",
+      "position": [
+        -17.0289,
+        -18.7379
+      ],
+      "wall_id": "26jjhu0DH0Lxf54dTa$Kpi",
+      "gap_m": 0.3
+    },
+    {
+      "node_id": "PATH-0027",
+      "position": [
+        -21.9845,
+        18.1964
+      ],
+      "wall_id": "26jjhu0DH0Lxf54dTa$Kpj",
+      "gap_m": 0.3
+    },
+    {
+      "node_id": "PATH-0028",
+      "position": [
+        -21.9845,
+        12.1964
+      ],
+      "wall_id": "26jjhu0DH0Lxf54dTa$Kpj",
+      "gap_m": 0.3
+    },
+    {
+      "node_id": "PATH-0029",
+      "position": [
+        -21.9845,
+        6.1964
+      ],
+      "wall_id": "26jjhu0DH0Lxf54dTa$Kpj",
+      "gap_m": 0.3
+    },
+    {
+      "node_id": "PATH-0030",
+      "position": [
+        -21.9845,
+        0.1964
+      ],
+      "wall_id": "26jjhu0DH0Lxf54dTa$Kpj",
+      "gap_m": 0.3
+    },
+    {
+      "node_id": "PATH-0031",
+      "position": [
+        -21.9845,
+        -5.8036
+      ],
+      "wall_id": "26jjhu0DH0Lxf54dTa$Kpj",
+      "gap_m": 0.3
+    },
+    {
+      "node_id": "PATH-0032",
+      "position": [
+        -21.9845,
+        -11.8036
+      ],
+      "wall_id": "26jjhu0DH0Lxf54dTa$Kpj",
+      "gap_m": 0.3
+    },
+    {
+      "node_id": "PATH-0033",
+      "position": [
+        -21.9845,
+        -17.8036
+      ],
+      "wall_id": "26jjhu0DH0Lxf54dTa$Kpj",
+      "gap_m": 0.3
+    },
+    {
+      "node_id": "PATH-0034",
+      "position": [
+        -28.1466,
+        19.0954
+      ],
+      "wall_id": "26jjhu0DH0Lxf54dTa$Kpk",
+      "gap_m": 0.3
+    },
+    {
+      "node_id": "PATH-0035",
+      "position": [
+        -33.6911,
+        19.0954
+      ],
+      "wall_id": "26jjhu0DH0Lxf54dTa$Kpk",
+      "gap_m": 0.3
+    },
+    {
+      "node_id": "PATH-0036",
+      "position": [
+        -39.2355,
+        19.0954
+      ],
+      "wall_id": "26jjhu0DH0Lxf54dTa$Kpk",
+      "gap_m": 0.3
+    },
+    {
+      "node_id": "PATH-0037",
+      "position": [
+        -44.78,
+        19.0954
+      ],
+      "wall_id": "26jjhu0DH0Lxf54dTa$Kpk",
+      "gap_m": 0.3
+    },
+    {
+      "node_id": "PATH-0038",
+      "position": [
+        -50.3244,
+        19.0954
+      ],
+      "wall_id": "26jjhu0DH0Lxf54dTa$Kpk",
+      "gap_m": 0.3
+    },
+    {
+      "node_id": "PATH-0039",
+      "position": [
+        -55.8689,
+        19.0954
+      ],
+      "wall_id": "26jjhu0DH0Lxf54dTa$Kpk",
+      "gap_m": 0.3
+    },
+    {
+      "node_id": "PATH-0040",
+      "position": [
+        -61.4133,
+        19.0954
+      ],
+      "wall_id": "26jjhu0DH0Lxf54dTa$Kpk",
+      "gap_m": 0.3
+    },
+    {
+      "node_id": "PATH-0041",
+      "position": [
+        -66.9577,
+        19.0954
+      ],
+      "wall_id": "26jjhu0DH0Lxf54dTa$Kpk",
+      "gap_m": 0.3
+    },
+    {
+      "node_id": "PATH-0042",
+      "position": [
+        -72.5022,
+        19.0954
+      ],
+      "wall_id": "26jjhu0DH0Lxf54dTa$Kpk",
+      "gap_m": 0.3
+    },
+    {
+      "node_id": "PATH-0043",
+      "position": [
+        -78.0466,
+        19.0954
+      ],
+      "wall_id": "26jjhu0DH0Lxf54dTa$Kpk",
+      "gap_m": 0.3
+    },
+    {
+      "node_id": "PATH-0044",
+      "position": [
+        -83.5911,
+        19.0954
+      ],
+      "wall_id": "26jjhu0DH0Lxf54dTa$Kpk",
+      "gap_m": 0.3
+    },
+    {
+      "node_id": "PATH-0045",
+      "position": [
+        -89.1355,
+        19.0954
+      ],
+      "wall_id": "26jjhu0DH0Lxf54dTa$Kpk",
+      "gap_m": 0.3
+    },
+    {
+      "node_id": "PATH-0046",
+      "position": [
+        -94.68,
+        19.0954
+      ],
+      "wall_id": "26jjhu0DH0Lxf54dTa$Kpk",
+      "gap_m": 0.3
+    },
+    {
+      "node_id": "PATH-0047",
+      "position": [
+        -100.2244,
+        19.0954
+      ],
+      "wall_id": "26jjhu0DH0Lxf54dTa$Kpk",
+      "gap_m": 0.3
+    },
+    {
+      "node_id": "PATH-0048",
+      "position": [
+        -105.1511,
+        19.8486
+      ],
+      "wall_id": "26jjhu0DH0Lxf54dTa$Kpl",
+      "gap_m": 0.3
+    },
+    {
+      "node_id": "PATH-0049",
+      "position": [
+        -105.1511,
+        25.8486
+      ],
+      "wall_id": "26jjhu0DH0Lxf54dTa$Kpl",
+      "gap_m": 0.3
+    },
+    {
+      "node_id": "PATH-0050",
+      "position": [
+        -98.3001,
+        25.9663
+      ],
+      "wall_id": "26jjhu0DH0Lxf54dTa$Kpe",
+      "gap_m": 0.3
+    },
+    {
+      "node_id": "PATH-0051",
+      "position": [
+        -92.3001,
+        26.5663
+      ],
+      "wall_id": "26jjhu0DH0Lxf54dTa$Kpe",
+      "gap_m": 0.3
+    },
+    {
+      "node_id": "PATH-0052",
+      "position": [
+        -93.9011,
+        32.584
+      ],
+      "wall_id": "26jjhu0DH0Lxf54dTa$Kpf",
+      "gap_m": 0.3
+    },
+    {
+      "node_id": "PATH-0053",
+      "position": [
+        -91.6491,
+        37.9663
+      ],
+      "wall_id": "26jjhu0DH0Lxf54dTa$Kpg",
+      "gap_m": 0.3
+    },
+    {
+      "node_id": "PATH-0054",
+      "position": [
+        -85.6491,
+        37.9663
+      ],
+      "wall_id": "26jjhu0DH0Lxf54dTa$Kpg",
+      "gap_m": 0.3
+    },
+    {
+      "node_id": "PATH-0055",
+      "position": [
+        -84.0324,
+        35.8236
+      ],
+      "wall_id": "26jjhu0DH0Lxf54dTa$Kph",
+      "gap_m": 0.3
+    },
+    {
+      "node_id": "PATH-0056",
+      "position": [
+        -83.4147,
+        33.7163
+      ],
+      "wall_id": "26jjhu0DH0Lxf54dTa$Kpq",
+      "gap_m": 0.3
+    },
+    {
+      "node_id": "PATH-0057",
+      "position": [
+        -78.3657,
+        33.1413
+      ],
+      "wall_id": "26jjhu0DH0Lxf54dTa$Kpr",
+      "gap_m": 0.3
+    },
+    {
+      "node_id": "PATH-0058",
+      "position": [
+        -78.3657,
+        27.1413
+      ],
+      "wall_id": "26jjhu0DH0Lxf54dTa$Kpr",
+      "gap_m": 0.3
+    },
+    {
+      "node_id": "PATH-0059",
+      "position": [
+        -29.2319,
+        25.9663
+      ],
+      "wall_id": "26jjhu0DH0Lxf54dTa$Kps",
+      "gap_m": 0.3
+    },
+    {
+      "node_id": "PATH-0060",
+      "position": [
+        -34.9137,
+        25.9663
+      ],
+      "wall_id": "26jjhu0DH0Lxf54dTa$Kps",
+      "gap_m": 0.3
+    },
+    {
+      "node_id": "PATH-0061",
+      "position": [
+        -40.5956,
+        25.9663
+      ],
+      "wall_id": "26jjhu0DH0Lxf54dTa$Kps",
+      "gap_m": 0.3
+    },
+    {
+      "node_id": "PATH-0062",
+      "position": [
+        -46.2774,
+        25.9663
+      ],
+      "wall_id": "26jjhu0DH0Lxf54dTa$Kps",
+      "gap_m": 0.3
+    },
+    {
+      "node_id": "PATH-0063",
+      "position": [
+        -51.9592,
+        25.9663
+      ],
+      "wall_id": "26jjhu0DH0Lxf54dTa$Kps",
+      "gap_m": 0.3
+    },
+    {
+      "node_id": "PATH-0064",
+      "position": [
+        -57.641,
+        25.9663
+      ],
+      "wall_id": "26jjhu0DH0Lxf54dTa$Kps",
+      "gap_m": 0.3
+    },
+    {
+      "node_id": "PATH-0065",
+      "position": [
+        -63.3228,
+        25.9663
+      ],
+      "wall_id": "26jjhu0DH0Lxf54dTa$Kps",
+      "gap_m": 0.3
+    },
+    {
+      "node_id": "PATH-0066",
+      "position": [
+        -69.0046,
+        25.9663
+      ],
+      "wall_id": "26jjhu0DH0Lxf54dTa$Kps",
+      "gap_m": 0.3
+    },
+    {
+      "node_id": "PATH-0067",
+      "position": [
+        -74.6865,
+        25.9663
+      ],
+      "wall_id": "26jjhu0DH0Lxf54dTa$Kps",
+      "gap_m": 0.3
+    },
+    {
+      "node_id": "PATH-0068",
+      "position": [
+        -80.3683,
+        25.9663
+      ],
+      "wall_id": "26jjhu0DH0Lxf54dTa$Kps",
+      "gap_m": 0.3
+    },
+    {
+      "node_id": "PATH-0069",
+      "position": [
+        -86.0501,
+        25.9663
+      ],
+      "wall_id": "26jjhu0DH0Lxf54dTa$Kps",
+      "gap_m": 0.3
+    },
+    {
+      "node_id": "PATH-0070",
+      "position": [
+        -13.4491,
+        -3.5952
+      ],
+      "wall_id": "26jjhu0DH0Lxf54dTa$Kpt",
+      "gap_m": 0.3
+    },
+    {
+      "node_id": "PATH-0071",
+      "position": [
+        -13.4491,
+        2.4048
+      ],
+      "wall_id": "26jjhu0DH0Lxf54dTa$Kpt",
+      "gap_m": 0.3
+    },
+    {
+      "node_id": "PATH-0072",
+      "position": [
+        -13.4491,
+        8.4048
+      ],
+      "wall_id": "26jjhu0DH0Lxf54dTa$Kpt",
+      "gap_m": 0.3
+    },
+    {
+      "node_id": "PATH-0073",
+      "position": [
+        -13.4491,
+        14.4048
+      ],
+      "wall_id": "26jjhu0DH0Lxf54dTa$Kpt",
+      "gap_m": 0.3
+    },
+    {
+      "node_id": "PATH-0074",
+      "position": [
+        -13.4668,
+        16.9287
+      ],
+      "wall_id": "26jjhu0DH0Lxf54dTa$Kpm",
+      "gap_m": 0.3
+    },
+    {
+      "node_id": "PATH-0075",
+      "position": [
+        -7.8668,
+        16.9287
+      ],
+      "wall_id": "26jjhu0DH0Lxf54dTa$Kpm",
+      "gap_m": 0.3
+    },
+    {
+      "node_id": "PATH-0076",
+      "position": [
+        -2.2668,
+        16.9287
+      ],
+      "wall_id": "26jjhu0DH0Lxf54dTa$Kpm",
+      "gap_m": 0.3
+    },
+    {
+      "node_id": "PATH-0077",
+      "position": [
+        3.3332,
+        16.9287
+      ],
+      "wall_id": "26jjhu0DH0Lxf54dTa$Kpm",
+      "gap_m": 0.3
+    },
+    {
+      "node_id": "PATH-0078",
+      "position": [
+        8.9332,
+        16.9287
+      ],
+      "wall_id": "26jjhu0DH0Lxf54dTa$Kpm",
+      "gap_m": 0.3
+    },
+    {
+      "node_id": "PATH-0079",
+      "position": [
+        14.5332,
+        16.9287
+      ],
+      "wall_id": "26jjhu0DH0Lxf54dTa$Kpm",
+      "gap_m": 0.3
+    },
+    {
+      "node_id": "PATH-0080",
+      "position": [
+        20.1332,
+        16.9287
+      ],
+      "wall_id": "26jjhu0DH0Lxf54dTa$Kpm",
+      "gap_m": 0.3
+    },
+    {
+      "node_id": "PATH-0081",
+      "position": [
+        25.7332,
+        16.9287
+      ],
+      "wall_id": "26jjhu0DH0Lxf54dTa$Kpm",
+      "gap_m": 0.3
+    },
+    {
+      "node_id": "PATH-0082",
+      "position": [
+        31.3332,
+        16.9287
+      ],
+      "wall_id": "26jjhu0DH0Lxf54dTa$Kpm",
+      "gap_m": 0.3
+    },
+    {
+      "node_id": "PATH-0083",
+      "position": [
+        36.9332,
+        16.9287
+      ],
+      "wall_id": "26jjhu0DH0Lxf54dTa$Kpm",
+      "gap_m": 0.3
+    },
+    {
+      "node_id": "PATH-0084",
+      "position": [
+        42.5332,
+        16.9287
+      ],
+      "wall_id": "26jjhu0DH0Lxf54dTa$Kpm",
+      "gap_m": 0.3
+    },
+    {
+      "node_id": "PATH-0085",
+      "position": [
+        42.5155,
+        10.699
+      ],
+      "wall_id": "26jjhu0DH0Lxf54dTa$Kpn",
+      "gap_m": 0.3
+    },
+    {
+      "node_id": "PATH-0086",
+      "position": [
+        42.5155,
+        5.0871
+      ],
+      "wall_id": "26jjhu0DH0Lxf54dTa$Kpn",
+      "gap_m": 0.3
+    },
+    {
+      "node_id": "PATH-0087",
+      "position": [
+        42.5155,
+        -0.5249
+      ],
+      "wall_id": "26jjhu0DH0Lxf54dTa$Kpn",
+      "gap_m": 0.3
+    },
+    {
+      "node_id": "PATH-0088",
+      "position": [
+        42.5155,
+        -6.1369
+      ],
+      "wall_id": "26jjhu0DH0Lxf54dTa$Kpn",
+      "gap_m": 0.3
+    },
+    {
+      "node_id": "PATH-0089",
+      "position": [
+        36.3614,
+        -6.1192
+      ],
+      "wall_id": "26jjhu0DH0Lxf54dTa$Kpo",
+      "gap_m": 0.3
+    },
+    {
+      "node_id": "PATH-0090",
+      "position": [
+        30.8249,
+        -6.1192
+      ],
+      "wall_id": "26jjhu0DH0Lxf54dTa$Kpo",
+      "gap_m": 0.3
+    },
+    {
+      "node_id": "PATH-0091",
+      "position": [
+        25.2884,
+        -6.1192
+      ],
+      "wall_id": "26jjhu0DH0Lxf54dTa$Kpo",
+      "gap_m": 0.3
+    },
+    {
+      "node_id": "PATH-0092",
+      "position": [
+        19.752,
+        -6.1192
+      ],
+      "wall_id": "26jjhu0DH0Lxf54dTa$Kpo",
+      "gap_m": 0.3
+    },
+    {
+      "node_id": "PATH-0093",
+      "position": [
+        14.2155,
+        -6.1192
+      ],
+      "wall_id": "26jjhu0DH0Lxf54dTa$Kpo",
+      "gap_m": 0.3
+    },
+    {
+      "node_id": "PATH-0094",
+      "position": [
+        8.6791,
+        -6.1192
+      ],
+      "wall_id": "26jjhu0DH0Lxf54dTa$Kpo",
+      "gap_m": 0.3
+    },
+    {
+      "node_id": "PATH-0095",
+      "position": [
+        3.1426,
+        -6.1192
+      ],
+      "wall_id": "26jjhu0DH0Lxf54dTa$Kpo",
+      "gap_m": 0.3
+    },
+    {
+      "node_id": "PATH-0096",
+      "position": [
+        -2.3939,
+        -6.1192
+      ],
+      "wall_id": "26jjhu0DH0Lxf54dTa$Kpo",
+      "gap_m": 0.3
+    },
+    {
+      "node_id": "PATH-0097",
+      "position": [
+        -7.9303,
+        -6.1192
+      ],
+      "wall_id": "26jjhu0DH0Lxf54dTa$Kpo",
+      "gap_m": 0.3
+    },
+    {
+      "node_id": "PATH-0098",
+      "position": [
+        -13.4668,
+        -6.1192
+      ],
+      "wall_id": "26jjhu0DH0Lxf54dTa$Kpo",
+      "gap_m": 0.3
+    },
+    {
+      "node_id": "PATH-0099",
+      "position": [
+        55.4968,
+        29.2662
+      ],
+      "wall_id": "0NrdkfQ69FhA8iVi0WZ07I",
+      "gap_m": 0.3
+    },
+    {
+      "node_id": "PATH-0100",
+      "position": [
+        61.1426,
+        29.2662
+      ],
+      "wall_id": "0NrdkfQ69FhA8iVi0WZ07I",
+      "gap_m": 0.3
+    },
+    {
+      "node_id": "PATH-0101",
+      "position": [
+        66.1707,
+        29.2485
+      ],
+      "wall_id": "0NrdkfQ69FhA8iVi0WZ07J",
+      "gap_m": 0.3
+    },
+    {
+      "node_id": "PATH-0102",
+      "position": [
+        66.1707,
+        23.6319
+      ],
+      "wall_id": "0NrdkfQ69FhA8iVi0WZ07J",
+      "gap_m": 0.3
+    },
+    {
+      "node_id": "PATH-0103",
+      "position": [
+        66.1707,
+        18.0152
+      ],
+      "wall_id": "0NrdkfQ69FhA8iVi0WZ07J",
+      "gap_m": 0.3
+    },
+    {
+      "node_id": "PATH-0104",
+      "position": [
+        66.1707,
+        12.3985
+      ],
+      "wall_id": "0NrdkfQ69FhA8iVi0WZ07J",
+      "gap_m": 0.3
+    },
+    {
+      "node_id": "PATH-0105",
+      "position": [
+        66.1707,
+        6.7819
+      ],
+      "wall_id": "0NrdkfQ69FhA8iVi0WZ07J",
+      "gap_m": 0.3
+    },
+    {
+      "node_id": "PATH-0106",
+      "position": [
+        66.7707,
+        1.1652
+      ],
+      "wall_id": "0NrdkfQ69FhA8iVi0WZ07J",
+      "gap_m": 0.3
+    },
+    {
+      "node_id": "PATH-0107",
+      "position": [
+        72.7051,
+        1.1829
+      ],
+      "wall_id": "0NrdkfQ69FhA8iVi0WZ07S",
+      "gap_m": 0.3
+    },
+    {
+      "node_id": "PATH-0108",
+      "position": [
+        78.6218,
+        1.1829
+      ],
+      "wall_id": "0NrdkfQ69FhA8iVi0WZ07S",
+      "gap_m": 0.3
+    },
+    {
+      "node_id": "PATH-0109",
+      "position": [
+        84.5384,
+        1.1829
+      ],
+      "wall_id": "0NrdkfQ69FhA8iVi0WZ07S",
+      "gap_m": 0.3
+    },
+    {
+      "node_id": "PATH-0110",
+      "position": [
+        90.4551,
+        1.1829
+      ],
+      "wall_id": "0NrdkfQ69FhA8iVi0WZ07S",
+      "gap_m": 0.3
+    },
+    {
+      "node_id": "PATH-0111",
+      "position": [
+        96.3718,
+        1.1829
+      ],
+      "wall_id": "0NrdkfQ69FhA8iVi0WZ07S",
+      "gap_m": 0.3
+    },
+    {
+      "node_id": "PATH-0112",
+      "position": [
+        101.6707,
+        1.0975
+      ],
+      "wall_id": "0NrdkfQ69FhA8iVi0WZ07T",
+      "gap_m": 0.3
+    },
+    {
+      "node_id": "PATH-0113",
+      "position": [
+        101.6707,
+        -4.9025
+      ],
+      "wall_id": "0NrdkfQ69FhA8iVi0WZ07T",
+      "gap_m": 0.3
+    },
+    {
+      "node_id": "PATH-0114",
+      "position": [
+        101.653,
+        -10.3525
+      ],
+      "wall_id": "0NrdkfQ69FhA8iVi0WZ07U",
+      "gap_m": 0.3
+    },
+    {
+      "node_id": "PATH-0115",
+      "position": [
+        95.7364,
+        -10.3525
+      ],
+      "wall_id": "0NrdkfQ69FhA8iVi0WZ07U",
+      "gap_m": 0.3
+    },
+    {
+      "node_id": "PATH-0116",
+      "position": [
+        89.8197,
+        -10.3525
+      ],
+      "wall_id": "0NrdkfQ69FhA8iVi0WZ07U",
+      "gap_m": 0.3
+    },
+    {
+      "node_id": "PATH-0117",
+      "position": [
+        83.903,
+        -10.3525
+      ],
+      "wall_id": "0NrdkfQ69FhA8iVi0WZ07U",
+      "gap_m": 0.3
+    },
+    {
+      "node_id": "PATH-0118",
+      "position": [
+        77.9864,
+        -10.3525
+      ],
+      "wall_id": "0NrdkfQ69FhA8iVi0WZ07U",
+      "gap_m": 0.3
+    },
+    {
+      "node_id": "PATH-0119",
+      "position": [
+        72.0697,
+        -10.3525
+      ],
+      "wall_id": "0NrdkfQ69FhA8iVi0WZ07U",
+      "gap_m": 0.3
+    },
+    {
+      "node_id": "PATH-0120",
+      "position": [
+        66.153,
+        -10.9525
+      ],
+      "wall_id": "0NrdkfQ69FhA8iVi0WZ07U",
+      "gap_m": 0.3
+    },
+    {
+      "node_id": "PATH-0121",
+      "position": [
+        66.1707,
+        -16.8244
+      ],
+      "wall_id": "0NrdkfQ69FhA8iVi0WZ07V",
+      "gap_m": 0.3
+    },
+    {
+      "node_id": "PATH-0122",
+      "position": [
+        66.1707,
+        -22.6786
+      ],
+      "wall_id": "0NrdkfQ69FhA8iVi0WZ07V",
+      "gap_m": 0.3
+    },
+    {
+      "node_id": "PATH-0123",
+      "position": [
+        66.1707,
+        -28.5327
+      ],
+      "wall_id": "0NrdkfQ69FhA8iVi0WZ07V",
+      "gap_m": 0.3
+    },
+    {
+      "node_id": "PATH-0124",
+      "position": [
+        64.002,
+        -33.7692
+      ],
+      "wall_id": "0NrdkfQ69FhA8iVi0WZ07O",
+      "gap_m": 0.3
+    },
+    {
+      "node_id": "PATH-0125",
+      "position": [
+        58.002,
+        -33.7692
+      ],
+      "wall_id": "0NrdkfQ69FhA8iVi0WZ07O",
+      "gap_m": 0.3
+    },
+    {
+      "node_id": "PATH-0126",
+      "position": [
+        52.002,
+        -33.7692
+      ],
+      "wall_id": "0NrdkfQ69FhA8iVi0WZ07O",
+      "gap_m": 0.3
+    },
+    {
+      "node_id": "PATH-0127",
+      "position": [
+        50.4686,
+        -28.1015
+      ],
+      "wall_id": "0NrdkfQ69FhA8iVi0WZ07P",
+      "gap_m": 0.3
+    },
+    {
+      "node_id": "PATH-0128",
+      "position": [
+        50.4686,
+        -22.4515
+      ],
+      "wall_id": "0NrdkfQ69FhA8iVi0WZ07P",
+      "gap_m": 0.3
+    },
+    {
+      "node_id": "PATH-0129",
+      "position": [
+        49.8686,
+        -11.1515
+      ],
+      "wall_id": "0NrdkfQ69FhA8iVi0WZ07P",
+      "gap_m": 0.3
+    },
+    {
+      "node_id": "PATH-0130",
+      "position": [
+        49.8686,
+        -5.5015
+      ],
+      "wall_id": "0NrdkfQ69FhA8iVi0WZ07P",
+      "gap_m": 0.3
+    },
+    {
+      "node_id": "PATH-0131",
+      "position": [
+        50.4686,
+        29.2485
+      ],
+      "wall_id": "0NrdkfQ69FhA8iVi0WZ07Q",
+      "gap_m": 0.3
+    },
+    {
+      "node_id": "PATH-0132",
+      "position": [
+        50.4686,
+        23.6319
+      ],
+      "wall_id": "0NrdkfQ69FhA8iVi0WZ07Q",
+      "gap_m": 0.3
+    },
+    {
+      "node_id": "PATH-0133",
+      "position": [
+        50.4686,
+        18.0152
+      ],
+      "wall_id": "0NrdkfQ69FhA8iVi0WZ07Q",
+      "gap_m": 0.3
+    },
+    {
+      "node_id": "PATH-0134",
+      "position": [
+        50.4686,
+        12.3985
+      ],
+      "wall_id": "0NrdkfQ69FhA8iVi0WZ07Q",
+      "gap_m": 0.3
+    },
+    {
+      "node_id": "PATH-0135",
+      "position": [
+        50.4686,
+        6.7819
+      ],
+      "wall_id": "0NrdkfQ69FhA8iVi0WZ07Q",
+      "gap_m": 0.3
+    },
+    {
+      "node_id": "PATH-0136",
+      "position": [
+        50.4686,
+        1.1652
+      ],
+      "wall_id": "0NrdkfQ69FhA8iVi0WZ07Q",
+      "gap_m": 0.3
+    }
+  ]
+}
