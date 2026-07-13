@@ -402,10 +402,19 @@ class PathNodeBuilder:
 
         for feat in self.sfm.features:
             centroid = (float(feat.position[0]), float(feat.position[1]))
+            poly = None
+            boundary = getattr(feat, "boundary_polygon", None)
+            if boundary and len(boundary) >= 3:
+                try:
+                    sp = Polygon(boundary).buffer(0)
+                    if sp.is_valid and sp.area > 0:
+                        poly = sp
+                except Exception:
+                    poly = None
             targets.append(_Target(
                 node_id  = f"FEAT-{feat.feature_id}",
                 kind     = "feature",
-                polygon  = None,          # features are point-only
+                polygon  = poly,           # None for point-only features
                 centroid = centroid,
             ))
 

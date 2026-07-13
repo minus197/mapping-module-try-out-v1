@@ -119,6 +119,10 @@ class ParsedFeature:
     position:     Point2D
     feature_type: str   # elevator|escalator|stair|door|info_desk|bench|furnishing
     raw_class:    str
+    # World-space footprint polygon (metres, closed), when the element's body
+    # geometry allows one to be extracted (currently: stair, elevator). None
+    # for features carried as a point only (doors, furnishing, ...).
+    polygon:      Optional[List[Point2D]] = field(default=None)
 
 
 @dataclass
@@ -327,6 +331,80 @@ def _extract_space_polygon(space, scale: float) -> Optional[List[Point2D]]:
 
 
 # ---------------------------------------------------------------------------
+# Feature footprint extraction (elevator / stair boundary polygons)
+# ---------------------------------------------------------------------------
+
+def _extrusion_footprint(item, mat: np.ndarray,
+                         scale: float) -> Optional[List[Point2D]]:
+    """World-space footprint polygon of one IfcExtrudedAreaSolid's SweptArea."""
+    sw = item.SweptArea
+    if sw.is_a("IfcArbitraryClosedProfileDef"):
+        curve = sw.OuterCurve
+        if curve.is_a("IfcIndexedPolyCurve"):
+            poly = _poly_from_indexed_poly_curve(curve, mat, scale)
+        else:
+            poly = _poly_from_polyline(curve, mat, scale)
+        return poly if poly and len(poly) >= 3 else None
+    if sw.is_a("IfcRectangleProfileDef"):
+        return _rect_polygon(float(sw.XDim), float(sw.YDim), mat, scale)
+    return None
+
+
+def _extract_feature_polygon(product, scale: float) -> Optional[List[Point2D]]:
+    """
+    Extract a world-space footprint polygon for a feature (stair / elevator)
+    from its Body representation, as the convex hull of every extruded solid's
+    footprint. A stair typically has several IfcExtrudedAreaSolid items (each
+    flight + landing); the hull gives one boundary spanning all of them.
+
+    Falls back to None when the element has no body geometry the way spaces
+    do (e.g. doors, furnishing) — callers keep the point-only position then.
+    """
+    if product.Representation is None:
+        return None
+    mat = _placement_matrix(product)
+    if mat is None:
+        return None
+
+    pts: List[Point2D] = []
+    for rep in product.Representation.Representations:
+        if (rep.RepresentationIdentifier or "") != "Body":
+            continue
+        for item in rep.Items:
+            if not item.is_a("IfcExtrudedAreaSolid"):
+                continue
+            poly = _extrusion_footprint(item, mat, scale)
+            if poly:
+                pts.extend(poly)
+
+    if len(pts) < 3:
+        return None
+    return _convex_hull(pts)
+
+
+def _convex_hull(points: List[Point2D]) -> List[Point2D]:
+    """Andrew's monotone-chain convex hull. Returns a closed CCW polygon."""
+    pts = sorted(set(points))
+    if len(pts) < 3:
+        return pts
+
+    def cross(o, a, b):
+        return (a[0] - o[0]) * (b[1] - o[1]) - (a[1] - o[1]) * (b[0] - o[0])
+
+    lower: List[Point2D] = []
+    for p in pts:
+        while len(lower) >= 2 and cross(lower[-2], lower[-1], p) <= 0:
+            lower.pop()
+        lower.append(p)
+    upper: List[Point2D] = []
+    for p in reversed(pts):
+        while len(upper) >= 2 and cross(upper[-2], upper[-1], p) <= 0:
+            upper.pop()
+        upper.append(p)
+    return lower[:-1] + upper[:-1]
+
+
+# ---------------------------------------------------------------------------
 # Wall axis extraction
 # ---------------------------------------------------------------------------
 
@@ -450,6 +528,7 @@ class IFCParser:
                 position     = pos,
                 feature_type = _TRANSPORT_KIND.get(kind_raw, "elevator"),
                 raw_class    = "IfcTransportElement",
+                polygon      = _extract_feature_polygon(t, self._scale),
             ))
 
         for f in self._model.by_type("IfcFurnishingElement"):
@@ -489,6 +568,7 @@ class IFCParser:
                 position     = pos,
                 feature_type = "stair",
                 raw_class    = "IfcStair",
+                polygon      = _extract_feature_polygon(st, self._scale),
             ))
 
         return feats

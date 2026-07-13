@@ -193,6 +193,12 @@ def draw_features(ax, sfm):
             continue
         ftype = f.get("feature_type", "furnishing")
         marker, color, _ = FEATURE_STYLE.get(ftype, FEATURE_STYLE["furnishing"])
+        poly = f.get("boundary_polygon")
+        if poly:
+            xs = [p[0] for p in poly] + [poly[0][0]]
+            ys = [p[1] for p in poly] + [poly[0][1]]
+            ax.fill(xs, ys, facecolor=color, edgecolor="black",
+                   linewidth=0.8, alpha=0.35, zorder=6)
         ax.scatter(pos[0], pos[1], marker=marker, c=color, s=55,
                    edgecolors="black", linewidths=0.4, zorder=7)
 
