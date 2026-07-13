@@ -237,7 +237,7 @@ def draw_path_nodes(ax, path_nodes):
 
 # ── Legend ────────────────────────────────────────────────────────────────────
 
-def build_legend(ax, layers_drawn):
+def build_legend(ax, layers_drawn, gap_m=None):
     handles = []
     if "zones" in layers_drawn:
         for cat in ("corridor", "shop", "unknown"):
@@ -255,10 +255,11 @@ def build_legend(ax, layers_drawn):
                               markerfacecolor=GRAPH_NODE_COLOR, markersize=7,
                               markeredgecolor="#555555", label="graph node"))
     if "path_nodes" in layers_drawn:
+        gap_txt = f"{gap_m:g} m off wall" if gap_m is not None else "off wall"
         handles.append(Line2D([0], [0], marker="o", color="w",
                               markerfacecolor=PATH_NODE_COLOR, markersize=9,
                               markeredgecolor="white",
-                              label="path node (0.3 m off wall)"))
+                              label=f"path node ({gap_txt})"))
     if handles:
         ax.legend(handles=handles, loc="upper left", bbox_to_anchor=(1.01, 1.0),
                   fontsize=7, framealpha=0.9, borderaxespad=0.0)
@@ -332,7 +333,10 @@ def render_figure(prefix, sfm, graph, path_nodes, occ, want):
     ax.set_aspect("equal", adjustable="datalim")
     ax.grid(True, linestyle=":", linewidth=0.4, alpha=0.5)
 
-    build_legend(ax, layers_drawn)
+    gap_m = None
+    if path_nodes is not None:
+        gap_m = path_nodes.get("meta", {}).get("gap_to_wall_m")
+    build_legend(ax, layers_drawn, gap_m=gap_m)
     fig.tight_layout()
     return fig
 

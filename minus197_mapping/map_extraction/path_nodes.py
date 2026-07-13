@@ -69,6 +69,11 @@ MIN_WALL_LEN   = 0.50   # m — ignore wall stubs shorter than this
 CORRIDOR_BUFFER = 0.05  # m — small outward buffer on the corridor union so a
                         # point sitting exactly on the corridor edge counts as
                         # inside (absorbs floating-point boundary cases)
+# A candidate node landing within this distance of ANY wall centreline is
+# rejected, so a node is never placed on (or hard against) a wall. This is what
+# skips a node that, while being laid along one wall, happens to land on a
+# perpendicular wall bounding the corridor (e.g. at a corridor corner).
+WALL_CLEARANCE_M = 0.50  # m — minimum clearance a node must keep from any wall
 
 # Zones whose interior is the walkable *circulation network*. Path nodes are
 # kept only where the wall's 0.3 m offset lands inside one of these — matching
@@ -121,12 +126,14 @@ class PathNodeBuilder:
         self.sfm = sfm
         self._nodes: List[PathNode] = []
         self._corridor: Optional[object] = None   # Shapely corridor union
+        self._wall_obst: Optional[object] = None   # all wall lines buffered
 
     # ── Public build / save ───────────────────────────────────────────────────
 
     def build(self) -> "PathNodeBuilder":
         print("[PathNodes] Building corridor geometry ...")
         self._corridor = self._build_corridor_union()
+        self._wall_obst = self._build_wall_obstacle()
         if self._corridor is None:
             print("[PathNodes]   WARNING: no circulation "
                   f"({'/'.join(sorted(CIRCULATION_CATEGORIES))}) zone found — "
@@ -181,12 +188,41 @@ class PathNodeBuilder:
             return None
         return unary_union(polys).buffer(CORRIDOR_BUFFER)
 
+    def _build_wall_obstacle(self) -> Optional[object]:
+        """
+        Union of every wall centreline, buffered by WALL_CLEARANCE_M. A
+        candidate node whose position lands inside this region sits on (or too
+        close to) a wall and is rejected. This is what stops a node laid along
+        one wall from landing on a perpendicular wall bounding the corridor.
+        """
+        lines: List[object] = []
+        for wall in self.sfm.walls:
+            try:
+                seg = LineString([wall.start, wall.end])
+                if seg.length > 1e-6:
+                    lines.append(seg)
+            except Exception:
+                pass
+        if not lines:
+            return None
+        return unary_union(lines).buffer(WALL_CLEARANCE_M)
+
     # ── Node placement along one wall ─────────────────────────────────────────
 
     def _place_along_wall(self, wall, wall_idx: int) -> List[PathNode]:
         """
         Place path nodes along one wall, PATH_GAP_M off its corridor-facing
-        side, spaced SPACING_MIN..SPACING_MAX apart.
+        side(s), spaced SPACING_MIN..SPACING_MAX apart.
+
+        Two behaviours added on top of the basic offset:
+          * If BOTH sides of the wall face the corridor (a free-standing wall
+            with corridor on either side), nodes are placed on BOTH sides so a
+            visually impaired user gets a consistent line of nodes whichever
+            side they are trailing.
+          * A candidate node that lands on (or within WALL_CLEARANCE_M of) any
+            wall is skipped — the rest of the nodes are still placed. This is
+            what drops a node laid along a horizontal wall when it would fall
+            on a perpendicular wall bounding the corridor (a corner).
 
         Returns [] when the wall never borders the corridor (both offset sides
         land outside the corridor union along its whole length) — this rejects
@@ -210,36 +246,46 @@ class PathNodeBuilder:
         out: List[PathNode] = []
         for t in positions:
             base = s + axis * t
-            side = self._corridor_side(base, normal)
-            if side is None:
-                continue   # wall does not face the corridor here
-            pos = base + normal * (PATH_GAP_M * side)
-            out.append(PathNode(
-                node_id  = f"PATH-{wall_idx:04d}-{len(out):03d}",
-                position = (float(pos[0]), float(pos[1])),
-                wall_id  = wall.wall_id,
-                gap_m    = PATH_GAP_M,
-            ))
+            for side in self._corridor_sides(base, normal):
+                pos = base + normal * (PATH_GAP_M * side)
+                # Skip a node that lands on / hard against any wall (e.g. a node
+                # from a horizontal wall landing on a perpendicular wall at a
+                # corridor corner). Keep placing the remaining nodes.
+                if self._on_wall(pos):
+                    continue
+                out.append(PathNode(
+                    node_id  = f"PATH-{wall_idx:04d}-{len(out):03d}",
+                    position = (float(pos[0]), float(pos[1])),
+                    wall_id  = wall.wall_id,
+                    gap_m    = PATH_GAP_M,
+                ))
         return out
 
-    def _corridor_side(self, base: np.ndarray, normal: np.ndarray) -> Optional[int]:
+    def _corridor_sides(self, base: np.ndarray, normal: np.ndarray) -> List[int]:
         """
-        Decide which side of the wall (at point `base`) faces the corridor.
+        Which side(s) of the wall (at point `base`) face the corridor.
 
-        Returns +1 if base + normal*gap is inside the corridor, -1 if
-        base - normal*gap is inside, or None if neither is (the wall does not
-        border the corridor at this point — e.g. a building-exterior wall or a
-        shop-interior face). If BOTH sides are inside (a thin wall standing
-        inside the corridor), the +normal side is chosen arbitrarily but
-        consistently.
+        Returns a list containing +1 (the +normal side), -1 (the -normal side),
+        or both when the wall has corridor on either side, or [] when neither
+        side is inside the corridor (a building-exterior wall or a shop-interior
+        face). Returning both sides is what lets a free-standing wall carry a
+        line of nodes on each of its faces.
         """
-        plus  = Point(*(base + normal * PATH_GAP_M))
-        minus = Point(*(base - normal * PATH_GAP_M))
-        if self._corridor.contains(plus):
-            return +1
-        if self._corridor.contains(minus):
-            return -1
-        return None
+        sides: List[int] = []
+        if self._corridor.contains(Point(*(base + normal * PATH_GAP_M))):
+            sides.append(+1)
+        if self._corridor.contains(Point(*(base - normal * PATH_GAP_M))):
+            sides.append(-1)
+        return sides
+
+    def _on_wall(self, pos: np.ndarray) -> bool:
+        """
+        True if `pos` lands on (or within WALL_CLEARANCE_M of) any wall — i.e.
+        the node would sit on top of a wall and must be skipped.
+        """
+        if self._wall_obst is None:
+            return False
+        return self._wall_obst.contains(Point(float(pos[0]), float(pos[1])))
 
     # ── Serialisation ─────────────────────────────────────────────────────────
 
@@ -254,11 +300,15 @@ class PathNodeBuilder:
                 "gap_to_wall_m":   PATH_GAP_M,
                 "spacing_min_m":   SPACING_MIN,
                 "spacing_max_m":   SPACING_MAX,
+                "wall_clearance_m": WALL_CLEARANCE_M,
                 "description": (
-                    "Cane-trailing waypoints ~0.3 m off the corridor-facing "
-                    "side of walls that line the walkable circulation area, "
-                    "spaced ~5.5-6 m apart. No edges. Building-perimeter walls "
-                    "and shop-interior wall faces are excluded."
+                    f"Cane-trailing waypoints ~{PATH_GAP_M} m off the "
+                    "corridor-facing side of walls that line the walkable "
+                    "circulation area, spaced ~5.5-6 m apart. No edges. "
+                    "Building-perimeter walls and shop-interior wall faces are "
+                    "excluded. Walls with corridor on both sides carry nodes on "
+                    "both sides. Nodes that would land on a wall (e.g. at a "
+                    "corridor corner) are skipped."
                 ),
             },
 
