@@ -38,6 +38,9 @@ from shared.types import FloorGraph
 from pathfinding.engine import PathfindingEngine, to_feedback_json
 from pathfinding.search import build_nx_graph
 from pathfinding.cost import CostWeights, compute_edge_costs, normalise_landmark_scores
+from pathfinding.path_node_adjuster import (
+    adjust_with_path_nodes, load_corridor_walls, load_path_nodes,
+)
 from evaluation import EndpointEvaluator, EvaluationRunner
 
 
@@ -100,6 +103,17 @@ def main() -> None:
         "--evaluate", action="store_true",
         help="Run evaluation checks on the found path (e.g. endpoint check)",
     )
+    parser.add_argument(
+        "--path-nodes", dest="path_nodes_path", default=None,
+        help="Path to the *_path_nodes.json file. When given (with --sfm), "
+             "the found route is adjusted to hug nearby path nodes on legs "
+             "that run along a corridor.",
+    )
+    parser.add_argument(
+        "--sfm", dest="sfm_path", default=None,
+        help="Path to the *_sfm.json file (wall geometry for the path-node "
+             "adjustment). Required together with --path-nodes.",
+    )
     args = parser.parse_args()
 
     with open(args.graph, encoding="utf-8") as f:
@@ -138,6 +152,13 @@ def main() -> None:
         print("No path found — start and destination may be in disconnected "
               "parts of the graph. Run without --from/--to to see components.")
         return
+
+    if args.path_nodes_path and args.sfm_path:
+        path_nodes = load_path_nodes(args.path_nodes_path)
+        walls = load_corridor_walls(args.sfm_path)
+        result = adjust_with_path_nodes(result, path_nodes, walls)
+        print(f"path-node adjustment: {len(path_nodes)} path nodes, "
+              f"{len(walls)} walls loaded")
 
     print(f"total_distance : {result.total_distance} m")
     print(f"total_cost     : {result.total_cost}")
