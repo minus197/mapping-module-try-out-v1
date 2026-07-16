@@ -225,7 +225,14 @@ landmark density). Zero pixel error on any scored quantity.
 | `distance` | `LineString.intersection(walkable_polygon)` length; handles `MultiLineString` and `GeometryCollection` results |
 | `safety_score` | Mean clearance from N sample points to walkable boundary, normalised by `MAX_CLEARANCE = 2.0 m` |
 | `shore_linable` | True when ≥ `SHORE_FRACTION = 0.40` of N sample points fall within `SHORE_BUFFER = 0.80 m` of any zone perimeter |
-| `landmark_score` | Count of named features within `LANDMARK_RADIUS = 3.0 m` of N sample points, normalised by 3 |
+| `landmark_score` | Count of feature nodes (door, elevator, escalator, stair, landmark) whose position lies within `LANDMARK_RADIUS = 3.0 m` of *any* of the N sample points along the edge, normalised as `min(count / 3, 1.0)` (3+ nearby features saturate to 1.0) |
+
+> **What `landmark_score` measures.** It is the *density of landmarks along an
+> edge* — how many navigable reference features an edge passes close to — not
+> the number of graph nodes clustered *in front of* a single landmark. The
+> direction is edge → nearby landmarks, not landmark → nearby nodes. Only the
+> five feature node types above count as landmarks; junction nodes, zone
+> centroids, and path nodes are never counted.
 
 **Edge limits**: max 6 edges per node, 4 for zone-centroid nodes. Edges are
 deduplicated by canonical sorted node-ID pair.
