@@ -185,6 +185,48 @@ class TestCoverageGap:
         assert node_ids == ["JUNC-B"]
 
 
+# ── Adjustment stats: junction-fallback reporting ─────────────────────────────
+
+class TestAdjustmentStats:
+    def test_clean_hugging_route_reports_zero_fallback(
+        self, corridor_wall, hugging_path_nodes,
+    ):
+        # A -> path nodes -> B: A and B both snap to the path layer within
+        # SNAP_RADIUS, so the whole route rides "path"/"mandatory" edges and
+        # no original-edge fallback is used.
+        a = _node("JUNC-A", (0.0, 1.0))
+        b = _node("JUNC-B", (11.0, 1.0))
+        edge = _edge("E-AB", a, b, dist=11.0)
+        result = _result_for_leg(a, b, edge)
+
+        adjusted = adjust_with_path_nodes(result, hugging_path_nodes, corridor_wall)
+        stats = adjusted.adjustment_stats
+        assert stats["clean"] is True
+        assert stats["fallback_hops"] == 0
+        assert stats["fallback_node_ids"] == []
+        assert stats["total_hops"] == len(adjusted.steps)
+
+    def test_coverage_gap_reports_fallback_hops(self, corridor_wall):
+        # Same sparse-gap layout as TestCoverageGap: the only route is the
+        # penalised original A->B edge, so the fallback must be flagged and
+        # both endpoints reported.
+        sparse_nodes = [
+            PathNode("PATH-0", (1.0, 1.7), "W1", 0.3),
+            PathNode("PATH-1", (21.0, 1.7), "W1", 0.3),
+        ]
+        a = _node("JUNC-A", (0.0, 1.0))
+        b = _node("JUNC-B", (22.0, 1.0))
+        edge = _edge("E-AB", a, b, dist=22.0)
+        result = _result_for_leg(a, b, edge)
+
+        adjusted = adjust_with_path_nodes(result, sparse_nodes, corridor_wall)
+        stats = adjusted.adjustment_stats
+        assert stats["clean"] is False
+        assert stats["fallback_hops"] >= 1
+        assert "JUNC-A" in stats["fallback_node_ids"]
+        assert "JUNC-B" in stats["fallback_node_ids"]
+
+
 # ── Corner: chain continues onto a perpendicular wall ─────────────────────────
 
 class TestCorner:

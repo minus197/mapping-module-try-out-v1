@@ -510,9 +510,10 @@ def adjust_with_path_nodes(
     start_id = route_nodes[0].node_id
     goal_id = route_nodes[-1].node_id
 
-    winning_ids = _dijkstra_mixed(adjacency, allowed, start_id, goal_id)
-    if winning_ids is None:
+    winning = _dijkstra_mixed(adjacency, allowed, start_id, goal_id)
+    if winning is None:
         return result
+    winning_ids, winning_kinds = winning
 
     expanded_nodes: List[NavigationNode] = []
     synthetic_edges: Dict[Tuple[str, str], NavigationEdge] = {}
@@ -533,7 +534,7 @@ def adjust_with_path_nodes(
     start_pos = user_xy if user_xy is not None else expanded_nodes[0].position
     new_steps = build_steps(start_pos, expanded_nodes[0], expanded_nodes, lookup)
 
-    return PathResult(
+    adjusted = PathResult(
         found=result.found,
         start_node=result.start_node,
         destination_node=result.destination_node,
@@ -545,6 +546,37 @@ def adjust_with_path_nodes(
         shore_score=result.shore_score,
         landmark_score=result.landmark_score,
     )
+    adjusted.adjustment_stats = _summarise_adjustment(winning_ids, winning_kinds)
+    return adjusted
+
+
+def _summarise_adjustment(
+    winning_ids: List[str], winning_kinds: List[str],
+) -> Dict[str, object]:
+    """Measure how much of the winning route hugs the path-node layer versus
+    how much fell back to the penalised original-route ("original") edges —
+    the seam where junctions survive into the geometry. `fallback_hops > 0`
+    means the shoreline graph could not carry the route the whole way and the
+    junction skeleton was used for `fallback_node_ids` of the stretch; it is
+    the evaluation metric for how often the all-path-node output degrades."""
+    total = len(winning_kinds)
+    fallback = sum(1 for k in winning_kinds if k == "original")
+    fallback_node_ids: List[str] = []
+    for i, kind in enumerate(winning_kinds):
+        if kind == "original":
+            fallback_node_ids.extend(winning_ids[i:i + 2])
+    # de-dup while preserving order
+    seen: Set[str] = set()
+    fallback_node_ids = [
+        nid for nid in fallback_node_ids
+        if not (nid in seen or seen.add(nid))
+    ]
+    return {
+        "total_hops": total,
+        "fallback_hops": fallback,
+        "clean": fallback == 0,
+        "fallback_node_ids": fallback_node_ids,
+    }
 
 
 def _reconstruct_route_nodes(result: PathResult) -> List[NavigationNode]:
@@ -620,15 +652,22 @@ def _dijkstra_mixed(
     allowed:   Set[str],
     start_id:  str,
     goal_id:   str,
-) -> Optional[List[str]]:
+) -> Optional[Tuple[List[str], List[str]]]:
     """Simple O(V^2) Dijkstra over the mixed graph, restricted to `allowed`
     node ids (path nodes within scoring + all mandatory/route node ids).
-    Node counts per floor are small (hundreds), so this stays fast."""
+    Node counts per floor are small (hundreds), so this stays fast.
+
+    Returns (node_chain, edge_kinds) where edge_kinds[i] is the kind of the
+    hop from node_chain[i] to node_chain[i+1] ("path"/"crossing"/"mandatory"/
+    "original"), so callers can measure how much of the winning route fell
+    back to the penalised original-route ("original") edges. Returns None
+    when no route exists."""
     if start_id == goal_id:
-        return [start_id]
+        return [start_id], []
 
     dist: Dict[str, float] = {start_id: 0.0}
     prev: Dict[str, str] = {}
+    prev_kind: Dict[str, str] = {}
     visited: Set[str] = set()
     frontier = {start_id}
 
@@ -640,7 +679,7 @@ def _dijkstra_mixed(
         visited.add(u)
         if u == goal_id:
             break
-        for v, w, _kind in adjacency.get(u, []):
+        for v, w, kind in adjacency.get(u, []):
             if v in visited:
                 continue
             if v != goal_id and v != start_id and v not in allowed:
@@ -649,18 +688,22 @@ def _dijkstra_mixed(
             if nd < dist.get(v, math.inf):
                 dist[v] = nd
                 prev[v] = u
+                prev_kind[v] = kind
                 frontier.add(v)
 
     if goal_id not in dist:
         return None
 
     chain = [goal_id]
+    kinds: List[str] = []
     cur = goal_id
     while cur != start_id:
+        kinds.append(prev_kind[cur])
         cur = prev[cur]
         chain.append(cur)
     chain.reverse()
-    return chain
+    kinds.reverse()
+    return chain, kinds
 
 
 def _mixed_link(

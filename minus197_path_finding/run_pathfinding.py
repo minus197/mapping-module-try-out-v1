@@ -39,7 +39,7 @@ from pathfinding.engine import PathfindingEngine, to_feedback_json
 from pathfinding.search import build_nx_graph
 from pathfinding.cost import CostWeights, compute_edge_costs, normalise_landmark_scores
 from pathfinding.path_node_adjuster import (
-    adjust_with_path_nodes, load_corridor_walls, load_path_nodes,
+    adjust_with_path_nodes, load_corridor_walls, load_path_nodes, load_zones,
 )
 from evaluation import EndpointEvaluator, EvaluationRunner
 
@@ -156,9 +156,20 @@ def main() -> None:
     if args.path_nodes_path and args.sfm_path:
         path_nodes = load_path_nodes(args.path_nodes_path)
         walls = load_corridor_walls(args.sfm_path)
-        result = adjust_with_path_nodes(result, path_nodes, walls)
+        zones = load_zones(args.sfm_path)
+        result = adjust_with_path_nodes(result, path_nodes, walls, zones=zones)
         print(f"path-node adjustment: {len(path_nodes)} path nodes, "
-              f"{len(walls)} walls loaded")
+              f"{len(walls)} walls, {len(zones)} zones loaded")
+
+        stats = getattr(result, "adjustment_stats", None)
+        if stats is not None:
+            if stats["clean"]:
+                print("  route is all-path-node: 0 junction-fallback hops "
+                      f"of {stats['total_hops']}")
+            else:
+                print(f"  WARNING: junction fallback fired on "
+                      f"{stats['fallback_hops']} of {stats['total_hops']} hops "
+                      f"-- nodes: {stats['fallback_node_ids']}")
 
     print(f"total_distance : {result.total_distance} m")
     print(f"total_cost     : {result.total_cost}")
