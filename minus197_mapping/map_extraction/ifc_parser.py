@@ -452,6 +452,65 @@ def _extract_wall_axis(wall, scale: float) -> Optional[Tuple[Point2D, Point2D]]:
 
 
 # ---------------------------------------------------------------------------
+# Storey (multi-floor) helpers
+# ---------------------------------------------------------------------------
+
+def list_populated_storeys(model) -> "list[tuple[int, str, float]]":
+    """
+    Return [(storey_id, storey_name, elevation)] for storeys that actually
+    contain navigable content, sorted bottom→top by elevation.
+
+    A storey counts as populated if it directly contains at least one wall
+    (IfcRelContainedInSpatialStructure) OR aggregates at least one space
+    (IfcRelAggregates). Empty reference storeys (e.g. a roof level) are dropped.
+    """
+    space_count: Dict[int, int] = {}
+    elem_count:  Dict[int, int] = {}
+
+    for rel in model.by_type("IfcRelAggregates"):
+        parent = rel.RelatingObject
+        if parent.is_a("IfcBuildingStorey"):
+            n = sum(1 for c in rel.RelatedObjects if c.is_a("IfcSpace"))
+            space_count[parent.id()] = space_count.get(parent.id(), 0) + n
+
+    for rel in model.by_type("IfcRelContainedInSpatialStructure"):
+        s = rel.RelatingStructure
+        if s.is_a("IfcBuildingStorey"):
+            n = sum(1 for e in rel.RelatedElements if e.is_a("IfcWall"))
+            elem_count[s.id()] = elem_count.get(s.id(), 0) + n
+
+    out: List[Tuple[int, str, float]] = []
+    for s in model.by_type("IfcBuildingStorey"):
+        if space_count.get(s.id(), 0) > 0 or elem_count.get(s.id(), 0) > 0:
+            elev = float(getattr(s, "Elevation", 0.0) or 0.0)
+            out.append((s.id(), s.Name or f"Storey_{s.id()}", elev))
+
+    out.sort(key=lambda t: t[2])   # bottom → top
+    return out
+
+
+def build_element_storey_map(model) -> "dict[int, int]":
+    """
+    Map every element id → its owning IfcBuildingStorey id, covering BOTH
+    containment relationships:
+      • IfcRelContainedInSpatialStructure  (walls, doors, stairs, transport)
+      • IfcRelAggregates                   (spaces)
+    """
+    m: Dict[int, int] = {}
+    for rel in model.by_type("IfcRelContainedInSpatialStructure"):
+        s = rel.RelatingStructure
+        if s.is_a("IfcBuildingStorey"):
+            for e in rel.RelatedElements:
+                m[e.id()] = s.id()
+    for rel in model.by_type("IfcRelAggregates"):
+        parent = rel.RelatingObject
+        if parent.is_a("IfcBuildingStorey"):
+            for c in rel.RelatedObjects:
+                m[c.id()] = parent.id()
+    return m
+
+
+# ---------------------------------------------------------------------------
 # Main parser class
 # ---------------------------------------------------------------------------
 
@@ -463,16 +522,24 @@ class IFCParser:
     ----------
     ifc_path : str | Path
         Path to the .ifc file.
+    target_storey_id : int | None
+        When set, only elements belonging to this IfcBuildingStorey are
+        extracted (multi-floor mode). When None (default) the whole file is
+        parsed, preserving legacy single-floor behaviour.
     """
 
-    def __init__(self, ifc_path: str | Path):
-        self.ifc_path = str(ifc_path)
-        self._model   = None
-        self._scale   = 1.0
+    def __init__(self, ifc_path: str | Path,
+                 target_storey_id: "int | None" = None):
+        self.ifc_path          = str(ifc_path)
+        self._model            = None
+        self._scale            = 1.0
+        self._target_storey_id = target_storey_id   # None = parse whole file
+        self._storey_of: Dict[int, int] = {}        # element_id -> storey_id
 
     def parse(self) -> IFCParseResult:
-        self._model = ifcopenshell.open(self.ifc_path)
-        self._scale = _detect_unit_scale(self._model)
+        self._model     = ifcopenshell.open(self.ifc_path)
+        self._scale     = _detect_unit_scale(self._model)
+        self._storey_of = build_element_storey_map(self._model)
 
         result = IFCParseResult(
             source_file = self.ifc_path,
@@ -485,9 +552,20 @@ class IFCParser:
         return result
 
     # ------------------------------------------------------------------
+    def _on_target_storey(self, element) -> bool:
+        """
+        True if the element belongs to the target storey (or if no storey
+        filter is active, i.e. single-floor / whole-file mode).
+        """
+        if self._target_storey_id is None:
+            return True
+        return self._storey_of.get(element.id()) == self._target_storey_id
+
     def _extract_spaces(self) -> List[ParsedSpace]:
         spaces = []
         for s in self._model.by_type("IfcSpace"):
+            if not self._on_target_storey(s):
+                continue
             poly = _extract_space_polygon(s, self._scale) or []
             spaces.append(ParsedSpace(
                 ifc_id    = s.id(),
@@ -501,6 +579,8 @@ class IFCParser:
     def _extract_walls(self) -> List[ParsedWall]:
         walls = []
         for w in self._model.by_type("IfcWall"):
+            if not self._on_target_storey(w):
+                continue
             axis = _extract_wall_axis(w, self._scale)
             if axis is None:
                 continue
@@ -517,6 +597,8 @@ class IFCParser:
         feats = []
 
         for t in self._model.by_type("IfcTransportElement"):
+            if not self._on_target_storey(t):
+                continue
             pos = _world_xy(t, self._scale)
             if pos is None:
                 continue
@@ -532,6 +614,8 @@ class IFCParser:
             ))
 
         for f in self._model.by_type("IfcFurnishingElement"):
+            if not self._on_target_storey(f):
+                continue
             pos = _world_xy(f, self._scale)
             if pos is None:
                 continue
@@ -545,6 +629,8 @@ class IFCParser:
             ))
 
         for d in self._model.by_type("IfcDoor"):
+            if not self._on_target_storey(d):
+                continue
             pos = _world_xy(d, self._scale)
             if pos is None:
                 continue
@@ -558,6 +644,8 @@ class IFCParser:
             ))
 
         for st in self._model.by_type("IfcStair"):
+            if not self._on_target_storey(st):
+                continue
             pos = _world_xy(st, self._scale)
             if pos is None:
                 continue

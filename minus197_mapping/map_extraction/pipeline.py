@@ -22,11 +22,21 @@ Multi-floor usage (one IFC file per floor):
     building = pipeline.run_multi()    # → BuildingGraph
     pipeline.save_multi("data/outputs/")
 
+Multi-floor usage (one IFC file with several storeys):
+    pipeline = MapExtractionPipeline.multi_floor_single_ifc(
+        "data/ifc_files/floors_3-4_combined.ifc",
+        building_name="ITFAC Mall",
+    )
+    building = pipeline.run_multi_single()   # → BuildingGraph
+    pipeline.save_multi_single("data/outputs/")
+
 Outputs produced per floor
 --------------------------
-  <stem>_graph.json       -- navigation graph (nodes + edges)
-  <stem>_sfm.json         -- semantic floor map
-  <stem>_occupancy.json   -- hybrid occupancy grid for perception module
+  <stem>_graph.json        -- navigation graph (nodes + edges)
+  <stem>_sfm.json          -- semantic floor map
+  <stem>_occupancy.json    -- hybrid occupancy grid for perception module
+  <stem>_path_nodes.json   -- cane-trailing waypoints
+  <stem>_shop_names.json   -- admin shop-name mappings (empty stub if unnamed)
 """
 
 from __future__ import annotations
@@ -60,11 +70,15 @@ class MapExtractionPipeline:
                  ifc_path:    str | Path,
                  floor_label: str   = "L1",
                  grid_res:    float = 0.1,
-                 admin_config: Optional[AdminConfig] = None):
-        self.ifc_path     = Path(ifc_path)
-        self.floor_label  = floor_label
-        self.grid_res     = grid_res
-        self.admin_config = admin_config or {}
+                 admin_config: Optional[AdminConfig] = None,
+                 target_storey_id: "int | None" = None,
+                 output_stem: "str | None" = None):
+        self.ifc_path         = Path(ifc_path)
+        self.floor_label      = floor_label
+        self.grid_res         = grid_res
+        self.admin_config     = admin_config or {}
+        self.target_storey_id = target_storey_id   # None = whole file (legacy)
+        self.output_stem      = output_stem        # per-floor stem override
 
         self._sfm:   Optional[object]     = None
         self._graph: Optional[FloorGraph] = None
@@ -75,7 +89,10 @@ class MapExtractionPipeline:
         """Execute the single-floor extraction pipeline."""
 
         print(f"[MapExtraction] Parsing {self.ifc_path.name} ...")
-        parse_result = IFCParser(self.ifc_path).parse()
+        parse_result = IFCParser(
+            self.ifc_path,
+            target_storey_id=self.target_storey_id,
+        ).parse()
         print(parse_result.summary())
 
         print("[MapExtraction] Building Semantic Floor Map Object ...")
@@ -102,21 +119,27 @@ class MapExtractionPipeline:
 
     def save(self, output_dir: str | Path = "data/outputs/") -> Path:
         """
-        Save all three outputs to output_dir:
-          <stem>_graph.json      -- navigation graph
-          <stem>_sfm.json        -- semantic floor map
-          <stem>_occupancy.json  -- hybrid occupancy grid (perception module)
+        Save all five outputs to output_dir:
+          <stem>_graph.json       -- navigation graph
+          <stem>_sfm.json         -- semantic floor map
+          <stem>_occupancy.json   -- hybrid occupancy grid (perception module)
+          <stem>_path_nodes.json  -- cane-trailing waypoints
+          <stem>_shop_names.json  -- admin shop-name mappings (empty stub if unnamed)
+
+        When an output_stem override is supplied (multi-floor mode), files are
+        prefixed with that per-floor stem so floors do not overwrite each other.
         """
         if self._graph is None:
             raise RuntimeError("Call run() before save().")
         out = Path(output_dir)
         out.mkdir(parents=True, exist_ok=True)
 
-        stem       = self.ifc_path.stem
+        stem       = self.output_stem or self.ifc_path.stem
         graph_path = out / f"{stem}_graph.json"
         sfm_path   = out / f"{stem}_sfm.json"
         occ_path   = out / f"{stem}_occupancy.json"
         path_path  = out / f"{stem}_path_nodes.json"
+        names_path = out / f"{stem}_shop_names.json"
 
         bb = self._sfm.bounding_box if self._sfm else None
         _save_floor_graph(self._graph, graph_path,
@@ -133,6 +156,14 @@ class MapExtractionPipeline:
             # Path nodes — cane-trailing waypoints along corridor-facing walls
             print("[MapExtraction] Building path nodes ...")
             PathNodeBuilder(self._sfm).build().save(path_path)
+
+        # Always emit the 5th file as a stub so every floor has all five
+        # artifacts even before an admin naming session. An empty {} is the
+        # "no mappings" case the admin patcher already tolerates; the admin
+        # UI/GUI overwrites it later, keyed to the same <stem>_sfm.json.
+        if not names_path.exists():
+            names_path.write_text(json.dumps({}, indent=2), encoding="utf-8")
+            print(f"[MapExtraction] Wrote empty shop-names stub → {names_path}")
 
         return graph_path
 
@@ -227,6 +258,105 @@ class MapExtractionPipeline:
 
         return path
 
+    # -- Multi-floor from a single multi-storey IFC ---------------------------
+
+    @classmethod
+    def multi_floor_single_ifc(cls,
+                               ifc_path: str | Path,
+                               building_name: str = "Building",
+                               grid_res: float = 0.1) -> "MapExtractionPipeline":
+        """
+        Factory for a single IFC file containing several IfcBuildingStoreys.
+
+        The file is split internally by storey; each populated storey runs the
+        existing per-floor extraction once, and the floors are stitched into one
+        building graph. Call run_multi_single() then save_multi_single().
+        """
+        inst = cls.__new__(cls)
+        inst._single_ifc      = str(ifc_path)
+        inst._building_name   = building_name
+        inst._grid_res        = grid_res
+        inst._building        = None
+        inst._sfm             = None
+        inst._graph           = None
+        inst._floor_sfms:      List[Tuple[str, object]] = []
+        inst._floor_out_stems: List[Tuple[str, "MapExtractionPipeline"]] = []
+        return inst
+
+    def run_multi_single(self) -> BuildingGraph:
+        """
+        Enumerate populated storeys in the single IFC, run one sub-pipeline per
+        storey with a per-floor output stem, compute true floor heights from
+        storey elevations, and link the floors into one BuildingGraph.
+        """
+        import ifcopenshell
+        from map_extraction.ifc_parser import list_populated_storeys
+
+        model   = ifcopenshell.open(self._single_ifc)
+        storeys = list_populated_storeys(model)   # [(id, name, elev)] bottom→top
+        if not storeys:
+            raise ValueError("No populated storeys found in the IFC.")
+
+        ifc_stem = Path(self._single_ifc).stem
+        linker   = InterFloorLinker(building_name=self._building_name)
+
+        self._floor_sfms      = []
+        self._floor_out_stems = []
+
+        for i, (sid, sname, elev) in enumerate(storeys):
+            floor_label = _label_from_storey_name(sname)   # "Level 3" -> "L3"
+            out_stem    = f"{ifc_stem}_{floor_label}"
+
+            # true floor height = elevation delta to the storey above
+            if i < len(storeys) - 1:
+                floor_height = round(storeys[i + 1][2] - elev, 3)
+            else:
+                floor_height = None
+
+            print(f"\n{'═'*50}\n[MapExtraction] Storey {sname!r} "
+                  f"(id={sid}, elev={elev}) → floor {floor_label}\n{'═'*50}")
+
+            p = MapExtractionPipeline(
+                ifc_path         = self._single_ifc,
+                floor_label      = floor_label,
+                grid_res         = self._grid_res,
+                target_storey_id = sid,
+                output_stem      = out_stem,
+            )
+            fg = p.run()
+
+            admin_cfg = {"floor_height_m": floor_height} if floor_height else {}
+            linker.add_floor(fg, admin_cfg)
+
+            if p._sfm:
+                self._floor_sfms.append((out_stem, p._sfm))
+            self._floor_out_stems.append((out_stem, p))
+
+        self._building = linker.build()
+        return self._building
+
+    def save_multi_single(self,
+                          output_dir: str | Path = "data/outputs/") -> Path:
+        """
+        Save all five artifacts per floor plus one building graph tying the
+        floors together (via the shared stair / elevator shafts).
+        """
+        if self._building is None:
+            raise RuntimeError("Call run_multi_single() before save_multi_single().")
+        out = Path(output_dir)
+        out.mkdir(parents=True, exist_ok=True)
+
+        # 5 files per floor (graph/sfm/occupancy/path_nodes/shop_names stub)
+        for out_stem, p in self._floor_out_stems:
+            p.save(out)
+
+        # one building graph tying the floors together
+        name   = self._building_name.replace(" ", "_")
+        linker = InterFloorLinker(self._building_name)
+        linker._result = self._building
+        linker.save(out / f"{name}_building_graph.json")
+        return out
+
     # -- Properties -----------------------------------------------------------
 
     @property
@@ -245,6 +375,12 @@ class MapExtractionPipeline:
 # ---------------------------------------------------------------------------
 # Helpers
 # ---------------------------------------------------------------------------
+
+def _label_from_storey_name(name: str) -> str:
+    """'Level 3' -> 'L3';  falls back to the sanitised name when no digits."""
+    digits = "".join(ch for ch in name if ch.isdigit())
+    return f"L{digits}" if digits else name.strip().replace(" ", "_")
+
 
 def _save_floor_graph(fg: FloorGraph,
                       path: Path,
