@@ -29,6 +29,18 @@ Usage
     # Auto-resolve files from a prefix in the default output dir and open a window
     python visualizer/path_node_visualizer.py floor_4_itfac_mall_with_open_area
 
+    # Several prefixes at once — each is rendered as its OWN separate image.
+    # Useful for a multi-floor IFC, where every floor is its own prefix.
+    python visualizer/path_node_visualizer.py floors_3-4_combined_L3 \
+                                              floors_3-4_combined_L4
+
+    # …the same, saved as one PNG per floor
+    python visualizer/path_node_visualizer.py floors_3-4_combined_L3 \
+                                              floors_3-4_combined_L4 --save
+
+    # Render every available prefix, each as its own image
+    python visualizer/path_node_visualizer.py --all --save
+
     # Point at a different output directory
     python visualizer/path_node_visualizer.py <prefix> --dir data/outputs
 
@@ -347,7 +359,16 @@ def render_figure(prefix, sfm, graph, path_nodes, occ, want):
     return fig
 
 
-def visualize(prefix, out_dir, want, save_path=None):
+def visualize(prefix, out_dir, want, save_path=None, show=True):
+    """Render one prefix.
+
+    When ``save_path`` is given the figure is written and closed. Otherwise the
+    figure is left open; pass ``show=False`` to defer ``plt.show()`` so several
+    prefixes can be displayed as separate windows at the same time (``plt.show()``
+    blocks, so calling it per figure would serialise them).
+
+    Returns the Figure when it is left open for a deferred show, else None.
+    """
     sfm, graph, path_nodes, occ = load_artefacts(
         prefix, out_dir, want["occupancy"]
     )
@@ -355,11 +376,18 @@ def visualize(prefix, out_dir, want, save_path=None):
 
     if save_path:
         fig.savefig(save_path, dpi=150, bbox_inches="tight")
-        print(f"\nSaved figure -> {save_path}")
-    else:
-        print("\nOpening interactive window (close it to exit)...")
+        print(f"Saved figure -> {save_path}")
+        plt.close(fig)
+        return None
+
+    if show:
+        print("Opening interactive window (close it to exit)...")
         plt.show()
-    plt.close(fig)
+        plt.close(fig)
+        return None
+
+    # Deferred: caller shows every figure at once.
+    return fig
 
 
 def main():
@@ -368,8 +396,10 @@ def main():
 
     parser = argparse.ArgumentParser(
         description="Visualize generated PATH NODES (blue) over the map.")
-    parser.add_argument("prefix", nargs="?",
-                        help="File prefix, e.g. floor_4_itfac_mall_with_open_area")
+    parser.add_argument("prefix", nargs="*",
+                        help="One or more file prefixes, e.g. "
+                             "floors_3-4_combined_L3 floors_3-4_combined_L4. "
+                             "Each prefix is rendered as its own separate image.")
     parser.add_argument("--dir", default=str(default_dir),
                         help=f"Output directory (default: {default_dir})")
     parser.add_argument("--occupancy", action="store_true",
@@ -385,6 +415,9 @@ def main():
                              "value, saves to visualizer/<prefix>_path_nodes.png")
     parser.add_argument("--list", action="store_true",
                         help="List prefixes that have a _path_nodes.json and exit")
+    parser.add_argument("--all", action="store_true",
+                        help="Render every prefix that has a _path_nodes.json, "
+                             "each as its own separate image")
     args = parser.parse_args()
 
     out_dir = Path(args.dir)
@@ -401,10 +434,16 @@ def main():
                 print(f"  {p}")
         return
 
-    if not args.prefix:
-        parser.error("a prefix is required (or use --list). e.g. "
-                     "python visualizer/path_node_visualizer.py "
-                     "floor_4_itfac_mall_with_open_area")
+    prefixes = list(args.prefix)
+    if args.all:
+        prefixes = list_prefixes(out_dir)
+        if not prefixes:
+            sys.exit(f"No *_path_nodes.json outputs found in {out_dir}")
+
+    if not prefixes:
+        parser.error("at least one prefix is required (or use --all / --list). "
+                     "e.g. python visualizer/path_node_visualizer.py "
+                     "floors_3-4_combined_L3 floors_3-4_combined_L4")
 
     want = {
         "occupancy":   args.occupancy,
@@ -416,15 +455,44 @@ def main():
         "path_nodes":  True,
     }
 
-    save_path = None
-    if args.save is not None:
-        if args.save == "__auto__":
-            save_path = visualizer_dir / f"{args.prefix}_path_nodes.png"
-        else:
-            save_path = Path(args.save)
+    # An explicit --save path names a single file, so it cannot be reused for
+    # several prefixes without overwriting. Derive one file per prefix instead.
+    explicit_save = (args.save is not None and args.save != "__auto__")
+    if explicit_save and len(prefixes) > 1:
+        stem_dir = Path(args.save).expanduser().resolve().parent
+        print(f"[note] --save with multiple prefixes: writing one PNG per "
+              f"prefix into {stem_dir}")
 
-    print(f"Visualizing path nodes for prefix '{args.prefix}' from {out_dir}")
-    visualize(args.prefix, out_dir, want, save_path=save_path)
+    # In window mode with several prefixes, build every figure first and show
+    # them together — plt.show() blocks, so showing per figure would force you
+    # to close one floor before seeing the next.
+    defer_show = args.save is None and len(prefixes) > 1
+    open_figs = []
+
+    for prefix in prefixes:
+        save_path = None
+        if args.save is not None:
+            if args.save == "__auto__":
+                save_path = visualizer_dir / f"{prefix}_path_nodes.png"
+            elif len(prefixes) == 1:
+                save_path = Path(args.save)
+            else:
+                # Multiple prefixes -> keep the chosen directory/suffix but give
+                # each figure its own per-prefix filename.
+                p = Path(args.save)
+                save_path = p.parent / f"{prefix}_path_nodes{p.suffix or '.png'}"
+
+        print(f"\nVisualizing path nodes for prefix '{prefix}' from {out_dir}")
+        fig = visualize(prefix, out_dir, want, save_path=save_path,
+                        show=not defer_show)
+        if fig is not None:
+            open_figs.append(fig)
+
+    if open_figs:
+        print(f"\nOpening {len(open_figs)} windows (close them to exit)...")
+        plt.show()
+        for fig in open_figs:
+            plt.close(fig)
 
 
 if __name__ == "__main__":

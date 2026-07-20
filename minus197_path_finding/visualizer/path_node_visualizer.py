@@ -59,6 +59,23 @@ Usage
 
     # List available map prefixes in the mapping output dir and exit
     python visualizer/path_node_visualizer.py --list
+
+Inter-floor routes
+------------------
+A route produced by the --building-graph mode (pathfinding/multi_floor.py) spans
+two floors and contains a `take_elevator` action at the floor change. Because the
+two floors have different geometry, they cannot share one image: the route is
+split at the elevator and each floor is rendered SEPARATELY, against its own
+`{stem}_{floor_label}_*` artefacts.
+
+    python visualizer/path_node_visualizer.py floors_3-4_combined \
+        --path data/outputs/route_L3_to_L4.json --save route.png
+    # -> route_L3.png  (start -> elevator)
+    # -> route_L4.png  (elevator -> destination)
+
+The floor label is appended to the --save filename automatically, and the base
+prefix may be given either bare (`floors_3-4_combined`) or already floor-specific.
+Without --save, each floor opens in its own window in turn.
 """
 
 from __future__ import annotations
@@ -99,6 +116,83 @@ def _is_path_node(step) -> bool:
     """True when a route step sits on a spliced-in cane-trailing path node."""
     nid = step.get("node_id") or ""
     return nid.startswith("PATH-")
+
+
+# ── Inter-floor route splitting ──────────────────────────────────────────────
+
+def split_route_by_floor(path_data):
+    """Split a route into one leg per floor.
+
+    An inter-floor route (see pathfinding/multi_floor.py) is a flat action list
+    with a single ``take_elevator`` action marking the floor change: everything
+    before it walks the start floor, everything after walks the destination
+    floor. The elevator action itself carries both floor labels and both XY
+    positions, so it is appended to the outgoing leg (as the point the user
+    walks to) and prepended to the incoming leg (as the point they exit at).
+
+    Returns a list of ``(floor_label, actions)`` pairs — a single unlabelled
+    (None) pair for an ordinary same-floor route, so callers can treat both
+    shapes uniformly.
+    """
+    idx = [i for i, a in enumerate(path_data)
+           if a.get("action") == "take_elevator"]
+    if not idx:
+        return [(None, path_data)]
+
+    legs = []
+    prev_cut = 0
+    for i in idx:
+        elev = path_data[i]
+        # Outgoing leg ends AT the elevator on the floor being left.
+        before = path_data[prev_cut:i] + [{
+            "action": "stop",
+            "landmark": f"elevator ({elev['direction']} to {elev['to_floor']})",
+            "node_id": elev["node_id"],
+            "position": elev["position"],
+        }]
+        legs.append((elev["from_floor"], before))
+        # Incoming leg starts AT the elevator on the floor being entered.
+        prev_cut = i + 1
+        pending_entry = {
+            "action": "continue",
+            "node_id": elev["arrive_node_id"],
+            "position": elev["arrive_position"],
+        }
+    legs.append((path_data[idx[-1]]["to_floor"],
+                 [pending_entry] + path_data[prev_cut:]))
+    return legs
+
+
+def _floor_prefix(prefix: str, floor_label: str, map_dir: Path) -> str:
+    """Per-floor artefact prefix for a floor label.
+
+    Inter-floor artefacts follow the ``{ifc_stem}_{floor_label}_*`` convention
+    written by the mapping module. The prefix may be given bare
+    (``floors_3-4_combined``) or already pointing at one floor
+    (``floors_3-4_combined_L3``); in the latter case the existing floor suffix
+    is stripped first, so every leg resolves to ITS OWN floor rather than
+    inheriting the one named on the command line.
+    """
+    if prefix.endswith(f"_{floor_label}"):
+        return prefix
+
+    base = prefix
+    # Strip a trailing floor suffix belonging to a DIFFERENT floor.
+    tail = prefix.rsplit("_", 1)[-1]
+    if tail != prefix and (map_dir / f"{prefix.rsplit('_', 1)[0]}_{floor_label}_sfm.json").exists():
+        base = prefix.rsplit("_", 1)[0]
+
+    candidate = f"{base}_{floor_label}"
+    if (map_dir / f"{candidate}_sfm.json").exists() or \
+       (map_dir / f"{candidate}_graph.json").exists():
+        return candidate
+    return prefix
+
+
+def _floor_save_path(save_path, floor_label: str) -> Path:
+    """Insert the floor label before the suffix: route.png -> route_L3.png."""
+    p = Path(save_path)
+    return p.with_name(f"{p.stem}_{floor_label}{p.suffix or '.png'}")
 
 
 # ── Path-node layer renderer ─────────────────────────────────────────────────
@@ -239,9 +333,27 @@ def render_figure(prefix, sfm, graph, occ, path_nodes_data, steps, want):
     return fig
 
 
-def visualize(prefix, map_dir, path_file, want, save_path=None):
-    sfm, graph, occ, path_data = pv.load_artefacts(
-        prefix, map_dir, path_file, want["occupancy"])
+def _visualize_leg(prefix, map_dir, path_data, want, floor_label, save_path):
+    """Render one already-split leg against that floor's own map artefacts.
+
+    Mirrors pv.load_artefacts() for the static layers, but takes the route as an
+    in-memory action list (one floor's leg) rather than re-reading it from disk.
+    """
+    paths = pv.resolve_map_paths(prefix, map_dir)
+    sfm = pv._load(paths["sfm"])
+    graph = pv._load(paths["graph"])
+    occ = pv._load(paths["occupancy"]) if want["occupancy"] else None
+
+    if sfm is None and graph is None:
+        sys.exit(f"No _sfm.json or _graph.json found for prefix '{prefix}' "
+                 f"in {map_dir}. Try --list to see available prefixes.")
+
+    for key, data in (("sfm", sfm), ("graph", graph)):
+        state = "loaded" if data is not None else "MISSING"
+        print(f"  {paths[key].name:<45} {state}")
+    if want["occupancy"]:
+        state = "loaded" if occ is not None else "MISSING"
+        print(f"  {paths['occupancy'].name:<45} {state}")
 
     # Path-node layer is our own extra artefact (not loaded by pv.load_artefacts).
     path_nodes_path = map_dir / f"{prefix}_path_nodes.json"
@@ -253,15 +365,43 @@ def visualize(prefix, map_dir, path_file, want, save_path=None):
 
     steps = pv.extract_path_points(path_data, graph)
 
-    fig = render_figure(prefix, sfm, graph, occ, path_nodes_data, steps, want)
+    title_prefix = f"{prefix}  [{floor_label}]" if floor_label else prefix
+    fig = render_figure(title_prefix, sfm, graph, occ, path_nodes_data, steps, want)
 
     if save_path:
         fig.savefig(save_path, dpi=150, bbox_inches="tight")
-        print(f"\nSaved figure -> {save_path}")
+        print(f"  Saved figure -> {save_path}")
     else:
         print("\nOpening interactive window (close it to exit)...")
         plt.show()
     plt.close(fig)
+
+
+def visualize(prefix, map_dir, path_file, want, save_path=None):
+    path_data = pv._load(Path(path_file))
+    if path_data is None:
+        sys.exit(f"Path output file not found or unreadable: {path_file}")
+    if not isinstance(path_data, list):
+        sys.exit(f"Unexpected path output format in {path_file} "
+                 f"(expected a JSON list of steps).")
+
+    legs = split_route_by_floor(path_data)
+
+    if len(legs) > 1 and not save_path:
+        print(f"\nNote: this is an inter-floor route ({len(legs)} floors); "
+              f"each floor opens in its own window, close one to see the next.")
+
+    for floor_label, leg_actions in legs:
+        if floor_label:
+            floor_prefix = _floor_prefix(prefix, floor_label, map_dir)
+            leg_save = _floor_save_path(save_path, floor_label) if save_path else None
+            print(f"\n--- {floor_label}: {len(leg_actions)} actions "
+                  f"over prefix '{floor_prefix}' ---")
+        else:
+            floor_prefix, leg_save = prefix, save_path
+
+        _visualize_leg(floor_prefix, map_dir, leg_actions, want,
+                       floor_label, leg_save)
 
 
 def main():

@@ -226,7 +226,9 @@ def _empty_result() -> PathResult:
 
 # ── Feedback-module serialiser ────────────────────────────────────────────────
 
-def to_feedback_json(result: PathResult) -> str:
+def to_feedback_json(result: PathResult,
+                     terminal: bool = True,
+                     as_list: bool = False):
     """
     Serialise a PathResult into the feedback-module action format.
 
@@ -236,15 +238,21 @@ def to_feedback_json(result: PathResult) -> str:
       - "stop"      — final step only, with landmark name
 
     Distance is rounded to the nearest metre and omitted on "stop".
+
+    terminal : when False, the final step is emitted as a movement action
+               (continue/turn) instead of "stop" — used for a non-final leg
+               of a multi-floor route that ends at an elevator.
+    as_list  : when True, return the Python list of action dicts instead of a
+               JSON string (so callers can concatenate legs).
     """
     if not result.found or not result.steps:
-        return json.dumps([])
+        return [] if as_list else json.dumps([])
 
     actions: List[Dict[str, Any]] = []
     steps = result.steps
 
     for i, step in enumerate(steps):
-        is_last = (i == len(steps) - 1)
+        is_last = (i == len(steps) - 1) and terminal
         phrase = _first_sentence(step.instruction)   # e.g. "Turn left"
         dist_m = round(step.distance)
 
@@ -272,7 +280,7 @@ def to_feedback_json(result: PathResult) -> str:
 
         actions.append(action)
 
-    return json.dumps(actions, indent=2)
+    return actions if as_list else json.dumps(actions, indent=2)
 
 
 def _first_sentence(instruction: str) -> str:
