@@ -169,7 +169,20 @@ def main() -> None:
 
     with open(args.graph, encoding="utf-8") as f:
         data = json.load(f)
+
+    # A building graph ({meta, floors, inter_floor_edges}) has no top-level
+    # nodes/edges, so FloorGraph.from_dict would yield an empty graph and fail
+    # much later inside the engine. Catch the mix-up here instead.
+    if "floors" in data and "nodes" not in data:
+        print(f"ERROR: '{args.graph}' is a building graph, not a single-floor "
+              f"graph. Use --building-graph instead of --graph.")
+        sys.exit(1)
+
     graph = FloorGraph.from_dict(data)
+    if not graph.nodes:
+        print(f"ERROR: '{args.graph}' contains no nodes — not a valid "
+              f"single-floor _graph.json.")
+        sys.exit(1)
 
     normalise_landmark_scores(graph, None)
     compute_edge_costs(graph, CostWeights())
@@ -195,7 +208,10 @@ def main() -> None:
         _print_summary(graph)
         return
 
-    engine = PathfindingEngine(graph, _no_wall_checker)
+    # Load path nodes before building the engine so a path-node id can be passed
+    # as the current (start) node to find_path().
+    path_nodes = load_path_nodes(args.path_nodes_path) if args.path_nodes_path else None
+    engine = PathfindingEngine(graph, _no_wall_checker, path_nodes=path_nodes)
     result = engine.find_path(start_id, dest_id)
 
     print(f"found          : {result.found}")
@@ -205,10 +221,16 @@ def main() -> None:
         return
 
     if args.path_nodes_path and args.sfm_path:
-        path_nodes = load_path_nodes(args.path_nodes_path)
         walls = load_corridor_walls(args.sfm_path)
         zones = load_zones(args.sfm_path)
-        result = adjust_with_path_nodes(result, path_nodes, walls, zones=zones)
+        # Pin the start path node when the current node IS a path node.
+        start_path_node_id = (
+            start_id if start_id in {p.node_id for p in path_nodes} else None
+        )
+        result = adjust_with_path_nodes(
+            result, path_nodes, walls, zones=zones,
+            start_path_node_id=start_path_node_id,
+        )
         print(f"path-node adjustment: {len(path_nodes)} path nodes, "
               f"{len(walls)} walls, {len(zones)} zones loaded")
 

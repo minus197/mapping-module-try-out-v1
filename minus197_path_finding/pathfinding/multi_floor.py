@@ -52,10 +52,6 @@ class _FloorContext:
         self.floor_label = floor_label
         self.graph = graph
 
-        # PathfindingEngine already runs normalise_landmark_scores +
-        # compute_edge_costs at construction; nothing to do here beforehand.
-        self.engine = PathfindingEngine(graph, _no_wall_checker)
-
         # Locate this floor's path_nodes / sfm by the output stem convention
         # {ifc_stem}_{floor_label}_*.
         stem = f"{_stem_of(graph.source_file)}_{floor_label}"
@@ -64,12 +60,27 @@ class _FloorContext:
 
         self._pn = self._walls = self._zones = None  # lazy
 
+        # Path nodes must reach the engine at construction so a path-node id can
+        # be passed as the current (start) node to find_path() — mirrors the
+        # single-floor path in run_pathfinding.py.
+        path_nodes, _, _ = self._load_adjust_inputs()
+
+        # PathfindingEngine already runs normalise_landmark_scores +
+        # compute_edge_costs at construction; nothing to do here beforehand.
+        self.engine = PathfindingEngine(graph, _no_wall_checker,
+                                        path_nodes=path_nodes)
+
     def _load_adjust_inputs(self):
         if self._pn is None:
             self._pn = load_path_nodes(self._pn_path) if self._pn_path.exists() else []
             self._walls = load_corridor_walls(self._sfm_path) if self._sfm_path.exists() else []
             self._zones = load_zones(self._sfm_path) if self._sfm_path.exists() else []
         return self._pn, self._walls, self._zones
+
+    def path_node_ids(self) -> set:
+        """Ids of this floor's path nodes (not part of the graph node set)."""
+        pn, _, _ = self._load_adjust_inputs()
+        return {p.node_id for p in pn}
 
     def leg_actions(self, start_id: str, dest_id: str, terminal: bool) -> List[Dict[str, Any]]:
         """Run find_path + path-node adjustment for one leg, return action dicts."""
@@ -78,7 +89,15 @@ class _FloorContext:
             return []
         pn, walls, zones = self._load_adjust_inputs()
         if pn and walls:
-            result = adjust_with_path_nodes(result, pn, walls, zones=zones)
+            # Pin the start path node when the leg begins on one, so the
+            # adjuster keeps it as the route's first node.
+            start_path_node_id = (
+                start_id if start_id in {p.node_id for p in pn} else None
+            )
+            result = adjust_with_path_nodes(
+                result, pn, walls, zones=zones,
+                start_path_node_id=start_path_node_id,
+            )
         return to_feedback_json(result, terminal=terminal, as_list=True)
 
     def elevators(self) -> List[NavigationNode]:
@@ -150,6 +169,39 @@ class MultiFloorRouter:
     def _floor_of(self, node_id: str) -> Optional[str]:
         return self.node_floor.get(node_id)
 
+    def resolve_node_ref(self, ref: str) -> Tuple[Optional[str], Optional[str], str]:
+        """
+        Resolve a user-supplied node reference to (node_id, floor_label, error).
+
+        Accepts a plain graph node_id, a path-node id, or a floor-qualified
+        "L3:PATH-0000". Path-node ids repeat across floors (each floor numbers
+        its own from PATH-0000), so an unqualified path-node id is only accepted
+        when exactly one floor defines it.
+        """
+        if ":" in ref:
+            floor, _, bare = ref.partition(":")
+            if floor not in self.floors:
+                return None, None, (f"unknown floor '{floor}' in '{ref}' "
+                                    f"(known: {', '.join(self.floor_order)})")
+            ctx = self.floors[floor]
+            if ctx.node(bare) is not None or bare in ctx.path_node_ids():
+                return bare, floor, ""
+            return None, None, f"node '{bare}' not found on floor {floor}"
+
+        floor = self.node_floor.get(ref)
+        if floor is not None:
+            return ref, floor, ""
+
+        # Not a graph node — look for it among the per-floor path nodes.
+        hits = [fl for fl, ctx in self.floors.items() if ref in ctx.path_node_ids()]
+        if len(hits) == 1:
+            return ref, hits[0], ""
+        if len(hits) > 1:
+            opts = ", ".join(f"{fl}:{ref}" for fl in sorted(hits))
+            return None, None, (f"'{ref}' is ambiguous - it exists on "
+                                f"{', '.join(sorted(hits))}. Qualify it: {opts}")
+        return None, None, f"'{ref}' is not a node id or path-node id in this building"
+
     def _direction(self, from_floor: str, to_floor: str) -> str:
         return "up" if self.floor_order.index(to_floor) > self.floor_order.index(from_floor) else "down"
 
@@ -209,12 +261,19 @@ class MultiFloorRouter:
               "message": str        # present when found is False
             }
         """
-        start_floor = self._floor_of(start_id)
-        dest_floor = self._floor_of(dest_id)
+        start_id, start_floor, start_err = self.resolve_node_ref(start_id)
+        dest_id, dest_floor, dest_err = self.resolve_node_ref(dest_id)
 
-        if start_floor is None or dest_floor is None:
+        if start_err or dest_err:
             return {"found": False, "actions": [],
-                    "message": "start or destination node_id not in building graph"}
+                    "message": "; ".join(m for m in (start_err, dest_err) if m)}
+
+        # find_path resolves a path node only as the START; a destination must be
+        # a real graph node.
+        if self.floors[dest_floor].node(dest_id) is None:
+            return {"found": False, "actions": [],
+                    "message": f"destination '{dest_id}' is a path node; "
+                               f"destinations must be graph nodes (e.g. a ZONE-* id)"}
 
         # ── Same floor — existing single-floor behaviour ──────────────────────
         if start_floor == dest_floor:

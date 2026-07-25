@@ -442,6 +442,7 @@ def adjust_with_path_nodes(
     walls:      List[Wall],
     zones:      Optional[List[Zone]] = None,
     user_xy:    Optional[Point2D] = None,
+    start_path_node_id: Optional[str] = None,
 ) -> PathResult:
     """
     Return a new PathResult whose `steps` walk a re-derived line over the
@@ -464,11 +465,19 @@ def adjust_with_path_nodes(
                  zone the original route touches; omitting it falls back to
                  route-polyline-buffer-only scoping.
     user_xy    : true user position; defaults to result.start_node.position
+    start_path_node_id : when the current node passed to find_path() was itself
+                 a path node, its id — pinned as the mixed-graph search's start
+                 so the walking geometry begins exactly on that path node
+                 (rather than on the graph node phase 1 snapped it to).
     """
     if not result.found or not result.steps:
         return result
 
     route_nodes = _reconstruct_route_nodes(result)
+
+    # When the current node was itself a path node, pin it as the search start.
+    pn_by_id = {n.node_id: n for n in path_nodes}
+    start_pn = pn_by_id.get(start_path_node_id) if start_path_node_id else None
 
     pn_graph = _GlobalPathGraph(path_nodes, walls)
 
@@ -505,9 +514,14 @@ def adjust_with_path_nodes(
 
     eligible = _eligible_path_node_ids(route_nodes, path_nodes, zones)
     mandatory_ids = {n.node_id for n in mandatory_nodes} | {n.node_id for n in route_nodes}
+    if start_pn is not None:
+        # The user-supplied start path node is mandatory regardless of buffer.
+        mandatory_ids.add(start_pn.node_id)
     allowed = eligible | mandatory_ids
 
-    start_id = route_nodes[0].node_id
+    # Pin the start path node as the search origin so the walking geometry
+    # begins exactly on it, instead of on the graph node phase 1 snapped to.
+    start_id = start_pn.node_id if start_pn is not None else route_nodes[0].node_id
     goal_id = route_nodes[-1].node_id
 
     winning = _dijkstra_mixed(adjacency, allowed, start_id, goal_id)
@@ -517,7 +531,6 @@ def adjust_with_path_nodes(
 
     expanded_nodes: List[NavigationNode] = []
     synthetic_edges: Dict[Tuple[str, str], NavigationEdge] = {}
-    pn_by_id = {n.node_id: n for n in path_nodes}
 
     for nid in winning_ids:
         if nid in node_lookup:
