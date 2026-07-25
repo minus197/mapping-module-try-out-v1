@@ -38,6 +38,10 @@ from shared.types import FloorGraph
 from pathfinding.engine import PathfindingEngine, to_feedback_json
 from pathfinding.search import build_nx_graph
 from pathfinding.cost import CostWeights, compute_edge_costs, normalise_landmark_scores
+from pathfinding.path_node_adjuster import (
+    adjust_with_path_nodes, load_corridor_walls, load_path_nodes, load_zones,
+)
+from pathfinding.multi_floor import MultiFloorRouter
 from evaluation import EndpointEvaluator, EvaluationRunner
 
 
@@ -79,11 +83,54 @@ def _print_summary(graph: FloorGraph) -> None:
             print(f"  {n.node_id}  ->  {n.tags.get('admin_name') or n.label}")
 
 
+def _run_building_graph(args) -> None:
+    """Inter-floor routing mode — routes across floors via the elevator."""
+    outputs_dir = args.outputs_dir or str(Path(args.building_graph).parent)
+    router = MultiFloorRouter.from_building_graph(args.building_graph, outputs_dir)
+
+    start_id = args.start_id or (router.find_node_id_by_name(args.start_name)
+                                 if args.start_name else None)
+    dest_id = args.dest_id or (router.find_node_id_by_name(args.dest_name)
+                               if args.dest_name else None)
+    if not start_id or not dest_id:
+        print("ERROR: provide --from/--to (node ids) or --from-name/--to-name.")
+        sys.exit(1)
+
+    route = router.route(start_id, dest_id)
+    print(f"found       : {route['found']}")
+    if not route["found"]:
+        print("message     :", route.get("message", ""))
+        return
+
+    print(f"same_floor  : {route['same_floor']}  "
+          f"({route['start_floor']} -> {route['dest_floor']})")
+    print(f"actions     : {len(route['actions'])}")
+    for a in route["actions"]:
+        if a["action"] == "take_elevator":
+            print(f"  >> TAKE ELEVATOR {a['direction']} to {a['to_floor']}")
+        elif a["action"] == "stop":
+            print(f"  - stop at {a.get('landmark', '')}")
+        else:
+            print(f"  - {a['action']} {a.get('direction', '')} {a.get('distance', '')}m")
+
+    out_json = json.dumps(route["actions"], indent=2)
+    if args.save_feedback_path:
+        Path(args.save_feedback_path).write_text(out_json, encoding="utf-8")
+        print(f"\nSaved feedback JSON -> {args.save_feedback_path}")
+    if args.feedback_json:
+        print("\nfeedback json:\n" + out_json)
+
+
 def main() -> None:
     parser = argparse.ArgumentParser(
         description="Load a _graph.json, compute edge costs, and optionally find a path."
     )
-    parser.add_argument("--graph", required=True, help="Path to the _graph.json file")
+    parser.add_argument("--graph", help="Path to the _graph.json file (single-floor mode)")
+    parser.add_argument("--building-graph", dest="building_graph", default=None,
+                        help="Path to <building>_building_graph.json for inter-floor routing")
+    parser.add_argument("--outputs-dir", dest="outputs_dir", default=None,
+                        help="Directory containing the per-floor _path_nodes.json / _sfm.json "
+                             "(defaults to the building graph's own directory)")
     parser.add_argument("--from", dest="start_id", help="Start node_id")
     parser.add_argument("--to", dest="dest_id", help="Destination node_id")
     parser.add_argument("--from-name", dest="start_name", help="Start shop/admin name")
@@ -100,11 +147,42 @@ def main() -> None:
         "--evaluate", action="store_true",
         help="Run evaluation checks on the found path (e.g. endpoint check)",
     )
+    parser.add_argument(
+        "--path-nodes", dest="path_nodes_path", default=None,
+        help="Path to the *_path_nodes.json file. When given (with --sfm), "
+             "the found route is adjusted to hug nearby path nodes on legs "
+             "that run along a corridor.",
+    )
+    parser.add_argument(
+        "--sfm", dest="sfm_path", default=None,
+        help="Path to the *_sfm.json file (wall geometry for the path-node "
+             "adjustment). Required together with --path-nodes.",
+    )
     args = parser.parse_args()
+
+    if not args.graph and not args.building_graph:
+        parser.error("one of --graph (single floor) or --building-graph (inter-floor) is required")
+
+    if args.building_graph:
+        _run_building_graph(args)
+        return
 
     with open(args.graph, encoding="utf-8") as f:
         data = json.load(f)
+
+    # A building graph ({meta, floors, inter_floor_edges}) has no top-level
+    # nodes/edges, so FloorGraph.from_dict would yield an empty graph and fail
+    # much later inside the engine. Catch the mix-up here instead.
+    if "floors" in data and "nodes" not in data:
+        print(f"ERROR: '{args.graph}' is a building graph, not a single-floor "
+              f"graph. Use --building-graph instead of --graph.")
+        sys.exit(1)
+
     graph = FloorGraph.from_dict(data)
+    if not graph.nodes:
+        print(f"ERROR: '{args.graph}' contains no nodes — not a valid "
+              f"single-floor _graph.json.")
+        sys.exit(1)
 
     normalise_landmark_scores(graph, None)
     compute_edge_costs(graph, CostWeights())
@@ -130,7 +208,10 @@ def main() -> None:
         _print_summary(graph)
         return
 
-    engine = PathfindingEngine(graph, _no_wall_checker)
+    # Load path nodes before building the engine so a path-node id can be passed
+    # as the current (start) node to find_path().
+    path_nodes = load_path_nodes(args.path_nodes_path) if args.path_nodes_path else None
+    engine = PathfindingEngine(graph, _no_wall_checker, path_nodes=path_nodes)
     result = engine.find_path(start_id, dest_id)
 
     print(f"found          : {result.found}")
@@ -138,6 +219,30 @@ def main() -> None:
         print("No path found — start and destination may be in disconnected "
               "parts of the graph. Run without --from/--to to see components.")
         return
+
+    if args.path_nodes_path and args.sfm_path:
+        walls = load_corridor_walls(args.sfm_path)
+        zones = load_zones(args.sfm_path)
+        # Pin the start path node when the current node IS a path node.
+        start_path_node_id = (
+            start_id if start_id in {p.node_id for p in path_nodes} else None
+        )
+        result = adjust_with_path_nodes(
+            result, path_nodes, walls, zones=zones,
+            start_path_node_id=start_path_node_id,
+        )
+        print(f"path-node adjustment: {len(path_nodes)} path nodes, "
+              f"{len(walls)} walls, {len(zones)} zones loaded")
+
+        stats = getattr(result, "adjustment_stats", None)
+        if stats is not None:
+            if stats["clean"]:
+                print("  route is all-path-node: 0 junction-fallback hops "
+                      f"of {stats['total_hops']}")
+            else:
+                print(f"  WARNING: junction fallback fired on "
+                      f"{stats['fallback_hops']} of {stats['total_hops']} hops "
+                      f"-- nodes: {stats['fallback_node_ids']}")
 
     print(f"total_distance : {result.total_distance} m")
     print(f"total_cost     : {result.total_cost}")

@@ -1,0 +1,251 @@
+[
+  {
+    "action": "continue",
+    "distance": 6,
+    "node_id": "ZONE-37u8JI5e1DzuzHo5nRFQEL",
+    "position": [
+      -99.1672,
+      31.2663
+    ]
+  },
+  {
+    "action": "continue",
+    "distance": 2,
+    "node_id": "FEAT-26jjhu0DH0Lxf54dTa$KoK",
+    "position": [
+      -93.8834,
+      28.584
+    ]
+  },
+  {
+    "action": "turn",
+    "direction": "right",
+    "distance": 8,
+    "node_id": "PATH-0050",
+    "position": [
+      -92.3001,
+      28.2663
+    ]
+  },
+  {
+    "action": "turn",
+    "direction": "left",
+    "distance": 6,
+    "node_id": "PATH-0044",
+    "position": [
+      -89.1355,
+      20.7954
+    ]
+  },
+  {
+    "action": "continue",
+    "distance": 6,
+    "node_id": "PATH-0043",
+    "position": [
+      -83.5911,
+      20.7954
+    ]
+  },
+  {
+    "action": "continue",
+    "distance": 6,
+    "node_id": "PATH-0042",
+    "position": [
+      -78.0466,
+      20.7954
+    ]
+  },
+  {
+    "action": "continue",
+    "distance": 6,
+    "node_id": "PATH-0041",
+    "position": [
+      -72.5022,
+      20.7954
+    ]
+  },
+  {
+    "action": "continue",
+    "distance": 6,
+    "node_id": "PATH-0040",
+    "position": [
+      -66.9577,
+      20.7954
+    ]
+  },
+  {
+    "action": "continue",
+    "distance": 6,
+    "node_id": "PATH-0039",
+    "position": [
+      -61.4133,
+      20.7954
+    ]
+  },
+  {
+    "action": "continue",
+    "distance": 6,
+    "node_id": "PATH-0038",
+    "position": [
+      -55.8689,
+      20.7954
+    ]
+  },
+  {
+    "action": "continue",
+    "distance": 6,
+    "node_id": "PATH-0037",
+    "position": [
+      -50.3244,
+      20.7954
+    ]
+  },
+  {
+    "action": "continue",
+    "distance": 6,
+    "node_id": "PATH-0036",
+    "position": [
+      -44.78,
+      20.7954
+    ]
+  },
+  {
+    "action": "continue",
+    "distance": 6,
+    "node_id": "PATH-0035",
+    "position": [
+      -39.2355,
+      20.7954
+    ]
+  },
+  {
+    "action": "continue",
+    "distance": 6,
+    "node_id": "PATH-0034",
+    "position": [
+      -33.6911,
+      20.7954
+    ]
+  },
+  {
+    "action": "continue",
+    "distance": 6,
+    "node_id": "PATH-0033",
+    "position": [
+      -28.1466,
+      20.7954
+    ]
+  },
+  {
+    "action": "turn",
+    "direction": "right",
+    "distance": 3,
+    "node_id": "PATH-0032",
+    "position": [
+      -22.6022,
+      20.7954
+    ]
+  },
+  {
+    "action": "turn",
+    "direction": "left",
+    "distance": 15,
+    "node_id": "PATH-0025",
+    "position": [
+      -20.2845,
+      18.1964
+    ]
+  },
+  {
+    "action": "turn",
+    "direction": "right",
+    "distance": 6,
+    "node_id": "PATH-0009",
+    "position": [
+      -6.6114,
+      24.2663
+    ]
+  },
+  {
+    "action": "continue",
+    "distance": 6,
+    "node_id": "PATH-0008",
+    "position": [
+      -0.9652,
+      24.2663
+    ]
+  },
+  {
+    "action": "continue",
+    "distance": 6,
+    "node_id": "PATH-0007",
+    "position": [
+      4.6811,
+      24.2663
+    ]
+  },
+  {
+    "action": "continue",
+    "distance": 6,
+    "node_id": "PATH-0006",
+    "position": [
+      10.3273,
+      24.2663
+    ]
+  },
+  {
+    "action": "continue",
+    "distance": 6,
+    "node_id": "PATH-0005",
+    "position": [
+      15.9735,
+      24.2663
+    ]
+  },
+  {
+    "action": "continue",
+    "distance": 6,
+    "node_id": "PATH-0004",
+    "position": [
+      21.6198,
+      24.2663
+    ]
+  },
+  {
+    "action": "continue",
+    "distance": 6,
+    "node_id": "PATH-0003",
+    "position": [
+      27.266,
+      24.2663
+    ]
+  },
+  {
+    "action": "continue",
+    "distance": 6,
+    "node_id": "PATH-0002",
+    "position": [
+      32.9122,
+      24.2663
+    ]
+  },
+  {
+    "action": "turn",
+    "direction": "left",
+    "distance": 3,
+    "node_id": "PATH-0001",
+    "position": [
+      38.5585,
+      24.2663
+    ]
+  },
+  {
+    "action": "stop",
+    "landmark": "SINGER",
+    "node_id": "ZONE-2SAGvqDRX6DRBKPckG2ybK",
+    "position": [
+      35.2311,
+      31.5919
+    ]
+  }
+]
