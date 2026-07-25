@@ -142,9 +142,13 @@ class Feature:
     position:     Point2D
     zone_id:      Optional[str]
     priority:     int
+    # World-space footprint polygon (metres, closed) when the feature's IFC
+    # body geometry allows one to be extracted (currently: stair, elevator).
+    # None for point-only features (doors, furnishing, ...).
+    boundary_polygon: Optional[List[Point2D]] = None
 
     def to_dict(self) -> Dict[str, Any]:
-        return {
+        d = {
             "feature_id":   self.feature_id,
             "ifc_guid":     self.ifc_guid,
             "name":         self.name,
@@ -153,6 +157,10 @@ class Feature:
             "zone_id":      self.zone_id,
             "priority":     int(self.priority),
         }
+        if self.boundary_polygon:
+            d["boundary_polygon"] = [[float(x), float(y)]
+                                     for x, y in self.boundary_polygon]
+        return d
 
 
 @dataclass
@@ -411,5 +419,6 @@ class SemanticFloorMapBuilder:
                 position     = pf.position,
                 zone_id      = zone_id,
                 priority     = _FEATURE_PRIORITY.get(pf.feature_type, 1),
+                boundary_polygon = pf.polygon,
             ))
         return features

@@ -210,6 +210,7 @@ class ShopNameGUI:
         floor_label: str,
         names_path: Path,
         run_patcher: bool = False,
+        container=None,
     ) -> None:
         import tkinter as tk
         from tkinter import ttk
@@ -217,6 +218,12 @@ class ShopNameGUI:
         self.tk = tk
         self.ttk = ttk
         self.root = root
+        # Widgets are built into `container`. In single-floor mode this is the
+        # root window itself; in tabbed multi-floor mode it is a notebook tab
+        # frame, so several ShopNameGUIs share one Tk root without fighting over
+        # window-level state (title, geometry, protocol).
+        self.container = container if container is not None else root
+        self._owns_window = container is None
         self.sfm_data = sfm_data
         self.zones = zones
         self.zone_by_id = {z["zone_id"]: z for z in zones}
@@ -242,10 +249,11 @@ class ShopNameGUI:
         self.id_by_tree_item: Dict[str, str] = {}
         self._patch_requested = False
 
-        root.title(f"Zone Naming — {stem} (floor {floor_label})")
-        root.geometry("1320x840")
-        root.minsize(1000, 640)
-        root.protocol("WM_DELETE_WINDOW", self.on_window_close)
+        if self._owns_window:
+            root.title(f"Zone Naming — {stem} (floor {floor_label})")
+            root.geometry("1320x840")
+            root.minsize(1000, 640)
+            root.protocol("WM_DELETE_WINDOW", self.on_window_close)
 
         self._build_layout()
         self._build_tree_rows()
@@ -259,7 +267,7 @@ class ShopNameGUI:
     def _build_layout(self) -> None:
         tk, ttk = self.tk, self.ttk
 
-        paned = ttk.PanedWindow(self.root, orient="horizontal")
+        paned = ttk.PanedWindow(self.container, orient="horizontal")
         paned.pack(fill="both", expand=True)
 
         left = ttk.Frame(paned)
@@ -594,16 +602,43 @@ class ShopNameGUI:
         self._autosave()
         self._set_status(f"Cleared {self.zone_by_id[zid]['ifc_name']}")
 
+    def _close_window(self) -> None:
+        """Destroy the toplevel — but only when this GUI owns it. In tabbed
+        mode the notebook owns the window, so the tab just autosaves instead."""
+        if self._owns_window:
+            self.root.destroy()
+
     def on_save_patch(self) -> None:
         self._commit_dirty_form()
         self._autosave()
         self._patch_requested = True
-        self.root.destroy()
+        if self._owns_window:
+            # Single-floor window: patching runs in run_gui after mainloop ends.
+            self._close_window()
+        else:
+            # Tabbed mode: closing would kill every floor's tab, so instead
+            # apply THIS floor's names to its output JSONs right now and keep
+            # the window open for the other tabs.
+            self._apply_patch_now()
+
+    def _apply_patch_now(self) -> None:
+        """Run the patcher for this floor immediately (tabbed mode)."""
+        try:
+            from admin_naming.shop_name_patcher import run_patcher as do_patch
+            do_patch(names_path=self.names_path,
+                     output_dir=self.names_path.parent)
+            named = self._named_count()
+            self._set_status(
+                f"Applied {named} name(s) to floor {self.floor_label or self.stem} "
+                f"outputs → {self.names_path.name}"
+            )
+        except Exception as exc:  # pragma: no cover - IO/patcher guard
+            self._set_status(f"Apply failed: {exc}")
 
     def on_save_close(self) -> None:
         self._commit_dirty_form()
         self._autosave()
-        self.root.destroy()
+        self._close_window()
 
     def on_cancel(self) -> None:
         from tkinter import messagebox
@@ -614,7 +649,7 @@ class ShopNameGUI:
                 "Zones you already saved are kept. Close anyway?",
             ):
                 return
-        self.root.destroy()
+        self._close_window()
 
     def on_window_close(self) -> None:
         from tkinter import messagebox
@@ -709,6 +744,128 @@ def run_gui(
 
     print(f"[AdminNamingGUI] Names saved -> {names_path.resolve()}")
     return names_path
+
+
+def run_gui_multi(
+    sfm_paths: List[str | Path],
+    output_dir: str | Path,
+    run_patcher: bool = False,
+) -> List[Path]:
+    """Launch ONE window with a tab per floor.
+
+    Each ``sfm_path`` (a ``{stem}_sfm.json``) becomes a notebook tab hosting a
+    full ShopNameGUI, so the admin names zones for every floor in a single
+    session — floor L3 on one tab, floor L4 on the next, etc. Each tab
+    autosaves its own ``{stem}_shop_names.json``.
+
+    Returns the list of names-file paths (one per floor). Mirrors ``run_gui``
+    for the single-floor case, so ``main.py`` can pick whichever fits.
+    """
+    output_dir = Path(output_dir)
+    output_dir.mkdir(parents=True, exist_ok=True)
+
+    # Load every floor's SFM up front; skip any with no nameable zones so we
+    # never build an empty tab.
+    floors: List[dict] = []
+    for sp in sfm_paths:
+        sp = Path(sp)
+        if not sp.exists():
+            print(f"[AdminNamingGUI] SFM not found, skipping: {sp}")
+            continue
+        sfm_data = json.loads(sp.read_text(encoding="utf-8"))
+        zones = load_zones(sfm_data)
+        if not zones:
+            print(f"[AdminNamingGUI] No zones in {sp.name} — skipping tab.")
+            continue
+        stem = _stem_from_sfm(sp, sfm_data)
+        floor_label = sfm_data.get("meta", {}).get("floor_label", "")
+        floors.append({
+            "sfm_path":    sp,
+            "sfm_data":    sfm_data,
+            "zones":       zones,
+            "stem":        stem,
+            "floor_label": floor_label,
+            "names_path":  output_dir / f"{stem}_shop_names.json",
+        })
+
+    if not floors:
+        print("[AdminNamingGUI] No floors with nameable zones — nothing to do.")
+        return []
+
+    # A single floor doesn't need tabs — reuse the plain window.
+    if len(floors) == 1:
+        f = floors[0]
+        return [run_gui(f["sfm_path"], output_dir, run_patcher)]
+
+    try:
+        import tkinter as tk
+        from tkinter import ttk
+        root = tk.Tk()
+    except Exception as exc:
+        print(f"[AdminNamingGUI] Could not open a GUI window: {exc}")
+        print("  This environment has no display. Use the text UI per floor instead.")
+        return [f["names_path"] for f in floors]
+
+    root.title("Zone Naming — all floors")
+    root.geometry("1360x880")
+    root.minsize(1000, 640)
+
+    notebook = ttk.Notebook(root)
+    notebook.pack(fill="both", expand=True)
+
+    apps: List[ShopNameGUI] = []
+    for f in floors:
+        tab = ttk.Frame(notebook)
+        label = f["floor_label"] or f["stem"]
+        notebook.add(tab, text=f"Floor {label}")
+        app = ShopNameGUI(
+            root         = root,
+            sfm_data     = f["sfm_data"],
+            zones        = f["zones"],
+            stem         = f["stem"],
+            floor_label  = f["floor_label"],
+            names_path   = f["names_path"],
+            run_patcher  = run_patcher,
+            container    = tab,
+        )
+        apps.append(app)
+
+    # One window-level close: commit + autosave every tab, then tear down.
+    def _on_close() -> None:
+        for a in apps:
+            a._commit_dirty_form()
+            a._autosave()
+        root.destroy()
+
+    root.protocol("WM_DELETE_WINDOW", _on_close)
+
+    # A global toolbar under the tabs so the admin can finish the whole session
+    # in one click regardless of which tab is active.
+    bar = ttk.Frame(root)
+    bar.pack(fill="x", side="bottom")
+    ttk.Button(bar, text="Save & Apply all floors",
+               command=lambda: (_mark_patch(apps), _on_close())
+               ).pack(side="right", padx=8, pady=6)
+    ttk.Button(bar, text="Save & Close",
+               command=_on_close).pack(side="right", pady=6)
+
+    root.mainloop()
+
+    names_paths = [f["names_path"] for f in floors]
+    if run_patcher or any(a._patch_requested for a in apps):
+        from admin_naming.shop_name_patcher import run_patcher as do_patch
+        for np_ in names_paths:
+            if np_.exists():
+                do_patch(names_path=np_, output_dir=output_dir)
+
+    for np_ in names_paths:
+        print(f"[AdminNamingGUI] Names saved -> {np_.resolve()}")
+    return names_paths
+
+
+def _mark_patch(apps: List["ShopNameGUI"]) -> None:
+    for a in apps:
+        a._patch_requested = True
 
 
 # ---------------------------------------------------------------------------

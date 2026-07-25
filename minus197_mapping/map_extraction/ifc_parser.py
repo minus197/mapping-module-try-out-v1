@@ -119,6 +119,10 @@ class ParsedFeature:
     position:     Point2D
     feature_type: str   # elevator|escalator|stair|door|info_desk|bench|furnishing
     raw_class:    str
+    # World-space footprint polygon (metres, closed), when the element's body
+    # geometry allows one to be extracted (currently: stair, elevator). None
+    # for features carried as a point only (doors, furnishing, ...).
+    polygon:      Optional[List[Point2D]] = field(default=None)
 
 
 @dataclass
@@ -327,6 +331,80 @@ def _extract_space_polygon(space, scale: float) -> Optional[List[Point2D]]:
 
 
 # ---------------------------------------------------------------------------
+# Feature footprint extraction (elevator / stair boundary polygons)
+# ---------------------------------------------------------------------------
+
+def _extrusion_footprint(item, mat: np.ndarray,
+                         scale: float) -> Optional[List[Point2D]]:
+    """World-space footprint polygon of one IfcExtrudedAreaSolid's SweptArea."""
+    sw = item.SweptArea
+    if sw.is_a("IfcArbitraryClosedProfileDef"):
+        curve = sw.OuterCurve
+        if curve.is_a("IfcIndexedPolyCurve"):
+            poly = _poly_from_indexed_poly_curve(curve, mat, scale)
+        else:
+            poly = _poly_from_polyline(curve, mat, scale)
+        return poly if poly and len(poly) >= 3 else None
+    if sw.is_a("IfcRectangleProfileDef"):
+        return _rect_polygon(float(sw.XDim), float(sw.YDim), mat, scale)
+    return None
+
+
+def _extract_feature_polygon(product, scale: float) -> Optional[List[Point2D]]:
+    """
+    Extract a world-space footprint polygon for a feature (stair / elevator)
+    from its Body representation, as the convex hull of every extruded solid's
+    footprint. A stair typically has several IfcExtrudedAreaSolid items (each
+    flight + landing); the hull gives one boundary spanning all of them.
+
+    Falls back to None when the element has no body geometry the way spaces
+    do (e.g. doors, furnishing) — callers keep the point-only position then.
+    """
+    if product.Representation is None:
+        return None
+    mat = _placement_matrix(product)
+    if mat is None:
+        return None
+
+    pts: List[Point2D] = []
+    for rep in product.Representation.Representations:
+        if (rep.RepresentationIdentifier or "") != "Body":
+            continue
+        for item in rep.Items:
+            if not item.is_a("IfcExtrudedAreaSolid"):
+                continue
+            poly = _extrusion_footprint(item, mat, scale)
+            if poly:
+                pts.extend(poly)
+
+    if len(pts) < 3:
+        return None
+    return _convex_hull(pts)
+
+
+def _convex_hull(points: List[Point2D]) -> List[Point2D]:
+    """Andrew's monotone-chain convex hull. Returns a closed CCW polygon."""
+    pts = sorted(set(points))
+    if len(pts) < 3:
+        return pts
+
+    def cross(o, a, b):
+        return (a[0] - o[0]) * (b[1] - o[1]) - (a[1] - o[1]) * (b[0] - o[0])
+
+    lower: List[Point2D] = []
+    for p in pts:
+        while len(lower) >= 2 and cross(lower[-2], lower[-1], p) <= 0:
+            lower.pop()
+        lower.append(p)
+    upper: List[Point2D] = []
+    for p in reversed(pts):
+        while len(upper) >= 2 and cross(upper[-2], upper[-1], p) <= 0:
+            upper.pop()
+        upper.append(p)
+    return lower[:-1] + upper[:-1]
+
+
+# ---------------------------------------------------------------------------
 # Wall axis extraction
 # ---------------------------------------------------------------------------
 
@@ -374,6 +452,65 @@ def _extract_wall_axis(wall, scale: float) -> Optional[Tuple[Point2D, Point2D]]:
 
 
 # ---------------------------------------------------------------------------
+# Storey (multi-floor) helpers
+# ---------------------------------------------------------------------------
+
+def list_populated_storeys(model) -> "list[tuple[int, str, float]]":
+    """
+    Return [(storey_id, storey_name, elevation)] for storeys that actually
+    contain navigable content, sorted bottom→top by elevation.
+
+    A storey counts as populated if it directly contains at least one wall
+    (IfcRelContainedInSpatialStructure) OR aggregates at least one space
+    (IfcRelAggregates). Empty reference storeys (e.g. a roof level) are dropped.
+    """
+    space_count: Dict[int, int] = {}
+    elem_count:  Dict[int, int] = {}
+
+    for rel in model.by_type("IfcRelAggregates"):
+        parent = rel.RelatingObject
+        if parent.is_a("IfcBuildingStorey"):
+            n = sum(1 for c in rel.RelatedObjects if c.is_a("IfcSpace"))
+            space_count[parent.id()] = space_count.get(parent.id(), 0) + n
+
+    for rel in model.by_type("IfcRelContainedInSpatialStructure"):
+        s = rel.RelatingStructure
+        if s.is_a("IfcBuildingStorey"):
+            n = sum(1 for e in rel.RelatedElements if e.is_a("IfcWall"))
+            elem_count[s.id()] = elem_count.get(s.id(), 0) + n
+
+    out: List[Tuple[int, str, float]] = []
+    for s in model.by_type("IfcBuildingStorey"):
+        if space_count.get(s.id(), 0) > 0 or elem_count.get(s.id(), 0) > 0:
+            elev = float(getattr(s, "Elevation", 0.0) or 0.0)
+            out.append((s.id(), s.Name or f"Storey_{s.id()}", elev))
+
+    out.sort(key=lambda t: t[2])   # bottom → top
+    return out
+
+
+def build_element_storey_map(model) -> "dict[int, int]":
+    """
+    Map every element id → its owning IfcBuildingStorey id, covering BOTH
+    containment relationships:
+      • IfcRelContainedInSpatialStructure  (walls, doors, stairs, transport)
+      • IfcRelAggregates                   (spaces)
+    """
+    m: Dict[int, int] = {}
+    for rel in model.by_type("IfcRelContainedInSpatialStructure"):
+        s = rel.RelatingStructure
+        if s.is_a("IfcBuildingStorey"):
+            for e in rel.RelatedElements:
+                m[e.id()] = s.id()
+    for rel in model.by_type("IfcRelAggregates"):
+        parent = rel.RelatingObject
+        if parent.is_a("IfcBuildingStorey"):
+            for c in rel.RelatedObjects:
+                m[c.id()] = parent.id()
+    return m
+
+
+# ---------------------------------------------------------------------------
 # Main parser class
 # ---------------------------------------------------------------------------
 
@@ -385,16 +522,24 @@ class IFCParser:
     ----------
     ifc_path : str | Path
         Path to the .ifc file.
+    target_storey_id : int | None
+        When set, only elements belonging to this IfcBuildingStorey are
+        extracted (multi-floor mode). When None (default) the whole file is
+        parsed, preserving legacy single-floor behaviour.
     """
 
-    def __init__(self, ifc_path: str | Path):
-        self.ifc_path = str(ifc_path)
-        self._model   = None
-        self._scale   = 1.0
+    def __init__(self, ifc_path: str | Path,
+                 target_storey_id: "int | None" = None):
+        self.ifc_path          = str(ifc_path)
+        self._model            = None
+        self._scale            = 1.0
+        self._target_storey_id = target_storey_id   # None = parse whole file
+        self._storey_of: Dict[int, int] = {}        # element_id -> storey_id
 
     def parse(self) -> IFCParseResult:
-        self._model = ifcopenshell.open(self.ifc_path)
-        self._scale = _detect_unit_scale(self._model)
+        self._model     = ifcopenshell.open(self.ifc_path)
+        self._scale     = _detect_unit_scale(self._model)
+        self._storey_of = build_element_storey_map(self._model)
 
         result = IFCParseResult(
             source_file = self.ifc_path,
@@ -407,9 +552,20 @@ class IFCParser:
         return result
 
     # ------------------------------------------------------------------
+    def _on_target_storey(self, element) -> bool:
+        """
+        True if the element belongs to the target storey (or if no storey
+        filter is active, i.e. single-floor / whole-file mode).
+        """
+        if self._target_storey_id is None:
+            return True
+        return self._storey_of.get(element.id()) == self._target_storey_id
+
     def _extract_spaces(self) -> List[ParsedSpace]:
         spaces = []
         for s in self._model.by_type("IfcSpace"):
+            if not self._on_target_storey(s):
+                continue
             poly = _extract_space_polygon(s, self._scale) or []
             spaces.append(ParsedSpace(
                 ifc_id    = s.id(),
@@ -423,6 +579,8 @@ class IFCParser:
     def _extract_walls(self) -> List[ParsedWall]:
         walls = []
         for w in self._model.by_type("IfcWall"):
+            if not self._on_target_storey(w):
+                continue
             axis = _extract_wall_axis(w, self._scale)
             if axis is None:
                 continue
@@ -439,6 +597,8 @@ class IFCParser:
         feats = []
 
         for t in self._model.by_type("IfcTransportElement"):
+            if not self._on_target_storey(t):
+                continue
             pos = _world_xy(t, self._scale)
             if pos is None:
                 continue
@@ -450,9 +610,12 @@ class IFCParser:
                 position     = pos,
                 feature_type = _TRANSPORT_KIND.get(kind_raw, "elevator"),
                 raw_class    = "IfcTransportElement",
+                polygon      = _extract_feature_polygon(t, self._scale),
             ))
 
         for f in self._model.by_type("IfcFurnishingElement"):
+            if not self._on_target_storey(f):
+                continue
             pos = _world_xy(f, self._scale)
             if pos is None:
                 continue
@@ -466,6 +629,8 @@ class IFCParser:
             ))
 
         for d in self._model.by_type("IfcDoor"):
+            if not self._on_target_storey(d):
+                continue
             pos = _world_xy(d, self._scale)
             if pos is None:
                 continue
@@ -479,6 +644,8 @@ class IFCParser:
             ))
 
         for st in self._model.by_type("IfcStair"):
+            if not self._on_target_storey(st):
+                continue
             pos = _world_xy(st, self._scale)
             if pos is None:
                 continue
@@ -489,6 +656,7 @@ class IFCParser:
                 position     = pos,
                 feature_type = "stair",
                 raw_class    = "IfcStair",
+                polygon      = _extract_feature_polygon(st, self._scale),
             ))
 
         return feats

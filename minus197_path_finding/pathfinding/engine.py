@@ -32,6 +32,7 @@ from shared.types import (
 from pathfinding.cost import CostWeights, compute_edge_costs, normalise_landmark_scores
 from pathfinding.instructions import build_steps
 from pathfinding.node_resolver import StartNodeResolver
+from pathfinding.path_node_adjuster import PathNode
 from pathfinding.scorer import score_path
 from pathfinding.search import build_nx_graph, k_best_paths, optimal_path
 
@@ -52,6 +53,9 @@ class PathfindingEngine:
     weights      : CostWeights   — λ/μ/ν penalty weights (default calibrated)
     landmark_max : float | None  — 99th-pct ceiling for landmark normalisation;
                                    None = auto-detect from graph
+    path_nodes   : list[PathNode] | None — optional path-node layer; when given,
+                                   find_path() can accept a path-node id as the
+                                   current (start) node. Adds no graph nodes/edges.
     """
 
     def __init__(
@@ -60,6 +64,7 @@ class PathfindingEngine:
         wall_checker: WallChecker,
         weights:      CostWeights = None,
         landmark_max: Optional[float] = None,
+        path_nodes:   Optional[List[PathNode]] = None,
     ) -> None:
         if weights is None:
             weights = CostWeights()
@@ -80,6 +85,13 @@ class PathfindingEngine:
 
         # Edge lookup used by build_steps (WP3)
         self._edge_lookup = _EdgeLookup(graph)
+
+        # Read-only lookup so find_path can resolve a path-node id passed as the
+        # current node. Path nodes are NOT added to any graph — this adds no
+        # nodes/edges and leaves all non-path-node routes byte-for-byte identical.
+        self._path_node_index: Dict[str, PathNode] = {
+            pn.node_id: pn for pn in (path_nodes or [])
+        }
 
     # ── Public API ────────────────────────────────────────────────────────────
 
@@ -105,10 +117,18 @@ class PathfindingEngine:
             return _empty_result()
 
         start_node = self.graph.node(start_node_id)
-        if start_node is None:
-            return _empty_result()
-
-        user_xy: Point2D = start_node.position
+        if start_node is not None:
+            # Non-path (graph) node — unchanged behaviour.
+            user_xy: Point2D = start_node.position
+        else:
+            # Not a graph node — try to treat it as a path node.
+            pn = self._path_node_index.get(start_node_id)
+            if pn is None:
+                return _empty_result()               # genuinely unknown id
+            # Resolve the path node's world position to a real graph start node,
+            # exactly as we resolve a raw user position. user_xy stays the path
+            # node's true position so build_steps' first step starts on it.
+            start_node, user_xy = self._resolver.resolve(pn.position[0], pn.position[1])
 
         # Quick reachability check (also handles start == dest)
         if start_node.node_id == dest_node.node_id:
@@ -226,7 +246,9 @@ def _empty_result() -> PathResult:
 
 # ── Feedback-module serialiser ────────────────────────────────────────────────
 
-def to_feedback_json(result: PathResult) -> str:
+def to_feedback_json(result: PathResult,
+                     terminal: bool = True,
+                     as_list: bool = False):
     """
     Serialise a PathResult into the feedback-module action format.
 
@@ -236,15 +258,21 @@ def to_feedback_json(result: PathResult) -> str:
       - "stop"      — final step only, with landmark name
 
     Distance is rounded to the nearest metre and omitted on "stop".
+
+    terminal : when False, the final step is emitted as a movement action
+               (continue/turn) instead of "stop" — used for a non-final leg
+               of a multi-floor route that ends at an elevator.
+    as_list  : when True, return the Python list of action dicts instead of a
+               JSON string (so callers can concatenate legs).
     """
     if not result.found or not result.steps:
-        return json.dumps([])
+        return [] if as_list else json.dumps([])
 
     actions: List[Dict[str, Any]] = []
     steps = result.steps
 
     for i, step in enumerate(steps):
-        is_last = (i == len(steps) - 1)
+        is_last = (i == len(steps) - 1) and terminal
         phrase = _first_sentence(step.instruction)   # e.g. "Turn left"
         dist_m = round(step.distance)
 
@@ -272,7 +300,7 @@ def to_feedback_json(result: PathResult) -> str:
 
         actions.append(action)
 
-    return json.dumps(actions, indent=2)
+    return actions if as_list else json.dumps(actions, indent=2)
 
 
 def _first_sentence(instruction: str) -> str:

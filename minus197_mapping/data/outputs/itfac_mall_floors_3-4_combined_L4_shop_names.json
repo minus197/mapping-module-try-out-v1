@@ -1,0 +1,49 @@
+{
+  "source_stem": "itfac_mall_floors_3-4_combined_L4",
+  "floor_label": "L4",
+  "generated_at": "2026-07-25T05:50:54",
+  "mappings": [
+    {
+      "zone_id": "233bRpVtr7PADnPMIOrRa2",
+      "ifc_name": "404",
+      "admin_name": "pop eyes",
+      "admin_description": ""
+    },
+    {
+      "zone_id": "3FVXf_y5n2nAY$fn4m$ryo",
+      "ifc_name": "405",
+      "admin_name": "keells",
+      "admin_description": ""
+    },
+    {
+      "zone_id": "07ws35hnz3mP6mOcSCf7VJ",
+      "ifc_name": "407",
+      "admin_name": "exit",
+      "admin_description": ""
+    },
+    {
+      "zone_id": "2SAGvqDRX6DRBKPckG2ybK",
+      "ifc_name": "408",
+      "admin_name": "singer",
+      "admin_description": ""
+    },
+    {
+      "zone_id": "2aQOv7Awv2XAeFI_6R_KbE",
+      "ifc_name": "409",
+      "admin_name": "odel",
+      "admin_description": ""
+    },
+    {
+      "zone_id": "2H1fgGRlD5k8YRFrovf7Qo",
+      "ifc_name": "410",
+      "admin_name": "abans",
+      "admin_description": ""
+    },
+    {
+      "zone_id": "3e6OphBZz5NRuWftrFmWYi",
+      "ifc_name": "411",
+      "admin_name": "hockey",
+      "admin_description": ""
+    }
+  ]
+}
