@@ -109,9 +109,13 @@ def _run_building_graph(args) -> None:
         if a["action"] == "take_elevator":
             print(f"  >> TAKE ELEVATOR {a['direction']} to {a['to_floor']}")
         elif a["action"] == "stop":
-            print(f"  - stop at {a.get('landmark', '')}")
+            side = a.get("side", "")
+            side_str = f" (on your {side})" if side in ("left", "right") else ""
+            print(f"  - stop at {a.get('landmark', '')}{side_str}")
         else:
-            print(f"  - {a['action']} {a.get('direction', '')} {a.get('distance', '')}m")
+            band = a.get("band", "")
+            move = f"{band} {a.get('direction', '')}".strip() or a["action"]
+            print(f"  - {move} {a.get('distance', 0):.1f}m")
 
     out_json = json.dumps(route["actions"], indent=2)
     if args.save_feedback_path:

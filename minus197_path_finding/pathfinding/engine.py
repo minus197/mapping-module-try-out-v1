@@ -24,6 +24,7 @@ find_path(start_node_id, dest_id)
 from __future__ import annotations
 
 import json
+import math
 from typing import Any, Callable, Dict, List, Optional, Tuple
 
 from shared.types import (
@@ -252,15 +253,24 @@ def to_feedback_json(result: PathResult,
     """
     Serialise a PathResult into the feedback-module action format.
 
-    Each PathStep becomes one action object:
+    Every PathStep becomes exactly one movement action, anchored at the node
+    the user is standing on (`from_node`). When `terminal` is set, a separate
+    "stop" action is *appended* at the destination rather than consuming the
+    final movement row — so a route ending `… → PATH-0126 → DOOR → CENTROID`
+    emits the door approach as its own step instead of hiding it.
+
+    Movement actions:
       - "continue"  — straight or start-walking segments
-      - "turn"      — any turn (left/right/bear/around), with direction
-      - "stop"      — final step only, with landmark name
+      - "turn"      — any turn, carrying both `direction` and `band`
 
-    Distance is rounded to the nearest metre and omitted on "stop".
+    Each action carries the full PathStep contract (shared/types.PathStep):
+    `bearing`, float `distance`, `instruction`, and the edge attributes
+    needed to compute the route-quality metrics (`edge_id`, `shore_linable`,
+    `safety_score`, `landmark_score`). Distances are emitted as floats;
+    round at the speech layer, and prefer rounding a cumulative figure over
+    rounding each hop independently.
 
-    terminal : when False, the final step is emitted as a movement action
-               (continue/turn) instead of "stop" — used for a non-final leg
+    terminal : when False, no "stop" is appended — used for a non-final leg
                of a multi-floor route that ends at an elevator.
     as_list  : when True, return the Python list of action dicts instead of a
                JSON string (so callers can concatenate legs).
@@ -271,36 +281,113 @@ def to_feedback_json(result: PathResult,
     actions: List[Dict[str, Any]] = []
     steps = result.steps
 
-    for i, step in enumerate(steps):
-        is_last = (i == len(steps) - 1) and terminal
+    for step in steps:
         phrase = _first_sentence(step.instruction)   # e.g. "Turn left"
-        dist_m = round(step.distance)
 
-        # The node at which the action is performed. turn/continue are acted
-        # at the node the user is standing on (from_node); the final stop is
-        # acted at the destination/landmark node reached (to_node).
-        anchor = step.to_node if is_last else step.from_node
-
-        if is_last:
-            landmark = (
-                step.to_node.tags.get("admin_label", "").strip()
-                or step.to_node.label
-            )
-            action: Dict[str, Any] = {"action": "stop", "landmark": landmark}
-        elif _is_turn(phrase):
-            direction = _turn_direction(phrase)
-            action = {"action": "turn", "direction": direction, "distance": dist_m}
+        if _is_turn(phrase):
+            action: Dict[str, Any] = {
+                "action":    "turn",
+                "direction": _turn_direction(phrase),
+                "band":      _turn_band(phrase),
+                "distance":  round(step.distance, 2),
+            }
         else:
-            action = {"action": "continue", "distance": dist_m}
+            action = {"action": "continue", "distance": round(step.distance, 2)}
 
+        # Movement actions are performed at the node the user stands on.
+        action["node_id"] = step.from_node.node_id
         # World coordinates in metres — see NavigationNode.position.
-        action["node_id"] = anchor.node_id
-        action["position"] = [round(anchor.position[0], 4),
-                              round(anchor.position[1], 4)]
+        action["position"] = [round(step.from_node.position[0], 4),
+                              round(step.from_node.position[1], 4)]
+        action["to_node_id"] = step.to_node.node_id
+        action["bearing"]    = round(step.bearing, 2)
+        action["instruction"] = step.instruction
+
+        edge = step.edge
+        if edge is not None:
+            action["edge_id"]        = edge.edge_id
+            action["shore_linable"]  = bool(edge.shore_linable)
+            action["safety_score"]   = round(edge.safety_score, 4)
+            action["landmark_score"] = round(edge.landmark_score, 4)
 
         actions.append(action)
 
+    if terminal:
+        prev = steps[-2] if len(steps) >= 2 else None
+        actions.append(_stop_action(steps[-1], prev))
+
     return actions if as_list else json.dumps(actions, indent=2)
+
+
+def _stop_action(final_step: PathStep,
+                 prev_step: Optional[PathStep]) -> Dict[str, Any]:
+    """
+    Build the terminal "stop", anchored at the destination node reached.
+
+    Emitted as an extra action so the final movement step keeps its own row —
+    on a route ending `… → PATH-0126 → DOOR → CENTROID` the door approach is
+    a movement step of its own and is no longer consumed as this anchor.
+
+    `side` names which side the destination lies on relative to the heading
+    the user was already travelling on.
+    """
+    dest = final_step.to_node
+    landmark = dest.tags.get("admin_label", "").strip() or dest.label
+    side = _approach_side(final_step, prev_step)
+    dist = round(final_step.distance, 2)
+
+    if side in ("left", "right"):
+        instruction = f"The entrance to {landmark} is on your {side} in {dist:.0f} metres."
+    else:
+        instruction = f"You have arrived at {landmark}."
+
+    return {
+        "action":      "stop",
+        "landmark":    landmark,
+        "side":        side,
+        "node_id":     dest.node_id,
+        "position":    [round(dest.position[0], 4), round(dest.position[1], 4)],
+        "instruction": instruction,
+    }
+
+
+def _approach_side(final_step: PathStep,
+                   prev_step: Optional[PathStep]) -> str:
+    """
+    Which side of the user the destination sits on: left | right | ahead.
+
+    Sign of the cross product between the heading the user is already
+    travelling (prev_step) and the vector to the destination. Positive cross
+    (x1*y2 − y1*x2) means the destination lies counter-clockwise of the
+    approach heading — which, with north as +Y and bearings measured
+    clockwise, is the user's left.
+
+    Returns "ahead" when the two are collinear within the dead band, or when
+    there is no preceding step to establish a heading.
+    """
+    if prev_step is None:
+        return "ahead"
+
+    # Heading the user is already travelling on.
+    hx = prev_step.to_node.position[0] - prev_step.from_node.position[0]
+    hy = prev_step.to_node.position[1] - prev_step.from_node.position[1]
+
+    # Vector from the user's current position to the destination.
+    dx = final_step.to_node.position[0] - final_step.from_node.position[0]
+    dy = final_step.to_node.position[1] - final_step.from_node.position[1]
+
+    if (hx == 0.0 and hy == 0.0) or (dx == 0.0 and dy == 0.0):
+        return "ahead"
+
+    cross = hx * dy - hy * dx
+    scale = math.hypot(hx, hy) * math.hypot(dx, dy)
+    if scale == 0.0 or abs(cross) / scale < _SIDE_DEAD_BAND:
+        return "ahead"
+    return "left" if cross > 0 else "right"
+
+
+# sin of the half-angle below which we call the destination "straight ahead"
+_SIDE_DEAD_BAND = 0.087   # ≈ 5°
 
 
 def _first_sentence(instruction: str) -> str:
@@ -321,3 +408,19 @@ def _turn_direction(phrase: str) -> str:
     if "right" in lower:
         return "right"
     return "around"
+
+
+def _turn_band(phrase: str) -> str:
+    """
+    Preserve the magnitude band that turn_phrase() resolved, which
+    `direction` alone discards: a 29° bear and a 141° near-reversal are
+    both "left" but are not the same instruction.
+
+    Bands mirror instructions.turn_phrase(): bear | turn | around.
+    """
+    lower = phrase.lower()
+    if "around" in lower:
+        return "around"
+    if "bear" in lower:
+        return "bear"
+    return "turn"
