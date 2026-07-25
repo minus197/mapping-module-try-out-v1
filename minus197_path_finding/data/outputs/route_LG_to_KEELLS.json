@@ -1,0 +1,279 @@
+[
+  {
+    "action": "continue",
+    "distance": 14,
+    "node_id": "ZONE-04gcgaNk9Fdu1P7GCXCjj7",
+    "position": [
+      -50.6022,
+      8.4699
+    ]
+  },
+  {
+    "action": "continue",
+    "distance": 3,
+    "node_id": "FEAT-3E9NwL8Zn3ZApLVUOA3jaA",
+    "position": [
+      -41.1022,
+      19.1131
+    ]
+  },
+  {
+    "action": "turn",
+    "direction": "left",
+    "distance": 6,
+    "node_id": "PATH-0035",
+    "position": [
+      -39.2355,
+      20.7954
+    ]
+  },
+  {
+    "action": "continue",
+    "distance": 6,
+    "node_id": "PATH-0036",
+    "position": [
+      -44.78,
+      20.7954
+    ]
+  },
+  {
+    "action": "continue",
+    "distance": 6,
+    "node_id": "PATH-0037",
+    "position": [
+      -50.3244,
+      20.7954
+    ]
+  },
+  {
+    "action": "continue",
+    "distance": 6,
+    "node_id": "PATH-0038",
+    "position": [
+      -55.8689,
+      20.7954
+    ]
+  },
+  {
+    "action": "continue",
+    "distance": 6,
+    "node_id": "PATH-0039",
+    "position": [
+      -61.4133,
+      20.7954
+    ]
+  },
+  {
+    "action": "continue",
+    "distance": 6,
+    "node_id": "PATH-0040",
+    "position": [
+      -66.9577,
+      20.7954
+    ]
+  },
+  {
+    "action": "continue",
+    "distance": 6,
+    "node_id": "PATH-0041",
+    "position": [
+      -72.5022,
+      20.7954
+    ]
+  },
+  {
+    "action": "continue",
+    "distance": 6,
+    "node_id": "PATH-0042",
+    "position": [
+      -78.0466,
+      20.7954
+    ]
+  },
+  {
+    "action": "continue",
+    "distance": 6,
+    "node_id": "PATH-0043",
+    "position": [
+      -83.5911,
+      20.7954
+    ]
+  },
+  {
+    "action": "turn",
+    "direction": "right",
+    "distance": 13,
+    "node_id": "PATH-0044",
+    "position": [
+      -89.1355,
+      20.7954
+    ]
+  },
+  {
+    "action": "turn",
+    "direction": "right",
+    "distance": 4,
+    "node_id": "PATH-0055",
+    "position": [
+      -83.4147,
+      32.0163
+    ]
+  },
+  {
+    "action": "turn",
+    "direction": "right",
+    "distance": 3,
+    "node_id": "PATH-0056",
+    "position": [
+      -80.0657,
+      33.1413
+    ]
+  },
+  {
+    "action": "take_elevator",
+    "direction": "up",
+    "from_floor": "L3",
+    "to_floor": "L4",
+    "connector": "elevator",
+    "node_id": "FEAT-2C5z0faBP8FeN44ZL7Q0J1",
+    "position": [
+      -77.748,
+      30.5325
+    ],
+    "arrive_node_id": "FEAT-1Y1xPx1xX0eBratXB1mbgA",
+    "arrive_position": [
+      -77.748,
+      30.5325
+    ]
+  },
+  {
+    "action": "continue",
+    "distance": 3,
+    "node_id": "FEAT-1Y1xPx1xX0eBratXB1mbgA",
+    "position": [
+      -77.748,
+      30.5325
+    ]
+  },
+  {
+    "action": "turn",
+    "direction": "left",
+    "distance": 4,
+    "node_id": "PATH-0056",
+    "position": [
+      -80.0657,
+      33.1413
+    ]
+  },
+  {
+    "action": "turn",
+    "direction": "left",
+    "distance": 13,
+    "node_id": "PATH-0055",
+    "position": [
+      -83.4147,
+      32.0163
+    ]
+  },
+  {
+    "action": "turn",
+    "direction": "left",
+    "distance": 6,
+    "node_id": "PATH-0044",
+    "position": [
+      -89.1355,
+      20.7954
+    ]
+  },
+  {
+    "action": "continue",
+    "distance": 6,
+    "node_id": "PATH-0043",
+    "position": [
+      -83.5911,
+      20.7954
+    ]
+  },
+  {
+    "action": "continue",
+    "distance": 6,
+    "node_id": "PATH-0042",
+    "position": [
+      -78.0466,
+      20.7954
+    ]
+  },
+  {
+    "action": "continue",
+    "distance": 6,
+    "node_id": "PATH-0041",
+    "position": [
+      -72.5022,
+      20.7954
+    ]
+  },
+  {
+    "action": "continue",
+    "distance": 6,
+    "node_id": "PATH-0040",
+    "position": [
+      -66.9577,
+      20.7954
+    ]
+  },
+  {
+    "action": "continue",
+    "distance": 6,
+    "node_id": "PATH-0039",
+    "position": [
+      -61.4133,
+      20.7954
+    ]
+  },
+  {
+    "action": "continue",
+    "distance": 6,
+    "node_id": "PATH-0038",
+    "position": [
+      -55.8689,
+      20.7954
+    ]
+  },
+  {
+    "action": "continue",
+    "distance": 6,
+    "node_id": "PATH-0037",
+    "position": [
+      -50.3244,
+      20.7954
+    ]
+  },
+  {
+    "action": "continue",
+    "distance": 6,
+    "node_id": "PATH-0036",
+    "position": [
+      -44.78,
+      20.7954
+    ]
+  },
+  {
+    "action": "turn",
+    "direction": "right",
+    "distance": 3,
+    "node_id": "PATH-0035",
+    "position": [
+      -39.2355,
+      20.7954
+    ]
+  },
+  {
+    "action": "stop",
+    "landmark": "KEELLS",
+    "node_id": "ZONE-2Jv0Xh5zj8tuX3MWSLrE0E",
+    "position": [
+      -50.6022,
+      8.4699
+    ]
+  }
+]

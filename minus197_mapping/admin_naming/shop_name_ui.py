@@ -88,14 +88,23 @@ def run_ui(
 # ---------------------------------------------------------------------------
 
 def _stem_from_sfm(sfm_path: Path, sfm_data: dict) -> str:
-    source = sfm_data.get("meta", {}).get("source_file", "")
-    if source:
-        return Path(source).stem
-    # Fallback: strip the trailing _sfm from the filename
+    """Derive the output-file stem for a floor from its ``{stem}_sfm.json``.
+
+    The stem MUST match the prefix the pipeline used for all five output files
+    so the patcher can find ``{stem}_graph.json`` etc. That prefix is the SFM
+    filename minus the trailing ``_sfm`` — e.g. ``floors_3-4_combined_L3``.
+
+    We deliberately do NOT use ``meta.source_file``: in multi-floor mode several
+    floors share one IFC, so its stem (``floors_3-4_combined``) drops the
+    per-floor suffix (``_L3``) and the patcher would look for files that don't
+    exist. The filename always carries the correct per-floor stem.
+    """
     name = sfm_path.stem
     if name.endswith("_sfm"):
         return name[:-4]
-    return name
+    # Fallback for oddly-named inputs: use the IFC source stem if present.
+    source = sfm_data.get("meta", {}).get("source_file", "")
+    return Path(source).stem if source else name
 
 
 def _load_existing(names_path: Path) -> Dict[str, str]:

@@ -1,0 +1,67 @@
+{
+  "source_stem": "floors_3-4_combined_L4",
+  "floor_label": "L4",
+  "generated_at": "2026-07-19T19:19:32",
+  "mappings": [
+    {
+      "zone_id": "2Jv0Xh5zj8tuX3MWSLrE0E",
+      "ifc_name": "402",
+      "admin_name": "KEELLS",
+      "admin_description": "KEELLS"
+    },
+    {
+      "zone_id": "233bRpVtr7PADnPMIOrRa2",
+      "ifc_name": "404",
+      "admin_name": "ZARA",
+      "admin_description": "ZARA"
+    },
+    {
+      "zone_id": "3FVXf_y5n2nAY$fn4m$ryo",
+      "ifc_name": "405",
+      "admin_name": "NIKE",
+      "admin_description": "NIKE"
+    },
+    {
+      "zone_id": "3fvkLYUGv9WfoOvOV1wvjM",
+      "ifc_name": "406",
+      "admin_name": "BING CHUN",
+      "admin_description": "BING CHUN"
+    },
+    {
+      "zone_id": "07ws35hnz3mP6mOcSCf7VJ",
+      "ifc_name": "407",
+      "admin_name": "N&N",
+      "admin_description": "N&N"
+    },
+    {
+      "zone_id": "2SAGvqDRX6DRBKPckG2ybK",
+      "ifc_name": "408",
+      "admin_name": "ADDIDAS",
+      "admin_description": "ADDIDAS"
+    },
+    {
+      "zone_id": "2aQOv7Awv2XAeFI_6R_KbE",
+      "ifc_name": "409",
+      "admin_name": "DSI",
+      "admin_description": "DSI"
+    },
+    {
+      "zone_id": "2H1fgGRlD5k8YRFrovf7Qo",
+      "ifc_name": "410",
+      "admin_name": "PIZZA HUT",
+      "admin_description": "PIZZA HUT"
+    },
+    {
+      "zone_id": "3e6OphBZz5NRuWftrFmWYi",
+      "ifc_name": "411",
+      "admin_name": "TACO BELL",
+      "admin_description": "TACO BELL"
+    },
+    {
+      "zone_id": "37u8JI5e1DzuzHo5nRFQEL",
+      "ifc_name": "412",
+      "admin_name": "WASHROOM",
+      "admin_description": "WASHROOM"
+    }
+  ]
+}
