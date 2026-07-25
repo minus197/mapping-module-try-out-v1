@@ -1,0 +1,95 @@
+[
+  {
+    "action": "continue",
+    "distance": 6,
+    "node_id": "ZONE-2aQOv7Awv2XAeFI_6R_KbE",
+    "position": [
+      -2.2689,
+      31.5919
+    ]
+  },
+  {
+    "action": "turn",
+    "direction": "right",
+    "distance": 3,
+    "node_id": "FEAT-26jjhu0DH0Lxf54dTa$KoN",
+    "position": [
+      -4.5501,
+      25.9486
+    ]
+  },
+  {
+    "action": "turn",
+    "direction": "right",
+    "distance": 6,
+    "node_id": "PATH-0009",
+    "position": [
+      -6.6114,
+      24.2663
+    ]
+  },
+  {
+    "action": "turn",
+    "direction": "left",
+    "distance": 10,
+    "node_id": "PATH-0010",
+    "position": [
+      -12.2576,
+      24.2663
+    ]
+  },
+  {
+    "action": "continue",
+    "distance": 6,
+    "node_id": "PATH-0073",
+    "position": [
+      -15.1491,
+      14.4048
+    ]
+  },
+  {
+    "action": "continue",
+    "distance": 6,
+    "node_id": "PATH-0072",
+    "position": [
+      -15.1491,
+      8.4048
+    ]
+  },
+  {
+    "action": "continue",
+    "distance": 6,
+    "node_id": "PATH-0071",
+    "position": [
+      -15.1491,
+      2.4048
+    ]
+  },
+  {
+    "action": "continue",
+    "distance": 14,
+    "node_id": "PATH-0070",
+    "position": [
+      -15.1491,
+      -3.5952
+    ]
+  },
+  {
+    "action": "continue",
+    "distance": 2,
+    "node_id": "PATH-0024",
+    "position": [
+      -17.0289,
+      -17.0379
+    ]
+  },
+  {
+    "action": "stop",
+    "landmark": "abans",
+    "node_id": "ZONE-2H1fgGRlD5k8YRFrovf7Qo",
+    "position": [
+      -16.9355,
+      -24.3635
+    ]
+  }
+]

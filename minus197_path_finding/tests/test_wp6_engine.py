@@ -78,19 +78,19 @@ def distance_biased_engine(distance_biased_graph):
 
 class TestInvalidDestination:
     def test_unknown_dest_returns_found_false(self, engine):
-        result = engine.find_path(0.0, 0.0, "DOES-NOT-EXIST")
+        result = engine.find_path("SKE-START", "DOES-NOT-EXIST")
         assert result.found is False
 
     def test_unknown_dest_empty_steps(self, engine):
-        result = engine.find_path(0.0, 0.0, "DOES-NOT-EXIST")
+        result = engine.find_path("SKE-START", "DOES-NOT-EXIST")
         assert result.steps == []
 
     def test_unknown_dest_empty_alternatives(self, engine):
-        result = engine.find_path(0.0, 0.0, "DOES-NOT-EXIST")
+        result = engine.find_path("SKE-START", "DOES-NOT-EXIST")
         assert result.alternatives == []
 
     def test_unknown_dest_zero_cost(self, engine):
-        result = engine.find_path(0.0, 0.0, "DOES-NOT-EXIST")
+        result = engine.find_path("SKE-START", "DOES-NOT-EXIST")
         assert result.total_cost == 0.0
 
 
@@ -98,74 +98,89 @@ class TestInvalidDestination:
 
 class TestEndToEnd:
     def test_valid_query_found_true(self, engine):
-        result = engine.find_path(0.0, 0.0, "ZONE-DEST")
+        result = engine.find_path("SKE-START", "ZONE-DEST")
         assert result.found is True
 
     def test_steps_not_empty(self, engine):
-        result = engine.find_path(0.0, 0.0, "ZONE-DEST")
+        result = engine.find_path("SKE-START", "ZONE-DEST")
         assert len(result.steps) > 0
 
     def test_alternatives_at_most_three(self, engine):
-        result = engine.find_path(0.0, 0.0, "ZONE-DEST")
+        result = engine.find_path("SKE-START", "ZONE-DEST")
         assert len(result.alternatives) <= 3
 
     def test_destination_node_set(self, engine):
-        result = engine.find_path(0.0, 0.0, "ZONE-DEST")
+        result = engine.find_path("SKE-START", "ZONE-DEST")
         assert result.destination_node.node_id == "ZONE-DEST"
 
     def test_start_node_set(self, engine):
-        result = engine.find_path(0.0, 0.0, "ZONE-DEST")
+        result = engine.find_path("SKE-START", "ZONE-DEST")
         assert result.start_node is not None
 
     def test_total_distance_positive(self, engine):
-        result = engine.find_path(0.0, 0.0, "ZONE-DEST")
+        result = engine.find_path("SKE-START", "ZONE-DEST")
         assert result.total_distance > 0.0
 
     def test_total_cost_positive(self, engine):
-        result = engine.find_path(0.0, 0.0, "ZONE-DEST")
+        result = engine.find_path("SKE-START", "ZONE-DEST")
         assert result.total_cost > 0.0
 
     def test_total_cost_gte_total_distance(self, engine):
         # combined_cost = distance × (1 + penalty) so cost ≥ distance always
-        result = engine.find_path(0.0, 0.0, "ZONE-DEST")
+        result = engine.find_path("SKE-START", "ZONE-DEST")
         assert result.total_cost >= result.total_distance - 1e-9
 
     def test_quality_scores_in_range(self, engine):
-        result = engine.find_path(0.0, 0.0, "ZONE-DEST")
+        result = engine.find_path("SKE-START", "ZONE-DEST")
         assert 0.0 <= result.safety_score   <= 1.0
         assert 0.0 <= result.shore_score    <= 1.0
         assert 0.0 <= result.landmark_score <= 1.0
 
     def test_step_instructions_non_empty(self, engine):
-        result = engine.find_path(0.0, 0.0, "ZONE-DEST")
+        result = engine.find_path("SKE-START", "ZONE-DEST")
         for step in result.steps:
             assert step.instruction.strip() != ""
 
     def test_step_bearings_in_range(self, engine):
-        result = engine.find_path(0.0, 0.0, "ZONE-DEST")
+        result = engine.find_path("SKE-START", "ZONE-DEST")
         for step in result.steps:
             assert 0.0 <= step.bearing < 360.0
 
     def test_same_node_start_and_dest(self, engine):
         # Start == dest → found=True, steps empty (user is already there)
-        result = engine.find_path(0.0, 0.0, "SKE-START")
+        result = engine.find_path("SKE-START", "SKE-START")
         assert result.found is True
 
 
 # ── First-step true-position segment ─────────────────────────────────────────
 
 class TestFirstStep:
-    def test_first_step_is_user_segment_when_far(self, engine):
-        # User placed 3 m away from start node along x-axis
-        result = engine.find_path(-3.0, 0.0, "ZONE-DEST")
-        assert result.found is True
-        assert result.steps[0].from_node.node_id == "USER"
-
-    def test_first_step_absent_when_on_start(self, engine):
-        # User exactly on SKE-START (0,0) — no virtual first step
-        result = engine.find_path(0.0, 0.0, "ZONE-DEST")
+    def test_first_step_absent_when_starting_on_a_graph_node(self, engine):
+        # find_path() now takes a start NODE ID, so user_xy is that node's own
+        # position and the virtual USER segment is never synthesised.
+        result = engine.find_path("SKE-START", "ZONE-DEST")
         first_id = result.steps[0].from_node.node_id
         assert first_id != "USER"
+
+    def test_first_step_is_user_segment_when_starting_on_a_path_node(
+        self, tiny_graph, fake_wall_checker,
+    ):
+        """
+        The USER first-step segment survives the node-id API via the path-node
+        entry point: a PATH-xxxx start resolves to a graph node while user_xy
+        stays on the path node, so build_steps() emits the true-position hop.
+        Replaces the old find_path(x, y, dest) coordinate form.
+        """
+        from pathfinding.path_node_adjuster import PathNode
+
+        # 3 m off SKE-START(0,0), on the far side from the x=5.0 fake wall.
+        pn = PathNode("PATH-9999", (-3.0, 0.0), "WALL-TEST", 2.0)
+        engine = PathfindingEngine(
+            tiny_graph, fake_wall_checker, path_nodes=[pn],
+        )
+        result = engine.find_path("PATH-9999", "ZONE-DEST")
+        assert result.found is True
+        assert result.steps[0].from_node.node_id == "USER"
 
 
 # ── Behavioural: Option A proof ───────────────────────────────────────────────
@@ -177,7 +192,7 @@ class TestOptionABehaviour:
         Route Y (START→MID-Y→DEST) must win over the shorter Route X.
         This is the core Option A claim.
         """
-        result = engine.find_path(0.0, 0.0, "ZONE-DEST")
+        result = engine.find_path("SKE-START", "ZONE-DEST")
         assert result.found is True
         node_ids = [s.to_node.node_id for s in result.steps]
         assert "MID-Y" in node_ids, (
@@ -186,7 +201,7 @@ class TestOptionABehaviour:
         assert "MID-X" not in node_ids
 
     def test_default_weights_route_y_has_high_quality_scores(self, engine):
-        result = engine.find_path(0.0, 0.0, "ZONE-DEST")
+        result = engine.find_path("SKE-START", "ZONE-DEST")
         # Route Y edges have safety=0.9, shore=1.0, landmark=0.8
         assert result.safety_score   >= 0.85
         assert result.shore_score    >= 0.99
@@ -200,7 +215,7 @@ class TestOptionABehaviour:
         This is the complement of the Option A proof: selection lives in the
         cost function, not in a separate hard-coded threshold.
         """
-        result = distance_biased_engine.find_path(0.0, 0.0, "DB-DEST")
+        result = distance_biased_engine.find_path("DB-START", "DB-DEST")
         assert result.found is True
         node_ids = [s.to_node.node_id for s in result.steps]
         assert "DB-MID-X" in node_ids, (
@@ -211,7 +226,7 @@ class TestOptionABehaviour:
 
     def test_route_y_appears_as_alternative_under_default_weights(self, engine):
         # Route X must appear in alternatives when Route Y wins
-        result = engine.find_path(0.0, 0.0, "ZONE-DEST")
+        result = engine.find_path("SKE-START", "ZONE-DEST")
         alt_node_sets = [
             {s.to_node.node_id for s in alt.steps}
             for alt in result.alternatives
@@ -221,6 +236,6 @@ class TestOptionABehaviour:
         )
 
     def test_winner_total_cost_less_than_alternatives(self, engine):
-        result = engine.find_path(0.0, 0.0, "ZONE-DEST")
+        result = engine.find_path("SKE-START", "ZONE-DEST")
         for alt in result.alternatives:
             assert result.total_cost <= alt.total_cost + 1e-9

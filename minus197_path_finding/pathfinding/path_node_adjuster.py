@@ -69,6 +69,7 @@ adjust_with_path_nodes(result, path_nodes, walls,
 
 from __future__ import annotations
 
+import heapq
 import json
 import math
 from dataclasses import dataclass, field
@@ -95,7 +96,32 @@ DRIFT_TOLERANCE_FACTOR = 1.75
 
 MAX_CROSSING_M    = 15.0   # m — max corridor width + margin for a crossing edge
 BETA              = 8.0    # flat cost charged per corridor crossing
+# Shore-linability of a synthetic hop. A path node sits PATH_GAP_M (2.0 m in
+# map_extraction/path_nodes.py) off its wall, so a genuine wall-hugging hop
+# never gets closer than that; the 1.25x margin absorbs corner bridges and
+# dedup-induced drift without admitting an open-floor diagonal. Expressed as a
+# multiple of the gap rather than a literal so it tracks PATH_GAP_M if that is
+# retuned (see LAST_MILE_FIX.md §4) — upstream graph_builder's SHORE_BUFFER of
+# 0.80 m cannot be reused directly: at a 2.0 m gap it would reject every hop.
+PATH_GAP_M        = 2.0    # m — mirrors map_extraction/path_nodes.py PATH_GAP_M
+SHORE_MAX_D       = 1.25 * PATH_GAP_M   # m — max wall distance for a shored hop
+# Fraction of sampled points along a hop that must be within SHORE_MAX_D of a
+# wall. Mirrors graph_builder.SHORE_FRACTION so the two modules agree on what
+# "shore-linable" means; sampling (rather than a midpoint test) is what stops a
+# hop that clips a wall at one end from claiming the whole run is shored.
+SHORE_FRACTION    = 0.40
+SHORE_SAMPLES     = 9      # sample points per hop, endpoints included
 PERP_ANGLE_MAX_DEG = 35.0  # max angle from the origin face's normal for a crossing
+# A crossing edge is meant to BRIDGE faces with no wall route between them. When
+# a wall-hugging route already exists it must not be short-circuited by the flat
+# BETA: on L4, 38 of 186 crossing edges did exactly that, including the 11.25 m
+# open-floor diagonal on the ODEL->Popeyes route which beat a fully connected
+# 15.62 m wall chain purely because 8.0 < 15.62 (LAST_MILE_FIX.md §2).
+# A crossing is suppressed when a path-only route exists within
+# CROSSING_SHORTCUT_FACTOR * BETA. Above that cutoff the wall route is so much
+# longer that the crossing is judged a genuine shortcut rather than a
+# short-circuit, and is kept.
+CROSSING_SHORTCUT_FACTOR = 3.0
 ROUTE_BUFFER_M    = 12.0   # m — eligibility buffer around the original route's polyline
 # Multiplier applied to an original-route edge's real distance when it is
 # seeded as a fallback candidate. The point of this stage is to PREFER
@@ -390,6 +416,40 @@ class _GlobalPathGraph:
 
 # ── Crossing edges between different faces ───────────────────────────────────
 
+def _path_only_distance(
+    pn_graph: _GlobalPathGraph, start_id: str, goal_id: str, limit: float,
+) -> Optional[float]:
+    """
+    Shortest distance from start_id to goal_id using ONLY wall-hugging
+    ("path") adjacency — same-face runs and corner bridges, never crossings.
+
+    Bounded: the search abandons any frontier beyond `limit`, so this stays
+    cheap even though it is called per candidate crossing edge. Returns None
+    when no wall route exists within the bound, which is precisely the case a
+    crossing edge is there to serve.
+    """
+    if start_id == goal_id:
+        return 0.0
+    dist: Dict[str, float] = {start_id: 0.0}
+    heap: List[Tuple[float, str]] = [(0.0, start_id)]
+    visited: Set[str] = set()
+    while heap:
+        d, u = heapq.heappop(heap)
+        if u in visited:
+            continue
+        visited.add(u)
+        if u == goal_id:
+            return d
+        for v, w, kind in pn_graph.adjacency.get(u, []):
+            if kind != "path" or v in visited:
+                continue
+            nd = d + w
+            if nd <= limit and nd < dist.get(v, math.inf):
+                dist[v] = nd
+                heapq.heappush(heap, (nd, v))
+    return None
+
+
 def _build_crossing_edges(pn_graph: _GlobalPathGraph) -> List[Tuple[str, str, float, str]]:
     """
     Candidate crossing edges between path nodes on DIFFERENT faces: the
@@ -397,6 +457,11 @@ def _build_crossing_edges(pn_graph: _GlobalPathGraph) -> List[Tuple[str, str, fl
     MAX_CROSSING_M, and must be within PERP_ANGLE_MAX_DEG of the origin
     face's normal (a genuine crossing, not a diagonal drift down the
     corridor). Cost is the flat BETA, not distance.
+
+    A candidate is DROPPED when a wall-hugging route between the same two
+    nodes already exists within CROSSING_SHORTCUT_FACTOR * BETA — otherwise
+    the flat BETA lets an open-floor diagonal undercut a connected wall chain
+    that merely happens to be longer (LAST_MILE_FIX.md §2).
     """
     edges: List[Tuple[str, str, float, str]] = []
     nodes = pn_graph.nodes
@@ -420,6 +485,13 @@ def _build_crossing_edges(pn_graph: _GlobalPathGraph) -> List[Tuple[str, str, fl
                 normal_b = pn_graph.face_normal_at(b.node_id)
                 if not _within_perp_angle(-seg, normal_b):
                     continue
+            # Suppress when the wall already connects these two nodes: the
+            # crossing would short-circuit a shoreline the user could follow.
+            if _path_only_distance(
+                pn_graph, a.node_id, b.node_id,
+                limit=CROSSING_SHORTCUT_FACTOR * BETA,
+            ) is not None:
+                continue
             edges.append((a.node_id, b.node_id, BETA, "crossing"))
     return edges
 
@@ -541,7 +613,7 @@ def adjust_with_path_nodes(
             continue  # defensive — should not happen
 
     for a, b in zip(expanded_nodes, expanded_nodes[1:]):
-        _add_synthetic_edge(synthetic_edges, a, b)
+        _add_synthetic_edge(synthetic_edges, a, b, pn_graph)
 
     lookup = _AdjustedEdgeLookup(result, synthetic_edges)
     start_pos = user_xy if user_xy is not None else expanded_nodes[0].position
@@ -730,20 +802,55 @@ def _mixed_link(
         adjacency[b_id].append((a_id, cost, kind))
 
 
+def _shore_fraction(
+    pn_graph: "_GlobalPathGraph", a: Point2D, b: Point2D,
+) -> float:
+    """
+    Fraction of sampled points along a->b lying within SHORE_MAX_D of a wall.
+
+    Sampled rather than measured at the midpoint alone: a hop that starts hard
+    against a wall and ends in open floor has a midpoint that can fall either
+    side of the threshold, and one sample cannot distinguish those cases.
+    """
+    if not pn_graph._wall_lines:
+        return 0.0
+    near = 0
+    for i in range(SHORE_SAMPLES):
+        t = i / (SHORE_SAMPLES - 1)
+        p = (a[0] + (b[0] - a[0]) * t, a[1] + (b[1] - a[1]) * t)
+        if pn_graph._nearest_wall_dist(p) <= SHORE_MAX_D:
+            near += 1
+    return near / SHORE_SAMPLES
+
+
 def _add_synthetic_edge(
-    store: Dict[Tuple[str, str], NavigationEdge],
-    src:   NavigationNode,
-    tgt:   NavigationNode,
+    store:    Dict[Tuple[str, str], NavigationEdge],
+    src:      NavigationNode,
+    tgt:      NavigationNode,
+    pn_graph: "_GlobalPathGraph",
 ) -> None:
+    """
+    Create the NavigationEdge for one hop of the adjusted route.
+
+    `shore_linable` is MEASURED, not asserted. It previously defaulted to True
+    on every hop, which made an open-floor diagonal indistinguishable from a
+    wall run in any downstream metric (see LAST_MILE_FIX.md §3). A hop counts as
+    shore-linable only when at least SHORE_FRACTION of its length runs within
+    SHORE_MAX_D of a wall — the same rule graph_builder applies to real edges.
+    Anchor hops to a door/centroid are measured on the same basis: reaching a
+    doorway along a wall is genuinely shored, cutting to a centroid is not.
+    """
     d = _euclidean(src.position, tgt.position)
+    frac = _shore_fraction(pn_graph, src.position, tgt.position)
     edge = NavigationEdge(
         edge_id=f"PN-EDGE-{src.node_id}-{tgt.node_id}",
         source_id=src.node_id,
         target_id=tgt.node_id,
         distance=d,
-        shore_linable=True,
+        shore_linable=frac >= SHORE_FRACTION,
         safety_score=1.0,
         landmark_score=0.0,
+        tags={"shore_fraction": str(round(frac, 3))},
     )
     store[(src.node_id, tgt.node_id)] = edge
     store[(tgt.node_id, src.node_id)] = edge

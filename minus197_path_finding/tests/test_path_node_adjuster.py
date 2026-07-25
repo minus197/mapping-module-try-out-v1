@@ -28,7 +28,9 @@ from shared.types import NavigationEdge, NavigationNode, PathResult, PathStep
 from pathfinding.instructions import bearing
 from pathfinding.path_node_adjuster import (
     PathNode, Wall, adjust_with_path_nodes,
-    BETA, _build_crossing_edges, _GlobalPathGraph,
+    BETA, CROSSING_SHORTCUT_FACTOR, SHORE_FRACTION,
+    _add_synthetic_edge, _build_crossing_edges, _GlobalPathGraph,
+    _path_only_distance,
 )
 
 
@@ -410,3 +412,141 @@ class TestCornerVsCrossingPrecedence:
         matching = [cost for nid, cost in edge_costs if nid == "PATH-2"]
         assert matching, "expected a corner-bridge link between PATH-1 and PATH-2"
         assert matching[0] < BETA
+
+
+# ── Regression: crossing edges must not short-circuit a connected wall route ─
+# See LAST_MILE_FIX.md §2. On the L4 ODEL->Popeyes route a flat-BETA crossing
+# beat a fully connected 15.62 m wall chain purely because 8.0 < 15.62, putting
+# the user on an 11.25 m unreferenced diagonal. A crossing must only be offered
+# where the wall does NOT already connect the two nodes.
+
+class TestCrossingShortCircuit:
+    @staticmethod
+    def _connected_corner():
+        """
+        An L-shaped corner whose two faces ARE joined by wall-hugging links,
+        and whose endpoints are also geometrically eligible as a crossing pair
+        (different faces, unobstructed, near-perpendicular, < MAX_CROSSING_M).
+        The diagonal is shorter than walking the corner, so without
+        suppression the crossing wins.
+        """
+        walls = [
+            Wall(wall_id="W1", start=(0.0, 2.0), end=(6.0, 2.0)),
+            Wall(wall_id="W2", start=(6.0, 2.0), end=(6.0, 8.0)),
+        ]
+        path_nodes = [
+            PathNode("P-A", (1.0, 1.7), "W1", 0.3),
+            PathNode("P-B", (4.0, 1.7), "W1", 0.3),
+            PathNode("P-C", (6.3, 3.0), "W2", 0.3),
+            PathNode("P-D", (6.3, 6.0), "W2", 0.3),
+        ]
+        # Wall route P-A -> P-D is 8.64 m; the straight diagonal is 6.82 m, so
+        # an unsuppressed flat-BETA crossing would win. This is the L4 defect
+        # in miniature.
+        return walls, path_nodes
+
+    def test_crossing_suppressed_when_wall_route_exists(self):
+        walls, path_nodes = self._connected_corner()
+        graph = _GlobalPathGraph(path_nodes, walls)
+
+        # Precondition: the wall genuinely connects the two faces.
+        assert _path_only_distance(
+            graph, "P-A", "P-D", limit=CROSSING_SHORTCUT_FACTOR * BETA,
+        ) is not None
+
+        crossings = _build_crossing_edges(graph)
+        pairs = {frozenset((a, b)) for a, b, _c, _k in crossings}
+        assert frozenset(("P-A", "P-D")) not in pairs, (
+            "a crossing must not short-circuit an already-connected wall route"
+        )
+
+    def test_crossing_kept_when_no_wall_route_exists(self):
+        # Two facing walls with no corner joining them: the ONLY way across is
+        # the crossing edge, so suppression must leave it in place.
+        walls = [
+            Wall(wall_id="BOTTOM", start=(-2.0, 0.0), end=(12.0, 0.0)),
+            Wall(wall_id="TOP", start=(-2.0, 3.0), end=(12.0, 3.0)),
+        ]
+        path_nodes = [
+            PathNode("P-B3", (10.0, 0.3), "BOTTOM", 0.3),
+            PathNode("P-T3", (10.0, 2.7), "TOP", 0.3),
+        ]
+        graph = _GlobalPathGraph(path_nodes, walls)
+
+        assert _path_only_distance(
+            graph, "P-B3", "P-T3", limit=CROSSING_SHORTCUT_FACTOR * BETA,
+        ) is None
+
+        pairs = {frozenset((a, b)) for a, b, _c, _k in _build_crossing_edges(graph)}
+        assert frozenset(("P-B3", "P-T3")) in pairs, (
+            "a crossing bridging a genuinely disconnected pair must be kept"
+        )
+
+    def test_bounded_search_returns_none_beyond_limit(self):
+        walls, path_nodes = self._connected_corner()
+        graph = _GlobalPathGraph(path_nodes, walls)
+        # The real wall route is several metres; a 1 m budget cannot reach it.
+        assert _path_only_distance(graph, "P-A", "P-D", limit=1.0) is None
+
+
+# ── Regression: synthetic edges must MEASURE shore_linable, not assert it ────
+# See LAST_MILE_FIX.md §3. Every synthetic hop previously claimed
+# shore_linable=True, so an open-floor diagonal was indistinguishable from a
+# wall run in any downstream metric.
+
+class TestSyntheticEdgeShoreHonesty:
+    def test_wall_hugging_hop_is_shore_linable(
+        self, corridor_wall, hugging_path_nodes,
+    ):
+        a = _node("JUNC-A", (0.0, 1.7))
+        b = _node("JUNC-B", (11.0, 1.7))
+        edge = _edge("E-AB", a, b, dist=11.0)
+        adjusted = adjust_with_path_nodes(
+            _result_for_leg(a, b, edge), hugging_path_nodes, corridor_wall,
+        )
+        hops = [s for s in adjusted.steps if s.edge.edge_id.startswith("PN-EDGE-")]
+        assert hops, "expected synthetic path-node hops"
+        assert all(s.edge.shore_linable for s in hops), (
+            "hops running 0.3 m off a wall must report shore_linable=True"
+        )
+
+    def test_open_floor_hop_is_not_shore_linable(self):
+        """
+        A hop whose length runs far from any wall must report False. Two short
+        wall stubs sit at the ends of a wide gap, so the connecting hop leaves
+        the shoreline entirely in the middle.
+        """
+        walls = [
+            Wall(wall_id="W1", start=(0.0, 0.0), end=(3.0, 0.0)),
+            Wall(wall_id="W2", start=(30.0, 0.0), end=(33.0, 0.0)),
+        ]
+        path_nodes = [
+            PathNode("P-A", (1.5, 2.0), "W1", 2.0),
+            PathNode("P-B", (31.5, 2.0), "W2", 2.0),
+        ]
+        graph = _GlobalPathGraph(path_nodes, walls)
+        store = {}
+        _add_synthetic_edge(
+            store,
+            _node("P-A", (1.5, 2.0)),
+            _node("P-B", (31.5, 2.0)),
+            graph,
+        )
+        edge = store[("P-A", "P-B")]
+        assert edge.shore_linable is False, (
+            "a hop crossing open floor must not claim to be shore-linable"
+        )
+        assert float(edge.tags["shore_fraction"]) < SHORE_FRACTION
+
+    def test_shore_fraction_is_recorded_on_every_synthetic_edge(
+        self, corridor_wall, hugging_path_nodes,
+    ):
+        a = _node("JUNC-A", (0.0, 1.7))
+        b = _node("JUNC-B", (11.0, 1.7))
+        edge = _edge("E-AB", a, b, dist=11.0)
+        adjusted = adjust_with_path_nodes(
+            _result_for_leg(a, b, edge), hugging_path_nodes, corridor_wall,
+        )
+        for step in adjusted.steps:
+            if step.edge.edge_id.startswith("PN-EDGE-"):
+                assert "shore_fraction" in step.edge.tags
