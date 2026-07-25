@@ -1,0 +1,213 @@
+[
+  {
+    "action": "continue",
+    "distance": 6.09,
+    "node_id": "ZONE-2aQOv7Awv2XAeFI_6R_KbE",
+    "position": [
+      -2.2689,
+      31.5919
+    ],
+    "to_node_id": "FEAT-26jjhu0DH0Lxf54dTa$KoN",
+    "bearing": 202.01,
+    "instruction": "Start walking. Walk 6 m. You will reach Door-Passage-Single-Vision_Lite:36\" x 84\":1240531.",
+    "edge_id": "PN-EDGE-ZONE-2aQOv7Awv2XAeFI_6R_KbE-FEAT-26jjhu0DH0Lxf54dTa$KoN",
+    "shore_linable": true,
+    "safety_score": 1.0,
+    "landmark_score": 0.0
+  },
+  {
+    "action": "turn",
+    "direction": "right",
+    "band": "bear",
+    "distance": 2.66,
+    "node_id": "FEAT-26jjhu0DH0Lxf54dTa$KoN",
+    "position": [
+      -4.5501,
+      25.9486
+    ],
+    "to_node_id": "PATH-0009",
+    "bearing": 230.78,
+    "instruction": "Bear right. Walk 3 m.",
+    "edge_id": "PN-EDGE-FEAT-26jjhu0DH0Lxf54dTa$KoN-PATH-0009",
+    "shore_linable": true,
+    "safety_score": 1.0,
+    "landmark_score": 0.0
+  },
+  {
+    "action": "turn",
+    "direction": "left",
+    "band": "turn",
+    "distance": 5.65,
+    "node_id": "PATH-0009",
+    "position": [
+      -6.6114,
+      24.2663
+    ],
+    "to_node_id": "PATH-0008",
+    "bearing": 90.0,
+    "instruction": "Turn left. Walk 6 m.",
+    "edge_id": "PN-EDGE-PATH-0009-PATH-0008",
+    "shore_linable": true,
+    "safety_score": 1.0,
+    "landmark_score": 0.0
+  },
+  {
+    "action": "continue",
+    "distance": 5.65,
+    "node_id": "PATH-0008",
+    "position": [
+      -0.9652,
+      24.2663
+    ],
+    "to_node_id": "PATH-0007",
+    "bearing": 90.0,
+    "instruction": "Continue straight. Walk 6 m.",
+    "edge_id": "PN-EDGE-PATH-0008-PATH-0007",
+    "shore_linable": true,
+    "safety_score": 1.0,
+    "landmark_score": 0.0
+  },
+  {
+    "action": "continue",
+    "distance": 5.65,
+    "node_id": "PATH-0007",
+    "position": [
+      4.6811,
+      24.2663
+    ],
+    "to_node_id": "PATH-0006",
+    "bearing": 90.0,
+    "instruction": "Continue straight. Walk 6 m.",
+    "edge_id": "PN-EDGE-PATH-0007-PATH-0006",
+    "shore_linable": true,
+    "safety_score": 1.0,
+    "landmark_score": 0.0
+  },
+  {
+    "action": "continue",
+    "distance": 5.65,
+    "node_id": "PATH-0006",
+    "position": [
+      10.3273,
+      24.2663
+    ],
+    "to_node_id": "PATH-0005",
+    "bearing": 90.0,
+    "instruction": "Continue straight. Walk 6 m.",
+    "edge_id": "PN-EDGE-PATH-0006-PATH-0005",
+    "shore_linable": true,
+    "safety_score": 1.0,
+    "landmark_score": 0.0
+  },
+  {
+    "action": "continue",
+    "distance": 5.65,
+    "node_id": "PATH-0005",
+    "position": [
+      15.9735,
+      24.2663
+    ],
+    "to_node_id": "PATH-0004",
+    "bearing": 90.0,
+    "instruction": "Continue straight. Walk 6 m.",
+    "edge_id": "PN-EDGE-PATH-0005-PATH-0004",
+    "shore_linable": true,
+    "safety_score": 1.0,
+    "landmark_score": 0.0
+  },
+  {
+    "action": "continue",
+    "distance": 5.65,
+    "node_id": "PATH-0004",
+    "position": [
+      21.6198,
+      24.2663
+    ],
+    "to_node_id": "PATH-0003",
+    "bearing": 90.0,
+    "instruction": "Continue straight. Walk 6 m.",
+    "edge_id": "PN-EDGE-PATH-0004-PATH-0003",
+    "shore_linable": true,
+    "safety_score": 1.0,
+    "landmark_score": 0.0
+  },
+  {
+    "action": "continue",
+    "distance": 5.65,
+    "node_id": "PATH-0003",
+    "position": [
+      27.266,
+      24.2663
+    ],
+    "to_node_id": "PATH-0002",
+    "bearing": 90.0,
+    "instruction": "Continue straight. Walk 6 m.",
+    "edge_id": "PN-EDGE-PATH-0003-PATH-0002",
+    "shore_linable": true,
+    "safety_score": 1.0,
+    "landmark_score": 0.0
+  },
+  {
+    "action": "continue",
+    "distance": 5.65,
+    "node_id": "PATH-0002",
+    "position": [
+      32.9122,
+      24.2663
+    ],
+    "to_node_id": "PATH-0001",
+    "bearing": 90.0,
+    "instruction": "Continue straight. Walk 6 m.",
+    "edge_id": "PN-EDGE-PATH-0002-PATH-0001",
+    "shore_linable": true,
+    "safety_score": 1.0,
+    "landmark_score": 0.0
+  },
+  {
+    "action": "turn",
+    "direction": "left",
+    "band": "turn",
+    "distance": 2.51,
+    "node_id": "PATH-0001",
+    "position": [
+      38.5585,
+      24.2663
+    ],
+    "to_node_id": "FEAT-26jjhu0DH0Lxf54dTa$KoG",
+    "bearing": 312.15,
+    "instruction": "Turn left. Walk 3 m. You will reach Door-Passage-Single-Vision_Lite:36\" x 84\":1240532.",
+    "edge_id": "PN-EDGE-PATH-0001-FEAT-26jjhu0DH0Lxf54dTa$KoG",
+    "shore_linable": true,
+    "safety_score": 1.0,
+    "landmark_score": 0.0
+  },
+  {
+    "action": "turn",
+    "direction": "right",
+    "band": "bear",
+    "distance": 5.83,
+    "node_id": "FEAT-26jjhu0DH0Lxf54dTa$KoG",
+    "position": [
+      36.6999,
+      25.9486
+    ],
+    "to_node_id": "ZONE-2SAGvqDRX6DRBKPckG2ybK",
+    "bearing": 345.41,
+    "instruction": "Bear right. Walk 6 m. You will reach singer.",
+    "edge_id": "PN-EDGE-FEAT-26jjhu0DH0Lxf54dTa$KoG-ZONE-2SAGvqDRX6DRBKPckG2ybK",
+    "shore_linable": true,
+    "safety_score": 1.0,
+    "landmark_score": 0.0
+  },
+  {
+    "action": "stop",
+    "landmark": "singer",
+    "side": "right",
+    "node_id": "ZONE-2SAGvqDRX6DRBKPckG2ybK",
+    "position": [
+      35.2311,
+      31.5919
+    ],
+    "instruction": "The entrance to singer is on your right in 6 metres."
+  }
+]
