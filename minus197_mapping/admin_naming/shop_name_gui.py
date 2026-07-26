@@ -296,7 +296,7 @@ class ShopNameGUI:
         ttk.Label(right, text=f"Floor {self.floor_label or '—'}").pack(
             anchor="w", padx=12)
 
-        self.progress_var = tk.StringVar(value="")
+        self.progress_var = tk.StringVar(master=self.root, value="")
         ttk.Label(right, textvariable=self.progress_var,
                   foreground="#2e7d32").pack(anchor="w", padx=12, pady=(2, 6))
 
@@ -304,7 +304,7 @@ class ShopNameGUI:
         filt = ttk.Frame(right)
         filt.pack(fill="x", padx=12)
         ttk.Label(filt, text="Filter:").pack(side="left")
-        self.filter_var = tk.StringVar()
+        self.filter_var = tk.StringVar(master=self.root)
         ent = ttk.Entry(filt, textvariable=self.filter_var)
         ent.pack(side="left", fill="x", expand=True, padx=(6, 0))
         ent.bind("<KeyRelease>", lambda e: self._build_tree_rows(self.filter_var.get()))
@@ -342,7 +342,7 @@ class ShopNameGUI:
         form = ttk.Frame(right)
         form.pack(fill="x", padx=12, pady=(8, 4))
         ttk.Label(form, text="Title", font=("Segoe UI", 9, "bold")).pack(anchor="w")
-        self.ent_title_var = tk.StringVar()
+        self.ent_title_var = tk.StringVar(master=self.root)
         self.ent_title = ttk.Entry(form, textvariable=self.ent_title_var)
         self.ent_title.pack(fill="x", pady=(0, 6))
         self.ent_title.bind("<Return>", lambda e: self.on_save_zone())
@@ -378,7 +378,7 @@ class ShopNameGUI:
                    command=self.on_cancel).pack(side="left", fill="x",
                                                 expand=True, padx=(6, 0))
 
-        self.status_var = tk.StringVar(value="")
+        self.status_var = tk.StringVar(master=self.root, value="")
         ttk.Label(right, textvariable=self.status_var, wraplength=350,
                   foreground="#555555").pack(anchor="w", padx=12, pady=(6, 10))
 
@@ -700,6 +700,41 @@ class ShopNameGUI:
 # Public entry point
 # ---------------------------------------------------------------------------
 
+def _open_naming_window():
+    """Create the root window the naming GUI will live in.
+
+    ``Tk_MainLoop()`` (what Tkinter's ``mainloop()`` calls) only returns once
+    the process-wide count of *all* Tk main windows reaches zero — that count
+    is global, not scoped to the particular ``Tk()`` instance whose
+    ``mainloop()`` you called. So if a host application already has a ``Tk()``
+    root running (the normal case when this GUI is embedded), opening a
+    second ``Tk()`` here and calling its ``mainloop()`` would never return
+    when the admin closes this window — it would keep blocking until the
+    *host's* root is also destroyed, silently pumping the host window's
+    events in the meantime.
+
+    When a root already exists we instead open a ``Toplevel`` of it and block
+    with ``wait_window()``, which returns as soon as this specific window is
+    destroyed — the same technique ``tkinter.filedialog``/``messagebox`` use
+    internally. Standalone (CLI) use, where no root exists yet, still gets
+    its own ``Tk()`` + ``mainloop()``.
+
+    Returns (root, owns_root).
+    """
+    import tkinter as tk
+    existing_root = tk._default_root
+    if existing_root is not None:
+        return tk.Toplevel(existing_root), False
+    return tk.Tk(), True
+
+
+def _run_naming_window(root, owns_root: bool) -> None:
+    if owns_root:
+        root.mainloop()
+    else:
+        root.wait_window()
+
+
 def run_gui(
     sfm_path: str | Path,
     output_dir: str | Path,
@@ -725,8 +760,7 @@ def run_gui(
         return names_path
 
     try:
-        import tkinter as tk
-        root = tk.Tk()
+        root, owns_root = _open_naming_window()
     except Exception as exc:
         print(f"[AdminNamingGUI] Could not open a GUI window: {exc}")
         print("  This environment has no display. Use the text UI instead:")
@@ -736,7 +770,7 @@ def run_gui(
 
     app = ShopNameGUI(root, sfm_data, zones, stem, floor_label,
                       names_path, run_patcher)
-    root.mainloop()
+    _run_naming_window(root, owns_root)
 
     if app._patch_requested or run_patcher:
         from admin_naming.shop_name_patcher import run_patcher as do_patch
@@ -798,9 +832,8 @@ def run_gui_multi(
         return [run_gui(f["sfm_path"], output_dir, run_patcher)]
 
     try:
-        import tkinter as tk
         from tkinter import ttk
-        root = tk.Tk()
+        root, owns_root = _open_naming_window()
     except Exception as exc:
         print(f"[AdminNamingGUI] Could not open a GUI window: {exc}")
         print("  This environment has no display. Use the text UI per floor instead.")
@@ -849,7 +882,7 @@ def run_gui_multi(
     ttk.Button(bar, text="Save & Close",
                command=_on_close).pack(side="right", pady=6)
 
-    root.mainloop()
+    _run_naming_window(root, owns_root)
 
     names_paths = [f["names_path"] for f in floors]
     if run_patcher or any(a._patch_requested for a in apps):
